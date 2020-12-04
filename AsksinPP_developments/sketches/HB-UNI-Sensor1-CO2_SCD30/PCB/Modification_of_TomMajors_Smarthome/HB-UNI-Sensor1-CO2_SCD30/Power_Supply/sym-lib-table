@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name HB-UNI-Sensor1-CO2_SCD30)(type Legacy)(uri ${KIPRJMOD}/../HB-UNI-Sensor1-CO2_SCD30.lib)(options "")(descr ""))
+  (lib (name Power_Supply-rescue)(type Legacy)(uri ${KIPRJMOD}/Power_Supply-rescue.lib)(options "")(descr ""))
+)

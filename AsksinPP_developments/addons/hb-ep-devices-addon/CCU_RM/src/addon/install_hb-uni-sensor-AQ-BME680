@@ -1,0 +1,218 @@
+#!/bin/sh
+
+#------------------------------------------------------------------------------
+# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name="HB-UNI-Sensor-AQ-BME680" id="HB-UNI-Sensor-AQ-BME680">
+DEVICE="HB-UNI-Sensor-AQ-BME680"
+# in der WebUI angezeigte Gerätebeschreibung
+DEVICE_DESC="universeller Luftg\&uuml;tesensor"
+# Name der Piktogramme, bestehend aus xx.png bzw. xx_thumb.png
+DEVICE_IMG=hb-uni-sensor-AQ-BME680.png
+DEVICE_THUMB=hb-uni-sensor-AQ-BME680_thumb.png
+FIRMWARE_FILE=/firmware/rftypes/hb-uni-sensor-AQ-BME680*.xml
+
+#------------------------------------------------------------------------------
+# Edit DEVDB.tcl
+devdescrFile="/www/config/devdescr/DEVDB.tcl"
+devdescrSearch="array[[:space:]]*set[[:space:]]*DEV_PATHS[[:space:]]*{"
+
+devdescrInsert="$DEVICE {{50 \/config\/img\/devices\/50\/$DEVICE_THUMB} {250 \/config\/img\/devices\/250\/$DEVICE_IMG}} "
+
+if [ -z "`cat $devdescrFile | grep \"$DEVICE\"`" ]; then
+	sed -i "s/\($devdescrSearch\)/\1$devdescrInsert/g" $devdescrFile
+fi
+
+#------------------------------------------------------------------------------
+# Edit webui.js
+webuiFile="/www/webui/webui.js"
+webuiSearch="DEV_HIGHLIGHT[[:space:]]*=[[:space:]]*new Array();"
+
+webuiInsert="\n"
+webuiInsert="${webuiInsert}DEV_HIGHLIGHT['$DEVICE'] = new Object();\n"
+webuiInsert="${webuiInsert}DEV_LIST.push('$DEVICE');\n"
+webuiInsert="${webuiInsert}DEV_DESCRIPTION['$DEVICE']='$DEVICE_DESC';\n"
+webuiInsert="${webuiInsert}DEV_PATHS['$DEVICE'] = new Object();\n"
+webuiInsert="${webuiInsert}DEV_PATHS['$DEVICE']['50'] = '\/config\/img\/devices\/50\/$DEVICE_THUMB';\n"
+webuiInsert="${webuiInsert}DEV_PATHS['$DEVICE']['250'] = '\/config\/img\/devices\/250\/$DEVICE_IMG';"
+
+if [ -z "`cat $webuiFile | grep \"$DEVICE\"`" ]; then
+	sed -i "s/\($webuiSearch\)/\1$webuiInsert/g" $webuiFile
+fi
+
+
+# ab hier siehe Anleitung von Jérôme, siehe https://homematic-forum.de/forum/viewtopic.php?f=76&t=60067
+    
+
+webuiSearchBegin="elvST[[:space:]]*=[[:space:]]*new Array();"
+
+
+webuiInsertParam="GENERIC|Luftg%FCegrad"
+webuiInsertValue="stringTableHBAirQualityLevel"
+webuiInsert="\n"
+webuiInsert="${webuiInsert}elvST['$webuiInsertParam'] = '\${$webuiInsertValue}';"
+if [ -z "`cat $webuiFile | grep \"$webuiInsertParam\"`" ]; then
+	sed -i "s/\($webuiSearchBegin\)/\1$webuiInsert/g" $webuiFile
+fi
+	
+webuiInsertParam="GENERIC|Luftg%FCelog10"
+webuiInsertValue="stringTableHBAirQualityLog10"
+webuiInsert="\n"
+webuiInsert="${webuiInsert}elvST['$webuiInsertParam'] = '\${$webuiInsertValue}';"
+if [ -z "`cat $webuiFile | grep \"$webuiInsertParam\"`" ]; then
+	sed -i "s/\($webuiSearchBegin\)/\1$webuiInsert/g" $webuiFile
+fi
+
+webuiInsertParam="GENERIC|Gaswiderstand"
+webuiInsertValue="stringTableHBGasResistanceRaw"
+webuiInsert="\n"
+webuiInsert="${webuiInsert}elvST['$webuiInsertParam'] = '\${$webuiInsertValue}';"
+if [ -z "`cat $webuiFile | grep \"$webuiInsertParam\"`" ]; then
+	sed -i "s/\($webuiSearchBegin\)/\1$webuiInsert/g" $webuiFile
+fi
+
+webuiInsertParam="GENERIC|Gaswiderstand_min"
+webuiInsertValue="stringTableHBGasResistanceMin"
+webuiInsert="\n"
+webuiInsert="${webuiInsert}elvST['$webuiInsertParam'] = '\${$webuiInsertValue}';"
+if [ -z "`cat $webuiFile | grep \"$webuiInsertParam\"`" ]; then
+	sed -i "s/\($webuiSearchBegin\)/\1$webuiInsert/g" $webuiFile
+fi
+
+webuiInsertParam="GENERIC|Gaswiderstand_max"
+webuiInsertValue="stringTableHBGasResistanceMax"
+webuiInsert="\n"
+webuiInsert="${webuiInsert}elvST['$webuiInsertParam'] = '\${$webuiInsertValue}';"
+if [ -z "`cat $webuiFile | grep \"$webuiInsertParam\"`" ]; then
+	sed -i "s/\($webuiSearchBegin\)/\1$webuiInsert/g" $webuiFile
+fi
+
+webuiInsertParam="GENERIC|Batteriespannung"
+webuiInsertValue="stringTableHBBatteryVoltage"
+webuiInsert="\n"
+webuiInsert="${webuiInsert}elvST['$webuiInsertParam'] = '\${$webuiInsertValue}';"
+if [ -z "`cat $webuiFile | grep \"$webuiInsertParam\"`" ]; then
+	sed -i "s/\($webuiSearchBegin\)/\1$webuiInsert/g" $webuiFile
+fi
+
+webuiInsertParam="ALTITUDE_ABOVE_SEA_LEVEL"
+webuiInsertValue="stringTableHBAltitudeAboveSealevel"
+webuiInsert="\n"
+webuiInsert="${webuiInsert}elvST['$webuiInsertParam'] = '\${$webuiInsertValue}';"
+if [ -z "`cat $webuiFile | grep \"$webuiInsertParam\"`" ]; then
+	sed -i "s/\($webuiSearchBegin\)/\1$webuiInsert/g" $webuiFile
+fi
+
+webuiInsertParam="TRANSMIT_TIME_INTERVAL"
+webuiInsertValue="stringTableHBTransmitTimeIntervall"
+webuiInsert="\n"
+webuiInsert="${webuiInsert}elvST['$webuiInsertParam'] = '\${$webuiInsertValue}';"
+if [ -z "`cat $webuiFile | grep \"$webuiInsertParam\"`" ]; then
+	sed -i "s/\($webuiSearchBegin\)/\1$webuiInsert/g" $webuiFile
+fi
+
+webuiInsertParam="GENERIC|Rel. Luftfeuchtigkeit"
+webuiInsertValue="stringTableHBHumidity"
+webuiInsert="\n"
+webuiInsert="${webuiInsert}elvST['$webuiInsertParam'] = '\${$webuiInsertValue}';"
+if [ -z "`cat $webuiFile | grep \"$webuiInsertParam\"`" ]; then
+	sed -i "s/\($webuiSearchBegin\)/\1$webuiInsert/g" $webuiFile
+fi
+
+### Edit stringtable_de.txt ###
+
+stringtable_deFile="/www/config/stringtable_de.txt"
+
+
+stringtable_deInsert="WEATHER|AQ_LEVEL\t\${stringTableHBAirQualityLevel}"
+if [ -z "`cat $stringtable_deFile | grep \"WEATHER|AQ_LEVEL"`" ]; then
+    echo -e $stringtable_deInsert >> $stringtable_deFile
+fi
+
+stringtable_deInsert="WEATHER|AQ_LOG10\t\${stringTableHBAirQualityLog10}"
+if [ -z "`cat $stringtable_deFile | grep \"WEATHER|AQ_LOG10"`" ]; then
+    echo -e $stringtable_deInsert >> $stringtable_deFile
+fi
+
+stringtable_deInsert="WEATHER|AQ_GAS_RESISTANCE_RAW\t\${stringTableHBGasResistanceRaw}"
+if [ -z "`cat $stringtable_deFile | grep \"WEATHER|AQ_GAS_RESISTANCE_RAW"`" ]; then
+    echo -e $stringtable_deInsert >> $stringtable_deFile
+fi
+
+stringtable_deInsert="WEATHER|AQ_GAS_RESISTANCE_MIN\t\${stringTableHBGasResistanceMin}"
+if [ -z "`cat $stringtable_deFile | grep \"WEATHER|AQ_GAS_RESISTANCE_MIN"`" ]; then
+    echo -e $stringtable_deInsert >> $stringtable_deFile
+fi
+
+stringtable_deInsert="WEATHER|AQ_GAS_RESISTANCE_MAX\t\${stringTableHBGasResistanceMax}"
+if [ -z "`cat $stringtable_deFile | grep \"WEATHER|AQ_GAS_RESISTANCE_MAX"`" ]; then
+    echo -e $stringtable_deInsert >> $stringtable_deFile
+fi
+
+stringtable_deInsert="WEATHER|OPERATING_VOLTAGE\t\${stringTableHBBatteryVoltage}"
+if [ -z "`cat $stringtable_deFile | grep \"WEATHER|OPERATING_VOLTAGE"`" ]; then
+    echo -e $stringtable_deInsert >> $stringtable_deFile
+fi
+
+stringtable_deInsert="ALTITUDE_ABOVE_SEA_LEVEL\t\${stringTableHBAltitudeAboveSealevel}"
+if [ -z "`cat $stringtable_deFile | grep \"ALTITUDE_ABOVE_SEA_LEVEL"`" ]; then
+    echo -e $stringtable_deInsert >> $stringtable_deFile
+fi
+
+stringtable_deInsert="TRANSMIT_TIME_INTERVAL\t\${stringTableHBTransmitTimeIntervall}"
+if [ -z "`cat $stringtable_deFile | grep \"TRANSMIT_TIME_INTERVAL"`" ]; then
+    echo -e $stringtable_deInsert >> $stringtable_deFile
+fi
+
+stringtable_deInsert="WEATHER|MY_HUMIDITY\t\${stringTableHBHumidity}"
+if [ -z "`cat $stringtable_deFile | grep \"WEATHER|MY_HUMIDITY"`" ]; then
+    echo -e $stringtable_deInsert >> $stringtable_deFile
+fi
+
+
+### Edit translate.lang.stringtable.js ###
+translate_deFile="/www/webui/js/lang/de/translate.lang.stringtable.js"
+translate_deSearch="\"dummy\" : \"\","
+
+translate_deInsert="\n    \"stringTableHBAirQualityLevel\" : \"Luftg%FCtegrad\","
+if [ -z "`cat $translate_deFile | grep \"stringTableHBAirQualityLevel\"`" ]; then
+	sed -i "s/\($translate_deSearch\)/\1$translate_deInsert/g" $translate_deFile
+fi
+
+translate_deInsert="\n    \"stringTableHBAirQualityLog10\" : \"Luftqualit%E4t Log10\","
+if [ -z "`cat $translate_deFile | grep \"stringTableHBAirQualityLog10\"`" ]; then
+	sed -i "s/\($translate_deSearch\)/\1$translate_deInsert/g" $translate_deFile
+fi
+
+translate_deInsert="\n    \"stringTableHBGasResistanceRaw\" : \"Gaswiderstand\","
+if [ -z "`cat $translate_deFile | grep \"stringTableHBGasResistanceRaw\"`" ]; then
+	sed -i "s/\($translate_deSearch\)/\1$translate_deInsert/g" $translate_deFile
+fi
+
+translate_deInsert="\n    \"stringTableHBGasResistanceMin\" : \"min Gaswiderstand\","
+if [ -z "`cat $translate_deFile | grep \"stringTableHBGasResistanceMin\"`" ]; then
+	sed -i "s/\($translate_deSearch\)/\1$translate_deInsert/g" $translate_deFile
+fi
+
+translate_deInsert="\n    \"stringTableHBGasResistanceMax\" : \"max Gaswiderstand\","
+if [ -z "`cat $translate_deFile | grep \"stringTableHBGasResistanceMax\"`" ]; then
+	sed -i "s/\($translate_deSearch\)/\1$translate_deInsert/g" $translate_deFile
+fi
+
+translate_deInsert="\n    \"stringTableHBBatteryVoltage\" : \"Batteriespannung\","
+if [ -z "`cat $translate_deFile | grep \"stringTableHBBatteryVoltage\"`" ]; then
+	sed -i "s/\($translate_deSearch\)/\1$translate_deInsert/g" $translate_deFile
+fi
+
+translate_deInsert="\n    \"stringTableHBAltitudeAboveSealevel\" : \"H%F6he_%FCber_NN\","
+if [ -z "`cat $translate_deFile | grep \"stringTableHBAltitudeAboveSealevel"`" ]; then
+	sed -i "s/\($translate_deSearch\)/\1$translate_deInsert/g" $translate_deFile
+fi
+
+translate_deInsert="\n    \"stringTableHBTransmitTimeIntervall\" : \"Sendeintervall\","
+if [ -z "`cat $translate_deFile | grep \"stringTableHBTransmitTimeIntervall"`" ]; then
+	sed -i "s/\($translate_deSearch\)/\1$translate_deInsert/g" $translate_deFile
+fi
+
+translate_deInsert="\n    \"stringTableHBHumidity\" : \"Rel. Luftfeuchtigkeit\","
+if [ -z "`cat $translate_deFile | grep \"stringTableHBHumidity"`" ]; then
+	sed -i "s/\($translate_deSearch\)/\1$translate_deInsert/g" $translate_deFile
+fi

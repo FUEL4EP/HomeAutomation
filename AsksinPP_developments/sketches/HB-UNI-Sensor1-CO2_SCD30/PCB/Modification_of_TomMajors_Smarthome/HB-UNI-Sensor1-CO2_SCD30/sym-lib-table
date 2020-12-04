@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name HB-UNI-Sensor1-CO2_SCD30)(type Legacy)(uri ${KIPRJMOD}/HB-UNI-Sensor1-CO2_SCD30.lib)(options "")(descr ""))
+  (lib (name HB-UNI-SEN-BATT-rescue)(type Legacy)(uri ${KIPRJMOD}/../HB-UNI-SEN-BATT/HB-UNI-SEN-BATT-rescue.lib)(options "")(descr ""))
+  (lib (name Homebrew)(type Legacy)(uri ${KIPRJMOD}/../Homebrew.lib)(options "")(descr ""))
+  (lib (name HB-UNI-Sensor1-CO2_SCD30-rescue)(type Legacy)(uri ${KIPRJMOD}/HB-UNI-Sensor1-CO2_SCD30-rescue.lib)(options "")(descr ""))
+)

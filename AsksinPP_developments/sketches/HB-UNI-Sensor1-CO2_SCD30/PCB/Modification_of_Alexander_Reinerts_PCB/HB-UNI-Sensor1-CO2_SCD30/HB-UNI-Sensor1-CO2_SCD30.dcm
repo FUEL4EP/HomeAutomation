@@ -1,0 +1,27 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 16Bit_ADC_ADS1115
+F https://www.ti.com/lit/ds/symlink/ads1115.pdf
+$ENDCMP
+#
+$CMP NiMH_Charger_NIMHCRTA_2S
+F https://datasheetspdf.com/pdf-file/1257631/CONSONANCE/CN3085/1
+$ENDCMP
+#
+$CMP Sensirion_CO2_Sensor_SCD30
+F https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/9.5_CO2/Sensirion_CO2_Sensors_SCD30_Datasheet.pdf
+$ENDCMP
+#
+$CMP Step_Down_LM2596
+F https://www.ti.com/lit/ds/symlink/lm2596.pdf
+$ENDCMP
+#
+$CMP Step_Up_HW_668_SX1308
+F https://datasheetspdf.com/pdf-file/921054/Suosemi/SX1308/1
+$ENDCMP
+#
+$CMP Step_Up_MT3608
+F https://chips-and-more.com/cm/pdf/K3608.pdf
+$ENDCMP
+#
+#End Doc Library
