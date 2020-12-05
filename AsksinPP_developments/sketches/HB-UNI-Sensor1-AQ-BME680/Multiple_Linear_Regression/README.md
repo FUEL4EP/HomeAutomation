@@ -26,6 +26,8 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 For more details, please refer to https://jupyter.org/.
 JupyterLab is here used to execute the multiple linear regression coded in Python language.
 
+#### Existing Jupyterlab installation on your computer
+
 - If you have a local (Linux) installation of Jupiterlab, please invoke a terminal window in the sketch's directory and enter the following commands:
 
 >cd ${sketch_dir}/Multiple_Linear_Regression<br/>
@@ -41,8 +43,7 @@ JupyterLab is here used to execute the multiple linear regression coded in Pytho
 
 - Select the Python notebook 'Multiple linear regression for BME680 gas readings of a single sensor.ipynb' in the directory browser 
 
+#### Online Jupyterlab session in a browser
 
-
-
-	
-
+- An easier approach is an online Jupyterlab session in a browser. This does not require an installation of Jupyterlap on your computer and may the most convenient way for most users to execute the multiple linear regression.
+- Start in a browser (Firefox, Chrome) an [interactive demo Jupyterlab session](https://hub.gke2.mybinder.org/user/jupyterlab-jupyterlab-demo-6s0h46lu/lab/tree/demo)

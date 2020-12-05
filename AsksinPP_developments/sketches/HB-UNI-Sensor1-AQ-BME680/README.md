@@ -108,10 +108,10 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 ## Benötige Libraries
 
-[AskSinPP Library](https://github.com/pa-pa/AskSinPP)</br>
-[EnableInterrupt](https://github.com/GreyGnome/EnableInterrupt)</br>
-[Low-Power](https://github.com/rocketscream/Low-Power)</br>
-[ClosedCube_BME680_Arduino](https://github.com/FUEL4EP/ClosedCube_BME680_Arduino/tree/implement_Bosch_datasheet_integer_formulas) (Update 05. Dez 2020!)
++ [AskSinPP Library](https://github.com/pa-pa/AskSinPP)</br>
++ [EnableInterrupt](https://github.com/GreyGnome/EnableInterrupt)</br>
++ [Low-Power](https://github.com/rocketscream/Low-Power)</br>
++ [ClosedCube_BME680_Arduino](https://github.com/FUEL4EP/ClosedCube_BME680_Arduino/tree/implement_Bosch_datasheet_integer_formulas) (Update 05. Dez 2020!)
 
 ## Benötiges Addon
 
