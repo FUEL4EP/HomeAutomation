@@ -130,9 +130,9 @@ public:
             t1 |= 0x80;    // set bat low bit
         }
 
-        DPRINT("check battery voltage1000 = ");         DDECLN(operatingVoltage1000);
-        DPRINT("check my humidity10 =       ");         DDECLN(my_humidity10);
-        DPRINT("check temperature10 =       ");         DDECLN(temp);
+        //DPRINT("check battery voltage1000 = ");         DDECLN(operatingVoltage1000);
+        //DPRINT("check my humidity10 =       ");         DDECLN(my_humidity10);
+        //DPRINT("check temperature10 =       ");         DDECLN(temp);
 
         // als Standard wird BCAST gesendet um Energie zu sparen, siehe Beschreibung unten.
         // Bei jeder 40. Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
@@ -288,7 +288,7 @@ public:
         
         device().battery().update();                            // get current battery voltage; measure every sampling cycle
         operatingVoltage1000 = device().battery().current();    // BatteryTM class, mV resolution
-        DPRINT("battery voltage = ");       DDECLN(operatingVoltage1000);
+        DPRINT("battery voltage x1000 = ");       DDECLN(operatingVoltage1000);
         
         uint8_t msgcnt = device().nextcount();
         msg.init(msgcnt, temperature10, humidity10, operatingVoltage1000, device().battery().low());

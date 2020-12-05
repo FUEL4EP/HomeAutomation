@@ -206,7 +206,7 @@ Basisplatine HB-UNI-SEN-BATT von Alexander Reinert (gibt es beim Smarthome Onlin
 
 restliche Bauteile und Module der Schematic Blätter 'Power Supply' und 'HB-UNI-SEN-BATT_mod':
 
-* 1x Elko 470uF 10V
+* ~~1x Elko 470uF 10V~~
 * 3x Schotty Diode 1N5819
 * 1x LED rot 3mm
 * 1x NiMH Lademodul "NiMH_Charger_NIMHCRTA_2S" 2S Version [Quelle z.B.](https://de.banggood.com/1A-NiMH-Rechargeable-Battery-Multipurpose-Charger-1_5V-3V-4_5V-CCCV-Charging-Module-with-Terminal-1_2V-2_4V-3_6V-Batteries-p-1624843.html)
@@ -227,7 +227,7 @@ restliche Bauteile und Module der Schematic Blätter 'Power Supply' und 'HB-UNI-
 * 1x Kit Mikro-Kreuzschlitzschrauben 1000 Stück M1, M1.2, M1.4, M1.7 [Quelle z.B.](https://www.amazon.de/Phillips-Schrauben-Selbstschneidende-Elektronische-Holzschrauben/dp/B07S4FNB5N)
 * 1x Arduino Common Sensor Cable-30cm [Quelle z.B.](https://www.emartee.com/product/41527/Arduino-Common-Sensor-Cable-30cm)
 
-### Reduktiuon des Ladestroms des NiMH Lademoduls NiMH_Charger_NIMHCRTA_2S
+### Reduktion des Ladestroms des NiMH Lademoduls NiMH_Charger_NIMHCRTA_2S
 
 Um ein Einfrieren des gesamten Sensors durch Spannungsstörungen bei Ladebeginn der NiMH Akkus zu vermeiden, muss der Ladestrom des Lademoduls "NiMH_Charger_NIMHCRTA_2S" von ca. 1 A auf 0.259 A verkleinert werden. Die Ladezeit der Akkus vergrößert sich dadurch auf ca. 12 Stunden. Dazu wird der SMD Widerstand R5 (siehe Bild, rot markiert) auf der Modulplatine von original 1.24 kOhm auf 4.7 kOhm vergrößert. Es kann auch statt des SMD Widerstands ein Metallfilmwiderstand eingelötet werden. Der positive Nebeneffekt des geringeren Ladestroms ist eine geringere Wärmeentwicklung des Lademoduls. 
 
@@ -252,7 +252,7 @@ Ausgangspunkt für den Sketch war die Vorarbeit von Tom Major:
 
 Die daraus abgeleiteten Modifikationen und Ergänzungen sind:
 
-[Top-Level Sketch HB-UNI-Sensor1-CO2_SCD30.ino](HB-UNI-Sensor1-CO2_SCD30.ino)<br />
+[Top-Level Sketch HB-UNI-Sensor1-CO2_SCD30.ino](HB-UNI-Sensor1-CO2_SCD30.ino)     <= Diesen Sketch im Arduino IDE laden und mit dem Programmer hochladen<br />
 [SCD30 Include File Sens_SCD30.h](Sensors/Sens_SCD30.h)<br />
 [projektspezifische my_Sensors_SCD30.h Datei](Sensors/my_Sensors_SCD30.h) mit 'class Carbondioxide' Definition<br />
 

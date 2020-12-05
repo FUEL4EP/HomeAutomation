@@ -287,7 +287,7 @@ class SensorList1 : public RegList1<UReg1> {
           ;
     }
 
-    bool humidOffset (int32_t value) const {
+    bool humidOffset10 (int32_t value) const {
       return
           this->writeRegister(0x05, (value >> 24) & 0xff) &&
           this->writeRegister(0x06, (value >> 16) & 0xff) &&
@@ -296,7 +296,7 @@ class SensorList1 : public RegList1<UReg1> {
           ;
     }
 
-    int32_t humidOffset () const {
+    int32_t humidOffset10 () const {
       return
           ((int32_t)(this->readRegister(0x05, 0)) << 24) +
           ((int32_t)(this->readRegister(0x06, 0)) << 16) +
@@ -310,8 +310,8 @@ class SensorList1 : public RegList1<UReg1> {
 
     void defaults () {
       clear();
-      tempOffset10(0);    // temperature measurement offset, multiplied by 10 [K], must be positive, will be subtracted, calibrate your sensor's characteristics, enter in WebUI as device parameter for dynamic adjustment
-      humidOffset(3);     // humidity measurement offset [%], calibrate your sensor's characteristics, enter in WebUI as device parameter for dynamic adjustment
+      tempOffset10(0);       // temperature measurement offset, multiplied by 10 [K], must be positive, will be subtracted, calibrate your sensor's characteristics, enter in WebUI as device parameter for dynamic adjustment
+      humidOffset10(30);     // humidity measurement offset, multiplied by 10 [%], calibrate your sensor's characteristics, enter in WebUI as device parameter for dynamic adjustment
     }
     
 };
@@ -411,7 +411,7 @@ public:
 #ifdef ADS1115
   #ifdef SOLAR_CHARGE
         digitalWrite(SOLAR_CHARGE_ACTIVATION_PIN, PNP_SOLAR_CHARGER_OFF); // deactivate solar charging for voltage measurement
-        delayMicroseconds(30000);                                          // wait for 30 ms until VCC voltage has settled, 47 uF need to be charged by the solar step-up charger
+        delayMicroseconds(30000);                                         // wait for 30 ms until VCC voltage has settled, 47 uF need to be charged by the solar step-up charger
   #endif
        adc0_VCC  = ads.readADC_SingleEnded(0);
        //delayMicroseconds(100);
@@ -455,7 +455,7 @@ public:
     {
 
 #ifdef SENSOR_SCD30
-        scd30.init(this->device().getList0().updIntervall(), this->device().getList0().altitude(), PARAMETER_AMBIENT_PRESSURE, (int16_t)this->getList1().tempOffset10(), (int16_t)this->getList1().humidOffset());
+        scd30.init(this->device().getList0().updIntervall(), this->device().getList0().altitude(), PARAMETER_AMBIENT_PRESSURE, (int16_t)this->getList1().tempOffset10(), (int16_t)this->getList1().humidOffset10());
 #endif
 
         DPRINTLN(F("Sensor setup done"));
@@ -479,8 +479,8 @@ public:
     void configChanged() {
       DPRINTLN("* Config Changed                                 : List1");
       DPRINT(F("* Temperature Offset x10                         : ")); DDECLN(this->getList1().tempOffset10());
-      DPRINT(F("* Humidity Offset                                : ")); DDECLN(this->getList1().humidOffset());
-      scd30.init(this->device().getList0().updIntervall(), this->device().getList0().altitude(), PARAMETER_AMBIENT_PRESSURE, (int16_t)this->getList1().tempOffset10(), (int16_t)this->getList1().humidOffset());
+      DPRINT(F("* Humidity Offset x10                            : ")); DDECLN(this->getList1().humidOffset10());
+      scd30.init(this->device().getList0().updIntervall(), this->device().getList0().altitude(), PARAMETER_AMBIENT_PRESSURE, (int16_t)this->getList1().tempOffset10(), (int16_t)this->getList1().humidOffset10());
     }
 
     uint8_t status() const { return 0; }

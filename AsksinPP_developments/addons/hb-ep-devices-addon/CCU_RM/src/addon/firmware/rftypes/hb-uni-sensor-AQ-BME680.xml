@@ -87,7 +87,7 @@
         <parameter id="HumidityOffset">
           <logical type="float" min="-5.0" max="5.0" default="0.0" unit="%" />
           <physical type="integer" signed="true" interface="config" list="1" index="5" size="4" />
-          <conversion type="float_integer_scale" factor="1" />
+          <conversion type="float_integer_scale" factor="10" />
         </parameter>
         <parameter id="PressureOffset">
           <logical type="float" min="-100.0" max="100.0" default="0.0" unit="hPa" />

@@ -96,9 +96,9 @@ public:
                     bRet      = true;
                 }
             }
-            DPRINT("SHT75    Temperature   : ");
+            DPRINT("SHT75    Temperature x10  : ");
             DDECLN(_temperature);
-            DPRINT("SHT75    Humidity      : ");
+            DPRINT("SHT75    Humidity x10     : ");
             DDECLN(_humidity);
             i2cEnable();
         }

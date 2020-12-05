@@ -14,6 +14,7 @@
 #define _SENS_SCD30_H_
 
 
+
 #include "my_Sensors_SCD30.h"
 #include <Wire.h>
 #include "SparkFun_SCD30_Arduino_Library.h" //Click here to get the library: http://librarymanager/All#SparkFun_SCD30
@@ -29,7 +30,7 @@ class Sens_SCD30 : public Sensor {
     int16_t  _temperature;
     uint32_t _carbondioxide;
     uint8_t  _humidity;
-    int8_t   _humidity_correction;
+    int16_t  _humidity_correction;
     
     SCD30    airSensor;
 
@@ -50,7 +51,7 @@ class Sens_SCD30 : public Sensor {
         {    
              
               _temperature      = (int16_t)(round(airSensor.getTemperature() * 10.0)); 
-              DPRINT("Measured temperature           : ");
+              DPRINT("Measured temperature x10       : ");
               DPRINT(_temperature);
               DPRINTLN(" deg C");
               _carbondioxide    = (uint32_t)(round(airSensor.getCO2() * 100.0));
@@ -59,7 +60,7 @@ class Sens_SCD30 : public Sensor {
               DPRINT(airSensor.getHumidity());
               DPRINTLN(" %");
 #endif
-              _humidity         = (uint8_t)((int8_t)(round(airSensor.getHumidity())) + _humidity_correction);
+              _humidity         = (uint8_t)((int16_t)(round(airSensor.getHumidity())) + _humidity_correction);
               DPRINT("Corrected humidity measurement : ");
               DPRINT(_humidity);
               DPRINTLN(" %");
@@ -75,7 +76,7 @@ public:
     {
     }
 
-    void init(uint16_t update_intervall, uint16_t height, uint16_t ambient_pressure, int16_t temperature_correction, int8_t humidity_correction)
+    void init(uint16_t update_intervall, uint16_t height, uint16_t ambient_pressure, int16_t temperature_correction, int16_t humidity_correction)
     {
         Wire.begin();
         
@@ -129,10 +130,10 @@ public:
           DPRINT((float)temperature_correction/10.0);
           DPRINTLN(" deg C");
 #endif
-          _humidity_correction = humidity_correction;
+          _humidity_correction = humidity_correction/10;
 #ifdef DEEP_DEBUG
           DPRINT("Humidity correction: ");
-          DPRINT((float)_humidity_correction);
+          DPRINT(_humidity_correction);
           DPRINTLN(" %");
           DPRINT("Update intervall: ");
           DPRINT(update_intervall);
@@ -143,6 +144,7 @@ public:
           DPRINT("Ambient pressure setting : ");
           DPRINT(ambient_pressure);
           DPRINTLN(" hPa (zero for disabling pressure compensation)");
+#endif
           DPRINTLN(" ");
           DPRINTLN("IMPORTANT: Remove accumulator batteries during debugging with serial monoitor !!");
           DPRINTLN("           This avoids a deep discharge of them by the step-up converter");
@@ -150,7 +152,7 @@ public:
           DPRINTLN("           Unplug the USB connector of the serial programmer (diamex) during debugging with serial monitor !!");
           DPRINTLN("           This avoids data corruption");
           DPRINTLN(" ");
-#endif
+
         }
     }
     
