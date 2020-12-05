@@ -41,9 +41,19 @@ JupyterLab is here used to execute the multiple linear regression coded in Pytho
 
 ![initial JupyterLab session view](./Jupyterlab_initial.png  "initial JupyterLab session view")
 
-- Select the Python notebook 'Multiple linear regression for BME680 gas readings of a single sensor.ipynb' in the directory browser 
+- Select the Python notebook 'Multiple linear regression for BME680 gas readings of a single sensor.ipynb' in the directory and file browser at the left side by clicking on it
+- The Python notebook will be executed. Depending on the size of the history.csv file, the execution may take a while. In the Launcher on the right hand side, all cells with a number in square brackets have been executed and the results are shown.
+- The multiple linear regression results are shown at the very bottom of the Launcher 'Multiple linear regression for BME680 gas readings of a single sensor' (scroll down):
+
+![results of multiple linear regresssion](./Results_of_multiple_linear_regression.png "results of multiple linear regresssion")
+
 
 #### Online Jupyterlab session in a browser
 
 - An easier approach is an online Jupyterlab session in a browser. This does not require an installation of Jupyterlap on your computer and may the most convenient way for most users to execute the multiple linear regression.
-- Start in a browser (Firefox, Chrome) an [interactive demo Jupyterlab session](https://hub.gke2.mybinder.org/user/jupyterlab-jupyterlab-demo-6s0h46lu/lab/tree/demo)
+- Start in a browser (Firefox, Chrome) an [interactive demo Jupyterlab session](https://mybinder.org/v2/gh/jupyterlab/jupyterlab-demo/master?urlpath=lab/tree/demo)
+- Your browser session should look like this:
+
+ 
+# TO BE CONTINUED !
+
