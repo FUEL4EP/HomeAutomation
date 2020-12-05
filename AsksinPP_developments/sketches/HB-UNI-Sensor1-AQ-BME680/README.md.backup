@@ -71,11 +71,11 @@
 
 ![pic](Images/AQ_LEVEL.png)
 
-## AQ_LOG10 logarithmierte normierte Luftqualität
+## AQ_LOG10 logarithmierte normierte Luftgüte
 
 ![pic](Images/AQ_LOG10_versus_NDIR_SCD30_CO2.png)
 
-- zusätzlich zum AQ_LOG10 Luftqualitätsverlauf wird der CO2 Gehalt der Luft gemessen mit einem Sensirion SCD30 NDIR CO2 Sensor 
+- zusätzlich zum AQ_LOG10 LugtqualitätsVerlauf wird der CO2 Gehalt der Luft gemessen mit einem Sensirion SCD30 NDIR CO2 Sensor. 
 
 
 ## Benötiger Sketch
