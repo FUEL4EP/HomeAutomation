@@ -1,7 +1,7 @@
 # Please run the following commands in order to execute a multiple linear regression:
 Linux is assumed as operating system, please adapt to Windows as applicable by yourself, I don't use Windows at all and cannot support it!
 
-##Preparational steps
+## Preparational steps
 
 - Output a history CSV file in the CCU Historian's Trend diagram (button 'CSV-Export' at the bottom) dumping the following data points (click exactly in that sequence in CCU Historian's 'Datenpunktliste' to create the Trend diagram):
 
@@ -63,7 +63,7 @@ A tutorial of Jupyterlab can be found [here](https://www.tutorialspoint.com/jupy
 
 ![online JupyterLab session view 2](./Online_Jupyterlab_2.png  "online JupyterLab session view 2")
 
-- delete the sessions 'Lorenz.ipynb' and 'Jupiterlab Reference' on the right hand side
+- delete the sessions 'Lorenz.ipynb' and 'Jupyterlab Reference' on the right hand side
 
 ![online JupyterLab session view 3](./Online_Jupyterlab_3.png  "online JupyterLab session view 3")
 
