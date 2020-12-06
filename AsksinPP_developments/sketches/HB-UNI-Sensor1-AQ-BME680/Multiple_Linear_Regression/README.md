@@ -1,4 +1,4 @@
-#Please run the following commands in order to execute a multiple linear regression:
+# Please run the following commands in order to execute a multiple linear regression:
 Linux is assumed as operating system, please adapt to Windows as applicable by yourself, I don't use Windows at all and cannot support it!
 
 ##Preparational steps
