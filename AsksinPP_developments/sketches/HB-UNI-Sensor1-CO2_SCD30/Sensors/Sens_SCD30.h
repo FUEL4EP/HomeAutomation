@@ -124,7 +124,7 @@ public:
              DPRINTLN("The temperature offset has been set to zero !!!");
              temperature_correction = 0;
           }
-          airSensor.setTemperatureOffset((float)temperature_correction/10.0);
+          airSensor.setTemperatureOffset(((float)(temperature_correction))/10.0);
 #ifdef DEEP_DEBUG
           DPRINT("New temperature correction: ");
           DPRINT((float)temperature_correction/10.0);

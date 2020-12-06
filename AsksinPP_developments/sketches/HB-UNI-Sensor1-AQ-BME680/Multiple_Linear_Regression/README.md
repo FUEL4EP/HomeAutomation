@@ -24,7 +24,10 @@ Linux is assumed as operating system, please adapt to Windows as applicable by y
 
 JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. JupyterLab is extensible and modular: write plugins that add new components and integrate with existing ones.
 For more details, please refer to https://jupyter.org/.
-JupyterLab is here used to execute the multiple linear regression coded in Python language.
+JupyterLab is used here to execute the multiple linear regression coded in Python language.
+
+A tutorial of Jupyterlab can be found [here](https://www.tutorialspoint.com/jupyter/jupyterlab_installation_and_getting_started.htm).
+
 
 #### Existing Jupyterlab installation on your computer
 
@@ -54,6 +57,34 @@ JupyterLab is here used to execute the multiple linear regression coded in Pytho
 - Start in a browser (Firefox, Chrome) an [interactive demo Jupyterlab session](https://mybinder.org/v2/gh/jupyterlab/jupyterlab-demo/master?urlpath=lab/tree/demo)
 - Your browser session should look like this:
 
- 
-# TO BE CONTINUED !
+![initial online JupyterLab session view](./Online_Jupyterlab_1.png  "initial online JupyterLab session view")
+
+- add a new directory 'MLR':
+
+![online JupyterLab session view 2](./Online_Jupyterlab_2.png  "online JupyterLab session view 2")
+
+- delete the sessions 'Lorenz.ipynb' and 'Jupiterlab Reference' on the right hand side
+
+![online JupyterLab session view 3](./Online_Jupyterlab_3.png  "online JupyterLab session view 3")
+
+- click to the button 'Upload Files' and upload the following local files:
+
+> 	+ 'history.csv'
+> 	+ 'Multiple linear regression for BME680 gas readings of a single sensor.ipynb'
+
+![online JupyterLab session view 4](./Online_Jupyterlab_4.png  "online JupyterLab session view 4")
+
+- click on 'Multiple linear regression for BME680 gas readings of a single sensor.ipyn'
+
+- wait a bit until the execution of the notebook will be finished and then scroll down to see the results at the very bottom
+
+![online JupyterLab session view 5](./Online_Jupyterlab_5.png  "online JupyterLab session view 5")
+
+- enter the results as device parameters into the RaspberryMatic / CCU3 WebUI
+
+
+![enter MLR device parameters](../Images/Setting_of_device_parameters_in_WebUI.png  "enter MLR device parameters")
+
+- You are done and have successfully executed a multiple linear regression! Congratulations!
+
 

@@ -130,7 +130,8 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - the colored part of the formula has been changed
 
 
-## Benötigtes Addon
+
+## Benötiges Addon
 
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/blob/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/hb-ep-devices-addon.tgz)
 

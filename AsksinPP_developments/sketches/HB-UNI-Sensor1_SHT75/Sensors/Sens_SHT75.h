@@ -67,9 +67,12 @@ public:
                 _present = true;
                 DPRINTLN(F("SHT75 found"));
                 i2cEnable();
-                _temperature_correction = (float)(temperature_correction / 10);
-                _humidity_correction = (float)(humidity_correction / 10);
-                
+                _temperature_correction = (float)(temperature_correction) / 10.0;
+                _humidity_correction = (float)(humidity_correction) / 10.0;
+                DPRINT("SHT75 Temperature correction  : ");
+                DDECLN(_temperature_correction);
+                DPRINT("SHT75 Humidity correction     : ");
+                DDECLN(_humidity_correction);
                 return true;
             }
             delay(100);
