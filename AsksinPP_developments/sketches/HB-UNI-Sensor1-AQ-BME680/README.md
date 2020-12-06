@@ -16,6 +16,10 @@
 - Ausgabe des Luftgütegrads AQ_LEVEL: normierter BME680 Gaswiderstand 0..100% (ohne Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftgüte)
 - Ausgabe der logarithmischen Luftqualität AQ_LOG10: logarithmierte normierte und kompensierte Luftqualität 0.0..4.0 (mit Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftqualität)
 	+ die logarithmischen Luftqualität AQ_LOG10 korreliert in der Regel gut mit dem CO2 Gehalt der Luft
+	+ Formeln zur Berechnung von AQ_LOG10:
+
+![pic](Multiple_Linear_Regression/AQ_LOG10_formulas.png)
+
 - Autokalibrierung für den Luftgütegrad und die logarithmische Luftqualität: Zur Kalibrierung muss der Sensor nur:  
 
 	+ ca. 15 min schlechter Luft, z.B. einem mit Schnaps getränkten Papiertaschentuch ausgesetzt werden
