@@ -9,8 +9,8 @@ An autocalibration algorithm has been implemented in the code [sens_bme680.h](..
 > gas_upper_limit := upper gas resistance reference = AQ_GAS_RESISTANCE_MAX in CCU Historian<BR/>
 > gas_lower_limit := measured gas resistance reference = AQ_GAS_RESISTANCE_MIN in CCU Historian<BR/>
 > gas_upper_limit_min := minimum limit of gas_upper_limit
->_gas_lower_limit_max := maximum limit of gas_lower_limit
->_min_gas_resistance := minimum ever measured gas resistance since last reset
+> gas_lower_limit_max := maximum limit of gas_lower_limit
+> min_gas_resistance := minimum ever measured gas resistance since last reset
 > max_gas_resistance := maximum ever measured gas resistance since last reset
 
 ### gas = AQ_GAS_RESISTANCE_RAW in CCU Historian

@@ -285,7 +285,7 @@ public:
 
       // calculate the normalized air quality level = AQ_LEVEL datapoint parameter in CCU Historian
       
-      _gas_score = (float)((gas - _gas_lower_limit)/(_gas_upper_limit - _gas_lower_limit)) * 100.0;
+      _gas_score = (float)(gas - _gas_lower_limit)/(float)(_gas_upper_limit - _gas_lower_limit) * 100.0;
       
       if ( _gas_score > 100.0 )
         _gas_score = 100.0;
