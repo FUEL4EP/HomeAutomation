@@ -5,6 +5,7 @@
 - ein herzliches Dankeschön für die Basisarbeit geht an Jérôme (jp112sdl)
 - ein herzliches Dankeschön an alle, die im Homematic Forum geholfen haben, meine Probleme zu lösen
 - der Homematic Forum [Diskussionsstrang](https://homematic-forum.de/forum/viewtopic.php?t=49422)
+- hilfreich ist auch die Diskussion zu den [rftypes XMLs](https://homematic-forum.de/forum/viewtopic.php?f=76&t=62578&sid=cf0f4cd99f7ee2bf070e9f39391ee652)
 
 ## Neue Eigenschaften im Vergleich zum HB-UNI-Sen-IAQ Sensor
 
@@ -22,9 +23,11 @@
 
 - Autokalibrierung für den Luftgütegrad und die logarithmische Luftqualität: Zur Kalibrierung muss der Sensor nur:  
 
-	+ ca. 15 min schlechter Luft, z.B. einem mit Schnaps getränkten Papiertaschentuch ausgesetzt werden
-	+ ca. 15 .. 20 min guter Außenluft, am besten bei Wind, ausgesetzt werden
-	+ diese Kalibrierung sollte ca. alle 1..2 Monate wiederholt werden
+	+ ca. 30 min schlechter Luft, z.B. einem mit Schnaps getränkten Papiertaschentuch ausgesetzt werden
+	+ ca. 30 min guter Außenluft, am besten bei Wind, ausgesetzt werden
+	+ diese Kalibrierung sollte ca. alle 1..3 Monate wiederholt werden
+	
+- Details zur Autokalibrierung sind [hier](./Autocalibration/README.md) nachzulesen.
 	
 - Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftgüte LOG10 durch [multiple lineare Regression](https://de.wikipedia.org/wiki/Multiple_lineare_Regression)
 	+ die absolute Luftfeuchte wird im Sensor auf der ATmega1284P MCU aus Temperatur und relativer Luftfeuchte [berechnet](https://www.kompf.de/weather/vent.html) 
@@ -55,10 +58,17 @@
 	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/), bitte geeignet abändern
 	+ die I2C-Verbindungen zwischen HB-UNI-SEN-BATT PCB und BME680 Breakout mit flexiblem Flachbandhabel
 	+ 2x 10 kOhm I2C Abschlusswiderstände auf HB-UNI-SEN-BATT PCB einlöten
-	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](3D_Druck/BME680_protection.stl) für eine BME680 Halterung zu finden
+	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](3D print files/BME680_protection.stl) für eine BME680 Halterung zu finden
 		* wird auf das HB-UNI-SEN-BATT PCB mit 2-Komponentenkleber aufgeklebt
 		* eine Nase muss mit einer Flachfeile entfernt werden
-	
+		
+## Verringerung des Ruhestroms
+
+- Nach erfolgreicher Inbetriebnahme bitte die LED auf dem Tindie Pro Mini XL - v2 - ATmega 1284 PCB vorsichtig oben links, wie im Bild gekennzeichnet, auslöten:
+
+![pic](Images/Tindie_Pro_Mini_XL_Pro_1284P_LED.png)	
+
+- Brown-Out_Detektor des ATmega1284P  (BOD) ausschalten, siehe Einstellungen Arduino IDE unten unter Punkt **Benötigter Sketch**
 	       
 
 ## Das angemeldete Gerät im RaspberryMatic WebUI
@@ -115,19 +125,19 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 + [AskSinPP Library](https://github.com/pa-pa/AskSinPP)</br>
 + [EnableInterrupt](https://github.com/GreyGnome/EnableInterrupt)</br>
 + [Low-Power](https://github.com/rocketscream/Low-Power)</br>
-+ [ClosedCube_BME680_Arduino](https://github.com/FUEL4EP/ClosedCube_BME680_Arduino/tree/implement_Bosch_datasheet_integer_formulas) (Update 05. Dez 2020, Bosch released a new BME680 data sheet V1.4)
++ [ClosedCube_BME680_Arduino](https://github.com/FUEL4EP/ClosedCube_BME680_Arduino/tree/implement_Bosch_datasheet_integer_formulas) (Update 05. Dez 2020, Bosch hat im Juni 2020 eine neue Version V1.4 des BME680 Datenblatts veröffentlicht)
 
 
 
 ## BME680 Data sheet
 
-- Bosch released an [update V1.4](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf) of the BME680 data sheet in June 2020
-- Some integer formulas were changed and required an update of the [ClosedCube_BME680_Arduino](https://github.com/FUEL4EP/ClosedCube_BME680_Arduino/tree/implement_Bosch_datasheet_integer_formulas) library. Please ensure to download the latest version!
-- Changed formula for calculating 'res_heat_x':
+- Bosch hat im Juni 2020 eine [neue Version V1.4](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf) des BME680 Datenblatts freigegeben
+- Einige Integer-Berechnungsformeln wurden geändert und bedingen ein Update der [ClosedCube_BME680_Arduino Bibliothek](https://github.com/FUEL4EP/ClosedCube_BME680_Arduino/tree/implement_Bosch_datasheet_integer_formulas). Bitte die neueste Version von Github herunterladen!
+- Geändert wurde die Berechnungsformel für 'res_heat_x':
 
 ![pic](Images/BME680_V1.4_datasheet_changes.png)
 
-- the colored part of the formula has been changed
+- Die farblich markierten Formelteile wurden geändert
 
 
 ## Benötigtes Addon

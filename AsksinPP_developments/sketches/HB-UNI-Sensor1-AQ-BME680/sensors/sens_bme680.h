@@ -18,12 +18,8 @@
  * Higher concentrations of VOC will make the resistance lower.
  */
 
-#define HUM_REFERENCE   40.0
-#define HUM_DELTA       5.0       // band around HUM_REFERENCE for best humidity, i.e. 35% .. 45% relative humidity as default
 #define AVG_COUNT       5
 #define IIR_FILTER_COEFFICIENT 0.0001359 // 1.0 -0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods)
-#define GAS_FACTOR      1.0      // for calclulating the _gas_score the upper gas limit is scaled by this factor in order to get more meaningful results for indoor sensors
-                                 // GAS_FACTOR should be set to 1.0 for an outdoor sensor
 #define EPSILON         0.0001
 
 
@@ -82,14 +78,14 @@ public:
     DPRINT(", Chip ID=0x");
     DHEXLN(_bme680.getChipID());
 
-      // oversampling: humidity = x2, temperature = x8, pressure = x4
-    _bme680.setOversampling(BME680_OVERSAMPLING_X2, BME680_OVERSAMPLING_X8, BME680_OVERSAMPLING_X4);
+      // oversampling: humidity = x2, temperature = x2, pressure = x4
+    _bme680.setOversampling(BME680_OVERSAMPLING_X2, BME680_OVERSAMPLING_X2, BME680_OVERSAMPLING_X4);
     _bme680.setIIRFilter(BME680_FILTER_3); // supresses spikes 
     _bme680.setGasOn(310, 300); // 310 degree Celsius and 300 milliseconds; please check in debug mode whether '-> Gas heat_stab_r   = 1' is achieved. If '-> Gas heat_stab_r   = 0' then the heating time is to short or the temp target too high
     _bme680.setForcedMode();
     
-    _max_gas_resistance = -1000000;     // initial value
-    _min_gas_resistance = 1000000;      // initial value
+    _max_gas_resistance = -2000000;     // initial value
+    _min_gas_resistance = 2000000;      // initial value
     _max_res = _max_gas_resistance;     // initial value
     _min_res = _min_gas_resistance;     // initial value
     _height  =  height;
@@ -187,42 +183,60 @@ public:
       DPRINT("avg gas: ");DDECLN(gas);
       
       
+      // peak detectors for min/max ever measured gas resistances since last reset
       
-      if ( gas > _max_gas_resistance)    // capture maximum of measured gas resistances
+      if ( gas > _max_gas_resistance) {   // capture maximum of ever measured gas resistances since last reset
         _max_gas_resistance = gas;
-      if ( gas < _min_gas_resistance)    // capture minimum of measured gas resistances
-        _min_gas_resistance = gas;
+        if ( _max_gas_resistance >= _min_gas_resistance ) {
+            
+            // set lower limit for decay of _gas_upper_limit; _max_decay_factor_upper_limit is typically set to 70 as WebUI device parameter
+            _gas_upper_limit_min = _min_gas_resistance + (_max_gas_resistance - _min_gas_resistance) * (int32_t)_max_decay_factor_upper_limit / 100;
+            
+            // set upper limit for increase of _gas_lower_limit; _max_increase_factor_lower_limit is typically set to 30 as WebUI device parameter
+            _gas_lower_limit_max = _min_gas_resistance + (_max_gas_resistance - _min_gas_resistance) * (int32_t)_max_increase_factor_lower_limit / 100;
+            
+        }
+      }
       
-      //peak detector for _gas_upper_limit 
+      if ( gas < _min_gas_resistance) {   // capture minimum of ever measured gas resistances since last reset
+        _min_gas_resistance = gas;
+         if ( _max_gas_resistance >= _min_gas_resistance ) {
+             
+            // set lower limit for decay of _gas_upper_limit; _max_decay_factor_upper_limit is typically set to 70 as WebUI device parameter
+            _gas_upper_limit_min = _min_gas_resistance + (_max_gas_resistance - _min_gas_resistance) * (int32_t)_max_decay_factor_upper_limit / 100;
+            
+            // set upper limit for increase of _gas_lower_limit; _max_increase_factor_lower_limit is typically set to 30 as WebUI device parameter
+            _gas_lower_limit_max = _min_gas_resistance + (_max_gas_resistance - _min_gas_resistance) * (int32_t)_max_increase_factor_lower_limit / 100;
+            
+        }
+      }
+      
+      //peak detector for _gas_upper_limit    (CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MAX)
+      
       if ( gas > _gas_upper_limit )
       {
         _gas_upper_limit = gas;
-        if ( _gas_upper_limit > _gas_lower_limit ) {
-            _gas_lower_limit_max = _gas_lower_limit + (_gas_upper_limit - _gas_lower_limit) * (int32_t)_max_decay_factor_upper_limit / 100;
-            _gas_upper_limit_min = _gas_lower_limit + (_gas_upper_limit - _gas_lower_limit) * (int32_t)_max_increase_factor_lower_limit / 100;
-        }
       }
       else
       {
         _gas_upper_limit = _gas_upper_limit - (_gas_upper_limit - _gas_lower_limit) * IIR_FILTER_COEFFICIENT; // decay each sample by IIR_FILTER_COEFFICIENT * (max-min)
         if ( _gas_upper_limit < _gas_upper_limit_min ) {
+          // limit decay of _gas_upper_limit to _gas_upper_limit_min
           _gas_upper_limit = _gas_upper_limit_min; // lower limit for _gas_upper_limit
         }
       }
       
-      //peak detector for _gas_lower_limit 
+      //peak detector for _gas_lower_limit  (CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MIN)
+      
       if ( gas < _gas_lower_limit )
       {
         _gas_lower_limit = gas;
-        if ( _gas_upper_limit > _gas_lower_limit ) {
-            _gas_lower_limit_max = _gas_lower_limit + (_gas_upper_limit - _gas_lower_limit) * (int32_t)_max_decay_factor_upper_limit / 100;
-            _gas_upper_limit_min = _gas_lower_limit + (_gas_upper_limit - _gas_lower_limit) * (int32_t)_max_increase_factor_lower_limit / 100;
-        }
       }
       else
       {
         _gas_lower_limit = _gas_lower_limit + (_gas_upper_limit - _gas_lower_limit) * IIR_FILTER_COEFFICIENT; // increase each sample by IIR_FILTER_COEFFICIENT * (max-min)
         if ( _gas_lower_limit > _gas_lower_limit_max ) {
+          // limit increase of _gas_lower_limit to _gas_lower_limit_max
           _gas_lower_limit = _gas_lower_limit_max; // upper limit for _gas_lower_limit
         }
       }
@@ -247,9 +261,6 @@ public:
       DPRINT(F("PNN = "));DDECLN(_pressureNN);
       DPRINT(F("Hum = "));DDECLN(_humidity);
       DPRINT(F("Gas = "));DDECLN(gas);
-#ifdef DEEP_DEBUG
-      DPRINT(F("Gas FACTOR = "));DDECLN(GAS_FACTOR);
-#endif
 
       /*
        This software, the ideas and concepts is Copyright (c) David Bird 2018. All rights to this software are reserved.
@@ -269,43 +280,19 @@ public:
        FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
        See more at http://www.dsbird.org.uk
       */
-        //Calculate humidity contribution to AQ index
-      float _hum_score = 0.0;
+     
       float _gas_score = 0.0;
-      if (hum >= HUM_REFERENCE - HUM_DELTA && hum <= HUM_REFERENCE + HUM_DELTA)
-        _hum_score = 100.0; // Humidity +/-HUM_DELTA% around optimum HUM_REFERENCE; region 0
-      else
-      { //sub-optimal, trapezoid function: 0 @ hum=0; 1.0 @ hum = HUM_REFERENCE - HUM_DELTA; 1.0 @ hum = HUM_REFERENCE + HUM_DELTA; 0 for hum >= HUM_REFERENCE + HUM_DELTA;
-        if (hum < HUM_REFERENCE - HUM_DELTA)
-          _hum_score = 1.0/(HUM_REFERENCE - HUM_DELTA)*hum*100.0; // region 1; zero for hum = 0, continuous at hum = HUM_REFERENCE - HUM_DELTA
-        else // (hum > HUM_REFERENCE + HUM_DELTA)
-        {
-          if ( hum >= 2 * HUM_REFERENCE )
-            _hum_score = 0.0;
-          else
-          {
-            _hum_score = (-1.0/(HUM_REFERENCE - HUM_DELTA)*(hum-2*HUM_REFERENCE))*100.0; // region 2; negative slope of region 1; zero for hum = 2 * HUM_REFERENCE, continuous at hum = HUM_REFERENCE + HUM_DELTA
-          }
-        }
-      }
-      
-      // limit gas values
-      if (gas > _gas_upper_limit) gas = _gas_upper_limit;
-      if (gas < _gas_lower_limit) gas = _gas_lower_limit;
-        
-      //DPRINT(F("gRef= "));DDECLN(_gas_reference);
 
-      _gas_score = ( 1.0/(_gas_upper_limit*GAS_FACTOR-_gas_lower_limit)*gas - 1.0*_gas_lower_limit/(_gas_upper_limit*GAS_FACTOR-_gas_lower_limit))*100.0;
+      // calculate the normalized air quality level = AQ_LEVEL datapoint parameter in CCU Historian
+      
+      _gas_score = (float)((gas - _gas_lower_limit)/(_gas_upper_limit - _gas_lower_limit)) * 100.0;
       
       if ( _gas_score > 100.0 )
         _gas_score = 100.0;
 
-        
-      float air_quality_score = _gas_score;
-
-      _aqLevel = (uint8_t)(air_quality_score);
+      _aqLevel = (uint8_t)(_gas_score);
       //DPRINT(F("AQ% = "));DDECLN(_aqLevel);
-      DPRINT(F("AQ  = "));DDEC((uint8_t)air_quality_score);DPRINT(F("% (H: "));DDEC((uint8_t)(_hum_score));DPRINT(F("% + G: "));DDEC((uint8_t)(_gas_score));DPRINTLN(F("%)"));
+      DPRINT(F("AQ  = "));DDEC((uint8_t)_gas_score);DPRINTLN(F("%"));
       _bme680.setForcedMode();
       
       // calculate the absolute humidity
@@ -335,23 +322,44 @@ public:
 #endif
       
       
-      if ( residual > _max_res)    // capture maximum of residual gas resistances
+      // peak detectors for min/max ever calculated residual since last reset
+      
+      
+      if ( residual > _max_res) {   // capture maximum of ever calculated residual gas resistances since last reset
         _max_res = residual;
-      if ( residual < _min_res)    // capture minimum of measured gas resistances
+         if ( _max_res > _min_res ) {
+             
+             // set lower limit for decay of _res_upper_limit; _max_decay_factor_upper_limit is typically set to 70 as WebUI device parameter
+            _res_upper_limit_min = _min_res + (_max_res - _min_res) * (int32_t)_max_decay_factor_upper_limit / 100;
+            
+            // set upper limit for increase of _res_lower_limit; _max_increase_factor_lower_limit is typically set to 30 as WebUI device parameter
+            _res_lower_limit_max = _min_res + (_max_res - _min_res) * (int32_t)_max_increase_factor_lower_limit / 100;
+            
+        }
+      }
+      if ( residual < _min_res) {   // capture minimum of ever calculated residual gas resistances since last reset
         _min_res = residual;
+        if ( _max_res > _min_res ) {
+            
+            // set lower limit for decay of _res_upper_limit; _max_decay_factor_upper_limit is typically set to 70 as WebUI device parameter
+            _res_upper_limit_min = _min_res + (_max_res - _min_res) * (int32_t)_max_decay_factor_upper_limit / 100;
+            
+            // set upper limit for increase of _res_lower_limit; _max_increase_factor_lower_limit is typically set to 30 as WebUI device parameter
+            _res_lower_limit_max = _min_res + (_max_res - _min_res) * (int32_t)_max_increase_factor_lower_limit / 100;
+            
+        }
+      }
       
       //peak detector for _res_upper_limit 
       if ( residual > _res_upper_limit )
       {
         _res_upper_limit = residual;
-        if ( _res_upper_limit > _res_lower_limit ) {
-            _res_lower_limit_max = _res_lower_limit + (_res_upper_limit - _res_lower_limit) * (int32_t)_max_decay_factor_upper_limit / 100;
-            _res_upper_limit_min = _res_lower_limit + (_res_upper_limit - _res_lower_limit) * (int32_t)_max_increase_factor_lower_limit / 100;
-        }
+       
       }
       else
       {
         _res_upper_limit = _res_upper_limit - (_res_upper_limit - _res_lower_limit) * IIR_FILTER_COEFFICIENT; // decay each sample by IIR_FILTER_COEFFICIENT * (max-min)
+        // limit decay of _res_upper_limit to _res_upper_limit_min
         if ( _res_upper_limit < _res_upper_limit_min ) {
           _res_upper_limit = _res_upper_limit_min; // lower limit for _res_upper_limit
         }
@@ -361,14 +369,11 @@ public:
       if ( residual < _res_lower_limit )
       {
         _res_lower_limit = residual;
-        if ( _res_upper_limit > _res_lower_limit ) {
-            _res_lower_limit_max = _res_lower_limit + (_res_upper_limit - _res_lower_limit) * (int32_t)_max_decay_factor_upper_limit / 100;
-            _res_upper_limit_min = _res_lower_limit + (_res_upper_limit - _res_lower_limit) * (int32_t)_max_increase_factor_lower_limit / 100;
-        }
       }
       else
       {
         _res_lower_limit = _res_lower_limit + (_res_upper_limit - _res_lower_limit) * IIR_FILTER_COEFFICIENT; // increase each sample by IIR_FILTER_COEFFICIENT * (max-min)
+        // limit increase of _res_lower_limit to _res_lower_limit_max
         if ( _res_lower_limit > _res_lower_limit_max ) {
           _res_lower_limit = _res_lower_limit_max; // upper limit for _res_lower_limit
         }
@@ -415,9 +420,9 @@ public:
   uint16_t  humidity ()                     { return _humidity; }                     // 0..100%
   uint8_t   aq_level ()                     { return _aqLevel; }                      // 0..100%
   uint16_t  aq_state_scaled ()              { return _aqState_scaled; }               // 0..40000, mul 10000!
-  uint16_t  gas_resistance_raw_scaled ()    { return _gas_resistance_raw_scaled; }    // 0..65365; div 20!
-  uint16_t  gas_resistance_min_scaled ()    { return _gas_resistance_min_scaled; }    // 0..65365; div 20!
-  uint16_t  gas_resistance_max_scaled ()    { return _gas_resistance_max_scaled; }    // 0..65365; div 20!
+  uint16_t  gas_resistance_raw_scaled ()    { return _gas_resistance_raw_scaled; }    // 0..65365; div 20!      CCU Historian datapoint parameter AQ_GAS_RESISTANCE_RAW
+  uint16_t  gas_resistance_min_scaled ()    { return _gas_resistance_min_scaled; }    // 0..65365; div 20!    	CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MIN
+  uint16_t  gas_resistance_max_scaled ()    { return _gas_resistance_max_scaled; }    // 0..65365; div 20!      CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MAX
 };
 
 }
