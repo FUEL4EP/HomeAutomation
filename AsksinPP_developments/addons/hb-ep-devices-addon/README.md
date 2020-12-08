@@ -33,7 +33,7 @@ _Bitte etwas Geduld haben - je nach Geschwindigkeit der SD Karte kann die Instal
 
 |  | Name | Beschreibung | 🔋Batterie-/<br/>⚡️Netzbetrieb |
 |--------|--------|--------|:--------:|
-|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-CO2-SCD30_thumb.png" width=25/> | [HB-UNI-SENSOR-CO2-SCD30](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30) | NDIR CO2 Sensor<br/>_basierend auf Sensirion SCD30_ | 🔋 |
+|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-CO2-SCD30_thumb.png" width=25/> | [HB-UNI-SENSOR-CO2-SCD30](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30) | NDIR CO2 Sensor<br/>_basierend auf Sensirion SCD30_ | 🔋 ⚡ |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-AQ-BME680_thumb.png" width=25/> | [HB-UNI-SENSOR-AQ-BME680](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680) | Air Quality Sensor<br/>_basierend auf Bosch BME680_ | 🔋 |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-TH-SHT75_thumb.png" width=25/> | [HB-UNI-SENSOR-TH-SHT75](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1_SHT75) | high accuracy TH Sensor<br/>_basierend auf Sensirion SHT75_ | 🔋 |
 

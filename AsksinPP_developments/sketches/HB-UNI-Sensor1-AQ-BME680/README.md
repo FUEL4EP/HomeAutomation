@@ -58,7 +58,8 @@
 	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/), bitte geeignet abändern
 	+ die I2C-Verbindungen zwischen HB-UNI-SEN-BATT PCB und BME680 Breakout mit flexiblem Flachbandhabel
 	+ 2x 10 kOhm I2C Abschlusswiderstände auf HB-UNI-SEN-BATT PCB einlöten
-	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](3D print files/BME680_protection.stl) für eine BME680 Halterung zu finden
+	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](3D print files/BME680_protection.stl) für eine BME680 Halterung zu finden:
+![pic](Images/BME680_holding.png)	
 		* wird auf das HB-UNI-SEN-BATT PCB mit 2-Komponentenkleber aufgeklebt
 		* eine Nase muss mit einer Flachfeile entfernt werden
 		
