@@ -297,8 +297,14 @@ Im obigen Beispiel ADC0_FACTOR ist 3.509 die mit dem Voltmeter gemessene VCC Spa
 
 **Speicherbedarf des Sketches:**
 
-Der Sketch verwendet 25946 Bytes (84%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
-Globale Variablen verwenden 1067 Bytes (52%) des dynamischen Speichers, 981 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.<br />
+~~Der Sketch verwendet 25946 Bytes (84%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
+Globale Variablen verwenden 1067 Bytes (52%) des dynamischen Speichers, 981 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.~~<br />
+**Update 08.12.2020:** Der Sketch verwendet 27416 Bytes (89%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
+Globale Variablen verwenden 1596 Bytes (77%) des dynamischen Speichers, 452 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
+Wenig Arbeitsspeicher verfügbar, es können Stabilitätsprobleme auftreten.
+Falls Stabilitätsprobleme auftreten, bitte die Debugoption auschalten:
+
+> //#define NDEBUG   // uncomment in case of stability issues
 
 **Benötigtes Addon auf CCUx/RaspberryMatic:**
 
@@ -327,8 +333,7 @@ Ich mach gerne einen Pull request, wenn Tom einverstanden ist.~~
 *  Vor dem Programmieren mit einem ISP Programmer oder Anschliessen eines FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino sind die Akkus aus den Halterungen zu entnehmen. Sonst entsteht ein hoher Strom Akku => Step-Up Wandler => 3.5 Versorgung ISP Programmer / FTDI Adapter. Sonst sind die Akkus sehr schnell tief entladen !!!!
 * Für die Verwendung des Akku-Step-Up Wandlers muss **vor** dem Auflöten der Batteriehalterungen mit einer scharfen Klinge die VCC Leiterbahn der Basisplatine aufgetrennt werden.
 * Die Spannungen der Step-Up und Step-Down Wandler müssen **unbedingt** im Leerlauf ohne angeschlossene andere Schaltkreise an den jeweiligen Potentiometern eingestellt werden. Sonst droht die Zerstörung der anderen Bauteile aufgrund von Überspannung! Die Wandler, die in das Gehäuseoberteil eingeklebt werden, müssen bei abgezogenem Arduino Common Sensor Stecker eingestellt werden (elektrische Trennung von Ober- und Unterteil des Gehäuses). Für die Feinjustage kann die Verbindung wieder hergestellt werden. Der Akku-Step-Up Wandler muss auch im Leerlauf ohne angeschlossene Last zuerst eingestellt werden, d.h. die Verbindung der Schottkydiode auf VCC wird erst **nach** der initialen Einstellung hergestellt.
-* Die korrekte Polarität der DC Spannungsversorgungsbuchse muss vor dem Anschluss von Wandlern oder Lademodulen geprüft werden. Das vorgeschlagene Netzteil erlaubt beide Polaritäten durch Umstecken des Adapters.
-* 
+* Die korrekte Polarität der DC Spannungsversorgungsbuchse muss vor dem Anschluss von Wandlern oder Lademodulen geprüft werden. Das vorgeschlagene Netzteil erlaubt beide Polaritäten durch Umstecken des Adapters.<br/><br/>
 ~~* Zur Zeit ist das projektspezifische Addon HB-TM-Devices-AddOn nicht synchronisiert mit dem von Tom Major https://github.com/TomMajor/SmartHome/tree/master/HB-TM-Devices-AddOn. Hier müssen sich Tom und ich noch einigen, wie wir das handhaben wollen. Wer die neueste Version von Tom für andere Sensoren braucht, kann meine projektspezifische Modifikation nicht nutzen. Bitte in diesen Fall bei mir melden.~~
 * Der Ladestrom des NiMH Lademoduls NIMHCRTA 2S muss durch Ändern des Widerstands R5 von 1.24kOhm auf 4.7kOhm verkleinert werden. Reduzierter Ladestrom ist ungefähr 0.259A.
 
