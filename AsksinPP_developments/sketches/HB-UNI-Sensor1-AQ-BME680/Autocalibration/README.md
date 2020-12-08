@@ -89,6 +89,7 @@ Basically the same autocalibration approach is implemented for the residual of t
 #### Recommendations
 
 - Repeat the exposure of the sensor to fresh and bad air regularily every 1..3 months.
+- If you want to change the batteries, please attach the sensor first to an ISP programmer. Such the sensor will not forget the autocalibration parameters during battery exchange.
 
 
 
