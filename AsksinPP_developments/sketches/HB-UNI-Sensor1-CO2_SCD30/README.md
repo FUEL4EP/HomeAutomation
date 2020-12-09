@@ -243,6 +243,8 @@ Icharge = 1218V／R5 [A]
 
 Die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO, RSET an der Steckerleiste unten rechts der Basisplatine.
 Einstellung: Board: Arduino Pro Mini; Prozessor: ATmega328P 3.3V, 8MHZ. Hochladen im Arduino IDE mit: Sketch => Hochladen mit Programmer
+- **WICHTIG:** Den ISP Programmer auf 3,3V einstellen!
+- **Unbedingt** diese [Warnung](https://github.com/TomMajor/SmartHome/tree/master/Info/Warnung_Flashen_33_USBasp_Klones) beachten!
 Debugging wird über den seriellen Monitor mit einem FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino gemacht.
 **WICHTIG:**  Vor dem Programmieren mit einem ISP Programmer oder Anschliessen eines FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino sind die Akkus aus den Halterungen zu entnehmen. Sonst entsteht ein hoher Strom Akku => Step-Up Wandler => 3.5 Versorgung ISP Programmer / FTDI Adapter. Sonst sind die Akkus sehr schnell tiefentladen !!!!
 
@@ -284,7 +286,21 @@ const float ADC1_FACTOR = 2 * 0.0625 * 2.582 / 2.560 * 0.9958; // 2 is the uncor
 Dazu wird der Sketch 'singleended.ino' von Adafruit (https://github.com/adafruit/Adafruit_ADS1X15) genommen, die Gain auf 2 gesetzt, und dann die gewandelten Spannungswerte in seriellen Monitor ausgelesen.
 Im obigen Beispiel ADC0_FACTOR ist 3.509 die mit dem Voltmeter gemessene VCC Spannung, 3.486 ist die ohne Korrektur vom ADC gewandelte Spannung.
 
-**Benötigte Arduino Libraries:**
+
+### Verringerung des Ruhestroms: [siehe auch Referenz von TomMajor](https://github.com/TomMajor/SmartHome/tree/master/Info/Ruhestrom)
+
+- Auf dem Arduino Pro Mini sollte der LDO Spannungsregler (die Stelle ist im Bild mit 1 markiert) sowie die Power-LED (2) entfernt werden, um den Ruhestrom wesentlich zu verringern.  
+- Weiterhin kann die zweite LED am Arduino Pin 13 (SCK) entfernt werden (3). Deren Einfluß auf den Ruhestrom ist kleiner als bei LDO und Power-LED, trotzdem kann es sich auf lange Sicht lohnen da diese bei jeder CC1101 Kommunikation für kurze Zeit aktiv ist, besonders im BurstDetector Mode.
+
+![pic](Images/Aufbau//ProMini_LDO_LED.png)	
+
+- Brown-Out_Detektor (BOD) des ATmega328P  ausschalten, dafür die Fuses setzen:
+
+	- [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega328P
+
+	- [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version)
+
+### Benötigte Arduino Libraries:
 
 \#include <EnableInterrupt.h><br />
 \#include <AskSinPP.h><br />
@@ -297,7 +313,7 @@ Im obigen Beispiel ADC0_FACTOR ist 3.509 die mit dem Voltmeter gemessene VCC Spa
 \#include <Adafruit_ADS1015.h> (https://github.com/adafruit/Adafruit_ADS1X15)
 
 
-**Speicherbedarf des Sketches:**
+### Speicherbedarf des Sketches:
 
 ~~Der Sketch verwendet 25946 Bytes (84%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
 Globale Variablen verwenden 1067 Bytes (52%) des dynamischen Speichers, 981 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.~~<br />
@@ -308,7 +324,7 @@ Falls Stabilitätsprobleme auftreten, bitte die Debugoption auschalten:
 
 > //#define NDEBUG   // uncomment in case of stability issues
 
-**Benötigtes Addon auf CCUx/RaspberryMatic:**
+### Benötigtes Addon auf CCUx/RaspberryMatic:
 
 ~~**Vor** dem Anlernen des HB-UNI-Sensor1-CO2_SCD30 Sensors ist das modifizierte Addon HB-TM-Devices-AddOn auf der CCUx/RaspberryMatic zu installieren.~~
 
