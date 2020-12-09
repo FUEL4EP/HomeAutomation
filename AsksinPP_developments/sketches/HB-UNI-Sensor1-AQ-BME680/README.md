@@ -56,7 +56,7 @@
 		* Der gelieferte Arduino Pro Mini wird durch Tindie Pro Mini XL - v2 - ATmega 1284p ersetzt
 		* Das gelieferte BME280 Sensor Breakout wird durch das BME680 Breakout ersetzt
 	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/), bitte geeignet abändern
-	+ die I2C-Verbindungen zwischen HB-UNI-SEN-BATT PCB und BME680 Breakout mit flexiblem Flachbandhabel
+	+ die I2C-Verbindungen zwischen HB-UNI-SEN-BATT PCB und BME680 Breakout mit flexiblem Flachbandkabel
 	+ 2x 10 kOhm I2C Abschlusswiderstände auf HB-UNI-SEN-BATT PCB einlöten
 	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](3D print files/BME680_protection.stl) für eine BME680 Halterung zu finden:
 ![pic](Images/BME680_holding.png)	
@@ -65,8 +65,8 @@
 		
 ## Verringerung des Ruhestroms
 
-- Nach erfolgreicher Inbetriebnahme bitte die LED auf dem Tindie Pro Mini XL - v2 - ATmega 1284 PCB vorsichtig oben links, wie im Bild gekennzeichnet, auslöten:
-
+- Auf dem Arduino Pro Mini sollte der LDO Spannungsregler (die Stelle ist im Bild mit 1 markiert) sowie die Power-LED (2) entfernt werden, um den Ruhestrom wesentlich zu verringern.
+- Weiterhin kann die zweite LED am Arduino Pin 13 (SCK) entfernt werden (3). Deren Einfluß auf den Ruhestrom ist kleiner als bei LDO und Power-LED, trotzdem kann es sich auf lange Sicht lohnen da diese bei jeder CC1101 Kommunikation für kurze Zeit aktiv ist, besonders im BurstDetector Mode.
 ![pic](Images/Tindie_Pro_Mini_XL_Pro_1284P_LED.png)	
 
 - Brown-Out_Detektor des ATmega1284P  (BOD) ausschalten, siehe Einstellungen Arduino IDE unten unter Punkt **Benötigter Sketch**
@@ -102,15 +102,18 @@
 
 > 	//#define NDEBUG   // disable all serial debug messages
 
-- als Taktfrequenz des ATmega1284P 20 MHz externer Quartz einstellen
+- als Taktfrequenz des ATmega1284P 20 MHz externer Quarz einstellen (es gibt zur Zeit leider nur die 20 MHz Quarz Version bei Tindie)
 - Der Sketch verwendet 38460 Bytes (29%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 1558 Bytes (9%) des dynamischen Speichers, 14826 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 
-- [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega1284phttp://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega1284p); select ATmega1284P
-- [avrdude script](avrdude/avrdude_m1284p_ext_20MHz.bsh) zum Setzen der Fuses für 20 MHz externer Quartz (Linux version)
+- [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
+- [avrdude script](avrdude/avrdude_m1284p_ext_20MHz.bsh) zum Setzen der Fuses für 20 MHz externer Quarz (Linux version)
 
 - Die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
-RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerleiste einlöten. Einstellungen Arduino IDE [Werkzeuge](Images/Arduino_IDE_Tools.png)
+RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerleiste einlöten.
+- **WICHTIG:** Den ISP Programmer auf 3,3V einstellen!
+- **Unbedingt** diese [Warnung](https://github.com/TomMajor/SmartHome/tree/master/Info/Warnung_Flashen_33_USBasp_Klones) beachten!
+- Einstellungen Arduino IDE [Werkzeuge](Images/Arduino_IDE_Tools.png)
 - Als zusätzliche Boardverwalter-URLs unter Arduino IDEs Voreinstellungen einstellen (falls noch nicht getan):
 
 > https://mcudude.github.io/MightyCore/package_MCUdude_MightyCore_index.json
@@ -170,6 +173,11 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 -	zur Zeit ist der maximale Gaswiderstand im Sketch auf 65365*20 Ohm = 1.3 MOhm beschränkt.
 -	die Einschwingzeit von BME680 Sensoren variiert wie der Widerstandswert von Sensor zu Sensor. Bei mir reagiert der hochohmigste Sensor am schnellsten auf Veränderungen der Luftgüte.
 -	sollte Dein Sensor höhere Widerstandswerte aufweisen, melde Dich bitte bei mir. Dann muss ein Softwareparameter geändert werden.
+
+## Batteriewechsel
+
+Um beim Batterieswechsel die internen Parameter des HB-UNI-Sensor1-AQ-BME680 Sketches zu erhalten, empfiehlt es sich, vor dem Wechsel einen USB versorgten ISP Programmer, z.B. Diamex ISP USB Programmer, anzuschliessen und nach erfolgtem Wechsel wieder zu entfernen.
+Ohne diese Maßnahme werden die internen Parameter beim Batteriewechsel vergessen und eine erneute Autokalibration muss dann stattfinden.
 
 
 ## Lizenz

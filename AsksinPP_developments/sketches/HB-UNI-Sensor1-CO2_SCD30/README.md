@@ -271,6 +271,8 @@ Die daraus abgeleiteten Modifikationen und Ergänzungen sind:
 
 ![pic](Images/WebUI/Setting_of_device_parameters_in_WebUI.png)
 
+**WICHTIG:** Während des Aufladens der Akkumulatorbatterien sind die gemessene Temperatur und Luftfeuchtigkeit durch die Wärmeentwicklung des Ladereglers verfälscht.
+
 Spezifisch angepasst werden müssen in **HB-UNI-Sensor1-CO2_SCD30.ino**:
 
 Für die Kalibrierung der ADS1115 Spannungsteiler (VCC und Vaccumulator Spannungsmessung) werden die Spannungsteilerverhältnisse ADC0_FACTOR und ADC1_FACTOR aufgrund von Messungen mit einem exakten Voltmeter feinjustiert:
