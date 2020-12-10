@@ -343,7 +343,7 @@ Falls Stabilitätsprobleme auftreten, bitte die Debugoption auschalten:
 ~~Vielleicht kann ja Tom Major die Änderungen in sein Repository übernehmen. Ich hab das eher pragmatisch aus seiner Heizungssteuerung abgeleitet. Da gibt es sicher was zu optimieren. Ich bin da zu wenig Experte und war zufrieden, als es funktionierte :-)
 Ich mach gerne einen Pull request, wenn Tom einverstanden ist.~~
 
-**Update 08.12.2020:** **Vor** dem Anlernen des HB-UNI-Sensor1-CO2_SCD30 Sensors ist das Addon [ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/addons/hb-ep-devices-addon) auf der CCUx/RaspberryMatic zu installieren. Dazu die [hb-ep-devices-addon.tgz Datei](https://github.com/FUEL4EP/HomeAutomation/blob/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/hb-ep-devices-addon.tgz) bitte herunterladen und als Zusatzsoftware in der CCU3/RaspberryMatic installieren.
+**Update 08.12.2020:** **Vor** dem Anlernen des HB-UNI-Sensor1-CO2_SCD30 Sensors ist das Addon [ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/tag/1.0) auf der CCUx/RaspberryMatic zu installieren. Dazu die 'hb-ep-devices-addon.tgz' von dort bitte herunterladen und als Zusatzsoftware in der CCU3/RaspberryMatic installieren. Die 'tgz'-Datei muss nicht unzipped werden!
 
 
 ### Wichtige Hinweise, unbedingt beachten !!

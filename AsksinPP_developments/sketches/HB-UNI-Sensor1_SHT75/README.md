@@ -1,7 +1,7 @@
 
 # Genauer Temperatur- und Luftfeuchtesensor auf der Basis von dem Sensirion SHT75 Sensor (HB-UNI-Sensor1_SHT75)
 
-- abgeleitet von Toms ([TomMajor](https://github.com/TomMajor) [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)
+- abgeleitet von Toms ([TomMajor](https://github.com/TomMajor)) [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)
 - ein herzliches Dankeschön für die Basisarbeit geht an Tom (TomMajor)
 - ein herzliches Dankeschön an alle, die im Homematic Forum geholfen haben, meine Probleme zu lösen
 - hilfreich ist auch die Diskussion zu den [rftypes XMLs](https://homematic-forum.de/forum/viewtopic.php?f=76&t=62578&sid=cf0f4cd99f7ee2bf070e9f39391ee652)
@@ -88,7 +88,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - Einstellungen Arduino IDE: 8MHz, 3.3V
 - Hochladen des kompilierten Sketchs im Arduino IDE mit: Sketch => Hochladen mit Programmer
 - Debugging wird über den seriellen Monitor mit einem FTDI Adapter USB zu TTL Serial für
-3,3V und 5V für Arduino gemacht. 
+3,3V und 5V für Arduino gemacht. Als Baudrate des seriellen Monitors bitte **57600** Baud einstellen.
 
 
 
@@ -102,9 +102,9 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 ## Benötigtes Addon
 
-[hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/blob/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/hb-ep-devices-addon.tgz)
+[hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/tag/1.0)
 
-- bitte dieses Addon vor dem Anlernen des HB-UNI-Sensor1_SHT75 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
+- bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-Sensor1_SHT75 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
 
 ## Lizenz
 
