@@ -145,18 +145,19 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 ## Benötigtes Addon
 
-[hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/blob/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/hb-ep-devices-addon.tgz)
+[hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/tag/1.0)
 
-- bitte dieses Addon vor dem Anlernen des HB-UNI-Sensor1-AQ-BME680 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
+- Bitte dieses Addon 'hb-ep-devices-addon.tgz' herunterladen und vor dem Anlernen des HB-UNI-Sensor1-AQ-BME680 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
 
-## Autokalibrierung
+## Autokalibrierung und Multiple Lineare Regression
 
-- Eine detaillierte Beschreibung der Vorgehensweise ist im Unterverzeichnis Multiple_Linear_Regression im [README.md](Multiple_Linear_Regression/README.md) zu finden
-- Vor der Autokalibrierung bitte die Offsets genau in dieser Reihenfolge
-
+- Eine detaillierte Beschreibung der Autokalibrierung ist im Unterverzeichnis 'Autocalibration' om [README.md](Autocalibration/README.md) zu finden.
+- Eine detaillierte Beschreibung der Vorgehensweise der Multiplen Linearen Regression (MLR) ist im Unterverzeichnis 'Multiple_Linear_Regression' im [README.md](Multiple_Linear_Regression/README.md) zu finden
+- **WICHTIG:** Vor der Autokalibrierung und Multiplen Linearen Regression bitte die Offsets genau in dieser Reihenfolge
 	+ der Temperatur
 	+ der relativen Luftfeuchte
-- bestimmen und im WebUI setzten. Dabei zuerst das Einschwingen der korrigierten Temperatur abwarten, bevor die Luftfeuchte korrigiert wird. Zum Bestimmen der Offsets eine 24h Aufzeichnung mit dem CCU-Historian mit einer genauen Referenztemperatur / -luftfeuchte machen ('golden' TH-Sensor daneben stellen)
+	
+- bestimmen und im WebUI setzten. Dabei zuerst das Einschwingen der korrigierten Temperatur abwarten, bevor die Luftfeuchte korrigiert wird. Zum Bestimmen der Offsets eine 24h Aufzeichnung mit dem CCU-Historian mit einer genauen Referenztemperatur / -luftfeuchte machen ('golden' TH-Sensor daneben stellen).
 
 ## Alterung des BME680 Sensors
 
