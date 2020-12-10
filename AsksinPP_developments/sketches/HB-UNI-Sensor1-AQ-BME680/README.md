@@ -62,6 +62,7 @@
 ![pic](Images/BME680_holding.png)	
 		* wird auf das HB-UNI-SEN-BATT PCB mit 2-Komponentenkleber aufgeklebt
 		* eine Nase muss mit einer Flachfeile entfernt werden
+		* eine Halterung ohne Nase wird auch bereitgestellt: [STL Datei](3D print files/BME680_protection_without_nose.stl). Sie muss geeignet gedreht gedruckt werden, damit die Supportstrukturen nicht stören. 
 		
 ## Verringerung des Ruhestroms
 
