@@ -68,10 +68,9 @@ A tutorial of Jupyterlab can be found [here](https://www.tutorialspoint.com/jupy
 
 - Select the Python notebook 'Multiple linear regression for BME680 gas readings of a single sensor.ipynb' in the directory and file browser at the left side by clicking on it
 
-
 - Click on restart the kernel, then re-run the whole notebook button:
 
-![restart the kernel](./Restart the kernel, then re-run the whole notebook.png  "Restart the kernel")
+![restart the kernel](./Restart_the_kernel.png  "Restart the kernel")
 
 - In the Launcher on the right hand side, all cells with a number in square brackets have been executed and the results are shown.
 
@@ -80,13 +79,13 @@ A tutorial of Jupyterlab can be found [here](https://www.tutorialspoint.com/jupy
 - Check the correct timestamp of your history.csv file (start time of tracking):
 
 
-![check timestamp of history.csv](./check timestamp of history.csv head line.png  "check timestamp of history.csv")
+![check_timestamp_of_history.csv](./check_timestamp_of_history.csv_head_line.png  "check timestamp of history.csv")
 
 
 - Then scroll down to see the results at the very bottom. Check the correct timestamp at the bottom:
 
 
-![check timestamp of results](./Results_of_multiple_linear_regression.png  "check timestamp of results")
+![check_timestamp_of_results](./Results_of_multiple_linear_regression.png  "check timestamp of results")
 
 
 - Enter the yellow marked results as device parameters into the RaspberryMatic / CCU3 WebUI
@@ -124,7 +123,7 @@ A tutorial of Jupyterlab can be found [here](https://www.tutorialspoint.com/jupy
 
 - Click on restart the kernel, then re-run the whole notebook button:
 
-![restart the kernel](./Restart the kernel, then re-run the whole notebook.png  "Restart the kernel")
+![restart the kernel](./Restart_the_kernel.png  "Restart the kernel")
 
 - In the Launcher on the right hand side, all cells with a number in square brackets have been executed and the results are shown.
 
@@ -133,7 +132,7 @@ A tutorial of Jupyterlab can be found [here](https://www.tutorialspoint.com/jupy
 - Check the correct timestamp of your history.csv file (start time of tracking):
 
 
-![check timestamp of history.csv](./check timestamp of history.csv head line.png  "check timestamp of history.csv")
+![check timestamp of history.csv](./check_timestamp_of_history.csv_head_line.png  "check timestamp of history.csv")
 
 
 - Then scroll down to see the results at the very bottom. Check the correct timestamp at the bottom:
