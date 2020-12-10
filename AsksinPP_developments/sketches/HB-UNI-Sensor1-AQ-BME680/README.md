@@ -7,6 +7,11 @@
 - der Homematic Forum [Diskussionsstrang](https://homematic-forum.de/forum/viewtopic.php?t=49422)
 - hilfreich ist auch die Diskussion zu den [rftypes XMLs](https://homematic-forum.de/forum/viewtopic.php?f=76&t=62578&sid=cf0f4cd99f7ee2bf070e9f39391ee652)
 
+## Aufgebauter Sensor ohne Gehäusedeckel
+
+![pic](Images/HB-UNI-Sensor1-AQ-BME680.png)
+
+
 ## Neue Eigenschaften im Vergleich zum HB-UNI-Sen-IAQ Sensor
 
 - die relative Luftfeuchtigkeit wird mit 0,1 % rLF Genauigkeit ausgegeben
@@ -58,11 +63,11 @@
 	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/), bitte geeignet abändern
 	+ die I2C-Verbindungen zwischen HB-UNI-SEN-BATT PCB und BME680 Breakout mit flexiblem Flachbandkabel
 	+ 2x 10 kOhm I2C Abschlusswiderstände auf HB-UNI-SEN-BATT PCB einlöten
-	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](3D print files/BME680_protection.stl) für eine BME680 Halterung zu finden:
+	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](./3D print files/BME680_protection.stl) für eine BME680 Halterung zu finden:
 ![pic](Images/BME680_holding.png)	
 		* wird auf das HB-UNI-SEN-BATT PCB mit 2-Komponentenkleber aufgeklebt
 		* eine Nase muss mit einer Flachfeile entfernt werden
-		* eine Halterung ohne Nase wird auch bereitgestellt: [STL Datei](3D print files/BME680_protection_without_nose.stl). Sie muss geeignet gedreht gedruckt werden, damit die Supportstrukturen nicht stören. 
+		* eine Halterung ohne Nase wird auch bereitgestellt: [STL Datei](./3D print files/BME680_protection_without_nose.stl). Sie muss geeignet gedreht gedruckt werden, damit die Supportstrukturen nicht stören. 
 		
 ## Verringerung des Ruhestroms
 
