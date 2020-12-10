@@ -3,6 +3,11 @@ Linux is assumed as operating system, please adapt to Windows as applicable by y
 
 ## Preparational steps
 
+- Before starting to collect data for a multiple linear regression, it is necessary to calibrate the temperature and humididy measurements of the BME680 sensor. For that purpose, please track the BME680 sensor's temperature and humidity e.g. in the CCU Historian and compare them with 'golden' reference sensor's values. Extract the offsets between the reference temperature/humidiy and the BM680 temperature/humidity measurements, ideally during night when there are little disturbances and thus flat curves, and use them for setting the temperature and humidity offsets in the WebUI.** Please run the offset calibration in two separated sequential steps**:
+	+ calibrate the BME680 temperature offset in a first step (first night)
+	+ calibrate then the BME680 humidity offset in a second step (second night)
+	- ** do not calibrate temperature and humidity together in a singular step since they depend on each other from physics point of view**
+
 - Collect history data with your HB-UNI-Sensor1-AQ-BME680 and record them with CCU Historian.
 	Take care to have as many as possible different air quality, tempperature, and humidity conditions during the recording time:
 	- put the sensor into your kitchen when you are cooking
@@ -15,7 +20,7 @@ Linux is assumed as operating system, please adapt to Windows as applicable by y
 
 	- HB-UNI-Sensor1-AQ-BME680's AQ_GAS_RESISTANCE_RAW
 	- HB-UNI-Sensor1-AQ-BME680's TEMPERATURE
-	- HB-UNI-Sensor1-AQ-BME680's HUMIDITY <br/>
+	- HB-UNI-Sensor1-AQ-BME680's MY_HUMIDITY <br/>
 
 - Ensure that your browser is downloading the CSV file to your ${HOME}/Downloads directory as 'historian.csv'. Check the correct time stamp of that file before continuing. <br/>
 
@@ -38,6 +43,15 @@ A tutorial of Jupyterlab can be found [here](https://www.tutorialspoint.com/jupy
 
 
 #### Existing Jupyterlab installation on your computer
+
+- Please ensure that yuou have installed the following Phyton modules on your computer (e.g. by pip install):
+	+ pandas
+	+ numpy
+	+ matplotlib
+	+ sklearn
+	+ statsmodels
+	+ datetime
+
 
 - If you have a local (Linux) installation of Jupiterlab, please invoke a terminal window in the sketch's directory and enter the following commands:
 

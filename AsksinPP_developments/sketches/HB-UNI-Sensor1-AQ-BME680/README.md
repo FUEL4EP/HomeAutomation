@@ -119,8 +119,8 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 > https://mcudude.github.io/MightyCore/package_MCUdude_MightyCore_index.json
 
 - Hochladen des kompilierten Sketchs im Arduino IDE mit: Sketch => Hochladen mit Programmer
-- Debugging wird über den seriellen Monitor mit einem FTDI Adapter USB zu TTL Serial für
-3,3V und 5V für Arduino gemacht. 
+- Debugging wird über den seriellen Monitor mit einem 'FTDI Adapter USB zu TTL Serial für
+3,3V und 5V für Arduino' gemacht. Als Baudrate 38400 Baud einstellen. 
 
 
 

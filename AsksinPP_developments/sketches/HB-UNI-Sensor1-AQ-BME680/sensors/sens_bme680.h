@@ -4,7 +4,7 @@
 #ifndef _SENS_BME680_H_
 #define _SENS_BME680_H_
 
-//#define DEEP_DEBUG // comment out if deep serial monitor debugging is not necessary
+#define DEEP_DEBUG // comment out if deep serial monitor debugging is not necessary
 
 #include <Wire.h>
 #include <Sensors.h>
@@ -63,7 +63,7 @@ public:
   Sens_Bme680 (): _temperature(0),  _pressureNN(0), _humidity(0), _aqLevel(0), _aqState_scaled(0), _gas_resistance_raw_scaled(0), _gas_resistance_min_scaled(0), _gas_resistance_max_scaled(0) {}
     ~Sens_Bme680 () {}
 
-  void init (uint16_t height, uint8_t max_decay_factor_upper_limit, uint8_t max_increase_factor_lower_limit, int32_t mlr_alpha, int32_t mlr_beta, int32_t mlr_delta) {
+  void init (uint16_t height, uint8_t max_decay_factor_upper_limit, uint8_t max_increase_factor_lower_limit, double mlr_alpha, double mlr_beta, double mlr_delta) {
 
     Wire.begin();
     DPRINT(F("BME680 "));
@@ -97,11 +97,11 @@ public:
     _gas_upper_limit = _gas_upper_limit_min;
     _res_lower_limit = _res_lower_limit_max;
     _res_upper_limit = _res_upper_limit_min;
-    _max_decay_factor_upper_limit = max_decay_factor_upper_limit;
+    _max_decay_factor_upper_limit    = max_decay_factor_upper_limit;
     _max_increase_factor_lower_limit = max_increase_factor_lower_limit;
-    _mlr_alpha = (double)mlr_alpha / 1000.0;
-    _mlr_beta  = (double)mlr_beta / 1000.0;
-    _mlr_delta = (double)mlr_delta / 1000.0;
+    _mlr_alpha = mlr_alpha;
+    _mlr_beta  = mlr_beta;
+    _mlr_delta = mlr_delta;
     
 #ifdef DEEP_DEBUG
     DPRINT(F("Gas UPPER LIMIT                    = "));DDECLN(_gas_upper_limit);
@@ -110,9 +110,9 @@ public:
     DPRINT(F("_gas_upper_limit_min               = "));DDECLN(_gas_upper_limit_min);
     DPRINT(F("_max_decay_factor_upper_limit      = "));DDECLN(_max_decay_factor_upper_limit);
     DPRINT(F("_max_increase_factor_lower_limit   = "));DDECLN(_max_increase_factor_lower_limit);
-    DPRINT(F("mlr_alpha                         = "));DDECLN(mlr_alpha);
-    DPRINT(F("mlr_beta                          = "));DDECLN(mlr_beta);
-    DPRINT(F("mlr_delta                         = "));DDECLN(mlr_delta);
+    DPRINT(F("mlr_alpha                          = "));DDECLN(mlr_alpha);
+    DPRINT(F("mlr_beta                           = "));DDECLN(mlr_beta);
+    DPRINT(F("mlr_delta                          = "));DDECLN(mlr_delta);
     DPRINT(F("_mlr_alpha                         = "));DDECLN(_mlr_alpha);
     DPRINT(F("_mlr_beta                          = "));DDECLN(_mlr_beta);
     DPRINT(F("_mlr_delta                         = "));DDECLN(_mlr_delta);
@@ -128,13 +128,31 @@ public:
   }
 
 
-  void measure (double tempOffset, double pressOffset, double humidOffset) {
+  void measure (double tempOffset, double pressOffset, double humidOffset, uint8_t max_decay_factor_upper_limit, uint8_t max_increase_factor_lower_limit, double mlr_alpha, double mlr_beta, double mlr_delta) {
     if (_present == true) {
       double temp(NAN), hum(NAN), pres(NAN);                                 // use type double in order to match the return type of closed cubes's library function readPressure
       double ah,tt,ttt,vp,svp;                                               //variables for calculating the absolute humidity
       double log_normalized_residual,normalized_residual,residual,mlr_pred;  //variables for calculating the air quality level
       int32_t gas = 0;
       int32_t gas_raw;
+      
+    _max_decay_factor_upper_limit    = max_decay_factor_upper_limit;
+    _max_increase_factor_lower_limit = max_increase_factor_lower_limit;
+    _mlr_alpha = mlr_alpha;
+    _mlr_beta  = mlr_beta;
+    _mlr_delta = mlr_delta;
+      
+ 
+#ifdef DEEP_DEBUG
+    DPRINT(F("_max_decay_factor_upper_limit      = "));DDECLN(_max_decay_factor_upper_limit);
+    DPRINT(F("_max_increase_factor_lower_limit   = "));DDECLN(_max_increase_factor_lower_limit);
+    DPRINT(F("mlr_alpha                          = "));DDECLN(mlr_alpha);
+    DPRINT(F("mlr_beta                           = "));DDECLN(mlr_beta);
+    DPRINT(F("mlr_delta                          = "));DDECLN(mlr_delta);
+    DPRINT(F("_mlr_alpha                         = "));DDECLN(_mlr_alpha);
+    DPRINT(F("_mlr_beta                          = "));DDECLN(_mlr_beta);
+    DPRINT(F("_mlr_delta                         = "));DDECLN(_mlr_delta);
+#endif
   
 
       ClosedCube_BME680_Status status = _bme680.readStatus();
