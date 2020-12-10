@@ -102,25 +102,24 @@
 
 > 	//#define NDEBUG   // disable all serial debug messages
 
-- als Taktfrequenz des ATmega1284P 20 MHz externer Quarz einstellen (es gibt zur Zeit leider nur die 20 MHz Quarz Version bei Tindie)
-- Der Sketch verwendet 38460 Bytes (29%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 1558 Bytes (9%) des dynamischen Speichers, 14826 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
-
+- als Taktfrequenz des ATmega1284P 8 MHz interner RC Oszillator einstellen (es gibt zur Zeit leider nur die 20 MHz Quarz Version bei Tindie)
+- Der Sketch verwendet 41176 Bytes (31%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 1580 Bytes (9%) des dynamischen Speichers, 14804 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
-- [avrdude script](avrdude/avrdude_m1284p_ext_20MHz.bsh) zum Setzen der Fuses für 20 MHz externer Quarz (Linux version)
+- [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) zum Setzen der Fuses für 8MHz interner RC Oszillator (Linux version)
 
 - Die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
 RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerleiste einlöten.
 - **WICHTIG:** Den ISP Programmer auf 3,3V einstellen!
 - **Unbedingt** diese [Warnung](https://github.com/TomMajor/SmartHome/tree/master/Info/Warnung_Flashen_33_USBasp_Klones) beachten!
-- Einstellungen Arduino IDE [Werkzeuge](Images/Arduino_IDE_Tools.png)
+- Einstellungen Arduino IDE [Werkzeuge](Images/Arduino_IDE_Tools_8MHz_int_RC_osc.png)
 - Als zusätzliche Boardverwalter-URLs unter Arduino IDEs Voreinstellungen einstellen (falls noch nicht getan):
 
 > https://mcudude.github.io/MightyCore/package_MCUdude_MightyCore_index.json
 
 - Hochladen des kompilierten Sketchs im Arduino IDE mit: Sketch => Hochladen mit Programmer
 - Debugging wird über den seriellen Monitor mit einem 'FTDI Adapter USB zu TTL Serial für
-3,3V und 5V für Arduino' gemacht. Als Baudrate 38400 Baud einstellen. 
+3,3V und 5V für Arduino' gemacht. Als Baudrate **38400 Baud** einstellen. 
 
 
 

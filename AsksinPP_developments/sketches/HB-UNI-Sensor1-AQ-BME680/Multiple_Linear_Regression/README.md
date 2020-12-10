@@ -67,10 +67,34 @@ A tutorial of Jupyterlab can be found [here](https://www.tutorialspoint.com/jupy
 ![initial JupyterLab session view](./Jupyterlab_initial.png  "initial JupyterLab session view")
 
 - Select the Python notebook 'Multiple linear regression for BME680 gas readings of a single sensor.ipynb' in the directory and file browser at the left side by clicking on it
-- The Python notebook will be executed. Depending on the size of the history.csv file, the execution may take a while. In the Launcher on the right hand side, all cells with a number in square brackets have been executed and the results are shown.
-- The multiple linear regression results are shown at the very bottom of the Launcher 'Multiple linear regression for BME680 gas readings of a single sensor' (scroll down):
 
-![results of multiple linear regresssion](./Results_of_multiple_linear_regression.png "results of multiple linear regresssion")
+
+- Click on restart the kernel, then re-run the whole notebook button:
+
+![restart the kernel](./Restart the kernel, then re-run the whole notebook.png  "Restart the kernel")
+
+- In the Launcher on the right hand side, all cells with a number in square brackets have been executed and the results are shown.
+
+- Wait a bit (can be minutes depending on history.csv size) until the execution of the notebook will be finished.
+
+- Check the correct timestamp of your history.csv file (start time of tracking):
+
+
+![check timestamp of history.csv](./check timestamp of history.csv head line.png  "check timestamp of history.csv")
+
+
+- Then scroll down to see the results at the very bottom. Check the correct timestamp at the bottom:
+
+
+![check timestamp of results](./Results_of_multiple_linear_regression.png  "check timestamp of results")
+
+
+- Enter the yellow marked results as device parameters into the RaspberryMatic / CCU3 WebUI
+
+
+![enter MLR device parameters](../Images/Setting_of_device_parameters_in_WebUI.png  "enter MLR device parameters")
+
+
 
 
 #### Online Jupyterlab session in a browser
@@ -81,31 +105,48 @@ A tutorial of Jupyterlab can be found [here](https://www.tutorialspoint.com/jupy
 
 ![initial online JupyterLab session view](./Online_Jupyterlab_1.png  "initial online JupyterLab session view")
 
-- add a new directory 'MLR':
+- Add a new directory 'MLR':
 
 ![online JupyterLab session view 2](./Online_Jupyterlab_2.png  "online JupyterLab session view 2")
 
-- delete the sessions 'Lorenz.ipynb' and 'Jupyterlab Reference' on the right hand side
+- Delete the sessions 'Lorenz.ipynb' and 'Jupyterlab Reference' on the right hand side
 
 ![online JupyterLab session view 3](./Online_Jupyterlab_3.png  "online JupyterLab session view 3")
 
-- click to the button 'Upload Files' and upload the following local files:
+- Click to the button 'Upload Files' and upload the following local files:
 
 > 	+ 'history.csv'
 > 	+ 'Multiple linear regression for BME680 gas readings of a single sensor.ipynb'
 
 ![online JupyterLab session view 4](./Online_Jupyterlab_4.png  "online JupyterLab session view 4")
 
-- click on 'Multiple linear regression for BME680 gas readings of a single sensor.ipyn'
+- Click on 'Multiple linear regression for BME680 gas readings of a single sensor.ipyn'
 
-- wait a bit until the execution of the notebook will be finished and then scroll down to see the results at the very bottom
+- Click on restart the kernel, then re-run the whole notebook button:
 
-![online JupyterLab session view 5](./Online_Jupyterlab_5.png  "online JupyterLab session view 5")
+![restart the kernel](./Restart the kernel, then re-run the whole notebook.png  "Restart the kernel")
 
-- enter the results as device parameters into the RaspberryMatic / CCU3 WebUI
+- In the Launcher on the right hand side, all cells with a number in square brackets have been executed and the results are shown.
+
+- Wait a bit (can be minutes depending on history.csv size) until the execution of the notebook will be finished.
+
+- Check the correct timestamp of your history.csv file (start time of tracking):
+
+
+![check timestamp of history.csv](./check timestamp of history.csv head line.png  "check timestamp of history.csv")
+
+
+- Then scroll down to see the results at the very bottom. Check the correct timestamp at the bottom:
+
+
+![check timestamp of results](./Results_of_multiple_linear_regression.png  "check timestamp of results")
+
+
+- Enter the yellow marked results as device parameters into the RaspberryMatic / CCU3 WebUI
 
 
 ![enter MLR device parameters](../Images/Setting_of_device_parameters_in_WebUI.png  "enter MLR device parameters")
+
 
 - You are done and have successfully executed a multiple linear regression! Congratulations!
 
