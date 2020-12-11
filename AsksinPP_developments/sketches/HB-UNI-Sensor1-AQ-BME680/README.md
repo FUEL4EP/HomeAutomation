@@ -37,7 +37,7 @@
 - Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftgüte LOG10 durch [multiple lineare Regression](https://de.wikipedia.org/wiki/Multiple_lineare_Regression)
 	+ die absolute Luftfeuchte wird im Sensor auf der ATmega1284P MCU aus Temperatur und relativer Luftfeuchte [berechnet](https://www.kompf.de/weather/vent.html) 
 	+ Historiendaten von Gaswiderstand, Temperatur und relativer Luftfeuchtigkeit werden mit dem [CCU-Historian](https://github.com/mdzio/ccu-historian) aufgezeichnet und als CSV Datei gespeichert
-	+ die Historiendaten soltten ausreichend viele Wechsel von guter und schlechter Luft beinhalten, z.B. Aufzeichnung über 2 Wochen oder länger
+	+ die Historiendaten sollten ausreichend viele Wechsel von guter und schlechter Luft beinhalten, z.B. Aufzeichnung über 2 Wochen oder länger
 	+ externe Berechnung der multiplen Regressionsparameter mittels eines interaktiven Python Notebooks in [JupyterLab](http://jupyterlab.io/)
 	+ Eingabe der berechneten Regressionparameter in das [WebUI](Images/Setting_of_device_parameters_in_WebUI.png) (siehe oben)
 	+ Wiederholung der Parameterberechnung aus Historiendaten ca. alle 6 Monate
@@ -63,11 +63,11 @@
 	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/), bitte geeignet abändern
 	+ die I2C-Verbindungen zwischen HB-UNI-SEN-BATT PCB und BME680 Breakout mit flexiblem Flachbandkabel
 	+ 2x 10 kOhm I2C Abschlusswiderstände auf HB-UNI-SEN-BATT PCB einlöten
-	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](./3D print files/BME680_protection.stl) für eine BME680 Halterung zu finden:
+	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](./3D%20print%20files/BME680_protection.stl) für eine BME680 Halterung zu finden:
 ![pic](Images/BME680_holding.png)	
 		* wird auf das HB-UNI-SEN-BATT PCB mit 2-Komponentenkleber aufgeklebt
 		* eine Nase muss mit einer Flachfeile entfernt werden
-		* eine Halterung ohne Nase wird auch bereitgestellt: [STL Datei](./3D print files/BME680_protection_without_nose.stl). Sie muss geeignet gedreht gedruckt werden, damit die Supportstrukturen nicht stören. 
+		* eine Halterung ohne Nase wird auch bereitgestellt: [STL Datei](./3D%20print%20files/BME680_protection_without_nose.stl). Sie muss geeignet gedreht gedruckt werden, damit die Supportstrukturen nicht stören. 
 		
 ## Verringerung des Ruhestroms
 
