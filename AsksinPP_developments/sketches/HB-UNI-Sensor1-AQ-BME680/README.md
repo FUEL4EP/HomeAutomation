@@ -71,8 +71,8 @@
 		
 ## Verringerung des Ruhestroms
 
-- Auf dem Arduino Pro Mini sollte der LDO Spannungsregler (die Stelle ist im Bild mit 1 markiert) sowie die Power-LED (2) entfernt werden, um den Ruhestrom wesentlich zu verringern.
-- Weiterhin kann die zweite LED am Arduino Pin 13 (SCK) entfernt werden (3). Deren Einfluß auf den Ruhestrom ist kleiner als bei LDO und Power-LED, trotzdem kann es sich auf lange Sicht lohnen da diese bei jeder CC1101 Kommunikation für kurze Zeit aktiv ist, besonders im BurstDetector Mode.
+- Auf dem Tindie Pro Mini XL - v2 - ATmega 1284p die markierte LED auslöten:
+
 ![pic](Images/Tindie_Pro_Mini_XL_Pro_1284P_LED.png)	
 
 - Brown-Out_Detektor des ATmega1284P  (BOD) ausschalten, siehe Einstellungen Arduino IDE unten unter Punkt **Benötigter Sketch**
