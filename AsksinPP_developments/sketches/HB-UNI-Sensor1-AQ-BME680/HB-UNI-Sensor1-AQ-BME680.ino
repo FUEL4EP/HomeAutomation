@@ -1,15 +1,20 @@
 //------------------------------------------------------------------------------------------------------------------------
-// AskSin++
-// 2016-10-31 papa Creative Commons - http://creativecommons.org/licenses/by-nc-sa/3.0/de/
-// 2019-02-28 jp112sdl (Creative Commons)
-// 2020-12-03 FUEL4EP (Creative Commons)
+// HB-UNI-Sensor1-AQ-BME680
+// Version 1.0
+// (C) 2020 FUEL4EP (Creative Commons)
+// https://creativecommons.org/licenses/by-nc-sa/4.0/
+// You are free to Share & Adapt under the following terms:
+// Give Credit, NonCommercial, ShareAlike
+// +++
+// AskSin++                  2016 papa (Creative Commons)
+// HB-UNI-Sen-IAQ            2019 jp112sdl Jérôme (https://homematic-forum.de/forum/viewtopic.php?f=76&t=49422)
+// HB-UNI-Sensor1            2018 TomMajor (Creative Commons)
+// ClosedCube_BME680_Arduino 2017 closedcube (MIT License)
 //------------------------------------------------------------------------------------------------------------------------
 //
 // this code supports only an Atmega1284P MCU, an Atmega328P MCU is NOT supported for memory size reasons 
 //
 //------------------------------------------------------------------------------------------------------------------------
-
-
 
 //#define NDEBUG   // disable all serial debug messages
 //#define USE_CC1101_ALT_FREQ_86835  //use alternative frequency to compensate not correct working cc1101 modules

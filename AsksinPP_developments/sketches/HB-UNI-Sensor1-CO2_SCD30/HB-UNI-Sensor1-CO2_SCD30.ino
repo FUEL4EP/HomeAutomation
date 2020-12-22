@@ -2,12 +2,14 @@
 // HB-UNI-Sensor1-CO2_SCD30
 // Version 2.0
 // (C) 2020 FUEL4EP (Creative Commons)
-// (C) 2018-2020 Tom Major (Creative Commons)
 // https://creativecommons.org/licenses/by-nc-sa/4.0/
 // You are free to Share & Adapt under the following terms:
 // Give Credit, NonCommercial, ShareAlike
 // +++
-// AskSin++ 2016-10-31 papa Creative Commons
+// AskSin++                       2016 papa (Creative Commons)
+// HB-UNI-Sensor1                 2018-2020 TomMajor (Creative Commons)
+// SparkFun_SCD30_Arduino_Library 2018 sparkfun (Creative Commons)
+// Adafruit_ADS1X15               2012 Adafruit (BSD license)
 //---------------------------------------------------------
 
 //---------------------------------------------------------
