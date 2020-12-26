@@ -259,6 +259,9 @@ public:
             _max_res                         = EEPROM_max_res;
             _res_upper_limit_min             = EEPROM_res_upper_limit_min;
             _res_lower_limit_max             = EEPROM_res_lower_limit_max;
+            _mlr_alpha                       = EEPROM_mlr_alpha;
+            _mlr_beta                        = EEPROM_mlr_beta;
+            _mlr_delta                       = EEPROM_mlr_delta;
           }
           else
           {
