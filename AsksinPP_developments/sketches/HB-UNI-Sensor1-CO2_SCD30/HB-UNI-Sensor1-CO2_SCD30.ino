@@ -100,11 +100,7 @@ const struct DeviceInfo PROGMEM devinfo = {
     cDEVICE_SERIAL,    // Device Serial             defined in ./Cfg/Device_SCD30.h
     { 0xf6, 0x01 },    // Device Model              needs to fit to Addon XML hb-uni-sensor-CO2-SCD30.xml line 6:
                        //                           <parameter index="10.0" size="2.0" const_value="0xF601" /
-    // Firmware Version
-    // die CCU Addon xml Datei ist mit der Zeile <parameter index="9.0" size="1.0" cond_op="E" const_value="0x13" />
-    // fest an diese Firmware Version gebunden! cond_op: E Equal, GE Greater or Equal
-    // bei Änderungen von Payload, message layout, Datenpunkt-Typen usw. muss die Version an beiden Stellen hochgezogen werden!
-    0x10,
+    0x10,              // Firmware Version
     as::DeviceType::THSensor,    // Device Type
     { 0x01, 0x01 }               // Info Bytes
 };
@@ -177,7 +173,7 @@ public:
  #endif
   
         // als Standard wird BCAST gesendet um Energie zu sparen, siehe Beschreibung unten.
-        // Bei jeder 20. Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
+        // Bei jeder 40. Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
         // ohne Betätigung des Anlerntaster übernehmen zu können (mit Verzögerung, worst-case 40x Sendeintervall).
         uint8_t flags = BCAST;
         if ((msgcnt % 40) == 2) {

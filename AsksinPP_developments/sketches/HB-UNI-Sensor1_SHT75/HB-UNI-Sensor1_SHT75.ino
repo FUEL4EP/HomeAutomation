@@ -80,11 +80,7 @@ const struct DeviceInfo PROGMEM devinfo = {
     cDEVICE_ID,        // Device ID           defined in ./Cfg/Device_SHT75.h
     cDEVICE_SERIAL,    // Device Serial       defined in ./Cfg/Device_SHT75.h
     { 0xF6, 0x03 },    // Device Model        needs to fit to Addon XML hb-uni-sensor-TH-SHT75.xml line 6:
-                       //                     <parameter index="10.0" size="2.0" const_value="0xF603" /
-    // Firmware Version
-    // die CCU Addon xml Datei ist mit der Zeile <parameter index="9.0" size="1.0" cond_op="E" const_value="0x13" />
-    // fest an diese Firmware Version gebunden! cond_op: E Equal, GE Greater or Equal
-    // bei Änderungen von Payload, message layout, Datenpunkt-Typen usw. muss die Version an beiden Stellen hochgezogen werden!
+                       //                     <parameter index="10.0" size="2.0" const_value="0xF603" 
     0x10,
     as::DeviceType::THSensor,    // Device Type
     { 0x01, 0x01 }               // Info Bytes

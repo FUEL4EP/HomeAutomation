@@ -6,10 +6,11 @@
 // You are free to Share & Adapt under the following terms:
 // Give Credit, NonCommercial, ShareAlike
 // +++
-// AskSin++                  2016 papa (Creative Commons)
-// HB-UNI-Sen-IAQ            2019 jp112sdl Jérôme (https://homematic-forum.de/forum/viewtopic.php?f=76&t=49422)
-// HB-UNI-Sensor1            2018 TomMajor (Creative Commons)
-// ClosedCube_BME680_Arduino 2017 closedcube (MIT License)
+// AskSin++                          2016 papa (Creative Commons)
+// HB-UNI-Sen-IAQ                    2019 jp112sdl Jérôme (https://homematic-forum.de/forum/viewtopic.php?f=76&t=49422)
+// HB-UNI-Sensor1                    2018 TomMajor (Creative Commons)
+// ClosedCube_BME680_Arduino         2017 closedcube (MIT License)
+// calculation of absolute humidity       Martin Kompf (https://www.kompf.de/weather/vent.html)
 //------------------------------------------------------------------------------------------------------------------------
 //
 // this code supports only an Atmega1284P MCU, an Atmega328P MCU is NOT supported for memory size reasons 
@@ -108,6 +109,7 @@ class Hal : public BaseHal {
       battery.init(seconds2ticks(60UL * 60), sysclock);
       battery.low(BAT_VOLT_LOW);
       battery.critical(BAT_VOLT_CRITICAL);
+
     }
 
     bool runready () {
@@ -133,9 +135,6 @@ class SensorList0 : public RegList0<Reg0> {
     uint16_t height () const {
       return (this->readRegister(0x22, 0) << 8) + this->readRegister(0x23, 0);
     }
-
-    
-
 
     void defaults () {
       clear();
@@ -299,13 +298,13 @@ class SensorList1 : public RegList1<UReg1> {
     }
 
 
-    void defaults () {
+    void defaults () {                      // these defaults are read and used if you press the config button for >6 seconds
       clear();
       tempOffset10(-15);                    // temperature measurement offset, multiplied by 10 [K], calibrate your sensor's characteristics, enter in WebUI as device parameter for dynamic adjustment
       humidOffset10(2);                     // humidity measurement offset, multiplied by 10 [%], calibrate your sensor's characteristics, enter in WebUI as device parameter for dynamic adjustment
       pressOffset10(-4);                    // pressure measurement offset, multiplied by 10 [hPa], calibrate your sensor's characteristics, enter in WebUI as device parameter for dynamic adjustment
-      max_decay_factor_upper_limit(70);     // IIR's filter max decay value of gas resistor upper limit
-      max_increase_factor_lower_limit(30);  // IIR's filter max increase value of gas resistor lower limit 
+      max_decay_factor_upper_limit(60);     // IIR's filter max decay value of gas resistor upper limit
+      max_increase_factor_lower_limit(40);  // IIR's filter max increase value of gas resistor lower limit 
       mlr_alpha(1454102);                   // Multiple Linear Regression parameter mlr_alpha multiplied by 1000, update in WebUI's Device Parameters according to regression result
       mlr_beta(-7571650);                   // Multiple Linear Regression parameter mlr_beta multiplied by 1000, update in WebUI's Device Parameters according to regression result
       mlr_delta(70054092);                  // Multiple Linear Regression parameter mlr_delta multiplied by 1000, update in WebUI's Device Parameters according to regression result
@@ -378,19 +377,25 @@ class WeatherChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
       // reactivate for next measure
       tick = delay();
       clock.add(*this);
-      bme680.measure(temperature_offset, pressure_offset, humidity_offset, max_decay_factor_upper_limit, max_increase_factor_lower_limit, mlr_alpha, mlr_beta, mlr_delta);
 
       device().battery().update();                            // get current battery voltage; measure every sampling cycle
       operatingVoltage1000 = device().battery().current();    // BatteryTM class, mV resolution
 
-      DPRINT("corrected T/H = ");         DDEC(bme680.temperature()); DPRINT("/"); DDECLN(bme680.humidity());
-      DPRINT("Pressure NN = ");           DDECLN(bme680.pressureNN());
-      DPRINT("scaled aq state = ");       DDECLN(bme680.aq_state_scaled());
-      DPRINT("scaled gas resistance = "); DDECLN(bme680.gas_resistance_raw_scaled());
-      DPRINT("battery voltage = ");       DDECLN(operatingVoltage1000);
+      bme680.measure(temperature_offset, pressure_offset, humidity_offset, max_decay_factor_upper_limit, max_increase_factor_lower_limit, mlr_alpha, mlr_beta, mlr_delta, operatingVoltage1000);
+
+ 
+      DPRINT("corrected T/H         = ");  DDEC(bme680.temperature()); DPRINT("/"); DDECLN(bme680.humidity());
+      DPRINT("Pressure NN           = ");  DDECLN(bme680.pressureNN());
+      DPRINT("scaled aq state       = ");  DDECLN(bme680.aq_state_scaled());
+      DPRINT("scaled gas resistance = ");  DDECLN(bme680.gas_resistance_raw_scaled());
+      DPRINT("battery voltage       = ");  DDECLN(operatingVoltage1000);
 
       msg.init( msgcnt, bme680.temperature(), bme680.pressureNN(), bme680.humidity(), bme680.aq_level(), bme680.aq_state_scaled(), bme680.gas_resistance_raw_scaled(), bme680.gas_resistance_min_scaled(), bme680.gas_resistance_max_scaled(), device().battery().low(), operatingVoltage1000);
-      if (msgcnt % 40 == 1) device().sendPeerEvent(msg, *this); else device().broadcastEvent(msg, *this);
+      if (msg.flags() & Message::BCAST) {
+        device().broadcastEvent(msg, *this);
+      } else {
+        device().sendPeerEvent(msg, *this);
+      }
     }
 
     uint32_t delay () {
@@ -398,36 +403,39 @@ class WeatherChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
     }
     void setup(Device<Hal, SensorList0>* dev, uint8_t number, uint16_t addr) {
       Channel::setup(dev, number, addr);
+
       bme680.init(this->device().getList0().height(), max_decay_factor_upper_limit, max_increase_factor_lower_limit, mlr_alpha, mlr_beta, mlr_delta);
+
       sysclock.add(*this);
+  
     }
 
      void configChanged() {
-      DPRINTLN("* Config Changed                                 : List1");
-      DPRINT(F("* Temperature Offset x10                         : ")); DDECLN(this->getList1().tempOffset10());
-      DPRINT(F("* Humidity Offset x10                            : ")); DDECLN(this->getList1().humidOffset10());
-      DPRINT(F("* Pressure Offset x10                            : ")); DDECLN(this->getList1().pressOffset10());
+      DPRINTLN("* Config Changed                                         : List1");
+      DPRINT(F("* Temperature Offset x10                                 : ")); DDECLN(this->getList1().tempOffset10());
+      DPRINT(F("* Humidity Offset x10                                    : ")); DDECLN(this->getList1().humidOffset10());
+      DPRINT(F("* Pressure Offset x10                                    : ")); DDECLN(this->getList1().pressOffset10());
       max_decay_factor_upper_limit    = (uint8_t)this->getList1().max_decay_factor_upper_limit();
       max_increase_factor_lower_limit = (uint8_t)this->getList1().max_increase_factor_lower_limit();
       mlr_alpha                       = (double)this->getList1().mlr_alpha() / 1000.0; //multiple linear regression coefficient alpha (temperature)
       mlr_beta                        = (double)this->getList1().mlr_beta()  / 1000.0;  //multiple linear regression coefficient beta (absolute humidity)
       mlr_delta                       = (double)this->getList1().mlr_delta() / 1000.0; //multiple linear regression coefficient delta (offset)      
-      DPRINT(F("* max IIR filter decay factor of upper limit     : ")); DDECLN(this->getList1().max_decay_factor_upper_limit());
-      DPRINT(F("* max IIR filter increase factor of lower limit  : ")); DDECLN(this->getList1().max_increase_factor_lower_limit());
-      DPRINT(F("* Multiple Linear Regression parameter mlr_alpha x1000: ")); DDECLN(this->getList1().mlr_alpha());
-      DPRINT(F("* Multiple Linear Regression parameter mlr_beta  x1000: ")); DDECLN(this->getList1().mlr_beta());
-      DPRINT(F("* Multiple Linear Regression parameter mlr_delta x1000: ")); DDECLN(this->getList1().mlr_delta());
+      DPRINT(F("* max IIR filter decay factor of upper limit             : ")); DDECLN(this->getList1().max_decay_factor_upper_limit());
+      DPRINT(F("* max IIR filter increase factor of lower limit          : ")); DDECLN(this->getList1().max_increase_factor_lower_limit());
+      DPRINT(F("* Multiple Linear Regression parameter mlr_alpha x1000   : ")); DDECLN(this->getList1().mlr_alpha());
+      DPRINT(F("* Multiple Linear Regression parameter mlr_beta  x1000   : ")); DDECLN(this->getList1().mlr_beta());
+      DPRINT(F("* Multiple Linear Regression parameter mlr_delta x1000   : ")); DDECLN(this->getList1().mlr_delta());
       temperature_offset = (double)this->getList1().tempOffset10()  / 10.0;
       pressure_offset    = (double)this->getList1().pressOffset10() / 10.0;
       humidity_offset    = (double)this->getList1().humidOffset10() / 10.0;
-      DPRINT(F("* Temperature Offset                             : ")); DDECLN(temperature_offset);
-      DPRINT(F("* Humidity Offset                                : ")); DDECLN(humidity_offset);
-      DPRINT(F("* Pressure Offset                                : ")); DDECLN(pressure_offset);
-      DPRINT(F("* max IIR filter decay factor of upper limit     : ")); DDECLN(max_decay_factor_upper_limit);
-      DPRINT(F("* max IIR filter increase factor of lower limit  : ")); DDECLN(max_increase_factor_lower_limit);
+      DPRINT(F("* Temperature Offset                                     : ")); DDECLN(temperature_offset);
+      DPRINT(F("* Humidity Offset                                        : ")); DDECLN(humidity_offset);
+      DPRINT(F("* Pressure Offset                                        : ")); DDECLN(pressure_offset);
+      DPRINT(F("* max IIR filter decay factor of upper limit             : ")); DDECLN(max_decay_factor_upper_limit);
+      DPRINT(F("* max IIR filter increase factor of lower limit          : ")); DDECLN(max_increase_factor_lower_limit);
       DPRINT(F("* Multiple Linear Regression parameter mlr_alpha (double): ")); DDECLN(mlr_alpha);
-      DPRINT(F("* Multiple Linear Regression parameter mlr_beta  (double)")); DDECLN(mlr_beta);
-      DPRINT(F("* Multiple Linear Regression parameter mlr_delta (double)")); DDECLN(mlr_delta); 
+      DPRINT(F("* Multiple Linear Regression parameter mlr_beta  (double): ")); DDECLN(mlr_beta);
+      DPRINT(F("* Multiple Linear Regression parameter mlr_delta (double): ")); DDECLN(mlr_delta); 
     }
 
     uint8_t status () const {

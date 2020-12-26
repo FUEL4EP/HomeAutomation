@@ -9,14 +9,14 @@ Linux is assumed as operating system, please adapt to Windows as applicable by y
 	- ** do not calibrate temperature and humidity together in a singular step since they depend on each other from physics point of view**
 
 - Collect history data with your HB-UNI-Sensor1-AQ-BME680 and record them with CCU Historian.
-	Take care to have as many as possible different air quality, tempperature, and humidity conditions during the recording time:
+	Take care to have as many as possible different air quality, temperature, and humidity conditions during the recording time:
 	- put the sensor into your kitchen when you are cooking
 	- put the sensor outside to fresh air
 	- put the sensor to other locations with strong smells
 	- put a paper tissue soaked with clear liquors (schnaps) close to the BME680 sensor
 	- place strong smelling food e.g. like cheese close to the sensor<br/>
-- Collect history data for 1..4 weeks
-- Output a history CSV file in the CCU Historian's Trend diagram (button 'CSV-Export' at the bottom) dumping the following data points (click exactly in that sequence in CCU Historian's 'Datenpunktliste' to create the Trend diagram):
+- Collect history data for 2..4 weeks
+- Output a history CSV file in the CCU Historian's Trend diagram (button 'CSV-Export' at the bottom) dumping the following data points (click in CCU Historian's 'Datenpunktliste' to create the Trend diagram):
 
 	- HB-UNI-Sensor1-AQ-BME680's AQ_GAS_RESISTANCE_RAW
 	- HB-UNI-Sensor1-AQ-BME680's TEMPERATURE

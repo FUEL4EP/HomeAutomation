@@ -30,17 +30,20 @@
 
 	+ ca. 30 min schlechter Luft, z.B. einem mit Schnaps getränkten Papiertaschentuch ausgesetzt werden
 	+ ca. 30 min guter Außenluft, am besten bei Wind, ausgesetzt werden
-	+ diese Kalibrierung sollte ca. alle 1..3 Monate wiederholt werden
+	+ diese Kalibrierung sollte ca. alle 6 Monate wiederholt werden
 	
 - Details zur Autokalibrierung sind [hier](./Autocalibration/README.md) nachzulesen.
 	
 - Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftgüte LOG10 durch [multiple lineare Regression](https://de.wikipedia.org/wiki/Multiple_lineare_Regression)
 	+ die absolute Luftfeuchte wird im Sensor auf der ATmega1284P MCU aus Temperatur und relativer Luftfeuchte [berechnet](https://www.kompf.de/weather/vent.html) 
 	+ Historiendaten von Gaswiderstand, Temperatur und relativer Luftfeuchtigkeit werden mit dem [CCU-Historian](https://github.com/mdzio/ccu-historian) aufgezeichnet und als CSV Datei gespeichert
-	+ die Historiendaten sollten ausreichend viele Wechsel von guter und schlechter Luft beinhalten, z.B. Aufzeichnung über 2 Wochen oder länger
+	+ die Historiendaten sollten ausreichend viele Wechsel von guter und schlechter Luft beinhalten, z.B. Aufzeichnung über mindestens 2 Wochen
 	+ externe Berechnung der multiplen Regressionsparameter mittels eines interaktiven Python Notebooks in [JupyterLab](http://jupyterlab.io/)
 	+ Eingabe der berechneten Regressionparameter in das [WebUI](Images/Setting_of_device_parameters_in_WebUI.png) (siehe oben)
-	+ Wiederholung der Parameterberechnung aus Historiendaten ca. alle 6 Monate
+		* Wiederholung der Parameterberechnung aus Historiendaten ca. alle 6 Monate
+	+ Tägliche Abspeicherung der Parameter der Autokalibrierung und der Multiplen Linearen Regression.
+		* Die letzten EEPROM Daten werden bei einem Batteriewechsel zurückgespeichert
+			- Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset NICHT zurückgespeichert (Betriebsspannung > 3.3V)
 	 
 
 
@@ -182,8 +185,10 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 ## Batteriewechsel
 
-Um beim Batterieswechsel die internen Parameter des HB-UNI-Sensor1-AQ-BME680 Sketches zu erhalten, empfiehlt es sich, vor dem Wechsel einen USB versorgten ISP Programmer, z.B. Diamex ISP USB Programmer, anzuschliessen und nach erfolgtem Wechsel wieder zu entfernen.
-Ohne diese Maßnahme werden die internen Parameter beim Batteriewechsel vergessen und eine erneute Autokalibration muss dann stattfinden.
+- Die Parameter der Autokalibrierung und der Multiplen Linearen Regression werden alle 24 Stunden in das EEPROM des ATmega1284P abgespeichert.
+- Die letzten EEPROM Daten werden bei einem Batteriewechsel oder/und einem RESET als aktuelle Parameter zurückgespeichert.
+- Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset **NICHT** zurückgespeichert. Vor der Rückspeicherung wird geprüft, ob die Betriebsspannung kleiner als 3.3V ist. Bei einem Betrieb mit ISP Programmer oder FTDI Debugger ist die Betriebsspannung größer als 3.3V.
+
 
 
 ## Lizenz
