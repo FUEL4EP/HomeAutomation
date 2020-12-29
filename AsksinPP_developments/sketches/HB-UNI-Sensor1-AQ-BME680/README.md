@@ -112,6 +112,8 @@
 
 > 	#define DEEP_DEBUG // comment out if deep serial monitor debugging is not necessary
 
+- zum Debuggen genau umgekehrt!
+
 - als Taktfrequenz des ATmega1284P 8 MHz interner RC Oszillator einstellen (es gibt zur Zeit leider nur die 20 MHz Quarz Version bei Tindie)
 - der Sketch verwendet 45936 Bytes (35%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 1840 Bytes (11%) des dynamischen Speichers, 14544 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 

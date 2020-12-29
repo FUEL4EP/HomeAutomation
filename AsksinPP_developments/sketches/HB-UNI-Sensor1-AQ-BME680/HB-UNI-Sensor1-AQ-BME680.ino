@@ -17,7 +17,7 @@
 //
 //------------------------------------------------------------------------------------------------------------------------
 
-//#define NDEBUG   // disable all serial debug messages
+#define NDEBUG   // disable all serial debug messages; comment if you want to get debug messages in the serial monitor
 //#define USE_CC1101_ALT_FREQ_86835  //use alternative frequency to compensate not correct working cc1101 modules
 // 1) Standard: tmBattery, UBatt = Betriebsspannung AVR
 #define BAT_SENSOR tmBattery

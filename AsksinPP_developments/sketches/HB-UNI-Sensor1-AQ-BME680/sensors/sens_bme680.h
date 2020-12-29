@@ -4,7 +4,7 @@
 #ifndef _SENS_BME680_H_
 #define _SENS_BME680_H_
 
-#define DEEP_DEBUG // comment if deep serial monitor debugging is not necessary
+//#define DEEP_DEBUG // comment out if deep serial monitor debugging is not necessary
 
 #include <Wire.h>
 #include <Sensors.h>
@@ -21,13 +21,13 @@
 
 #define AVG_COUNT                   5
 #define IIR_FILTER_COEFFICIENT      0.0001359 // 1.0 -0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods)
-#define EPSILON                     0.0001    // decrease to 0.00001 if you want a value range of 0..5 for AQ_LOG10
-#define MAX_BATTERY_VOLTAGE         3300
+#define EPSILON                     0.0001
+#define MAX_BATTERY_VOLTAGE         3300     // change to 6000 for debugging with FTDI Debugger, default: 3300
 #define EEPROM_START_ADDRESS        100
 #define DEVICE_TYPE                 "HB-UNI-Sensor1-AQ-BME680"
 #define FINISH_STRING               "/HB-UNI-Sensor1-AQ-BME680"
-#define STORE_TO_EEPROM_NO_CYCLES   360                              // store parameters once a day; 360 * 4 min
-
+#define STORE_TO_EEPROM_NO_CYCLES   360      // store parameters once a day; 360 * 4 min
+                                            // change 10 for debugging with FTDI Debugger, default: 360
 
 namespace as {
 
@@ -109,15 +109,21 @@ public:
     measurement_index = 0;
     
 #ifdef DEEP_DEBUG
+    DPRINTLN("\n\nParameters after init:");
     DPRINT(F("Gas UPPER LIMIT                    = "));DDECLN(_gas_upper_limit);
     DPRINT(F("Gas LOWER LIMIT                    = "));DDECLN(_gas_lower_limit);
     DPRINT(F("_gas_lower_limit_max               = "));DDECLN(_gas_lower_limit_max);
     DPRINT(F("_gas_upper_limit_min               = "));DDECLN(_gas_upper_limit_min);
     DPRINT(F("_max_decay_factor_upper_limit      = "));DDECLN(_max_decay_factor_upper_limit);
     DPRINT(F("_max_increase_factor_lower_limit   = "));DDECLN(_max_increase_factor_lower_limit);
+    DPRINT(F("_min_res                           = "));DDECLN(_min_res);
+    DPRINT(F("_max_res                           = "));DDECLN(_max_res);
+    DPRINT(F("_res_upper_limit_min               = "));DDECLN(_res_upper_limit_min);
+    DPRINT(F("_res_lower_limit_max               = "));DDECLN(_res_lower_limit_max);
     DPRINT(F("_mlr_alpha                         = "));DDECLN(_mlr_alpha);
     DPRINT(F("_mlr_beta                          = "));DDECLN(_mlr_beta);
     DPRINT(F("_mlr_delta                         = "));DDECLN(_mlr_delta);
+    DPRINTLN("Parameters after init end\n\n");
 #endif
     
   }
@@ -144,10 +150,14 @@ public:
     uint8_t  EEPROM_max_increase_factor_lower_limit;
     int32_t  EEPROM_max_gas_resistance;
     int32_t  EEPROM_min_gas_resistance;
+    int32_t  EEPROM_gas_upper_limit;
+    int32_t  EEPROM_gas_lower_limit;
     int32_t  EEPROM_gas_upper_limit_min;
     int32_t  EEPROM_gas_lower_limit_max;
     int32_t  EEPROM_min_res;
     int32_t  EEPROM_max_res;
+    int32_t  EEPROM_res_upper_limit;
+    int32_t  EEPROM_res_lower_limit;
     int32_t  EEPROM_res_upper_limit_min;
     int32_t  EEPROM_res_lower_limit_max;
     double   EEPROM_mlr_alpha;
@@ -197,6 +207,12 @@ public:
           EEPROM.get(address, EEPROM_min_gas_resistance);
           address += sizeof(EEPROM_min_gas_resistance);
           
+          EEPROM.get(address, EEPROM_gas_upper_limit);
+          address += sizeof(EEPROM_gas_upper_limit);
+          
+          EEPROM.get(address, EEPROM_gas_lower_limit);
+          address += sizeof(EEPROM_gas_lower_limit);
+          
           EEPROM.get(address, EEPROM_gas_upper_limit_min);
           address += sizeof(EEPROM_gas_upper_limit_min);
           
@@ -208,6 +224,12 @@ public:
           
           EEPROM.get(address, EEPROM_max_res);
           address += sizeof(EEPROM_max_res);
+          
+          EEPROM.get(address, EEPROM_res_upper_limit);
+          address += sizeof(EEPROM_res_upper_limit);
+          
+          EEPROM.get(address, EEPROM_res_lower_limit);
+          address += sizeof(EEPROM_res_lower_limit);
           
           EEPROM.get(address, EEPROM_res_upper_limit_min);
           address += sizeof(EEPROM_res_upper_limit_min);
@@ -226,7 +248,8 @@ public:
           
           EEPROM.get(address, buffer2);
           DPRINT(F("Restored finish string             = "));DPRINTLN(buffer2);
-         
+          address += sizeof(FINISH_STRING);
+          
           if (strcmp(buffer2, FINISH_STRING) == 0) {
             DPRINT(F("Matching finish string             = "));DPRINTLN(buffer2);
             
@@ -239,29 +262,65 @@ public:
             DPRINT(F("EEPROM_max_increase_factor_lower_limit  = "));DDECLN(EEPROM_max_increase_factor_lower_limit);
             DPRINT(F("EEPROM_max_gas_resistance               = "));DDECLN(EEPROM_max_gas_resistance);
             DPRINT(F("EEPROM_min_gas_resistance               = "));DDECLN(EEPROM_min_gas_resistance);
+            DPRINT(F("EEPROM_gas_upper_limit                  = "));DDECLN(EEPROM_gas_upper_limit);
+            DPRINT(F("EEPROM_gas_lower_limit                  = "));DDECLN(EEPROM_gas_lower_limit);
             DPRINT(F("EEPROM_gas_upper_limit_min              = "));DDECLN(EEPROM_gas_upper_limit_min);
             DPRINT(F("EEPROM_gas_lower_limit_max              = "));DDECLN(EEPROM_gas_lower_limit_max);
             DPRINT(F("EEPROM_min_res                          = "));DDECLN(EEPROM_min_res);
             DPRINT(F("EEPROM_max_res                          = "));DDECLN(EEPROM_max_res);
+            DPRINT(F("EEPROM_res_upper_limit                  = "));DDECLN(EEPROM_res_upper_limit);
+            DPRINT(F("EEPROM_res_lower_limit                  = "));DDECLN(EEPROM_res_lower_limit);
             DPRINT(F("EEPROM_res_upper_limit_min              = "));DDECLN(EEPROM_res_upper_limit_min);
             DPRINT(F("EEPROM_res_lower_limit_max              = "));DDECLN(EEPROM_res_lower_limit_max);
-            DPRINT(F("EEPROM_data_length                      = "));DDECLN(EEPROM_data_length);
-            DPRINT(F("EEPROM_data_length                      = "));DDECLN(EEPROM_data_length);
+            DPRINT(F("EEPROM_mlr_alpha                        = "));DDECLN(EEPROM_mlr_alpha);
+            DPRINT(F("EEPROM_mlr_beta                         = "));DDECLN(EEPROM_mlr_beta);
+            DPRINT(F("EEPROM_mlr_delta                        = "));DDECLN(EEPROM_mlr_delta);
 #endif 
             // restore parameters from EEPROM data
+            
             _max_decay_factor_upper_limit    = EEPROM_max_decay_factor_upper_limit;
             _max_increase_factor_lower_limit = EEPROM_max_increase_factor_lower_limit;
             _max_gas_resistance              = EEPROM_max_gas_resistance;
             _min_gas_resistance              = EEPROM_min_gas_resistance;
+            _gas_upper_limit                 = EEPROM_gas_upper_limit;
+            _gas_lower_limit                 = EEPROM_gas_lower_limit;
             _gas_upper_limit_min             = EEPROM_gas_upper_limit_min;
             _gas_lower_limit_max             = EEPROM_gas_lower_limit_max;
             _min_res                         = EEPROM_min_res;
             _max_res                         = EEPROM_max_res;
+            _res_upper_limit                 = EEPROM_res_upper_limit;
+            _res_lower_limit                 = EEPROM_res_lower_limit;
             _res_upper_limit_min             = EEPROM_res_upper_limit_min;
             _res_lower_limit_max             = EEPROM_res_lower_limit_max;
             _mlr_alpha                       = EEPROM_mlr_alpha;
             _mlr_beta                        = EEPROM_mlr_beta;
             _mlr_delta                       = EEPROM_mlr_delta;
+            
+            DPRINT(F("Number of Bytes restored from EEPROM  = "));DDECLN((uint16_t)(address - EEPROM_START_ADDRESS));
+            DPRINTLN("Restore of EEPROM data after Reset has been successfully finished!");
+#ifdef DEEP_DEBUG
+            DPRINTLN("\n\nData restored from EEPROM start:");
+            DPRINT(F("_max_decay_factor_upper_limit      = "));DDECLN(_max_decay_factor_upper_limit);
+            DPRINT(F("_max_increase_factor_lower_limit   = "));DDECLN(_max_increase_factor_lower_limit);
+            DPRINT(F("_max_decay_factor_upper_limit      = "));DDECLN(_max_decay_factor_upper_limit);
+            DPRINT(F("_max_increase_factor_lower_limit   = "));DDECLN(_max_increase_factor_lower_limit);
+            DPRINT(F("_max_gas_resistance                = "));DDECLN(_max_gas_resistance);
+            DPRINT(F("_min_gas_resistance                = "));DDECLN(_min_gas_resistance);
+            DPRINT(F("_gas_upper_limit                   = "));DDECLN(_gas_upper_limit);
+            DPRINT(F("_gas_lower_limit                   = "));DDECLN(_gas_lower_limit);
+            DPRINT(F("_gas_upper_limit_min               = "));DDECLN(_gas_upper_limit_min);
+            DPRINT(F("_gas_lower_limit_max               = "));DDECLN(_gas_lower_limit_max);
+            DPRINT(F("_min_res                           = "));DDECLN(_min_res);
+            DPRINT(F("_max_res                           = "));DDECLN(_max_res);
+            DPRINT(F("_res_upper_limit                   = "));DDECLN(_res_upper_limit);
+            DPRINT(F("_res_lower_limit                   = "));DDECLN(_res_lower_limit);
+            DPRINT(F("_res_upper_limit_min               = "));DDECLN(_res_upper_limit_min);
+            DPRINT(F("_res_lower_limit_max               = "));DDECLN(_res_lower_limit_max);
+            DPRINT(F("_mlr_alpha                         = "));DDECLN(_mlr_alpha);
+            DPRINT(F("_mlr_beta                          = "));DDECLN(_mlr_beta);
+            DPRINT(F("_mlr_delta                         = "));DDECLN(_mlr_delta);
+            DPRINTLN("Data restored from EEPROM end\n\n");
+#endif
           }
           else
           {
@@ -313,6 +372,12 @@ public:
           EEPROM.put(address, _min_gas_resistance);                // writing _min_increase_factor_lower_limit value
           address += sizeof(int32_t);                              // add size of int32_t value
           
+          EEPROM.put(address, _gas_upper_limit);                   // writing _gas_upper_limit value
+          address += sizeof(int32_t);                              // add size of int32_t value         
+          
+          EEPROM.put(address, _gas_lower_limit);                   // writing _gas_lower_limit value
+          address += sizeof(int32_t);                              // add size of int32_t value  
+          
           EEPROM.put(address, _gas_upper_limit_min);               // writing _gas_upper_limit_min value
           address += sizeof(int32_t);                              // add size of int32_t value         
           
@@ -324,6 +389,12 @@ public:
           
           EEPROM.put(address, _max_res);                           // writing _max_res value
           address += sizeof(int32_t);                              // add size of uint32_t value
+          
+          EEPROM.put(address, _res_upper_limit);                   // writing _res_upper_limit value
+          address += sizeof(int32_t);                              // add size of int32_t value         
+          
+          EEPROM.put(address, _res_lower_limit);                   // writing _res_lower_limit value
+          address += sizeof(int32_t);                              // add size of int32_t value
         
           EEPROM.put(address, _res_upper_limit_min);               // writing _res_upper_limit_min value
           address += sizeof(int32_t);                              // add size of int32_t value         
@@ -343,9 +414,35 @@ public:
           EEPROM.put(address, FINISH_STRING);                      // writing FINISH_STRING value
           address += sizeof(FINISH_STRING);                        // add size of sting FINISH_STRING
           
+          DPRINT(F("Number of Bytes written to EEPROM  = "));DDECLN((uint16_t)(address - EEPROM_START_ADDRESS));
           address = EEPROM_START_ADDRESS + sizeof(Device_type);    // write length of EEPROM data value
           EEPROM.put(address, (uint16_t)(address - EEPROM_START_ADDRESS));
-          DPRINT(F("Number of Bytes written to EEPROM  = "));DDECLN((uint16_t)(address - EEPROM_START_ADDRESS));
+          
+#ifdef DEEP_DEBUG
+          DPRINTLN("\n\nData stored to EEPROM start:");
+          DPRINT(F("\n\nmeasurement_index                  = "));DDECLN(measurement_index);
+          DPRINT(F("operatingVoltage1000               = "));DDECLN(operatingVoltage1000);
+          DPRINT(F("_max_decay_factor_upper_limit      = "));DDECLN(_max_decay_factor_upper_limit);
+          DPRINT(F("_max_increase_factor_lower_limit   = "));DDECLN(_max_increase_factor_lower_limit);
+          DPRINT(F("_max_decay_factor_upper_limit      = "));DDECLN(_max_decay_factor_upper_limit);
+          DPRINT(F("_max_increase_factor_lower_limit   = "));DDECLN(_max_increase_factor_lower_limit);
+          DPRINT(F("_max_gas_resistance                = "));DDECLN(_max_gas_resistance);
+          DPRINT(F("_min_gas_resistance                = "));DDECLN(_min_gas_resistance);
+          DPRINT(F("_gas_upper_limit                   = "));DDECLN(_gas_upper_limit);
+          DPRINT(F("_gas_lower_limit                   = "));DDECLN(_gas_lower_limit);
+          DPRINT(F("_gas_upper_limit_min               = "));DDECLN(_gas_upper_limit_min);
+          DPRINT(F("_gas_lower_limit_max               = "));DDECLN(_gas_lower_limit_max);
+          DPRINT(F("_min_res                           = "));DDECLN(_min_res);
+          DPRINT(F("_max_res                           = "));DDECLN(_max_res);
+          DPRINT(F("_res_upper_limit                   = "));DDECLN(_res_upper_limit);
+          DPRINT(F("_res_lower_limit                   = "));DDECLN(_res_lower_limit);
+          DPRINT(F("_res_upper_limit_min               = "));DDECLN(_res_upper_limit_min);
+          DPRINT(F("_res_lower_limit_max               = "));DDECLN(_res_lower_limit_max);
+          DPRINT(F("_mlr_alpha                         = "));DDECLN(_mlr_alpha);
+          DPRINT(F("_mlr_beta                          = "));DDECLN(_mlr_beta);
+          DPRINT(F("_mlr_delta                         = "));DDECLN(_mlr_delta);
+          DPRINTLN("Data stored to EEPROM end\n");
+#endif
         }
     }
           
@@ -384,15 +481,31 @@ public:
       
 #ifdef DEEP_DEBUG
       DPRINT(F("\n\nmeasurement_index                  = "));DDECLN(measurement_index);
+      DPRINTLN("\n\nActual parameters start:");
       DPRINT(F("operatingVoltage1000               = "));DDECLN(operatingVoltage1000);
       DPRINT(F("_max_decay_factor_upper_limit      = "));DDECLN(_max_decay_factor_upper_limit);
       DPRINT(F("_max_increase_factor_lower_limit   = "));DDECLN(_max_increase_factor_lower_limit);
+      DPRINT(F("_max_decay_factor_upper_limit      = "));DDECLN(_max_decay_factor_upper_limit);
+      DPRINT(F("_max_increase_factor_lower_limit   = "));DDECLN(_max_increase_factor_lower_limit);
+      DPRINT(F("_max_gas_resistance                = "));DDECLN(_max_gas_resistance);
+      DPRINT(F("_min_gas_resistance                = "));DDECLN(_min_gas_resistance);
+      DPRINT(F("_gas_upper_limit                   = "));DDECLN(_gas_upper_limit);
+      DPRINT(F("_gas_lower_limit                   = "));DDECLN(_gas_lower_limit);
+      DPRINT(F("_gas_upper_limit_min               = "));DDECLN(_gas_upper_limit_min);
+      DPRINT(F("_gas_lower_limit_max               = "));DDECLN(_gas_lower_limit_max);
+      DPRINT(F("_min_res                           = "));DDECLN(_min_res);
+      DPRINT(F("_max_res                           = "));DDECLN(_max_res);
+      DPRINT(F("_res_upper_limit                   = "));DDECLN(_res_upper_limit);
+      DPRINT(F("_res_lower_limit                   = "));DDECLN(_res_lower_limit);
+      DPRINT(F("_res_upper_limit_min               = "));DDECLN(_res_upper_limit_min);
+      DPRINT(F("_res_lower_limit_max               = "));DDECLN(_res_lower_limit_max);
       DPRINT(F("mlr_alpha                          = "));DDECLN(mlr_alpha);
       DPRINT(F("mlr_beta                           = "));DDECLN(mlr_beta);
       DPRINT(F("mlr_delta                          = "));DDECLN(mlr_delta);
       DPRINT(F("_mlr_alpha                         = "));DDECLN(_mlr_alpha);
       DPRINT(F("_mlr_beta                          = "));DDECLN(_mlr_beta);
       DPRINT(F("_mlr_delta                         = "));DDECLN(_mlr_delta);
+      DPRINTLN("Actual parameters end\n");
 #endif
   
 
