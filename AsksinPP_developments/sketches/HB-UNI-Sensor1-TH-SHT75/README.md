@@ -1,5 +1,5 @@
 
-# Genauer Temperatur- und Luftfeuchtesensor auf der Basis von dem Sensirion SHT75 Sensor (HB-UNI-Sensor1_SHT75)
+# Genauer Temperatur- und Luftfeuchtesensor auf der Basis von dem Sensirion SHT75 Sensor (HB-UNI-Sensor1-TH-SHT75)
 
 - abgeleitet von Toms ([TomMajor](https://github.com/TomMajor)) [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)
 - ein herzliches Dankeschön für die Basisarbeit geht an Tom (TomMajor)
@@ -40,7 +40,7 @@ Die Genauigkeit der Luftfeuchtemessung des SHT75 Sensors ist typisch +-1.8% rH.
 		* Das gelieferte BME280 Sensor Breakout wird durch den SHT75 Sensor ersetzt
 	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/), bitte geeignet abändern
 	+ die Verbindungen zwischen HB-UNI-SEN-BATT PCB und SHT75 mit flexiblem Flachbandkabel ausführen
-	+ Schnitstelle des SHT75 Sensors zur MCU isst kein I2C. Details sind im [Datenblatt](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT7x_Datasheet.pdf) in dem Kapitel 2, Seite 4 zu finden. Notwendige Verbindungen sind:
+	+ Schnittstelle des SHT75 Sensors zur MCU isst kein I2C. Details sind im [Datenblatt](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT7x_Datasheet.pdf) in dem Kapitel 2, Seite 4 zu finden. Notwendige Verbindungen sind:
 		* PCB SCL <-> SHT75 Pin 1
 		* PCB SDA <-> SHT75 Pin 4
 		* PCB VCC <-> SHT75 Pin 2
@@ -64,10 +64,10 @@ Die Genauigkeit der Luftfeuchtemessung des SHT75 Sensors ist typisch +-1.8% rH.
 
 ## Benötiger Sketch
 
-[HB-UNI-Sensor1_SHT75](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1_SHT75)
+[HB-UNI-Sensor1_SHT75](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75)
 
 - bitte alle Unterverzeichnisse mit kopieren
-- nach erfolgreicher Inbetriebnahme können die Debugausgaben im serial Monitor ausgeschaltet werden. Dazu bitte im Sketch HB-UNI-Sensor1_SHT75.ino auskommentieren:
+- nach erfolgreicher Inbetriebnahme können die Debugausgaben im serial Monitor ausgeschaltet werden. Dazu bitte im Sketch HB-UNI-Sensor1-TH-SHT75.ino auskommentieren:
 
 > // !! NDEBUG sollte aktiviert werden wenn die Sensorentwicklung und die Tests abgeschlossen sind und das Gerät in den 'Produktionsmodus' geht.
 > // Insbesondere die RAM-Einsparungen sind wichtig für die Stabilität / dynamische Speicherzuweisungen etc.
@@ -104,7 +104,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/tag/1.0)
 
-- bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-Sensor1_SHT75 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
+- bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-Sensor1-TH-SHT75 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
 
 ## Lizenz
 

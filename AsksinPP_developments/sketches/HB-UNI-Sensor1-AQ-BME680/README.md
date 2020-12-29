@@ -18,6 +18,7 @@
 - die Batteriespannung wird mit 10 mV Genauigkeit und jeden Zyklus ausgegeben 
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smart-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
 	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png)
+	+ Bitte beachten: Der LazyConfig Modus funktioniert NUR bei einem angelernten Sensor. Wird der Resettaster nach dem Anlernen gedrückt oder die Batterien gewechselt, funktioniert der LazyConfig Modus nicht mehr. Ein erneutes Anlernen ist dann notwendig, um den LazyConfig Mode wieder zum Funktionieren zu bringen.
 	
 - Ausgabe des Luftgütegrads AQ_LEVEL: normierter BME680 Gaswiderstand 0..100% (ohne Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftgüte)
 - Ausgabe der logarithmischen Luftqualität AQ_LOG10: logarithmierte normierte und kompensierte Luftqualität 0.0..4.0 (mit Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftqualität)
@@ -26,13 +27,9 @@
 
 ![pic](Multiple_Linear_Regression/AQ_LOG10_formulas.png)
 
-- Autokalibrierung für den Luftgütegrad und die logarithmische Luftqualität: Zur Kalibrierung muss der Sensor nur:  
-
-	+ ca. 30 min schlechter Luft, z.B. einem mit Schnaps getränkten Papiertaschentuch ausgesetzt werden
-	+ ca. 30 min guter Außenluft, am besten bei Wind, ausgesetzt werden
-	+ diese Kalibrierung sollte ca. alle 6 Monate wiederholt werden
+- Autokalibrierung für den Luftgütegrad und die logarithmische Luftqualität: Zur Kalibrierung muss der Sensor nur in Betrieb genommen werden. Es sollte nur regelmäßig für ca. 20..30 Minuten bei völlig geöffneten Fenstern quer gelüftet werden. Die Autokalibrierung ist adaptiv und wird im Laufe der Zeit immer besser. Der Adaptionsprozess kann mehrere Tage dauern.
 	
-- Details zur Autokalibrierung sind [hier](./Autocalibration/README.md) nachzulesen.
+- Details zur Autokalibrierung sind [hier](./Autocalibration/README.md) auf Englisch nachzulesen.
 	
 - Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftgüte LOG10 durch [multiple lineare Regression](https://de.wikipedia.org/wiki/Multiple_lineare_Regression)
 	+ die absolute Luftfeuchte wird im Sensor auf der ATmega1284P MCU aus Temperatur und relativer Luftfeuchte [berechnet](https://www.kompf.de/weather/vent.html) 
@@ -41,9 +38,9 @@
 	+ externe Berechnung der multiplen Regressionsparameter mittels eines interaktiven Python Notebooks in [JupyterLab](http://jupyterlab.io/)
 	+ Eingabe der berechneten Regressionparameter in das [WebUI](Images/Setting_of_device_parameters_in_WebUI.png) (siehe oben)
 		* Wiederholung der Parameterberechnung aus Historiendaten ca. alle 6 Monate
-	+ Tägliche Abspeicherung der Parameter der Autokalibrierung und der Multiplen Linearen Regression.
-		* Die letzten EEPROM Daten werden bei einem Batteriewechsel zurückgespeichert
-			- Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset NICHT zurückgespeichert (Betriebsspannung > 3.3V)
+- Tägliche Abspeicherung der Parameter der Autokalibrierung und der Multiplen Linearen Regression.
+	+ Die letzten EEPROM Daten werden bei einem Batteriewechsel zurückgespeichert
+	+ Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset NICHT zurückgespeichert (wenn Betriebsspannung > 3.3V)
 	 
 
 
@@ -111,8 +108,12 @@
 
 > 	//#define NDEBUG   // disable all serial debug messages
 
+- und in 'sensors/sens_bme680.h' kommentieren:
+
+> 	#define DEEP_DEBUG // comment out if deep serial monitor debugging is not necessary
+
 - als Taktfrequenz des ATmega1284P 8 MHz interner RC Oszillator einstellen (es gibt zur Zeit leider nur die 20 MHz Quarz Version bei Tindie)
-- Der Sketch verwendet 41176 Bytes (31%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 1580 Bytes (9%) des dynamischen Speichers, 14804 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
+- der Sketch verwendet 45936 Bytes (35%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 1840 Bytes (11%) des dynamischen Speichers, 14544 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
 - [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) zum Setzen der Fuses für 8MHz interner RC Oszillator (Linux version)
@@ -167,6 +168,8 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 	+ der relativen Luftfeuchte
 	
 - bestimmen und im WebUI setzten. Dabei zuerst das Einschwingen der korrigierten Temperatur abwarten, bevor die Luftfeuchte korrigiert wird. Zum Bestimmen der Offsets eine 24h Aufzeichnung mit dem CCU-Historian mit einer genauen Referenztemperatur / -luftfeuchte machen ('golden' TH-Sensor daneben stellen).
+- Die in diesen Release noch extern durchgeführte Multiple Lineare Regression wird zeitnah durch eine auf dem ATmega1284P durchgeführte Kalman Filterung ersetzt werden. Beide Berechnungen sind mathematisch gleichwertig und führen zu (fast) identischen Regressionsparametern. Dann entfällt das externe Berechnen der Koeffizienten für die Temperatur- und Luftfeuchtekompensation. Der Sensor ist dadurch viel einfacher in Betrieb zu nehmen.
+- Details zur Kalman Filterung sind im Unterverzeichnis [Kalman Filter](./Kalman_Filter) zu finden. Der Algorithmus ist schon in einem Jupyter Notebook beschrieben. Die C++ Implementierung fehlt noch. Wer will, kann da mithelfen.
 
 ## Alterung des BME680 Sensors
 
@@ -186,7 +189,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 ## Batteriewechsel
 
 - Die Parameter der Autokalibrierung und der Multiplen Linearen Regression werden alle 24 Stunden in das EEPROM des ATmega1284P abgespeichert.
-- Die letzten EEPROM Daten werden bei einem Batteriewechsel oder/und einem RESET als aktuelle Parameter zurückgespeichert.
+- Die letzten EEPROM Daten werden bei einem Batteriewechsel oder/und einem RESET als aktuelle Parameter zurückgespeichert. Bedingung dafür ist, dass die VCC Betriebsspannung <= 3.3V ist.
 - Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset **NICHT** zurückgespeichert. Vor der Rückspeicherung wird geprüft, ob die Betriebsspannung kleiner als 3.3V ist. Bei einem Betrieb mit ISP Programmer oder FTDI Debugger ist die Betriebsspannung größer als 3.3V.
 
 

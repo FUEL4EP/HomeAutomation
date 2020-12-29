@@ -1,6 +1,11 @@
 # Please run the following commands in order to execute a multiple linear regression:
 Linux is assumed as operating system, please adapt to Windows as applicable by yourself, I don't use Windows at all and cannot support it!
 
+## Please note
+
+The currently externally executed mutiple linear regression will be replaced soon by an internally on the ATmega1284P executed Kalman filter. The algorithm and settings of the concerning Kalman filter are described in the subdirectory [Kalman  Filter](../Kalman_Filter).  
+You can compare the (almost identical) results of a multiple linear regression and a Kalman filter in a JupyterLab notebook there.
+
 ## Preparational steps
 
 - Before starting to collect data for a multiple linear regression, it is necessary to calibrate the temperature and humididy measurements of the BME680 sensor. For that purpose, please track the BME680 sensor's temperature and humidity e.g. in the CCU Historian and compare them with 'golden' reference sensor's values. Extract the offsets between the reference temperature/humidiy and the BM680 temperature/humidity measurements, ideally during night when there are little disturbances and thus flat curves, and use them for setting the temperature and humidity offsets in the WebUI.** Please run the offset calibration in two separated sequential steps**:
@@ -11,10 +16,8 @@ Linux is assumed as operating system, please adapt to Windows as applicable by y
 - Collect history data with your HB-UNI-Sensor1-AQ-BME680 and record them with CCU Historian.
 	Take care to have as many as possible different air quality, temperature, and humidity conditions during the recording time:
 	- put the sensor into your kitchen when you are cooking
-	- put the sensor outside to fresh air
 	- put the sensor to other locations with strong smells
-	- put a paper tissue soaked with clear liquors (schnaps) close to the BME680 sensor
-	- place strong smelling food e.g. like cheese close to the sensor<br/>
+	- place strong smelling food e.g. like parmesan cheese close to the sensor<br/>
 - Collect history data for 2..4 weeks
 - Output a history CSV file in the CCU Historian's Trend diagram (button 'CSV-Export' at the bottom) dumping the following data points (click in CCU Historian's 'Datenpunktliste' to create the Trend diagram):
 
@@ -24,14 +27,14 @@ Linux is assumed as operating system, please adapt to Windows as applicable by y
 
 - Ensure that your browser is downloading the CSV file to your ${HOME}/Downloads directory as 'historian.csv'. Check the correct time stamp of that file before continuing. <br/>
 
-- Execute the provided script 'get_new_history.bsh'. It fetches CCU Historian's CSV file from '${HOME}/Downloads' and translates the CSV decimal separator from ',' to '.' (english notation) <br/>
+- Execute the provided script 'get_new_history.bsh'. It fetches CCU Historian's CSV file from '${HOME}/Downloads' and does some pre-processing<br/>
 
 - If you read in the created CSV file into Microsoft Office EXCEL or Libreoffice Calc, it should look like:
 
  ![ ](./EXCEL_Calc_view.png  "converted CSV view in EXCEL/Calc")
 
- >For the CSV import, please select a column separator the semicolon ';'
- Please check that the decimal separator is a **'.'**
+ >For the CSV import into EXCEL or Libreoffice Calc, please select a column separator the semicolon ';'
+ Please check that the decimal separator is a **','**
  
 ### Jupyterlab
 
@@ -56,13 +59,9 @@ A tutorial of Jupyterlab can be found [here](https://www.tutorialspoint.com/jupy
 - If you have a local (Linux) installation of Jupiterlab, please invoke a terminal window in the sketch's directory and enter the following commands:
 
 >cd ${sketch_dir}/Multiple_Linear_Regression<br/>
->jupyter lab --allow-root --ip=0.0.0.0 --no-browser<br/>
+>bash jupyterlab.bsh<br/>
 
-- Then you should get in the terminal window an output of an URL:
-
-> http://127.0.0.1:8888/?token=<token>
-
-- Invoke this URL in a browser like Firefox or Chrome. You will get an interactive Jupyterlab session in your browser like:
+- Your browser should then be started automatically and look like this:
 
 ![initial JupyterLab session view](./Jupyterlab_initial.png  "initial JupyterLab session view")
 

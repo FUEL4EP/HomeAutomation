@@ -8,10 +8,10 @@ An autocalibration algorithm has been implemented in the code [sens_bme680.h](..
 > gas := measured gas resistance = AQ_GAS_RESISTANCE_RAW in CCU Historian<BR/>
 > gas_upper_limit := upper gas resistance reference = AQ_GAS_RESISTANCE_MAX in CCU Historian<BR/>
 > gas_lower_limit := measured gas resistance reference = AQ_GAS_RESISTANCE_MIN in CCU Historian<BR/>
-> gas_upper_limit_min := minimum limit of gas_upper_limit
-> gas_lower_limit_max := maximum limit of gas_lower_limit
-> min_gas_resistance := minimum ever measured gas resistance since last reset
-> max_gas_resistance := maximum ever measured gas resistance since last reset
+> gas_upper_limit_min := minimum limit of gas_upper_limit<BR/>
+> gas_lower_limit_max := maximum limit of gas_lower_limit<BR/>
+> min_gas_resistance := minimum ever measured gas resistance since last reset<BR/>
+> max_gas_resistance := maximum ever measured gas resistance since last reset<BR/>
 
 ### gas = AQ_GAS_RESISTANCE_RAW in CCU Historian
 
@@ -65,32 +65,37 @@ gas_score = ((gas - gas_lower_limit)/(gas_upper_limit - gas_lower_limit)) * 100.
 
 Basically the same autocalibration approach is implemented for the residual of the multilinear regression. For details, please refer to the comments in the code [sens_bme680.h](../sensors/sens_bme680.h).
 
-- However, only the variable aq_state_scaled = Datapoint Parameter AQ_LOG10 in CCU Historian is observble from outside.
+- However, only the variable aq_state_scaled = Datapoint Parameter AQ_LOG10 in CCU Historian is observable from outside. The upper and lower limits are not observable from outside.
 
 ### Prerequisites and recommendations for the autocalibration
 
 #### Prerequisites
 
-- Before stating the autocalibration process, please adjust the temperature and humity offsets in the WebUI device parameters. For that purpose, please put a 'golden' reference sensor next to the HB-UNI-Sensor1-AQ-BME680 sensor. Preferably do this over night when the temperature is quite stable without big disturbances:
+- Before starting the autocalibration process, please adjust the temperature and humity offsets in the WebUI device parameters. For that purpose, please put a 'golden' reference sensor next to the HB-UNI-Sensor1-AQ-BME680 sensor. Preferably do this over night when the temperature is quite stable without big disturbances:
 
 
 ![pic](./temperature_offset_calibration.png)
 
 - Here three HB-UNI-Sensor1-AQ-BME680 sensors' temperature measurements are shown together with the temperature measurement of a 'golden' sensor. 
-- **After a device's power-on or reset**, a new autocalibration cycle is started. This will happen e.g. when you will change the batteries.
-- To enable a meaningful autocalibration, the gas_upper_limit and gas_lower_limit need to be set by
-	+ expose the sensor to fresh air for at least 30 minutes. This will set gas_upper_limit to a large value.
-	+ expose the sensor to bad air for at least 30 minutes. The easiest way is to put a paper tissue soaked with clear liquors (schnaps) close to the BME680 sensor.
-	+ for generating bad air, you can also experiment with cheese or other strong smelling chemicals.
-	+ in both cases, fresh and bad air exposure, please observe the transient effects in the CCU historian (similar to above diagram).
-	+ please note that the outside air is sometimes not fresh at all. Repeat the fresh air exposure at a different time in such a case. Do experiments and observe the results in the CCU Historian to get a better understanding.
+- **After a device's power-on or reset**, a new autocalibration cycle is started if the supply voltage is > 3.3V, .e. if you supply it with an ISP programmer of an FTDI debugger. A reset with battery supply (VCC < 3.3V) will read the previous autocalibration parameters from the EEPROM.
+
+- A solely battery change will restore the last saved autocalibration parameters from EEPROM.
+- To enable a meaningful autocalibration, the gas_upper_limit and gas_lower_limit need to be set
+
+	+ recommendation is to simple put the sensor into operation and to ensure that you ventilate  on a regular basis. The best way to ventilate is by opening doors and windows that are opposite each other, i.e. by cross-ventilation.
+	+ a more sophisticated autocalibration consists of the following steps 
+		+ by exposing the sensor to fresh air for at least 30 minutes. This will set gas_upper_limit to a large value.
+		+ by exposing the sensor to bad air for at least 30 minutes. The easiest way is to put some strong smelling cheese close to the BME680 sensor. This will set gas_lower_limit to a small value.
+		+ in both cases, fresh and bad air exposure,please observe the transient effects in the CCU historian (similar to above diagram).
+		+ please refrain in winter time to put the sensor to outside for the fresh air exposure. The big temerature and humidity differences to the inside conditions will otherwise overweight the humidity compensation.
+	+ please do experiments and observe the results in the CCU Historian to get a better understanding about the capabilities, sensitivities, and limitations of the BME680 sensor.
+	+ 
 	
 	
 #### Recommendations
 
 - Repeat the exposure of the sensor to fresh and bad air regularily every 6 months.
-- If you want to change the batteries, please attach the sensor first to an ISP programmer. Such the sensor will not forget the autocalibration parameters during battery exchange.
-
+- All autocalibration parameters will be reset if you reset the microcontroller with a supply voltage > 3.3V, i.e. if you supply it with an ISP programmer of an FTDI debugger. A reset with battery supply (VCC < 3.3V) will read the previous autocalibration parameters from the EEPROM.
 
 
 

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# this script expects that the CCU Historian's CSV file is downloaded to ${HOME}/Downloads by the browser
+
+if [ -f "${HOME}/Downloads/historian.csv" ]; then
+  cp ${HOME}/Downloads/historian.csv .
+  /bin/bash ./csv_convert_historian.bsh historian.csv
+  mv historian_converted.csv historian.csv
+  rm -f "${HOME}/Downloads/historian.csv"
+else
+  echo "Could not find the CCU Historian CSV file '${HOME}/Downloads/historian.csv'"
+fi

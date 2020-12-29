@@ -4,7 +4,7 @@
 #ifndef _SENS_BME680_H_
 #define _SENS_BME680_H_
 
-#define DEEP_DEBUG // comment out if deep serial monitor debugging is not necessary
+#define DEEP_DEBUG // comment if deep serial monitor debugging is not necessary
 
 #include <Wire.h>
 #include <Sensors.h>
@@ -21,7 +21,7 @@
 
 #define AVG_COUNT                   5
 #define IIR_FILTER_COEFFICIENT      0.0001359 // 1.0 -0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods)
-#define EPSILON                     0.0001
+#define EPSILON                     0.0001    // decrease to 0.00001 if you want a value range of 0..5 for AQ_LOG10
 #define MAX_BATTERY_VOLTAGE         3300
 #define EEPROM_START_ADDRESS        100
 #define DEVICE_TYPE                 "HB-UNI-Sensor1-AQ-BME680"

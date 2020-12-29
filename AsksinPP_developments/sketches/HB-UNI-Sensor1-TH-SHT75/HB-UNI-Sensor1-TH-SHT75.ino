@@ -1,5 +1,5 @@
 //---------------------------------------------------------
-// HB-UNI-Sensor1_SHT75    Sensirion SHT75 high accuracy Temperature and Humidity Sensor
+// HB-UNI-Sensor1-TH-SHT75    Sensirion SHT75 high accuracy Temperature and Humidity Sensor
 // Version 1.18a
 // (C) 2018-2020 Tom Major (Creative Commons)
 // (C) 2020 FUEL4EP i      (Creative Commons)          adaptions to Sensirion SHT75 high accuracy sensor
