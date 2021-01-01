@@ -1,14 +1,14 @@
 #!/bin/sh
 
 #------------------------------------------------------------------------------
-# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name="HB-UNI-Sensor-TH-SHT75" id="HB-UNI-Sensor-TH-SHT75" updatable="true">
-DEVICE="HB-UNI-Sensor-TH-SHT75"
+# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name="HB-UNI-Sensor-THPD-BME280" id="HB-UNI-Sensor-THPD-BME280" updatable="true">
+DEVICE="HB-UNI-Sensor-THPD-BME280"
 # in der WebUI angezeigte Gerätebeschreibung
-DEVICE_DESC="Sensor TH"
+DEVICE_DESC="Sensor THPD"
 # Name der Piktogramme, bestehend aus xx.png bzw. xx_thumb.png
-DEVICE_IMG=hb-uni-sensor-TH-SHT75.png
-DEVICE_THUMB=hb-uni-sensor-TH-SHT75_thumb.png
-FIRMWARE_FILE=/firmware/rftypes/hb-uni-sensor-TH-SHT75*.xml
+DEVICE_IMG=hb-uni-sensor-THPD-BME280.png
+DEVICE_THUMB=hb-uni-sensor-THPD-BME280_thumb.png
+FIRMWARE_FILE=/firmware/rftypes/hb-uni-sensor-THPD-BME280*.xml
 
 #------------------------------------------------------------------------------
 # Undo DEVDB.tcl changes
@@ -32,6 +32,9 @@ sed -i "/\($webuiSearch\)/d" $webuiFile
 webuiSearch="GENERIC|Rel. Luftfeuchtigkeit"
 sed -i "/\($webuiSearch\)/d" $webuiFile
 
+webuiSearch="GENERIC|Abs. Luftfeuchtigkeit"
+sed -i "/\($webuiSearch\)/d" $webuiFile
+
 stringtable_deFile="/www/config/stringtable_de.txt"
 stringtable_deSearch="WEATHER|OPERATING_VOLTAGE"
 sed -i "/\($stringtable_deSearch\)/d" $stringtable_deFile
@@ -40,12 +43,28 @@ stringtable_deFile="/www/config/stringtable_de.txt"
 stringtable_deSearch="WEATHER|MY_HUMIDITY"
 sed -i "/\($stringtable_deSearch\)/d" $stringtable_deFile
 
+stringtable_deFile="/www/config/stringtable_de.txt"
+stringtable_deSearch="WEATHER|DEWPOINT"
+sed -i "/\($stringtable_deSearch\)/d" $stringtable_deFile
+
+stringtable_deFile="/www/config/stringtable_de.txt"
+stringtable_deSearch="WEATHER|VAPOR_CONCENTRATION"
+sed -i "/\($stringtable_deSearch\)/d" $stringtable_deFile
+
 translate_deFile="/www/webui/js/lang/de/translate.lang.stringtable.js"
 translate_deSearch="stringTableHBBatteryVoltage"
 sed -i "/\(${translate_deSearch}\)/d" $translate_deFile
 
 translate_deFile="/www/webui/js/lang/de/translate.lang.stringtable.js"
 translate_deSearch="stringTableHBHumidity"
+sed -i "/\(${translate_deSearch}\)/d" $translate_deFile
+
+translate_deFile="/www/webui/js/lang/de/translate.lang.stringtable.js"
+translate_deSearch="stringTableHBDewpoint"
+sed -i "/\(${translate_deSearch}\)/d" $translate_deFile
+
+translate_deFile="/www/webui/js/lang/de/translate.lang.stringtable.js"
+translate_deSearch="stringTableHBVaporConcentration"
 sed -i "/\(${translate_deSearch}\)/d" $translate_deFile
 
 
