@@ -1,6 +1,6 @@
 #!/bin/tclsh
-set checkURL    "https://github.com/FUEL4EP/HomeAutomation/blob/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/src/addon/VERSION"
-set downloadURL "https://github.com/FUEL4EP/HomeAutomation/blob/master/AsksinPP_developments/addons/hb-ep-devices-addon/releases/latest"
+set checkURL    "https://raw.githubusercontent.com/FUEL4EP/HomeAutomation/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/src/addon/VERSION"
+set downloadURL "https://github.com/FUEL4EP/HomeAutomation/releases/latest"
 catch {
   set input $env(QUERY_STRING)
   set pairs [split $input &]
