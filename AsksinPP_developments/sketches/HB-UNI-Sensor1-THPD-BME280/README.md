@@ -30,12 +30,12 @@ Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/med
 
 ## Kalibrierung von Temperatur, relativer Luftfeuchtigkeit   
 
-- Um eine Offsetkalibrierung der Temperatur- und relativen Luftfeuchtemessung des BME2980 Sensors durchzuführen, zeichne diese beiden Messgrößen z.B. im CCU Historian und vergleiche sie mit den entsprechenden Messwerten eines 'goldenen' Referenzsensors. Extrahiere die Diiferenzen zwischen den Referenzmesswerten des 'goldenen' Referenzsensors und den entsprechenden des BME280 Sensors, am Besten in einer Messreihe über Nacht mit geringen Messwertschwankungen und daher flachen Messverläufen. Gebe die Differenzen in das [WebUI Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png) ein.
+- Um eine Offsetkalibrierung der Temperatur- und relativen Luftfeuchtemessung des BME2980 Sensors durchzuführen, zeichne diese beiden Messgrößen z.B. im CCU Historian und vergleiche sie mit den entsprechenden Messwerten eines 'goldenen' Referenzsensors. Extrahiere die Differenzen zwischen den Referenzmesswerten des 'goldenen' Referenzsensors und den entsprechenden des BME280 Sensors, am Besten in einer Messreihe über Nacht mit geringen Messwertschwankungen und daher flachen Messverläufen. Gebe die Differenzen in das [WebUI Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png) ein.
 
-- ** Bitte führe die Offsetkalibrierung in zwei getrennten Schritten durch**:
+- Bitte führe die Offsetkalibrierung in zwei getrennten Schritten durch:
 	+ Kalibriere die BME280 Temperatur in einem ersten Schritt (erste Nacht)
 	+ Kalibriere die BME280 relative Luftfeuchtigkeit in einem zweiten Schritt (zweite Nacht)
-	+ ** Kalibriere die BME280 Temperature and relative Luftfeuchtigkeit NICHT gemeinsam in einem Schritt, da diese beiden Größen physikalisch voneinender abhängen.**
+	+ Kalibriere die BME280 Temperatur and relative Luftfeuchtigkeit NICHT gemeinsam in einem Schritt, da diese beiden Größen physikalisch voneinander abhängen
 	
 ## Schaltung
 
