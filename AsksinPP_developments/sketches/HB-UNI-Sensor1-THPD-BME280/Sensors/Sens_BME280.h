@@ -58,9 +58,9 @@ public:
        DPRINTLN(F("BME280 sensor OK"));
        
        _altitude     = altitude;
-       _tempOffset   = (float)( tempOffset10  / 10.0 );
-       _humidOffset  = (float)( humidOffset10 / 10.0 );
-       _pressOffset  = (float)( pressOffset10 / 10.0 );
+       _tempOffset   = (float)( tempOffset10 )  / 10.0;
+       _humidOffset  = (float)( humidOffset10 ) / 10.0;
+       _pressOffset  = (float)( pressOffset10 ) / 10.0;
        
        DPRINTLN(F("BME280 offsets (all x10):"));
        DPRINT(F("-T    : ")); DDECLN(tempOffset10);
