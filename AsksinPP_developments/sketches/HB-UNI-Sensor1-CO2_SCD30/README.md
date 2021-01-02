@@ -258,16 +258,6 @@ Die daraus abgeleiteten Modifikationen und Ergänzungen sind:
 [SCD30 Include File Sens_SCD30.h](Sensors/Sens_SCD30.h)<br />
 [projektspezifische my_Sensors_SCD30.h Datei](Sensors/my_Sensors_SCD30.h) mit 'class Carbondioxide' Definition<br />
 
-~~Spezifisch angepasst werden müssen in **HB-UNI-Sensor1-CO2_SCD30.ino**:~~
-
-~~\#define PARAMETER_ALTITUDE_ABOVE_SEALEVEL     83      // height of SCD30 sensor's location above sea level NN<br />
-\#define PARAMETER_AMBIENT_PRESSURE          1013      // ambient air pressure for the SCD30's internal compensation<br />
-//Korrektur von Temperatur und Luftfeuchte<br />
-//Einstellbarer OFFSET für Temperatur -> gemessene Temp +Offset = Angezeigte Temperatur; WICHTIG: Nur positive Offsets sind erlaubt und sinvoll !!, Skalierung x10<br />
-\#define OFFSETtemp +12 //z.B 50 ≙ +5°C, Offset bitte an Deinen SCD30 Sensor anpassen<br />
-<br />
-//Einstellbarer OFFSET für Luftfeuchte -> gemessene Luftf. +/- Offset = Angezeigte Luftf.<br />
-\#define OFFSEThumi +4   //z.B -10 ≙ -10%RF / 10 ≙ +10%RF, Offset bitte an Deinen Sensor anpassen<br />~~
 
 **Update 08.12.2020:** Bitte im CCU3/RaspberryMatic WebUI sind unter 'Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen' die folgenden Parameter einstellen:
 
@@ -315,35 +305,16 @@ Im obigen Beispiel ADC0_FACTOR ist 3.509 die mit dem Voltmeter gemessene VCC Spa
 
 ### Speicherbedarf des Sketches:
 
-~~Der Sketch verwendet 25946 Bytes (84%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
-Globale Variablen verwenden 1067 Bytes (52%) des dynamischen Speichers, 981 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.~~<br />
 **Update 08.12.2020:** Der Sketch verwendet 27416 Bytes (89%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
 Globale Variablen verwenden 1596 Bytes (77%) des dynamischen Speichers, 452 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
 Wenig Arbeitsspeicher verfügbar, es können Stabilitätsprobleme auftreten.
-Falls Stabilitätsprobleme auftreten, bitte die Debugoption auschalten:
+Falls Stabilitätsprobleme auftreten, bitte die Debugoption ausschalten:
 
 > //#define NDEBUG   // uncomment in case of stability issues
 
 ### Benötigtes Addon auf CCUx/RaspberryMatic:
 
-~~**Vor** dem Anlernen des HB-UNI-Sensor1-CO2_SCD30 Sensors ist das modifizierte Addon HB-TM-Devices-AddOn auf der CCUx/RaspberryMatic zu installieren.~~
-
-~~Das OriginalAddon von Tom Major, das der Ausgangspunkt war, steht unter~~
-
-~~[Original HB-TM-Devices-AddOn](https://github.com/TomMajor/SmartHome/tree/master/HB-TM-Devices-AddOn)~~
-
-~~Die benötigten HB-UNI-Sensor1-CO2_SCD30 spezifischen Modifikationen sind unter~~
-
-~~[zu installierendes modifiziertes Addon HB-TM-Devices-AddOn](https://github.com/FUEL4EP/SmartHome/tree/HB-UNI-Sensor1-CO2_SCD30/HB-TM-Devices-AddOn)~~
-
-~~verfügbar. Die Addon tar.gz Datei steht unter~~
-~~
-[hb-tm-devices-addon.tgz](../HB-TM-Devices-AddOn/CCU_RM/hb-tm-devices-addon.tgz)  (Linux Pfade)~~
-
-~~Vielleicht kann ja Tom Major die Änderungen in sein Repository übernehmen. Ich hab das eher pragmatisch aus seiner Heizungssteuerung abgeleitet. Da gibt es sicher was zu optimieren. Ich bin da zu wenig Experte und war zufrieden, als es funktionierte :-)
-Ich mach gerne einen Pull request, wenn Tom einverstanden ist.~~
-
-**Update 08.12.2020:** **Vor** dem Anlernen des HB-UNI-Sensor1-CO2_SCD30 Sensors ist das Addon [ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/tag/1.0) auf der CCUx/RaspberryMatic zu installieren. Dazu die 'hb-ep-devices-addon.tgz' von dort bitte herunterladen und als Zusatzsoftware in der CCU3/RaspberryMatic installieren. Die 'tgz'-Datei muss nicht unzipped werden!
+**Update 08.12.2020:** **Vor** dem Anlernen des HB-UNI-Sensor1-CO2_SCD30 Sensors ist das Addon [ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf der CCUx/RaspberryMatic zu installieren. Dazu die 'hb-ep-devices-addon.tgz' von dort bitte herunterladen und als Zusatzsoftware in der CCU3/RaspberryMatic installieren. Die 'tgz'-Datei muss nicht unzipped werden!
 
 
 ### Wichtige Hinweise, unbedingt beachten !!
@@ -352,7 +323,6 @@ Ich mach gerne einen Pull request, wenn Tom einverstanden ist.~~
 * Für die Verwendung des Akku-Step-Up Wandlers muss **vor** dem Auflöten der Batteriehalterungen mit einer scharfen Klinge die VCC Leiterbahn der Basisplatine aufgetrennt werden.
 * Die Spannungen der Step-Up und Step-Down Wandler müssen **unbedingt** im Leerlauf ohne angeschlossene andere Schaltkreise an den jeweiligen Potentiometern eingestellt werden. Sonst droht die Zerstörung der anderen Bauteile aufgrund von Überspannung! Die Wandler, die in das Gehäuseoberteil eingeklebt werden, müssen bei abgezogenem Arduino Common Sensor Stecker eingestellt werden (elektrische Trennung von Ober- und Unterteil des Gehäuses). Für die Feinjustage kann die Verbindung wieder hergestellt werden. Der Akku-Step-Up Wandler muss auch im Leerlauf ohne angeschlossene Last zuerst eingestellt werden, d.h. die Verbindung der Schottkydiode auf VCC wird erst **nach** der initialen Einstellung hergestellt.
 * Die korrekte Polarität der DC Spannungsversorgungsbuchse muss vor dem Anschluss von Wandlern oder Lademodulen geprüft werden. Das vorgeschlagene Netzteil erlaubt beide Polaritäten durch Umstecken des Adapters.<br/><br/>
-~~* Zur Zeit ist das projektspezifische Addon HB-TM-Devices-AddOn nicht synchronisiert mit dem von Tom Major https://github.com/TomMajor/SmartHome/tree/master/HB-TM-Devices-AddOn. Hier müssen sich Tom und ich noch einigen, wie wir das handhaben wollen. Wer die neueste Version von Tom für andere Sensoren braucht, kann meine projektspezifische Modifikation nicht nutzen. Bitte in diesen Fall bei mir melden.~~
 * Der Ladestrom des NiMH Lademoduls NIMHCRTA 2S muss durch Ändern des Widerstands R5 von 1.24kOhm auf 4.7kOhm verkleinert werden. Reduzierter Ladestrom ist ungefähr 0.259A.
 
 

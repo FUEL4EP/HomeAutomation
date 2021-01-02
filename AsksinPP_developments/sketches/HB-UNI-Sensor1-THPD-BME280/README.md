@@ -90,7 +90,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 ## Benötigtes Addon
 
-[hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/tag/1.0)
+[hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
 - bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-Sensor1-THPD-BME280 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
 
