@@ -89,7 +89,7 @@ Basically the same autocalibration approach is implemented for the residual of t
 		+ in both cases, fresh and bad air exposure,please observe the transient effects in the CCU historian (similar to above diagram).
 		+ please refrain in winter time to put the sensor to outside for the fresh air exposure. The big temerature and humidity differences to the inside conditions will otherwise overweight the humidity compensation.
 	+ please do experiments and observe the results in the CCU Historian to get a better understanding about the capabilities, sensitivities, and limitations of the BME680 sensor.
-	
+	+ 
 	
 	
 #### Recommendations

@@ -170,7 +170,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 	+ der relativen Luftfeuchte
 	
 - bestimmen und im WebUI setzten. Dabei zuerst das Einschwingen der korrigierten Temperatur abwarten, bevor die Luftfeuchte korrigiert wird. Zum Bestimmen der Offsets eine 24h Aufzeichnung mit dem CCU-Historian mit einer genauen Referenztemperatur / -luftfeuchte machen ('golden' TH-Sensor daneben stellen).
-- die in diesen Release noch extern durchgeführte Multiple Lineare Regression wird zeitnah durch eine auf dem ATmega1284P durchgeführte Kalman Filterung ersetzt werden. Beide Berechnungen sind mathematisch gleichwertig und führen zu (fast) identischen Regressionsparametern. Dann entfällt das externe Berechnen der Koeffizienten für die Temperatur- und Luftfeuchtekompensation. Der Sensor ist dadurch viel einfacher in Betrieb zu nehmen.
+- Die in diesen Release noch extern durchgeführte Multiple Lineare Regression wird zeitnah durch eine auf dem ATmega1284P durchgeführte Kalman Filterung ersetzt werden. Beide Berechnungen sind mathematisch gleichwertig und führen zu (fast) identischen Regressionsparametern. Dann entfällt das externe Berechnen der Koeffizienten für die Temperatur- und Luftfeuchtekompensation. Der Sensor ist dadurch viel einfacher in Betrieb zu nehmen.
 - Details zur Kalman Filterung sind im Unterverzeichnis [Kalman Filter](./Kalman_Filter) zu finden. Der Algorithmus ist schon in einem Jupyter Notebook beschrieben. Die C++ Implementierung fehlt noch. Wer will, kann da mithelfen.
 
 ## Alterung des BME680 Sensors

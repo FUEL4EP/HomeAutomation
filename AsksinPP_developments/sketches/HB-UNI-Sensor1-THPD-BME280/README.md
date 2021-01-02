@@ -18,15 +18,25 @@ Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/med
 - die Batteriespannung wird mit 10 mV Genauigkeit und jeden Zyklus ausgegeben 
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smart-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
 	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png)
-	+ Alle drei Offsetwerte (T, rLF, P) müssen für die Eingabe mit dem Faktor 10 multipliziert werden. 
+	+ Alle drei Offsetwerte (T, rLF, P) müssen für die Eingabe mit dem Faktor 10 multipliziert werden.
+	+ Bitte beachten: Der LazyConfig Modus funktioniert NUR bei einem angelernten Sensor. Wird der Resettaster nach dem Anlernen gedrückt oder die Batterien gewechselt, funktioniert der LazyConfig Modus nicht mehr. Ein erneutes Anlernen ist dann notwendig, um den LazyConfig Mode wieder zum Funktionieren zu bringen.
 	
 
 ## Taupunkttemperatur und absolute Luftfeuchtigkeit
 
 - Die angezeigte Taupunkttemperatur kann zur Bewertung der Gefährdung einer Schimmelbildung in einem Raum verwendet werden: Der kälteste Punkt eines Raums (in der Regel die untere oder oberere Ecke einer Außenwand) sollte eine mit einem Infrarotthermometer gemessene Temperatur haben, die mindestens 2..4 Grad Celsius über der angezeigten Taupunkttemperatur liegt.
 - Die angezeigte absolute Luftfeuchtigkeit kann dazu verwendet werden zu entscheiden, ob das Öffnen der Fenster eine Entfeuchtung eines Raums bewirkt: Wenn die absolute Luftfeuchte außen um mindestens 1 g/m³ kleiner ist als im Innenraum, dann wird beim Lüften der Raum entfeuchtet. 
-	
 
+
+## Kalibrierung von Temperatur, relativer Luftfeuchtigkeit   
+
+- Um eine Offsetkalibrierung der Temperatur- und relativen Luftfeuchtemessung des BME2980 Sensors durchzuführen, zeichne diese beiden Messgrößen z.B. im CCU Historian und vergleiche sie mit den entsprechenden Messwerten eines 'goldenen' Referenzsensors. Extrahiere die Diiferenzen zwischen den Referenzmesswerten des 'goldenen' Referenzsensors und den entsprechenden des BME280 Sensors, am Besten in einer Messreihe über Nacht mit geringen Messwertschwankungen und daher flachen Messverläufen. Gebe die Differenzen in das [WebUI Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png) ein.
+
+- ** Bitte führe die Offsetkalibrierung in zwei getrennten Schritten durch**:
+	+ Kalibriere die BME280 Temperatur in einem ersten Schritt (erste Nacht)
+	+ Kalibriere die BME280 relative Luftfeuchtigkeit in einem zweiten Schritt (zweite Nacht)
+	+ ** Kalibriere die BME280 Temperature and relative Luftfeuchtigkeit NICHT gemeinsam in einem Schritt, da diese beiden Größen physikalisch voneinender abhängen.**
+	
 ## Schaltung
 
 - basierend auf einer ATmega328P MCU mit CC1101 Sendemodul, Eigenbau möglich
