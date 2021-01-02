@@ -1,8 +1,8 @@
 //---------------------------------------------------------
 // HB-UNI-Sensor1-THPD-BME280    Bosch BME280 Temperature, Humidity, Pressure, Dewpoint, Vapor Concentration Sensor with WebUI offset setting
-// Version 1.18a
+// Version 1.0
 // (C) 2018-2020 Tom Major (Creative Commons)
-// (C) 2020 FUEL4EP i      (Creative Commons)          adaptions to Bosch BME280 high accuracy sensor
+// (C) 2020 FUEL4EP        (Creative Commons)          adaptions to Bosch BME280 sensor /  offset setting by WebUI / dewpoint and vapor concentration
 // https://creativecommons.org/licenses/by-nc-sa/4.0/
 // You are free to Share & Adapt under the following terms:
 // Give Credit, NonCommercial, ShareAlike
@@ -142,7 +142,7 @@ public:
         if ((msgcnt % 40) == 2) {
             flags = BIDI | WKMEUP;
         }
-        Message::init(0x14, msgcnt, 0x70, flags, t1, t2); //  length 20 = 0x14 bytes (see also addon hb-ep-devices-addon/CCU_RM/src/addon/firmware/rftypes/hb-uni-sensor-THP-BME280.xml)
+        Message::init(0x15, msgcnt, 0x70, flags, t1, t2); //  length 21 = 0x15 bytes (see also addon hb-ep-devices-addon/CCU_RM/src/addon/firmware/rftypes/hb-uni-sensor-THP-BME280.xml)
         // Message Length (first byte param.): 11 + payload
         //  1 Byte payload -> length 12
         // 12 Byte payload -> length 23
@@ -192,7 +192,7 @@ public:
 // die "freien" Register 0x20/21 werden hier als 16bit memory für das Update
 // Intervall in Sek. benutzt siehe auch hb-uni-sensor1.xml, <parameter
 // id="Sendeintervall"> .. ausserdem werden die Register 0x22/0x23 für den
-// konf. Parameter Höhe benutzt
+// konf. Parameter Höhe benutztF
 DEFREGISTER(Reg0, MASTERID_REGS, DREG_LEDMODE, DREG_LOWBATLIMIT, DREG_TRANSMITTRYMAX, 0x20, 0x21, 0x22, 0x23)
 class SensorList0 : public RegList0<Reg0> {
 public:
@@ -305,6 +305,7 @@ public:
         
         device().battery().update();                            // get current battery voltage; measure every sampling cycle
         operatingVoltage1000 = device().battery().current();    // BatteryTM class, mV resolution
+        DPRINT("battery voltage x1000 = ");       DDECLN(operatingVoltage1000);
         
         uint8_t msgcnt = device().nextcount();
         msg.init(msgcnt, temperature10, humidity10, airPressure10, dewpoint10, vaporConcentration100, operatingVoltage1000, device().battery().low());
