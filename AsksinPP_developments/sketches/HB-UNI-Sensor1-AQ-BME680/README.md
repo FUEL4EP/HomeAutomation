@@ -7,6 +7,11 @@
 - der Homematic Forum [Diskussionsstrang](https://homematic-forum.de/forum/viewtopic.php?t=49422)
 - hilfreich ist auch die Diskussion zu den [rftypes XMLs](https://homematic-forum.de/forum/viewtopic.php?f=76&t=62578&sid=cf0f4cd99f7ee2bf070e9f39391ee652)
 
+
+## ACHTUNG: Hinweis auf zur Zeit noch vorhandene Unzulänglichkeit
+
+-	Wegen eines EEPROm Adresskonflikts funktioniert zur Zeit 'LazyConfig' nicht. Dieser Fehler wird kurzfristig behoben werden. Näheres siehe [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=64185&sid=0835d8d03a8acab67612b8f42b3d3d75).
+
 ## Aufgebauter Sensor ohne Gehäusedeckel
 
 ![pic](Images/HB-UNI-Sensor1-AQ-BME680.png)
@@ -119,6 +124,8 @@
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
 - [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) zum Setzen der Fuses für 8MHz interner RC Oszillator (Linux version)
+	- wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega328P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
+
 
 - Die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
 RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerleiste einlöten.
