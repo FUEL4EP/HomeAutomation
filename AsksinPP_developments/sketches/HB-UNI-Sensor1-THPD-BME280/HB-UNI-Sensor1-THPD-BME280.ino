@@ -142,6 +142,9 @@ public:
         if ((msgcnt % 40) == 2) {
             flags = BIDI | WKMEUP;
         }
+        DPRINT(F("msgcnt    : ")); DDECLN(msgcnt);
+        
+        
         Message::init(0x15, msgcnt, 0x70, flags, t1, t2); //  length 21 = 0x15 bytes (see also addon hb-ep-devices-addon/CCU_RM/src/addon/firmware/rftypes/hb-uni-sensor-THP-BME280.xml)
         // Message Length (first byte param.): 11 + payload
         //  1 Byte payload -> length 12
@@ -316,7 +319,7 @@ public:
         }
         // reactivate for next measure
         uint16_t updCycle = this->device().getList0().updIntervall();
-        set(seconds2ticks(max(updCycle,240)));
+        set(seconds2ticks(updCycle));
         CLOCK.add(*this);
         
         regularWakeUp = true;

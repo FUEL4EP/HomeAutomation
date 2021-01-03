@@ -19,7 +19,6 @@ Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/med
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smart-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
 	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png)
 	+ Alle drei Offsetwerte (T, rLF, P) müssen für die Eingabe mit dem Faktor 10 multipliziert werden.
-	+ Bitte beachten: Der LazyConfig Modus funktioniert NUR bei einem angelernten Sensor. Wird der Resettaster nach dem Anlernen gedrückt oder die Batterien gewechselt, funktioniert der LazyConfig Modus nicht mehr. Ein erneutes Anlernen ist dann notwendig, um den LazyConfig Mode wieder zum Funktionieren zu bringen.
 	
 
 ## Taupunkttemperatur und absolute Luftfeuchtigkeit
@@ -85,6 +84,7 @@ Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/med
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega328P
 
 - [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version)
+	- wichtig ist dass dieser Skript **VOR** den Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega328P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
 
 - Die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
 RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerleiste einlöten.

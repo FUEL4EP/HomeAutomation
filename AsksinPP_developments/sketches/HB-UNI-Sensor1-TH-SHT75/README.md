@@ -81,6 +81,8 @@ Die Genauigkeit der Luftfeuchtemessung des SHT75 Sensors ist typisch +-1.8% rH.
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega328P
 
 - [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version)
+	- wichtig ist dass dieser Skript **VOR** den Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega328P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
+
 
 - Die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
 RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerleiste einlöten.
