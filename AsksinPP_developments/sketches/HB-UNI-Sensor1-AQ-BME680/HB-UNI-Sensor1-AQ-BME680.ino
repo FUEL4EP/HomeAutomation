@@ -17,7 +17,7 @@
 //
 //------------------------------------------------------------------------------------------------------------------------
 
-#define NDEBUG   // disable all serial debug messages; comment if you want to get debug messages in the serial monitor
+//#define NDEBUG   // disable all serial debug messages; comment if you want to get debug messages in the serial monitor
 //#define USE_CC1101_ALT_FREQ_86835  //use alternative frequency to compensate not correct working cc1101 modules
 // 1) Standard: tmBattery, UBatt = Betriebsspannung AVR
 #define BAT_SENSOR tmBattery
@@ -34,8 +34,8 @@
 #include "sensors/sens_bme680.h"
 
 
-#define PEERS_PER_CHANNEL 6
-#define SAMPLINGINTERVALL_IN_SECONDS 240
+#define PEERS_PER_CHANNEL   6
+#define SAMPLINGINTERVALL_IN_SECONDS 2
 #define BAT_VOLT_LOW        28  // 2.8V
 #define BAT_VOLT_CRITICAL   27  // 2.7V
 
@@ -304,10 +304,10 @@ class SensorList1 : public RegList1<UReg1> {
       humidOffset10(2);                     // humidity measurement offset, multiplied by 10 [%], calibrate your sensor's characteristics, enter in WebUI as device parameter for dynamic adjustment
       pressOffset10(-4);                    // pressure measurement offset, multiplied by 10 [hPa], calibrate your sensor's characteristics, enter in WebUI as device parameter for dynamic adjustment
       max_decay_factor_upper_limit(60);     // IIR's filter max decay value of gas resistor upper limit
-      max_increase_factor_lower_limit(40);  // IIR's filter max increase value of gas resistor lower limit 
+      max_increase_factor_lower_limit();  // IIR's filter max increase value of gas resistor lower limit 
       mlr_alpha(1454102);                   // Multiple Linear Regression parameter mlr_alpha multiplied by 1000, update in WebUI's Device Parameters according to regression result
       mlr_beta(-7571650);                   // Multiple Linear Regression parameter mlr_beta multiplied by 1000, update in WebUI's Device Parameters according to regression result
-      mlr_delta(70054092);                  // Multiple Linear Regression parameter mlr_delta multiplied by 1000, update in WebUI's Device Parameters according to regression result
+      mlr_delta(700592);                  // Multiple Linear Regression parameter mlr_delta multiplied by 1000, update in WebUI's Device Parameters according to regression result
       DPRINTLN(F("Init of channel parameters done"));
     }
     
@@ -326,12 +326,12 @@ class WeatherEventMsg : public Message {
       }
       
       // als Standard wird BCAST gesendet um Energie zu sparen, siehe Beschreibung unten.
-      // Bei jeder 40. Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
-      // ohne Betätigung des Anlerntaster übernehmen zu können (mit Verzögerung, worst-case 40x Sendeintervall).
+      // Bei jeder . Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
+      // ohne Betätigung des Anlerntaster übernehmen zu können (mit Verzögerung, worst-case x Sendeintervall).
     
       // als Standard wird BCAST gesendet um Energie zu sparen, siehe Beschreibung unten.
-      // Bei jeder 40. Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
-      // ohne Betätigung des Anlerntaster übernehmen zu können (mit Verzögerung, worst-case 40x Sendeintervall).
+      // Bei jeder . Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
+      // ohne Betätigung des Anlerntaster übernehmen zu können (mit Verzögerung, worst-case x Sendeintervall).
       uint8_t flags = BCAST;
       if ((msgcnt % 40) == 2) {
         flags = BIDI | WKMEUP;
@@ -403,7 +403,7 @@ class WeatherChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
     }
     void setup(Device<Hal, SensorList0>* dev, uint8_t number, uint16_t addr) {
       Channel::setup(dev, number, addr);
-
+      
       bme680.init(this->device().getList0().height(), max_decay_factor_upper_limit, max_increase_factor_lower_limit, mlr_alpha, mlr_beta, mlr_delta);
 
       sysclock.add(*this);
@@ -461,7 +461,7 @@ class AQDevice : public MultiChannelDevice<Hal, WeatherChannel, 1, SensorList0> 
       DPRINT(F("* Sendeversuche                                  : ")); DDECLN(this->getList0().transmitDevTryMax());                   
       DPRINT(F("* Sendeintervall                                 : ")); DDECLN(this->getList0().updIntervall());
       DPRINT(F("* Hoehe ueber NN                                 : ")); DDECLN(this->getList0().height());
- 
+      
     }
 };
 
@@ -469,11 +469,14 @@ AQDevice sdev(devinfo, 0x20);
 ConfigButton<AQDevice> cfgBtn(sdev);
 
 void setup () {
-  DINIT(38400, ASKSIN_PLUS_PLUS_IDENTIFIER);
+  DINIT(380, ASKSIN_PLUS_PLUS_IDENTIFIER);
   sdev.init(hal);
   buttonISR(cfgBtn, CONFIG_BUTTON_PIN);
   sdev.initDone();
   DPRINT("List0 dump: "); sdev.getList0().dump();
+  DDEVINFO(sdev)
+  uint16_t last_used_eeprom_address = sdev.getUserStorage().getAddress();
+  DPRINT(F("last_used_eeprom_address  : ")); DDECLN(last_used_eeprom_address);
 }
 
 void loop() {

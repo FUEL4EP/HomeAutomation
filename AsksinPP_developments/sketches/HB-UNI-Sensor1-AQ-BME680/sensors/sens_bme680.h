@@ -1,10 +1,9 @@
-// based on https://github.com/G6EJD/BME680-Example
-// https://github.com/pimoroni/bme680-python/blob/master/examples/indoor-air-quality.py
+
 
 #ifndef _SENS_BME680_H_
 #define _SENS_BME680_H_
 
-//#define DEEP_DEBUG // comment out if deep serial monitor debugging is not necessary
+#define DEEP_DEBUG // comment out if deep serial monitor debugging is not necessary
 
 #include <Wire.h>
 #include <Sensors.h>
@@ -15,7 +14,6 @@
 
 /*
  * Gas is returned as a resistance value in ohms.
- * Once it stabilizes, you can use that as your baseline reading.
  * Higher concentrations of VOC will make the resistance lower.
  */
 
@@ -23,7 +21,7 @@
 #define IIR_FILTER_COEFFICIENT      0.0001359 // 1.0 -0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods)
 #define EPSILON                     0.0001
 #define MAX_BATTERY_VOLTAGE         3300     // change to 6000 for debugging with FTDI Debugger, default: 3300
-#define EEPROM_START_ADDRESS        100
+#define EEPROM_START_ADDRESS        512      // needs to be above reserved AsksinPP EEPROM area: Address Space: 32 - 110
 #define DEVICE_TYPE                 "HB-UNI-Sensor1-AQ-BME680"
 #define FINISH_STRING               "/HB-UNI-Sensor1-AQ-BME680"
 #define STORE_TO_EEPROM_NO_CYCLES   360      // store parameters once a day; 360 * 4 min
