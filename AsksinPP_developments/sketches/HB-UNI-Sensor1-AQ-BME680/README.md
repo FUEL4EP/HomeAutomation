@@ -8,6 +8,11 @@
 - hilfreich ist auch die Diskussion zu den [rftypes XMLs](https://homematic-forum.de/forum/viewtopic.php?f=76&t=62578&sid=cf0f4cd99f7ee2bf070e9f39391ee652)
 
 
+## Bitte immer die aktuellste Version von AsksinPP nutzen
+
+- HB-UNI-Sensor1-AQ-BME680.ino kompiliert nur mit der aktuellsten Version von [AsksinPP](https://github.com/pa-pa/AskSinPP/tree/master)
+
+
 ## ACHTUNG: EEPROM Nutzung
 
 -	Ein bisheriger Adresskonflikt im EEPROM ist gelöst (näheres siehe [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=64185&sid=0835d8d03a8acab67612b8f42b3d3d75)), jedoch noch nicht 'elegant'. Daher werden die EEPROM Routinen mittelfristig noch überarbeitet werden. Das wird dann hier vermerkt werden. LazyConfig funktioniert.

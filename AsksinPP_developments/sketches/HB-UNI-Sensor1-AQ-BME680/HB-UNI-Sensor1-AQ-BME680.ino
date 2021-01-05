@@ -35,7 +35,7 @@
 
 
 #define PEERS_PER_CHANNEL   6
-#define SAMPLINGINTERVALL_IN_SECONDS 2
+#define SAMPLINGINTERVALL_IN_SECONDS 240
 #define BAT_VOLT_LOW        28  // 2.8V
 #define BAT_VOLT_CRITICAL   27  // 2.7V
 
@@ -403,6 +403,7 @@ class WeatherChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
     }
     void setup(Device<Hal, SensorList0>* dev, uint8_t number, uint16_t addr) {
       Channel::setup(dev, number, addr);
+
       
       bme680.init(this->device().getList0().height(), max_decay_factor_upper_limit, max_increase_factor_lower_limit, mlr_alpha, mlr_beta, mlr_delta);
 
