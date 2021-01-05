@@ -304,10 +304,10 @@ class SensorList1 : public RegList1<UReg1> {
       humidOffset10(2);                     // humidity measurement offset, multiplied by 10 [%], calibrate your sensor's characteristics, enter in WebUI as device parameter for dynamic adjustment
       pressOffset10(-4);                    // pressure measurement offset, multiplied by 10 [hPa], calibrate your sensor's characteristics, enter in WebUI as device parameter for dynamic adjustment
       max_decay_factor_upper_limit(60);     // IIR's filter max decay value of gas resistor upper limit
-      max_increase_factor_lower_limit();  // IIR's filter max increase value of gas resistor lower limit 
+      max_increase_factor_lower_limit(40);  // IIR's filter max increase value of gas resistor lower limit 
       mlr_alpha(1454102);                   // Multiple Linear Regression parameter mlr_alpha multiplied by 1000, update in WebUI's Device Parameters according to regression result
       mlr_beta(-7571650);                   // Multiple Linear Regression parameter mlr_beta multiplied by 1000, update in WebUI's Device Parameters according to regression result
-      mlr_delta(700592);                  // Multiple Linear Regression parameter mlr_delta multiplied by 1000, update in WebUI's Device Parameters according to regression result
+      mlr_delta(70054092);                  // Multiple Linear Regression parameter mlr_delta multiplied by 1000, update in WebUI's Device Parameters according to regression result
       DPRINTLN(F("Init of channel parameters done"));
     }
     
@@ -326,11 +326,11 @@ class WeatherEventMsg : public Message {
       }
       
       // als Standard wird BCAST gesendet um Energie zu sparen, siehe Beschreibung unten.
-      // Bei jeder . Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
+      // Bei jeder 40. Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
       // ohne Betätigung des Anlerntaster übernehmen zu können (mit Verzögerung, worst-case x Sendeintervall).
     
       // als Standard wird BCAST gesendet um Energie zu sparen, siehe Beschreibung unten.
-      // Bei jeder . Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
+      // Bei jeder 40. Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
       // ohne Betätigung des Anlerntaster übernehmen zu können (mit Verzögerung, worst-case x Sendeintervall).
       uint8_t flags = BCAST;
       if ((msgcnt % 40) == 2) {
@@ -470,7 +470,7 @@ AQDevice sdev(devinfo, 0x20);
 ConfigButton<AQDevice> cfgBtn(sdev);
 
 void setup () {
-  DINIT(380, ASKSIN_PLUS_PLUS_IDENTIFIER);
+  DINIT(38400, ASKSIN_PLUS_PLUS_IDENTIFIER);
   sdev.init(hal);
   buttonISR(cfgBtn, CONFIG_BUTTON_PIN);
   sdev.initDone();
