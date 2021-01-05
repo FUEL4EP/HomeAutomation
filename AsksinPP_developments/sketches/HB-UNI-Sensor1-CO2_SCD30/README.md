@@ -256,7 +256,18 @@ Die daraus abgeleiteten Modifikationen und Ergänzungen sind:
 
 [Top-Level Sketch HB-UNI-Sensor1-CO2_SCD30.ino](HB-UNI-Sensor1-CO2_SCD30.ino)     <= Diesen Sketch im Arduino IDE laden und mit dem Programmer hochladen<br />
 [SCD30 Include File Sens_SCD30.h](Sensors/Sens_SCD30.h)<br />
-[projektspezifische my_Sensors_SCD30.h Datei](Sensors/my_Sensors_SCD30.h) mit 'class Carbondioxide' Definition<br />
+[projektspezifische my_Sensors_SCD30.h Datei](Sensors/my_Sensors_SCD30.h) mit 'class Carbondioxide' Definition<br /><br />
+
+**Zur lokalen Installation des Github Releases auf Deinem Computer**
+
+- gehe bitte in Dein Zielinstallationsverzeichnis, wo Du mit dem HB-UNI-Sensor1-CO2_SCD30 Sensor arbeiten möchtest
+
+  - gebe dort 'git clone https://github.com/FUEL4EP/HomeAutomation.git' ein
+	  + damit lädst Du mein [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) für alle meine auf Github freigegebenen HomeBrew Sensoren herunter.
+  - dann findest Du ein neues Verzeichnis 'HomeAutomation' auf Deinem Rechner, das alle meine auf Github freigebenen Sensoren enthält, siehe [README.md](https://github.com/FUEL4EP/HomeAutomation/blob/master/README.md)
+  	+ mache bitte regelmäßig ein Update mit 'git pull'
+ -	enthalten ist auch das notwendige Addon '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)'
+ -	den HB-UNI-Sensor1-CO2_SCD3 Sensor findest Du unter './HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30'
 
 
 **Update 08.12.2020:** Bitte im CCU3/RaspberryMatic WebUI sind unter 'Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen' die folgenden Parameter einstellen:

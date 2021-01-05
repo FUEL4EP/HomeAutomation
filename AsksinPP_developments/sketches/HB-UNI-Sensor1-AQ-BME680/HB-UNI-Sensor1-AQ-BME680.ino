@@ -411,8 +411,8 @@ class WeatherChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
   
     }
 
-     void configChanged() {
-      DPRINTLN("* Config Changed                                         : List1");
+    void configChanged() {
+      DPRINTLN(F("* Config Changed                                         : List1"));
       DPRINT(F("* Temperature Offset x10                                 : ")); DDECLN(this->getList1().tempOffset10());
       DPRINT(F("* Humidity Offset x10                                    : ")); DDECLN(this->getList1().humidOffset10());
       DPRINT(F("* Pressure Offset x10                                    : ")); DDECLN(this->getList1().pressOffset10());
@@ -456,7 +456,7 @@ class AQDevice : public MultiChannelDevice<Hal, WeatherChannel, 1, SensorList0> 
 
     virtual void configChanged () {
       TSDevice::configChanged();
-      DPRINTLN("* Config Changed                                 : List0");
+      DPRINTLN(F("* Config Changed                                 : List0"));
       DPRINT(F("* LED Mode                                       : ")); DDECLN(this->getList0().ledMode());    
       DPRINT(F("* Low Bat Limit                                  : ")); DDECLN(this->getList0().lowBatLimit()); 
       DPRINT(F("* Sendeversuche                                  : ")); DDECLN(this->getList0().transmitDevTryMax());                   
