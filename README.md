@@ -23,6 +23,23 @@
 
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
+- bitte als Zusatzsoftware auf der CCU3/RaspberryMatic installieren
+
+<br/>
+<br/>
+<br/>
+
+
+#### Installation von Sensoren auf lokalem Computer
+
+- Herunterladen des Sammelrepositories mit dem Kommando im lokalen Zielverzeichnis:
+	+	git clone https://github.com/FUEL4EP/HomeAutomation.git
+- alle zu einem Sensor gehörenden Installationsdaten stehen dann unter
+	+ HomeAutomation/AsksinPP_developments/sketches/<Sensorname\>
+- der Sensor Sketch
+	+ HomeAutomation/AsksinPP_developments/sketches/<Sensorname\>/<Sensorname\>.ino
+- kann direkt im Arduino IDE aufgerufen werden
+
 <br/>
 <br/>
 <br/>
@@ -31,6 +48,7 @@
 
 <br/>
 <br/>
+
 
 
 #### Die verwendeten Icons sind "free for non-commercial use" von
