@@ -66,7 +66,19 @@ Die Genauigkeit der Luftfeuchtemessung des SHT75 Sensors ist typisch +-1.8% rH.
 
 [HB-UNI-Sensor1_SHT75](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75)
 
-- bitte alle Unterverzeichnisse mit kopieren
+- bitte alle Unterverzeichnisse mit kopieren:
+
+### Zur lokalen Installation des Github Releases auf Deinem Computer
+
+- gehe bitte in Dein Zielinstallationsverzeichnis, wo Du mit dem HB-UNI-Sensor1-TH-SHT75 Sensor arbeiten möchtest
+
+  - gebe dort 'git clone https://github.com/FUEL4EP/HomeAutomation.git' ein
+	  + damit lädst Du mein [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) für alle meine auf Github freigegebenen HomeBrew Sensoren herunter.
+  - dann findest Du ein neues Verzeichnis 'HomeAutomation' auf Deinem Rechner, das alle meine auf Github freigebenen Sensoren enthält, siehe [README.md](https://github.com/FUEL4EP/HomeAutomation/blob/master/README.md)
+  	+ mache bitte regelmäßig ein Update mit 'git pull'
+ -	enthalten ist auch das notwendige Addon '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)'
+ -	den HB-UNI-Sensor1-TH-SHT75 Sensor findest Du unter './HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75'
+
 - nach erfolgreicher Inbetriebnahme können die Debugausgaben im serial Monitor ausgeschaltet werden. Dazu bitte im Sketch HB-UNI-Sensor1-TH-SHT75.ino auskommentieren:
 
 > // !! NDEBUG sollte aktiviert werden wenn die Sensorentwicklung und die Tests abgeschlossen sind und das Gerät in den 'Produktionsmodus' geht.<br/>
