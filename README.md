@@ -32,13 +32,13 @@
 
 #### Installation von Sensoren auf lokalem Computer
 
-- Herunterladen des Sammelrepositories mit dem Kommando im lokalen Zielverzeichnis:
+- Herunterladen des Sammelrepositories in ein lokales Zielverzeichnis mit dem Kommando:
 	+	git clone https://github.com/FUEL4EP/HomeAutomation.git
-- alle zu einem Sensor gehörenden Installationsdaten stehen dann unter
+- alle zu einem Sensor <Sensorname\> gehörenden Installationsdaten stehen dann unter
 	+ HomeAutomation/AsksinPP_developments/sketches/<Sensorname\>
 - der Sensor Sketch
-	+ HomeAutomation/AsksinPP_developments/sketches/<Sensorname\>/<Sensorname\>.ino
-- kann direkt im Arduino IDE aufgerufen werden
+	+ HomeAutomation/AsksinPP_developments/sketches/<Sensorname\>/<Sensorname\>.ino<br/><br/>
+  kann direkt im Arduino IDE aufgerufen werden
 
 <br/>
 <br/>
