@@ -274,7 +274,13 @@ Die daraus abgeleiteten Modifikationen und Ergänzungen sind:
 
 ![pic](Images/WebUI/Setting_of_device_parameters_in_WebUI.png)
 
+**WICHTIG** Der einzugebende Temperaturoffset darf nur positiv sein, da die Firmware des SCD30 Sensors nur positive Werte (unint16 im nächsten Bild) zulässt. Ein positiver Temperaturoffset im WebUI bewirkt eine Verringerung der gemessenen Temperatur! Genau umgekehrt als 'normal':
+
+![pic](Images/WebUI/SCD30_temperature_offset_compensation.png)
+
 **WICHTIG:** Während des Aufladens der Akkumulatorbatterien sind die gemessene Temperatur und Luftfeuchtigkeit durch die Wärmeentwicklung des Ladereglers verfälscht.
+
+
 
 Spezifisch angepasst werden müssen in **HB-UNI-Sensor1-CO2_SCD30.ino**:
 

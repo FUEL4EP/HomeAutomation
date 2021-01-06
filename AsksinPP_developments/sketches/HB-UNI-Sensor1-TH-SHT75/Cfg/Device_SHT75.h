@@ -68,8 +68,8 @@
 
 //---------------------------------------------------------
 // Schwellwerte für Batteriespannungsmessung
-#define BAT_VOLT_LOW        24  // 2.4V
-#define BAT_VOLT_CRITICAL   20  // 2.0V
+#define BAT_VOLT_LOW        26  // 2.6V  increased after some tests
+#define BAT_VOLT_CRITICAL   23  // 2.3V
 
 
 #endif
