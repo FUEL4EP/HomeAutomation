@@ -70,8 +70,8 @@ using namespace as;
 
 // define all device properties
 const struct DeviceInfo PROGMEM devinfo = {
-  {0xf6, 0x02, 0x03},       // Device ID             // change 0x01 to your sensor's index number
-  "JPAQFUEL03",             // Device Serial         // change NAME to your name abbreviation
+  {0xf6, 0x02, 0x01},       // Device ID             // change 0x01 to your sensor's index number
+  "JPAQNAME01",             // Device Serial         // change NAME to your name abbreviation
 // 1234567890                                        // device serial must be exactly 10 characters
   {0xf6, 0x02},             // Device Model Indoor   needs to fit to Addon XML hb-uni-sensor-AQ-BME680.xml line 6:
                             //                       <parameter index="10.0" size="2.0" const_value="0xF602" /> 
