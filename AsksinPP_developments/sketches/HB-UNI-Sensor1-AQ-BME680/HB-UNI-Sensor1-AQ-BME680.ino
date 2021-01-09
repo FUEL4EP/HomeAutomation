@@ -6,18 +6,19 @@
 // You are free to Share & Adapt under the following terms:
 // Give Credit, NonCommercial, ShareAlike
 // +++
-// AskSin++                          2016 papa (Creative Commons)
-// HB-UNI-Sen-IAQ                    2019 jp112sdl Jérôme (https://homematic-forum.de/forum/viewtopic.php?f=76&t=49422)
-// HB-UNI-Sensor1                    2018 TomMajor (Creative Commons)
-// ClosedCube_BME680_Arduino         2017 closedcube (MIT License)
-// calculation of absolute humidity       Martin Kompf (https://www.kompf.de/weather/vent.html)
+// AskSin++                                 2016 papa (Creative Commons) (https://github.com/pa-pa/AskSinPP/tree/master)
+// HB-UNI-Sen-IAQ                           2019 jp112sdl Jérôme (https://homematic-forum.de/forum/viewtopic.php?f=76&t=49422) (https://github.com/jp112sdl/HB-UNI-Sen-IAQ)
+// HB-UNI-Sensor1                           2018 TomMajor (Creative Commons) (https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)
+// ClosedCube_BME680_Arduino                2017 closedcube (MIT License) (https://github.com/FUEL4EP/ClosedCube_BME680_Arduino/tree/implement_Bosch_datasheet_integer_formulas)
+// calculation of absolute humidity              Martin Kompf (https://www.kompf.de/weather/vent.html)
+// Optimized CRC32 library for Arduino      2018 Erriez (MIT License) (https://github.com/Erriez/ErriezCRC32)
 //------------------------------------------------------------------------------------------------------------------------
 //
 // this code supports only an Atmega1284P MCU, an Atmega328P MCU is NOT supported for memory size reasons 
 //
 //------------------------------------------------------------------------------------------------------------------------
 
-#define NDEBUG   // disable all serial debug messages; comment if you want to get debug messages in the serial monitor
+//#define NDEBUG   // disable all serial debug messages; comment if you want to get debug messages in the serial monitor
 //#define USE_CC1101_ALT_FREQ_86835  //use alternative frequency to compensate not correct working cc1101 modules
 // 1) Standard: tmBattery, UBatt = Betriebsspannung AVR
 #define BAT_SENSOR tmBattery
@@ -64,6 +65,9 @@ uint8_t   max_increase_factor_lower_limit;
 double    mlr_alpha; //multiple linear regression coefficient alpha (temperature)
 double    mlr_beta;  //multiple linear regression coefficient beta (absolute humidity)
 double    mlr_delta; //multiple linear regression coefficient delta (offset)
+
+//global start of free eeprom address space
+uint16_t first_free_user_eeprom_address;
 
 // all library classes are placed in the namespace 'as'
 using namespace as;
@@ -382,13 +386,12 @@ class WeatherChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
       operatingVoltage1000 = device().battery().current();    // BatteryTM class, mV resolution
 
       bme680.measure(temperature_offset, pressure_offset, humidity_offset, max_decay_factor_upper_limit, max_increase_factor_lower_limit, mlr_alpha, mlr_beta, mlr_delta, operatingVoltage1000);
-
- 
-      DPRINT("corrected T/H         = ");  DDEC(bme680.temperature()); DPRINT("/"); DDECLN(bme680.humidity());
-      DPRINT("Pressure NN           = ");  DDECLN(bme680.pressureNN());
-      DPRINT("scaled aq state       = ");  DDECLN(bme680.aq_state_scaled());
-      DPRINT("scaled gas resistance = ");  DDECLN(bme680.gas_resistance_raw_scaled());
-      DPRINT("battery voltage       = ");  DDECLN(operatingVoltage1000);
+       
+      DPRINT(F("corrected T/H                          = "));  DDEC(bme680.temperature()); DPRINT("/"); DDECLN(bme680.humidity());
+      DPRINT(F("Pressure NN                            = "));  DDECLN(bme680.pressureNN());
+      DPRINT(F("scaled aq state                        = "));  DDECLN(bme680.aq_state_scaled());
+      DPRINT(F("scaled gas resistance                  = "));  DDECLN(bme680.gas_resistance_raw_scaled());
+      DPRINT(F("battery voltage                        = "));  DDECLN(operatingVoltage1000);
 
       msg.init( msgcnt, bme680.temperature(), bme680.pressureNN(), bme680.humidity(), bme680.aq_level(), bme680.aq_state_scaled(), bme680.gas_resistance_raw_scaled(), bme680.gas_resistance_min_scaled(), bme680.gas_resistance_max_scaled(), device().battery().low(), operatingVoltage1000);
       if (msg.flags() & Message::BCAST) {
@@ -403,16 +406,15 @@ class WeatherChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
     }
     void setup(Device<Hal, SensorList0>* dev, uint8_t number, uint16_t addr) {
       Channel::setup(dev, number, addr);
-
       
-      bme680.init(this->device().getList0().height(), max_decay_factor_upper_limit, max_increase_factor_lower_limit, mlr_alpha, mlr_beta, mlr_delta);
+      bme680.init(this->device().getList0().height(), max_decay_factor_upper_limit, max_increase_factor_lower_limit, mlr_alpha, mlr_beta, mlr_delta, first_free_user_eeprom_address);
 
       sysclock.add(*this);
   
     }
 
-    void configChanged() {
-      DPRINTLN(F("* Config Changed                                         : List1"));
+     void configChanged() {
+      DPRINTLN("* Config Changed                                         : List1");
       DPRINT(F("* Temperature Offset x10                                 : ")); DDECLN(this->getList1().tempOffset10());
       DPRINT(F("* Humidity Offset x10                                    : ")); DDECLN(this->getList1().humidOffset10());
       DPRINT(F("* Pressure Offset x10                                    : ")); DDECLN(this->getList1().pressOffset10());
@@ -456,12 +458,12 @@ class AQDevice : public MultiChannelDevice<Hal, WeatherChannel, 1, SensorList0> 
 
     virtual void configChanged () {
       TSDevice::configChanged();
-      DPRINTLN(F("* Config Changed                                 : List0"));
-      DPRINT(F("* LED Mode                                       : ")); DDECLN(this->getList0().ledMode());    
-      DPRINT(F("* Low Bat Limit                                  : ")); DDECLN(this->getList0().lowBatLimit()); 
-      DPRINT(F("* Sendeversuche                                  : ")); DDECLN(this->getList0().transmitDevTryMax());                   
-      DPRINT(F("* Sendeintervall                                 : ")); DDECLN(this->getList0().updIntervall());
-      DPRINT(F("* Hoehe ueber NN                                 : ")); DDECLN(this->getList0().height());
+      DPRINTLN("* Config Changed                                         : List0");
+      DPRINT(F("* LED Mode                                               : ")); DDECLN(this->getList0().ledMode());    
+      DPRINT(F("* Low Bat Limit                                          : ")); DDECLN(this->getList0().lowBatLimit()); 
+      DPRINT(F("* Sendeversuche                                          : ")); DDECLN(this->getList0().transmitDevTryMax());                   
+      DPRINT(F("* Sendeintervall                                         : ")); DDECLN(this->getList0().updIntervall());
+      DPRINT(F("* Hoehe ueber NN                                         : ")); DDECLN(this->getList0().height());
       
     }
 };
@@ -476,8 +478,8 @@ void setup () {
   sdev.initDone();
   DPRINT("List0 dump: "); sdev.getList0().dump();
   DDEVINFO(sdev)
-  uint16_t last_used_eeprom_address = sdev.getUserStorage().getAddress();
-  DPRINT(F("last_used_eeprom_address  : ")); DDECLN(last_used_eeprom_address);
+  first_free_user_eeprom_address = sdev.getUserStorage().getAddress();  //first_free_user_eeprom_address iss a global variable
+  DPRINT(F("first_free_user_eeprom_address  : ")); DDECLN(first_free_user_eeprom_address);
 }
 
 void loop() {

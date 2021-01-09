@@ -15,7 +15,7 @@
 
 ## ACHTUNG: EEPROM Nutzung
 
--	Ein bisheriger Adresskonflikt im EEPROM ist gelöst (näheres siehe [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=64185&sid=0835d8d03a8acab67612b8f42b3d3d75)), jedoch noch nicht 'elegant'. Daher werden die EEPROM Routinen mittelfristig noch überarbeitet werden. Das wird dann hier vermerkt werden. LazyConfig funktioniert.
+-	Die EEPROM Software zur regelmässigen Zwischenspeicherung von wichtigen Sensorparametern wurde überarbeitet. Sie verwendet jetzt eine Structure für alle relevanten Parameter und eine CRC32 Prüfsumme. Diese neue Version ist mit der vorausgegangenen EEPROM Software nicht kompatibel. Daher findet nach den Flashen der neuen Software auf jeden Fall eine neue Autokalibrierung statt.
 
 ## Aufgebauter Sensor ohne Gehäusedeckel
 
@@ -138,7 +138,8 @@
 - zum Debuggen genau umgekehrt!
 
 - als Taktfrequenz des ATmega1284P 8 MHz interner RC Oszillator einstellen (es gibt zur Zeit leider nur die 20 MHz Quarz Version bei Tindie)
-- der Sketch verwendet 45936 Bytes (35%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 1840 Bytes (11%) des dynamischen Speichers, 14544 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
+- der Sketch verwendet 46854 Bytes (36%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes.
+Globale Variablen verwenden 1706 Bytes (10%) des dynamischen Speichers, 14678 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
 - [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) zum Setzen der Fuses für 8MHz interner RC Oszillator (Linux version)
@@ -188,13 +189,14 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 ## Autokalibrierung und Multiple Lineare Regression
 
-- Eine detaillierte Beschreibung der Autokalibrierung ist im Unterverzeichnis 'Autocalibration' om [README.md](Autocalibration/README.md) zu finden.
-- Eine detaillierte Beschreibung der Vorgehensweise der Multiplen Linearen Regression (MLR) ist im Unterverzeichnis 'Multiple_Linear_Regression' im [README.md](Multiple_Linear_Regression/README.md) zu finden
+- Eine detaillierte Beschreibung der Autokalibrierung ist im Unterverzeichnis 'Autocalibration' om [README.md](Autocalibration/README.md) zu finden. Der Sensor ist in der Regel autokalibrierend, d.h. es muss keine dedizierte Kalibrierung des Sensors mit 'guter' und 'schlechter' Luft gemacht werden. Wer dennoch eine Kalibrierung machen möchte, kann das, wie im [README.md](Autocalibration/README.md) beschrieben, tun.
+- Eine detaillierte Beschreibung der Vorgehensweise der Multiplen Linearen Regression (MLR) ist im Unterverzeichnis 'Multiple_Linear_Regression' im [README.md](Multiple_Linear_Regression/README.md) zu finden. 
 - **WICHTIG:** Vor der Autokalibrierung und Multiplen Linearen Regression bitte die Offsets genau in dieser Reihenfolge
 	+ der Temperatur
 	+ der relativen Luftfeuchte
 	
 - bestimmen und im WebUI setzten. Dabei zuerst das Einschwingen der korrigierten Temperatur abwarten, bevor die Luftfeuchte korrigiert wird. Zum Bestimmen der Offsets eine 24h Aufzeichnung mit dem CCU-Historian mit einer genauen Referenztemperatur / -luftfeuchte machen ('golden' TH-Sensor daneben stellen).
+- die Multiple Lineare Regression (MLR) erfordert 'nur', den Sensor HB-UNI-Sensor1-AQ-BME680 nach Abgleich des Temperatur- und Luftfeuchteoffsets für 2..4 Wochen laufen zu lassen, dann eine Historie mit dem CCU Historian rauszuschreiben, dann einen Jupyterlab Skript in der Cloud anzustarten und dann die berechneten Regressionsparameter wieder als Device Parameter in das WebUI einzugeben. Das ist einfach zu machen und kein großer Aufwand! Die Mathematik dahin müsst ihr dazu nicht verstehen. Alles Nähere ist in [README.md](Multiple_Linear_Regression/README.md) auf Englisch beschrieben.
 - die in diesen Release noch extern durchgeführte Multiple Lineare Regression wird zeitnah durch eine auf dem ATmega1284P durchgeführte Kalman Filterung ersetzt werden. Beide Berechnungen sind mathematisch gleichwertig und führen zu (fast) identischen Regressionsparametern. Dann entfällt das externe Berechnen der Koeffizienten für die Temperatur- und Luftfeuchtekompensation. Der Sensor ist dadurch viel einfacher in Betrieb zu nehmen.
 - Details zur Kalman Filterung sind im Unterverzeichnis [Kalman Filter](./Kalman_Filter) zu finden. Der Algorithmus ist schon in einem Jupyter Notebook beschrieben. Die C++ Implementierung fehlt noch. Wer will, kann da mithelfen.
 
