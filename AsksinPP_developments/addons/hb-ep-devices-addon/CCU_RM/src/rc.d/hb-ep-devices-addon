@@ -105,10 +105,6 @@ case "$1" in
         ./patchworker install ${ADDON_NAME} ${PATCHVERSION} $model.$version.$build.$bdate
 
         cd /www
-        
-        ### Create Symlink to include own js file
-        echo "(Re-)Creating symlinks for jp_webui_inc.js..." | tee -a $GLOBAL_LOGFILE
-        [[ ! -f /www/webui/js/extern/jp_webui_inc.js ]] && ln -s ${ADDON_DIR}/js/jp_webui_inc.js /www/webui/js/extern/jp_webui_inc.js
 
 
         cd ${ADDON_DIR}
@@ -183,10 +179,6 @@ case "$1" in
       
       check_ccu_fw_version
       ./patchworker uninstall ${ADDON_NAME} ${PATCHVERSION} $model.$version.$build.$bdate
-
-      cd /www
-
-      [[ -f ./webui/js/extern/jp_webui_inc.js ]] && rm ./webui/js/extern/jp_webui_inc.js
   		    		    		
       cd /
       rm -rf $ADDON_DIR
