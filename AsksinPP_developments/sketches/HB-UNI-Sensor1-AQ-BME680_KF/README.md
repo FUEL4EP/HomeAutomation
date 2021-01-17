@@ -13,7 +13,7 @@
 
 ## ACHTUNG: EEPROM Nutzung
 
--	Die EEPROM Software zur regelmässigen Zwischenspeicherung von wichtigen Sensorparametern wurde überarbeitet. Sie verwendet jetzt eine Structure für alle relevanten Parameter und eine CRC32 Prüfsumme. 318 Bytes EEPROM-Speicher werden verwendet.
+-	Die EEPROM Software zur regelmässigen Zwischenspeicherung von wichtigen Sensorparametern wurde überarbeitet. Sie verwendet jetzt eine Structure für alle relevanten Parameter und eine CRC32 Prüfsumme. Die Abspeicherung erfolgt einmal am Tag. 318 Bytes EEPROM-Speicher werden verwendet. Eine EEPROM Zelle des ATmega1284P kann laut [Datenblatt](https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega164A_PA-324A_PA-644A_PA-1284_P_Data-Sheet-40002070B.pdf) 100000 mal gelöscht/beschrieben werden. Bei einem Schreibvorgang pro Tag reicht das für 273 Jahre!
 
 
 ## Aufgebauter Sensor ohne Gehäusedeckel
