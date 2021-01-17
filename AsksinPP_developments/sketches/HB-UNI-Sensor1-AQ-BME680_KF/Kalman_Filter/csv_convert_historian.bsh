@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ $1 = *.csv ]]; then
+  ext=${1##*.}
+  bn=`basename $1 .csv`
+  #echo $bn
+  #echo $ext
+  
+  /bin/sed -e '/;;/d' < "$1" > ${bn}_converted.csv
+
+else
+  echo " "
+  echo "Please enter a csv file name with suffix '.csv'"
+  echo " "
+fi

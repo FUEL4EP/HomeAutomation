@@ -1,16 +1,17 @@
 
-# Universeller Luftgütesensor auf der Basis von dem Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680)
+# Universeller selbstkalibrierenter Luftgütesensor auf der Basis von dem Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680) mit semi-automatischer Kompensation der Abhängigkeiten von Temperatur und absoluter Luftfeuchte mittels einer externen Multiplen Linearen Regression
 
 - abgeleitet von Jérômes ([jp112sdl](https://github.com/jp112sdl)) [HB-UNI-Sen-IAQ](https://github.com/jp112sdl/HB-UNI-Sen-IAQ)
 - ein herzliches Dankeschön für die Basisarbeit geht an Jérôme (jp112sdl)
 - ein herzliches Dankeschön an alle, die im Homematic Forum geholfen haben, meine Probleme zu lösen
 - der Homematic Forum [Diskussionsstrang](https://homematic-forum.de/forum/viewtopic.php?t=49422)
 - hilfreich ist auch die Diskussion zu den [rftypes XMLs](https://homematic-forum.de/forum/viewtopic.php?f=76&t=62578&sid=cf0f4cd99f7ee2bf070e9f39391ee652)
+- **WICHTIG:** dieser Sensor HB-UNI-Sensor1-AQ-BME680 verwendet für die Kompensation der Abhängigkeit des gemessenen VOC Widerstands von der Temperatur und von der absoluten Luftfeuchte eine externe multiple lineare Regression. Wer den dafür notwendigen zusätzlichen Aufwand nicht spendieren möchte, sollte das Sensorderivat [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) nehmen, das die Kompensation mit einem Kalman Filter vollständig intern berechnet.
 
 
 ## Bitte immer die aktuellste Version von AsksinPP nutzen
 
-- HB-UNI-Sensor1-AQ-BME680.ino kompiliert nur mit der aktuellsten Version von [AsksinPP](https://github.com/pa-pa/AskSinPP/tree/master)
+- HB-UNI-Sensor1-AQ-BME680.ino kompiliert nur mit der aktuellsten **Master** Version von [AsksinPP](https://github.com/pa-pa/AskSinPP/tree/master)
 
 
 ## ACHTUNG: EEPROM Nutzung
@@ -167,6 +168,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 + [EnableInterrupt](https://github.com/GreyGnome/EnableInterrupt)</br>
 + [Low-Power](https://github.com/rocketscream/Low-Power)</br>
 + [ClosedCube_BME680_Arduino](https://github.com/FUEL4EP/ClosedCube_BME680_Arduino/tree/implement_Bosch_datasheet_integer_formulas) (Update 05. Dez 2020, Bosch hat im Juni 2020 eine neue Version V1.4 des BME680 Datenblatts veröffentlicht)
+++ [Optimized CRC32 library for Arduino](https://github.com/Erriez/ErriezCRC32)
 
 
 
@@ -197,8 +199,8 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 	
 - bestimmen und im WebUI setzten. Dabei zuerst das Einschwingen der korrigierten Temperatur abwarten, bevor die Luftfeuchte korrigiert wird. Zum Bestimmen der Offsets eine 24h Aufzeichnung mit dem CCU-Historian mit einer genauen Referenztemperatur / -luftfeuchte machen ('golden' TH-Sensor daneben stellen).
 - die Multiple Lineare Regression (MLR) erfordert 'nur', den Sensor HB-UNI-Sensor1-AQ-BME680 nach Abgleich des Temperatur- und Luftfeuchteoffsets für 2..4 Wochen laufen zu lassen, dann eine Historie mit dem CCU Historian rauszuschreiben, dann einen Jupyterlab Skript in der Cloud anzustarten und dann die berechneten Regressionsparameter wieder als Device Parameter in das WebUI einzugeben. Das ist einfach zu machen und kein großer Aufwand! Die Mathematik dahin müsst ihr dazu nicht verstehen. Alles Nähere ist in [README.md](Multiple_Linear_Regression/README.md) auf Englisch beschrieben.
-- die in diesen Release noch extern durchgeführte Multiple Lineare Regression wird zeitnah durch eine auf dem ATmega1284P durchgeführte Kalman Filterung ersetzt werden. Beide Berechnungen sind mathematisch gleichwertig und führen zu (fast) identischen Regressionsparametern. Dann entfällt das externe Berechnen der Koeffizienten für die Temperatur- und Luftfeuchtekompensation. Der Sensor ist dadurch viel einfacher in Betrieb zu nehmen.
-- Details zur Kalman Filterung sind im Unterverzeichnis [Kalman Filter](./Kalman_Filter) zu finden. Der Algorithmus ist schon in einem Jupyter Notebook beschrieben. Die C++ Implementierung fehlt noch. Wer will, kann da mithelfen.
+- die in diesen Release noch extern durchgeführte Multiple Lineare Regression wurde im Sensor [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) durch eine auf dem ATmega1284P durchgeführte Kalman Filterung ersetzt werden. Beide Berechnungen sind mathematisch gleichwertig und führen zu (fast) identischen Regressionsparametern. Dadurch entfällt das externe Berechnen der Koeffizienten für die Temperatur- und Luftfeuchtekompensation. Der Sensor [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) ist dadurch viel einfacher in Betrieb zu nehmen.
+	- Details zur Kalman Filterung sind im Unterverzeichnis [Kalman Filter](./Kalman_Filter) zu finden. Der Algorithmus ist schon in einem Jupyter Notebook beschrieben.
 
 ## Alterung des BME680 Sensors
 

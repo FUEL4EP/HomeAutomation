@@ -1,14 +1,14 @@
 #!/bin/sh
 
 #------------------------------------------------------------------------------
-# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name="HB-UNI-CO2-SCD30" id="HB-UNI-Sensor-CO2-SCD30">
+# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name="HB-UNI-Sensor-CO2-SCD30" id="HB-UNI-Sensor-CO2-SCD30" updatable="true">
 DEVICE="HB-UNI-Sensor-CO2-SCD30"
 # in der WebUI angezeigte Gerätebeschreibung
 DEVICE_DESC="Sensor Kohlendioxid"
 # Name der Piktogramme, bestehend aus xx.png bzw. xx_thumb.png
 DEVICE_IMG=hb-uni-sensor-CO2-SCD30.png
 DEVICE_THUMB=hb-uni-sensor-CO2-SCD30_thumb.png
-FIRMWARE_FILE=/firmware/rftypes/hb-uni-sensor-CO2*.xml
+FIRMWARE_FILE=/firmware/rftypes/hb-uni-sensor-CO2-SCD30*.xml
 
 #------------------------------------------------------------------------------
 # Undo DEVDB.tcl changes

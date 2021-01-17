@@ -47,7 +47,7 @@ A tutorial of Jupyterlab can be found [here](https://www.tutorialspoint.com/jupy
 
 #### Existing Jupyterlab installation on your computer
 
-- Please ensure that yuou have installed the following Phyton modules on your computer (e.g. by pip install):
+- Please ensure that you have installed the following Phyton modules on your computer (e.g. by pip install):
 	+ pandas
 	+ numpy
 	+ matplotlib

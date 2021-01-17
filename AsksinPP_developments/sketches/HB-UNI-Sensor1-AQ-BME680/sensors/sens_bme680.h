@@ -335,10 +335,10 @@ public:
         
       batteries_were_changed = check_for_battery_change(measurement_index, operatingVoltage1000,_first_free_user_eeprom_address);
       if (batteries_were_changed )  {
-        DPRINT(F("Change off batteries was detected      = yes"));
+        DPRINT(F("Change of batteries was detected       = yes"));
       }
       else {
-        DPRINT(F("Change off batteries was detected      = no"));
+        DPRINT(F("Change of batteries was detected       = no"));
       }
 
       measurement_index = measurement_index + 1; // increase measurement index by 1
