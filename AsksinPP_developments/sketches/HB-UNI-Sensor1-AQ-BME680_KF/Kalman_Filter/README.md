@@ -41,7 +41,7 @@ kalman-filter](https://github.com/zziz/kalman-filter) repository. Thanks to Zaur
 	+ calibrate then the BME680 humidity offset in a second step (second night)
 	- ** do not calibrate temperature and humidity together in a singular step since they depend on each other from physics point of view**
 
-- Collect history data with your HB-UNI-Sensor1-AQ-BME680 and record them with CCU Historian.
+- Collect history data with your HB-UNI-Sensor1-AQ-BME680_KF and record them with CCU Historian.
 	Take care to have as many as possible different air quality, temperature, and humidity conditions during the recording time:
 	- put the sensor into your kitchen when you are cooking
 	- put the sensor to other locations with strong smells
@@ -49,9 +49,9 @@ kalman-filter](https://github.com/zziz/kalman-filter) repository. Thanks to Zaur
 - Collect history data for 2..4 weeks
 - Output a history CSV file in the CCU Historian's Trend diagram (button 'CSV-Export' at the bottom) dumping the following data points (click in CCU Historian's 'Datenpunktliste' to create the Trend diagram):
 
-	- HB-UNI-Sensor1-AQ-BME680's AQ_GAS_RESISTANCE_RAW
-	- HB-UNI-Sensor1-AQ-BME680's TEMPERATURE
-	- HB-UNI-Sensor1-AQ-BME680's MY_HUMIDITY <br/>
+	- HB-UNI-Sensor1-AQ-BME680_KF's AQ_GAS_RESISTANCE_RAW
+	- HB-UNI-Sensor1-AQ-BME680_KF's TEMPERATURE
+	- HB-UNI-Sensor1-AQ-BME680_KF's MY_HUMIDITY <br/>
 
 - Ensure that your browser is downloading the CSV file to your ${HOME}/Downloads directory as 'historian.csv'. Check the correct time stamp of that file before continuing. <br/>
 
