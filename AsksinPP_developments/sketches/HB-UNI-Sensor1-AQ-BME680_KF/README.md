@@ -133,6 +133,7 @@
 - zum Debuggen genau umgekehrt!
 
 - als Taktfrequenz des ATmega1284P 8 MHz interner RC Oszillator einstellen (es gibt zur Zeit leider nur die 20 MHz Quarz Version bei Tindie)
+- 
 - der Sketch verwendet 52868 Bytes (40%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 2253 Bytes (13%) des dynamischen Speichers, 14131 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
@@ -151,9 +152,21 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 - Hochladen des kompilierten Sketchs im Arduino IDE mit: Sketch => Hochladen mit Programmer
 - Debugging wird über den seriellen Monitor mit einem 'FTDI Adapter USB zu TTL Serial für
-3,3V und 5V für Arduino' gemacht. Als Baudrate **38400 Baud** einstellen. 
+3,3V und 5V für Arduino' gemacht. Als Baudrate **38400 Baud** einstellen.
 
+## Ausführungszeiten
 
+- auf einem ATmega1284P mit 8 MHz interner Taktfrequenz und 3,3V Betriebsspannung betragen die Ausführungszeiten im Debugmode ca.<br/>
+	* des Kalman Filters:	ca. 190 msec
+	* der Meßroutine:		ca. 2700 msec, davon wird ca. 1500 msec der BME680 geheizt
+	
+- damit ist die ATmega1284P ca. 1,1% der Zeit 'wach'.
+
+- die Ausführungszeiten werden mit eingeschaltetem DEBUG und DEEP_DEBUG Mode im seriellen Monitor ausgegeben: 
+
+	//#define NDEBUG   // disable all serial debug messages  
+	  
+	#define DEEP_DEBUG               // comment out if deep serial monitor debugging is not necessary
 
 ## Benötigte Libraries
 

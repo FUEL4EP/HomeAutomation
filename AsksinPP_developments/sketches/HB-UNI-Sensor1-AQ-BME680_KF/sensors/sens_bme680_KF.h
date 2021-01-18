@@ -453,7 +453,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
 #ifdef DEEP_DEBUG 
     unsigned long CurrentTime = millis();
     unsigned long ElapsedTime = CurrentTime - StartTime;
-    Serial << "Executiom time of Kalman filter update: " << ElapsedTime << " msec" << '\n';
+    Serial << "Executiom time of Kalman filter update  = " << ElapsedTime << " msec" << '\n';
     
     // PRINT RESULTS: measures and estimated state
     Serial << "obs : " << ee.obs << '\n' << "K.x : "  << ee.K.x << '\n';
@@ -823,7 +823,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
 #ifdef DEEP_DEBUG
       unsigned long MeasureFinishTime  = millis();
       unsigned long MeasureElapsedTime = MeasureFinishTime - MeasureStartTime;
-      Serial << "Executiom time of measurement method: " << MeasureElapsedTime << " msec" << '\n';
+      Serial << "Executiom time of measurement method   = " << MeasureElapsedTime << " msec" << '\n';
 #endif
 
     }
