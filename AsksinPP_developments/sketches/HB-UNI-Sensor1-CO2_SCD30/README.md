@@ -403,13 +403,42 @@ ab nach
                      //   1234567890   IMPORTANT: exact 10 characters are required! 
 </code></pre>
 
+Für reinen Netzbetrieb des HB-UNI-Sensor1-CO2_SCD30 Sensors sind an der Hardware folgende Anpassungen vorzunehmen:
 
+- Weglassen der folgenden Module / Bauteile
+
+	* Akkumulatoren
+	* 3x Schotty Diode 1N5819
+	* 1x LED rot 3mm
+	* 1x NiMH Lademodul "NiMH_Charger_NIMHCRTA_2S" 2S Version
+	* 1x Step-Down Wandler "Step_Down_LM2596"
+	* 1x Step-Up Wandler "Step_Up_HW_668_SX1308" 
+	* 1x Step-Up Wandler "Step_Up_MT3608" 
+	* 1x ADC Wandler Modul "16Bit_ADC_ADS1115"
+	* 1x PNP Transistor BC327
+	* 1x 270Ohm Widerstand
+	* 1x 100Ohm Widerstand
+	* 2x 10kOhm Widerstände
+	* 4x 47kOhm Widerstände 1% Genauigkeit
+	* 1x Solarpanel 3V 100mA 70mm x 70mm 
+	* 1x Mikroschalter 6x6mm mit Rastung 
+	* 1x DC Spannungsversorgungsbuchse 3.5mm*1.3 mm 
+	* 1x Universal Netzteil weiß 3V-12V, 1000mA 
+	* 1x Arduino Common Sensor Cable-30cm 
+	
+- Hinzufügen der folgenden Module / Bauteile (nur Vorschlag, keine Ausarbeitung)
+
+	* USB Buchse
+	* geeigneter Step-Down Konverter 5V (USB) nach 3.5V
+	
+- Es solle möglich sein, ein [Standardgehäuse](https://smartkram.de/produkt/sensorgehaeuse-passend-fuer-platine-von-alexander-reinert/) zu verwenden. Der Step-Down Konverter kann z.B. mit einer 3D-Druckhalterung auf die Platine anstelle des nicht mehr benötigten Batteriehalters geklebt werden.
+	
 ### Wichtige Hinweise, unbedingt beachten !!
 
 *  Vor dem Programmieren mit einem ISP Programmer oder Anschliessen eines FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino sind die Akkus aus den Halterungen zu entnehmen. Sonst entsteht ein hoher Strom Akku => Step-Up Wandler => 3.5 Versorgung ISP Programmer / FTDI Adapter. Sonst sind die Akkus sehr schnell tief entladen !!!!
 * Für die Verwendung des Akku-Step-Up Wandlers muss **vor** dem Auflöten der Batteriehalterungen mit einer scharfen Klinge die VCC Leiterbahn der Basisplatine aufgetrennt werden.
 * Die Spannungen der Step-Up und Step-Down Wandler müssen **unbedingt** im Leerlauf ohne angeschlossene andere Schaltkreise an den jeweiligen Potentiometern eingestellt werden. Sonst droht die Zerstörung der anderen Bauteile aufgrund von Überspannung! Die Wandler, die in das Gehäuseoberteil eingeklebt werden, müssen bei abgezogenem Arduino Common Sensor Stecker eingestellt werden (elektrische Trennung von Ober- und Unterteil des Gehäuses). Für die Feinjustage kann die Verbindung wieder hergestellt werden. Der Akku-Step-Up Wandler muss auch im Leerlauf ohne angeschlossene Last zuerst eingestellt werden, d.h. die Verbindung der Schottkydiode auf VCC wird erst **nach** der initialen Einstellung hergestellt.
-* Die korrekte Polarität der DC Spannungsversorgungsbuchse muss vor dem Anschluss von Wandlern oder Lademodulen geprüft werden. Das vorgeschlagene Netzteil erlaubt beide Polaritäten durch Umstecken des Adapters.<br/><br/>
+* Die korrekte Polarität der DC Spannungsversorgungsbuchse muss vor dem Anschluss von Wandlern oder Lademodulen geprüft werden. Das vorgeschlagene Netzteil erlaubt beide Polaritäten durch Umstecken des Adapters.<br/>
 * Der Ladestrom des NiMH Lademoduls NIMHCRTA 2S muss durch Ändern des Widerstands R5 von 1.24kOhm auf 4.7kOhm verkleinert werden. Reduzierter Ladestrom ist ungefähr 0.259A.
 
 
