@@ -78,7 +78,7 @@ using namespace BLA;
 // measurement std
 
 #define n_obs 0.01
-#define RESET_INDEX_KALMAN          60        // measurement index for resetting the residual boundaries after 4 hours in order to let the Kalman filter do an initial settling
+#define RESET_INDEX_KALMAN          360        // measurement index for resetting the residual boundaries after 24 hours in order to let the Kalman filter do an initial settling
 
 namespace as {
                                             
@@ -477,7 +477,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       unsigned long MeasureStartTime = millis();
 #endif
       
-      // reset boundaries to initial values after 4 hours after the Kalman filter has done some initial settling (60 measurement cycles)
+      // reset boundaries to initial values after 24 hours after the Kalman filter has done some initial settling (360 measurement cycles)
       if (init_flag) {
           if ( measurement_index == RESET_INDEX_KALMAN) {
             ee.max_res                         = -START_RESISTANCE;   // initial value

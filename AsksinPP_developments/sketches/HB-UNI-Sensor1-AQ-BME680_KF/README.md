@@ -1,5 +1,19 @@
+# **Dies ist noch eine Testversion!!!**
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
-# Universeller selbstkalibrierenter Luftgütesensor auf der Basis von dem Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680_KF) mit vollautomatischer Kompensation der Abhängigkeiten von Temperatur und absoluter Luftfeuchte mit einem Kalman Filter
+
+
+
+
+
+
+ 
+#Universeller selbstkalibrierenter Luftgütesensor auf der Basis von dem Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680_KF) mit vollautomatischer Kompensation der Abhängigkeiten von Temperatur und absoluter Luftfeuchte mit einem Kalman Filter
 - abgeleitet von Jérômes ([jp112sdl](https://github.com/jp112sdl)) [HB-UNI-Sen-IAQ](https://github.com/jp112sdl/HB-UNI-Sen-IAQ)
 - ein herzliches Dankeschön für die Basisarbeit geht an Jérôme (jp112sdl)
 - ein herzliches Dankeschön an alle, die im Homematic Forum geholfen haben, meine Probleme zu lösen
@@ -36,7 +50,7 @@
 
 ![pic](Images/AQ_LOG10_formulas.png)
 
-- Autokalibrierung für den Luftgütegrad und die logarithmische Luftqualität: Zur Kalibrierung muss der Sensor nur in Betrieb genommen werden. Es sollte nur regelmäßig für ca. 20..30 Minuten bei völlig geöffneten Fenstern quer gelüftet werden. Die Autokalibrierung ist adaptiv und wird im Laufe der Zeit immer besser. Der Adaptionsprozess kann mehrere Tage dauern. 4 Stunden nach dem Start einer Autokalibrierung wird die Autokalibrierung nochmals erneut gestartet, nachdem das Kalman Filter initial eingeschwungen ist. Während der ersten Tage nach Beginn einer Autokalibrierung kann es zu stärkere Schwankungen der ausgegebenen Luftgüte AQ_LOG10 geben, die aber schnell kleiner werden, wenn der Kalibriervorgang voranschreitet.
+- Autokalibrierung für den Luftgütegrad und die logarithmische Luftqualität: Zur Kalibrierung muss der Sensor nur in Betrieb genommen werden. Es sollte nur regelmäßig für ca. 20..30 Minuten bei völlig geöffneten Fenstern quer gelüftet werden. Die Autokalibrierung ist adaptiv und wird im Laufe der Zeit immer besser. Der Adaptionsprozess kann mehrere Tage dauern. 24 Stunden nach dem Start einer Autokalibrierung wird die Autokalibrierung nochmals erneut gestartet, nachdem das Kalman Filter initial eingeschwungen ist. Während der ersten Tage nach Beginn einer Autokalibrierung kann es zu stärkere Schwankungen der ausgegebenen Luftgüte AQ_LOG10 geben, die aber schnell kleiner werden, wenn der Kalibriervorgang voranschreitet.
 	
 - Details zur Autokalibrierung sind [hier](./Autocalibration/README.md) auf Englisch nachzulesen.
 	

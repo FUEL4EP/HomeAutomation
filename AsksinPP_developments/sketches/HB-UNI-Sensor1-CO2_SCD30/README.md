@@ -66,6 +66,8 @@ Exemplarische Spannungsverläufe der VCC und Akkumulatorenspannung sind unter
 zu finden. In den Verläufen über 7 Tage wurden die Akkumulatoren am 10. August mit dem Lademodul aufgeladen. Danach fand nur noch Nachladen mit dem Solarlader statt. Die wenige mV großen Spannungseinbrüche scheinen immer bei Übergängen zwischen verschiedenen Spannungsquellen stattzufinden. Sie beeinträchtigen die Funktion nicht. Die Regelkreise der Wandlermodule scheinen kurzfristig gegeneinander zu arbeiten. Der Beweis kann aber mangels einem digitalen Speicheroszilloskop nicht geführt werden.
 Der starke Spannungseinbruch am 11. August ist auf ein kurzfristiges Herausnehmen der Akkumulatorenbatterien zurückzuführen.<br />
 
+**Der HB-UNI-Sensor1-CO2_SCD30 Sensor kann auch nur mit Netzbetrieb versorgt werden.** Dadurch entfällt der Vorteil der beliebigen Aufstellung innerhalb eines Hauses bzw. Wohnung. Dafür wird die Hardware aber deutlich einfacher. Das Gehäuse kann dann kleiner werden. Die Software ist dafür vorbereitet. Die Hardware muss selbst geeignet angepasst werden. In einem Kapitel am Schluss werden dazu Hinweise gegeben, eine detaillierte Aufbaubeschreibung wird dazu allerdings nicht geliefert.
+
 ### Autokalibrierung des Sensirion SCD30 CO2 Sensors
 
 Der bereitgestellte Sketch schaltet die Autokalibrierung des SCD30 CO2 Sensors ein. Siehe Details im Datenblatt:
@@ -333,6 +335,73 @@ Falls Stabilitätsprobleme auftreten, bitte die Debugoption ausschalten:
 ### Benötigtes Addon auf CCUx/RaspberryMatic:
 
 **Update 08.12.2020:** **Vor** dem Anlernen des HB-UNI-Sensor1-CO2_SCD30 Sensors ist das Addon [ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf der CCUx/RaspberryMatic zu installieren. Dazu die 'hb-ep-devices-addon.tgz' von dort bitte herunterladen und als Zusatzsoftware in der CCU3/RaspberryMatic installieren. Die 'tgz'-Datei muss nicht unzipped werden!
+
+### Hinweise zum reinen Netzbetrieb des HB-UNI-Sensor1-CO2_SCD30 Sensors
+
+Für reinen Netzbetrieb des HB-UNI-Sensor1-CO2_SCD30 Sensors sind an der Software folgende Anpassungen vorzunehmen:
+
+#### Auskommentieren von 'defines':
+
+In 'HB-UNI-Sensor1-CO2_SCD30.ino':
+
+<pre><code>
+//#define ADS1115
+//#define SOLAR_CHARGE  
+</code></pre>
+
+#### Codeänderungen
+
+Bitte ändere in 	'HB-UNI-Sensor1-CO2_SCD30.ino'
+
+<pre><code>
+const struct DeviceInfo PROGMEM devinfo = {
+    cDEVICE_ID,        // Device ID                 defined in ./Cfg/Device_SCD30.h
+    cDEVICE_SERIAL,    // Device Serial             defined in ./Cfg/Device_SCD30.h
+    { 0xf6, 0x01 },    // Device Model              needs to fit to Addon XML hb-uni-sensor-CO2-SCD30.xml line 6:
+                       //                           parameter index="10.0" size="2.0" const_value="0xF601"
+    0x10,              // Firmware Version
+    as::DeviceType::THSensor,    // Device Type
+    { 0x01, 0x01 }               // Info Bytes
+};
+</code></pre>
+
+ab nach
+
+<pre><code>
+const struct DeviceInfo PROGMEM devinfo = {
+    cDEVICE_ID,        // Device ID                 defined in ./Cfg/Device_SCD30.h
+    cDEVICE_SERIAL,    // Device Serial             defined in ./Cfg/Device_SCD30.h
+    { 0xf6, 0x05 },    // Device Model              needs to fit to Addon XML hb-uni-sensor-CO2-SCD30.xml line 6:
+                       //                           parameter index="10.0" size="2.0" const_value="0xF605"
+    0x10,              // Firmware Version
+    as::DeviceType::THSensor,    // Device Type
+    { 0x01, 0x01 }               // Info Bytes
+};
+</code></pre>
+
+'0x05' wählt eine modifizierte rftypes XML mit weniger Ausgabedatenpunkten aus.
+
+Bitte ändere in 	'Cfg/Device_SCD30.h'
+
+<pre><code>
+//---------------------------------------------------------
+// Definition von Device ID und Device Serial
+// Bei mehreren Geräten des gleichen Typs (HB-UNI-Sensor1) muss Device ID und Device Serial unterschiedlich sein!
+ #define cDEVICE_ID      { 0xF6, 0x01, 0x01 }       //change second 0x01 to your sensor's numeration index
+ #define cDEVICE_SERIAL  "SCD30SENS1"               //change 'SENS' to your name's abbreviation
+                     //   1234567890   IMPORTANT: exact 10 characters are required! 
+</code></pre>
+
+ab nach
+
+<pre><code>
+//---------------------------------------------------------
+// Definition von Device ID und Device Serial
+// Bei mehreren Geräten des gleichen Typs (HB-UNI-Sensor1) muss Device ID und Device Serial unterschiedlich sein!
+ #define cDEVICE_ID      { 0xF6, 0x05, 0x01 }       //change 0x01 to your sensor's numeration index
+ #define cDEVICE_SERIAL  "SCD30SENS1"               //change 'SENS' to your name's abbreviation
+                     //   1234567890   IMPORTANT: exact 10 characters are required! 
+</code></pre>
 
 
 ### Wichtige Hinweise, unbedingt beachten !!

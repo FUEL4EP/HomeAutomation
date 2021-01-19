@@ -99,7 +99,7 @@ const struct DeviceInfo PROGMEM devinfo = {
     cDEVICE_ID,        // Device ID                 defined in ./Cfg/Device_SCD30.h
     cDEVICE_SERIAL,    // Device Serial             defined in ./Cfg/Device_SCD30.h
     { 0xf6, 0x01 },    // Device Model              needs to fit to Addon XML hb-uni-sensor-CO2-SCD30.xml line 6:
-                       //                           <parameter index="10.0" size="2.0" const_value="0xF601" /
+                       //                           parameter index="10.0" size="2.0" const_value="0xF601" /
     0x10,              // Firmware Version
     as::DeviceType::THSensor,    // Device Type
     { 0x01, 0x01 }               // Info Bytes
