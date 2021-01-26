@@ -5,6 +5,9 @@
 
 #define DEEP_DEBUG               // comment out if deep serial monitor debugging is not necessary
 
+#define KALMAN_FILTER_SETTLING_INDICATION_PIN PA0  // PA0 / physical pin 37 of ATmega1284P of Tindie Pro Mini XL V2.0 (A0 pin on board); pease adapt if you use a different MCU
+
+#include <limits.h>
 #include <Wire.h>
 #include <Sensors.h>
 #include <ClosedCube_BME680.h>   // https://github.com/FUEL4EP/ClosedCube_BME680_Arduino/tree/implement_Bosch_datasheet_integer_formulas
@@ -56,29 +59,30 @@ using namespace BLA;
  * Gas is returned as a resistance value in ohms.
  * Higher concentrations of VOC will make the resistance lower.
  */
-
-#define AVG_COUNT                   5
-#define IIR_FILTER_COEFFICIENT      0.0001359 // 1.0 -0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods)
-#define EPSILON                     0.0001
-#define MAX_BATTERY_VOLTAGE         3300      // change to 6000 for debugging with FTDI Debugger, default: 3300
-#define EEPROM_START_ADDRESS        512       // needs to be above reserved AsksinPP EEPROM area: Address Space: 32 - 110
-#define DEVICE_TYPE                 "HB-UNI-Sensor1-AQ-BME680_KF"
-#define FINISH_STRING               "/HB-UNI-Sensor1-AQ-BME680_KF"
-#define STORE_TO_EEPROM_NO_CYCLES   360       // store parameters once a day; 360 * 4 min
-                                              // change to 10 for debugging with FTDI Debugger, default: 360
-#define START_RESISTANCE            2000000   // 2 Meg Ohm
+#define AVG_COUNT                                        5
+#define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.0001359 // 1.0 - 0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods); settled status of Kalman filter
+#define IIR_FILTER_COEFFICIENT_KF_UNSETTLED              0.0037982 // 1.0 - 0.9962019 ; Decay to 0.71 in about 6 hours for a 4 min sampling period (in 90 sampling periods); unsettled status of Kalman filter
+#define EPSILON                                          0.0001
+#define MAX_BATTERY_VOLTAGE                              3300      // change to 6000 for debugging with FTDI Debugger, default: 3300
+#define EEPROM_START_ADDRESS                             512       // needs to be above reserved AsksinPP EEPROM area: Address Space: 32 - 110
+#define DEVICE_TYPE                                      "HB-UNI-Sensor1-AQ-BME680_KF"
+#define FINISH_STRING                                    "/HB-UNI-Sensor1-AQ-BME680_KF"
+#define STORE_TO_EEPROM_NO_CYCLES                        60        // store parameters once a day; 360 * 4 min
+                                                                   // change to 10 for debugging with FTDI Debugger, default: 360
+#define START_RESISTANCE                                 4000000   // 4 Meg Ohm
                                               
 //------------------------------------
 /****  KALMAN MODEL PARAMETERS  ****/
 //------------------------------------
-
-#define Nstate 4 // VOC_resistance, alpha_temperature, beta_ah, delta_intercept
-#define Nobs   1 // raw_gas_resistance; note: 'temperature' and 'aH' are NOT part of the observation vector! 
+#define Nstate                                          4          // VOC_resistance, alpha_temperature, beta_ah, delta_intercept
+#define Nobs                                            1          // raw_gas_resistance; note: 'temperature' and 'aH' are NOT part of the observation vector! 
 
 // measurement std
 
 #define n_obs 0.01
-#define RESET_INDEX_KALMAN          360        // measurement index for resetting the residual boundaries after 24 hours in order to let the Kalman filter do an initial settling
+#define NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING  60         // measurement index for resetting the residual boundaries if Kalman online regression parameters are not yet stable enough (check every 4 hours); default 60
+#define AVG_GAS_RESISTANCE                              200000.0   // raw average gas resistance of BME680 sensor; adjust to your sensor if convergence of the Kalman filter takes > 2 days
+#define REGRESSION_SETLLED_THRESHOLD                    0.15       // relative changes of Kalman online regression parameters alpha and beta need to be below this threshold for a settled regression
 
 namespace as {
                                             
@@ -109,8 +113,12 @@ struct AQ_eeprom_data {
     double                      kalman_alpha;                     // Kalman regression coefficient alpha (temperature)
     double                      kalman_beta;                      // Kalman linear regression coefficient beta (absolute humidity)
     double                      kalman_delta;                     // Kalman linear regression coefficient delta (intercept)
+    double                      previous_alpha;                   // regression parameter alpha at RESET_INDEX_KALMAN measurement cycles in the past; used for checking whether regression parameters are stable
+    double                      previous_beta;                    // regression parameter beta at RESET_INDEX_KALMAN measurement cycles in the past; used for checking whether regression parameters are stable
     KALMAN<Nstate,Nobs>         K;                                // Kalman filter
     BLA::Matrix<Nobs>           obs;                              // Kalman observation vector
+    double                      iir_filter_coefficient;           // IIR filter coefficient for decay/increase of normalization boundaries of gas resistances / residual gas resistances
+    bool                        settled_flag;                     // indicates whether Kalman filter regression coefficients are settled
     char                        finish_string[sizeof(FINISH_STRING)];
     uint32_t                    crc32;                            // crc32 of struct AQ_eeprom_data except the crc32 itself
 }; 
@@ -124,9 +132,15 @@ private:
   uint16_t   _humidity;
   uint16_t   _aqLevel;
   uint16_t   _aqState_scaled;
-  int16_t    _gas_resistance_raw_scaled;
-  int16_t    _gas_resistance_min_scaled;
-  int16_t    _gas_resistance_max_scaled;
+  uint16_t   _gas_resistance_raw_scaled;
+  uint16_t   _gas_resistance_min_scaled;
+  uint16_t   _gas_resistance_max_scaled;
+  int16_t    _aq_compensated_gas_res_raw_scaled;
+  int16_t    _aq_compensated_gas_res_min_scaled;
+  int16_t    _aq_compensated_gas_res_max_scaled;
+  int16_t    _aq_alpha_scaled;
+  int16_t    _aq_beta_scaled;
+  int16_t    _aq_delta_scaled;
   uint16_t   _height;
   uint16_t   measurement_index;
   uint16_t   _first_free_user_eeprom_address;   // EEPROM starting address for storing essential data
@@ -135,7 +149,7 @@ private:
   AQ_eeprom_data ee_get;                        // EEPROM structure for reading essential parameters
   
   uint32_t   crc32_checksum_recreated;
-  bool       init_flag;                         // true indicates that a reset has been done with operatinVoltage1000 > MAX_BATTERY_VOLTAGE (FTDI Debugger or ISP Programmer supply)
+  bool       lowbat_save_to_eeprom_flag;        // indcates that parameters need to be saved to eeprom due to lowbat
 
   ClosedCube_BME680 _bme680;
   
@@ -175,6 +189,15 @@ public:
     DPRINT(F("ee.kalman_alpha                        = "));DDECLN(ee.kalman_alpha);
     DPRINT(F("ee.kalman_beta                         = "));DDECLN(ee.kalman_beta);
     DPRINT(F("ee.kalman_delta                        = "));DDECLN(ee.kalman_delta);
+    DPRINT(F("ee.previous_alpha                      = "));DDECLN(ee.previous_alpha);
+    DPRINT(F("ee.previous_beta                       = "));DDECLN(ee.previous_beta);
+    DPRINT(F("ee.iir_filter_coefficient              = "));DDECLN(ee.iir_filter_coefficient);
+    if (ee.settled_flag) {
+      DPRINTLN(F("ee.settled_flag                        = true"));
+    }
+    else {
+      DPRINTLN(F("ee.settled_flag                        = false"));
+    }
     DPRINT(F("ee.crc32                               = "));DHEXLN(ee.crc32);
     DPRINT(F("ee.finish_string                       = "));DPRINTLN(ee.finish_string);
       
@@ -199,10 +222,10 @@ public:
     _bme680.setGasOn(310, 300); // 310 degree Celsius and 300 milliseconds; please check in debug mode whether '-> Gas heat_stab_r   = 1' is achieved. If '-> Gas heat_stab_r   = 0' then the heating time is to short or the temp target too high
     _bme680.setForcedMode();
     
-    ee.max_gas_resistance              = -START_RESISTANCE;     // initial value
-    ee.min_gas_resistance              =  START_RESISTANCE;     // initial value
-    ee.max_res                         = ee.max_gas_resistance;   // initial value
-    ee.min_res                         = ee.min_gas_resistance;   // initial value
+    ee.max_gas_resistance              = -START_RESISTANCE;    // initial value
+    ee.min_gas_resistance              =  START_RESISTANCE;    // initial value
+    ee.max_res                         = -START_RESISTANCE;    // initial value
+    ee.min_res                         =  START_RESISTANCE;    // initial value
     _height                            = height;
     ee.gas_lower_limit_max             = ee.min_gas_resistance;
     ee.gas_upper_limit_min             = ee.max_gas_resistance;
@@ -238,7 +261,14 @@ public:
     DPRINTLN(F("====== Initialize Kalman Filter ========\n\n"));
     kalman_filter_init();
     
-    init_flag = true;               // will be reset in 'check_for_battery_change' if parameters will be restored from EEPROM (battery suppply)
+    lowbat_save_to_eeprom_flag = false;
+    ee.previous_alpha          = 0.0;                               // initial value
+    ee.previous_beta           = 0.0;                               // initial value
+    
+    ee.iir_filter_coefficient  = IIR_FILTER_COEFFICIENT_KF_SETTLED; // initial value
+    ee.settled_flag            = false;                             // initial value
+    
+    pinMode(KALMAN_FILTER_SETTLING_INDICATION_PIN, OUTPUT);
     
   }
   
@@ -250,15 +280,118 @@ public:
       
   }
   
+  void check_if_Kalman_filter_regression_is_settled () {
+  // check id Kalman filter has already settled; check is done every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
+      
+    // ee.settled_flag is true if Kalman filter is settled
+    double ratio;
+    
+    // check settling of the Kalman filter's online regression coefficients every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
+    if (( measurement_index % NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING) == 1 ){
+
+#ifdef DEEP_DEBUG
+      DPRINTLN(F("\n\n=== Checking convergence of Kalman filter ====\n\n"));                                  DPRINTLN(F(" ")); 
+#endif
+
+      ee.settled_flag = true;
+      
+      // check online regression coefficient alpha
+      if (ee.kalman_alpha != 0.0 ) {
+        ratio = fabs((ee.kalman_alpha - ee.previous_alpha) / ee.kalman_alpha);
+#ifdef DEEP_DEBUG
+        DPRINT(F("ee.kalman_alpha                        = "));DDEC(ee.kalman_alpha);                       DPRINTLN(F(" "));
+        DPRINT(F("ee.previous_alpha                      = "));DDEC(ee.previous_alpha);                     DPRINTLN(F(" "));
+        DPRINT(F("Convergence ratio of alpha coefficient = "));DDEC(ratio);                                 DPRINTLN(F(" "));
+#endif
+        // check if relative change of regression coefficient alpha is above REGRESSION_SETLLED_THRESHOLD
+        if ( ratio >= REGRESSION_SETLLED_THRESHOLD) {
+          ee.settled_flag = false;
+        }
+      }
+      else {
+        ee.settled_flag = false;
+      }
+      
+      // check online regression coefficient beta
+      if (ee.kalman_beta != 0.0 ) { 
+        ratio = fabs((ee.kalman_beta - ee.previous_beta) / ee.kalman_beta) ;
+#ifdef DEEP_DEBUG
+        DPRINT(F("ee.kalman_beta                         = "));DDEC(ee.kalman_beta);                        DPRINTLN(F(" "));
+        DPRINT(F("ee.previous_beta                       = "));DDEC(ee.previous_beta);                      DPRINTLN(F(" "));
+        DPRINT(F("Convergence ratio of beta coefficient  = "));DDEC(ratio);                                 DPRINTLN(F(" "));
+#endif
+        // check if relative change of regression coefficient beta is above REGRESSION_SETLLED_THRESHOLD
+        if ( ratio >= REGRESSION_SETLLED_THRESHOLD) {
+          ee.settled_flag = false;
+        }
+      }
+      else {
+        ee.settled_flag = false;
+      }
+      
+      // update previous regression coefficients
+      ee.previous_alpha = ee.kalman_alpha;
+      ee.previous_beta  = ee.kalman_beta;
+    
+      if ( (! ee.settled_flag)  && (measurement_index != 1) ){  // not for startup: measurement_index == 1
+        // Kalman filter online regression did not yet settle
+        // reset upper and lower ever measured/calulated gas resistances/residual gas resistances
+        // increase decay factor to about 71% in about 6h
+        ee.max_res                         = -START_RESISTANCE;                      // initial value
+        ee.min_res                         =  START_RESISTANCE;                      // initial value
+        ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
+        ee.min_gas_resistance              =  START_RESISTANCE;                      // initial value
+        ee.iir_filter_coefficient          =  IIR_FILTER_COEFFICIENT_KF_UNSETTLED;   // increase decay factor to about 71% in about 6h
+#ifdef DEEP_DEBUG
+        DPRINTLN(F("\n\n\n\n==================================================="));
+        DPRINT(F("reset boundaries at measurement index  = "));DDECLN(measurement_index);
+        DPRINTLN(F("==================================================="));
+#endif
+      }
+      else {
+        // Kalman filter online regression did settle
+        // set decay factor to about 71% in about 7 days
+        ee.iir_filter_coefficient         =  IIR_FILTER_COEFFICIENT_KF_SETTLED;     // increase decay factor to about 71% in about 6h
+      }
+      
+    }
+    
+    // indicate the Kalman filter's settling state to pin A0 = pin 37 of ATMega1284P of Tindie Pro Mini XL V2, active high for status 'settled'
+    // you may connect a yellow LED with resistor 220 Ohms in series between A0 PCB PIN and PCB GND pin
+    digitalWrite(KALMAN_FILTER_SETTLING_INDICATION_PIN, ee.settled_flag);
+    
+  }
+  
+  bool check_for_parameter_save_due_to_lowbat( bool lowbat) {
+      
+    if (lowbat) {
+      if (!lowbat_save_to_eeprom_flag) {
+        // lowbat has been set newly
+        lowbat_save_to_eeprom_flag = true;
+      }
+      else // lowbat_save_to_eeprom_flag ist set
+      {
+        // reset lowbat_save_to_eeprom_flag due to not newly set lowbat
+        lowbat_save_to_eeprom_flag = false;
+      }
+    }
+    else {
+      // lowbat not set
+      lowbat_save_to_eeprom_flag = false;
+    }
+    
+    return lowbat_save_to_eeprom_flag;
+  }
+  
   
   // check whether batteries have been replaced, this is detected by checking whether VCC voltage is smaller than MAX_BATTERY_VOLTAGE (#define MAX_BATTERY_VOLTAGE)
   // if yes, restore important device parameters from EEPROM
   // if no, store important device parameters to EEPROM every (STORE_TO_EEPROM_NO_CYCLES)th measurement cycle, typically once a day (#define STORE_TO_EEPROM_NO_CYCLES 360)
-  bool check_for_battery_change(uint16_t index, uint16_t operatingVoltage1000, uint16 first_free_user_eeprom_address) {
+  bool check_for_battery_change(uint16_t index, uint16_t operatingVoltage1000, uint16 first_free_user_eeprom_address, bool batlow) {
     
-    bool battery_change_flag = false;
+    bool battery_change_flag                = false;
     
-    //check for previous reset ( index is then 0)
+    //check for previous reset ( index is then 0 )
     if ( index == 0 ) {
       // check if device is battery supplied, i.e. not supplied by ISP Programmer or FTDI Debugger
         
@@ -277,12 +410,12 @@ public:
         // check for correct crc32
         
         crc32_checksum_recreated = crc32Buffer(&ee_get, sizeof(ee_get)-sizeof(ee_get.crc32));   // exclude scrc32 from creating the crc32 checksum
-        DPRINT(F("Recalculated CRC32 fron read data  = "));DHEXLN(crc32_checksum_recreated);
+        DPRINT(F("Recalculated CRC32 from read data  = "));DHEXLN(crc32_checksum_recreated);
         
         if (ee_get.crc32 == crc32_checksum_recreated) {
 	            
             // stored and recreated crc32 checksum are matching
-	        
+            DPRINTLN(F("CRC32 of stored and recalculated data are matching"));
             // check for correct start string
 	        
             if (strncmp(ee_get.device_type_string, DEVICE_TYPE, sizeof(DEVICE_TYPE)) == 0) {
@@ -308,7 +441,6 @@ public:
 	            
                     //memcpy( &ee, &ee_get, sizeof(ee_get) );
                     ee = ee_get;
-                    init_flag = false;
 	            
 #ifdef DEEP_DEBUG
                     DPRINTLN(F("\n\n====== Data restored from EEPROM start ======"));
@@ -340,14 +472,14 @@ public:
       }
       else  {
         // device is powered by ISP Programmer or FTDI Debugger (VCC > MAX_BATTERY_VOLTAGE)
-        DPRINT(F("Device is not battery supplied     = "));DDECLN(operatingVoltage1000);
+        DPRINT(F("Device is not battery supplied         = "));DDECLN(operatingVoltage1000);
         DPRINTLN(F("No restore of EEPROM data is done!"));
       }
     }
     else
     { 
-        // store device parameters in EEPROM every (STORE_TO_EEPROM_NO_CYCLES)th measurement (typically once a day)
-        if ((measurement_index % STORE_TO_EEPROM_NO_CYCLES) == 0 ) {
+        // store device parameters in EEPROM every (STORE_TO_EEPROM_NO_CYCLES)th measurement (typically once a day) or if low bat has been detected
+        if ( ((measurement_index % STORE_TO_EEPROM_NO_CYCLES) == 0 ) || check_for_parameter_save_due_to_lowbat(batlow) ){
           DPRINTLN(F("\n\nSaving important device parameters that should be persistent into EEPROM"));
           DPRINT(F("\nmeasurement_index when saving        = "));DDECLN(index);
           
@@ -359,11 +491,21 @@ public:
           ee.first_free_user_eeprom_address = _first_free_user_eeprom_address;
           ee.data_length                    = (uint16_t)sizeof(struct AQ_eeprom_data);
           ee.crc32                          = crc32Buffer(&ee, sizeof(ee)-sizeof(ee.crc32));   // exclude scrc32 from creating the crc32 checksum
+
+#ifdef DEEP_DEBUG          
+          unsigned long EEPROMStorageStartTime  = millis();
+#endif
           
           EEPROM.put(_first_free_user_eeprom_address, ee);   //write whole structure 'ee' to EEPROM
           
+#ifdef DEEP_DEBUG 
+          unsigned long EEPROMStorageFinishTime  = millis();
+         
           DPRINT(F("Number of Bytes written to EEPROM    = "));DDECLN((uint16_t)(ee.data_length));
           
+          unsigned long EEPROMStorageTime = EEPROMStorageFinishTime - EEPROMStorageStartTime;
+          Serial << "EEPROM storage time   = " << EEPROMStorageTime << " msec" << '\n';
+#endif          
           
 #ifdef DEEP_DEBUG
           DPRINTLN(F("\n\n====== Data stored to EEPROM start ======"));
@@ -411,8 +553,18 @@ public:
           0.0, 0.0, 0.0, 1.0};
 
    // initialize system state vector
+
+  // get BME680 gas resistance (only rough value is needed) for initialization of the Kalman filter's state vector, this will fasten the convergence of the Kalman filter
+   uint32_t _g0 = _bme680.readGasResistance();
+   _delay_ms(400);
+   uint32_t _g1 = _bme680.readGasResistance();
+   _delay_ms(400);
+   uint32_t _g2 = _bme680.readGasResistance();
+   uint32_t _g_avg0 = (_g0 + _g1 + _g2)/3;
    
-   ee.K.x = {0.0, 0.0, 0.0, 0.0};
+   DPRINT(F("start raw gas resistance               = "));  DDEC(_g_avg0);  DPRINTLN(F(" Ohm"));
+   
+   ee.K.x = {_g_avg0/2.0, 0.0, 0.0, _g_avg0/2.0};
   
 
    // measurement covariance matrix
@@ -461,9 +613,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
 
 }
 
-
-
-  void measure (double tempOffset, double pressOffset, double humidOffset, uint8_t max_decay_factor_upper_limit, uint8_t max_increase_factor_lower_limit, uint16_t operatingVoltage1000) {
+  void measure (double tempOffset, double pressOffset, double humidOffset, uint8_t max_decay_factor_upper_limit, uint8_t max_increase_factor_lower_limit, uint16_t operatingVoltage1000, bool batlow) {
     if (_present == true) {
       double  temp(NAN), hum(NAN), pres(NAN);                                 // use type double in order to match the return type of closed cubes's library function readPressure
       double  ah,tt,ttt,vp,svp;                                               // variables for calculating the absolute humidity
@@ -477,29 +627,30 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       unsigned long MeasureStartTime = millis();
 #endif
       
-      // reset boundaries to initial values after 24 hours after the Kalman filter has done some initial settling (360 measurement cycles)
-      if (init_flag) {
-          if ( measurement_index == RESET_INDEX_KALMAN) {
-            ee.max_res                         = -START_RESISTANCE;   // initial value
-            ee.min_res                         =  START_RESISTANCE;   // initial value
-            ee.res_lower_limit_max             =  START_RESISTANCE;
-            ee.res_upper_limit_min             = -START_RESISTANCE;
-            ee.res_lower_limit                 =  START_RESISTANCE;
-            ee.res_upper_limit                 = -START_RESISTANCE;
-            init_flag                          = false;
-          }
+      // check if the Kalman filter online regression is settled, min/max ever boundaries and ee.iir_filter_coefficient are adapted in case of a non yet settled Kalman filter
+      check_if_Kalman_filter_regression_is_settled();
+#ifdef DEEP_DEBUG
+      if (ee.settled_flag) {
+        DPRINTLN(F("\nConvergence of Kalman filter           = GOOD\n"));
       }
+      else {
+        DPRINTLN(F("\nConvergence of Kalman filter           = POOR\n"));
+      }
+      DPRINT(F("ee.iir_filter_coefficient              = "));DDEC(ee.iir_filter_coefficient);                         DPRINTLN(F(" \n"));
+#endif
       
       ee.max_decay_factor_upper_limit    = max_decay_factor_upper_limit;
       ee.max_increase_factor_lower_limit = max_increase_factor_lower_limit;
 
-      batteries_were_changed = check_for_battery_change(measurement_index, operatingVoltage1000,_first_free_user_eeprom_address);
+      batteries_were_changed = check_for_battery_change(measurement_index, operatingVoltage1000,_first_free_user_eeprom_address, batlow);
+#ifdef DEEP_DEBUG
       if (batteries_were_changed )  {
         DPRINT(F("Change of batteries was detected       = yes"));
       }
       else {
         DPRINT(F("Change of batteries was detected       = no"));
       }
+#endif
 
       measurement_index = measurement_index + 1; // increase measurement index by 1
 #ifdef DEEP_DEBUG
@@ -531,6 +682,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
      
 #endif
   
+
 
       ClosedCube_BME680_Status status = _bme680.readStatus();
       while (! (status.newDataFlag == 1)) {
@@ -626,7 +778,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       }
       else
       {
-        ee.gas_upper_limit = ee.gas_upper_limit - (ee.gas_upper_limit - ee.gas_lower_limit) * IIR_FILTER_COEFFICIENT; // decay each sample by IIR_FILTER_COEFFICIENT * (max-min)
+        ee.gas_upper_limit = ee.gas_upper_limit - (ee.gas_upper_limit - ee.gas_lower_limit) * ee.iir_filter_coefficient; // decay each sample by ee.iir_filter_coefficient * (max-min)
         if ( ee.gas_upper_limit < ee.gas_upper_limit_min ) {
           // limit decay of ee.gas_upper_limit to ee.gas_upper_limit_min
           ee.gas_upper_limit = ee.gas_upper_limit_min; // lower limit for ee.gas_upper_limit
@@ -641,7 +793,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       }
       else
       {
-        ee.gas_lower_limit = ee.gas_lower_limit + (ee.gas_upper_limit - ee.gas_lower_limit) * IIR_FILTER_COEFFICIENT; // increase each sample by IIR_FILTER_COEFFICIENT * (max-min)
+        ee.gas_lower_limit = ee.gas_lower_limit + (ee.gas_upper_limit - ee.gas_lower_limit) * ee.iir_filter_coefficient; // increase each sample by ee.iir_filter_coefficient * (max-min)
         if ( ee.gas_lower_limit > ee.gas_lower_limit_max ) {
           // limit increase of ee.gas_lower_limit to ee.gas_lower_limit_max
           ee.gas_lower_limit = ee.gas_lower_limit_max; // upper limit for ee.gas_lower_limit
@@ -712,7 +864,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       ee.kalman_delta                       = ee.K.x(0)+ee.K.x(3);
       
       //calculate the compensated gas resistance in double precision, use the regression coefficients calculated by the Kalman filter for compensating the interference of temperature and absolute humidity
-      residual = (int32_t)(gas_raw - ee.kalman_alpha*temp - ee.kalman_beta*ah);
+      residual = (int32_t)constrain((gas_raw - ee.kalman_alpha*temp - ee.kalman_beta*ah),-START_RESISTANCE,START_RESISTANCE);  // clamp value to -START_RESISTANCE .. +START_RESISTANCE
       
       
 #ifdef DEEP_DEBUG
@@ -768,7 +920,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       }
       else
       {
-        ee.res_upper_limit = ee.res_upper_limit - (ee.res_upper_limit - ee.res_lower_limit) * IIR_FILTER_COEFFICIENT; // decay each sample by IIR_FILTER_COEFFICIENT * (max-min)
+        ee.res_upper_limit = ee.res_upper_limit - (ee.res_upper_limit - ee.res_lower_limit) * ee.iir_filter_coefficient; // decay each sample by ee.iir_filter_coefficient * (max-min)
         // limit decay of ee.res_upper_limit to ee.res_upper_limit_min
         if ( ee.res_upper_limit < ee.res_upper_limit_min ) {
           ee.res_upper_limit = ee.res_upper_limit_min; // lower limit for ee.res_upper_limit
@@ -782,14 +934,14 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       }
       else
       {
-        ee.res_lower_limit = ee.res_lower_limit + (ee.res_upper_limit - ee.res_lower_limit) * IIR_FILTER_COEFFICIENT; // increase each sample by IIR_FILTER_COEFFICIENT * (max-min)
+        ee.res_lower_limit = ee.res_lower_limit + (ee.res_upper_limit - ee.res_lower_limit) * ee.iir_filter_coefficient; // increase each sample by ee.iir_filter_coefficient * (max-min)
         // limit increase of ee.res_lower_limit to ee.res_lower_limit_max
         if ( ee.res_lower_limit > ee.res_lower_limit_max ) {
           ee.res_lower_limit = ee.res_lower_limit_max; // upper limit for ee.res_lower_limit
         }
       }
       
-      normalized_residual=((double)(residual - ee.min_res)/(double)(ee.max_res - ee.min_res));
+      normalized_residual=((double)(residual - ee.res_lower_limit)/(double)(ee.res_upper_limit - ee.res_lower_limit));
       
       // limit minimum of normalized_residual to EPSILON
       if ( normalized_residual < EPSILON)
@@ -800,24 +952,39 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       
       log_normalized_residual = -1.0 * (log10(normalized_residual) - 2.0);
       
-      _aqState_scaled = (uint16_t)(log_normalized_residual*10000.0); //0.0..40000.0
-      _gas_resistance_raw_scaled = (uint16_t) (gas_raw / 20);
-      _gas_resistance_min_scaled = (uint16_t) (ee.gas_lower_limit / 20);
-      _gas_resistance_max_scaled = (uint16_t) (ee.gas_upper_limit / 20);
+      _aqState_scaled                    = (uint16_t)(log_normalized_residual*10000.0); //0.0..40000.0
+      _gas_resistance_raw_scaled         = (uint16_t) constrain((gas_raw / 20),0,USHRT_MAX);
+      _gas_resistance_min_scaled         = (uint16_t) constrain((ee.gas_lower_limit / 20),0,USHRT_MAX);
+      _gas_resistance_max_scaled         = (uint16_t) constrain((ee.gas_upper_limit / 20),0,USHRT_MAX);
+      
+      _aq_compensated_gas_res_raw_scaled = (int16_t) constrain((residual / 80),SHRT_MIN,SHRT_MAX);
+      _aq_compensated_gas_res_min_scaled = (int16_t) constrain((ee.res_lower_limit / 80),SHRT_MIN,SHRT_MAX);
+      _aq_compensated_gas_res_max_scaled = (int16_t) constrain((ee.res_upper_limit / 80),SHRT_MIN,SHRT_MAX);
+      DPRINT(F("ee.kalman_alpha                        = "));DDEC(ee.kalman_alpha);                          DPRINTLN(F(" "));
+      _aq_alpha_scaled                   = (int16_t) constrain((ee.kalman_alpha /4.0),SHRT_MIN,SHRT_MAX);
+      DPRINT(F("_aq_alpha_scaled                       = "));DDEC(_aq_alpha_scaled);                         DPRINTLN(F(" "));
+      _aq_beta_scaled                    = (int16_t) constrain((ee.kalman_beta / 16.0),SHRT_MIN,SHRT_MAX);
+      _aq_delta_scaled                   = (int16_t) constrain((ee.kalman_delta / 40.0),SHRT_MIN,SHRT_MAX);
       
 #ifdef DEEP_DEBUG
-      DPRINT(F("raw gas resistance                     = "));DDEC(gas_raw);                          DPRINTLN(F(" "));
-      DPRINT(F("residual                               = "));DDEC(residual);                         DPRINTLN(F(" "));
-      DPRINT(F("minimum residual                       = "));DDEC(ee.min_res);                       DPRINTLN(F(" "));
-      DPRINT(F("maximum residual                       = "));DDEC(ee.max_res);                       DPRINTLN(F(" "));
-      DPRINT(F("normalized residual                    = "));DDEC(normalized_residual);              DPRINTLN(F(" "));
-      DPRINT(F("air quality level                      = "));DDEC(log_normalized_residual);          DPRINTLN(F(" "));
-      DPRINT(F("Gas UPPER LIMIT                        = "));DDEC(ee.gas_upper_limit);               DPRINTLN(F(" "));
-      DPRINT(F("Gas LOWER LIMIT                        = "));DDEC(ee.gas_lower_limit);               DPRINTLN(F(" "));
-      DPRINT(F("air quality level scaled               = "));DDEC(_aqState_scaled);                  DPRINTLN(F(" "));
-      DPRINT(F("_gas_resistance_raw_scaled             = "));DDEC(_gas_resistance_raw_scaled);       DPRINTLN(F(" "));
-      DPRINT(F("_gas_resistance_min_scaled             = "));DDEC(_gas_resistance_min_scaled);       DPRINTLN(F(" ")); 
-      DPRINT(F("_gas_resistance_max_scaled             = "));DDEC(_gas_resistance_max_scaled);       DPRINTLN(F(" "));
+      DPRINT(F("raw gas resistance                     = "));DDEC(gas_raw);                                  DPRINTLN(F(" "));
+      DPRINT(F("residual                               = "));DDEC(residual);                                 DPRINTLN(F(" "));
+      DPRINT(F("minimum residual                       = "));DDEC(ee.min_res);                               DPRINTLN(F(" "));
+      DPRINT(F("maximum residual                       = "));DDEC(ee.max_res);                               DPRINTLN(F(" "));
+      DPRINT(F("normalized residual                    = "));DDEC(normalized_residual);                      DPRINTLN(F(" "));
+      DPRINT(F("air quality level                      = "));DDEC(log_normalized_residual);                  DPRINTLN(F(" "));
+      DPRINT(F("Gas UPPER LIMIT                        = "));DDEC(ee.gas_upper_limit);                       DPRINTLN(F(" "));
+      DPRINT(F("Gas LOWER LIMIT                        = "));DDEC(ee.gas_lower_limit);                       DPRINTLN(F(" "));
+      DPRINT(F("air quality level scaled               = "));DDEC(_aqState_scaled);                          DPRINTLN(F(" "));
+      DPRINT(F("_gas_resistance_raw_scaled             = "));DDEC(_gas_resistance_raw_scaled);               DPRINTLN(F(" "));
+      DPRINT(F("_gas_resistance_min_scaled             = "));DDEC(_gas_resistance_min_scaled);               DPRINTLN(F(" ")); 
+      DPRINT(F("_gas_resistance_max_scaled             = "));DDEC(_gas_resistance_max_scaled);               DPRINTLN(F(" "));
+      DPRINT(F("_aq_compensated_gas_res_raw_scaled     = "));DDEC(_aq_compensated_gas_res_raw_scaled);       DPRINTLN(F(" "));
+      DPRINT(F("_aq_compensated_gas_res_min_scaled     = "));DDEC(_aq_compensated_gas_res_min_scaled);       DPRINTLN(F(" ")); 
+      DPRINT(F("_aq_compensated_gas_res_max_scaled     = "));DDEC(_aq_compensated_gas_res_max_scaled);       DPRINTLN(F(" "));
+      DPRINT(F("_aq_alpha_scaled                       = "));DDEC(_aq_alpha_scaled);                         DPRINTLN(F(" "));
+      DPRINT(F("_aq_beta_scaled                        = "));DDEC(_aq_beta_scaled);                          DPRINTLN(F(" ")); 
+      DPRINT(F("_aq_delta_scaled                       = "));DDEC(_aq_delta_scaled);                         DPRINTLN(F(" "));
 #endif
       
 #ifdef DEEP_DEBUG
@@ -827,17 +994,23 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
 #endif
 
     }
+    
+    // reset indication of the Kalman filter's settling state to pin A0 = pin 37 of ATMega1284P of Tindie Pro Mini XL V2, active high for status 'settled', reset here to 'LOW'
+    // you may connect a yellow LED with resistor 220 Ohms in series between A0 PCB PIN and PCB GND pin
+    digitalWrite(KALMAN_FILTER_SETTLING_INDICATION_PIN, LOW);
 
   }
+  
+  // list of return variables, please notice the limitation of payload of a event message to max. 17 Bytes!
   
   int16_t   temperature ()                  { return _temperature; }
   uint16_t  pressureNN ()                   { return _pressureNN; }
   uint16_t  humidity ()                     { return _humidity; }                     // 0..100%
-  uint8_t   aq_level ()                     { return _aqLevel; }                      // 0..100%
-  uint16_t  aq_state_scaled ()              { return _aqState_scaled; }               // 0..40000, mul 10000!
-  uint16_t  gas_resistance_raw_scaled ()    { return _gas_resistance_raw_scaled; }    // 0..65365; div 20!      CCU Historian datapoint parameter AQ_GAS_RESISTANCE_RAW
-  uint16_t  gas_resistance_min_scaled ()    { return _gas_resistance_min_scaled; }    // 0..65365; div 20!    	CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MIN
-  uint16_t  gas_resistance_max_scaled ()    { return _gas_resistance_max_scaled; }    // 0..65365; div 20!      CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MAX
+  uint8_t   aq_level ()                     { return _aqLevel; }                      // 0..100%                         CCU Historian datapoint parameter AQ_LEVEL
+  uint16_t  aq_state_scaled ()              { return _aqState_scaled; }               // 0..40000, mul 10000!            CCU Historian datapoint parameter AQ_LOG10
+  uint16_t  gas_resistance_raw_scaled ()    { return _gas_resistance_raw_scaled; }    // 0..65365; div 20!               CCU Historian datapoint parameter AQ_GAS_RESISTANCE_RAW
+  uint16_t  gas_resistance_min_scaled ()    { return _gas_resistance_min_scaled; }    // 0..65365; div 20!               CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MIN
+  uint16_t  gas_resistance_max_scaled ()    { return _gas_resistance_max_scaled; }    // 0..65365; div 20!               CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MAX
 };
 
 }

@@ -82,7 +82,7 @@ Nach der Entnahme der Akkus ist in der Regel eine erneute Autokalibrierung vonn�
 
 Der bereitgestellte Sketch betreibt den SCD30 Sensor im 'Continuous Measurement Mode' mit einer CO2 Messung alle 60 Sekunden. Im SCD30 findet dann eine Filterung über mehrere Messwerte statt. Der Sketch liest dann alle 4 Minuten = 4 x 60 Sekunden einen CO2 Messwert aus.
 
-[Beispielhistogramm eines gemessenen CO2 Konzentrationsverlaufs](Images/Histogramme/CO2 Histogram.png)
+[Beispielhistogramm eines gemessenen CO2 Konzentrationsverlaufs](Images/Histogramme/CO2_Histogram.png)
 
 Das Histogramm zeigt den Effekt von Querlüftung am morgen kurz nach 7 Uhr.<br />
 

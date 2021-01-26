@@ -1,14 +1,14 @@
 #!/bin/sh
 
 #------------------------------------------------------------------------------
-# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name="HB-UNI-Sensor-AQ-BME680_KF" id="HB-UNI-Sensor-AQ-BME680_KF">
-DEVICE="HB-UNI-Sensor-AQ-BME680_KF"
+# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name="HB-UNI-Sensor-AQ-BME680_KF_DEBUG" id="HB-UNI-Sensor-AQ-BME680_KF_DEBUG">
+DEVICE="HB-UNI-Sensor-AQ-BME680_KF_DEBUG"
 # in der WebUI angezeigte Gerätebeschreibung
 DEVICE_DESC="universeller Luftg\&uuml;tesensor"
 # Name der Piktogramme, bestehend aus xx.png bzw. xx_thumb.png
-DEVICE_IMG=hb-uni-sensor-AQ-BME680_KF.png
-DEVICE_THUMB=hb-uni-sensor-AQ-BME680_KF_thumb.png
-FIRMWARE_FILE=/firmware/rftypes/hb-uni-sensor-AQ-BME680_KF*.xml
+DEVICE_IMG=hb-uni-sensor-AQ-BME680_KF_DEBUG.png
+DEVICE_THUMB=hb-uni-sensor-AQ-BME680_KF_DEBUG_thumb.png
+FIRMWARE_FILE=/firmware/rftypes/hb-uni-sensor-AQ-BME680_KF_DEBUG*.xml
 
 #------------------------------------------------------------------------------
 # Undo DEVDB.tcl changes

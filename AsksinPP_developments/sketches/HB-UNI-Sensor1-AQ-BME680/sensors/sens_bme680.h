@@ -19,7 +19,8 @@
  */
 
 #define AVG_COUNT                   5
-#define IIR_FILTER_COEFFICIENT      0.0001359 // 1.0 -0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods)
+#define IIR_FILTER_COEFFICIENT      0.0001359 // 1.0 - 0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods); settled status of Kalman filter
+#define IIR_FILTER_COEFF_UNSETTLED  0.0037982 // 1.0 - 0.9962019 ; Decay to 0.71 in about 6 hours for a 4 min sampling period (in 90 sampling periods); unsettled status of Kalman filter
 #define EPSILON                     0.0001
 #define MAX_BATTERY_VOLTAGE         3300      // change to 6000 for debugging with FTDI Debugger, default: 3300
 #define EEPROM_START_ADDRESS        512       // needs to be above reserved AsksinPP EEPROM area: Address Space: 32 - 110
@@ -68,9 +69,9 @@ private:
   uint16_t   _humidity;
   uint16_t   _aqLevel;
   uint16_t   _aqState_scaled;
-  int16_t    _gas_resistance_raw_scaled;
-  int16_t    _gas_resistance_min_scaled;
-  int16_t    _gas_resistance_max_scaled;
+  uint16_t   _gas_resistance_raw_scaled;
+  uint16_t   _gas_resistance_min_scaled;
+  uint16_t   _gas_resistance_max_scaled;
   uint16_t   _height;
   uint16_t   measurement_index;
   uint16_t   _first_free_user_eeprom_address;   // EEPROM starting address for storing essential data
@@ -136,15 +137,15 @@ public:
 
     DPRINT(", Chip ID=0x"); DHEXLN(_bme680.getChipID());
 
-      // BME680 oversampling: humidity = x2, temperature = x2, pressure = x4
-    _bme680.setOversampling(BME680_OVERSAMPLING_X2, BME680_OVERSAMPLING_X2, BME680_OVERSAMPLING_X4);
+      // BME680 oversampling: humidity = x2, temperature = x4, pressure = x4
+    _bme680.setOversampling(BME680_OVERSAMPLING_X2, BME680_OVERSAMPLING_X4, BME680_OVERSAMPLING_X4);
     _bme680.setIIRFilter(BME680_FILTER_3); // supresses spikes 
     _bme680.setGasOn(310, 300); // 310 degree Celsius and 300 milliseconds; please check in debug mode whether '-> Gas heat_stab_r   = 1' is achieved. If '-> Gas heat_stab_r   = 0' then the heating time is to short or the temp target too high
     _bme680.setForcedMode();
     
-    ee.max_gas_resistance              = -2000000;     // initial value
-    ee.min_gas_resistance              =  2000000;     // initial value
-    ee.max_res                         = ee.max_gas_resistance;   // initial value
+    ee.max_gas_resistance              = -2000000;                // initial value maximum of ever measured gas resistances since last reset
+    ee.min_gas_resistance              =  2000000;                // initial value
+    ee.max_res                         = ee.max_gas_resistance;   // initial value maximum of ever measured residual gas resistance since last reset
     ee.min_res                         = ee.min_gas_resistance;   // initial value
     _height                            = height;
     ee.gas_lower_limit_max             = ee.min_gas_resistance;
@@ -618,7 +619,7 @@ public:
         }
       }
       
-      normalized_residual=((double)(residual - ee.min_res)/(double)(ee.max_res - ee.min_res));
+      normalized_residual=((double)(residual - ee.res_lower_limit)/(double)(ee.res_upper_limit - ee.res_lower_limit));
       
       // limit minimum of normalized_residual to EPSILON
       if ( normalized_residual < EPSILON)

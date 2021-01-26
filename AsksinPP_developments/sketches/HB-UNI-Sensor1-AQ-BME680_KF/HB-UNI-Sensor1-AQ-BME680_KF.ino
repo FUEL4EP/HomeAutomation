@@ -305,6 +305,8 @@ class WeatherEventMsg : public Message {
 
       pload[13] =  (operatingVoltage1000 >> 8) & 0xff;
       pload[14] =  (operatingVoltage1000 >> 0) & 0xff;
+      
+      // max payload index is 14!! Total payload ist max 17 bytes including temperature!
     }
 };
 
@@ -327,7 +329,7 @@ class WeatherChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
       device().battery().update();                            // get current battery voltage; measure every sampling cycle
       operatingVoltage1000 = device().battery().current();    // BatteryTM class, mV resolution
 
-      bme680.measure(temperature_offset, pressure_offset, humidity_offset, max_decay_factor_upper_limit, max_increase_factor_lower_limit, operatingVoltage1000);
+      bme680.measure(temperature_offset, pressure_offset, humidity_offset, max_decay_factor_upper_limit, max_increase_factor_lower_limit, operatingVoltage1000, device().battery().low());
        
       DPRINT(F("corrected T/H                          = "));  DDEC(bme680.temperature()); DPRINT("/"); DDECLN(bme680.humidity());
       DPRINT(F("Pressure NN                            = "));  DDECLN(bme680.pressureNN());
