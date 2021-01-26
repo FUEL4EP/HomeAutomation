@@ -1,6 +1,5 @@
 # Dieser Sensor HB-UNI-Sensor1-AQ-BME680_KF_DEBUG ist eine **DEBUG** Version und NICHT für den normalen Einsatz!
 - mit dieser DEBUG Version kann  das Einschwingen des Kalman Filters beobachtet werden.
-<br/>
 - beobachtbar sind folgende Datenpunkte, z.B. im CCU Historian:
 	+ TEMPERATURE
 	+ AQ_LEVEL (linearer Luftgütegrad)
