@@ -54,10 +54,10 @@
 // Schaltungsvariante und Pins für Batteriespannungsmessung, siehe README
 //------------
 // 1) Standard: tmBattery, UBatt = Betriebsspannung AVR
-#define BAT_SENSOR tmBattery
+//#define BAT_SENSOR tmBattery
 //------------
-// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A0, activation pin D9, Faktor = Rges/Rlow*1000, z.B. 470k/100k, Faktor 570k/100k*1000 = 5700
-//#define BAT_SENSOR tmBatteryResDiv<A0, 9, 5700>
+// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A0, activation pin A1, Faktor = Rges/Rlow*1000, z.B. 100k/470k, Faktor 570k/470k*1000 = 1213
+#define BAT_SENSOR tmBatteryResDiv<A0, A1, 1213>
 //------------
 // 3) Echte Batteriespannungsmessung unter Last, siehe README und Thema "Babbling Idiot Protection"
 // tmBatteryLoad: sense pin A0, activation pin D9, Faktor = Rges/Rlow*1000, z.B. 10/30 Ohm, Faktor 40/10*1000 = 4000, 200ms Belastung vor Messung

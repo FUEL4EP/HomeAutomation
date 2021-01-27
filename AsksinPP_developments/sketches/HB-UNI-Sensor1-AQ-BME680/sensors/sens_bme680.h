@@ -423,7 +423,7 @@ public:
       
       // peak detectors for min/max ever measured gas resistances since last reset
       
-      if ( gas > ee.max_gas_resistance) {   // capture maximum of ever measured gas resistances since last reset
+      if ( gas >= ee.max_gas_resistance) {   // capture maximum of ever measured gas resistances since last reset
         ee.max_gas_resistance = gas;
         if ( ee.max_gas_resistance >= ee.min_gas_resistance ) {
             
@@ -441,7 +441,7 @@ public:
         }
       }
       
-      if ( gas < ee.min_gas_resistance) {   // capture minimum of ever measured gas resistances since last reset
+      if ( gas <= ee.min_gas_resistance) {   // capture minimum of ever measured gas resistances since last reset
         ee.min_gas_resistance = gas;
          if ( ee.max_gas_resistance >= ee.min_gas_resistance ) {
              
@@ -461,7 +461,7 @@ public:
       
       //peak detector for ee.gas_upper_limit    (CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MAX)
       
-      if ( gas > ee.gas_upper_limit )
+      if ( gas >= ee.gas_upper_limit )
       {
         ee.gas_upper_limit = gas;
       }
@@ -476,7 +476,7 @@ public:
       
       //peak detector for ee.gas_lower_limit  (CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MIN)
       
-      if ( gas < ee.gas_lower_limit )
+      if ( gas <= ee.gas_lower_limit )
       {
         ee.gas_lower_limit = gas;
       }
@@ -555,7 +555,7 @@ public:
       // peak detectors for min/max ever calculated residual since last reset
       
       
-      if ( residual > ee.max_res) {   // capture maximum of ever calculated residual gas resistances since last reset
+      if ( residual >= ee.max_res) {   // capture maximum of ever calculated residual gas resistances since last reset
         ee.max_res = residual;
          if ( ee.max_res > ee.min_res ) {
              
@@ -572,7 +572,7 @@ public:
 #endif
         }
       }
-      if ( residual < ee.min_res) {   // capture minimum of ever calculated residual gas resistances since last reset
+      if ( residual <= ee.min_res) {   // capture minimum of ever calculated residual gas resistances since last reset
         ee.min_res = residual;
         if ( ee.max_res > ee.min_res ) {
             
@@ -591,7 +591,7 @@ public:
       }
       
       //peak detector for ee.res_upper_limit 
-      if ( residual > ee.res_upper_limit )
+      if ( residual >= ee.res_upper_limit )
       {
         ee.res_upper_limit = residual;
        
@@ -606,7 +606,7 @@ public:
       }
       
       //peak detector for ee.res_lower_limit 
-      if ( residual < ee.res_lower_limit )
+      if ( residual <= ee.res_lower_limit )
       {
         ee.res_lower_limit = residual;
       }

@@ -53,7 +53,6 @@
 // number of available peers per channel
 #define PEERS_PER_CHANNEL 6
 
-
 // all library classes are placed in the namespace 'as'
 using namespace as;
 

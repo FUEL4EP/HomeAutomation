@@ -62,7 +62,7 @@ using namespace BLA;
 
 #define AVG_COUNT                                        5
 #define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.0001359 // 1.0 - 0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods); settled status of Kalman filter
-#define IIR_FILTER_COEFFICIENT_KF_UNSETTLED              0.0037982 // 1.0 - 0.9962019 ; Decay to 0.71 in about 6 hours for a 4 min sampling period (in 90 sampling periods); unsettled status of Kalman filter
+#define IIR_FILTER_COEFFICIENT_KF_UNSETTLED              0.0376494 // 1.0 - 0.9623506 ; Decay to 0.1 in about 4 hours for a 4 min sampling period (in 60 sampling periods); unsettled status of Kalman filter
 #define EPSILON                                          0.0001
 #define MAX_BATTERY_VOLTAGE                              3300      // change to 6000 for debugging with FTDI Debugger, default: 3300
 #define EEPROM_START_ADDRESS                             512       // needs to be above reserved AsksinPP EEPROM area: Address Space: 32 - 110
@@ -345,7 +345,7 @@ public:
         ee.min_res                         =  START_RESISTANCE;                      // initial value
         ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
         ee.min_gas_resistance              =  START_RESISTANCE;                      // initial value
-        ee.iir_filter_coefficient          =  IIR_FILTER_COEFFICIENT_KF_UNSETTLED;   // increase decay factor to about 71% in about 6h
+        ee.iir_filter_coefficient          =  IIR_FILTER_COEFFICIENT_KF_UNSETTLED;   // increase decay factor to about 10% in about 4h
 #ifdef DEEP_DEBUG
         DPRINTLN(F("\n\n\n\n==================================================="));
         DPRINT(F("reset boundaries at measurement index  = "));DDECLN(measurement_index);
@@ -568,7 +568,7 @@ public:
    
    DPRINT(F("start raw gas resistance               = "));  DDEC(_g_avg0);  DPRINTLN(F(" Ohm"));
    
-   ee.K.x = {_g_avg0/2.0, 0.0, 0.0, _g_avg0/2.0};
+   ee.K.x = {_g_avg0/2.0, 0.0, 0.0, 0.0};
   
 
    // measurement covariance matrix
@@ -739,7 +739,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       
       // peak detectors for min/max ever measured gas resistances since last reset
       
-      if ( gas > ee.max_gas_resistance) {   // capture maximum of ever measured gas resistances since last reset
+      if ( gas >= ee.max_gas_resistance) {   // capture maximum of ever measured gas resistances since last reset
         ee.max_gas_resistance = gas;
         if ( ee.max_gas_resistance >= ee.min_gas_resistance ) {
             
@@ -757,7 +757,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
         }
       }
       
-      if ( gas < ee.min_gas_resistance) {   // capture minimum of ever measured gas resistances since last reset
+      if ( gas <= ee.min_gas_resistance) {   // capture minimum of ever measured gas resistances since last reset
         ee.min_gas_resistance = gas;
          if ( ee.max_gas_resistance >= ee.min_gas_resistance ) {
              
@@ -777,7 +777,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       
       //peak detector for ee.gas_upper_limit    (CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MAX)
       
-      if ( gas > ee.gas_upper_limit )
+      if ( gas >= ee.gas_upper_limit )
       {
         ee.gas_upper_limit = gas;
       }
@@ -792,7 +792,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       
       //peak detector for ee.gas_lower_limit  (CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MIN)
       
-      if ( gas < ee.gas_lower_limit )
+      if ( gas <= ee.gas_lower_limit )
       {
         ee.gas_lower_limit = gas;
       }
@@ -882,7 +882,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       // peak detectors for min/max ever calculated residual since last reset
       
       
-      if ( residual > ee.max_res) {   // capture maximum of ever calculated residual gas resistances since last reset
+      if ( residual >= ee.max_res) {   // capture maximum of ever calculated residual gas resistances since last reset
         ee.max_res = residual;
          if ( ee.max_res > ee.min_res ) {
              
@@ -899,7 +899,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
 #endif
         }
       }
-      if ( residual < ee.min_res) {   // capture minimum of ever calculated residual gas resistances since last reset
+      if ( residual <= ee.min_res) {   // capture minimum of ever calculated residual gas resistances since last reset
         ee.min_res = residual;
         if ( ee.max_res > ee.min_res ) {
             
@@ -918,7 +918,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       }
       
       //peak detector for ee.res_upper_limit 
-      if ( residual > ee.res_upper_limit )
+      if ( residual >= ee.res_upper_limit )
       {
         ee.res_upper_limit = residual;
        
@@ -933,7 +933,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       }
       
       //peak detector for ee.res_lower_limit 
-      if ( residual < ee.res_lower_limit )
+      if ( residual <= ee.res_lower_limit )
       {
         ee.res_lower_limit = residual;
       }

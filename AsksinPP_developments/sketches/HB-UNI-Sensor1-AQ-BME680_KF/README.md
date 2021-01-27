@@ -37,6 +37,14 @@
 ## ACHTUNG: Neuprogrammierung (Flashen)
 
 - Bitte eine Neuprogrammierung des Flash-Speichers **NUR** direkt nach dem kurzen Aufblinken der roten Signalisierungs-LED austauschen. Dann 'schläft' der ATmega1284P Arduino für ca. 235..238 Sekunden und es werden in dieser Zeit keine Daten in das EEPROM geschrieben. Die Gefahr einer Korrumpierung der EEPROM Daten durch den Programmiervorgang ist dadurch nicht mehr gegeben.
+- Zur Neuprogrammierung bitte UNBEDINGT die folgende Sequenz einhalten:
+	+ ISP Programmer anschließen (Steckerleiste und USB Stecker)
+	+ 1 Batterie entfernen
+	+ 4 Minuten warten und im WebUI prüfen, dass die OPERATING VOLTAGE größer als 3.3V ist
+	+ Neuprogrammieren
+	+ die herausgenommene Batterie wieder einlegen
+	+ den ISP Programmer entfernen
+- diese Sequenz stellt sicher, dass ein korrekter Reset durchgeführt wird. Bedingung dafür ist, dass die OPERATING VOLTAGE größer als 3.3V ist.
 
 
 ## Aufgebauter Sensor ohne Gehäusedeckel
