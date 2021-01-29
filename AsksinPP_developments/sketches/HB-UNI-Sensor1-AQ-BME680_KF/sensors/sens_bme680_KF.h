@@ -59,9 +59,10 @@ using namespace BLA;
  * Gas is returned as a resistance value in ohms.
  * Higher concentrations of VOC will make the resistance lower.
  */
+
 #define AVG_COUNT                                        5
 #define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.0001359 // 1.0 - 0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods); settled status of Kalman filter
-#define IIR_FILTER_COEFFICIENT_KF_UNSETTLED              0.0037982 // 1.0 - 0.9962019 ; Decay to 0.71 in about 6 hours for a 4 min sampling period (in 90 sampling periods); unsettled status of Kalman filter
+#define IIR_FILTER_COEFFICIENT_KF_UNSETTLED              0.0376494 // 1.0 - 0.9623506 ; Decay to 0.1 in about 4 hours for a 4 min sampling period (in 60 sampling periods); unsettled status of Kalman filter
 #define EPSILON                                          0.0001
 #define MAX_BATTERY_VOLTAGE                              3300      // change to 6000 for debugging with FTDI Debugger, default: 3300
 #define EEPROM_START_ADDRESS                             512       // needs to be above reserved AsksinPP EEPROM area: Address Space: 32 - 110
@@ -74,6 +75,7 @@ using namespace BLA;
 //------------------------------------
 /****  KALMAN MODEL PARAMETERS  ****/
 //------------------------------------
+
 #define Nstate                                          4          // VOC_resistance, alpha_temperature, beta_ah, delta_intercept
 #define Nobs                                            1          // raw_gas_resistance; note: 'temperature' and 'aH' are NOT part of the observation vector! 
 
@@ -151,6 +153,8 @@ private:
   uint32_t   crc32_checksum_recreated;
   bool       lowbat_save_to_eeprom_flag;        // indcates that parameters need to be saved to eeprom due to lowbat
 
+ 
+  
   ClosedCube_BME680 _bme680;
   
 public:
@@ -341,7 +345,7 @@ public:
         ee.min_res                         =  START_RESISTANCE;                      // initial value
         ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
         ee.min_gas_resistance              =  START_RESISTANCE;                      // initial value
-        ee.iir_filter_coefficient          =  IIR_FILTER_COEFFICIENT_KF_UNSETTLED;   // increase decay factor to about 71% in about 6h
+        ee.iir_filter_coefficient          =  IIR_FILTER_COEFFICIENT_KF_UNSETTLED;   // increase decay factor to about 10% in about 4h
 #ifdef DEEP_DEBUG
         DPRINTLN(F("\n\n\n\n==================================================="));
         DPRINT(F("reset boundaries at measurement index  = "));DDECLN(measurement_index);
@@ -613,6 +617,8 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
 
 }
 
+
+
   void measure (double tempOffset, double pressOffset, double humidOffset, uint8_t max_decay_factor_upper_limit, uint8_t max_increase_factor_lower_limit, uint16_t operatingVoltage1000, bool batlow) {
     if (_present == true) {
       double  temp(NAN), hum(NAN), pres(NAN);                                 // use type double in order to match the return type of closed cubes's library function readPressure
@@ -682,7 +688,6 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
      
 #endif
   
-
 
       ClosedCube_BME680_Status status = _bme680.readStatus();
       while (! (status.newDataFlag == 1)) {
@@ -864,7 +869,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       ee.kalman_delta                       = ee.K.x(0)+ee.K.x(3);
       
       //calculate the compensated gas resistance in double precision, use the regression coefficients calculated by the Kalman filter for compensating the interference of temperature and absolute humidity
-      residual = (int32_t)constrain((gas_raw - ee.kalman_alpha*temp - ee.kalman_beta*ah),-START_RESISTANCE,START_RESISTANCE);  // clamp value to -START_RESISTANCE .. +START_RESISTANCE
+      residual = (int32_t)(gas_raw - ee.kalman_alpha*temp - ee.kalman_beta*ah); 
       
       
 #ifdef DEEP_DEBUG
@@ -940,7 +945,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
           ee.res_lower_limit = ee.res_lower_limit_max; // upper limit for ee.res_lower_limit
         }
       }
-        
+      
       normalized_residual=constrain(((double)(residual - ee.res_lower_limit)/(double)(ee.res_upper_limit - ee.res_lower_limit)),0.0,1.0); // constraining is necessary to avoid underflow effects later on
       
       // limit minimum of normalized_residual to EPSILON
@@ -1001,16 +1006,16 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
 
   }
   
-  // list of return variables, please notice the limitation of payload of a event message to max. 17 Bytes!
+  // dedicated list of return variables for debugging only, limitation of payload of a event message to 17 Bytes!
   
-  int16_t   temperature ()                  { return _temperature; }
-  uint16_t  pressureNN ()                   { return _pressureNN; }
-  uint16_t  humidity ()                     { return _humidity; }                     // 0..100%
-  uint8_t   aq_level ()                     { return _aqLevel; }                      // 0..100%                         CCU Historian datapoint parameter AQ_LEVEL
-  uint16_t  aq_state_scaled ()              { return _aqState_scaled; }               // 0..40000, mul 10000!            CCU Historian datapoint parameter AQ_LOG10
-  uint16_t  gas_resistance_raw_scaled ()    { return _gas_resistance_raw_scaled; }    // 0..65365; div 20!               CCU Historian datapoint parameter AQ_GAS_RESISTANCE_RAW
-  uint16_t  gas_resistance_min_scaled ()    { return _gas_resistance_min_scaled; }    // 0..65365; div 20!               CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MIN
-  uint16_t  gas_resistance_max_scaled ()    { return _gas_resistance_max_scaled; }    // 0..65365; div 20!               CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MAX
+  int16_t   temperature ()                       { return _temperature; }
+  uint8_t   aq_level ()                          { return _aqLevel; }                              // 0..100%                         CCU Historian datapoint parameter AQ_LEVEL
+  uint16_t  aq_state_scaled ()                   { return _aqState_scaled; }                       // 0..40000, mul 10000!            CCU Historian datapoint parameter AQ_LOG10
+  int16_t   aq_compensated_gas_res_raw_scaled () { return _aq_compensated_gas_res_raw_scaled; }    // -32768..32768; div 80!          CCU Historian datapoint parameter AQ_COMP_GAS_RES_RAW
+  int16_t   aq_compensated_gas_res_min_scaled () { return _aq_compensated_gas_res_min_scaled; }    // -32768..32768; div 80!          CCU Historian datapoint parameter AQ_COMP_GAS_RES_MIN
+  int16_t   aq_compensated_gas_res_max_scaled () { return _aq_compensated_gas_res_max_scaled; }    // -32768..32768; div 80!          CCU Historian datapoint parameter AQ_COMP_GAS_RES_MAX
+  int16_t   aq_alpha_scaled ()                   { return _aq_alpha_scaled; }                      // -32768..32768; div 4!           CCU Historian datapoint parameter AQ_ALPHA
+  int16_t   aq_beta_scaled ()                    { return _aq_beta_scaled; }                       // -32768..32768; div 16!          CCU Historian datapoint parameter AQ_BETA
 };
 
 }
