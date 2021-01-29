@@ -340,7 +340,7 @@ public:
       if ( (! ee.settled_flag)  && (measurement_index != 1) ){  // not for startup: measurement_index == 1
         // Kalman filter online regression did not yet settle
         // reset upper and lower ever measured/calulated gas resistances/residual gas resistances
-        // increase decay factor to about 71% in about 6h
+        // increase decay factor to about 10% in about 4h
         ee.max_res                         = -START_RESISTANCE;                      // initial value
         ee.min_res                         =  START_RESISTANCE;                      // initial value
         ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
@@ -355,7 +355,7 @@ public:
       else {
         // Kalman filter online regression did settle
         // set decay factor to about 71% in about 7 days
-        ee.iir_filter_coefficient         =  IIR_FILTER_COEFFICIENT_KF_SETTLED;     // increase decay factor to about 71% in about 6h
+        ee.iir_filter_coefficient         =  IIR_FILTER_COEFFICIENT_KF_SETTLED;     // increase decay factor to about 10% in about 4h
       }
       
     }
@@ -869,7 +869,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       ee.kalman_delta                       = ee.K.x(0)+ee.K.x(3);
       
       //calculate the compensated gas resistance in double precision, use the regression coefficients calculated by the Kalman filter for compensating the interference of temperature and absolute humidity
-      residual = (int32_t)constrain((gas_raw - ee.kalman_alpha*temp - ee.kalman_beta*ah),-START_RESISTANCE,START_RESISTANCE);  // clamp value to -START_RESISTANCE .. +START_RESISTANCE
+      residual = (int32_t)(gas_raw - ee.kalman_alpha*temp - ee.kalman_beta*ah); 
       
       
 #ifdef DEEP_DEBUG
