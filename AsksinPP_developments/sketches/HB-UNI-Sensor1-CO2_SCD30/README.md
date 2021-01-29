@@ -33,6 +33,8 @@ Die Schaltpläne enthalten als Textkommentare zusätzliche Aufbauhinweise.
 
 [KiCAD Schaltpläne](PCB/Modification_of_Alexander_Reinerts_PCB/HB-UNI-Sensor1-CO2_SCD30/)<br />
 
+**UPDATE 29. 01. 2021:** Die Widerstände R12, R13 und R14 wurden hinzugefügt, um bei einem kritischen Akkuladezustand den Prozessor in den Tiefschlaf versetzen zu können.
+
 
 ### Stromversorgung des HB-UNI-Sensor1-CO2_SCD30 Sensors
 
@@ -203,7 +205,8 @@ Basisplatine HB-UNI-SEN-BATT von Alexander Reinert (gibt es beim Smarthome Onlin
 * Stiftleiste RM 2,54MM (nach Bedarf)
 * IRLU024N (optional für Verpolungsschutz)
 * 100KOhm Widerstand (optional für Verpolungsschutz)
-* 2x 10KOhm Widerstand (Pullup für I2C, nicht optional)
+* 2x 10KOhm Widerstände (Pullup für I2C, nicht optional)
+* 3x 47k Widerstände
 * 2x NiMH 2400mAh AA Akkumulatorbatterien (WICHTIG: Typ 'ready to use' für geringe Selbstentladung)<br /> 
 
 restliche Bauteile und Module der Schematic Blätter 'Power Supply' und 'HB-UNI-SEN-BATT_mod':
@@ -325,12 +328,13 @@ Im obigen Beispiel ADC0_FACTOR ist 3.509 die mit dem Voltmeter gemessene VCC Spa
 
 ### Speicherbedarf des Sketches:
 
-**Update 08.12.2020:** Der Sketch verwendet 27416 Bytes (89%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
-Globale Variablen verwenden 1596 Bytes (77%) des dynamischen Speichers, 452 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
-Wenig Arbeitsspeicher verfügbar, es können Stabilitätsprobleme auftreten.
-Falls Stabilitätsprobleme auftreten, bitte die Debugoption ausschalten:
-
+**Update 08.12.2020:** Der Sketch verwendet 23142 Bytes (75%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
+Globale Variablen verwenden 928 Bytes (45%) des dynamischen Speichers, 1120 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes. Diese Werte gelten für den eingeschalteten DEBUG Modus.<br/>
+**Bitte nach der erfolgreichen Inbetriebnahme UNBEDINGT die Debugoption ausschalten:
+**
 > //#define NDEBUG   // uncomment in case of stability issues
+
+Nur bei ausgeschaltetem DEBUG Modus wird bei einem kritischen Akkuladezustand der Sensor in den Tiefschlaf versetzt!
 
 ### Benötigtes Addon auf CCUx/RaspberryMatic:
 
@@ -403,6 +407,32 @@ ab nach
                      //   1234567890   IMPORTANT: exact 10 characters are required! 
 </code></pre>
 
+Bitte ändere in 	'Cfg/Device_SCD30.h'
+
+<pre><code>
+//---------------------------------------------------------
+// Schaltungsvariante und Pins für Batteriespannungsmessung, siehe README
+//------------
+// 1) Standard: tmBattery, UBatt = Betriebsspannung AVR
+//#define BAT_SENSOR tmBattery
+//------------
+// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A2, activation pin A3, Faktor = Rges/Rlow*1000, z.B. 94k/47k, Faktor (3*47k)/(2*47k)*1000 = 3333; correction factor2 = 2653/2986, total factor = 3333 * 2653/2986
+ #define BAT_SENSOR tmBatteryResDiv<A2, A3, 2961>
+</code></pre>
+
+ab nach
+
+<pre><code>
+//---------------------------------------------------------
+// Schaltungsvariante und Pins für Batteriespannungsmessung, siehe README
+//------------
+// 1) Standard: tmBattery, UBatt = Betriebsspannung AVR
+ #define BAT_SENSOR tmBattery
+//------------
+// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A2, activation pin A3, Faktor = Rges/Rlow*1000, z.B. 94k/47k, Faktor (3*47k)/(2*47k)*1000 = 3333; correction factor2 = 2653/2986, total factor = 3333 * 2653/2986
+// #define BAT_SENSOR tmBatteryResDiv<A2, A3, 2961>
+</code></pre>
+
 Für reinen Netzbetrieb des HB-UNI-Sensor1-CO2_SCD30 Sensors sind an der Hardware folgende Anpassungen vorzunehmen:
 
 - Weglassen der folgenden Module / Bauteile
@@ -424,7 +454,8 @@ Für reinen Netzbetrieb des HB-UNI-Sensor1-CO2_SCD30 Sensors sind an der Hardwar
 	* 1x Mikroschalter 6x6mm mit Rastung 
 	* 1x DC Spannungsversorgungsbuchse 3.5mm*1.3 mm 
 	* 1x Universal Netzteil weiß 3V-12V, 1000mA 
-	* 1x Arduino Common Sensor Cable-30cm 
+	* 1x Arduino Common Sensor Cable-30cm
+	* 3x 47kOhm R12, R13, R14 (Akkuspannungsüberwachung) 
 	
 - Hinzufügen der folgenden Module / Bauteile (nur Vorschlag, keine Ausarbeitung)
 

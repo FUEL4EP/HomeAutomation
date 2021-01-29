@@ -146,12 +146,9 @@ public:
           DPRINTLN(" hPa (zero for disabling pressure compensation)");
 #endif
           DPRINTLN(" ");
-          DPRINTLN("IMPORTANT: Remove accumulator batteries during debugging with a FTDI Debugger in the serial monitor !!");
-          DPRINTLN("           This avoids a deep discharge of them by the step-up converter");
+          DPRINTLN("IMPORTANT: Remove accumulator batteries during debugging with a FTDI Debugger in the serial monitor");
+          DPRINTLN("           This avoids a deep discharge of them by the boost converter");
           DPRINTLN(" ");
-          //DPRINTLN("           Unplug the USB connector of the serial programmer (diamex) during debugging with serial monitor !!");
-          //DPRINTLN("           This avoids data corruption");
-          //DPRINTLN(" ");
 
         }
     }

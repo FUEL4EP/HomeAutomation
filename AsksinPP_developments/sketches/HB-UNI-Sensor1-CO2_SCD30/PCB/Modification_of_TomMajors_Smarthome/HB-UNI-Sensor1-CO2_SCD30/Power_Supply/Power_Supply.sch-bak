@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 2 3
 Title ""
 Date "2020-08-16"
 Rev ""
@@ -113,10 +113,6 @@ F 3 "https://datasheetspdf.com/pdf-file/1257631/CONSONANCE/CN3085/1" H 4600 3250
 $EndComp
 Wire Wire Line
 	3700 3350 3700 3150
-Wire Wire Line
-	1800 1550 2800 1550
-Wire Wire Line
-	2800 1550 2800 3250
 Wire Wire Line
 	2700 1800 2700 4800
 Wire Wire Line
@@ -240,9 +236,6 @@ Wire Wire Line
 	2850 3650 3000 3650
 Wire Wire Line
 	3600 3550 3600 1550
-Wire Wire Line
-	3600 1550 2800 1550
-Connection ~ 2800 1550
 Text Label 6550 4600 0    50   ~ 0
 VCC_top_case
 Wire Wire Line
@@ -276,7 +269,7 @@ Wire Wire Line
 	3050 4450 3050 4600
 Connection ~ 3050 4600
 Wire Wire Line
-	3050 4600 2100 4600
+	3050 4600 2600 4600
 $Comp
 L power:+6V #PWR02
 U 1 1 5F430916
@@ -315,8 +308,6 @@ NoConn ~ 3400 3750
 NoConn ~ 3400 3150
 Wire Wire Line
 	3600 3550 3400 3550
-Wire Wire Line
-	3000 3250 2800 3250
 $Comp
 L power:PWR_FLAG #FLG01
 U 1 1 5F4676D1
@@ -398,4 +389,13 @@ Wire Wire Line
 Wire Wire Line
 	3350 4600 4050 4600
 Connection ~ 3350 4600
+Wire Wire Line
+	1800 1550 3600 1550
+Wire Wire Line
+	2600 3250 2600 4600
+Wire Wire Line
+	2600 3250 3000 3250
+Connection ~ 2600 4600
+Wire Wire Line
+	2600 4600 2100 4600
 $EndSCHEMATC

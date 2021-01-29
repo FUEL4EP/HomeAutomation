@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>/home/ewald/Arduino/sketches/HB-UNI-Sensor1-CO2_SCD30/PCB/Modification_of_TomMajors_Smarthome/HB-UNI-Sensor1-CO2_SCD30/HB-UNI-Sensor1-CO2_SCD30.sch</source>
-    <date>Sun 16 Aug 2020 19:39:28 CEST</date>
+    <source>/home/ewald/CAD/git/SmartHome/HB-UNI-Sensor1-CO2_SCD30/PCB/Modification_of_TomMajors_Smarthome/HB-UNI-Sensor1-CO2_SCD30/HB-UNI-Sensor1-CO2_SCD30.sch</source>
+    <date>Mon 17 Aug 2020 18:07:38 CEST</date>
     <tool>Eeschema 5.1.6-c6e7f7d~87~ubuntu18.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
-        <company>developped by FUEL4EP</company>
+        <company>developed by FUEL4EP</company>
         <rev/>
         <date>2020-08-16</date>
         <source>HB-UNI-Sensor1-CO2_SCD30.sch</source>
@@ -167,7 +167,7 @@
       <tstamp>5F39C03D</tstamp>
     </comp>
     <comp ref="R2">
-      <value>R</value>
+      <value>470</value>
       <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical</footprint>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -233,7 +233,7 @@
       <tstamp>5F39C0E7</tstamp>
     </comp>
     <comp ref="C1">
-      <value>CP</value>
+      <value>10u</value>
       <footprint>Capacitors_THT:CP_Radial_D4.0mm_P1.50mm</footprint>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="CP" description="Polarized capacitor"/>
@@ -241,7 +241,7 @@
       <tstamp>5F39C106</tstamp>
     </comp>
     <comp ref="R10">
-      <value>R</value>
+      <value>10k</value>
       <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical</footprint>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -249,7 +249,7 @@
       <tstamp>5F39C15D</tstamp>
     </comp>
     <comp ref="R11">
-      <value>R</value>
+      <value>10k</value>
       <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical</footprint>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
@@ -271,7 +271,7 @@
       <tstamp>5F39C18C</tstamp>
     </comp>
     <comp ref="C2">
-      <value>CP</value>
+      <value>470u</value>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="CP" description="Polarized capacitor"/>
       <sheetpath names="/HB-UNI-SEN-BATT_mod/" tstamps="/5F37F134/"/>
@@ -301,21 +301,21 @@
       <tstamp>5F4D628C</tstamp>
     </comp>
     <comp ref="R4">
-      <value>R</value>
+      <value>10k</value>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/HB-UNI-SEN-BATT_mod/" tstamps="/5F37F134/"/>
       <tstamp>5F4DCA03</tstamp>
     </comp>
     <comp ref="R5">
-      <value>R</value>
+      <value>10k</value>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/HB-UNI-SEN-BATT_mod/" tstamps="/5F37F134/"/>
       <tstamp>5F4DD3C3</tstamp>
     </comp>
     <comp ref="R3">
-      <value>R</value>
+      <value>100</value>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/HB-UNI-SEN-BATT_mod/" tstamps="/5F37F134/"/>
@@ -343,28 +343,28 @@
       <tstamp>5F39C0DB</tstamp>
     </comp>
     <comp ref="R6">
-      <value>R</value>
+      <value>47k 1%</value>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/HB-UNI-SEN-BATT_mod/" tstamps="/5F37F134/"/>
       <tstamp>5F39C30E</tstamp>
     </comp>
     <comp ref="R8">
-      <value>R</value>
+      <value>47k 1%</value>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/HB-UNI-SEN-BATT_mod/" tstamps="/5F37F134/"/>
       <tstamp>5F39CCDF</tstamp>
     </comp>
     <comp ref="R9">
-      <value>R</value>
+      <value>47k 1%</value>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/HB-UNI-SEN-BATT_mod/" tstamps="/5F37F134/"/>
       <tstamp>5F39D383</tstamp>
     </comp>
     <comp ref="R7">
-      <value>R</value>
+      <value>47k 1%</value>
       <datasheet>~</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <sheetpath names="/HB-UNI-SEN-BATT_mod/" tstamps="/5F37F134/"/>
@@ -784,13 +784,13 @@
       <uri>/usr/share/kicad/library/Diode.lib</uri>
     </library>
     <library logical="HB-UNI-SEN-BATT-rescue">
-      <uri>/home/ewald/Arduino/sketches/HB-UNI-Sensor1-CO2_SCD30/PCB/Modification_of_TomMajors_Smarthome/HB-UNI-Sensor1-CO2_SCD30/../HB-UNI-SEN-BATT/HB-UNI-SEN-BATT-rescue.lib</uri>
+      <uri>/home/ewald/CAD/git/SmartHome/HB-UNI-Sensor1-CO2_SCD30/PCB/Modification_of_TomMajors_Smarthome/HB-UNI-Sensor1-CO2_SCD30/../HB-UNI-SEN-BATT/HB-UNI-SEN-BATT-rescue.lib</uri>
     </library>
     <library logical="HB-UNI-Sensor1-CO2_SCD30">
-      <uri>/home/ewald/Arduino/sketches/HB-UNI-Sensor1-CO2_SCD30/PCB/Modification_of_TomMajors_Smarthome/HB-UNI-Sensor1-CO2_SCD30/HB-UNI-Sensor1-CO2_SCD30.lib</uri>
+      <uri>/home/ewald/CAD/git/SmartHome/HB-UNI-Sensor1-CO2_SCD30/PCB/Modification_of_TomMajors_Smarthome/HB-UNI-Sensor1-CO2_SCD30/HB-UNI-Sensor1-CO2_SCD30.lib</uri>
     </library>
     <library logical="Homebrew">
-      <uri>/home/ewald/Arduino/sketches/HB-UNI-Sensor1-CO2_SCD30/PCB/Modification_of_TomMajors_Smarthome/HB-UNI-Sensor1-CO2_SCD30/../Homebrew.lib</uri>
+      <uri>/home/ewald/CAD/git/SmartHome/HB-UNI-Sensor1-CO2_SCD30/PCB/Modification_of_TomMajors_Smarthome/HB-UNI-Sensor1-CO2_SCD30/../Homebrew.lib</uri>
     </library>
     <library logical="Switch">
       <uri>/usr/share/kicad/library/Switch.lib</uri>
@@ -801,45 +801,43 @@
   </libraries>
   <nets>
     <net code="1" name="/Power_Supply/VCC_CONN">
-      <node ref="J1" pin="2"/>
       <node ref="SW1" pin="4"/>
-      <node ref="SW1" pin="2"/>
+      <node ref="J1" pin="2"/>
     </net>
     <net code="5" name="/Power_Supply/VBatt_CONN">
-      <node ref="Module1" pin="4"/>
       <node ref="J1" pin="1"/>
+      <node ref="Module1" pin="4"/>
     </net>
     <net code="6" name="VCC">
       <node ref="U2" pin="9"/>
-      <node ref="J13" pin="1"/>
       <node ref="D3" pin="1"/>
-      <node ref="J11" pin="1"/>
-      <node ref="J12" pin="1"/>
-      <node ref="C1" pin="1"/>
       <node ref="Module5" pin="1"/>
       <node ref="Module6" pin="1"/>
+      <node ref="J12" pin="1"/>
       <node ref="R10" pin="1"/>
-      <node ref="U1" pin="1"/>
-      <node ref="J4" pin="1"/>
+      <node ref="C1" pin="1"/>
       <node ref="R4" pin="1"/>
       <node ref="Q1" pin="3"/>
       <node ref="R8" pin="1"/>
       <node ref="J14" pin="1"/>
       <node ref="Module4" pin="2"/>
-      <node ref="R11" pin="1"/>
       <node ref="C2" pin="1"/>
+      <node ref="U1" pin="1"/>
+      <node ref="J4" pin="1"/>
+      <node ref="R11" pin="1"/>
+      <node ref="J13" pin="1"/>
+      <node ref="J11" pin="1"/>
       <node ref="J2" pin="2"/>
     </net>
     <net code="7" name="/HB-UNI-SEN-BATT_mod/VBatt_CONN">
       <node ref="J2" pin="3"/>
-      <node ref="R3" pin="2"/>
-      <node ref="R6" pin="1"/>
       <node ref="BT1" pin="1"/>
+      <node ref="R6" pin="1"/>
+      <node ref="R3" pin="2"/>
     </net>
     <net code="8" name="GND">
       <node ref="R9" pin="2"/>
-      <node ref="Module4" pin="1"/>
-      <node ref="U2" pin="16"/>
+      <node ref="J12" pin="2"/>
       <node ref="C2" pin="2"/>
       <node ref="J11" pin="2"/>
       <node ref="J13" pin="2"/>
@@ -851,36 +849,39 @@
       <node ref="J9" pin="2"/>
       <node ref="J7" pin="2"/>
       <node ref="J8" pin="2"/>
-      <node ref="J12" pin="2"/>
       <node ref="J14" pin="2"/>
+      <node ref="U2" pin="16"/>
       <node ref="J1" pin="3"/>
       <node ref="J2" pin="1"/>
       <node ref="R7" pin="2"/>
-      <node ref="Module1" pin="3"/>
-      <node ref="Module6" pin="2"/>
-      <node ref="Module5" pin="2"/>
-      <node ref="Module1" pin="1"/>
-      <node ref="Module5" pin="5"/>
-      <node ref="Module3" pin="1"/>
-      <node ref="Module3" pin="3"/>
-      <node ref="Module2" pin="3"/>
+      <node ref="Module4" pin="1"/>
       <node ref="SC1" pin="2"/>
-      <node ref="Module2" pin="1"/>
-      <node ref="Module4" pin="3"/>
-      <node ref="U2" pin="11"/>
+      <node ref="Module5" pin="5"/>
+      <node ref="Module5" pin="2"/>
+      <node ref="Module6" pin="2"/>
+      <node ref="Module1" pin="3"/>
+      <node ref="Module1" pin="1"/>
       <node ref="J5" pin="1"/>
+      <node ref="Module2" pin="1"/>
+      <node ref="U2" pin="11"/>
+      <node ref="Module4" pin="3"/>
+      <node ref="Module3" pin="3"/>
+      <node ref="Module3" pin="1"/>
+      <node ref="Module2" pin="3"/>
     </net>
     <net code="9" name="+6V">
+      <node ref="SW1" pin="2"/>
       <node ref="Module2" pin="2"/>
       <node ref="J3" pin="2"/>
-    </net>
-    <net code="10" name="Net-(D1-Pad2)">
-      <node ref="Module2" pin="4"/>
-      <node ref="D1" pin="2"/>
     </net>
     <net code="11" name="Net-(Module1-Pad2)">
       <node ref="SW1" pin="3"/>
       <node ref="Module1" pin="2"/>
+    </net>
+    <net code="12" name="/Power_Supply/VCC_top_case">
+      <node ref="Module3" pin="4"/>
+      <node ref="SW1" pin="5"/>
+      <node ref="D1" pin="1"/>
     </net>
     <net code="13" name="Net-(SW1-Pad6)">
       <node ref="SW1" pin="6"/>
@@ -891,31 +892,30 @@
     <net code="15" name="Net-(J3-Pad1)">
       <node ref="J3" pin="1"/>
     </net>
-    <net code="16" name="/Power_Supply/VCC_top_case">
-      <node ref="D1" pin="1"/>
-      <node ref="SW1" pin="5"/>
-      <node ref="Module3" pin="4"/>
+    <net code="16" name="Net-(D1-Pad2)">
+      <node ref="D1" pin="2"/>
+      <node ref="Module2" pin="4"/>
     </net>
-    <net code="17" name="Net-(Module1-Pad7)">
-      <node ref="Module1" pin="7"/>
-      <node ref="R1" pin="1"/>
-    </net>
-    <net code="18" name="Net-(D2-Pad2)">
-      <node ref="Module1" pin="5"/>
-      <node ref="D2" pin="2"/>
-    </net>
-    <net code="19" name="Net-(D2-Pad1)">
-      <node ref="R1" pin="2"/>
+    <net code="17" name="Net-(D2-Pad1)">
       <node ref="Module1" pin="6"/>
       <node ref="D2" pin="1"/>
+      <node ref="R1" pin="2"/>
     </net>
-    <net code="20" name="Net-(Module3-Pad2)">
+    <net code="18" name="Net-(Module1-Pad7)">
+      <node ref="R1" pin="1"/>
+      <node ref="Module1" pin="7"/>
+    </net>
+    <net code="19" name="Net-(Module3-Pad2)">
       <node ref="SC1" pin="1"/>
       <node ref="Module3" pin="2"/>
     </net>
+    <net code="20" name="Net-(D2-Pad2)">
+      <node ref="Module1" pin="5"/>
+      <node ref="D2" pin="2"/>
+    </net>
     <net code="21" name="Net-(Module6-Pad3)">
-      <node ref="R10" pin="2"/>
       <node ref="Module6" pin="3"/>
+      <node ref="R10" pin="2"/>
     </net>
     <net code="22" name="Net-(Module6-Pad4)">
       <node ref="R11" pin="2"/>
@@ -938,8 +938,8 @@
       <node ref="Module6" pin="5"/>
     </net>
     <net code="28" name="Net-(J14-Pad3)">
-      <node ref="J14" pin="3"/>
       <node ref="Module5" pin="4"/>
+      <node ref="J14" pin="3"/>
     </net>
     <net code="29" name="Net-(J14-Pad4)">
       <node ref="J14" pin="4"/>

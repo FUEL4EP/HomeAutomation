@@ -2,26 +2,23 @@
 // HB-UNI-Sensor1-CO2_SCD30
 // Version 2.0
 // (C) 2020 FUEL4EP (Creative Commons)
+// (C) 2018-2020 Tom Major (Creative Commons)
 // https://creativecommons.org/licenses/by-nc-sa/4.0/
 // You are free to Share & Adapt under the following terms:
 // Give Credit, NonCommercial, ShareAlike
 // +++
-// AskSin++                       2016 papa (Creative Commons)
-// HB-UNI-Sensor1                 2018-2020 TomMajor (Creative Commons)
-// SparkFun_SCD30_Arduino_Library 2018 sparkfun (Creative Commons)
-// Adafruit_ADS1X15               2012 Adafruit (BSD license)
+// AskSin++ 2016-10-31 papa Creative Commons
 //---------------------------------------------------------
 
-//---------------------------------------------------------
-// !! NDEBUG sollte aktiviert werden wenn die Sensorentwicklung und die Tests abgeschlossen sind und das Gerät in den 'Produktionsmodus' geht.
-// Zum Beispiel bei aktiviertem BME280 und MAX44009 werden damit ca. 2,6 KBytes Flash und 100 Bytes RAM eingespart.
-// Insbesondere die RAM-Einsparungen sind wichtig für die Stabilität / dynamische Speicherzuweisungen etc.
-// Dies beseitigt dann auch die mögliche Arduino-Warnung 'Low memory available, stability problems may occur'.
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
-//#define NDEBUG
+// !! NDEBUG muss UNBEDINGT aktiviert werden wenn die Sensorentwicklung und die Tests abgeschlossen sind und das Gerät in den 'Produktionsmodus' geht !!!
+//
+//
+#define NDEBUG
 #define USE_CC1101_ALT_FREQ_86835  //use alternative frequency to compensate not correct working cc1101 modules
 
-//---------------------------------------------------------
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #define ADS1115
 #define SOLAR_CHARGE
@@ -45,13 +42,14 @@
 // - Pin und Address Definitionen der Sensoren
 // - Clock Definition
 // - Schaltungsvariante und Pins für Batteriespannungsmessung
-// - Schwellwerte für Batteriespannungsmessung
+// - Schwellwerte für Batteriespannungsmessung (bitte nicht ändern, sonst droht eine Tiefentladung der Akkumulatoren)
 #include "Cfg/Device_SCD30.h"
 
 #define PARAMETER_AMBIENT_PRESSURE             0      // ambient air pressure for the SCD30's internal compensation, set to zero for disabling pressure compensation, see 'Interface Description Sensirion SCD30Sensor Module'
 
 // number of available peers per channel
 #define PEERS_PER_CHANNEL 6
+
 
 // all library classes are placed in the namespace 'as'
 using namespace as;
@@ -98,8 +96,9 @@ const struct DeviceInfo PROGMEM devinfo = {
     cDEVICE_ID,        // Device ID                 defined in ./Cfg/Device_SCD30.h
     cDEVICE_SERIAL,    // Device Serial             defined in ./Cfg/Device_SCD30.h
     { 0xf6, 0x01 },    // Device Model              needs to fit to Addon XML hb-uni-sensor-CO2-SCD30.xml line 6:
-                       //                           parameter index="10.0" size="2.0" const_value="0xF601" /
-    0x10,              // Firmware Version
+                       //                           <parameter index="10.0" size="2.0" const_value="0xF601" /
+    // Firmware Version
+    0x10,
     as::DeviceType::THSensor,    // Device Type
     { 0x01, 0x01 }               // Info Bytes
 };
@@ -332,11 +331,6 @@ class WeatherChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
 #endif
 
 
-//#ifdef SENSOR_SCD30
-//    Sens_SCD30 scd30;
-//#endif
-
-
 public:
     WeatherChannel()
         : Channel()
@@ -417,16 +411,16 @@ public:
        //adc3 = ads.readADC_SingleEnded(3);
        adc0_VCC_f  = (float)adc0_VCC*ADC0_FACTOR;
        adc1_VBat_f = (float)adc1_VBat*ADC1_FACTOR;
-       DPRINT(F("VCC(ADC0)   : "));
+       DPRINT(F("VCC(ADC0)                    : "));
        DDECLN(adc0_VCC_f);
-       DPRINT(F("VBat(ADC1)  : "));
+       DPRINT(F("VBat(ADC1)                   : "));
        DDECLN(adc1_VBat_f);
        //DDECLN(adc2);
        //DDECLN(adc3);
        batteryVoltage1000 = (uint16_t)adc1_VBat_f;   //captured by HW ADC ADS1115
        VCCVoltage1000     = (uint16_t)adc0_VCC_f;    //captured by HW ADC ADS1115    
 #endif
-       DPRINT(F("VCC(MCU ADC): "));
+       DPRINT(F("Accumulator voltage(MCU ADC) : "));
        device().battery().update();
        operatingVoltage1000 = device().battery().current();    // BatteryTM class, mV resolution
 
@@ -474,7 +468,7 @@ public:
     }
     
     void configChanged() {
-      DPRINTLN("* Config Changed                                 : List1");
+      DPRINTLN(F("* Config Changed                                 : List1"));
       DPRINT(F("* Temperature Offset x10                         : ")); DDECLN(this->getList1().tempOffset10());
       DPRINT(F("* Humidity Offset x10                            : ")); DDECLN(this->getList1().humidOffset10());
       scd30.init(this->device().getList0().updIntervall(), this->device().getList0().altitude(), PARAMETER_AMBIENT_PRESSURE, (int16_t)this->getList1().tempOffset10(), (int16_t)this->getList1().humidOffset10());
@@ -538,14 +532,21 @@ void loop()
     bool worked = hal.runready();
     bool poll   = sdev.pollRadio();
     if (worked == false && poll == false) {
-        // deep discharge protection
+#ifdef NDEBUG
+        // deep discharge protection // only active when Debugging is switched !! Otherwise the deep discharge protection would get active if an accumulator battery is removed
+        //
+        // IMPORTANT: During Debugging or programming at least one accumulator battery needs to be removed in order to avoid a short current loop:
+        // accumulator => boost converter => external supply by the ISP programmer or FTDI debugger
+        // This would cause a deep discharge of the accumulator batteries!!!
+        //
         // if we drop below critical battery level - switch off all and sleep forever
         if (hal.battery.critical()) {
-            // stop continuous measurements of SCD30 before falling to sleep
-            scd30.stop_measurements();
-            // this call will never return
-            hal.activity.sleepForever(hal);
+          //stop continuous measurements of SCD30 before falling to sleep
+          scd30.stop_measurements();
+          // this call will never return
+          hal.activity.sleepForever(hal);
         }
+#endif
         // if nothing to do - go sleep
         hal.activity.savePower<SAVEPWR_MODE>(hal);
         //hal.activity.savePower<Idle<>>(hal);

@@ -418,10 +418,6 @@ Wire Wire Line
 Wire Wire Line
 	3650 5250 3950 5250
 Wire Wire Line
-	3650 5350 3950 5350
-Wire Wire Line
-	3650 5450 3950 5450
-Wire Wire Line
 	3650 5550 3950 5550
 Wire Wire Line
 	6650 5350 6400 5350
@@ -643,7 +639,7 @@ Text Notes 2450 7700 0    50   ~ 0
 CC1101 is supplied by VCC=3.7..3.9V \n(up to it's maximum ratings)\n
 Text Notes 6150 2800 0    50   ~ 0
 VCC depends on source of power supply:\na) Step-Up converter Module4:   3.7V\nb) 6V DC input power supply and Step-Down converter: 3.8V\nc) Solar suppy and Step-Up converter: 3.7 .. 3.9V (depends on sun light intensity)
-Text Notes 4150 5200 0    50   ~ 10
+Text Notes 900  4950 0    50   ~ 10
 For power saving, please desolder\nvoltage regulator and red LED from\nArduino Pro Mini module
 NoConn ~ 3650 4150
 $Comp
@@ -1161,4 +1157,54 @@ Text Notes 3400 1750 0    50   ~ 0
 C2 has been added on 6th Sept 2020\n
 Text Notes 8100 1200 0    50   ~ 0
 A 470 uF decoupling capacitor attached to the I2C sockets has been removed !
+$Comp
+L Device:R R12
+U 1 1 6015794F
+P 4200 5450
+F 0 "R12" V 4300 5450 50  0000 C CNN
+F 1 "47k" V 4200 5450 50  0000 C CNN
+F 2 "" V 4130 5450 50  0001 C CNN
+F 3 "~" H 4200 5450 50  0001 C CNN
+	1    4200 5450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R14
+U 1 1 601625EB
+P 4350 5100
+F 0 "R14" H 4420 5146 50  0000 L CNN
+F 1 "47k" H 4420 5055 50  0000 L CNN
+F 2 "" V 4280 5100 50  0001 C CNN
+F 3 "~" H 4350 5100 50  0001 C CNN
+	1    4350 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R13
+U 1 1 60162E56
+P 4350 4750
+F 0 "R13" H 4420 4796 50  0000 L CNN
+F 1 "47k" H 4420 4705 50  0000 L CNN
+F 2 "" V 4280 4750 50  0001 C CNN
+F 3 "~" H 4350 4750 50  0001 C CNN
+	1    4350 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 5450 4050 5450
+Wire Wire Line
+	4350 5450 4350 5350
+Wire Wire Line
+	4350 4950 4350 4900
+Wire Wire Line
+	4350 4600 4350 3450
+Wire Wire Line
+	4350 3450 2600 3450
+Wire Wire Line
+	2600 3450 2600 2450
+Wire Wire Line
+	3650 5350 4350 5350
+Connection ~ 4350 5350
+Wire Wire Line
+	4350 5350 4350 5250
 $EndSCHEMATC

@@ -56,8 +56,8 @@
 // 1) Standard: tmBattery, UBatt = Betriebsspannung AVR
 //#define BAT_SENSOR tmBattery
 //------------
-// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A0, activation pin A1, Faktor = Rges/Rlow*1000, z.B. 100k/470k, Faktor 570k/470k*1000 = 1213
-#define BAT_SENSOR tmBatteryResDiv<A0, A1, 1213>
+// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A2, activation pin A3, Faktor = Rges/Rlow*1000, z.B. 94k/47k, Faktor (3*47k)/(2*47k)*1000 = 3333; correction factor2 = 2653/2986, total factor = 3333 * 2653/2986
+#define BAT_SENSOR tmBatteryResDiv<A2, A3, 2961>
 //------------
 // 3) Echte Batteriespannungsmessung unter Last, siehe README und Thema "Babbling Idiot Protection"
 // tmBatteryLoad: sense pin A0, activation pin D9, Faktor = Rges/Rlow*1000, z.B. 10/30 Ohm, Faktor 40/10*1000 = 4000, 200ms Belastung vor Messung
@@ -66,8 +66,8 @@
 
 //---------------------------------------------------------
 // Schwellwerte für Batteriespannungsmessung
-#define BAT_VOLT_LOW        32  // 3.2V minimale Betriebsspannung des SCD30 Sensors ist 3.5V
-#define BAT_VOLT_CRITICAL   27  // 2.7V
+#define BAT_VOLT_LOW        25  // 2.5V accumulator voltage for low battery signalling measured at pin A2 (see above)
+#define BAT_VOLT_CRITICAL   22  // 2.2V accuumulator voltage for switch off (sleep forever)
 
 
 #endif

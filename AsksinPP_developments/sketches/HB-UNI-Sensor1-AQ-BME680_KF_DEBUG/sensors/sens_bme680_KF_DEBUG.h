@@ -946,7 +946,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
         }
       }
       
-      normalized_residual=((double)(residual - ee.res_lower_limit)/(double)(ee.res_upper_limit - ee.res_lower_limit));
+      normalized_residual=constrain(((double)(residual - ee.res_lower_limit)/(double)(ee.res_upper_limit - ee.res_lower_limit)),0.0,1.0); // constraining is necessary to avoid underflow effects later on
       
       // limit minimum of normalized_residual to EPSILON
       if ( normalized_residual < EPSILON)

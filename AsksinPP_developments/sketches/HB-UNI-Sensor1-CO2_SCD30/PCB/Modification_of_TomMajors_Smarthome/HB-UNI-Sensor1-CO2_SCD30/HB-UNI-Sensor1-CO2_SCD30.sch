@@ -7,7 +7,7 @@ Sheet 1 3
 Title ""
 Date "2020-08-16"
 Rev ""
-Comp "developped by FUEL4EP"
+Comp "developed by FUEL4EP"
 Comment1 "AsksinPP CO2 sensor based on Sensirion SCD30 sensor"
 Comment2 ""
 Comment3 ""

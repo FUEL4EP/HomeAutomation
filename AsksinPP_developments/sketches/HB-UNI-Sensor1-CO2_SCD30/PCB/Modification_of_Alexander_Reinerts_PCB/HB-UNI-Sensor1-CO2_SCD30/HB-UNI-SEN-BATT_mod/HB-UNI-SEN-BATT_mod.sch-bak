@@ -1157,4 +1157,8 @@ Wire Wire Line
 Wire Wire Line
 	4350 1650 4200 1650
 Connection ~ 4200 1650
+Text Notes 3400 1750 0    50   ~ 0
+C2 has been added on 6th Sept 2020\n
+Text Notes 8100 1200 0    50   ~ 0
+A 470 uF decoupling capacitor attached to the I2C sockets has been removed !
 $EndSCHEMATC
