@@ -120,6 +120,7 @@ struct AQ_eeprom_data {
     KALMAN<Nstate,Nobs>         K;                                // Kalman filter
     BLA::Matrix<Nobs>           obs;                              // Kalman observation vector
     double                      iir_filter_coefficient;           // IIR filter coefficient for decay/increase of normalization boundaries of gas resistances / residual gas resistances
+    double                      non_convergence_factor;           // factor that indicates the non-convergence of the Kalman filter 0.0 .. 100.0 (poor convergence)
     bool                        settled_flag;                     // indicates whether Kalman filter regression coefficients are settled
     char                        finish_string[sizeof(FINISH_STRING)];
     uint32_t                    crc32;                            // crc32 of struct AQ_eeprom_data except the crc32 itself
@@ -271,6 +272,7 @@ public:
     
     ee.iir_filter_coefficient  = IIR_FILTER_COEFFICIENT_KF_SETTLED; // initial value
     ee.settled_flag            = false;                             // initial value
+    ee.non_convergence_factor  = 100.0;                             // initial.value
     
     pinMode(KALMAN_FILTER_SETTLING_INDICATION_PIN, OUTPUT);
     
@@ -288,7 +290,7 @@ public:
   // check id Kalman filter has already settled; check is done every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
       
     // ee.settled_flag is true if Kalman filter is settled
-    double ratio;
+    double ratio = 0.0;
     
     // check settling of the Kalman filter's online regression coefficients every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
     if (( measurement_index % NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING) == 1 ){
@@ -316,6 +318,8 @@ public:
         ee.settled_flag = false;
       }
       
+      ee.non_convergence_factor = ratio;
+      
       // check online regression coefficient beta
       if (ee.kalman_beta != 0.0 ) { 
         ratio = fabs((ee.kalman_beta - ee.previous_beta) / ee.kalman_beta) ;
@@ -332,6 +336,12 @@ public:
       else {
         ee.settled_flag = false;
       }
+      
+      if ( ratio > ee.non_convergence_factor ) {
+        ee.non_convergence_factor = ratio;
+      }
+      
+      ee.non_convergence_factor = constrain( ee.non_convergence_factor * 100.0, 0.0, 100.0 );
       
       // update previous regression coefficients
       ee.previous_alpha = ee.kalman_alpha;
@@ -946,7 +956,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
         }
       }
       
-      normalized_residual=constrain(((double)(residual - ee.res_lower_limit)/(double)(ee.res_upper_limit - ee.res_lower_limit)),0.0,1.0); // constraining is necessary to avoid underflow effects later on
+      normalized_residual=constrain( ((double)(residual - ee.res_lower_limit)/(double)(ee.res_upper_limit - ee.res_lower_limit)), 0.0, 1.0 ); // constraining is necessary to avoid underflow effects later on
       
       // limit minimum of normalized_residual to EPSILON
       if ( normalized_residual < EPSILON)
@@ -958,18 +968,18 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       log_normalized_residual = -1.0 * (log10(normalized_residual) - 2.0);
       
       _aqState_scaled                    = (uint16_t)(log_normalized_residual*10000.0); //0.0..40000.0
-      _gas_resistance_raw_scaled         = (uint16_t) constrain((gas_raw / 20),0,USHRT_MAX);
-      _gas_resistance_min_scaled         = (uint16_t) constrain((ee.gas_lower_limit / 20),0,USHRT_MAX);
-      _gas_resistance_max_scaled         = (uint16_t) constrain((ee.gas_upper_limit / 20),0,USHRT_MAX);
+      _gas_resistance_raw_scaled         = (uint16_t) constrain(( gas_raw / 20.0 ),0,USHRT_MAX);
+      _gas_resistance_min_scaled         = (uint16_t) constrain(( ee.gas_lower_limit / 20 ),0,USHRT_MAX);
+      _gas_resistance_max_scaled         = (uint16_t) constrain(( ee.gas_upper_limit / 20 ),0,USHRT_MAX);
       
-      _aq_compensated_gas_res_raw_scaled = (int16_t) constrain((residual / 80),SHRT_MIN,SHRT_MAX);
-      _aq_compensated_gas_res_min_scaled = (int16_t) constrain((ee.res_lower_limit / 80),SHRT_MIN,SHRT_MAX);
-      _aq_compensated_gas_res_max_scaled = (int16_t) constrain((ee.res_upper_limit / 80),SHRT_MIN,SHRT_MAX);
+      _aq_compensated_gas_res_raw_scaled = (int16_t) constrain(( residual / 80 ),SHRT_MIN,SHRT_MAX);
+      _aq_compensated_gas_res_min_scaled = (int16_t) constrain(( ee.res_lower_limit / 80 ),SHRT_MIN,SHRT_MAX);
+      _aq_compensated_gas_res_max_scaled = (int16_t) constrain(( ee.res_upper_limit / 80 ),SHRT_MIN,SHRT_MAX);
       DPRINT(F("ee.kalman_alpha                        = "));DDEC(ee.kalman_alpha);                          DPRINTLN(F(" "));
-      _aq_alpha_scaled                   = (int16_t) constrain((ee.kalman_alpha /4.0),SHRT_MIN,SHRT_MAX);
+      _aq_alpha_scaled                   = (int16_t) constrain(( ee.kalman_alpha / 4.0 ),SHRT_MIN,SHRT_MAX);
       DPRINT(F("_aq_alpha_scaled                       = "));DDEC(_aq_alpha_scaled);                         DPRINTLN(F(" "));
-      _aq_beta_scaled                    = (int16_t) constrain((ee.kalman_beta / 16.0),SHRT_MIN,SHRT_MAX);
-      _aq_delta_scaled                   = (int16_t) constrain((ee.kalman_delta / 40.0),SHRT_MIN,SHRT_MAX);
+      _aq_beta_scaled                    = (int16_t) constrain(( ee.kalman_beta / 16.0 ),SHRT_MIN,SHRT_MAX);
+      _aq_delta_scaled                   = (int16_t) constrain(( ee.kalman_delta / 40.0 ),SHRT_MIN,SHRT_MAX);
       
 #ifdef DEEP_DEBUG
       DPRINT(F("raw gas resistance                     = "));DDEC(gas_raw);                                  DPRINTLN(F(" "));
@@ -1003,6 +1013,13 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
     // reset indication of the Kalman filter's settling state to pin A0 = pin 37 of ATMega1284P of Tindie Pro Mini XL V2, active high for status 'settled', reset here to 'LOW'
     // you may connect a yellow LED with resistor 220 Ohms in series between A0 PCB PIN and PCB GND pin
     digitalWrite(KALMAN_FILTER_SETTLING_INDICATION_PIN, LOW);
+    
+    // indicate the non-settled status to the AQ_LOG10 datapoint and the settling convergence factor to AQ_LEVEL datapoint; during the initial settling these datapoints would anyway be somehow chaotic
+    // such the non-setlled state can easily be observed without an additinal LED
+    if (ee.settled_flag) {
+        _aqState_scaled = 33333;                              // during settling AQ_LOG10 is set to 3.3333
+        _aqLevel        = (uint8_t)ee.non_convergence_factor;  // indicates the non convergence ( ee.non_convergence_factor higher than REGRESSION_SETLLED_THRESHOLD * 100.0; > 15 .. 100 poor convergence )
+    }
 
   }
   

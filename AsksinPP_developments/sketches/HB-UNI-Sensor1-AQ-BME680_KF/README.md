@@ -13,7 +13,7 @@
 
 
  
-#Universeller selbstkalibrierenter Luftgütesensor auf der Basis von dem Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680_KF) mit vollautomatischer Kompensation der Abhängigkeiten von Temperatur und absoluter Luftfeuchte mit einem Kalman Filter
+#Universeller selbstkalibrierender Luftgütesensor auf der Basis von dem Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680_KF) mit vollautomatischer Kompensation der Abhängigkeiten von Temperatur und absoluter Luftfeuchte mit einem Kalman Filter
 - abgeleitet von Jérômes ([jp112sdl](https://github.com/jp112sdl)) [HB-UNI-Sen-IAQ](https://github.com/jp112sdl/HB-UNI-Sen-IAQ)
 - ein herzliches Dankeschön für die Basisarbeit geht an Jérôme (jp112sdl)
 - ein herzliches Dankeschön an alle, die im Homematic Forum geholfen haben, meine Probleme zu lösen
@@ -165,7 +165,8 @@
 
 - als Taktfrequenz des ATmega1284P 8 MHz interner RC Oszillator einstellen (es gibt zur Zeit leider nur die 20 MHz Quarz Version bei Tindie)
 - 
-- der Sketch verwendet 52868 Bytes (40%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 2253 Bytes (13%) des dynamischen Speichers, 14131 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
+- der Sketch verwendet 55462 Bytes (42%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 2303 Bytes (14%) des dynamischen Speichers, 14081 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
+
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
 - [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) zum Setzen der Fuses für 8MHz interner RC Oszillator (Linux version)

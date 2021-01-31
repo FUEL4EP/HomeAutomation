@@ -120,6 +120,7 @@ struct AQ_eeprom_data {
     KALMAN<Nstate,Nobs>         K;                                // Kalman filter
     BLA::Matrix<Nobs>           obs;                              // Kalman observation vector
     double                      iir_filter_coefficient;           // IIR filter coefficient for decay/increase of normalization boundaries of gas resistances / residual gas resistances
+    double                      non_convergence_factor;           // factor that indicates the non-convergence of the Kalman filter 0.0 .. 100.0 (poor convergence)
     bool                        settled_flag;                     // indicates whether Kalman filter regression coefficients are settled
     char                        finish_string[sizeof(FINISH_STRING)];
     uint32_t                    crc32;                            // crc32 of struct AQ_eeprom_data except the crc32 itself
@@ -271,6 +272,7 @@ public:
     
     ee.iir_filter_coefficient  = IIR_FILTER_COEFFICIENT_KF_SETTLED; // initial value
     ee.settled_flag            = false;                             // initial value
+    ee.non_convergence_factor  = 100.0;                             // initial.value
     
     pinMode(KALMAN_FILTER_SETTLING_INDICATION_PIN, OUTPUT);
     
@@ -288,7 +290,7 @@ public:
   // check id Kalman filter has already settled; check is done every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
       
     // ee.settled_flag is true if Kalman filter is settled
-    double ratio;
+    double ratio = 0.0;
     
     // check settling of the Kalman filter's online regression coefficients every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
     if (( measurement_index % NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING) == 1 ){
@@ -316,6 +318,8 @@ public:
         ee.settled_flag = false;
       }
       
+      ee.non_convergence_factor = ratio;
+      
       // check online regression coefficient beta
       if (ee.kalman_beta != 0.0 ) { 
         ratio = fabs((ee.kalman_beta - ee.previous_beta) / ee.kalman_beta) ;
@@ -333,6 +337,12 @@ public:
         ee.settled_flag = false;
       }
       
+      if ( ratio > ee.non_convergence_factor ) {
+        ee.non_convergence_factor = ratio;
+      }
+      
+      ee.non_convergence_factor = constrain( ee.non_convergence_factor * 100.0, 0.0, 100.0 );
+      
       // update previous regression coefficients
       ee.previous_alpha = ee.kalman_alpha;
       ee.previous_beta  = ee.kalman_beta;
@@ -340,7 +350,7 @@ public:
       if ( (! ee.settled_flag)  && (measurement_index != 1) ){  // not for startup: measurement_index == 1
         // Kalman filter online regression did not yet settle
         // reset upper and lower ever measured/calulated gas resistances/residual gas resistances
-        // increase decay factor to about 71% in about 6h
+        // increase decay factor to about 10% in about 4h
         ee.max_res                         = -START_RESISTANCE;                      // initial value
         ee.min_res                         =  START_RESISTANCE;                      // initial value
         ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
@@ -355,7 +365,7 @@ public:
       else {
         // Kalman filter online regression did settle
         // set decay factor to about 71% in about 7 days
-        ee.iir_filter_coefficient         =  IIR_FILTER_COEFFICIENT_KF_SETTLED;     // increase decay factor to about 71% in about 6h
+        ee.iir_filter_coefficient         =  IIR_FILTER_COEFFICIENT_KF_SETTLED;     // increase decay factor to about 10% in about 4h
       }
       
     }
@@ -946,7 +956,8 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
         }
       }
       
-      normalized_residual=constrain(((double)(residual - ee.res_lower_limit)/(double)(ee.res_upper_limit - ee.res_lower_limit)),0.0,1.0); // constraining is necessary to avoid underflow effects later on
+      normalized_residual=constrain( ((double)(residual - ee.res_lower_limit)/(double)(ee.res_upper_limit - ee.res_lower_limit)), 0.0, 1.0 ); // constraining is necessary to avoid underflow effects later on
+      
       
       // limit minimum of normalized_residual to EPSILON
       if ( normalized_residual < EPSILON)
@@ -958,18 +969,18 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       log_normalized_residual = -1.0 * (log10(normalized_residual) - 2.0);
       
       _aqState_scaled                    = (uint16_t)(log_normalized_residual*10000.0); //0.0..40000.0
-      _gas_resistance_raw_scaled         = (uint16_t) constrain((gas_raw / 20),0,USHRT_MAX);
-      _gas_resistance_min_scaled         = (uint16_t) constrain((ee.gas_lower_limit / 20),0,USHRT_MAX);
-      _gas_resistance_max_scaled         = (uint16_t) constrain((ee.gas_upper_limit / 20),0,USHRT_MAX);
+      _gas_resistance_raw_scaled         = (uint16_t) constrain(( gas_raw / 20.0 ),0,USHRT_MAX);
+      _gas_resistance_min_scaled         = (uint16_t) constrain(( ee.gas_lower_limit / 20 ),0,USHRT_MAX);
+      _gas_resistance_max_scaled         = (uint16_t) constrain(( ee.gas_upper_limit / 20 ),0,USHRT_MAX);
       
-      _aq_compensated_gas_res_raw_scaled = (int16_t) constrain((residual / 80),SHRT_MIN,SHRT_MAX);
-      _aq_compensated_gas_res_min_scaled = (int16_t) constrain((ee.res_lower_limit / 80),SHRT_MIN,SHRT_MAX);
-      _aq_compensated_gas_res_max_scaled = (int16_t) constrain((ee.res_upper_limit / 80),SHRT_MIN,SHRT_MAX);
+      _aq_compensated_gas_res_raw_scaled = (int16_t) constrain(( residual / 80 ),SHRT_MIN,SHRT_MAX);
+      _aq_compensated_gas_res_min_scaled = (int16_t) constrain(( ee.res_lower_limit / 80 ),SHRT_MIN,SHRT_MAX);
+      _aq_compensated_gas_res_max_scaled = (int16_t) constrain(( ee.res_upper_limit / 80 ),SHRT_MIN,SHRT_MAX);
       DPRINT(F("ee.kalman_alpha                        = "));DDEC(ee.kalman_alpha);                          DPRINTLN(F(" "));
-      _aq_alpha_scaled                   = (int16_t) constrain((ee.kalman_alpha /4.0),SHRT_MIN,SHRT_MAX);
+      _aq_alpha_scaled                   = (int16_t) constrain(( ee.kalman_alpha / 4.0 ),SHRT_MIN,SHRT_MAX);
       DPRINT(F("_aq_alpha_scaled                       = "));DDEC(_aq_alpha_scaled);                         DPRINTLN(F(" "));
-      _aq_beta_scaled                    = (int16_t) constrain((ee.kalman_beta / 16.0),SHRT_MIN,SHRT_MAX);
-      _aq_delta_scaled                   = (int16_t) constrain((ee.kalman_delta / 40.0),SHRT_MIN,SHRT_MAX);
+      _aq_beta_scaled                    = (int16_t) constrain(( ee.kalman_beta / 16.0 ),SHRT_MIN,SHRT_MAX);
+      _aq_delta_scaled                   = (int16_t) constrain(( ee.kalman_delta / 40.0 ),SHRT_MIN,SHRT_MAX);
       
 #ifdef DEEP_DEBUG
       DPRINT(F("raw gas resistance                     = "));DDEC(gas_raw);                                  DPRINTLN(F(" "));
@@ -1003,19 +1014,26 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
     // reset indication of the Kalman filter's settling state to pin A0 = pin 37 of ATMega1284P of Tindie Pro Mini XL V2, active high for status 'settled', reset here to 'LOW'
     // you may connect a yellow LED with resistor 220 Ohms in series between A0 PCB PIN and PCB GND pin
     digitalWrite(KALMAN_FILTER_SETTLING_INDICATION_PIN, LOW);
+    
+    // indicate the non-settled status to the AQ_LOG10 datapoint and the settling convergence factor to AQ_LEVEL datapoint; during the initial settling these datapoints would anyway be somehow chaotic
+    // such the non-setlled state can easily be observed without an additinal LED
+    if (ee.settled_flag) {
+        _aqState_scaled = 33333;                              // during settling AQ_LOG10 is set to 3.3333
+        _aqLevel        = (uint8_t)ee.non_convergence_factor;  // indicates the non convergence ( ee.non_convergence_factor higher than REGRESSION_SETLLED_THRESHOLD * 100.0; > 15 .. 100 poor convergence )
+    }
 
   }
   
-  // dedicated list of return variables for debugging only, limitation of payload of a event message to 17 Bytes!
+  // list of return variables, please notice the limitation of payload of a event message to max. 17 Bytes!
   
-  int16_t   temperature ()                       { return _temperature; }
-  uint8_t   aq_level ()                          { return _aqLevel; }                              // 0..100%                         CCU Historian datapoint parameter AQ_LEVEL
-  uint16_t  aq_state_scaled ()                   { return _aqState_scaled; }                       // 0..40000, mul 10000!            CCU Historian datapoint parameter AQ_LOG10
-  int16_t   aq_compensated_gas_res_raw_scaled () { return _aq_compensated_gas_res_raw_scaled; }    // -32768..32768; div 80!          CCU Historian datapoint parameter AQ_COMP_GAS_RES_RAW
-  int16_t   aq_compensated_gas_res_min_scaled () { return _aq_compensated_gas_res_min_scaled; }    // -32768..32768; div 80!          CCU Historian datapoint parameter AQ_COMP_GAS_RES_MIN
-  int16_t   aq_compensated_gas_res_max_scaled () { return _aq_compensated_gas_res_max_scaled; }    // -32768..32768; div 80!          CCU Historian datapoint parameter AQ_COMP_GAS_RES_MAX
-  int16_t   aq_alpha_scaled ()                   { return _aq_alpha_scaled; }                      // -32768..32768; div 4!           CCU Historian datapoint parameter AQ_ALPHA
-  int16_t   aq_beta_scaled ()                    { return _aq_beta_scaled; }                       // -32768..32768; div 16!          CCU Historian datapoint parameter AQ_BETA
+  int16_t   temperature ()                  { return _temperature; }
+  uint16_t  pressureNN ()                   { return _pressureNN; }
+  uint16_t  humidity ()                     { return _humidity; }                     // 0..100%
+  uint8_t   aq_level ()                     { return _aqLevel; }                      // 0..100%                         CCU Historian datapoint parameter AQ_LEVEL
+  uint16_t  aq_state_scaled ()              { return _aqState_scaled; }               // 0..40000, mul 10000!            CCU Historian datapoint parameter AQ_LOG10
+  uint16_t  gas_resistance_raw_scaled ()    { return _gas_resistance_raw_scaled; }    // 0..65365; div 20!               CCU Historian datapoint parameter AQ_GAS_RESISTANCE_RAW
+  uint16_t  gas_resistance_min_scaled ()    { return _gas_resistance_min_scaled; }    // 0..65365; div 20!               CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MIN
+  uint16_t  gas_resistance_max_scaled ()    { return _gas_resistance_max_scaled; }    // 0..65365; div 20!               CCU Historian datapoint parameter AQ_GAS_RESISTANCE_MAX
 };
 
 }
