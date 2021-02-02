@@ -6,7 +6,7 @@
 - See also '[Optimum Linear Estimation](https://www.sciencedirect.com/topics/social-sciences/kalman-filter)'
 - The below Python Jupyterlab Kalman filter 'kalman-filter-AQ.ipynb' is derived from Kalman Filter is derived from [Zaur Fataliyev's](https://github.com/zziz) Github [ zziz /
 kalman-filter](https://github.com/zziz/kalman-filter) repository. Thanks to Zaur for this great repository. 
-- The corresponding C++ implementation of the Kalman filter in '[sens_bme680_KF_DEBUG.h](../sensors/sens_bme680_KF_DEBUG.h)' is based on [Romain JL. FETICK's](https://github.com/rfetick) Github  [rfetick/Kalman](https://github.com/rfetick/Kalman) repository 'Implement Kalman filter for your Arduino projects'. Special thanks to Romain for this great repository.
+- The corresponding C++ implementation of the Kalman filter in '[sens_bme680_KF.h](../sensors/sens_bme680_KF.h)' is based on [Romain JL. FETICK's](https://github.com/rfetick) Github  [rfetick/Kalman](https://github.com/rfetick/Kalman) repository 'Implement Kalman filter for your Arduino projects'. Special thanks to Romain for this great repository.
 - For executing an online linear regression, it is essential to set the system model's covariance matrix Q to a zero matrix. Furthermore, the measurement covariance matrix R should bet set to a very small value, e.g. 0.0001 or smaller.
 
 ## Required Python installations on your computer
@@ -29,6 +29,7 @@ kalman-filter](https://github.com/zziz/kalman-filter) repository. Thanks to Zaur
 - Then run in JupyterLab
 	+ kalman-filter-AQ.ipynb
 	+ Multiple linear regression for BME680 gas readings of a single sensor.ipynb
+	+ Prove_of_Kalman_filter_with_synthesized_data.ipynb
 
 - Compare the linear regression results at the end of the notebook
 - The calculations can take several minutes depending on the size of historian.csv
@@ -65,6 +66,8 @@ kalman-filter](https://github.com/zziz/kalman-filter) repository. Thanks to Zaur
  Please check that the decimal separator is a **','**, the thousands seperator should be a **'.'**. If you use a non German language setting on your computer, e.g. Austrian, you may need to adapt the thousands separator in the provided Jupyter notebooks 'kalman-filter-AQ.ipynb and 'Multiple linear regression for BME680 gas readings of a single sensor.ipynb' appropriately:
  
 >  df0 = pd.read_csv("historian.csv", sep=';', thousands=".", decimal=",", skiprows = [0,1,2],dtype={'High': np.float64, 'Low': np.float64}, header = None, encoding= 'unicode_escape',  parse_dates=[0], date_parser=dateparse, names = [ 'Datum', 'Mode', 'raw_gas_resistance', 'relative_humidity', 'temperature'])
+>  
+>  
 
 # Prove of the correct online regression by the Kalman filter by using synthesized sensor data
 

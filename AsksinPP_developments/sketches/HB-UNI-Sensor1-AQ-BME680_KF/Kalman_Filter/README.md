@@ -29,6 +29,7 @@ kalman-filter](https://github.com/zziz/kalman-filter) repository. Thanks to Zaur
 - Then run in JupyterLab
 	+ kalman-filter-AQ.ipynb
 	+ Multiple linear regression for BME680 gas readings of a single sensor.ipynb
+	+ Prove_of_Kalman_filter_with_synthesized_data.ipynb
 
 - Compare the linear regression results at the end of the notebook
 - The calculations can take several minutes depending on the size of historian.csv
