@@ -13,7 +13,7 @@
 
 
  
-#Universeller selbstkalibrierender Luftgütesensor auf der Basis von dem Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680_KF) mit vollautomatischer Kompensation der Abhängigkeiten von Temperatur und absoluter Luftfeuchte mit einem Kalman Filter
+# Universeller selbstkalibrierender Luftgütesensor auf der Basis von dem Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680_KF) mit vollautomatischer Kompensation der Abhängigkeiten von Temperatur und absoluter Luftfeuchte mit einem Kalman Filter
 - abgeleitet von Jérômes ([jp112sdl](https://github.com/jp112sdl)) [HB-UNI-Sen-IAQ](https://github.com/jp112sdl/HB-UNI-Sen-IAQ)
 - ein herzliches Dankeschön für die Basisarbeit geht an Jérôme (jp112sdl)
 - ein herzliches Dankeschön an alle, die im Homematic Forum geholfen haben, meine Probleme zu lösen
