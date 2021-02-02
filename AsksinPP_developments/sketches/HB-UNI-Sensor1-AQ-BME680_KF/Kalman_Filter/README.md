@@ -65,3 +65,19 @@ kalman-filter](https://github.com/zziz/kalman-filter) repository. Thanks to Zaur
  Please check that the decimal separator is a **','**, the thousands seperator should be a **'.'**. If you use a non German language setting on your computer, e.g. Austrian, you may need to adapt the thousands separator in the provided Jupyter notebooks 'kalman-filter-AQ.ipynb and 'Multiple linear regression for BME680 gas readings of a single sensor.ipynb' appropriately:
  
 >  df0 = pd.read_csv("historian.csv", sep=';', thousands=".", decimal=",", skiprows = [0,1,2],dtype={'High': np.float64, 'Low': np.float64}, header = None, encoding= 'unicode_escape',  parse_dates=[0], date_parser=dateparse, names = [ 'Datum', 'Mode', 'raw_gas_resistance', 'relative_humidity', 'temperature'])
+>  
+>  
+
+# Prove of the correct online regression by the Kalman filter by using synthesized sensor data
+
+- A Jupyter notebook ["Prove_of_Kalman_filter_with_synthesized_data.ipynb"](./Prove_of_Kalman_filter_with_synthesized_data.ipynb) is provided.
+- It can be used for the following purposes for a better understanding and prove of the correct online regression by the Kalman filter by using synthesized sensor data:
++	creation of synthesized sensor data (gas_resistance_raw, temperature, absolute humidity)
++	gas_resistance_raw is synthesized as a linear equation of gas_resistance_compensated, temperature, and absolute_humidity
++	the synthesis parameters 'alpha' and 'beta' can be set
++	the time frame of the sythesized data can be chosen, e.g. 4 days, 14 days, or 150 days
++	then a Kalman online regression is done with the synthesized data
++	at the end of the notebook the estimated regression parameters 'alpha' and 'beta' are compared with the set ones, the relative error is calculated
++	by playing with different time frames 'number_of_days', it can easily be seen that the estimation accuracy improves with a longer time frame. Recommended minimum regression duration is about 14 days.
++ see also some additional comments at the end of the notebook
++ please play with this Jupyter notebook to get a better understanding of the Kalman online linear regression
