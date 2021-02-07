@@ -85,6 +85,7 @@ using namespace BLA;
 #define NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING  60         // measurement index for resetting the residual boundaries if Kalman online regression parameters are not yet stable enough (check every 4 hours); default 60
 #define AVG_GAS_RESISTANCE                              200000.0   // raw average gas resistance of BME680 sensor; adjust to your sensor if convergence of the Kalman filter takes > 2 days
 #define REGRESSION_SETLLED_THRESHOLD                    0.15       // relative changes of Kalman online regression parameters alpha and beta need to be below this threshold for a settled regression
+#define REGRESSION_ABSOLUTE_ALPHA_CHANGE                1800       // allow absolute changes up to REGRESSION_ABSOLUTE_ALPHA_CHANGE for a settled 'alpha' temperature coefficient
 
 namespace as {
                                             
@@ -286,11 +287,12 @@ public:
       
   }
   
-  void check_if_Kalman_filter_regression_is_settled () {
+   void check_if_Kalman_filter_regression_is_settled () {
   // check id Kalman filter has already settled; check is done every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
       
     // ee.settled_flag is true if Kalman filter is settled
-    double ratio = 0.0;
+    double ratio;
+    double delta;
     
     // check settling of the Kalman filter's online regression coefficients every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
     if (( measurement_index % NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING) == 1 ){
@@ -303,22 +305,25 @@ public:
       
       // check online regression coefficient alpha
       if (ee.kalman_alpha != 0.0 ) {
-        ratio = fabs((ee.kalman_alpha - ee.previous_alpha) / ee.kalman_alpha);
+        // the temperature regression coefficient alpha can be quite small, therefore we also check for the absolute change 'delta'
+        delta = fabs((ee.kalman_alpha - ee.previous_alpha));
+        ratio = delta / ee.kalman_alpha;
 #ifdef DEEP_DEBUG
         DPRINT(F("ee.kalman_alpha                        = "));DDEC(ee.kalman_alpha);                       DPRINTLN(F(" "));
         DPRINT(F("ee.previous_alpha                      = "));DDEC(ee.previous_alpha);                     DPRINTLN(F(" "));
         DPRINT(F("Convergence ratio of alpha coefficient = "));DDEC(ratio);                                 DPRINTLN(F(" "));
+        DPRINT(F("Absolute change of alpha coefficient   = "));DDEC(delta);                                 DPRINTLN(F(" "));
 #endif
         // check if relative change of regression coefficient alpha is above REGRESSION_SETLLED_THRESHOLD
         if ( ratio >= REGRESSION_SETLLED_THRESHOLD) {
-          ee.settled_flag = false;
+          if ( delta > REGRESSION_ABSOLUTE_ALPHA_CHANGE ) {
+            ee.settled_flag = false;
+          }
         }
       }
       else {
         ee.settled_flag = false;
       }
-      
-      ee.non_convergence_factor = ratio;
       
       // check online regression coefficient beta
       if (ee.kalman_beta != 0.0 ) { 
@@ -337,12 +342,6 @@ public:
         ee.settled_flag = false;
       }
       
-      if ( ratio > ee.non_convergence_factor ) {
-        ee.non_convergence_factor = ratio;
-      }
-      
-      ee.non_convergence_factor = constrain( ee.non_convergence_factor * 100.0, 0.0, 100.0 );
-      
       // update previous regression coefficients
       ee.previous_alpha = ee.kalman_alpha;
       ee.previous_beta  = ee.kalman_beta;
@@ -350,7 +349,7 @@ public:
       if ( (! ee.settled_flag)  && (measurement_index != 1) ){  // not for startup: measurement_index == 1
         // Kalman filter online regression did not yet settle
         // reset upper and lower ever measured/calulated gas resistances/residual gas resistances
-        // increase decay factor to about 10% in about 4h
+        // increase decay factor to about 71% in about 6h
         ee.max_res                         = -START_RESISTANCE;                      // initial value
         ee.min_res                         =  START_RESISTANCE;                      // initial value
         ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
@@ -365,7 +364,7 @@ public:
       else {
         // Kalman filter online regression did settle
         // set decay factor to about 71% in about 7 days
-        ee.iir_filter_coefficient         =  IIR_FILTER_COEFFICIENT_KF_SETTLED;     // increase decay factor to about 10% in about 4h
+        ee.iir_filter_coefficient         =  IIR_FILTER_COEFFICIENT_KF_SETTLED;     // increase decay factor to about 71% in about 6h
       }
       
     }

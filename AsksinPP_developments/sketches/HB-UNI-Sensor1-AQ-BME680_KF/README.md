@@ -4,7 +4,7 @@
 <br/>
 <br/>
 <br/>
-<br/>
+<br/>Update 07. Februar 2021: Konvergenzkriterium für den Temperatur-Regressionskoeffizienten 'alpha' wurde angepasst.
 
 
 
@@ -53,7 +53,7 @@
 	 
 ## Initiales Lernen des Kalman Filters
 
-- das Kalman Filter zur Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessenen Gaswiderstände braucht zu Beginn eines Autokalibrierzyklus ca. 14 Tage um auf stabile Regressionskoeffizienten einzuschwingen. Solange sich die geschätzten Regressionskoeffizienten sich noch mehr als 15% innerhalb von 4 Stunden ändern, ist keine Konvergenz gegeben. Dies wird mit der Ausgabe des Werts 3.333 im Datenpunkt AQ_LOG10 gekennzeichnet. Der Datenpunkt AQ_LEVEL zeigt währen der Phase des Lernens (=Nichtkonvergenz) einen 'Nichtkonvergenzgrad' an, der sich zwischen 0% und 100% bewegt. Werte oberhalb von 15% kennzeichnen eine Nichtkonvergenz. Das Lernen des Kalman Filters findet hauptsächlich bei Veränderungen der Temperatur und absoluten Luftfeuchte statt, also beim Lüften. Häufigeres und intensives Lüften kann den Lernprozess beschleunigen. Seltenes Lüften kann den Lernvorgang verlangsamen!
+- das Kalman Filter zur Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessenen Gaswiderstände braucht zu Beginn eines Autokalibrierzyklus ca. 14 Tage um auf stabile Regressionskoeffizienten einzuschwingen. Solange sich die geschätzten Regressionskoeffizienten sich noch mehr als 15% innerhalb von 4 Stunden ändern, ist keine Konvergenz gegeben. Dies wird mit der Ausgabe des Werts 3.333 im Datenpunkt AQ_LOG10 gekennzeichnet. Der Datenpunkt AQ_LEVEL zeigt währen der Phase des Lernens (=Nichtkonvergenz) einen 'Nichtkonvergenzgrad' an, der sich zwischen 0% und 100% bewegt. Werte oberhalb von 15% kennzeichnen eine Nichtkonvergenz. Die absolute Änderung des Temperatur-Regressionskoeffizienten 'alpha' darf im Konvergenzfall maximal 1800 Ohm/K (#define REGRESSION_ABSOLUTE_ALPHA_CHANGE                1800) betragen. Das Lernen des Kalman Filters findet hauptsächlich bei Veränderungen der Temperatur und absoluten Luftfeuchte statt, also beim Lüften. Häufigeres und intensives Lüften kann den Lernprozess beschleunigen. Seltenes Lüften kann den Lernvorgang verlangsamen!
 
 ## Aufgebauter Sensor ohne Gehäusedeckel
 
@@ -115,7 +115,7 @@
 		
 ## Verringerung des Ruhestroms
 
-- Auf dem Tindie Pro Mini XL - v2 - ATmega 1284p die markierte LED auslöten:
+- auf dem Tindie Pro Mini XL - v2 - ATmega 1284p die markierte LED auslöten:
 
 ![pic](Images/Tindie_Pro_Mini_XL_Pro_1284P_LED.png)	
 
@@ -181,12 +181,12 @@
 	- wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega328P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
 
 
-- Die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
+- die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
 RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerleiste einlöten.
 - **WICHTIG:** Den ISP Programmer auf 3,3V einstellen!
 - **Unbedingt** diese [Warnung](https://github.com/TomMajor/SmartHome/tree/master/Info/Warnung_Flashen_33_USBasp_Klones) beachten!
 - Einstellungen Arduino IDE [Werkzeuge](Images/Arduino_IDE_Tools_8MHz_int_RC_osc.png)
-- Als zusätzliche Boardverwalter-URLs unter Arduino IDEs Voreinstellungen einstellen (falls noch nicht getan):
+- als zusätzliche Boardverwalter-URLs unter Arduino IDEs Voreinstellungen einstellen (falls noch nicht getan):
 
 > https://mcudude.github.io/MightyCore/package_MCUdude_MightyCore_index.json
 
