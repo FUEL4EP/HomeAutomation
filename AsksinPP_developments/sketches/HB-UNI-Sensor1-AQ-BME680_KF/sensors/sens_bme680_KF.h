@@ -287,11 +287,11 @@ public:
       
   }
   
-   void check_if_Kalman_filter_regression_is_settled () {
+  void check_if_Kalman_filter_regression_is_settled () {
   // check id Kalman filter has already settled; check is done every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
       
     // ee.settled_flag is true if Kalman filter is settled
-    double ratio;
+    double ratio = 0.0;
     double delta;
     
     // check settling of the Kalman filter's online regression coefficients every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
@@ -325,6 +325,9 @@ public:
         ee.settled_flag = false;
       }
       
+      
+      ee.non_convergence_factor = ratio;
+      
       // check online regression coefficient beta
       if (ee.kalman_beta != 0.0 ) { 
         ratio = fabs((ee.kalman_beta - ee.previous_beta) / ee.kalman_beta) ;
@@ -342,6 +345,12 @@ public:
         ee.settled_flag = false;
       }
       
+      if ( ratio > ee.non_convergence_factor ) {
+        ee.non_convergence_factor = ratio;
+      }
+      
+      ee.non_convergence_factor = constrain( ee.non_convergence_factor * 100.0, 0.0, 100.0 );
+      
       // update previous regression coefficients
       ee.previous_alpha = ee.kalman_alpha;
       ee.previous_beta  = ee.kalman_beta;
@@ -349,7 +358,7 @@ public:
       if ( (! ee.settled_flag)  && (measurement_index != 1) ){  // not for startup: measurement_index == 1
         // Kalman filter online regression did not yet settle
         // reset upper and lower ever measured/calulated gas resistances/residual gas resistances
-        // increase decay factor to about 71% in about 6h
+        // increase decay factor to about 10% in about 4h
         ee.max_res                         = -START_RESISTANCE;                      // initial value
         ee.min_res                         =  START_RESISTANCE;                      // initial value
         ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
@@ -364,7 +373,7 @@ public:
       else {
         // Kalman filter online regression did settle
         // set decay factor to about 71% in about 7 days
-        ee.iir_filter_coefficient         =  IIR_FILTER_COEFFICIENT_KF_SETTLED;     // increase decay factor to about 71% in about 6h
+        ee.iir_filter_coefficient         =  IIR_FILTER_COEFFICIENT_KF_SETTLED;     // increase decay factor to about 10% in about 4h
       }
       
     }
