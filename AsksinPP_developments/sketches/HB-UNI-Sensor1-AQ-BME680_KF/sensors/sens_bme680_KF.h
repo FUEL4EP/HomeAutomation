@@ -1025,7 +1025,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
     
     // indicate the non-settled status to the AQ_LOG10 datapoint and the settling convergence factor to AQ_LEVEL datapoint; during the initial settling these datapoints would anyway be somehow chaotic
     // such the non-setlled state can easily be observed without an additinal LED
-    if (ee.settled_flag) {
+    if (! ee.settled_flag) {
         _aqState_scaled = 33333;                              // during settling AQ_LOG10 is set to 3.3333
         _aqLevel        = (uint8_t)ee.non_convergence_factor;  // indicates the non convergence ( ee.non_convergence_factor higher than REGRESSION_SETLLED_THRESHOLD * 100.0; > 15 .. 100 poor convergence )
     }
