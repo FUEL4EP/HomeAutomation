@@ -117,6 +117,9 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 + [Low-Power](https://github.com/rocketscream/Low-Power)</br>
 + [finitespace/BME280](https://github.com/finitespace/BME280)
 
+- **WICHTIG:** Es darf nur die [finitespace BME280](https://github.com/finitespace/BME280) Bibliothek im Suchpfad der Arduino IDE sein! Gegebenenfalls müssen andere BME280 Bibliotheken temporär anders wohin verschoben werden.
+
+
 
 ## Benötigtes Addon
 
