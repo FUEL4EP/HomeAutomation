@@ -222,8 +222,8 @@ public:
 
     DPRINT(", Chip ID=0x"); DHEXLN(_bme680.getChipID());
 
-      // BME680 oversampling: humidity = x2, temperature = x2, pressure = x4
-    _bme680.setOversampling(BME680_OVERSAMPLING_X2, BME680_OVERSAMPLING_X2, BME680_OVERSAMPLING_X4);
+      // BME680 oversampling: humidity = x4, temperature = x4, pressure = x4
+    _bme680.setOversampling(BME680_OVERSAMPLING_X4, BME680_OVERSAMPLING_X4, BME680_OVERSAMPLING_X4);
     _bme680.setIIRFilter(BME680_FILTER_3); // supresses spikes 
     _bme680.setGasOn(310, 300); // 310 degree Celsius and 300 milliseconds; please check in debug mode whether '-> Gas heat_stab_r   = 1' is achieved. If '-> Gas heat_stab_r   = 0' then the heating time is to short or the temp target too high
     _bme680.setForcedMode();
