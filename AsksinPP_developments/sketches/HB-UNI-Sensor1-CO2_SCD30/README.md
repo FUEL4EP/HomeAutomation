@@ -279,7 +279,9 @@ Die daraus abgeleiteten Modifikationen und Ergänzungen sind:
 
 ![pic](Images/WebUI/Setting_of_device_parameters_in_WebUI.png)
 
-**WICHTIG** Der einzugebende Temperaturoffset darf nur positiv sein, da die Firmware des SCD30 Sensors nur positive Werte (unint16 im nächsten Bild) zulässt. Ein positiver Temperaturoffset im WebUI bewirkt eine Verringerung der gemessenen Temperatur! Genau umgekehrt als 'normal':
+**WICHTIG:** Wegen eines Bugs in der eQ3 Software OCCU ['Fehler in ProofAndSetValue bei Gleitkommawerten #1058'](https://github.com/jens-maus/RaspberryMatic/issues/1058) funktioniert die Offseteinstellung im WebUI nur eingeschränkt: Es können nur ganzzahlig Offsets eingegeben werden. In der RaspberryMatic [3.55.10.20210213](https://github.com/jens-maus/RaspberryMatic/labels/%3Alabel%3A%20WebUI) ist der Bug noch nicht gefixt!
+
+**WICHTIG:** Der einzugebende Temperaturoffset darf nur positiv sein, da die Firmware des SCD30 Sensors nur positive Werte (unint16 im nächsten Bild) zulässt. Ein positiver Temperaturoffset im WebUI bewirkt eine Verringerung der gemessenen Temperatur! Genau umgekehrt als 'normal':
 
 ![pic](Images/WebUI/SCD30_temperature_offset_compensation.png)
 
