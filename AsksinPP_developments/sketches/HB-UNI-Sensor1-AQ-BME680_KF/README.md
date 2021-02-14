@@ -272,11 +272,17 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset **NICHT** zurückgespeichert. Vor der Rückspeicherung wird geprüft, ob die Betriebsspannung kleiner als 3.3V ist. Bei einem Betrieb mit ISP Programmer oder FTDI Debugger ist die Betriebsspannung größer als 3.3V.
 - Bei einer Neuprogrammierung mit einem ISP Programmer wird immer eine neue Autokalibrierung eingeleitet, da dann die Betriebsspannung größer als 3.3V ist.
 
-# Vergleich des Bosch BME680 Sensors mit Sensoren anderer Hersteller
+## Vergleich des Bosch BME680 Sensors mit Sensoren anderer Hersteller
 - Hier ist eine interessante [Publikation "Development of a Compact, IoT-Enabled Electronic
 Nose for Breath Analysis"](https://www.mdpi.com/2079-9292/9/1/84/pdf) dazu zu finden.
 
+## Erfahrungen zur Geruchsempfindlichkeit des BME680 Sensors
 
+- Der BME680 Sensor ist nicht empfindlich für (nur wenn auffällig)
+	+ Lösemittel des Pattex Klebers
+	+ .. wird fortgesetzt
+- Der BME680 Sensor ist empfindlich für (nur Auswahl)
+	+ Isopropanol
 
 ## Lizenz
 
