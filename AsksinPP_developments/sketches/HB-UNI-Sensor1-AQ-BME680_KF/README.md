@@ -278,8 +278,8 @@ Nose for Breath Analysis"](https://www.mdpi.com/2079-9292/9/1/84/pdf) dazu zu fi
 
 ## Erfahrungen zur Geruchsempfindlichkeit des BME680 Sensors
 
-- Der BME680 Sensor ist nicht empfindlich für (nur wenn auffällig)
-	+ Lösemittel des Pattex Klebers
+- Der BME680 Sensor ist **nicht** empfindlich für (nur wenn auffällig)
+	+ Lösemittel des Pattex Klebers (Ethylacetat, Methycyclohexan)
 	+ .. wird fortgesetzt
 - Der BME680 Sensor ist empfindlich für (nur Auswahl)
 	+ Isopropanol
