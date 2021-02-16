@@ -19,7 +19,9 @@
 - ein herzliches Dankeschön an alle, die im Homematic Forum geholfen haben, meine Probleme zu lösen
 - der Homematic Forum [Diskussionsstrang](https://homematic-forum.de/forum/viewtopic.php?t=49422)
 - hilfreich ist auch die Diskussion zu den [rftypes XMLs](https://homematic-forum.de/forum/viewtopic.php?f=76&t=62578&sid=cf0f4cd99f7ee2bf070e9f39391ee652)
-- **WICHTIG:** Das initiale Lernen des zur online Regression benutzten Kalman Filters braucht ca. 14 Tage. Details siehe unten. Die Empfehlung ist, den aufgebauten und programmierten Sensor einfach 14 Tage laufen zu lassen, ohne ihm viel Beachtung zu schenken. Das Anlernen kann beschleunigt werden, wenn der Sensor in dieser Zeit möglichst vielen Wechseln von Luftgüte, Temperatur und absoluter Luftfeuchte ausgesetzt wird. Am besten wird der Sensor in dieser Zeit in die Nähe eines zum Lüften vollständig geöffneten Fensters aufgestellt. Bitte 3x am Tag gründlich lüften (morgens, mittags, abends).
+- **WICHTIG:** Das initiale Lernen des zur online Regression benutzten Kalman Filters braucht ca. 14 Tage. Details siehe unten. Die Empfehlung ist, den aufgebauten und programmierten Sensor einfach 14 Tage laufen zu lassen, ohne ihm viel Beachtung zu schenken. Das Anlernen kann beschleunigt werden, wenn der Sensor in dieser Zeit möglichst vielen Wechseln von Luftgüte, Temperatur und absoluter Luftfeuchte ausgesetzt wird. Am besten wird der Sensor in dieser Zeit in die Nähe eines zum Lüften vollständig geöffneten Fensters aufgestellt. Bitte 3x am Tag gründlich lüften (morgens, mittags, abends). Zur Beschleunigung und Verbesserung des Lernens kann Folgendes unterstützend  getan werden, am Besten mehrfach:
+	+ den Sensor höherer Temperatur und geringerer Luftfeuchte aussetzen, z.B. durch Platzieren auf einem Ofen oder einem Heizkörper
+	+ den Sensor hoher Luftfeuchte und geringer Temperatur aussetzen, z.B. durch Auflegen eines gut mit Wasser durchfeuchteten Papiertaschentuchs auf den Sensor. Die Verdampfung von Wasser bewirkt eine Temperaturverringerung!
 - zur Verifizierung und besserem Verständnis des Kalman Filters wird ein Jupyter Notebook [Prove_of_Kalman_filter_with_synthesized_data.ipynb](./Kalman_Filter/Prove_of_Kalman_filter_with_synthesized_data.ipynb) zur Verfügung gestellt. Auf Github kann das Notebook direkt angesehen werden.
 - ausschliesslich für DEBUG Zwecke gibt es eine DEBUG Version des Sensors [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG)
 
@@ -54,6 +56,10 @@
 ## Initiales Lernen des Kalman Filters
 
 - das Kalman Filter zur Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessenen Gaswiderstände braucht zu Beginn eines Autokalibrierzyklus ca. 14 Tage um auf stabile Regressionskoeffizienten einzuschwingen. Solange sich die geschätzten Regressionskoeffizienten sich noch mehr als 15% innerhalb von 4 Stunden ändern, ist keine Konvergenz gegeben. Dies wird mit der Ausgabe des Werts 3.333 im Datenpunkt AQ_LOG10 gekennzeichnet. Der Datenpunkt AQ_LEVEL zeigt währen der Phase des Lernens (=Nichtkonvergenz) einen 'Nichtkonvergenzgrad' an, der sich zwischen 0% und 100% bewegt. Werte oberhalb von 15% kennzeichnen eine Nichtkonvergenz. Die absolute Änderung des Temperatur-Regressionskoeffizienten 'alpha' darf im Konvergenzfall maximal 1800 Ohm/K (#define REGRESSION_ABSOLUTE_ALPHA_CHANGE                1800) betragen. Das Lernen des Kalman Filters findet hauptsächlich bei Veränderungen der Temperatur und absoluten Luftfeuchte statt, also beim Lüften. Häufigeres und intensives Lüften kann den Lernprozess beschleunigen. Seltenes Lüften kann den Lernvorgang verlangsamen!
+- zur Beschleunigung und Verbesserung des Lernens kann Folgendes unterstützend  getan werden, am Besten mehrfach:
+	+ den Sensor höherer Temperatur und geringerer Luftfeuchte aussetzen, z.B. durch Platzieren auf einem Ofen oder einem Heizkörper
+	+ den Sensor hoher Luftfeuchte und geringer Temperatur aussetzen, z.B. durch Auflegen eines gut mit Wasser durchfeuchteten Papiertaschentuchs auf den Sensor. Die Verdampfung von Wasser bewirkt eine Temperaturverringerung!
+
 
 ## Aufgebauter Sensor ohne Gehäusedeckel
 
