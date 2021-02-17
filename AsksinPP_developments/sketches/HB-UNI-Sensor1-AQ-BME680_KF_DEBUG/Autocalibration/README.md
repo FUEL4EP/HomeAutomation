@@ -90,14 +90,18 @@ Basically the same autocalibration approach is implemented for the residual of t
 		+ please refrain in winter time to put the sensor to outside for the fresh air exposure. The big temerature and humidity differences to the inside conditions will otherwise overweight the humidity compensation.
 	+ please do experiments and observe the results in the CCU Historian to get a better understanding about the capabilities, sensitivities, and limitations of the BME680 sensor.
 	
-	
+
 #### Recommendations
 
 - Ventilate your rooms on a regular basis. Open the windows completely for 10..15 minutes.
-- All autocalibration parameters will be reset if you reset the microcontroller with a supply voltage > 3.3V, i.e. if you supply it with an ISP programmer of an FTDI debugger. A reset with battery supply (VCC < 3.3V) will read the previous autocalibration parameters from the EEPROM.
-
-
-
+- All autocalibration parameters will be reset if you reset the microcontroller with a supply voltage > 3.3V, i.e. if you supply it with an ISP programmer of an FTDI debugger. A reset with battery supply (VCC < 3.3V) will read the previous autocalibration parameters from the EEPROM:
+	+ supply voltage >= 3.3V during battery change or flashing: start a new auto-calibration
+	+ supply voltage < 3.3V during battery change or flashing: read previous autocalibration parameters from the EEPROM, do not start a new auto-calibration
+- You may speed-up and improve the settling of Kalman filter by:
+	+ Expose the sensor to several cycles of
+		* high humidity by putting a wet soft tissue soaked with water on top of the sensor for about 30 minutes
+		* high temperature and low humidity by putting the sensor on a heater or oven for about 30 min (Tmax < 35 deg C)
+	
 
 
 
