@@ -63,6 +63,8 @@ using namespace BLA;
 #define AVG_COUNT                                        5
 #define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.0001359 // 1.0 - 0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods); settled status of Kalman filter
 #define IIR_FILTER_COEFFICIENT_KF_UNSETTLED              0.0376494 // 1.0 - 0.9623506 ; Decay to 0.1 in about 4 hours for a 4 min sampling period (in 60 sampling periods); unsettled status of Kalman filter
+#define IIR_FILTER_COEFFICIENT_KF_POST_SETTLED           0.0009509 // 1.0 - 0.9990491 ; Decay to 0.71 in about 24 hours for a 4 min sampling period (in 360 sampling periods); post settled status of Kalman filter
+#define POST_SETTLING_NPHASE_NO_SAMPLES                  720       // 2 days = 720 * 4 minutes
 #define EPSILON                                          0.0001
 #define MAX_BATTERY_VOLTAGE                              3300      // change to 6000 for debugging with FTDI Debugger, default: 3300
 #define EEPROM_START_ADDRESS                             512       // needs to be above reserved AsksinPP EEPROM area: Address Space: 32 - 110
@@ -154,6 +156,7 @@ private:
   
   uint32_t   crc32_checksum_recreated;
   bool       lowbat_save_to_eeprom_flag;        // indcates that parameters need to be saved to eeprom due to lowbat
+  uint16_t   post_settling_index;               // non-zero during post-settling phase, down counted from POST_SETTLING_NPHASE_NO_SAMPLES
 
  
   
@@ -247,6 +250,8 @@ public:
     ee.kalman_beta                     = 0.0;
     ee.kalman_delta                    = 0.0;
     measurement_index                  = 0;
+    
+    post_settling_index                = POST_SETTLING_NPHASE_NO_SAMPLES / NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING + 1;                   // non-zero during post-settling phase and after reset, down counted
     
     _first_free_user_eeprom_address = max(first_free_user_eeprom_address,(uint16_t)EEPROM_START_ADDRESS); // needs to be equal of above first_free_user_eeprom_address
     
@@ -364,6 +369,7 @@ public:
         ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
         ee.min_gas_resistance              =  START_RESISTANCE;                      // initial value
         ee.iir_filter_coefficient          =  IIR_FILTER_COEFFICIENT_KF_UNSETTLED;   // increase decay factor to about 10% in about 4h
+        post_settling_index                =  POST_SETTLING_NPHASE_NO_SAMPLES / NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING + 1;
 #ifdef DEEP_DEBUG
         DPRINTLN(F("\n\n\n\n==================================================="));
         DPRINT(F("reset boundaries at measurement index  = "));DDECLN(measurement_index);
@@ -372,8 +378,14 @@ public:
       }
       else {
         // Kalman filter online regression did settle
-        // set decay factor to about 71% in about 7 days
-        ee.iir_filter_coefficient         =  IIR_FILTER_COEFFICIENT_KF_SETTLED;     // increase decay factor to about 10% in about 4h
+        if ( post_settling_index > 0 ) {
+          post_settling_index--;   // decrement post_settling_index until 0 is reached
+          ee.iir_filter_coefficient = IIR_FILTER_COEFFICIENT_KF_POST_SETTLED;       // increase decay factor to 71% in about 1 day for the first POST_SETTLING_NPHASE_NO_SAMPLES after settling has been achieved
+        }
+        else
+        {
+          ee.iir_filter_coefficient = IIR_FILTER_COEFFICIENT_KF_SETTLED;            // set decay factor to about 71% in about 7 days
+        }
       }
       
     }
@@ -1031,6 +1043,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
     }
 
   }
+  
   
   // dedicated list of return variables for debugging only, limitation of payload of a event message to 17 Bytes!
   

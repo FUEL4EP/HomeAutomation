@@ -33,17 +33,17 @@
 
 ## ACHTUNG: EEPROM Nutzung
 
--	Die EEPROM Software zur regelmässigen Zwischenspeicherung von wichtigen Sensorparametern wurde überarbeitet. Sie verwendet jetzt eine Structure für alle relevanten Parameter und eine CRC32 Prüfsumme. Die Abspeicherung erfolgt einmal am Tag. 318 Bytes EEPROM-Speicher werden verwendet. Eine EEPROM Zelle des ATmega1284P kann laut [Datenblatt](https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega164A_PA-324A_PA-644A_PA-1284_P_Data-Sheet-40002070B.pdf) 100000 mal gelöscht/beschrieben werden. Bei einem Schreibvorgang pro Tag reicht das für 273 Jahre! Das Schreiben eines Bytes in das EEPROM dauert ca. 1 Millisekunde, so dass das Schreiben der Structure ca. 300 Millisekunden dauert.
+-	die EEPROM Software zur regelmässigen Zwischenspeicherung von wichtigen Sensorparametern wurde überarbeitet. Sie verwendet jetzt eine Structure für alle relevanten Parameter und eine CRC32 Prüfsumme. Die Abspeicherung erfolgt einmal am Tag. 318 Bytes EEPROM-Speicher werden verwendet. Eine EEPROM Zelle des ATmega1284P kann laut [Datenblatt](https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega164A_PA-324A_PA-644A_PA-1284_P_Data-Sheet-40002070B.pdf) 100000 mal gelöscht/beschrieben werden. Bei einem Schreibvorgang pro Tag reicht das für 273 Jahre! Das Schreiben eines Bytes in das EEPROM dauert ca. 1 Millisekunde, so dass das Schreiben der Structure ca. 300 Millisekunden dauert.
 
 
 ## ACHTUNG: Batteriewechsel
 
-- Bitte die Batterien **NUR** direkt nach dem kurzen Aufblinken der roten Signalisierungs-LED austauschen. Dann 'schläft' der ATmega1284P Arduino für ca. 235..238 Sekunden und es werden in dieser Zeit keine Daten in das EEPROM geschrieben. Die Gefahr einer Korrumpierung der EEPROM Daten durch den Batteriewechsel ist dadurch nicht mehr gegeben.
+- bitte die Batterien **NUR** direkt nach dem kurzen Aufblinken der roten Signalisierungs-LED oder direkt nach der letzten Änderung für den Sensor im WebUI unter 'Startseite > Status und Bedienung > Gewerke' austauschen. Dann 'schläft' der ATmega1284P Arduino für ca. 235..238 Sekunden und es werden in dieser Zeit keine Daten in das EEPROM geschrieben. Die Gefahr einer Korrumpierung der EEPROM Daten durch den Batteriewechsel ist dadurch nicht mehr gegeben.
 
 ## ACHTUNG: Neuprogrammierung (Flashen)
 
-- Bitte eine Neuprogrammierung des Flash-Speichers **NUR** direkt nach dem kurzen Aufblinken der roten Signalisierungs-LED austauschen. Dann 'schläft' der ATmega1284P Arduino für ca. 235..238 Sekunden und es werden in dieser Zeit keine Daten in das EEPROM geschrieben. Die Gefahr einer Korrumpierung der EEPROM Daten durch den Programmiervorgang ist dadurch nicht mehr gegeben.
-- Zur Neuprogrammierung bitte UNBEDINGT die folgende Sequenz einhalten:
+- bitte eine Neuprogrammierung des Flash-Speichers **NUR** direkt nach dem kurzen Aufblinken der roten Signalisierungs-LED oder direkt nach der letzten Änderung für den Sensor im WebUI unter 'Startseite > Status und Bedienung > Gewerke' durchführen. Dann 'schläft' der ATmega1284P Arduino für ca. 235..238 Sekunden und es werden in dieser Zeit keine Daten in das EEPROM geschrieben. Die Gefahr einer Korrumpierung der EEPROM Daten durch den Programmiervorgang ist dadurch nicht mehr gegeben.
+- zur Neuprogrammierung bitte UNBEDINGT die folgende Sequenz einhalten:
 	+ ISP Programmer anschließen (Steckerleiste und USB Stecker)
 	+ 1 Batterie entfernen
 	+ 4 Minuten warten und im WebUI prüfen, dass die OPERATING VOLTAGE größer als 3.3V ist
@@ -51,6 +51,7 @@
 	+ die herausgenommene Batterie wieder einlegen
 	+ den ISP Programmer entfernen
 - diese Sequenz stellt sicher, dass ein korrekter Reset durchgeführt wird. Bedingung dafür ist, dass die OPERATING VOLTAGE größer als 3.3V ist.
+- soll eine Neuprogrammierung ohne Reset und Neustart der Autokalibrierung durchgeführt werden, bitte die Batterien während des Programmiervorgangs eingelegt lassen.
 
 	 
 ## Initiales Lernen des Kalman Filters

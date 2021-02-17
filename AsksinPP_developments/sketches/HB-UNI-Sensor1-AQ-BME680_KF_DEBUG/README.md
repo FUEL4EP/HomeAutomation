@@ -27,15 +27,14 @@
 - HB-UNI-Sensor1-AQ-BME680_KF_DEBUG.ino kompiliert nur mit der aktuellsten **Master** Version von [AsksinPP](https://github.com/pa-pa/AskSinPP/tree/master)
 
 
-
 ## ACHTUNG: Batteriewechsel
 
-- Bitte die Batterien **NUR** direkt nach dem kurzen Aufblinken der roten Signalisierungs-LED austauschen. Dann 'schläft' der ATmega1284P Arduino für ca. 235..238 Sekunden und es werden in dieser Zeit keine Daten in das EEPROM geschrieben. Die Gefahr einer Korrumpierung der EEPROM Daten durch den Batteriewechsel ist dadurch nicht mehr gegeben.
+- bitte die Batterien **NUR** direkt nach dem kurzen Aufblinken der roten Signalisierungs-LED oder direkt nach der letzten Änderung für den Sensor im WebUI unter 'Startseite > Status und Bedienung > Gewerke' austauschen. Dann 'schläft' der ATmega1284P Arduino für ca. 235..238 Sekunden und es werden in dieser Zeit keine Daten in das EEPROM geschrieben. Die Gefahr einer Korrumpierung der EEPROM Daten durch den Batteriewechsel ist dadurch nicht mehr gegeben.
 
 ## ACHTUNG: Neuprogrammierung (Flashen)
 
-- Bitte eine Neuprogrammierung des Flash-Speichers **NUR** direkt nach dem kurzen Aufblinken der roten Signalisierungs-LED austauschen. Dann 'schläft' der ATmega1284P Arduino für ca. 235..238 Sekunden und es werden in dieser Zeit keine Daten in das EEPROM geschrieben. Die Gefahr einer Korrumpierung der EEPROM Daten durch den Programmiervorgang ist dadurch nicht mehr gegeben.
-- Zur Neuprogrammierung bitte UNBEDINGT die folgende Sequenz einhalten:
+- bitte eine Neuprogrammierung des Flash-Speichers **NUR** direkt nach dem kurzen Aufblinken der roten Signalisierungs-LED oder direkt nach der letzten Änderung für den Sensor im WebUI unter 'Startseite > Status und Bedienung > Gewerke' durchführen. Dann 'schläft' der ATmega1284P Arduino für ca. 235..238 Sekunden und es werden in dieser Zeit keine Daten in das EEPROM geschrieben. Die Gefahr einer Korrumpierung der EEPROM Daten durch den Programmiervorgang ist dadurch nicht mehr gegeben.
+- zur Neuprogrammierung bitte UNBEDINGT die folgende Sequenz einhalten:
 	+ ISP Programmer anschließen (Steckerleiste und USB Stecker)
 	+ 1 Batterie entfernen
 	+ 4 Minuten warten und im WebUI prüfen, dass die OPERATING VOLTAGE größer als 3.3V ist
@@ -43,6 +42,8 @@
 	+ die herausgenommene Batterie wieder einlegen
 	+ den ISP Programmer entfernen
 - diese Sequenz stellt sicher, dass ein korrekter Reset durchgeführt wird. Bedingung dafür ist, dass die OPERATING VOLTAGE größer als 3.3V ist.
+- soll eine Neuprogrammierung ohne Reset und Neustart der Autokalibrierung durchgeführt werden, bitte die Batterien während des Programmiervorgangs eingelegt lassen.
+
 
 ## Initiales Lernen des Kalman Filters
 
