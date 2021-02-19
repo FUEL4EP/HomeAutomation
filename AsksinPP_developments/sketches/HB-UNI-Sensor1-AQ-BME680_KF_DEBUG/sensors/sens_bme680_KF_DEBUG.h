@@ -380,7 +380,11 @@ public:
         // Kalman filter online regression did settle
         if ( post_settling_index > 0 ) {
           post_settling_index--;   // decrement post_settling_index until 0 is reached
-          ee.iir_filter_coefficient = IIR_FILTER_COEFFICIENT_KF_POST_SETTLED;       // increase decay factor to 71% in about 0.5 days for the first POST_SETTLING_NPHASE_NO_SAMPLES after settling has been achieved
+          ee.iir_filter_coefficient          = IIR_FILTER_COEFFICIENT_KF_POST_SETTLED;       // increase decay factor to 71% in about 0.5 days for the first POST_SETTLING_NPHASE_NO_SAMPLES after settling has been achieved
+          ee.max_res                         = -START_RESISTANCE;                      // initial value
+          ee.min_res                         =  START_RESISTANCE;                      // initial value
+          ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
+          ee.min_gas_resistance              =  START_RESISTANCE;                      // initial value
         }
         else
         {
