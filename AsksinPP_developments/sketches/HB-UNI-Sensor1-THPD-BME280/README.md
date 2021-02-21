@@ -1,5 +1,5 @@
 
-# Temperatur-, Luftfeuchte und Luftdrucksensor auf der Basis von dem Bosch BME280 Sensor (HB-UNI-Sensor1-THPD-BME280) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte und Batteriespannung
+# Temperatur-, Luftfeuchte und Luftdrucksensor auf der Basis von dem Bosch BME280 Sensor (HB-UNI-Sensor1-THPD-BME280) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte und Batteriespannung und WebUI Offseteinstellung
 
 - abgeleitet von Toms ([TomMajor](https://github.com/TomMajor)) [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)
 - ein herzliches Dankeschön für die Basisarbeit geht an Tom (TomMajor)
