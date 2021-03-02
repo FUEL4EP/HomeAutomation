@@ -83,7 +83,13 @@
 
 ![pic](Images/AQ_LOG10_formulas.png)
 
-- Autokalibrierung für den Luftgütegrad und die logarithmische Luftqualität: Zur Kalibrierung muss der Sensor nur in Betrieb genommen werden. Es sollte nur regelmäßig für ca. 20..30 Minuten bei völlig geöffneten Fenstern quer gelüftet werden. Die Autokalibrierung ist adaptiv und wird im Laufe der Zeit immer besser. Der Adaptionsprozess kann mehrere Tage dauern. 24 Stunden nach dem Start einer Autokalibrierung wird die Autokalibrierung nochmals erneut gestartet, nachdem das Kalman Filter initial eingeschwungen ist. Während der ersten Tage nach Beginn einer Autokalibrierung kann es zu stärkere Schwankungen der ausgegebenen Luftgüte AQ_LOG10 geben, die aber schnell kleiner werden, wenn der Kalibriervorgang voranschreitet.
+- Abbildung der normalisierten linearen Luftgüte [0..100%] auf die logarithmische Luftgüte [0..4]:
+	+ im Bereich 60..100% lineare Luftgüte ist die Abhängigkeit der logarithmischen Luftgüte annähernd linear
+	+ bei kleinen linearen Luftgüten 0..5% nimmt die logarithmische Luftgüte stark zu. Bei schlechter Luftqualität ist die logarithmische Luftqualität besonders empfindlich! 
+
+![pic](Images/AQ_mapping_linear_to_log.png)
+
+- Autokalibrierung für den Luftgütegrad und die logarithmische Luftqualität: Zur Kalibrierung muss der Sensor nur in Betrieb genommen werden. Es sollte nur regelmäßig für ca. 10..30 Minuten bei völlig geöffneten Fenstern quer gelüftet werden, je nach Außentemperaturen. Die Autokalibrierung ist adaptiv und wird im Laufe der Zeit immer besser. Der Adaptionsprozess kann mehrere Tage dauern. 24 Stunden nach dem Start einer Autokalibrierung wird die Autokalibrierung nochmals erneut gestartet, nachdem das Kalman Filter initial eingeschwungen ist. Während der ersten Tage nach Beginn einer Autokalibrierung kann es zu stärkere Schwankungen der ausgegebenen Luftgüte AQ_LOG10 geben, die aber schnell kleiner werden, wenn der Kalibriervorgang voranschreitet.
 	
 - Details zur Autokalibrierung sind [hier](./Autocalibration/README.md) auf Englisch nachzulesen.
 	
