@@ -1,7 +1,5 @@
-
-# HB-UNI-Sensor1-THPD-BME280 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![hit-count][]][count]
-
-[![HitCount](http://hits.dwyl.com/FUEL4EP/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280.svg)](http://hits.dwyl.com/FUEL4EP/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280)
+# HB-UNI-Sensor1-THPD-BME280 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+<br/>
 
 # Temperatur-, Luftfeuchte und Luftdrucksensor auf der Basis von dem Bosch BME280 Sensor (HB-UNI-Sensor1-THPD-BME280) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte und Batteriespannung und WebUI Offseteinstellung
 
@@ -137,8 +135,3 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 Give Credit, NonCommercial, ShareAlike
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
-
-
-
-[hit-count]:     http://hits.dwyl.io/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280.svg
-[count]:         http://hits.dwyl.io/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280
