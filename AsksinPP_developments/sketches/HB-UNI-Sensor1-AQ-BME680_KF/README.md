@@ -5,7 +5,7 @@
 <br/>
 <br/>
 <br/>Update 07. Februar 2021: Konvergenzkriterium für den Temperatur-Regressionskoeffizienten 'alpha' wurde angepasst.
-<br/>Update 04. März 2021: Zwischenergebnisse sind nun als [CCU Historian Zeitdiagramme](Kalman_Filter/ccu-historian_histograms) verfügbar.
+<br/>Update 04. März 2021: Zwischenergebnisse sind nun als [CCU Historian Zeitdiagramme](Kalman_Filter/ccu_historian_histograms) verfügbar.
 <br/>
 <br/>
 
