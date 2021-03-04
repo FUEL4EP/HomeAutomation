@@ -2,9 +2,7 @@
 
 Dieses Werk ist lizenziert unter einer [Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-
-
-## HB-UNI-Sensor1-CO2_SCD30
+# HB-UNI-Sensor1-CO2_SCD30 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![hit-count][]][count]
 
 HB-UNI-Sensor1-CO2_SCD30 ist ein auf nichtdispersiver Infrarotsensormessung (NDIR) basierendes CO2 Messgerät mit einem Sensirion SCD30 CO2 und RH/T Sensor Modul.
 
@@ -477,3 +475,5 @@ Für reinen Netzbetrieb des HB-UNI-Sensor1-CO2_SCD30 Sensors sind an der Hardwar
 * Der Ladestrom des NiMH Lademoduls NIMHCRTA 2S muss durch Ändern des Widerstands R3 von 1.24kOhm auf 4.7kOhm verkleinert werden. Reduzierter Ladestrom ist ungefähr 0.259A.
 
 
+[hit-count]:     http://hits.dwyl.io/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30.svg
+[count]:         http://hits.dwyl.io/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30/badges

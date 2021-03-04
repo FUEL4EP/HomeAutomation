@@ -1,3 +1,5 @@
+# HB-UNI-Sensor1-AQ-BME680_KF_DEBUG [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![hit-count][]][count]
+
 # Dieser Sensor HB-UNI-Sensor1-AQ-BME680_KF_DEBUG ist eine **DEBUG** Version und NICHT für den normalen Einsatz!
 - dieser Sensor ist eine reine DEBUG Version von [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF)
 - mit dieser DEBUG Version kann  das Einschwingen des benutzten Kalman Filters beobachtet werden.
@@ -282,3 +284,5 @@ Give Credit, NonCommercial, ShareAlike
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
+[hit-count]:     http://hits.dwyl.io/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG.svg
+[count]:         http://hits.dwyl.io/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG/badges
