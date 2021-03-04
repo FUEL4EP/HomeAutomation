@@ -5,7 +5,9 @@
 <br/>
 <br/>
 <br/>Update 07. Februar 2021: Konvergenzkriterium für den Temperatur-Regressionskoeffizienten 'alpha' wurde angepasst.
-
+<br/>Update 04. März 2021: Zwischenergebnisse sind als [CCU Historian Zeitdiagramme](./Kalman_Filter/ccu-historian_histograms/) verfügbar.
+<br/>
+<br/>
 
 
 
@@ -154,7 +156,7 @@
 
 ![pic](Images/AQ_LOG10_versus_NDIR_SCD30_CO2.png)
 
-- zusätzlich zum AQ_LOG10 Luftqualitätsverlauf wird der CO2 Gehalt der Luft gemessen mit einem Sensirion SCD30 NDIR CO2 Sensor 
+- zusätzlich zum AQ_LOG10 Luftqualitätsverlauf von 3 nebeneinanderstehenden Sensoren wird der CO2 Gehalt der Luft gemessen mit einem Sensirion SCD30 NDIR CO2 Sensor 
 
 
 ## Benötiger Sketch
