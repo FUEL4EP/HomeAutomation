@@ -20,7 +20,7 @@ An autocalibration algorithm has been implemented in the code [sens_bme680_KF.h]
 - gas_upper_limit is basically the min peak (largest) value of the so far measured gas resistances
 - As long as the currently measured gas resistance is lower than the gas_upper_limit,  gas_upper_limit is **decaying** every sampling cycle by a factor IIR_FILTER_COEFFICIENT
 
->  #define IIR_FILTER_COEFFICIENT 0.0001359 // 1.0 -0.9998641 ; Decay to 0.71 in about one week for a 4 min sampling period (in 2520 sampling periods)<BR/><BR/>
+>  #define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0,999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter<BR/><BR/>
 >  gas_upper_limit = gas_upper_limit - ( gas_upper_limit - gas_lower_limit) * IIR_FILTER_COEFFICIENT;<BR/>
 
 - However, the maximum decay is limited to gas_upper_limit_min
@@ -37,7 +37,7 @@ An autocalibration algorithm has been implemented in the code [sens_bme680_KF.h]
 - gas_lower_limit is basically the min peak value (smallest) of the so far measured gas resistances
 - As long as the currently measured gas resistance is larger than the gas_lower_limit,  gas_lower_limit is **increasing** every sampling cycle by a factor IIR_FILTER_COEFFICIENT
 
->  #define IIR_FILTER_COEFFICIENT 0.0001359 // 1.0 -0.9998641 ; Increase to 1/0.71 in about one week for a 4 min sampling period (in 2520 sampling periods)<BR/><BR/>
+>  #define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0,999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter<BR/><BR/>
 >  gas_lower_limit_max = _min_gas_resistance + (max_gas_resistance - min_gas_resistance) * **max_increase_factor_lower_limit** / 100;<BR/>
 
 - However, the maximum increase is limited to gas_lower_limit_max
