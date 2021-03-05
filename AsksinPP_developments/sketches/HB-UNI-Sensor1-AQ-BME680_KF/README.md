@@ -1,22 +1,3 @@
-# **Dies ist noch eine Testversion in der Validierungsphase !!!**
-<br/>
-<br/>Zur Zeit laufen noch Validierungen an 3 aufgebauten Sensoren. Sobald die Validierung abgeschlossen sein wird, werden die Ergebnisse hier veröffentlicht. Bisher sehen die Zwischenergebnisse vielversprechend aus.
-<br/>
-<br/>
-<br/>
-Update 07. Februar 2021: Konvergenzkriterium für den Temperatur-Regressionskoeffizienten 'alpha' wurde angepasst.
-<br/>
-<br/>
-Update 04. März 2021: Zwischenergebnisse sind nun als
-
-[CCU-Historian Zeitdiagramme](Kalman_Filter/ccu_historian_histograms)
-
-verfügbar.
-<br/>
-<br/>
-
-
-
 
 # HB-UNI-Sensor1-AQ-BME680_KF [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2FAsksinPP_developments%2Fsketches%2FHB-UNI-Sensor1-AQ-BME680_KF&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 <br/>
@@ -43,6 +24,9 @@ verfügbar.
 ## ACHTUNG: EEPROM Nutzung
 
 -	die EEPROM Software zur regelmässigen Zwischenspeicherung von wichtigen Sensorparametern wurde überarbeitet. Sie verwendet jetzt eine Structure für alle relevanten Parameter und eine CRC32 Prüfsumme. Die Abspeicherung erfolgt einmal am Tag. 318 Bytes EEPROM-Speicher werden verwendet. Eine EEPROM Zelle des ATmega1284P kann laut [Datenblatt](https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega164A_PA-324A_PA-644A_PA-1284_P_Data-Sheet-40002070B.pdf) 100000 mal gelöscht/beschrieben werden. Bei einem Schreibvorgang pro Tag reicht das für 273 Jahre! Das Schreiben eines Bytes in das EEPROM dauert ca. 1 Millisekunde, so dass das Schreiben der Structure ca. 300 Millisekunden dauert.
+-	Die Debug-Version [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) und die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) nutzen diesselbe Struktur für die Abspeicherung und Restaurierung von EEPROM-Daten. Daher kann der Sensor zwischen diesen beiden Versionen umprogrammiert werden. Dabei bitte die Hinweise unter 'Neuprogrammierung (Flashen)' unten beachten.
+
+
 
 
 ## ACHTUNG: Batteriewechsel
@@ -280,7 +264,10 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 		* die Konvergenz wird alle 4 Stunden geprüft.
 		* die Konvergenz kann während dessen am Datenpunkt AQ_LEVEL beobachtet werde. Dort wird dann der Konvergenzgrad 0%..100% ausgegeben. Bei <15% ist eine ausreichende Konvergenz zum Übergang in die Phase 2 erreicht. Das Konvergenzkriterium wird alle 4 Stunden geprüft. Bei >15% Änderungerungen der Regressionskoeffizienten innerhalb von 4 Stunden (auch in den Phasen 2 und 3) wird der Nichtkonvergenzzustand eingenommen.
 	+ Phase 2: Das Kalman Filter ist ausreichend konvergiert. Der kompensierte logarithmische Luftgütewert wird als Datenpunkt AQ_LOG10 ausgegeben. Der lineare, nicht kompensierte Luftgütewert wird als Datenpunkt AQ_LEVEL ausgegeben. Für die ersten 48 Stunden nach dem Erreichen der ausreichenden Konvergenz des Kalman Filters werden die oberen und unteren Referenzwerte AQ_GAS_RESISTANCE_MIN, AQ_GAS_RESISTANCE_MAX, AQ_COMP_GAS_RES_MIN und AQ_COMP_GAS_RES_MAX werden mit einem 'IIR Infinite Impulse Response'-Filter mit einer Abfall-/Anstiegsrate auf 71% in 12 Stunden angepasst,  d.h. eine mittlere Filterung (#define IIR_FILTER_COEFFICIENT_KF_POST_SETTLED           0.0019009). Alle 4 Stunden werden die maximalen und minimalen Spitzenwerte zurückgesetzt.
-	+ Phase 3: Normalbetrieb, beginnt 48 Stunden nach dem letzten Erreichen  einer ausreichenden Konvergenz des Kalman Filters.  Die oberen und unteren Referenzwerte AQ_GAS_RESISTANCE_MIN, AQ_GAS_RESISTANCE_MAX, AQ_COMP_GAS_RES_MIN und AQ_COMP_GAS_RES_MAX werden mit einem 'IIR Infinite Impulse Response'-Filter mit einer Abfall-/Anstiegsrate auf 71% in 14 Tagen angepasst,  d.h. eine geringe Filterung (#define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0,999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter).
+	+ Phase 3: Normalbetrieb, beginnt 48 Stunden nach dem letzten Erreichen  einer ausreichenden Konvergenz des Kalman Filters.  Die oberen und unteren Referenzwerte AQ_GAS_RESISTANCE_MIN, AQ_GAS_RESISTANCE_MAX, AQ_COMP_GAS_RES_MIN und AQ_COMP_GAS_RES_MAX werden mit einem 'IIR Infinite Impulse Response'-Filter mit einer Abfall-/Anstiegsrate auf 71% in 14 Tagen angepasst,  d.h. eine geringe Filterung (#define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0.999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter).
+	+ beispielhafte CCU-Historian Histogramme der Lernphasen sind abgespeichert unter
+	
+      [Histogramme der Lernphasen](Kalman_Filter/ccu_historian_histograms)
 
 
 ## Alterung des BME680 Sensors

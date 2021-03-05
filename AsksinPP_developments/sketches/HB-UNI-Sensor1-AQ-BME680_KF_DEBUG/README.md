@@ -16,6 +16,7 @@
 - für AQ_COMP_GAS_RES_RAW, AQ_COMP_GAS_RES_MIN, AQ_COMP_GAS_RES_MAX, AQ_ALPHA, AQ_BETA können bei der Ausgabe der Datenpunkte Sättigungseffekte auftreten, wenn der unterstützte Wertebreich über- bzw. unterschritten wird. Dadurch werden Überlaufeffekte vermieden.
 - alle anderen Datenpunkte sind nicht beobachtbar, da die maximale Payload einer Nachricht 17 Bytes beträgt.
 - zur Verifizierung und besserem Verständnis des Kalman Filters wird ein Jupyter Notebook [Prove_of_Kalman_filter_with_synthesized_data.ipynb](./Kalman_Filter/Prove_of_Kalman_filter_with_synthesized_data.ipynb) zur Verfügung gestellt. Auf Github kann das Notebook direkt angesehen werden.
+-	Die Debug-Version [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) und die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) nutzen diesselbe Struktur für die Abspeicherung und Restaurierung von EEPROM-Daten. Daher kann der Sensor zwischen diesen beiden Versionen umprogrammiert werden. Dabei bitte die Hinweise unter 'Neuprogrammierung (Flashen)' unten beachten.
 
 
 # Universeller selbstkalibrierender Luftgütesensor auf der Basis von dem Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) mit vollautomatischer Kompensation der Abhängigkeiten von Temperatur und absoluter Luftfeuchte mit einem Kalman Filter
@@ -54,7 +55,7 @@
 
 - **WICHTIG:** Das initiale Lernen des zur online Regression benutzten Kalman Filters braucht ca. 14..18 Tage. Details siehe unten. Die Empfehlung ist, den aufgebauten und programmierten Sensor einfach 14..18 Tage laufen zu lassen, ohne ihm viel Beachtung zu schenken. Das Anlernen kann beschleunigt werden, wenn der Sensor in dieser Zeit möglichst vielen Wechseln von Luftgüte, Temperatur und absoluter Luftfeuchte ausgesetzt wird. Am besten wird der Sensor in dieser Zeit in die Nähe eines zum Lüften vollständig geöffneten Fensters aufgestellt. Bitte 3x am Tag gründlich lüften (morgens, mittags, abends). Zur Beschleunigung und Verbesserung des Lernens wird empfohlen, **am Besten mehrfach direkt nach dem Flashen des Sensors** Folgendes zu tun:
 	+ den Sensor für ca. 30 Minuten höherer Temperatur und geringerer Luftfeuchte aussetzen, z.B. durch Platzieren auf einem Ofen oder einem Heizkörper oder direkter Sonneneinstrahlung bei geöffnetem Gehäuse
-	+ den Sensor für ca. 30 Minuten hoher Luftfeuchte und geringer Temperatur aussetzen, z.B. durch Auflegen eines gut mit Wasser durchfeuchteten Papiertaschentuchs bei geöffnetem Gehäuse auf den Sensor. Die Verdampfung von Wasser bewirkt eine Temperaturverringerung!
+	+ den Sensor für ca. 30 Minuten hoher Luftfeuchte und geringer Temperatur aussetzen, z.B. durch Auflegen eines gut mit Wasser durchfeuchteten Papiertaschentuchs bei geöffnetem Gehäuse auf den Sensor. Die Verdampfung von Wasser bewirkt eine Temperaturverringerung! 
 
 
 
@@ -240,7 +241,6 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 	
 - bestimmen und im WebUI setzten. Dabei zuerst das Einschwingen der korrigierten Temperatur abwarten, bevor die Luftfeuchte korrigiert wird. Zum Bestimmen der Offsets eine 24h Aufzeichnung mit dem CCU-Historian mit einer genauen Referenztemperatur / -luftfeuchte machen ('golden' TH-Sensor daneben stellen).
 - Details zur Kalman Filterung sind im Unterverzeichnis [Kalman Filter](./Kalman_Filter) zu finden. Der Algorithmus ist dort in einem Jupyter Notebook in Python beschrieben. Im [README.md](./Kalman_Filter/README.md) sind weitere Erläuterungen auf Englisch zu finden.
-- - Details zur Kalman Filterung sind im Unterverzeichnis [Kalman Filter](./Kalman_Filter) zu finden. Der Algorithmus ist dort in einem Jupyter Notebook in Python beschrieben. Im [README.md](./Kalman_Filter/README.md) sind weitere Erläuterungen auf Englisch zu finden.
 - das Lernen und Einschwingen der Autokalibrierungs- und des Kalman Filters hat drei Phasen:
 	+ Phase 1: Neustart der Autokalibrierung und des Kalibrierung von Grund auf, wenn
 		* die eingelegten Batterien vorübergehend entfernt werden und der Sensorstart mit einer Versorgung durch einen ISP Programmiergerät oder durch den FTDI Debugger erfolgt (OPERATING_VOLTAGE >= 3.3V)
@@ -250,7 +250,11 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 		* die Konvergenz wird alle 4 Stunden geprüft.
 		* die Konvergenz kann während dessen am Datenpunkt AQ_LEVEL beobachtet werde. Dort wird dann der Konvergenzgrad 0%..100% ausgegeben. Bei <15% ist eine ausreichende Konvergenz zum Übergang in die Phase 2 erreicht. Das Konvergenzkriterium wird alle 4 Stunden geprüft. Bei >15% Änderungerungen der Regressionskoeffizienten innerhalb von 4 Stunden (auch in den Phasen 2 und 3) wird der Nichtkonvergenzzustand eingenommen.
 	+ Phase 2: Das Kalman Filter ist ausreichend konvergiert. Der kompensierte logarithmische Luftgütewert wird als Datenpunkt AQ_LOG10 ausgegeben. Der lineare, nicht kompensierte Luftgütewert wird als Datenpunkt AQ_LEVEL ausgegeben. Für die ersten 48 Stunden nach dem Erreichen der ausreichenden Konvergenz des Kalman Filters werden die oberen und unteren Referenzwerte AQ_GAS_RESISTANCE_MIN, AQ_GAS_RESISTANCE_MAX, AQ_COMP_GAS_RES_MIN und AQ_COMP_GAS_RES_MAX werden mit einem 'IIR Infinite Impulse Response'-Filter mit einer Abfall-/Anstiegsrate auf 71% in 12 Stunden angepasst,  d.h. eine mittlere Filterung (#define IIR_FILTER_COEFFICIENT_KF_POST_SETTLED           0.0019009).  Alle 4 Stunden werden die maximalen und minimalen Spitzenwerte zurückgesetzt.
-	+ Phase 3: Normalbetrieb, beginnt 48 Stunden nach dem letzten Erreichen  einer ausreichenden Konvergenz des Kalman Filters.  Die oberen und unteren Referenzwerte AQ_GAS_RESISTANCE_MIN, AQ_GAS_RESISTANCE_MAX, AQ_COMP_GAS_RES_MIN und AQ_COMP_GAS_RES_MAX werden mit einem 'IIR Infinite Impulse Response'-Filter mit einer Abfall-/Anstiegsrate auf 71% in 14 Tagen angepasst,  d.h. eine geringe Filterung (#define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0,999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter).
+	+ Phase 3: Normalbetrieb, beginnt 48 Stunden nach dem letzten Erreichen  einer ausreichenden Konvergenz des Kalman Filters.  Die oberen und unteren Referenzwerte AQ_GAS_RESISTANCE_MIN, AQ_GAS_RESISTANCE_MAX, AQ_COMP_GAS_RES_MIN und AQ_COMP_GAS_RES_MAX werden mit einem 'IIR Infinite Impulse Response'-Filter mit einer Abfall-/Anstiegsrate auf 71% in 14 Tagen angepasst,  d.h. eine geringe Filterung (#define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0.999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter).
+	+ beispielhafte CCU-Historian Histogramme der Lernphasen sind abgespeichert unter
+	
+      [Histogramme der Lernphasen](Kalman_Filter/ccu_historian_histograms)
+
 
 ## Alterung des BME680 Sensors
 

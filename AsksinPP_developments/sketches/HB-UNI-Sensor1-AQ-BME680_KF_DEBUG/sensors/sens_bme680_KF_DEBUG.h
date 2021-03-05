@@ -61,7 +61,7 @@ using namespace BLA;
  */
 
 #define AVG_COUNT                                        5
-#define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0,999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter
+#define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0.999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter
 #define IIR_FILTER_COEFFICIENT_KF_UNSETTLED              0.0376494 // 1.0 - 0.9623506 ; Decay to 0.1 in about 4 hours for a 4 min sampling period (in 60 sampling periods); unsettled status of Kalman filter
 #define IIR_FILTER_COEFFICIENT_KF_POST_SETTLED           0.0019009 // 1.0 - 0.9980991 ; Decay to 0.71 in about 12 hours for a 4 min sampling period (in 360 sampling periods); post settled status of Kalman filter
 #define POST_SETTLING_NPHASE_NO_SAMPLES                  720       // 2 days = 720 * 4 minutes
