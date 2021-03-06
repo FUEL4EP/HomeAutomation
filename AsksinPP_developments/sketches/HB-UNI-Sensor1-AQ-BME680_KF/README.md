@@ -14,6 +14,8 @@
 	+ den Sensor für ca. 30 Minuten hoher Luftfeuchte und geringer Temperatur aussetzen, z.B. durch Auflegen eines gut mit Wasser durchfeuchteten Papiertaschentuchs bei geöffnetem Gehäuse auf den Sensor. Die Verdampfung von Wasser bewirkt eine Temperaturverringerung!
 - zur Verifizierung und besserem Verständnis des Kalman Filters wird ein Jupyter Notebook [Prove_of_Kalman_filter_with_synthesized_data.ipynb](./Kalman_Filter/Prove_of_Kalman_filter_with_synthesized_data.ipynb) zur Verfügung gestellt. Auf Github kann das Notebook direkt angesehen werden.
 - ausschliesslich für DEBUG Zwecke gibt es eine DEBUG Version des Sensors [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG)
+- Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=66058&sid=8555144b99f475b251fc1b9d958e9f8b) zu finden. Bitte dort auch Fragen stellen. 
+
 
 
 ## Bitte immer die aktuellste Version von AsksinPP nutzen
@@ -291,6 +293,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - Die letzten EEPROM Daten werden bei einem Batteriewechsel oder/und einem RESET als aktuelle Parameter bzw. Variablen zurückgespeichert. Bedingung dafür ist, dass die VCC Betriebsspannung <= 3.3V ist.
 - Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset **NICHT** zurückgespeichert. Vor der Rückspeicherung wird geprüft, ob die Betriebsspannung kleiner als 3.3V ist. Bei einem Betrieb mit ISP Programmer oder FTDI Debugger ist die Betriebsspannung größer als 3.3V.
 - Bei einer Neuprogrammierung mit einem ISP Programmer wird immer eine neue Autokalibrierung eingeleitet, da dann die Betriebsspannung größer als 3.3V ist.
+- Ein Batteriesatz hält > 2 Monate (konkrete Erfahrungswerte stehen noch aus und werden später hier veröffentlicht). Wer die Batterielebensdauer verlängern will, kann statt 5 Messungen z.B. nur 2 Messungen in jeder Messperiode vornehmen. Dazu bitte in [sens_bme680_KF.h](sensors/sens_bme680_KF.h) den Parameter '#define AVG_COUNT                                        5' auf z.B. '#define AVG_COUNT                                        2' setzen. Dieselbe Änderung gegebenenfalls auch für die DEBUG Version in 'sens_bme680_KF_DEBUG.h'  durchführen! Der Stromverbrauch wird fast linear von der Anzahl der Heizperioden des BME680 Sensors innerhalb einer Messperiode bestimmt.
 
 ## Vergleich des Bosch BME680 Sensors mit Sensoren anderer Hersteller
 - Hier ist eine interessante [Publikation "Development of a Compact, IoT-Enabled Electronic
