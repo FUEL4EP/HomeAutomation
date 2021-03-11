@@ -1,0 +1,263 @@
+
+Demo for usage of the Arduino library for ABLIC S-35770 counter IC
+(C) FUEL4EP 2021-03-09
+ 
+SUCCESS: ABLIC S-35770 counter IC device found at I2C address 0x32 !
+ABLIC S-35770 counter IC with I2C interface seems to be present !
+ABLIC S-35770 counter IC is accessible
+ 
+Read free register of ABLIC S-35770 counter IC
+Read free register....: 0 
+ 
+ 
+ 
+Soft resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read free register....: 2 
+ 
+ 
+Set bit F17 of free register of ABLIC S-35770 counter IC
+Read free register....: 100002 
+Clear bit F17 of free register of ABLIC S-35770 counter IC
+Read free register....: 2 
+ 
+ 
+Read free register....: 2 
+Set F part ot free register of ABLIC S-35770 counter IC to 12345
+Read F part ot free register of ABLIC S-35770 counter IC   12345
+Read free register....: 91A2A 
+ 
+ 
+ 
+Read free register....: 91A2A 
+Set F part ot free register of ABLIC S-35770 counter IC to 1FFFFF
+Read F part ot free register of ABLIC S-35770 counter IC   1FFFFF
+Read free register....: FFFFFA 
+ 
+ 
+ 
+Read free register....: FFFFFA 
+Set F part ot free register of ABLIC S-35770 counter IC to 0
+Read F part ot free register of ABLIC S-35770 counter IC   0
+Read free register....: 2 
+ 
+ 
+Count register........: 0 
+Read free register....: 2 
+Write free register...: 6F 
+Read free register....: 6F 
+ 
+ 
+Enable counting of ABLIC S-35770 counter IC
+Creating fixed number of pulses..: 16384 
+Wire.end
+SDA High
+SDA Low
+Creating fixed number of pulses..: 16384 
+SDA High
+myABLIC_S35770.begin
+Read count register..............: 16384 
+IMPORTANT: Second pulse sequence has not been counted since SDA was low!!!Disable counting and reset counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+ 
+Starting loop now .. 
+ 
+Creating fixed number of pulses..: 14 
+Read count register..............: 14 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 28 
+Read count register..............: 28 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 15 
+Read count register..............: 15 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 30 
+Read count register..............: 30 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 16 
+Read count register..............: 16 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 32 
+Read count register..............: 32 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 17 
+Read count register..............: 17 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 34 
+Read count register..............: 34 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 18 
+Read count register..............: 18 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 36 
+Read count register..............: 36 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 19 
+Read count register..............: 19 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 38 
+Read count register..............: 38 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 20 
+Read count register..............: 20 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 40 
+Read count register..............: 40 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 21 
+Read count register..............: 21 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 42 
+Read count register..............: 42 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 22 
+Read count register..............: 22 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 44 
+Read count register..............: 44 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 23 
+Read count register..............: 23 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 46 
+Read count register..............: 46 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 24 
+Read count register..............: 24 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 48 
+Read count register..............: 48 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 25 
+Read count register..............: 25 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 50 
+Read count register..............: 50 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 26 
+Read count register..............: 26 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 52 
+Read count register..............: 52 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 27 
+Read count register..............: 27 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 54 
+Read count register..............: 54 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 28 
+Read count register..............: 28 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 56 
+Read count register..............: 56 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 29 
+Read count register..............: 29 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 58 
+Read count register..............: 58 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 30 
+Read count register..............: 30 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 60 
+Read count register..............: 60 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Creating fixed number of pulses..: 31 
+Read count register..............: 31 
+Software resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+Creating fixed number of pulses..: 62 
+Read count register..............: 62 
+Hardware resetting 24 Bit binary counter of ABLIC S-35770 counter IC
+Read count register..............: 0 
+ 
+Starts over again in 1 sec.
+ 
+Stop incrementing loop index! Upper boarder has been reached! 
