@@ -29,8 +29,13 @@
 - bitte als Zusatzsoftware auf der CCU3/RaspberryMatic installieren
 
 <br/>
-<br/>
-<br/>
+
+#### Arduino libraries:
+
+
+| Name | Beschreibung | Datenblatt |
+|--------|--------|--------|:--------:|
+| [ABLIC_S35770](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/ABLIC_S35770) | Arduino Bibliothek für ABLIC S-35770 24-Bit Binärzähler<br/>mit I2C Schnittstelle | [datasheet](https://www.ablic.com/en/doc/datasheet/counter_ic/S35770_I_E.pdf)|
 
 
 #### Installation von Sensoren auf lokalem Computer
