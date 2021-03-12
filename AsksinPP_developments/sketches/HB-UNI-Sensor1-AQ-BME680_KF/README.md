@@ -120,7 +120,13 @@
 ![pic](Images/BME680_holding.png)	
 		* wird auf das HB-UNI-SEN-BATT PCB mit 2-Komponentenkleber aufgeklebt
 		* eine Nase muss mit einer Flachfeile entfernt werden
-		* eine Halterung ohne Nase wird auch bereitgestellt: [STL Datei](./3D%20print%20files/BME680_protection_without_nose.stl). Sie muss geeignet gedreht gedruckt werden, damit die Supportstrukturen nicht stören.  
+		* eine Halterung ohne Nase wird auch bereitgestellt: [STL Datei](./3D%20print%20files/BME680_protection_without_nose.stl). Sie muss geeignet gedreht gedruckt werden, damit die Supportstrukturen nicht stören.
+		
+## Frequenztest des CC1101 RF Moduls
+
+- Bitte vor dem Aufspielen des eigentlichen Sketches HB-UNI-Sensor1-AQ-BME680_KF UNBEDINGT einen [Frequenztest ATMega1284P](FreqTest_1284P/FreqTest_1284P.ino) durchführen. Viele CC1101 Module lassen sich ohne diesen Frequenztest nicht anlernen!
+- Eine Beschreibung des Frequenztests ist [hier](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) zu finden.
+ 
 		
 ## Verringerung des Ruhestroms
 
@@ -181,7 +187,7 @@
 - zum Debuggen genau umgekehrt!
 
 - als Taktfrequenz des ATmega1284P 8 MHz interner RC Oszillator einstellen (es gibt zur Zeit leider nur die 20 MHz Quarz Version bei Tindie)
-- 
+
 - der Sketch verwendet 55462 Bytes (42%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 2303 Bytes (14%) des dynamischen Speichers, 14081 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 
@@ -194,7 +200,7 @@
 RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerleiste einlöten.
 - **WICHTIG:** Den ISP Programmer auf 3,3V einstellen!
 - **Unbedingt** diese [Warnung](https://github.com/TomMajor/SmartHome/tree/master/Info/Warnung_Flashen_33_USBasp_Klones) beachten!
-- Einstellungen Arduino IDE [Werkzeuge](Images/Arduino_IDE_Tools_8MHz_int_RC_osc.png)
+- Einstellungen Arduino IDE [Werkzeuge](Images/Arduino_IDE_Tools_8MHz_int_RC_osc.png) und auch [hier](https://prominimicros.com/how-to-use-the-pro-mini-xl-or-atmega-1284p-with-the-arduino-ide/)
 - als zusätzliche Boardverwalter-URLs unter Arduino IDEs Voreinstellungen einstellen (falls noch nicht getan):
 
 > https://mcudude.github.io/MightyCore/package_MCUdude_MightyCore_index.json
