@@ -423,7 +423,10 @@ public:
         uint16_t updCycle = this->getList0().updIntervall();
         DPRINT(F("updCycle: "));
         DDECLN(updCycle);
-
+   
+        uint16_t altitude = this->getList0().altitude();
+        DPRINT(F("altitude: "));
+        DDECLN(altitude);
     }
 };
 
