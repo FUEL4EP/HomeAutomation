@@ -72,6 +72,10 @@ Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum
 ## Das angemeldete Gerät im RaspberryMatic WebUI
 
 ![pic](Images/WebUI.png)
+
+## Bitte immer die aktuellste Version von AsksinPP nutzen
+
+- HB-UNI-Sensor1-AQ-BME680.ino kompiliert nur mit der aktuellsten **Master** Version von [AsksinPP](https://github.com/pa-pa/AskSinPP/tree/master)
  
 
 ## Benötiger Sketch
@@ -114,6 +118,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - Hochladen des kompilierten Sketchs im Arduino IDE mit: Sketch => Hochladen mit Programmer
 - Debugging wird über den seriellen Monitor mit einem FTDI Adapter USB zu TTL Serial für
 3,3V und 5V für Arduino gemacht. Als Baudrate des seriellen Monitors bitte **57600** Baud einstellen.
+- **WICHTIG:** Wenn der Resetknopf (nicht die Config-Taste!) des Pro Mini 328P Boards gedrückt wurde, muss der Sensor danach neu an der Zentrale angelernt werden. Beim Reset wird die Adresse der Zentrale (CCU3/RaspberryMatic) im EEPROM des 328P gelöscht. Damit funktioniert LazyConfig nicht mehr. War der Sensor schon an der Zentrale angemeldet, erscheint der Sensor nicht mehr im Posteingangskorb, bekommt aber dennoch die Adresse der Zentrale mitgeteilt.
 
 
 
