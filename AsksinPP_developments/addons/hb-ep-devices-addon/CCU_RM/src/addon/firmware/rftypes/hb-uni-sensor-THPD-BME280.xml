@@ -120,9 +120,6 @@
             <event frame="WEATHER_EVENT" />
           </physical>
           <conversion type="float_integer_scale" factor="10.0" />
-          <description>
-            <field id="AutoconfRoles" value="WEATHER" />
-          </description>
         </parameter>
         <parameter id="DEWPOINT" operations="read,event">
           <logical type="float" min="-50.0" max="120.0" unit="°C">
@@ -142,9 +139,6 @@
             <event frame="WEATHER_EVENT" />
           </physical>
           <conversion type="float_integer_scale" factor="100.0" />
-          <description>
-            <field id="AutoconfRoles" value="WEATHER" />
-          </description>
         </parameter>
         <parameter id="OPERATING_VOLTAGE" operations="read,event">
           <logical type="float" min="0.5" max="5.5" unit="V" />
@@ -162,7 +156,7 @@
       <parameter type="integer" signed="true"  index="9"  size="1.7" param="TEMPERATURE" />
       <parameter type="integer" index="11" size="2.0" param="MY_HUMIDITY" />
       <parameter type="integer" index="13" size="2.0" param="AIR_PRESSURE" />
-      <parameter type="integer" index="15" size="2.0" param="DEWPOINT" />
+      <parameter type="integer" signed="true" index="15" size="2.0" param="DEWPOINT" />
       <parameter type="integer" index="17" size="2.0" param="VAPOR_CONCENTRATION" />
       <parameter type="integer" index="19" size="2.0" param="OPERATING_VOLTAGE" />
     </frame>
