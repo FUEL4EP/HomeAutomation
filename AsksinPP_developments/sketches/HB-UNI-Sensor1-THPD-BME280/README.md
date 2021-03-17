@@ -1,11 +1,16 @@
 # HB-UNI-Sensor1-THPD-BME280 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2FAsksinPP_developments%2Fsketches%2FHB-UNI-Sensor1-THPD-BME280&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 <br/>
 
-## WICHTIG: Addon Update auf Version 1.6 am 15. März 2021
+## WICHTIG: Addon Update auf Version 1.6 am 16. März 2021
 
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
-- bitte wegen eines Fehlers auf die Version 1.6 updaten
+- am** 15. März 2021** wurde leider die falsche hb-ep-devices-addon.tar.gz Datei hochgeladen
+- daher bitte die Version 1.6 **nochmals** herunterladen und als Zusatzsoftware auf der CCU3/RaspberryMatic installieren, wenn die CCU3/RaspberryMatic für die Zusatzsoftware hb-ep-devices-addon nach der Installation nicht die Version 1.6 anzeigt:
+
+
+![pic](Images/Addon_version.png)
+
 - bis Version 1.5 einschließlich wurden negative Taupunkttemperaturen als 120 Grad Celsius ausgegeben
 - Version 1.6 behebt diesen Fehler
 
