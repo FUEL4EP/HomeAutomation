@@ -56,6 +56,7 @@ public:
      case BME280::ChipModel_BME280:
        _present = true;
        DPRINTLN(F("BME280 sensor OK"));
+       _bme280.setSettings(settings);
        
        _altitude     = altitude;
        _tempOffset   = (float)( tempOffset10 )  / 10.0;

@@ -14,7 +14,7 @@
 - bis Version 1.5 einschließlich wurden negative Taupunkttemperaturen als 120 Grad Celsius ausgegeben
 - Version 1.6 behebt diesen Fehler
 
-# Temperatur-, Luftfeuchte und Luftdrucksensor auf der Basis von dem Bosch BME280 Sensor (HB-UNI-Sensor1-THPD-BME280) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte und Batteriespannung und WebUI Offseteinstellung
+# Temperatur-, Luftfeuchte und Luftdrucksensor auf der Basis von dem [Bosch BME280 Sensor](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) (HB-UNI-Sensor1-THPD-BME280) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte und Batteriespannung und WebUI Offseteinstellung
 
 - abgeleitet von Toms ([TomMajor](https://github.com/TomMajor)) [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)
 - ein herzliches Dankeschön für die Basisarbeit geht an Tom (TomMajor)
