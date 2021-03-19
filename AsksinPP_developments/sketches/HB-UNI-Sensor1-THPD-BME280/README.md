@@ -1,6 +1,10 @@
 # HB-UNI-Sensor1-THPD-BME280 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2FAsksinPP_developments%2Fsketches%2FHB-UNI-Sensor1-THPD-BME280&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 <br/>
 
+
+## WICHTIG: Sketch Update am 19. März 2021
+- Ein fehlende Initialisierung des Oversamplings wurde gefixt. Der Sensor wird dadurch wieder schnell.  Bitte den Sketch, 'Sens_BME280.h' nochmals neu von Github herunterladen und programmieren.
+
 ## WICHTIG: Addon Update auf Version 1.6 am 16. März 2021
 
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
@@ -13,6 +17,9 @@
 
 - bis Version 1.5 einschließlich wurden negative Taupunkttemperaturen als 120 Grad Celsius ausgegeben
 - Version 1.6 behebt diesen Fehler
+
+
+
 
 # Temperatur-, Luftfeuchte und Luftdrucksensor auf der Basis von dem [Bosch BME280 Sensor](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) (HB-UNI-Sensor1-THPD-BME280) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte und Batteriespannung und WebUI Offseteinstellung
 
@@ -34,7 +41,7 @@ Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum
 - die absolute Luftfeuchte wird mit 0.01 g/m³ Genauigkeit ausgegeben
 - die Batteriespannung wird mit 10 mV Genauigkeit und jeden Zyklus ausgegeben 
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smart-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
-	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png)
+	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/BME280_Setting_of_device_parameters_in_WebUI.png)
 	+ Alle drei Offsetwerte (T, rLF, P) müssen für die Eingabe mit dem Faktor 10 multipliziert werden.
 	
 
