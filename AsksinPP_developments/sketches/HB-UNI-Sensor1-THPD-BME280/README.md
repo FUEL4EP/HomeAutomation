@@ -64,7 +64,7 @@ Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum
 	
 ## Schaltung
 
-- basierend auf einer ATmega328P MCU mit CC1101 Sendemodul, Eigenbau möglich
+- basierend auf einer ATmega328P MCU (3,3V/8MHz) mit CC1101 Sendemodul, Eigenbau möglich
 - eine mögliche und von mir empfohlene Hardwarebasis sieht so aus:
 	+ Universalplatine für DIY-Bausätze von Alexander Reinert
 		* Github [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt)
@@ -75,6 +75,7 @@ Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum
 	+ Bauteile [HB-UNI-SEN-BATT](https://smartkram.de/produkt/bauteile-fuer-homematic-diy-projekt-thermometer-hydrometer/) von Smartkram Webshop
 	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/)
 	+ 2x 10 kOhm I2C Abschlusswiderstände für SCL und SDA auf HB-UNI-SEN-BATT PCB einlöten
+	+ Bitte darauf achten, das der Arduino Pro Mini die 3,3V/8MHz Version ist!
 	
 ## Frequenztest des CC1101 RF Moduls
 
