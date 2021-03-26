@@ -29,7 +29,7 @@
 	+ Alle drei Offsetwerte (T, rLF, P) müssen für die Eingabe mit dem Faktor 10 multipliziert werden.
 	+ Wegen eines Bugs in der eQ3 Software OCCU ['Fehler in ProofAndSetValue bei Gleitkommawerten #1058'](https://github.com/jens-maus/RaspberryMatic/issues/1058) funktioniert die Offseteinstellung im WebUI nur eingeschränkt: Es können nur ganzzahlige Offsets eingegeben werden. In den RaspberryMatic Versionen [3.55.10.20210213 und 3.57.4.20210320](https://github.com/jens-maus/RaspberryMatic/labels/%3Alabel%3A%20WebUI) ist der Bug noch nicht gefixt! Beim mir half der Workaround von Baxxy [hier](https://homematic-forum.de/forum/viewtopic.php?p=652376#p652376). CCU3 Nutzer sollten auf die neueste Firmware 3.55.10 upgraden, 3.55.5 scheint hier einen Bug zu haben.
 
-## Neue Eigenschaften im Vergleich zum [HB-UNI-Sensor1-THPD-BME280]((https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) Sensor
+## Neue Eigenschaften im Vergleich zum [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) Sensor
 
 - **Zusätzlich** zum BOSCH BME280 Sensor wird für die hoch genaue und schnelle Messung der Temperatur und der relativen Luftfeuchte der Sensirion SHT85 verwendet. Der SHT85 Sensor ist aufgrund seiner kleinen Bauform thermisch viel geringer an die Basisplatine angeschlossen und reagiert daher viel schneller auf Änderungen der Temperatur oder der Luftfeuchte.
 - Da der Flashspeicher eines ATmega328P für den HB-UNI-Sensor1-THPD-SHT85 Sensor nicht ausreicht, wird hier ein Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verwendet. 
