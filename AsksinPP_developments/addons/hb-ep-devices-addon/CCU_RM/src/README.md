@@ -1,6 +1,6 @@
 # ep-hb-devices-addon [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Github All Releases](https://img.shields.io/github/downloads/FUEL4EP/HomeAutomation/total.svg)](https://github.com/FUEL4EP/HomeAutomation/releases) [![GitHub issues](https://img.shields.io/github/issues/FUEL4EP/HomeAutomation.svg)](https://github.com/FUEL4EP/HomeAutomation/issues) 
 
-**:heavy_check_mark: lauffähig unter CCU / RaspberryMatic Firmware 2.31.x - 2.53.27 | 3.37.x - 3.55.10**<br/>
+**:heavy_check_mark: lauffähig unter CCU / RaspberryMatic Firmware 2.31.x - 2.53.27 | 3.37.x - 3.57.4**<br/>
 Die jeweils aktuellste Version ist bei den [Releases](https://github.com/FUEL4EP/HomeAutomation/releases/latest) zu finden.
 
 <hr/>
@@ -40,7 +40,8 @@ Nach einem Upgrade der CCU/RaspberryMatic Firmware kann es notwendig sein, diese
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-AQ-BME680_KF_thumb.png" width=25/> | [HB-UNI-SENSOR1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) | Air Quality Sensor<br/>basierend auf Bosch BME680<br/>und Kalman Filter | 🔋 |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-AQ-BME680_KF_DEBUG_thumb.png" width=25/> | [HB-UNI-SENSOR1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) | Air Quality Sensor<br/>basierend auf Bosch BME680<br/>und Kalman Filter (DEBUG) | 🔋 |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-TH-SHT75_thumb.png" width=25/> | [HB-UNI-SENSOR1-TH-SHT75](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75) | high accuracy TH Sensor<br/>_basierend auf Sensirion SHT75_ | 🔋 |
-|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THPD-BME280_thumb.png" width=25/> | [HB-UNI-SENSOR1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) | THPD Sensor<br/>_basierend auf Bosch BME280<br/>mit Taupunkttemperatur<br/>und absoluter Luftfeuchte_ | 🔋 |
+|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THPD-BME280_thumb.png" width=25/> | [HB-UNI-SENSOR1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) | THPD Sensor<br/>basierend auf Bosch BME280<br/>mit Taupunkttemperatur | 🔋 |
+|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THPD-BME280_thumb.png" width=25/> | [HB-UNI-SENSOR1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) | THPD Sensor<br/>basierend auf Sensirion SHT85 und Bosch BME280<br/>mit Taupunkttemperatur| 🔋 |
 
 
 
@@ -52,7 +53,7 @@ Nach einem Upgrade der CCU/RaspberryMatic Firmware kann es notwendig sein, diese
 |F6 01 | HB-UNI-SENSOR1-CO2-SCD30 |
 |F6 02 | HB-UNI-SENSOR1-AQ-BME680 |
 |F6 03 | HB-UNI-SENSOR1-TH-SHT75 |
-|F6 04 | HB-UNI-Sensor1-THPD-BME280 |
+|F6 04 | HB-UNI-Sensor1-THPD-BME280 und HB-UNI-Sensor1-THPD-SHT85 |
 |F6 05 | HB-UNI-SENSOR1-CO2-SCD30-PLUGGED_IN |
 |F6 06 | HB-UNI-SENSOR1-AQ-BME680_KF |
 |F6 07 | HB-UNI-SENSOR1-AQ-BME680_KF_DEBUG |
