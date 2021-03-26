@@ -96,14 +96,14 @@ Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum
 
 ![pic](Images/WebUI.png)
 
-## Bitte immer die aktuellste Version von AsksinPP nutzen
-
-- HB-UNI-Sensor1-AQ-BME680.ino kompiliert nur mit der aktuellsten **Master** Version von [AsksinPP](https://github.com/pa-pa/AskSinPP/tree/master)
-
 
 ## Vor dem Aufspielen von Software
 
 - Bitte macht Euch zuerst mit den Grundlagen von AsksinPP [hier](https://asksinpp.de/Grundlagen/) vertraut.
+
+## Bitte immer die aktuellste Version von AsksinPP nutzen
+
+-  [AsksinPP Master](https://github.com/pa-pa/AskSinPP/tree/master)
 
 ## Bitte genau diese Abfolge beim Einspielen von Software beachten:
 
