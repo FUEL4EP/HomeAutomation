@@ -99,6 +99,27 @@ Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum
 ## Bitte immer die aktuellste Version von AsksinPP nutzen
 
 - HB-UNI-Sensor1-AQ-BME680.ino kompiliert nur mit der aktuellsten **Master** Version von [AsksinPP](https://github.com/pa-pa/AskSinPP/tree/master)
+
+
+## Vor dem Aufspielen von Software
+
+- Bitte macht Euch zuerst mit den Grundlagen von AsksinPP [hier](https://asksinpp.de/Grundlagen/) vertraut.
+
+## Bitte genau diese Abfolge beim Einspielen von Software beachten:
+
+- Details sind gegebenenfalls weiter unten zu finden
+
+1. Bitte zuerst nochmals vergewissern, dass der verbaute Arduino Pro Mini ein 3,3V/8MHz Typ ist.
+2. Das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren.
+3. Für das Programmierern und Setzen der Fuses des ATmega328P ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
+4. Setzten der richtigen Fuses mit [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version)
+5. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [FreqTest.ino Sketch](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
+6. Gegebenenfalls die Parameter cDEVICE_und cDEVICE_in [Device_BME280.h](Cfg/Device_BME280.h) ändern. Jeder Sensor muss ein eineindeutiges cDEVICE_und cDEVICE haben!
+7. Die aktuelle Version des [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) Sketches herunterladen, siehe unten.
+8. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
+9. Dann den Sketch [HB-UNI-Sensor1-THPD-BME280.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280/HB-UNI-Sensor1-THPD-BME280.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
+10. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
+11. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
  
 
 ## Benötiger Sketch
@@ -153,6 +174,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 + [finitespace/BME280](https://github.com/finitespace/BME280)
 
 - **WICHTIG:** Es darf nur die [finitespace BME280](https://github.com/finitespace/BME280) Bibliothek im Suchpfad der Arduino IDE sein! Gegebenenfalls müssen andere BME280 Bibliotheken temporär anders wohin verschoben werden.
+
 
 
 
