@@ -13,7 +13,7 @@
 - Das Datenblatt des SHT85 Sensors ist [hier](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT85_Datasheet.pdf) zu finden.
 - Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) zu finden.
 
-- Der Diskussionsstrang im Homematic Forum dazu ist [hier](tbd) zu finden. Bitte dort auch Fragen stellen.
+- Der Diskussionsstrang im Homematic Forum dazu ist bald [hier](tbd) zu finden. Bitte dort auch Fragen stellen.
 ![pic](Images/HB-UNI-Sensor1-THPD-SHT85.png)	
 
 
@@ -32,7 +32,8 @@
 ## Neue Eigenschaften im Vergleich zum [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) Sensor
 
 - **Zusätzlich** zum BOSCH BME280 Sensor wird für die hoch genaue und schnelle Messung der Temperatur und der relativen Luftfeuchte der Sensirion SHT85 verwendet. Der SHT85 Sensor ist aufgrund seiner kleinen Bauform thermisch viel geringer an die Basisplatine angeschlossen und reagiert daher viel schneller auf Änderungen der Temperatur oder der Luftfeuchte.
-- Da der Flashspeicher eines ATmega328P für den HB-UNI-Sensor1-THPD-SHT85 Sensor nicht ausreicht, wird hier ein Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verwendet. 
+- Da der Flashspeicher eines ATmega328P für den HB-UNI-Sensor1-THPD-SHT85 Sensor nicht ausreicht, wird hier ein Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verwendet.
+- **Hinweis:** Wer auf das Debuggen mit den seriellen Monitor verzichten kann, kann den HB-UNI-Sensor1-THPD-SHT85 Sketch mit '#define NDEBUG' für einen ATmega328P / Arduino Pro Mini (3,3V/8MHz) kompilieren. Das '#define  M1284P' ist dann auszukommentieren. Der HB-UNI-Sensor1-THPD-SHT85 Sketch passt dann in den Flash Speicher des ATmega328P. Damit können z.B. HB-UNI-Sensor1-THPD-BME280 Sensoren nach dem  Auflöten eines zusätzlichen SHT85 Sensors zu einem HB-UNI-Sensor1-THPD-SHT85 umgeflasht werden.
 	
 
 ## Taupunkttemperatur und absolute Luftfeuchtigkeit
