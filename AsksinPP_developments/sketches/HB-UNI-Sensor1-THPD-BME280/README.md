@@ -2,6 +2,10 @@
 <br/>
 
 
+## Hinweis: Alternativer schneller und hoch genauer HomeBrew Sensor
+Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, kann den neuen Sensor [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) nehmen. Er ist zusätzlich mit einem Sension SHT85 Sensor bestückt, sonst aber funktional identisch.
+
+
 ## WICHTIG: Sketch Update am 19. März 2021
 - Ein fehlende Initialisierung des Oversamplings wurde gefixt. Der Sensor wird dadurch wieder schnell.  Bitte den Sketch, 'Sens_BME280.h' nochmals neu von Github herunterladen und programmieren.
 
