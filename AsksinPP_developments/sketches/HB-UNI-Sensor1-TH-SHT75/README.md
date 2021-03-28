@@ -15,7 +15,8 @@ Das Datenblatt des SHT75 Sensors ist [hier](https://www.sensirion.com/fileadmin/
 Die Genauigkeit der Temperaturmessung des SHT75 Sensors ist typisch +-0.3 Grad Celsius.
 Die Genauigkeit der Luftfeuchtemessung des SHT75 Sensors ist typisch +-1.8% rH.
 
-**Es gibt von Sensirion inzwischen das Nachfolgemodell SHT85.** Der Übergang von SHT75 auf SHT85 ist [hier](https://media.digikey.com/pdf/Data%20Sheets/Sensirion%20PDFs/HT_AN_SHT85_Transitioning_SHT7x_to_SHT85_V0.9_D1.pdf) beschrieben. Der SHT85 Sensor nutzt einen I2C Bus und ist daher **NICHT** Software kompatibelzu SHT75! Ein SHT85 AsksinPP Projekt wird vielleicht später von mir angelegt, sobald ich einen SHT85 Sensor gekauft habe. 
+**Es gibt von Sensirion inzwischen das Nachfolgemodell SHT85.** Der Übergang von SHT75 auf SHT85 ist [hier](https://media.digikey.com/pdf/Data%20Sheets/Sensirion%20PDFs/HT_AN_SHT85_Transitioning_SHT7x_to_SHT85_V0.9_D1.pdf) beschrieben. Der SHT85 Sensor nutzt einen I2C Bus und ist daher **NICHT** Software kompatibelzu SHT75!. 
+Inzwischen gibt es auch dafür einen Sketch [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85)
 
 
 ## Neue Eigenschaften im Vergleich zum HB-UNI-Sensor1 Sensor
