@@ -3,25 +3,7 @@
 
 
 ## Hinweis: Alternativer schneller und hoch genauer HomeBrew Sensor
-Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, kann den neuen Sensor [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) nehmen. Er ist zusätzlich mit einem Sension SHT85 Sensor bestückt, sonst aber funktional identisch.
-
-
-## WICHTIG: Sketch Update am 19. März 2021
-- Ein fehlende Initialisierung des Oversamplings wurde gefixt. Der Sensor wird dadurch wieder schnell.  Bitte den Sketch, 'Sens_BME280.h' nochmals neu von Github herunterladen und programmieren.
-
-## WICHTIG: Addon Update auf Version 1.6 am 16. März 2021
-
-[hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
-
-- am** 15. März 2021** wurde leider die falsche hb-ep-devices-addon.tar.gz Datei hochgeladen
-- daher bitte die Version 1.6 **nochmals** herunterladen und als Zusatzsoftware auf der CCU3/RaspberryMatic installieren, wenn die CCU3/RaspberryMatic für die Zusatzsoftware hb-ep-devices-addon nach der Installation nicht die Version 1.6 anzeigt:
-
-
-![pic](Images/Addon_version.png)
-
-- bis Version 1.5 einschließlich wurden negative Taupunkttemperaturen als 120 Grad Celsius ausgegeben
-- Version 1.6 behebt diesen Fehler
-
+Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, kann den neuen Sensor [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) nehmen. Er ist zusätzlich mit einem Sension SHT85 Sensor bestückt, sonst aber funktional identisch. Ein Vergleich der unterschiedlich schnellen Temperaturtransienten ist unter [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) zu finden.
 
 
 

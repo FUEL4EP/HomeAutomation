@@ -25,11 +25,11 @@ webuiFile="/www/webui/webui.js"
 if [ "`cat $webuiFile | grep \"$DEVICE\"`" ]; then
         sed -i "/\($DEVICE\)/d" $webuiFile
 fi
-webuiSearch="GENERIC|Luftg%FCegrad"
+webuiSearch="GENERIC|Luftg%FCtegrad"
 sed -i "/\($webuiSearch\)/d" $webuiFile
-webuiSearch="GENERIC|Luftg%FCegrad"
+webuiSearch="GENERIC|Luftg%FCtegrad"
 sed -i "/\($webuiSearch\)/d" $webuiFile
-webuiSearch="GENERIC|Luftg%FCelog10"
+webuiSearch="GENERIC|Luftg%FCtelog10"
 sed -i "/\($webuiSearch\)/d" $webuiFile
 webuiSearch="GENERIC|Gaswiderstand"
 sed -i "/\($webuiSearch\)/d" $webuiFile

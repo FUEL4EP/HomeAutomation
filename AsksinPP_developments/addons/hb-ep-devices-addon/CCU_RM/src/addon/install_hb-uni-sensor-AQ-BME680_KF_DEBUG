@@ -45,7 +45,7 @@ fi
 webuiSearchBegin="elvST[[:space:]]*=[[:space:]]*new Array();"
 
 
-webuiInsertParam="GENERIC|Luftg%FCegrad"
+webuiInsertParam="GENERIC|Luftg%FCtegrad"
 webuiInsertValue="stringTableHBAirQualityLevel"
 webuiInsert="\n"
 webuiInsert="${webuiInsert}elvST['$webuiInsertParam'] = '\${$webuiInsertValue}';"
@@ -53,7 +53,7 @@ if [ -z "`cat $webuiFile | grep \"$webuiInsertParam\"`" ]; then
 	sed -i "s/\($webuiSearchBegin\)/\1$webuiInsert/g" $webuiFile
 fi
 	
-webuiInsertParam="GENERIC|Luftg%FCelog10"
+webuiInsertParam="GENERIC|Luftg%FCtelog10"
 webuiInsertValue="stringTableHBAirQualityLog10"
 webuiInsert="\n"
 webuiInsert="${webuiInsert}elvST['$webuiInsertParam'] = '\${$webuiInsertValue}';"

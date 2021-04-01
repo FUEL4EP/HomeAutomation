@@ -14,7 +14,16 @@
 - Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) zu finden.
 
 - Der Diskussionsstrang im Homematic Forum dazu ist bald [hier](tbd) zu finden. Bitte dort auch Fragen stellen.
-![pic](Images/HB-UNI-Sensor1-THPD-SHT85.png)	
+
+## Vergleich der Temperaturtransiente des HB-UNI-Sensor1-THPD-SHT85 Sensor mit dem [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) 
+
+- grüne Linie: HB-UNI-Sensor1-THPD-SHT85
+- blaue Linie: [HM-WDS40-TH-I-2](https://de.elv.com/homematic-funk-innensensor-ith-hm-wds40-th-i-2-fuer-smart-home-hausautomation-132095) (original HomeMatic von EQ-3)
+- rote, violette und türkise Linie: [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280)
+- alle 5 Sensoren stehen direkt nebeneinander, die Homebrew Sensoren ohne Gehäusedecke
+- Temperaturtransiente ist durch Lüften bedingt
+
+![pic](Images/SHT85_green_line_versus_BME280_other_line_colors.png)	
 
 
 ## Neue Eigenschaften im Vergleich zum [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1) Sensor
