@@ -2,11 +2,6 @@
 <br/>
 
 
-## Hinweis: Alternativer schneller und hoch genauer HomeBrew Sensor
-Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, kann den neuen Sensor [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) nehmen. Er ist zusätzlich mit einem Sension SHT85 Sensor bestückt, sonst aber funktional identisch. Ein Vergleich der unterschiedlich schnellen Temperaturtransienten ist unter [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) zu finden.
-
-
-
 # Temperatur-, Luftfeuchte und Luftdrucksensor auf der Basis von dem [Bosch BME280 Sensor](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) (HB-UNI-Sensor1-THPD-BME280) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte und Batteriespannung und WebUI Offseteinstellung
 
 - abgeleitet von Toms ([TomMajor](https://github.com/TomMajor)) [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)
@@ -17,6 +12,12 @@ Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, 
 Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) zu finden.
 
 Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=65320&p=642213#p642213) zu finden. Bitte dort auch Fragen stellen.
+
+
+## Hinweis: Alternativer schneller und hoch genauer HomeBrew Sensor
+Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, kann den neuen Sensor [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) nehmen. Er ist zusätzlich mit einem Sension SHT85 Sensor bestückt, sonst aber funktional identisch. Ein Vergleich der unterschiedlich schnellen Temperaturtransienten ist unter [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) zu finden.
+
+
 
 
 ## Neue Eigenschaften im Vergleich zum [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1) Sensor
@@ -98,14 +99,15 @@ Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum
 1. Bitte zuerst nochmals vergewissern, dass der verbaute Arduino Pro Mini ein 3,3V/8MHz Typ ist.
 2. Das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren.
 3. Für das Programmierern und Setzen der Fuses des ATmega328P ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
-4. Setzten der richtigen Fuses mit [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version)
+4. Setzten der richtigen Fuses mit dem [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xFF  High Byte:0xD6  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
 5. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [FreqTest.ino Sketch](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
-6. Gegebenenfalls die Parameter cDEVICE_und cDEVICE_in [Device_BME280.h](Cfg/Device_BME280.h) ändern. Jeder Sensor muss ein eineindeutiges cDEVICE_und cDEVICE haben!
-7. Die aktuelle Version des [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) Sketches herunterladen, siehe unten.
-8. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
-9. Dann den Sketch [HB-UNI-Sensor1-THPD-BME280.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280/HB-UNI-Sensor1-THPD-BME280.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
-10. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
-11. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
+6. Den Config-Taster ganz lange drücken (ca. 6..8 Sekunden) bis die rote LED erlischt und im seriellen Monitor 'RESET' ausgegeben wird. Damit wird ein 'Werksreset' durchgeführt und das EEPROM gelöscht. Damit gehen auch alle im EEPROM gespeicherten Einstellungen verloren.  Die ermittelte Frequenzeinstellung des Frequenztests bleibt aber erhalten.
+7. Gegebenenfalls die Parameter cDEVICE_und cDEVICE_in [Device_BME280.h](Cfg/Device_BME280.h) ändern. Jeder Sensor muss ein eineindeutiges cDEVICE_als auch ein eindeutiges cDEVICE haben!
+8. Die aktuelle Version des [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) Sketches herunterladen, siehe unten.
+9. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
+10. Dann den Sketch [HB-UNI-Sensor1-THPD-BME280.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280/HB-UNI-Sensor1-THPD-BME280.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
+11. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
+12. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
  
 
 ## Benötiger Sketch
@@ -124,6 +126,8 @@ Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum
   	+ mache bitte regelmäßig ein Update mit 'git pull'
  -	enthalten ist auch das notwendige Addon '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)'
  -	den HB-UNI-Sensor1-THPD-BME280 Sensor findest Du unter './HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280'
+ 
+- alternativ kann vom Github [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) die ZIP-Datei HomeAutomation-master.zip heruntergeladen und auf dem lokalen Rechner ausgepackt werden. Bitte dann regelmäßig auf Github nach Updates schauen.
 
 - nach erfolgreicher Inbetriebnahme können die Debugausgaben im serial Monitor ausgeschaltet werden. Dazu bitte im Sketch HB-UNI-Sensor1-THPD-BME280.ino auskommentieren:
 
@@ -148,8 +152,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - Hochladen des kompilierten Sketchs im Arduino IDE mit: Sketch => Hochladen mit Programmer
 - Debugging wird über den seriellen Monitor mit einem FTDI Adapter USB zu TTL Serial für
 3,3V und 5V für Arduino gemacht. Als Baudrate des seriellen Monitors bitte **57600** Baud einstellen.
-- **WICHTIG:** Wenn der Resetknopf (nicht die Config-Taste!) des Pro Mini 328P Boards gedrückt wurde, muss der Sensor danach neu an der Zentrale angelernt werden. Beim Reset wird die Adresse der Zentrale (CCU3/RaspberryMatic) im EEPROM des 328P gelöscht. Damit funktioniert LazyConfig nicht mehr. War der Sensor schon an der Zentrale angemeldet, erscheint der Sensor nicht mehr im Posteingangskorb, bekommt aber dennoch die Adresse der Zentrale mitgeteilt.
-
+- **WICHTIG:** Wenn der Config-Taster des Sensors (unbeabsichtigt) länger als 6..8 Sekunden gedrückt wurde, muss der Sensor danach neu an der Zentrale angelernt werden. Beim Reset wird die Adresse der Zentrale (CCU3/RaspberryMatic) im EEPROM des 328P gelöscht. Damit funktioniert LazyConfig nicht mehr. Zum erneuten Anlernen, zuerst den Sensor in der CCU3/RaspberryMatic ablernen und dann normal wieder anlernen. Die Offseteinstellungen müssen dann im WebUI erneut vorgenommen werden!
 
 
 ## Benötigte Libraries
