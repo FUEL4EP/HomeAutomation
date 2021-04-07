@@ -28,11 +28,11 @@
 			- click on the blue checkmark of the XML copy menu to check whether your XML is well-formed
 			- click on the green checkmark of the XML copy menu to check whether your XML is valid. If it is valid (see message at the bottom) save it.
 			
-	+ now invoke the groovy generator script in a terminal window as follows:
+- now invoke the groovy generator script in a terminal window as follows:
 > 		groovy <path_to_groovy_script>/AsksinPP_addon_generator.groovy
-	+ next you will be asked for the file name of the generated XML control file, please enter it e.g. <HB-UNI-Sensor-XXX-YYYY_addon_control.xml> .
-	+ the generator script will create an install and an uninstall script in the working directory
-	+ check the created install and an uninstall script before you yuse it within an AsksinPP addon
+- next you will be asked for the file name of the generated XML control file, please enter it e.g. <HB-UNI-Sensor-XXX-YYYY_addon_control.xml> .
+- the generator script will create an install and an uninstall script in the working directory
+- check the created install and an uninstall script before you yuse it within an AsksinPP addon
 
 
 ## Lizenz
