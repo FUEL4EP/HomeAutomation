@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AsksinPP_addon_control_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="AsksinPP_addon_control_file.xsd">
+  <creator>FUEL4EP</creator>
+  <device_name>HB-UNI-Sensor-THPD-SHT85</device_name>
+  <device_description>Sensor THPD</device_description>
+  <device_small_case_name>hb-uni-sensor-THPD-SHT85</device_small_case_name>
+  <version>1.0</version>
+  <translated_datapoints>
+      <datapoint name="OPERATING_VOLTAGE">
+        <index>1</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBBatteryVoltage</string_identifier>
+        <translated_string>Batteriespannung</translated_string>
+      </datapoint>
+      <datapoint name="MY_HUMIDITY">
+        <index>2</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBHumidity</string_identifier>
+        <translated_string>Rel. Luftfeuchtigkeit</translated_string>
+      </datapoint>
+      <datapoint name="DEWPOINT">
+        <index>3</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBDewpoint</string_identifier>
+        <translated_string>Taupunkt</translated_string>
+      </datapoint>
+      <datapoint name="VAPOR_CONCENTRATION">
+        <index>4</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBVaporConcentration</string_identifier>
+        <translated_string>Abs. Luftfeuchtigkeit</translated_string>
+      </datapoint>
+  </translated_datapoints>
+</AsksinPP_addon_control_file>

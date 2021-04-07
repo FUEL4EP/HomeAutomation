@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AsksinPP_addon_control_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="AsksinPP_addon_control_file.xsd">
+  <creator>FUEL4EP</creator>
+  <device_name>HB-UNI-Sensor-CO2-SCD30_plugged_in</device_name>
+  <device_description>Sensor Kohlendioxid Netzbetrieb</device_description>
+  <device_small_case_name>hb-uni-sensor-CO2-SCD30_plugged_in</device_small_case_name>
+  <version>1.0</version>
+  <translated_datapoints>
+      <datapoint name="CO2">
+        <index>1</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBCO2Sensor</string_identifier>
+        <translated_string>CO2 Messwert</translated_string>
+      </datapoint>
+      <datapoint name="OPERATING_VOLTAGE">
+        <index>2</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBBatteryVoltage</string_identifier>
+        <translated_string>Batteriespannung</translated_string>
+    </datapoint>
+  </translated_datapoints>
+</AsksinPP_addon_control_file>

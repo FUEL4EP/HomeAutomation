@@ -1,0 +1,449 @@
+
+package AsksinPP_addon_generator
+/**
+* A Simple example that parses an XML stored in a file using XmlSlurper.
+*/ 
+
+import java.nio.file.FileSystems
+import java.nio.file.Path
+import java.io.File
+import javax.xml.xpath.*
+import javax.xml.parsers.DocumentBuilderFactory
+import org.w3c.dom.*
+import javax.xml.parsers.*
+import java.io.*
+import java.lang.String
+
+
+class Addon_generator {
+
+    static VersionString = "0.92"
+    
+    static def String my_encodeAsHTML (String input_string) {
+
+        def my_html4_encoding_map = [
+        
+            "À":"\\&Agrave;",
+            "Á":"\\&Aacute;",
+            "Â":"\\&Acirc;",
+            "Ã":"\\&Atilde;",
+            "Ä":"\\&Auml;",
+            "Å":"\\&Aring;",
+            "Æ":"\\&AElig;",
+            "Ç":"\\&Ccedil;",
+            "È":"\\&Egrave;",
+            "É":"\\&Eacute;",
+            "Ê":"\\&Ecirc;",
+            "Ë":"\\&Euml;",
+            "Ì":"\\&Igrave;",
+            "Í":"\\&Iacute;",
+            "Î":"\\&Icirc;",
+            "Ï":"\\&Iuml;",
+            "Ð":"\\&ETH;",
+            "Ñ":"\\&Ntilde;",
+            "Ò":"\\&Ograve;",
+            "Ó":"\\&Oacute;",
+            "Ô":"\\&Ocirc;",
+            "Õ":"\\&Otilde;",
+            "Ö":"\\&Ouml;",
+            "Ø":"\\&Oslash;",
+            "Ù":"\\&Ugrave;",
+            "Ú":"\\&Uacute;",
+            "Û":"\\&Ucirc;",
+            "Ü":"\\&Uuml;",
+            "Ý":"\\&Yacute;",
+            "Þ":"\\&THORN;",
+            "ß":"\\&szlig;",
+            "à":"\\&agrave;",
+            "á":"\\&aacute;",
+            "â":"\\&acirc;",
+            "ã":"\\&atilde;",
+            "ä":"\\&auml;",
+            "å":"\\&aring;",
+            "æ":"\\&aelig;",
+            "ç":"\\&ccedil;",
+            "è":"\\&egrave;",
+            "é":"\\&eacute;",
+            "ê":"\\&ecirc;",
+            "ë":"\\&euml;",
+            "ì":"\\&igrave;",
+            "í":"\\&iacute;",
+            "î":"\\&icirc;",
+            "ï":"\\&iuml;",
+            "ð":"\\&eth;",
+            "ñ":"\\&ntilde;",
+            "ò":"\\&ograve;",
+            "ó":"\\&oacute;",
+            "ô":"\\&ocirc;",
+            "õ":"\\&otilde;",
+            "ö":"\\&ouml;",
+            "ø":"\\&oslash;",
+            "ù":"\\&ugrave;",
+            "ú":"\\&uacute;",
+            "û":"\\&ucirc;",
+            "ü":"\\&uuml;",
+            "ý":"\\&yacute;",
+            "þ":"\\&thorn;",
+            "ÿ":"\\&yuml;",
+            "/":"\\/"
+            
+        ]
+
+        def encoded_string = ""
+
+        input_string.each { c ->
+            if ( my_html4_encoding_map.containsKey(c) ) {
+            encoded_string += my_html4_encoding_map.get(c)
+            }
+            else {
+            encoded_string += c
+            }
+        } 
+        return encoded_string
+    }
+
+    static def get_control_XML_file_name() {
+        print "Please input the file name of the AsksinPP addon generator XML control file : "
+        def control_file_name = System.in.newReader().readLine()
+        println "\nThe specified XML control file name is :  '${control_file_name}'"
+        def file = new File(control_file_name)
+        boolean isFile =      file.isFile(); 
+
+        if ( ! file.exists() ){
+        println "The file '${control_file_name}' is NOT existing"
+        println "Aborting .."
+        System.exit(0)
+        }
+
+        if ( ! file.isFile() ){
+        println "The file '${control_file_name}' is NOT a regular file"
+        println "Aborting .."
+        System.exit(0)
+        }
+
+        if ( ! file.canRead() ){
+        println "The file '${control_file_name}' is NOT readable"
+        println "Aborting .."
+        System.exit(0)
+        }
+
+        def control_file_name_extension = control_file_name.lastIndexOf('.').with {it != -1 ? control_file_name.substring(it+1):''}
+
+        if ( control_file_name_extension != 'xml' ) {
+        println "The extension of '${control_file_name}' is not 'xml': '${control_file_name_extension}'"
+        println "Aborting .."
+        System.exit(0)
+        }
+
+        try {
+        File fXmlFile = new File(control_file_name)
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance()
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder()
+        Document doc = dBuilder.parse(fXmlFile)
+        } catch(Exception ex) {
+            println (" ")
+            println("The specified XML control file '${control_file_name}' is not a well-formed XML file")
+            println (" ")
+            println "Aborting .."
+            /*throw new RuntimeException("The specified XML control file '${control_file_name}' is not a well-formed XML file", ex)*/
+            System.exit(0)
+        } 
+        
+        return control_file_name
+    } 
+
+    static main(args) {
+    
+        println "\nAsksinPP addon script generator ${VersionString}\n\n"
+        def my_xml_contro_file_name = get_control_XML_file_name()
+        def AsksinPP_addon_control_file = new XmlSlurper().parse(new File(my_xml_contro_file_name))
+        
+        String.metaClass.encodeURL = {
+            java.net.URLEncoder.encode(delegate, "ISO8859-1").replace("+", "%20")
+        }
+        
+        def String my_device_class = ""
+        
+        println ""
+        println "creator                : ${AsksinPP_addon_control_file.creator}"
+        println "device name            : ${AsksinPP_addon_control_file.device_name}"
+        println "device description     : ${AsksinPP_addon_control_file.device_description}"
+        println "small case device name : ${AsksinPP_addon_control_file.device_small_case_name}"
+        println "XML version            : ${AsksinPP_addon_control_file.version}"
+        def install_script_file_name    = "install_"+"${AsksinPP_addon_control_file.device_small_case_name}"
+        println "install script name    : ${install_script_file_name}"
+        def uninstall_script_file_name  = "uninstall_"+"${AsksinPP_addon_control_file.device_small_case_name}"
+        println "uninstall script name  : ${uninstall_script_file_name}"
+        
+        
+        // generate install script
+        
+        File isf = new File(install_script_file_name)
+        def  webuiInsert_buffer                   = StringBuffer.newInstance()
+        def  stringtable_de_txt_buffer            = StringBuffer.newInstance()
+        def  translate_lang_stringtable_js_buffer = StringBuffer.newInstance()
+        
+        isf.write  "#!/bin/sh\n\n"
+        isf.append "# generated by AsksinPP_addon_generator ${VersionString}\n"
+        def my_date = new Date()
+        isf.append "# generated on ${my_date}\n\n"
+        isf.append "# XML control file name  : ${my_xml_contro_file_name}\n\n"
+        isf.append "# creator                : ${AsksinPP_addon_control_file.creator}\n"
+        isf.append "# device name            : ${AsksinPP_addon_control_file.device_name}\n"
+        isf.append "# small case device name : ${AsksinPP_addon_control_file.device_small_case_name}\n"
+        isf.append "# XML version            : ${AsksinPP_addon_control_file.version}\n"
+        
+        isf.append "#------------------------------------------------------------------------------\n"
+        isf.append "# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name=\"${AsksinPP_addon_control_file.device_name}\" id=\"${AsksinPP_addon_control_file.device_name}\">\n"
+        isf.append "DEVICE=\"${AsksinPP_addon_control_file.device_name}\"\n"
+        isf.append "# in der WebUI angezeigte Gerätebeschreibung\n"
+        String toEncode = "${AsksinPP_addon_control_file.device_description}".toString()
+        toEncode = my_encodeAsHTML(toEncode)
+        isf.append "DEVICE_DESC=\"${toEncode}\"\n"
+
+        isf.append "# Name der Piktogramme, bestehend aus xx.png bzw. xx_thumb.png\n"
+        isf.append "DEVICE_IMG=${AsksinPP_addon_control_file.device_small_case_name}.png\n"
+        isf.append "DEVICE_THUMB=${AsksinPP_addon_control_file.device_small_case_name}_thumb.png\n"
+        isf.append "FIRMWARE_FILE=/firmware/rftypes/${AsksinPP_addon_control_file.device_small_case_name}*.xml\n\n"
+
+        isf.append "#------------------------------------------------------------------------------\n"
+        isf.append "# Edit DEVDB.tcl\n"
+        isf.append "devdescrFile=\"/www/config/devdescr/DEVDB.tcl\"\n"
+        isf.append "devdescrSearch=\"array[[:space:]]*set[[:space:]]*DEV_PATHS[[:space:]]*{\"\n\n"
+
+        isf.append "devdescrInsert=\"\$DEVICE {{50 \\/config\\/img\\/devices\\/50\\/\$DEVICE_THUMB} {250 \\/config\\/img\\/devices\\/250\\/\$DEVICE_IMG}} \"\n\n"
+
+        isf.append "if [ -z \"`cat \$devdescrFile | grep \\\"\$DEVICE\\\"`\" ]; then\n"
+        isf.append "	sed -i \"s/\\(\$devdescrSearch\\)/\\1\$devdescrInsert/g\" \$devdescrFile\n"
+        isf.append "fi\n\n"
+
+        isf.append "#------------------------------------------------------------------------------\n"
+        isf.append "# Edit webui.js\n"
+        isf.append "webuiFile=\"/www/webui/webui.js\"\n"
+        isf.append "webuiSearch=\"DEV_HIGHLIGHT[[:space:]]*=[[:space:]]*new Array();\"\n\n"
+
+        isf.append "webuiInsert=\"\\n\"\n"
+        isf.append "webuiInsert=\"\${webuiInsert}DEV_HIGHLIGHT['\$DEVICE'] = new Object();\\n\"\n"
+        isf.append "webuiInsert=\"\${webuiInsert}DEV_LIST.push('\$DEVICE');\\n\"\n"
+        isf.append "webuiInsert=\"\${webuiInsert}DEV_DESCRIPTION['\$DEVICE']='\$DEVICE_DESC';\\n\"\n"
+        isf.append "webuiInsert=\"\${webuiInsert}DEV_PATHS['\$DEVICE'] = new Object();\\n\"\n"
+        isf.append "webuiInsert=\"\${webuiInsert}DEV_PATHS['\$DEVICE']['50'] = '\\/config\\/img\\/devices\\/50\\/\$DEVICE_THUMB';\\n\"\n"
+        isf.append "webuiInsert=\"\${webuiInsert}DEV_PATHS['\$DEVICE']['250'] = '\\/config\\/img\\/devices\\/250\\/\$DEVICE_IMG';\"\n\n"
+        
+        isf.append "if [ -z \"`cat \$webuiFile | grep \\\"\$DEVICE\\\"`\" ]; then\n"
+        isf.append "	sed -i \"s/\\(\$webuiSearch\\)/\\1\$webuiInsert/g\" \$webuiFile\n"
+        isf.append "fi\n\n"
+
+        isf.append "# ab hier siehe Anleitung von Jérôme, siehe https://homematic-forum.de/forum/viewtopic.php?f=76&t=60067\n\n\n"
+
+        isf.append "webuiSearchBegin=\"elvST[[:space:]]*=[[:space:]]*new Array();\"\n\n"
+
+
+        
+        webuiInsert_buffer.append( "\n\n\n### Edit webuiInsert ####\n\n" )
+        
+        webuiInsert_buffer.append( "webuiFile=\"/www/webui/webui.js\"\n" )
+        
+        stringtable_de_txt_buffer.append( "\n\n\n### Edit stringtable_de.txt ###\n\n" )
+        stringtable_de_txt_buffer.append( "stringtable_deFile=\"/www/config/stringtable_de.txt\"\n" )
+        
+        translate_lang_stringtable_js_buffer.append( "\n\n\n### Edit translate.lang.stringtable.js ###\n\n" )
+        translate_lang_stringtable_js_buffer.append( "translate_deFile=\"/www/webui/js/lang/de/translate.lang.stringtable.js\"\n" )
+        translate_lang_stringtable_js_buffer.append( "translate_deSearch=\"\\\"dummy\\\" : \\\"\\\",\"\n\n" )
+        
+        AsksinPP_addon_control_file.translated_datapoints.datapoint.each
+        {
+
+          
+          
+          println "\n\n.. working on .. \n"
+          println " "
+          println "index                  : ${it.index}"
+          println "name                   : ${it.@name}"
+
+          toEncode = "${it.translated_string}"
+          println "translated_string      : ${toEncode.encodeURL()}"
+          println "string_identifier      : ${it.string_identifier}"
+          println "device class           : ${it.device_class}"
+          
+          if ( it.device_class == "SKIP" ) {
+            my_device_class = ""
+          }
+          else {
+            my_device_class = "${it.device_class}|"
+          }
+          
+          webuiInsert_buffer.append( " \n" )
+          stringtable_de_txt_buffer.append( " \n" )
+          translate_lang_stringtable_js_buffer.append( " \n" )
+          
+          webuiInsert_buffer.append("\n# datapoint name #${it.index}: ${my_device_class}${it.@name}\n")
+          webuiInsert_buffer.append( " \n" )
+          toEncode = "${it.translated_string}"
+          webuiInsert_buffer.append( "webuiInsertParam=\"${my_device_class}${toEncode.encodeURL()}\"\n" )
+          webuiInsert_buffer.append( "webuiInsertValue=\"${it.string_identifier}\"\n" )
+          webuiInsert_buffer.append( "webuiInsert=\"\\n\"\n" )
+          webuiInsert_buffer.append( "webuiInsert=\"\${webuiInsert}elvST['\$webuiInsertParam'] = '\\\${\$webuiInsertValue}';\"\n" )
+          webuiInsert_buffer.append( "if [ -z \"`cat \$webuiFile | grep \\\"\$webuiInsertParam\\\"`\" ]; then\n" )
+          webuiInsert_buffer.append( "	sed -i \"s/\\(\$webuiSearchBegin\\)/\\1\$webuiInsert/g\" \$webuiFile\n" )
+          webuiInsert_buffer.append( "fi\n" )
+          webuiInsert_buffer.append( " \n" )
+          webuiInsert_buffer.append( " \n" )
+          
+          
+          
+          stringtable_de_txt_buffer.append("\n# datapoint name #${it.index}: ${my_device_class}${it.@name}\n")
+          stringtable_de_txt_buffer.append( " \n" )
+          stringtable_de_txt_buffer.append( "stringtable_deInsert=\"${my_device_class}${it.@name}\\t\\\${${it.string_identifier}}\"\n" )
+          stringtable_de_txt_buffer.append( "if [ -z \"`cat \$stringtable_deFile | grep \\\"${my_device_class}${it.@name}\\\"`\" ]; then\n" )
+          stringtable_de_txt_buffer.append( "    echo -e \$stringtable_deInsert >> \$stringtable_deFile\n" )
+          stringtable_de_txt_buffer.append( "fi\n" )
+          
+          
+          
+          translate_lang_stringtable_js_buffer.append("\n# datapoint name #${it.index}: ${my_device_class}${it.@name}\n")
+          translate_lang_stringtable_js_buffer.append( " \n" )
+          toEncode = "${it.translated_string}"
+          translate_lang_stringtable_js_buffer.append( "translate_deInsert=\"\\n    \\\"${it.string_identifier}\\\" : \\\"${toEncode.encodeURL()}\\\",\"\n" )
+          translate_lang_stringtable_js_buffer.append( "if [ -z \"`cat \$translate_deFile | grep \\\"${it.string_identifier}\\\"`\" ]; then\n" )
+          translate_lang_stringtable_js_buffer.append( "      sed -i \"s/\\(\$translate_deSearch\\)/\\1\$translate_deInsert/g\" \$translate_deFile\n" )
+          translate_lang_stringtable_js_buffer.append( "fi\n" )
+          translate_lang_stringtable_js_buffer.append( " \n" )
+          
+        }
+        
+        isf.append(webuiInsert_buffer)
+        isf.append(stringtable_de_txt_buffer)
+        isf.append(translate_lang_stringtable_js_buffer)
+        isf.append("\n\n#finished 'AsksinPP addon script generator ${VersionString}'\n")
+        
+    
+    
+        
+        // generate uninstall script
+        
+        File uisf = new File(uninstall_script_file_name)
+        webuiInsert_buffer                   = webuiInsert_buffer.delete(0, webuiInsert_buffer.length())
+        stringtable_de_txt_buffer            = stringtable_de_txt_buffer.delete(0, stringtable_de_txt_buffer.length())
+        translate_lang_stringtable_js_buffer = translate_lang_stringtable_js_buffer.delete(0, translate_lang_stringtable_js_buffer.length())
+        
+        uisf.write  "#!/bin/sh\n\n"
+        uisf.append "# generated by AsksinPP_addon_generator ${VersionString}\n"
+        my_date = new Date()
+        uisf.append "# generated on ${my_date}\n\n"
+        uisf.append "# XML control file name  : ${my_xml_contro_file_name}\n\n"
+        uisf.append "# creator                : ${AsksinPP_addon_control_file.creator}\n"
+        uisf.append "# device name            : ${AsksinPP_addon_control_file.device_name}\n"
+        uisf.append "# small case device name : ${AsksinPP_addon_control_file.device_small_case_name}\n"
+        uisf.append "# XML version            : ${AsksinPP_addon_control_file.version}\n"
+        
+        uisf.append "#------------------------------------------------------------------------------\n"
+        uisf.append "# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name=\"${AsksinPP_addon_control_file.device_name}\" id=\"${AsksinPP_addon_control_file.device_name}\">\n"
+        uisf.append "DEVICE=\"${AsksinPP_addon_control_file.device_name}\"\n"
+        uisf.append "# in der WebUI angezeigte Gerätebeschreibung\n"
+        toEncode = "${AsksinPP_addon_control_file.device_description}".toString()
+        toEncode = my_encodeAsHTML(toEncode)
+        uisf.append "DEVICE_DESC=\"${toEncode}\"\n"
+
+        uisf.append "# Name der Piktogramme, bestehend aus xx.png bzw. xx_thumb.png\n"
+        uisf.append "DEVICE_IMG=${AsksinPP_addon_control_file.device_small_case_name}.png\n"
+        uisf.append "DEVICE_THUMB=${AsksinPP_addon_control_file.device_small_case_name}_thumb.png\n"
+        uisf.append "FIRMWARE_FILE=/firmware/rftypes/${AsksinPP_addon_control_file.device_small_case_name}*.xml\n\n"
+
+        uisf.append "#------------------------------------------------------------------------------\n"
+        uisf.append "# Undo DEVDB.tcl changes\n"
+        uisf.append "devdescrFile=\"/www/config/devdescr/DEVDB.tcl\"\n"
+        uisf.append "devdescrSearch=\"\$DEVICE {{50 \\/config\\/img\\/devices\\/50\\/\$DEVICE_THUMB} {250 \\/config\\/img\\/devices\\/250\\/\$DEVICE_IMG}} \"\n\n"
+
+        uisf.append "if [ \"`cat \$devdescrFile | grep \\\"\$DEVICE\\\"`\" ]; then\n"
+        uisf.append "        sed -i \"s/\\(\$devdescrSearch\\)//g\" \$devdescrFile\n"
+        uisf.append "fi\n\n"
+
+        uisf.append "#------------------------------------------------------------------------------\n"
+        uisf.append "# Undo webui.js changes\n"
+        uisf.append "webuiFile=\"/www/webui/webui.js\"\n"
+        uisf.append "if [ \"`cat \$webuiFile | grep \\\"\$DEVICE\\\"`\" ]; then\n"
+        uisf.append "        sed -i \"/\\(\$DEVICE\\)/d\" \$webuiFile\n"
+        uisf.append "fi\n\n"
+        
+        uisf.append "#------------------------------------------------------------------------------\n"
+        uisf.append "# remove device_xml links\n"
+        uisf.append "rm -f \$FIRMWARE_FILE\n\n"
+        
+        uisf.append "#------------------------------------------------------------------------------\n"
+        uisf.append "# remove image files\n"
+        uisf.append "rm -f /www/config/img/devices/250/\$DEVICE_IMG\n"
+        uisf.append "rm -f /www/config/img/devices/50/\$DEVICE_THUMB\n\n"
+
+        
+        webuiInsert_buffer.append( "\n\n\n### Undo changes of webuiFile ####\n\n" )
+        
+        
+        stringtable_de_txt_buffer.append( "\n\n\n### Undo changes of stringtable_de.txt ###\n\n" )
+        stringtable_de_txt_buffer.append( "stringtable_deFile=\"/www/config/stringtable_de.txt\"\n" )
+        
+        translate_lang_stringtable_js_buffer.append( "\n\n\n### Undo changes of translate.lang.stringtable.js ###\n\n" )
+        translate_lang_stringtable_js_buffer.append( "translate_deFile=\"/www/webui/js/lang/de/translate.lang.stringtable.js\"\n" )
+        
+        AsksinPP_addon_control_file.translated_datapoints.datapoint.each
+        {
+
+          
+          
+          println "\n\n.. working on .. \n"
+          println " "
+          println "index                  : ${it.index}"
+          println "name                   : ${it.@name}"
+
+          toEncode = "${it.translated_string}"
+          println "translated_string      : ${toEncode.encodeURL()}"
+          println "string_identifier      : ${it.string_identifier}"
+          println "device class           : ${it.device_class}"
+          
+          if ( it.device_class == "SKIP" ) {
+            my_device_class = ""
+          }
+          else {
+            my_device_class = "${it.device_class}|"
+          }
+          
+          webuiInsert_buffer.append( " \n" )
+          stringtable_de_txt_buffer.append( " \n" )
+          translate_lang_stringtable_js_buffer.append( " \n" )
+          
+          webuiInsert_buffer.append("\n# datapoint name #${it.index}: ${my_device_class}${it.@name}\n")
+          webuiInsert_buffer.append( " \n" )
+          toEncode = "${it.translated_string}"
+          webuiInsert_buffer.append( "webuiSearch=\"${my_device_class}${toEncode.encodeURL()}\"\n" )
+          webuiInsert_buffer.append( "sed -i \"/\\(\$webuiSearch\\)/d\" \$webuiFile\n\n" )
+          
+          
+          stringtable_de_txt_buffer.append("\n# datapoint name #${it.index}: ${my_device_class}${it.@name}\n")
+          stringtable_de_txt_buffer.append( " \n" )
+          stringtable_de_txt_buffer.append( "stringtable_deSearch=\"${my_device_class}${it.@name}\"\n")
+          stringtable_de_txt_buffer.append( "sed -i \"/\\(\$stringtable_deSearch\\)/d\" \$stringtable_deFile\n")
+
+          
+          
+          translate_lang_stringtable_js_buffer.append("\n# datapoint name #${it.index}: ${my_device_class}${it.@name}\n")
+          translate_lang_stringtable_js_buffer.append( " \n" )
+          translate_lang_stringtable_js_buffer.append("translate_deSearch=\"${it.string_identifier}\"\n")
+          translate_lang_stringtable_js_buffer.append("sed -i \"/\\(\${translate_deSearch}\\)/d\" \$translate_deFile\n")
+          
+        }
+        
+        uisf.append(webuiInsert_buffer)
+        uisf.append(stringtable_de_txt_buffer)
+        uisf.append(translate_lang_stringtable_js_buffer)
+        uisf.append("\n\n#finished 'AsksinPP addon script generator ${VersionString}'\n")
+        
+        
+        println "\n\nfinished 'AsksinPP addon script generator ${VersionString}'\n"
+    }
+    
+    
+
+}
+
+
+

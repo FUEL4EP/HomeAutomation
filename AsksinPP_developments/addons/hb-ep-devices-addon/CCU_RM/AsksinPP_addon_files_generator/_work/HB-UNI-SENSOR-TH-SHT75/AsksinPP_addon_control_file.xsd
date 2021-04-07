@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="AsksinPP_addon_control_file">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="creator" type="xs:string"/>
+        <xs:element name="device_name" type="xs:string"/>
+        <xs:element name="device_description" type="xs:string"/>
+        <xs:element name="device_small_case_name" type="xs:string"/>
+        <xs:element name="version" type="xs:string"/>
+        <xs:element ref="translated_datapoints"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="translated_datapoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="datapoint" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="datapoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="index" type="xs:string"/>
+        <xs:element name="device_class" type="xs:string"/>
+        <xs:element name="string_identifier" type="xs:string"/>
+        <xs:element name="translated_string" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AsksinPP_addon_control_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="AsksinPP_addon_control_file.xsd">
+  <creator>FUEL4EP</creator>
+  <device_name>HB-UNI-Sensor-AQ-BME680</device_name>
+  <device_description>universeller Luftgütesensor</device_description>
+  <device_small_case_name>hb-uni-sensor-AQ-BME680</device_small_case_name>
+  <version>1.0</version>
+  <translated_datapoints>
+      <datapoint name="AQ_LEVEL">
+        <index>1</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBAirQualityLevel</string_identifier>
+        <translated_string>Luftgütegrad</translated_string>
+      </datapoint>
+      <datapoint name="AQ_LOG10">
+        <index>2</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBAirQualityLog10</string_identifier>
+        <translated_string>Luftqualität Log10</translated_string>
+      </datapoint>
+      <datapoint name="AQ_GAS_RESISTANCE_RAW">
+        <index>3</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBGasResistanceRaw</string_identifier>
+        <translated_string>Gaswiderstand</translated_string>
+      </datapoint>
+      <datapoint name="AQ_GAS_RESISTANCE_MIN">
+        <index>4</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBGasResistanceMin</string_identifier>
+        <translated_string>min Gaswiderstand</translated_string>
+      </datapoint>
+      <datapoint name="AQ_GAS_RESISTANCE_MAX">
+        <index>5</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBGasResistanceMax</string_identifier>
+        <translated_string>max Gaswiderstand</translated_string>
+      </datapoint>
+      <datapoint name="OPERATING_VOLTAGE">
+        <index>6</index>
+        <device_class>WEATHER</device_class>
+        <string_identifier>stringTableHBBatteryVoltage</string_identifier>
+        <translated_string>Batteriespannung</translated_string>
+      </datapoint>
+    <datapoint name="ALTITUDE_ABOVE_SEA_LEVEL">
+      <index>7</index>
+      <device_class>SKIP</device_class>
+      <string_identifier>stringTableHBAltitudeAboveSealevel</string_identifier>
+      <translated_string>Höhe über NN</translated_string>
+    </datapoint>
+    <datapoint name="TRANSMIT_TIME_INTERVAL">
+      <index>8</index>
+      <device_class>SKIP</device_class>
+      <string_identifier>stringTableHBTransmitTimeIntervall</string_identifier>
+      <translated_string>Sendeintervall</translated_string>
+    </datapoint>
+    <datapoint name="MY_HUMIDITY">
+      <index>9</index>
+      <device_class>WEATHER</device_class>
+      <string_identifier>stringTableHBHumidity</string_identifier>
+      <translated_string>Rel. Luftfeuchtigkeit</translated_string>
+    </datapoint>
+  </translated_datapoints>
+</AsksinPP_addon_control_file>
