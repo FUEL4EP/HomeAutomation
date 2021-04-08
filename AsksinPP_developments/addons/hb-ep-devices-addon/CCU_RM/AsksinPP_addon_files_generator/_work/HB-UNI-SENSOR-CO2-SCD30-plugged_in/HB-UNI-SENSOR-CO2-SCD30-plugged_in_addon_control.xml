@@ -15,8 +15,8 @@
       <datapoint name="OPERATING_VOLTAGE">
         <index>2</index>
         <channel_type>WEATHER</channel_type>
-        <string_identifier>stringTableHBBatteryVoltage</string_identifier>
-        <translated_string>Batteriespannung</translated_string>
+        <string_identifier>stringTableHBPlugin_SupplyVoltage</string_identifier>
+        <translated_string>VCC Betriebsspannung</translated_string>
     </datapoint>
     <datapoint name="TemperatureOffset">
         <index>3</index>
