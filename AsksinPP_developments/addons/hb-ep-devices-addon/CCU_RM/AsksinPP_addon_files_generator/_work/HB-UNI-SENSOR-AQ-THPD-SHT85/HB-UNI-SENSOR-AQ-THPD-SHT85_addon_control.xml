@@ -8,25 +8,25 @@
   <translated_datapoints>
       <datapoint name="OPERATING_VOLTAGE">
         <index>1</index>
-        <device_class>WEATHER</device_class>
+        <channel_type>WEATHER</channel_type>
         <string_identifier>stringTableHBBatteryVoltage</string_identifier>
         <translated_string>Batteriespannung</translated_string>
       </datapoint>
       <datapoint name="MY_HUMIDITY">
         <index>2</index>
-        <device_class>WEATHER</device_class>
+        <channel_type>WEATHER</channel_type>
         <string_identifier>stringTableHBHumidity</string_identifier>
         <translated_string>Rel. Luftfeuchtigkeit</translated_string>
       </datapoint>
       <datapoint name="DEWPOINT">
         <index>3</index>
-        <device_class>WEATHER</device_class>
+        <channel_type>WEATHER</channel_type>
         <string_identifier>stringTableHBDewpoint</string_identifier>
         <translated_string>Taupunkt</translated_string>
       </datapoint>
       <datapoint name="VAPOR_CONCENTRATION">
         <index>4</index>
-        <device_class>WEATHER</device_class>
+        <channel_type>WEATHER</channel_type>
         <string_identifier>stringTableHBVaporConcentration</string_identifier>
         <translated_string>Abs. Luftfeuchtigkeit</translated_string>
       </datapoint>

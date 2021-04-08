@@ -1,0 +1,41 @@
+#!/bin/bash
+
+
+
+for dir in _work/*; do (
+
+  echo ""
+  echo ..working on device: " ${dir} .."
+  echo ""
+  
+  pushd ${dir} >& /dev/null
+  
+  cp ../../AsksinPP_addon_control_file.xsd .
+  
+  ls -largt
+  
+  FILE="install*"
+  [[ -f ${FILE} ]] && /bin/rm ./${FILE} 
+  FILE="run*"
+  [[ -f ${FILE} ]] && /bin/rm ./${FILE} 
+  FILE="uninstall*"
+  [[ -f ${FILE} ]] && /bin/rm ./${FILE} 
+  
+  sensor=`basename ${dir}`
+  
+  #sed -i 's/device_class/channel_type/g' "${sensor}_addon_control.xml"
+  
+  /usr/bin/env groovy ../../AsksinPP_addon_generator.groovy "${sensor}_addon_control.xml"
+  
+  if [ ${sensor} != "HB-UNI-SENSOR-EXAMPLE" ]; then
+    chmod +x ./install_*
+    chmod +x ./uninstall_*
+    cp install_* ../../../src/addon/
+    cp uninstall_* ../../../src/addon/
+  fi
+
+  popd
+  
+); done
+
+

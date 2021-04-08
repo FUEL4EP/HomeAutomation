@@ -23,7 +23,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="index" type="xs:string"/>
-        <xs:element name="device_class" type="xs:string"/>
+        <xs:element name="channel_type" type="xs:string"/>
         <xs:element name="string_identifier" type="xs:string"/>
         <xs:element name="translated_string" type="xs:string"/>
       </xs:sequence>

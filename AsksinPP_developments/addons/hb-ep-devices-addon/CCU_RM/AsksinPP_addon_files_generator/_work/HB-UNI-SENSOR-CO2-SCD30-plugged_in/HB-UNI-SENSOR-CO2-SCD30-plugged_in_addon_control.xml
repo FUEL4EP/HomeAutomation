@@ -8,13 +8,13 @@
   <translated_datapoints>
       <datapoint name="CO2">
         <index>1</index>
-        <device_class>WEATHER</device_class>
+        <channel_type>WEATHER</channel_type>
         <string_identifier>stringTableHBCO2Sensor</string_identifier>
         <translated_string>CO2 Messwert</translated_string>
       </datapoint>
       <datapoint name="OPERATING_VOLTAGE">
         <index>2</index>
-        <device_class>WEATHER</device_class>
+        <channel_type>WEATHER</channel_type>
         <string_identifier>stringTableHBBatteryVoltage</string_identifier>
         <translated_string>Batteriespannung</translated_string>
     </datapoint>

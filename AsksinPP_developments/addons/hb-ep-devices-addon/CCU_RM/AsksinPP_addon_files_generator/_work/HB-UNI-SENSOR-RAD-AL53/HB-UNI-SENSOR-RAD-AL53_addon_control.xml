@@ -8,43 +8,43 @@
   <translated_datapoints>
       <datapoint name="COUNTS_PER_HOUR">
         <index>1</index>
-        <device_class>HB_MEASUREMENT_RAD</device_class>
+        <channel_type>HB_MEASUREMENT_RAD</channel_type>
         <string_identifier>stringTableHBCOUNTS_PER_HOUR</string_identifier>
         <translated_string>Zählimpulse pro h</translated_string>
       </datapoint>
       <datapoint name="COUNTS_PER_HOUR_MAX">
         <index>2</index>
-        <device_class>HB_MEASUREMENT_RAD</device_class>
+        <channel_type>HB_MEASUREMENT_RAD</channel_type>
         <string_identifier>stringTableHBCOUNTS_PER_HOUR_MAX</string_identifier>
         <translated_string>Zählimpulse pro h max</translated_string>
       </datapoint>
       <datapoint name="COUNTS_PER_HOUR_FILTERED">
         <index>3</index>
-        <device_class>HB_MEASUREMENT_RAD</device_class>
+        <channel_type>HB_MEASUREMENT_RAD</channel_type>
         <string_identifier>stringTableHBCOUNTS_PER_HOUR_FILTERED</string_identifier>
         <translated_string>Zählimpulse pro h filtered</translated_string>
       </datapoint>
       <datapoint name="COUNTS_PER_SAMPLE">
         <index>4</index>
-        <device_class>HB_MEASUREMENT_RAD</device_class>
+        <channel_type>HB_MEASUREMENT_RAD</channel_type>
         <string_identifier>stringTableHBCOUNTS_PER_SAMPLE</string_identifier>
         <translated_string>Zählimpulse</translated_string>
       </datapoint>
         <datapoint name="ACCUMULATOR_VOLTAGE">
         <index>5</index>
-        <device_class>HB_MEASUREMENT_RAD</device_class>
+        <channel_type>HB_MEASUREMENT_RAD</channel_type>
         <string_identifier>stringTableHBACCUMULATOR_VOLTAGE</string_identifier>
         <translated_string>Akkumulatorspannung(ADC)</translated_string>
       </datapoint>
       <datapoint name="AL53_SUPPLY_VOLTAGE">
         <index>6</index>
-        <device_class>HB_MEASUREMENT_RAD</device_class>
+        <channel_type>HB_MEASUREMENT_RAD</channel_type>
         <string_identifier>stringTableHBAL53_SUPPLY_VOLTAGE</string_identifier>
         <translated_string>AL53 Betriebsspannung (ADC)</translated_string>
       </datapoint>
       <datapoint name="OPERATING_VOLTAGE">
         <index>7</index>
-        <device_class>HB_MEASUREMENT_RAD</device_class>
+        <channel_type>HB_MEASUREMENT_RAD</channel_type>
         <string_identifier>stringTableHBBatteryVoltage</string_identifier>
         <translated_string>Betriebsspannung</translated_string>
       </datapoint>

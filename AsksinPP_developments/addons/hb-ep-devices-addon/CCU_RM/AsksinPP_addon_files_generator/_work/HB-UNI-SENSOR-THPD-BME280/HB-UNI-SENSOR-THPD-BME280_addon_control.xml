@@ -8,27 +8,45 @@
   <translated_datapoints>
       <datapoint name="OPERATING_VOLTAGE">
         <index>1</index>
-        <device_class>WEATHER</device_class>
+        <channel_type>WEATHER</channel_type>
         <string_identifier>stringTableHBBatteryVoltage</string_identifier>
         <translated_string>Batteriespannung</translated_string>
       </datapoint>
       <datapoint name="MY_HUMIDITY">
         <index>2</index>
-        <device_class>WEATHER</device_class>
+        <channel_type>WEATHER</channel_type>
         <string_identifier>stringTableHBHumidity</string_identifier>
         <translated_string>Rel. Luftfeuchtigkeit</translated_string>
       </datapoint>
       <datapoint name="DEWPOINT">
         <index>3</index>
-        <device_class>WEATHER</device_class>
+        <channel_type>WEATHER</channel_type>
         <string_identifier>stringTableHBDewpoint</string_identifier>
         <translated_string>Taupunkt</translated_string>
       </datapoint>
       <datapoint name="VAPOR_CONCENTRATION">
         <index>4</index>
-        <device_class>WEATHER</device_class>
+        <channel_type>WEATHER</channel_type>
         <string_identifier>stringTableHBVaporConcentration</string_identifier>
         <translated_string>Abs. Luftfeuchtigkeit</translated_string>
+      </datapoint>
+      <datapoint name="TemperatureOffset">
+        <index>5</index>
+        <channel_type>WEATHER</channel_type>
+        <string_identifier>stringTableHBTemperatureOffset</string_identifier>
+        <translated_string>Temperaturoffset</translated_string>
+      </datapoint>
+      <datapoint name="HumidityOffset">
+        <index>6</index>
+        <channel_type>WEATHER</channel_type>
+        <string_identifier>stringTableHBHumidityOffset</string_identifier>
+        <translated_string>Luftfeuchtigkeitsoffset</translated_string>
+      </datapoint>
+      <datapoint name="PressureOffset">
+        <index>7</index>
+        <channel_type>WEATHER</channel_type>
+        <string_identifier>stringTableHBPressureOffset</string_identifier>
+        <translated_string>Luftdruckoffset</translated_string>
       </datapoint>
   </translated_datapoints>
 </AsksinPP_addon_control_file>
