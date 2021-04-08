@@ -2,11 +2,11 @@
 # Groovy generator script [AsksinPP_addon_generator.groovy](./AsksinPP_addon_generator.groovy) for automatically generate device specific install and uninstall scripts [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2Faddons%2Fhb-ep-devices-addon%2FCCU_RM%2FAsksinPP_addon_files_generator&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_colorfile:///usr/share/applications/ghostwriter.desktop=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 
-# DO NOT USE THIS SCRIPT YET. IT REQUIRES SOME CHANGES. PLEASE WAIT A BIT. THANKS.
+# Since this generator software has beta status only, please check the generated install and uninstall scripts carefully before using them in a production version of an addon.
 
  
 
-- creates install and uninstall scripts required in [../src/addon/](../src/addon/)
+- Creates install and uninstall scripts required in [../src/addon/](../src/addon/)
 
 - The following software installations are prereqisites:
 
@@ -21,10 +21,10 @@
 	+ copy the [example XML control](_work/HB-UNI-Sensor-EXAMPLE/HB-UNI-Sensor-EXAMPLE_addon_control.xml) in your new device's working directory to your new sensors XML control file <e.g. HB-UNI-Sensor-XXX-YYYY_addon_control.xml>. File extension needs to be '.xml'.
 	+ change to your working directory '[<Device_name: here HB-UNI-Sensor-EXAMPLE>](./_work/HB-UNI-Sensor-EXAMPLE)
 	+ edit your new sensors XML control file <e.g. HB-UNI-Sensor-XXX-YYYY_addon_control.xml> with the XML Copy Editor.
-	+ you should get [this](./Images/HB-UNI-Sensor-EXAMPLE_addon_control.xml.png) window.
+	+ you should get [this](./Images/HB-UNI-Sensor-EXAMPLE_addon_control.xml.png) xmlcopyeditor window.
 	+ now edit in XML Copy Editor the XML elements according to your needs:
 		* add or delete data_points according to your new device's needs
-		* the element device_class can be chosen arbitrarily for each datapoint. If you want to skip it, enter 'SKIP'.
+		* the element channel_type can be chosen arbitrarily for each datapoint. If you want to skip it, enter 'SKIP'. It should match the channel type of the datapoint in the concerning rftypes XML file.
 		* the element device_description is automatically HTML4 encoded by the generator script, so no need to take care e.g. of Umlauts here
 		* the elements translated_string are automatically URL encoded by the generator script, so no need to take care e.g. of Umlauts here
 		* after having done all changes, please check your XML:
@@ -36,6 +36,7 @@
 - next you will be asked for the file name of the generated XML control file, please enter it e.g. <HB-UNI-Sensor-XXX-YYYY_addon_control.xml> .
 - the generator script will create an install and an uninstall script in the working directory
 - check the created install and an uninstall script before you yuse it within an AsksinPP addon
+- a [make_all.bsh](./make_all.bsh) bash script is provided for reference. Please adapt it to your needs.
 
 
 ## Lizenz
