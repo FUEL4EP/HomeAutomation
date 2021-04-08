@@ -48,5 +48,17 @@
         <string_identifier>stringTableHBPressureOffset</string_identifier>
         <translated_string>Luftdruckoffset</translated_string>
       </datapoint>
+      <datapoint name="ALTITUDE_ABOVE_SEA_LEVEL">
+      <index>8</index>
+      <channel_type>SKIP</channel_type>
+      <string_identifier>stringTableHBAltitudeAboveSealevel</string_identifier>
+      <translated_string>Höhe über NN</translated_string>
+    </datapoint>
+    <datapoint name="TRANSMIT_TIME_INTERVAL">
+      <index>9</index>
+      <channel_type>SKIP</channel_type>
+      <string_identifier>stringTableHBTransmitTimeIntervall</string_identifier>
+      <translated_string>Sendeintervall</translated_string>
+    </datapoint>
   </translated_datapoints>
 </AsksinPP_addon_control_file>

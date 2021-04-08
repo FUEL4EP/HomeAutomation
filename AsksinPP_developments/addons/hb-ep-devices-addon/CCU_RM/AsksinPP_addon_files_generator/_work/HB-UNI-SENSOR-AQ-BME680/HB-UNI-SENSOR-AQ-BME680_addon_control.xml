@@ -60,5 +60,53 @@
       <string_identifier>stringTableHBHumidity</string_identifier>
       <translated_string>Rel. Luftfeuchtigkeit</translated_string>
     </datapoint>
+    <datapoint name="TemperatureOffset">
+        <index>10</index>
+        <channel_type>WEATHER</channel_type>
+        <string_identifier>stringTableHBTemperatureOffset</string_identifier>
+        <translated_string>Temperaturoffset</translated_string>
+      </datapoint>
+      <datapoint name="HumidityOffset">
+        <index>11</index>
+        <channel_type>WEATHER</channel_type>
+        <string_identifier>stringTableHBHumidityOffset</string_identifier>
+        <translated_string>Luftfeuchtigkeitsoffset</translated_string>
+      </datapoint>
+      <datapoint name="PressureOffset">
+        <index>12</index>
+        <channel_type>WEATHER</channel_type>
+        <string_identifier>stringTableHBPressureOffset</string_identifier>
+        <translated_string>Luftdruckoffset</translated_string>
+      </datapoint>
+      <datapoint name="max_decay_factor_upper_limit">
+        <index>13</index>
+        <channel_type>WEATHER</channel_type>
+        <string_identifier>stringTableHBmax_decay_factor_upper_limit</string_identifier>
+        <translated_string>relative untere Schwelle der Abklingfunktion</translated_string>
+      </datapoint>
+      <datapoint name="max_increase_factor_lower_limit">
+        <index>14</index>
+        <channel_type>WEATHER</channel_type>
+        <string_identifier>stringTableHBmax_increase_factor_lower_limit</string_identifier>
+        <translated_string>relative obere Schwelle der Aufklingfunktion</translated_string>
+      </datapoint>
+      <datapoint name="mlr_alpha">
+        <index>15</index>
+        <channel_type>WEATHER</channel_type>
+        <string_identifier>stringTableHBmlr_alpha</string_identifier>
+        <translated_string>Regressionskoeffizent alpha (für Temperatur)</translated_string>
+      </datapoint>
+      <datapoint name="mlr_beta">
+        <index>16</index>
+        <channel_type>WEATHER</channel_type>
+        <string_identifier>stringTableHBmlr_beta</string_identifier>
+        <translated_string>Regressionskoeffizent beta (für absolute Feuchte)</translated_string>
+      </datapoint>
+      <datapoint name="mlr_delta">
+        <index>17</index>
+        <channel_type>WEATHER</channel_type>
+        <string_identifier>stringTableHBmlr_delta</string_identifier>
+        <translated_string>Regressionskoeffizent delta( Achsenabschnitt)</translated_string>
+      </datapoint>
   </translated_datapoints>
 </AsksinPP_addon_control_file>
