@@ -10,6 +10,12 @@ Die CO2 Konzentration ist ein wichtiger Indikator für die Luftqualität in Inne
 
 [Auswirkung hoher CO2 Konzentrationen](https://www.cik-solutions.com/content/images/co2-konzentration.png)
 
+## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.7 updaten
+
+- Die neue Version V1.7 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
+
+## Hardware
+
 Als Ausgangspunkt wird die Platine Alex Reinert und der Sketch  HB-UNI-SEN-BATT von Tom Major genommen und geeignet modifiziert.
 
 Die unveränderten Originaldaten von HB-UNI-SEN-BAT sind verfügbar unter
@@ -255,14 +261,15 @@ Icharge = 1218V／R3 [A]
 1. Bitte zuerst nochmals vergewissern, dass der verbaute Arduino Pro Mini ein 3,3V/8MHz Typ ist.
 2. Das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren.
 3. Für das Programmierern und Setzen der Fuses des ATmega328P ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
-4. Setzten der richtigen Fuses mit [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version)
+4. Setzten der richtigen Fuses mit [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xFF  High Byte:0xD6  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
 5. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [FreqTest.ino Sketch](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
-6. Gegebenenfalls die Parameter cDEVICE_und cDEVICE_in [Device_SCD30.h](Cfg/Device_SCD30.h) ändern. Jeder Sensor muss ein eineindeutiges cDEVICE_und cDEVICE haben!
-7. Die aktuelle Version des [HB-UNI-Sensor1-CO2_SCD30](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30) Sketches herunterladen, siehe unten.
-8. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
-9. Dann den Sketch [HB-UNI-Sensor1-CO2_SCD30.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30/HB-UNI-Sensor1-CO2_SCD30.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
-10. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
-11. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
+6.  Den Config-Taster ganz lange drücken (ca. 6..8 Sekunden) bis die rote LED erlischt und im seriellen Monitor 'RESET' ausgegeben wird. Damit wird ein 'Werksreset' durchgeführt und das EEPROM gelöscht. Damit gehen auch alle im EEPROM gespeicherten Einstellungen verloren.  Die ermittelte Frequenzeinstellung des Frequenztests bleibt aber erhalten.
+7. Gegebenenfalls die Parameter cDEVICE_und cDEVICE_in [Device_SCD30.h](Cfg/Device_SCD30.h) ändern. Jeder Sensor muss ein eineindeutiges cDEVICE_und cDEVICE haben!
+8. Die aktuelle Version des [HB-UNI-Sensor1-CO2_SCD30](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30) Sketches herunterladen, siehe unten.
+9. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
+10. Dann den Sketch [HB-UNI-Sensor1-CO2_SCD30.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30/HB-UNI-Sensor1-CO2_SCD30.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
+11. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
+12. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
 
 ### Programmierung des Arduino Pro Mini
 

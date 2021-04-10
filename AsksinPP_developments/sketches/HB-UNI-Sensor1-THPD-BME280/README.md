@@ -13,6 +13,10 @@ Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/med
 
 Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=65320&p=642213#p642213) zu finden. Bitte dort auch Fragen stellen.
 
+## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.7 updaten
+
+- Die neue Version V1.7 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
+
 
 ## Hinweis: Alternativer schneller und hoch genauer HomeBrew Sensor
 Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, kann den neuen Sensor [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) nehmen. Er ist zusätzlich mit einem Sension SHT85 Sensor bestückt, sonst aber funktional identisch. Ein Vergleich der unterschiedlich schnellen Temperaturtransienten ist unter [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) zu finden.

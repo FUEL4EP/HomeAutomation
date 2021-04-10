@@ -16,6 +16,9 @@
 - ausschliesslich für DEBUG Zwecke gibt es eine DEBUG Version des Sensors [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG)
 - Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=66058&sid=8555144b99f475b251fc1b9d958e9f8b) zu finden. Bitte dort auch Fragen stellen. 
 
+## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.7 updaten
+
+- Die neue Version V1.7 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
 
 
 ## Bitte immer die aktuellste Version von AsksinPP nutzen
@@ -69,7 +72,7 @@
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smarIt-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
 	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png)
 	+ Wegen eines Bugs in der eQ3 Software OCCU ['Fehler in ProofAndSetValue bei Gleitkommawerten #1058'](https://github.com/jens-maus/RaspberryMatic/issues/1058) funktioniert die Offseteinstellung im WebUI nur eingeschränkt: Es können nur ganzzahlige Offsets eingegeben werden. In den RaspberryMatic Versionen [3.55.10.20210213 und 3.57.4.20210320](https:/github.com/jens-maus/RaspberryMatic/labels/%3Alabel%3A%20WebUI) ist der Bug noch nicht gefixt! Beim mir half der Workaround von Baxxy [hier](https://homematic-forum.de/forum/viewtopic.php?p=652376#p652376). CCU3 Nutzer sollten auf die neueste Firmware 3.55.10 upgraden, 3.55.5 scheint hier einen Bug zu haben. 
-	+ Bitte beachten: Der LazyConfig Modus funktioniert NUR bei einem angelernten Sensor. Wird der Resettaster nach dem Anlernen gedrückt, funktioniert der LazyConfig Modus nicht mehr. Ein erneutes Anlernen ist dann notwendig, um den LazyConfig Mode wieder zum Funktionieren zu bringen.
+	+ Bitte beachten: Der LazyConfig Modus funktioniert NUR bei einem angelernten Sensor. Wird der Config-Taster nach dem Anlernen sehr lange (6..8 Sekunden) gedrückt, funktioniert der LazyConfig Modus nicht mehr. Ein erneutes Anlernen ist dann notwendig, um den LazyConfig Mode wieder zum Funktionieren zu bringen.
 	
 - Ausgabe des Luftgütegrads AQ_LEVEL: normierter BME680 Gaswiderstand 0..100% (ohne Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftgüte)
 - Ausgabe der logarithmischen Luftqualität AQ_LOG10: logarithmierte normierte und kompensierte Luftqualität 0.0..4.0 (mit Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftqualität)
@@ -156,6 +159,31 @@
 ![pic](Images/AQ_LOG10_versus_NDIR_SCD30_CO2.png)
 
 - zusätzlich zum AQ_LOG10 Luftqualitätsverlauf von 3 nebeneinanderstehenden Sensoren wird der CO2 Gehalt der Luft gemessen mit einem Sensirion SCD30 NDIR CO2 Sensor 
+
+## Vor dem Aufspielen von Software
+
+- Bitte macht Euch zuerst mit den Grundlagen von AsksinPP [hier](https://asksinpp.de/Grundlagen/) vertraut.
+
+## Bitte immer die aktuellste Version von AsksinPP nutzen
+
+-  [AsksinPP Master](https://github.com/pa-pa/AskSinPP/tree/master)
+
+## Bitte genau diese Abfolge beim Einspielen von Software beachten:
+
+- Details sind gegebenenfalls weiter unten zu finden
+
+1. Bitte zuerst nochmals vergewissern, dass der verbaute Arduino Pro Mini ein 3,3V/8MHz Typ ist.
+2. Das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren.
+3. Für das Programmierern und Setzen der Fuses des ATmega328P ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
+4. Setzten der richtigen Fuses mit dem [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xFF  High Byte:0xD6  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
+5. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [FreqTest.ino Sketch](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
+6. Den Config-Taster ganz lange drücken (ca. 6..8 Sekunden) bis die rote LED erlischt und im seriellen Monitor 'RESET' ausgegeben wird. Damit wird ein 'Werksreset' durchgeführt und das EEPROM gelöscht. Damit gehen auch alle im EEPROM gespeicherten Einstellungen verloren.  Die ermittelte Frequenzeinstellung des Frequenztests bleibt aber erhalten.
+7. Gegebenenfalls die Parameter Device ID und Device Serial in [HB-UNI-Sensor1-AQ-BME680_KF.ino](./HB-UNI-Sensor1-AQ-BME680_KF.ino) ändern. Jeder Sensor muss ein eineindeutiges Device ID als auch ein eindeutiges Device Serial haben!
+8. Die aktuelle Version des [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) Sketches herunterladen, siehe unten.
+9. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
+10. Dann den Sketch [HB-UNI-Sensor1-AQ-BME680_KF.ino]](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF/HB-UNI-Sensor1-AQ-BME680_KF.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
+11. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
+12. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
 
 
 ## Benötiger Sketch

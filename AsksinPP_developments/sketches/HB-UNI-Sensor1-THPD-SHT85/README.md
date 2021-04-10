@@ -110,14 +110,19 @@
 1. Bitte zuerst nochmals vergewissern, dass ein Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verbaut wurde.
 2. Das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren.
 3. Für das Programmierern und Setzen der Fuses des ATmega1284p ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
-4. Setzten der richtigen Fuses mit [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) (LINUX version)
-5. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [Frequenztest ATMega1284P](FreqTest_1284P/FreqTest_1284P.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
-6. Gegebenenfalls die Parameter cDEVICE_und cDEVICE_in [Device_SHT85_BME280.h](Cfg/Device_SHT85_BME280.h) ändern. Jeder Sensor muss ein eineindeutiges cDEVICE_und cDEVICE haben!
-7. Die aktuelle Version des [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) Sketches herunterladen, siehe unten.
-8. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
-9. Dann den Sketch [HB-UNI-Sensor1-THPD-SHT85.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85/HB-UNI-Sensor1-THPD-SHT85.ino) kompilieren und mit dem ISP Programmer auf den Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) hochladen. Details siehe unten.
-10. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
-11. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
+4. Setzten der richtigen Fuses mit [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xE2  High Byte:0xD4  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
+5. Den Config-Taster ganz lange drücken (ca. 6..8 Sekunden) bis die rote LED erlischt und im seriellen Monitor 'RESET' ausgegeben wird. Damit wird ein 'Werksreset' durchgeführt und das EEPROM gelöscht. Damit gehen auch alle im EEPROM gespeicherten Einstellungen verloren.  Die ermittelte Frequenzeinstellung des Frequenztests bleibt aber erhalten. 
+6. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [Frequenztest ATMega1284P](FreqTest_1284P/FreqTest_1284P.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
+7. Gegebenenfalls die Parameter cDEVICE_und cDEVICE_in [Device_SHT85_BME280.h](Cfg/Device_SHT85_BME280.h) ändern. Jeder Sensor muss ein eineindeutiges cDEVICE_und cDEVICE haben!
+8. Die aktuelle Version des [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) Sketches herunterladen, siehe unten.
+9. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
+10. Dann den Sketch [HB-UNI-Sensor1-THPD-SHT85.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85/HB-UNI-Sensor1-THPD-SHT85.ino) kompilieren und mit dem ISP Programmer auf den Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) hochladen. Details siehe unten.
+11. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
+12. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
+
+## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.7 updaten
+
+- Die neue Version V1.7 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
  
 
 ## Benötiger Sketch

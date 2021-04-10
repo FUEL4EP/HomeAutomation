@@ -18,6 +18,10 @@
 - zur Verifizierung und besserem Verständnis des Kalman Filters wird ein Jupyter Notebook [Prove_of_Kalman_filter_with_synthesized_data.ipynb](./Kalman_Filter/Prove_of_Kalman_filter_with_synthesized_data.ipynb) zur Verfügung gestellt. Auf Github kann das Notebook direkt angesehen werden.
 -	Die Debug-Version [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) und die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) nutzen diesselbe Struktur für die Abspeicherung und Restaurierung von EEPROM-Daten. Daher kann der Sensor zwischen diesen beiden Versionen umprogrammiert werden. Dabei bitte die Hinweise unter 'Neuprogrammierung (Flashen)' unten beachten.
 
+## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.7 updaten
+
+- Die neue Version V1.7 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
+
 
 # Universeller selbstkalibrierender Luftgütesensor auf der Basis von dem Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) mit vollautomatischer Kompensation der Abhängigkeiten von Temperatur und absoluter Luftfeuchte mit einem Kalman Filter
 - abgeleitet von Jérômes ([jp112sdl](https://github.com/jp112sdl)) [HB-UNI-Sen-IAQ](https://github.com/jp112sdl/HB-UNI-Sen-IAQ)
