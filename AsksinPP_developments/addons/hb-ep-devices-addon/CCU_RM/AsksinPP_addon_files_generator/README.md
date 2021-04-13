@@ -1,8 +1,9 @@
  
 # Groovy generator script [AsksinPP_addon_generator.groovy](./AsksinPP_addon_generator.groovy) for automatically generate device specific install and uninstall scripts [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2Faddons%2Fhb-ep-devices-addon%2FCCU_RM%2FAsksinPP_addon_files_generator&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_colorfile:///usr/share/applications/ghostwriter.desktop=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-
-# Since this generator software has beta status only, please check the generated install and uninstall scripts carefully before using them in a production version of an addon.
+<br/>
+## IMPORTANT: Since this generator software has beta status only, please check the generated install and uninstall scripts carefully before using them in a production version of an addon. In particular, the webuiInsert section may be incomplete, e.g. if the device needs specific DEV_HIGHLIGHT entries like ''hb-ou-mp3-led'. Please handle those entries manually. Thanks.
+<br/>
 
  
 
@@ -37,6 +38,7 @@
 - the generator script will create an install and an uninstall script in the working directory
 - check the created install and an uninstall script before you yuse it within an AsksinPP addon
 - a [make_all.bsh](./make_all.bsh) bash script is provided for reference. Please adapt it to your needs.
+- An early version of a rfytpes XML extractor is provided [extract_rftypes_XML.groovy](./extract_rftypes_XML.groovy). Feedback is welcome.
 
 
 ## Lizenz
