@@ -1,2 +1,2 @@
-avrdude -v -pm328p -P usb -c stk500v2  -b 9200 -Ulfuse:w:0xFF:m -Uhfuse:w:0xD6:m -Uefuse:w:0xFF:m
+avrdude -v -pm328p -P usb -c stk500v2  -b 9200 -Ulfuse:w:0xFF:m -Uhfuse:w:0xD2:m -Uefuse:w:0xFF:m
 
