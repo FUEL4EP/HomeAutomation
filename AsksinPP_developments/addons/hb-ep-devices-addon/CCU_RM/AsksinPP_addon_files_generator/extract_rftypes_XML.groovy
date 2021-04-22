@@ -16,6 +16,7 @@ import groovy.xml.XmlUtil
 import groovy.util.Node
 import groovy.json.JsonSlurper
 import groovy.xml.MarkupBuilder
+import groovy.xml.*
 
 
 class extract_rftypes_XML {
@@ -23,6 +24,7 @@ class extract_rftypes_XML {
     static VersionString                  = "0.10"
     static Map_Storage_Identifier         = "extract_rftypes_XML map storage file, please don't touch!\n\n"
     static Addon_translation_archive_file = "extract_rftypes_XML_translation_archive.db"
+    static Addon_control_file_suffix      = "_addon_control.xml"
     
     static def parse_webui_js(file_name){
  
@@ -272,8 +274,13 @@ class extract_rftypes_XML {
           
           key_already_exists |= check_if_key_already_exists ( key, translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map)
           if ( var["type"] == "channel" ) {
-            key_str = "${var["channel_type"]}|" + key
-            //println "channel => ${key_str}"
+            key_str = var["channel_type"] + "|" + key
+            /*println "channel => '${key_str}'"
+            if ( key_str == "MAINTENANCE|UNREACH" ) {
+              println "match"
+            }
+            println webui_js_map.containsKey("MAINTENANCE|UNREACH")
+            println webui_js_map.containsKey(key_str) */
             key_already_exists |= check_if_key_already_exists ( key_str, translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map)
           }
           if ( var["type"] == "param_defs" ) {
@@ -291,6 +298,21 @@ class extract_rftypes_XML {
         }
         
         return translation_map
+    }
+    
+    static def write_control_xml_file (String XML_text , String file_name) {
+    
+      File file = new File(file_name)
+      
+      if ( file.exists() ){
+        println "\n\nW A R N I N G: The file '${file_name}' is already existing!"
+        println "File '${file_name}' will be renamed to '" + file_name + "." + get_current_date_time()  + ".bck'"
+        file.renameTo(file_name + ".bck_" + get_current_date_time())
+        file = new File(file_name)
+      }
+      
+      file.write(XML_text)
+    
     }
     
     static def save_map_to_file (Map map_to_be_saved, String file_name) {
@@ -366,126 +388,90 @@ class extract_rftypes_XML {
        return pretty_print_str
     }
     
-   static def makeXmlBody(map, lastParent, counter) {
-        // credits to Asinus Rex, see https://stackoverflow.com/questions/48709822/dynamically-generate-xml-with-attributes-and-child-nodes-from-map-in-groovy
+    
+    static def create_xml_control_file(Map parameters, Map master_parameter_translation_map, data_points_translation_map, keys_translation_map) {
+        
         def writer = new StringWriter()
-        def xmlBuilder = new MarkupBuilder(writer)
-        if (counter == 0) {
-            xmlBuilder.mkp.xmlDeclaration(version: "1.0", encoding: "utf-8")
-        }
-        counter++
+        def xml = new MarkupBuilder(writer)
+        
+        def my_index = 0
 
-        map.each {
-            if (it.value.getClass() == LinkedHashMap) {
-                xmlBuilder.createNode(it.key, it.value.attributes, makeXmlBody(it.value.elements, lastParent, counter))
-                xmlBuilder.nodeCompleted(lastParent, it.key)
-                lastParent = it.key
-            } else {
+        xml.AsksinPP_addon_generator_control() {
+          creator( parameters["creator"] )
+          created_on( parameters["current_date_time"] )
+          generator_version( parameters["VersionString"] )
+          device_name( parameters["device_name"] )
+          device_small_case_name( parameters["device_small_case_name"] )
+          device_description( "!!! Please substitute appropriately !!!")
+          device_model( parameters["device_model"] )
+          creator_prefix( parameters["creator_prefix"] )
+          rftypes_XML_version ( parameters["device_model_version"] )
 
-                xmlBuilder.createNode(it.key, it.value)
-                xmlBuilder.nodeCompleted(lastParent, it.key)
+          if ( master_parameter_translation_map.size() > 0 )
+          {
+            MASTER_DEVICE_PARAMETERS {
+              master_parameter_translation_map.each { key, var ->
+                "$key" {
+                  def ind_str = my_index.toString()
+                  INDEX ( "${ind_str}" )
+                  STRINGTABLE_NAME ( var["stringTable_name"] )
+                  TRANSLATION_DE ( "!!! bitte hier die deutsche Übersetzung eingeben !!!" )
+                  TRANSLATION_EN ( "!!! please enter here the english translation !!!" )
+                  my_index = my_index + 1
+                }
+              }
             }
-    }
-    
-    //unescape 
-    def escaped_str = writer.toString().replaceAll(/&lt;/, '<')
-         .replaceAll(/&gt;/, '>')
-         .replaceAll(/&quot;/, '"')
-         .replaceAll(/&apos;/, "'")
-         .replaceAll(/&amp;/, '&')
-
+          }
         
-    return escaped_str
-}
 
-/*
+          
+          if ( data_points_translation_map.size() > 0 )
+          {
+            CHANNEL_DATAPOINTS {
+              data_points_translation_map.each { key, var ->
+                def my_channel = var["channel_type"]
+                "$key" {
+                  def ind_str = my_index.toString()
+                  INDEX ( "${ind_str}" )
+                  CHANNEL (my_channel )
+                  STRINGTABLE_NAME ( var["stringTable_name"] )
+                  TRANSLATION_DE ( "!!! bitte hier die deutsche Übersetzung eingeben !!!" )
+                  TRANSLATION_EN ( "!!! please enter here the english translation !!!" )
+                  my_index = my_index + 1
+                }
+              }
+            }
+          }
+        
+          if ( keys_translation_map.size() > 0 )
+          {
+            PARAMSET_DEFS_KEY_SETS {
+              keys_translation_map.each { key, var ->
+                def my_paramset_id = var["paramset_id"]
+                "$key" {
+                  def ind_str = my_index.toString()
+                  INDEX ( "${ind_str}" )
+                  PARAMSET_ID (my_paramset_id )
+                  STRINGTABLE_NAME ( var["stringTable_name"] )
+                  TRANSLATION_DE ( "!!! bitte hier die deutsche Übersetzung eingeben !!!" )
+                  TRANSLATION_EN ( "!!! please enter here the english translation !!!" )
+                  my_index = my_index + 1
+                }
+              }
+            }
+          }
+        }
 
-       Map map = [
-            root: [
-                    elements  : [
-                            node1: [
-                                    elements  : [
-                                            key1Node1: "elementValue1Node1",
-                                            key2Node1: "elementValue2Node2",
-                                    ],
-                                    attributes: [
-                                            attribute1Node1: "attributeValue1node1",
-                                            attribute2Node1: "attributeValue2node1",
-                                            attribute3Node1: "attributeValue3node1"
-                                    ]
-                            ],
-                            node2: [
-                                    elements  : [
-                                            key1Node2: "elementValue1Node2",
-                                            key2Node2: "elementValue2Node2",
-                                    ],
-                                    attributes: [
-                                            attribute1Node2: "attributeValue1node2",
-                                            attribute2Node2: "attributeValue2node2",
-                                            attribute3Node2: "attributeValue3node2"
-                                    ]
-                            ]
-                    ],
-                    attributes: [
-                            rootAttribute: "iniciarSesion"
-                    ]
-            ]
-
-    ]
-*/
-    
-    static def create_map_for_xml_generation (VersionString, device_name, device_id){
-    
-        def map_for_xml_generation = [:]
+        /*println ""
+        println writer*/
         
-        //map_for_xml_generation["AsksinPP_addon_control_file"] = ["elements" : ["creator":"FUEL4EP"],"attributes" : [rootAttribute: "my attribute"]]
-        
-        map_for_xml_generation = [
-            AsksinPP_addon_generator_control: [
-                    elements  : [
-                            creator                : System.getProperty("user.name"),
-                            created_on             : get_current_date_time(),
-                            device_name            : device_name,
-                            device_id              : device_id,
-                            device_small_case_name : device_id.toString().replaceFirst("HB-","hb-").replaceFirst("hb-UNI-SENSOR","hb-uni-sensor"),
-                            device_description     : "Please subsitute appropriately",
-                            version                : "1.0", 
-                            translated_datapoints: [
-                                    elements  : [
-                                            key1Node1  : "elementValue1Node1",
-                                            key2Node1  : "elementValue2Node2",
-                                    ],
-                                    attributes: [
-                                            type: "channel"
-                                    ]
-                            ],
-                            node2: [
-                                    elements  : [
-                                            key1Node2: "elementValue1Node2",
-                                            key2Node2: "elementValue2Node2",
-                                    ],
-                                    attributes: [
-                                            attribute1Node2: "attributeValue1node2",
-                                            attribute2Node2: "attributeValue2node2",
-                                            attribute3Node2: "attributeValue3node2"
-                                    ]
-                            ]
-                    ],
-                    attributes: [
-                            Version: VersionString
-                    ]
-            ]
-
-    ]
-        
-        println "\nXML generation ...\n"
-    
-        def tt = makeXmlBody(map_for_xml_generation, null, 0)
-        
-        println pretty_print_XML(tt)
+        return writer.toString()
     }
 
     static void main(String... args) {
+    
+        //Map for program parameters
+        def parameters = [:]
         
         println "\nAsksinPP rftypes XML extractor ${VersionString}\n\n"
         
@@ -537,11 +523,27 @@ class extract_rftypes_XML {
         println "device id            = ${device_id}"
         println "XML version          = ${device_model_version}"
         println "device model         = ${device_model}"
+        
         println ""
         
-        def creator_prefix            = device_model.toString().toUpperCase().substring(2,4)
-        println "creator prefix       = ${creator_prefix}"
+        parameters["VersionString"]          = VersionString.toString()
+        parameters["device_name"]            = device_name.toString()
+        parameters["device_id"]              = device_id.toString().toUpperCase()
+        parameters["device_model_version"]   = device_model_version
+        parameters["device_model"]           = device_model.toString()
+        parameters["device_small_case_name"] = device_id.toString().replaceFirst("HB-","hb-").replaceFirst("hb-UNI-Sensor","hb-uni-sensor")
+          
+        def creator_prefix                   = device_model.toString().toUpperCase().substring(2,4)
+        println "creator prefix              = ${creator_prefix}"
         println ""
+        
+        parameters["creator_prefix"]         = creator_prefix
+        parameters["current_date_time"]      = get_current_date_time()
+        parameters["creator"]                = System.getProperty("user.name").toString()
+        
+        /*parameters.each { key, var ->
+          println "${key} => ${var}"
+        }*/
         
         //initialize the translation maps
         def master_parameter_translation_map = [:]
@@ -598,14 +600,14 @@ class extract_rftypes_XML {
                         //println "=====> datapoint '${channel_type}|${it.@id}' found"
                         datapoint_id = it.@id.toString()
                         //println datapoint_id
-                        data_points_translation_map[it.@id]=["type":"channel","channel_type":channel_type,"stringTable_name":"stringTableHB"+"_"+creator_prefix+"_"+datapoint_id,"options":[]]
+                        data_points_translation_map[datapoint_id]=["type":"channel","channel_type":channel_type,"stringTable_name":"stringTableHB"+"_"+creator_prefix+"_"+datapoint_id,"options":[]]
                       }
                       // check for options
                       it.children().each {
                         if ( ( it.name() == "logical" ) && ( it.@type == "option" ) ) {
                           it.children().each {
                             //println "=====>  option '${datapoint_id}=${it.@id}'"
-                            my_option = master_parameter_id + "=" + it.@id.toString()
+                            def my_option = datapoint_id + "=" + it.@id.toString()
                             //println my_option
                             data_points_translation_map[datapoint_id]."options".add(my_option)
                             //println data_points_translation_map[datapoint_id]
@@ -633,7 +635,7 @@ class extract_rftypes_XML {
                     def my_operations = it.@operations.toString()
                     if ( it.@ui_flags != "internal" ) {
                       //println "KEY: " + key_id
-                      keys_translation_map[key_id]=["type":"param_defs","stringTable_name":"stringTableHB"+"_"+creator_prefix+"_"+key_id,"options":[], "operations":my_operations]
+                      keys_translation_map[key_id]=["type":"param_defs", "paramset_id": keyset_id, "stringTable_name":"stringTableHB"+"_"+creator_prefix+"_"+key_id,"options":[], "operations":my_operations]
                       //println keys_translation_map[key_id]
                       it.children().each {
                         if ( ( it.name() == "logical" ) && ( it.@type == "option" ) ) {
@@ -724,6 +726,14 @@ class extract_rftypes_XML {
         println "\nRestored map\n"
         println restored_data_points_translation_map
         
-        create_map_for_xml_generation(VersionString, device_name, device_id)
+        def XML_control_file =  parameters["device_name"] + Addon_control_file_suffix
+        
+        println "\n\nCreating XML control file '" + XML_control_file + "'\n\n"
+        
+        def XML_text = create_xml_control_file(parameters, master_parameter_translation_map, data_points_translation_map, keys_translation_map)
+        
+        write_control_xml_file( XML_text, XML_control_file)
+        
+        println "Done\n"
       }
     }
