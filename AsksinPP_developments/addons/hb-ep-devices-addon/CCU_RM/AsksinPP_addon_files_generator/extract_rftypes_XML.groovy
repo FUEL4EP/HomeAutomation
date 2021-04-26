@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 package extract_rftypes_XML
 /**
 * A simple extractor for translation candidates of a rftypes XML file.
@@ -166,7 +168,6 @@ class extract_rftypes_XML {
     
     static def check_control_XML_file_name(String rftypes_XML_file_name) {
        
-        println "\nThe specified rftypes XML file name is :  '${rftypes_XML_file_name}'"
         def file = new File(rftypes_XML_file_name)
 
         if ( ! file.exists() ){
@@ -467,37 +468,149 @@ class extract_rftypes_XML {
         
         return writer.toString()
     }
+    
+    
+    static def get_options(args, parameters) {
+        def cli = new CliBuilder(usage: 'extract_rftypes_XML.groovy [options] [rftypes_XML_file_name]',
+                                 header: 'options:',
+                                 footer: "\nAsksinPP rftypes XML extractor ${VersionString} (c) FUEL4EP\n\n"
+                                )
+        
+        // set the amount of columns the usage message will be wide
+        cli.width = 100
+        // Create the list of options.
+        cli.with {
+            h longOpt: 'help', 'Show usage information'
+            occu longOpt: 'extract_occu_XMLs', args: 1, argName: 'occu_path', 'extract defined names in EQ-3\'s occu repository @ firmware/rftypes'
+            o longOpt: 'output_XML_file', args: 1, argName: 'output_file_name', 'file name of generated XML control file'
+            s longOpt: 'strict', args: 0, 'exact match of names without adding prefixes, e.g. channel_type'
+            x longOpt: 'verbose', args: 0, 'verbose'
+            eq3 longOpt: 'eQ-3_path', args: 1, argName: 'eq3_path', 'path to original EQ-3 files: webui.js, stringtable_de.txt, and translate.lang.stringtable.js'
+            v longOpt: 'version', args: 0, 'version'
+            a longOpt: 'addon_db', args: 1, argName: 'addon_db_file_name', 'file name of addon_db file which is containing all used addon names'
+        }
+        
+        def options = cli.parse(args)
+        if (!options) {
+            cli.usage()
+            System.exit(0)
+            return
+        }
+        // Show usage text when -h or --help option is used.
+        if (options.h) {
+            cli.usage()
+            System.exit(0)
+            return
+        }
+        
+        
+        
+        
+        if ( options.o ) {
+          parameters.output_XML_file = options.o
+        }
+        else {
+          parameters.output_XML_file = ""
+        }
+        if ( options.eq3 ) {
+          parameters.eQ3_path = options.eq3
+        }
+        else {
+          parameters.eQ3_path = "."
+        }
+        if ( options.a ) {
+          parameters.addon_db_file_name = options.a
+        }
+        if ( options.v ) {
+          parameters.version   = true
+        }
+        else {
+          parameters.version   = false
+        }
+        if ( options.s ) {
+          parameters.strict    = true
+        }
+        else {
+          parameters.strict    = false
+        }
+        if ( options.x ) {
+          parameters.verbose   = true
+        }
+        else {
+          parameters.verbose   = false
+        }
+        if ( options.occu ) {
+          parameters.occu_path = options.occu
+        }
+        else {
+          parameters.occu_path = "."
+        }
+    
+        def extraArguments = options.arguments()
+        
+        if (extraArguments) {
+          if ( extraArguments.size() == 1 ) {
+            parameters.amount_extraArguments = 1
+            parameters.extraArgument = extraArguments[0]
+          }
+          else {
+            println "\nE R R O R :  Too many extra arguments, only one extra argument is allowed!\n"
+            println "Aborting .."
+            System.exit(0)
+          }
+        }
+        else {
+          parameters.amount_extraArguments = 0
+        }
+        
+        return parameters
+    }   
 
     static void main(String... args) {
     
         //Map for program parameters
         def parameters = [:]
         
-        println "\nAsksinPP rftypes XML extractor ${VersionString}\n\n"
+        parameters = get_options(args, parameters)
         
-        def my_xml_rftypes_XML_file_name
-     
-        if ( args.size() == 0 ) {
-          my_xml_rftypes_XML_file_name = get_control_XML_file_name()
-        }
-        
-        if ( args.size() == 1 ) {
-          my_xml_rftypes_XML_file_name = check_control_XML_file_name(args[0])
-        }
-        
-        if ( args.size() > 1 ) {
-          println "Too many command line parameters !"
-          println "\nUsage: groovy AsksinPP_addon_generator.groovy [<xml_rftypes_XML_file_name>]\n"
-          println "Aborting .."
+        if ( parameters.version ) {
+          println "\nAsksinPP rftypes XML extractor ${VersionString}\n\n"
           System.exit(0)
         }
         
-        println "rftypes XML file : ${my_xml_rftypes_XML_file_name}"
+        def my_xml_rftypes_XML_file_name
+     
+        if ( parameters.amount_extraArguments == 0 ) {
+          my_xml_rftypes_XML_file_name = get_control_XML_file_name()
+        }
+        
+        if ( parameters.amount_extraArguments == 1 ) {
+          my_xml_rftypes_XML_file_name = check_control_XML_file_name(parameters.extraArgument)
+        }
+        
+        println "\nThe specified rftypes XML file : ${my_xml_rftypes_XML_file_name}"
+        
+        def device_name = ""
+        def device_id   = ""
+        def separator = ""
         
         def xml = new XmlSlurper().parse(my_xml_rftypes_XML_file_name)
-
-        def device_name = xml.supported_types.type.@name
-        def device_id   = xml.supported_types.type.@id
+        if ( xml.supported_types.type.@name.size() > 1 ) {
+          //  multiple devices
+          xml.supported_types.type.@name.each {
+            device_name = device_name + separator + it
+            separator = "_"
+          }
+          xml.supported_types.type.@id.each {
+            device_id   = device_id + separator + it
+            separator = "_"
+          }
+        }
+        else {
+          //single device
+          device_name = xml.supported_types.type.@name
+          device_id   = xml.supported_types.type.@id
+        }
 
         def device_model_version = xml.supported_types.type.parameter.@const_value[0]
         def device_model         = xml.supported_types.type.parameter.@const_value[1]
@@ -534,7 +647,7 @@ class extract_rftypes_XML {
         parameters["device_small_case_name"] = device_id.toString().replaceFirst("HB-","hb-").replaceFirst("hb-UNI-Sensor","hb-uni-sensor")
           
         def creator_prefix                   = device_model.toString().toUpperCase().substring(2,4)
-        println "creator prefix              = ${creator_prefix}"
+        println "creator prefix       = ${creator_prefix}"
         println ""
         
         parameters["creator_prefix"]         = creator_prefix
@@ -654,29 +767,33 @@ class extract_rftypes_XML {
           }
         } 
         
-        println "\n\nExtracted master parameter candidates for translation are:\n\n"
+        if ( parameters.verbose ) {
         
-        master_parameter_translation_map.each{
-          print "=====>"
-          print it
-          println (" : " + master_parameter_translation_map[it])
-        }
+          println "\n\nExtracted master parameter candidates for translation are:\n\n"
+            
+          master_parameter_translation_map.each{
+            print "=====>"
+            print it
+            println (" : " + master_parameter_translation_map[it])
+          }
+            
+            
+          println "\n\nExtracted data point candidates for translation are:\n\n"
+            
+          data_points_translation_map.each{
+            print "=====>"
+            print it
+            println (" : " + data_points_translation_map[it])
+          }
+            
+          println "\n\nExtracted key_id candidates for translation are:\n\n"
+            
+          keys_translation_map.each{
+            print "=====>"
+            print it
+            println (" : " + keys_translation_map[it])
+          }
         
-        
-        println "\n\nExtracted data point candidates for translation are:\n\n"
-        
-        data_points_translation_map.each{
-          print "=====>"
-          print it
-          println (" : " + data_points_translation_map[it])
-        }
-        
-        println "\n\nExtracted key_id candidates for translation are:\n\n"
-        
-        keys_translation_map.each{
-          print "=====>"
-          print it
-          println (" : " + keys_translation_map[it])
         }
         
         def my_file_name
@@ -695,28 +812,31 @@ class extract_rftypes_XML {
         
         keys_translation_map = remove_duplicates_from_translation_map(keys_translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map)
         
-        println "\n\nRemaining master parameter candidates for translation are:\n\n"
+        if ( parameters.verbose ) {
         
-        master_parameter_translation_map.each{
-          print "=====>"
-          print it
-          println (" : " + master_parameter_translation_map[it])
-        }
+          println "\n\nRemaining master parameter candidates for translation are:\n\n"
         
-        println "\n\nRemaining data point candidates for translation are:\n\n"
+          master_parameter_translation_map.each{
+            print "=====>"
+            print it
+            println (" : " + master_parameter_translation_map[it])
+          }
         
-        data_points_translation_map.each{
-          print "=====>"
-          print it
-          println (" : " + data_points_translation_map[it])
-        }
+          println "\n\nRemaining data point candidates for translation are:\n\n"
         
-        println "\n\nRemaining key_id candidates for translation are:\n\n"
+          data_points_translation_map.each{
+            print "=====>"
+            print it
+            println (" : " + data_points_translation_map[it])
+          }
         
-        keys_translation_map.each{
-          print "=====>"
-          print it
-          println (" : " + keys_translation_map[it])
+          println "\n\nRemaining key_id candidates for translation are:\n\n"
+        
+          keys_translation_map.each{
+            print "=====>"
+            print it
+            println (" : " + keys_translation_map[it])
+          }
         }
         
         save_map_to_file(data_points_translation_map, Addon_translation_archive_file)
