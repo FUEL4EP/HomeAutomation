@@ -316,7 +316,11 @@ class extract_rftypes_XML {
         
         println ".. working on '${map_name}'"
         
-        map_target.each { key ->
+        /*println ""
+        println map_target
+        println ""*/
+        
+        map_target.each { key, val ->
         
           //println ".. working on key '${key}'"
           if ( map_reference.containsKey(key) ) {
@@ -1077,7 +1081,7 @@ class extract_rftypes_XML {
         
         def XML_control_file
         if ( parameters.output_XML_file == "" ) {
-          XML_control_file = parameters["device_name"] + Addon_control_file_suffix
+          XML_control_file = (parameters["device_id"] + Addon_control_file_suffix).toLowerCase()
         }
         else {
           XML_control_file = parameters.output_XML_file
