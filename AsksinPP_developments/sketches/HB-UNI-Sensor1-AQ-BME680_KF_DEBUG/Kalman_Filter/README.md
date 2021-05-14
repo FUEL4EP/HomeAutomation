@@ -8,7 +8,7 @@
 kalman-filter](https://github.com/zziz/kalman-filter) repository. Thanks to Zaur for this great repository. 
 - The corresponding C++ implementation of the Kalman filter in '[sens_bme680_KF.h](../sensors/sens_bme680_KF.h)' is based on [Romain JL. FETICK's](https://github.com/rfetick) Github  [rfetick/Kalman](https://github.com/rfetick/Kalman) repository 'Implement Kalman filter for your Arduino projects'. Special thanks to Romain for this great repository.
 - For executing an online linear regression, it is essential to set the system model's covariance matrix Q to a zero matrix. Furthermore, the measurement covariance matrix R should bet set to a very small value, e.g. 0.0001 or smaller.
-**UPDATE 14. May 2021:** The N dimension of the Kalman filter has been reduced from 4 to 3 for improving the convergence (new state vector: VOC_resistance, alpha_temperature, beta_ah). The Python scripts are, however, not yet updated, but still for N=4. An update will be done later on.
+**UPDATE 14. May 2021:** The N dimension of the Kalman filter has been reduced from 4 to 3 for improving the convergence (new state vector: VOC_resistance, alpha_temperature, beta_ah). This is avoiding multi-collinearity effects. The Python scripts are, however, not yet updated, but still for N=4. An update will be done later on.
 
 ## Required Python installations on your computer
 
