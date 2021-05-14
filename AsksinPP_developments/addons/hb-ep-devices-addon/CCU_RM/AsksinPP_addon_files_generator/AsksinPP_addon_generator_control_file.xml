@@ -1,0 +1,99 @@
+﻿<AsksinPP_addon_generator_control>
+  <addon_name>hb-ep-devices-addon</addon_name>
+  <addon_version>1.8</addon_version>
+  <creator>ewald</creator>
+  <creator_prefix>F6</creator_prefix>
+  <created_on>2021_05_12-14:58:15</created_on>
+  <generator_version>0.13</generator_version>
+  <devices>
+    <device id='HB-UNI-SENSOR-AQ-BME680_KF_DEBUG' index='0' device_name='HB-UNI-Sensor-AQ-BME680_KF_DEBUG' device_model='0xF607' device_small_case_name='hb-uni-sensor-AQ-BME680_KF_DEBUG' rftypes_XML_version='0x10' VersionString='0.13'>
+      <device_description>universeller Luftgütesensor mit Kalman Filter (Debug Version)</device_description>
+    </device>
+  </devices>
+  <paramset>
+    <parameter id='TRANSMIT_TIME_INTERVAL' index='1' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+      <stringtable_identifier>stringTableHB_F6_TRANSMIT_TIME_INTERVAL</stringtable_identifier>
+      <translation_de>Sendeintervall</translation_de>
+      <translation_en>transmit time interval</translation_en>
+    </parameter>
+    <parameter id='ALTITUDE_ABOVE_SEA_LEVEL' index='2' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+      <stringtable_identifier>stringTableHB_F6_ALTITUDE_ABOVE_SEA_LEVEL</stringtable_identifier>
+      <translation_de>Höhe über NN</translation_de>
+      <translation_en>altitude above sea level</translation_en>
+    </parameter>
+  </paramset>
+  <channel>
+    <parameter id='TemperatureOffset' index='3' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_TemperatureOffset</stringtable_identifier>
+      <translation_de>Temperaturoffset</translation_de>
+      <translation_en>temperature offset</translation_en>
+    </parameter>
+    <parameter id='HumidityOffset' index='4' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_HumidityOffset</stringtable_identifier>
+      <translation_de>Luftfeuchtigkeitsoffset</translation_de>
+      <translation_en>humidity offset</translation_en>
+    </parameter>
+    <parameter id='PressureOffset' index='5' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_PressureOffset</stringtable_identifier>
+      <translation_de>Luftdruckoffset</translation_de>
+      <translation_en>pressure offset</translation_en>
+    </parameter>
+    <parameter id='max_decay_factor_upper_limit' index='6' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_max_decay_factor_upper_limit</stringtable_identifier>
+      <translation_de>relative untere Schwelle der Abklingfunktion</translation_de>
+      <translation_en>relative lower border of decay function</translation_en>
+    </parameter>
+    <parameter id='max_increase_factor_lower_limit' index='7' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_max_increase_factor_lower_limit</stringtable_identifier>
+      <translation_de>relative obere Schwelle der Aufklingfunktion</translation_de>
+      <translation_en>relative upper border of rise function</translation_en>
+    </parameter>
+    <parameter id='AQ_LEVEL' index='8' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_AQ_LEVEL</stringtable_identifier>
+      <translation_de>Luftgütegrad</translation_de>
+      <translation_en>air quality level</translation_en>
+    </parameter>
+    <parameter id='AQ_LOG10' index='9' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_AQ_LOG10</stringtable_identifier>
+      <translation_de>Luftqualität Log10</translation_de>
+      <translation_en>air quality Log10</translation_en>
+    </parameter>
+    <parameter id='AQ_COMP_GAS_RES_RAW' index='10' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_AQ_COMP_GAS_RES_RAW</stringtable_identifier>
+      <translation_de>T/aH kompensierter Gaswiderstand</translation_de>
+      <translation_en>T/aH compensated gas resistance</translation_en>
+    </parameter>
+    <parameter id='AQ_COMP_GAS_RES_MIN' index='11' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_AQ_COMP_GAS_RES_MIN</stringtable_identifier>
+      <translation_de>min T/aH kompensierter Gaswiderstand</translation_de>
+      <translation_en>min T/aH compensated gas resistance</translation_en>
+    </parameter>
+    <parameter id='AQ_COMP_GAS_RES_MAX' index='12' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_AQ_COMP_GAS_RES_MAX</stringtable_identifier>
+      <translation_de>max T/aH kompensierter Gaswiderstand</translation_de>
+      <translation_en>max T/aH compensated gas resistance</translation_en>
+    </parameter>
+    <parameter id='AQ_ALPHA' index='13' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_AQ_ALPHA</stringtable_identifier>
+      <translation_de>Regressionskoeffizient alpha (T)</translation_de>
+      <translation_en>regression coefficient alpha (T)</translation_en>
+    </parameter>
+    <parameter id='AQ_BETA' index='14' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <skip_channel_prefix>no</skip_channel_prefix>
+      <stringtable_identifier>stringTableHB_F6_AQ_BETA</stringtable_identifier>
+      <translation_de>Regressionskoeffizient beta (aH)</translation_de>
+      <translation_en>regression coefficient beta (aH)</translation_en>
+    </parameter>
+  </channel>
+</AsksinPP_addon_generator_control>

@@ -1,41 +1,233 @@
 #!/bin/bash
 
+# This script has been developped for Linux OS, please adapt to other OS appropriately according to your needs
+
+# The schema file ${LIBRARY_DIR}/occu.xsd can be updated to the latest occu release by
+# trang -I xml -O xsd <path_to_local_occu_repository>/*.xml ${LIBRARY_DIR}/occu.xsd
+
+# A good way to compare newly created install and install scripts with previous versions is to use 'dif':
+# https://github.com/koknat/dif
+# usage: dif file1 file2 -sort
+
+# Version 0.1 2021-05-2021
+# (c) FUEL4EP 
+
+# prerequisites (Linux OS is assumed)
+# 1. git
+# 2. groovy
+
+usage()
+{
+    echo "usage: make_all.bsh [[-run1] | [-run2] | [-check] | [-h]]"
+}
 
 
-for dir in _work/*; do (
+execute_part1=0
+execute_part2=0
+execute_check=0
+run=""
 
+#========================================================================================================================
+#
+#                           P A R A M E T E R S
+#
+#========================================================================================================================
+ADDON_NAME=hb-ep-devices-addon                #adapt to your addon name, if needed
+
+# ensure same definitions as in 'get_occu.bsh'!
+LIBRARY_DIR=./libraries
+OCCU_DIR=${LIBRARY_DIR}/occu                  #don't change, needs to be in sync with definition in 'get_occu.bsh'            
+SUBDIR1=firmware/rftypes/                     #don't change, needs to be in sync with definition in 'get_occu.bsh'
+SUBDIR2=WebUI/www/                            #don't change, needs to be in sync with definition in 'get_occu.bsh'
+OCCU_XML_DIR=${OCCU_DIR}/${SUBDIR1}           #don't change, needs to be in sync with definition in 'get_occu.bsh'
+OCCU_WEBUI_DIR=${OCCU_DIR}/${SUBDIR2}         #don't change, needs to be in sync with definition in 'get_occu.bsh'
+
+VERSION=0.11
+#========================================================================================================================
+
+echo ""
+echo "make_all.bsh Version ${VERSION}"
+echo ""
+echo "This script will run with the CLI option '-run1' up to several minutes. Please be a bit patient :-)"
+echo "The progress can be seen from the generated log files 'run1.log', 'run2.log', or 'check.log', respectively"
+echo ""
+echo "Use 'tail -f '<log_file>' at another terminal window"
+echo ""
+echo ""
+
+if [[ $# -ne 1 ]]; then
   echo ""
-  echo ..working on device: " ${dir} .."
+  echo "E R R O R: Exactly one command line parameter is required!"
   echo ""
-  
-  pushd ${dir} >& /dev/null
-  
-  cp ../../AsksinPP_addon_control_file.xsd .
-  
-  ls -largt
-  
-  FILE="install*"
-  [[ -f ${FILE} ]] && /bin/rm ./${FILE} 
-  FILE="run*"
-  [[ -f ${FILE} ]] && /bin/rm ./${FILE} 
-  FILE="uninstall*"
-  [[ -f ${FILE} ]] && /bin/rm ./${FILE} 
-  
-  sensor=`basename ${dir}`
-  
-  #sed -i 's/device_class/channel_type/g' "${sensor}_addon_control.xml"
-  
-  /usr/bin/env groovy ../../AsksinPP_addon_generator.groovy "${sensor}_addon_control.xml"
-  
-  if [ ${sensor} != "HB-UNI-SENSOR-EXAMPLE" ]; then
-    chmod +x ./install_*
-    chmod +x ./uninstall_*
-    cp install_* ../../../src/addon/
-    cp uninstall_* ../../../src/addon/
-  fi
+  usage
+  echo ""
+  exit 1
+fi
 
-  popd
+while [ "$1" != "" ]; do
+    case $1 in
+        -run1 )                 execute_part1=1
+                                execute_check=1
+                                run="run1"
+                                ;;
+        -run2 )                 execute_part2=1
+                                run="run2"
+                                ;;
+        -check )                execute_check=1
+                                run="check"
+                                ;;
+        -h | --help )           usage
+                                exit
+                                ;;
+        * )                     echo ""
+                                echo "E R R O R: Wrong command line parameters!"
+                                echo ""
+                                usage
+                                exit 1
+    esac
+    shift
+done
+
+# Redirect all stdout and stderr to ${run}.log
+exec > ${run}.log 2>&1
+
+echo ""
+echo "make_all.bsh -${run} Version ${VERSION}"
+echo ""
+
+
+# delete backup files '*bck*' from previous runs in directory ${LIBRARY_DIR}
+
+for file in ${LIBRARY_DIR}/*bck*; do
+    if [ -f $file ]; then
+        /bin/rm "$file"
+    fi
+done
+
+# delete backup files '*bck*' from previous runs in current directory '.'
+
+for file in ./*bck*; do
+    if [ -f $file ]; then
+        /bin/rm "$file"
+    fi
+done
+
+#initialize iteration counter
+iteration=0
+
+
+# execute run1
+
+if [[ execute_part1 -eq 1 ]]; then
+
+  #download 'https:'https://github.com/eq-3/occu/' to '${OCCU_DIR}' with git
+  ./get_occu.bsh
   
-); done
+  # delete existing addon_db ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db
+  FILE="${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db"
+  [[ -f ${FILE} ]] && /bin/rm ./${FILE}
+  
+  for xml in ../src/addon/firmware/rftypes/*.xml; do
+    echo ""
+    echo ".. working on the addon rftypes XML file '${xml}' .."
+    echo ""
+    
+    if [[ execute_check -eq 1 ]]; then
+      echo ".. validating the rftypes XML file '${xml}' against schema file '${LIBRARY_DIR}/occu.xsd' with xmllint tool .."
+      echo ""
+      xmllint --schema ${LIBRARY_DIR}/occu.xsd ${xml} --noout >& lint.$$.log
+      # check if lint found any validation errors
+      ret=$?
+    else
+      ret=0
+    fi
+    
+    if [[  $ret -ne 0  ]]; then
+      echo ""
+      echo "W A R N I N G : The rftypes XML ${xml} has a failed schema validation !!! Please correct the XML file!"
+      echo ""
+      echo "The xmllint error messages are:"
+      echo ""
+      /bin/cat lint.$$.log
+      echo ""
+      /bin/rm -f lint.$$.log
+      exit 1
+    else
+      if [[ execute_check -eq 1 ]]; then
+        echo ".. The rftypes XML ${xml} has been correctly validated .."; echo ""
+        /bin/rm -f lint.$$.log
+      fi
+      
+      fbname=$(basename  "${xml}" .xml)
+      
+      ((iteration++))
+      echo ".. iteration is ${iteration} .."
+      if [[ iteration -eq 1 ]]; then
+        
+        echo "first run, clear option is set"
+        # first iteration (with -c -y options)
+        /usr/bin/env groovy ./extract_rftypes_XML.groovy -c -y -eq3 ${LIBRARY_DIR} -occu ${OCCU_XML_DIR} -e -eq3_db ${LIBRARY_DIR}/EQ3_occu_extract_rftypes_translation_archive.db -a ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db -t ${LIBRARY_DIR}/AsksinPP_addon_generator_control_file_translation_source.xml -o AsksinPP_addon_generator_control_file.xml -n ${ADDON_NAME} ${xml}
+      else
+        # > first iteration (add -m option)
+        echo "subsequent run, merge option is set"
+        /usr/bin/env groovy ./extract_rftypes_XML.groovy -m -eq3 ${LIBRARY_DIR} -occu ${OCCU_XML_DIR} -e -eq3_db ${LIBRARY_DIR}/EQ3_occu_extract_rftypes_translation_archive.db -a ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db -t ${LIBRARY_DIR}/AsksinPP_addon_generator_control_file_translation_source.xml -o AsksinPP_addon_generator_control_file.xml -n ${ADDON_NAME} ${xml} 
+      fi
+    fi
+  done
+  execute_check=0
+else
+  iteration=0
+fi
+
+
+
+# execute run2
+
+if [[ execute_part2 -eq 1 ]]; then
+  /usr/bin/env groovy ./AsksinPP_addon_generator.groovy AsksinPP_addon_generator_control_file.xml
+fi
+
+# execute check
+
+if [[ execute_check -eq 1 ]]; then
+  for xml in ../src/addon/firmware/rftypes/*.xml; do
+    echo ""
+    echo ".. working on the addon rftypes XML file '${xml}' .."
+    echo ""
+    
+    
+    echo ".. validating the rftypes XML file '${xml}' against schema file '${LIBRARY_DIR}/occu.xsd' with xmllint tool .."
+    echo ""
+    xmllint --schema ${LIBRARY_DIR}/occu.xsd ${xml} --noout >& lint.$$.log
+    # check if lint found any validation errors
+    ret=$?
+
+    
+    if [[  $ret -ne 0  ]]; then
+      echo ""
+      echo "W A R N I N G : The rftypes XML ${xml} has a failed schema validation !!! Please correct the XML file!"
+      echo ""
+      echo "The xmllint error messages are:"
+      echo ""
+      /bin/cat lint.$$.log
+      echo ""
+      /bin/rm -f lint.$$.log
+      exit 1
+    else
+      echo ".. The rftypes XML ${xml} has been correctly validated .."; echo ""
+      /bin/rm -f lint.$$.log
+    fi
+  done
+fi
+
+
+# final cleaning up
+
+if [ -d ${OCCU_DIR} ]; then
+  echo ""
+  echo ".. deleting directory '${OCCU_DIR}' .."
+  echo ""
+  rm -rf ${OCCU_DIR}
+fi
 
 

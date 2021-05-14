@@ -1,0 +1,59 @@
+
+make_all.bsh -check Version 0.1
+
+
+.. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-AQ-BME680_KF_DEBUG.xml' ..
+
+.. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-AQ-BME680_KF_DEBUG.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
+
+.. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-AQ-BME680_KF_DEBUG.xml has been correctly validated ..
+
+
+.. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-AQ-BME680_KF.xml' ..
+
+.. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-AQ-BME680_KF.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
+
+.. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-AQ-BME680_KF.xml has been correctly validated ..
+
+
+.. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-AQ-BME680.xml' ..
+
+.. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-AQ-BME680.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
+
+.. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-AQ-BME680.xml has been correctly validated ..
+
+
+.. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-CO2-SCD30-plugged_in.xml' ..
+
+.. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-CO2-SCD30-plugged_in.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
+
+.. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-CO2-SCD30-plugged_in.xml has been correctly validated ..
+
+
+.. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-CO2-SCD30.xml' ..
+
+.. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-CO2-SCD30.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
+
+.. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-CO2-SCD30.xml has been correctly validated ..
+
+
+.. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-RAD-AL53.xml' ..
+
+.. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-RAD-AL53.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
+
+.. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-RAD-AL53.xml has been correctly validated ..
+
+
+.. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-THPD-BME280.xml' ..
+
+.. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-THPD-BME280.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
+
+.. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-THPD-BME280.xml has been correctly validated ..
+
+
+.. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-TH-SHT75.xml' ..
+
+.. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-TH-SHT75.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
+
+.. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-TH-SHT75.xml has been correctly validated ..
+

@@ -1,0 +1,387 @@
+
+make_all.bsh -run2 Version 0.11
+
+
+AsksinPP addon script generator 0.94
+
+
+
+The specified XML control file name is :  'AsksinPP_addon_generator_control_file.xml'
+XML control file : AsksinPP_addon_generator_control_file.xml
+
+addon name                     : hb-ep-devices-addon
+addon version                  : 1.8
+creator                        : ewald
+creator prefix                 : F6
+created_on                     : 2021_05_12-14:58:15
+extract_rftypes_XML version    : 0.13
+install script name    : install_hb-ep-devices-addon
+uninstall script name  : uninstall_hb-ep-devices-addon
+
+
+.. creating install script 'install_hb-ep-devices-addon' ..
+
+
+
+.. working on device 'HB-UNI-SENSOR-AQ-BME680_KF_DEBUG' ..
+
+
+device id              : HB-UNI-SENSOR-AQ-BME680_KF_DEBUG
+device description     : universeller Luftgütesensor mit Kalman Filter (Debug Version)
+small case device name : hb-uni-sensor-AQ-BME680_KF_DEBUG
+XML version            : 0x10
+index                  : 0
+
+
+.. working on paramset 'MASTER' 'HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master' .. 
+
+ 
+index                  : 1
+parameter id           : TRANSMIT_TIME_INTERVAL
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master
+translated_string      : Sendeintervall
+stringtable_identifier : stringTableHB_F6_TRANSMIT_TIME_INTERVAL
+
+
+.. working on paramset 'MASTER' 'HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master' .. 
+
+ 
+index                  : 2
+parameter id           : ALTITUDE_ABOVE_SEA_LEVEL
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master
+translated_string      : H%F6he%20%FCber%20NN
+stringtable_identifier : stringTableHB_F6_ALTITUDE_ABOVE_SEA_LEVEL
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 3
+parameter id           : TemperatureOffset
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
+channel                : WEATHER
+translated_string      : Temperaturoffset
+stringtable_identifier : stringTableHB_F6_TemperatureOffset
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 4
+parameter id           : HumidityOffset
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
+channel                : WEATHER
+translated_string      : Luftfeuchtigkeitsoffset
+stringtable_identifier : stringTableHB_F6_HumidityOffset
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 5
+parameter id           : PressureOffset
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
+channel                : WEATHER
+translated_string      : Luftdruckoffset
+stringtable_identifier : stringTableHB_F6_PressureOffset
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 6
+parameter id           : max_decay_factor_upper_limit
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
+channel                : WEATHER
+translated_string      : relative%20untere%20Schwelle%20der%20Abklingfunktion
+stringtable_identifier : stringTableHB_F6_max_decay_factor_upper_limit
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 7
+parameter id           : max_increase_factor_lower_limit
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
+channel                : WEATHER
+translated_string      : relative%20obere%20Schwelle%20der%20Aufklingfunktion
+stringtable_identifier : stringTableHB_F6_max_increase_factor_lower_limit
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 8
+parameter id           : AQ_LEVEL
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : Luftg%FCtegrad
+stringtable_identifier : stringTableHB_F6_AQ_LEVEL
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 9
+parameter id           : AQ_LOG10
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : Luftqualit%E4t%20Log10
+stringtable_identifier : stringTableHB_F6_AQ_LOG10
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 10
+parameter id           : AQ_COMP_GAS_RES_RAW
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : T%2FaH%20kompensierter%20Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_RAW
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 11
+parameter id           : AQ_COMP_GAS_RES_MIN
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : min%20T%2FaH%20kompensierter%20Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_MIN
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 12
+parameter id           : AQ_COMP_GAS_RES_MAX
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : max%20T%2FaH%20kompensierter%20Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_MAX
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 13
+parameter id           : AQ_ALPHA
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : Regressionskoeffizient%20alpha%20%28T%29
+stringtable_identifier : stringTableHB_F6_AQ_ALPHA
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 14
+parameter id           : AQ_BETA
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : Regressionskoeffizient%20beta%20%28aH%29
+stringtable_identifier : stringTableHB_F6_AQ_BETA
+
+
+.. creating uninstall script 'uninstall_hb-ep-devices-addon' ..
+
+
+
+.. working on device 'HB-UNI-SENSOR-AQ-BME680_KF_DEBUG' ..
+
+
+device id              : HB-UNI-SENSOR-AQ-BME680_KF_DEBUG
+device description     : universeller Luftgütesensor mit Kalman Filter (Debug Version)
+small case device name : hb-uni-sensor-AQ-BME680_KF_DEBUG
+XML version            : 0x10
+index                  : 0
+
+
+.. working on paramset 'MASTER' 'HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master' .. 
+
+ 
+index                  : 1
+parameter id           : TRANSMIT_TIME_INTERVAL
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master
+translated_string      : Sendeintervall
+stringtable_identifier : stringTableHB_F6_TRANSMIT_TIME_INTERVAL
+
+
+.. working on paramset 'MASTER' 'HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master' .. 
+
+ 
+index                  : 2
+parameter id           : ALTITUDE_ABOVE_SEA_LEVEL
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master
+translated_string      : H%F6he%20%FCber%20NN
+stringtable_identifier : stringTableHB_F6_ALTITUDE_ABOVE_SEA_LEVEL
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 3
+parameter id           : TemperatureOffset
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
+channel                : WEATHER
+translated_string      : Temperaturoffset
+stringtable_identifier : stringTableHB_F6_TemperatureOffset
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 4
+parameter id           : HumidityOffset
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
+channel                : WEATHER
+translated_string      : Luftfeuchtigkeitsoffset
+stringtable_identifier : stringTableHB_F6_HumidityOffset
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 5
+parameter id           : PressureOffset
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
+channel                : WEATHER
+translated_string      : Luftdruckoffset
+stringtable_identifier : stringTableHB_F6_PressureOffset
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 6
+parameter id           : max_decay_factor_upper_limit
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
+channel                : WEATHER
+translated_string      : relative%20untere%20Schwelle%20der%20Abklingfunktion
+stringtable_identifier : stringTableHB_F6_max_decay_factor_upper_limit
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 7
+parameter id           : max_increase_factor_lower_limit
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
+channel                : WEATHER
+translated_string      : relative%20obere%20Schwelle%20der%20Aufklingfunktion
+stringtable_identifier : stringTableHB_F6_max_increase_factor_lower_limit
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 8
+parameter id           : AQ_LEVEL
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : Luftg%FCtegrad
+stringtable_identifier : stringTableHB_F6_AQ_LEVEL
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 9
+parameter id           : AQ_LOG10
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : Luftqualit%E4t%20Log10
+stringtable_identifier : stringTableHB_F6_AQ_LOG10
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 10
+parameter id           : AQ_COMP_GAS_RES_RAW
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : T%2FaH%20kompensierter%20Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_RAW
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 11
+parameter id           : AQ_COMP_GAS_RES_MIN
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : min%20T%2FaH%20kompensierter%20Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_MIN
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 12
+parameter id           : AQ_COMP_GAS_RES_MAX
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : max%20T%2FaH%20kompensierter%20Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_MAX
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 13
+parameter id           : AQ_ALPHA
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : Regressionskoeffizient%20alpha%20%28T%29
+stringtable_identifier : stringTableHB_F6_AQ_ALPHA
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 14
+parameter id           : AQ_BETA
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : Regressionskoeffizient%20beta%20%28aH%29
+stringtable_identifier : stringTableHB_F6_AQ_BETA
+
+
+.. created install script 'install_hb-ep-devices-addon'
+.. created uninstall script 'uninstall_hb-ep-devices-addon'
+
+
+finished 'AsksinPP addon script generator 0.94'
+
