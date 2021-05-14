@@ -50,9 +50,11 @@
 	+	open and edit the generated XML control file for addon generator [./AsksinPP_addon_generator_control_file.xml](./AsksinPP_addon_generator_control_file.xml) with 'xmlcopyeditor
 	>xmlcopyeditor  ./AsksinPP_addon_generator_control_file.xml
 
-        ![AsksinPP_addon_generator_control_file.xml](./Images/HB-UNI-Sensor-EXAMPLE_addon_control.xml.png  "AsksinPP_addon_generator_control_file.xml")
-	
-		+ check all entries of this control file for completeness and correctness
+	![AsksinPP_addon_generator_control_file.xml](./Images/HB-UNI-Sensor-EXAMPLE_addon_control.xml.png  "AsksinPP_addon_generator_control_file.xml")
+
+
+    + then
+    	+	check all entries of this control file for completeness and correctness
 		+ update the 'addon_name' if needed
 		+ update the 'addon_version' if needed
 		+ replace all undefined device descriptions 'tbd' by the concerning description strings, the URL and HTML encoding for German 'Umlauts' is done automatically
