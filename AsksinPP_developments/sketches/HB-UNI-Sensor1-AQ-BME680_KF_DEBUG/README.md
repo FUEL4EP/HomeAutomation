@@ -17,6 +17,7 @@
 - alle anderen Datenpunkte sind nicht beobachtbar, da die maximale Payload einer Nachricht 17 Bytes beträgt.
 - zur Verifizierung und besserem Verständnis des Kalman Filters wird ein Jupyter Notebook [Prove_of_Kalman_filter_with_synthesized_data.ipynb](./Kalman_Filter/Prove_of_Kalman_filter_with_synthesized_data.ipynb) zur Verfügung gestellt. Auf Github kann das Notebook direkt angesehen werden.
 -	Die Debug-Version [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) und die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) nutzen diesselbe Struktur für die Abspeicherung und Restaurierung von EEPROM-Daten. Daher kann der Sensor zwischen diesen beiden Versionen umprogrammiert werden. Dabei bitte die Hinweise unter 'Neuprogrammierung (Flashen)' unten beachten.
+**UPDATE 14. May 2021:** The N dimension of the Kalman filter has been reduced from 4 to 3 for improving the convergence (new state vector: VOC_resistance, alpha_temperature, beta_ah). The Python scripts are, however, not yet updated, but still for N=4. An update will be done later on.
 
 ## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.7 updaten
 

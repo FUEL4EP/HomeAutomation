@@ -78,7 +78,7 @@ using namespace BLA;
 /****  KALMAN MODEL PARAMETERS  ****/
 //------------------------------------
 
-#define Nstate                                          4          // VOC_resistance, alpha_temperature, beta_ah, delta_intercept
+#define Nstate                                          3          // VOC_resistance, alpha_temperature, beta_ah
 #define Nobs                                            1          // raw_gas_resistance; note: 'temperature' and 'aH' are NOT part of the observation vector! 
 
 // measurement std
@@ -380,7 +380,8 @@ public:
         // Kalman filter online regression did settle
         if ( post_settling_index > 0 ) {
           post_settling_index--;   // decrement post_settling_index until 0 is reached
-          ee.iir_filter_coefficient          = IIR_FILTER_COEFFICIENT_KF_POST_SETTLED;       // increase decay factor to 71% in about 0.5 days for the first POST_SETTLING_NPHASE_NO_SAMPLES after settling has been achieved
+          ee.iir_filter_coefficient          = IIR_FILTER_COEFFICIENT_KF_POST_SETTLED; // increase decay factor to 71% in about 0.5 days for the first POST_SETTLING_NPHASE_NO_SAMPLES after settling has been achieved
+          // reset upper and lower borders
           ee.max_res                         = -START_RESISTANCE;                      // initial value
           ee.min_res                         =  START_RESISTANCE;                      // initial value
           ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
@@ -567,28 +568,25 @@ public:
       
    // system evolution matrix (unity diagonal matrix)
   
-   ee.K.F = {1.0, 0.0, 0.0, 0.0,
-          0.0, 1.0, 0.0, 0.0,
-          0.0, 0.0, 1.0, 0.0,
-          0.0, 0.0, 0.0, 1.0};
+   ee.K.F = {1.0, 0.0, 0.0, 
+          0.0, 1.0, 0.0, 
+          0.0, 0.0, 1.0};
           
    // measurement matrix
 
-   ee.K.H = {1.0, 1.0, 1.0, 1.0};
+   ee.K.H = {1.0, 1.0, 1.0};
    
    // system model covariance matrix (zero matrix)
    
-   ee.K.Q = {0.0, 0.0, 0.0, 0.0,
-          0.0, 0.0, 0.0, 0.0,
-          0.0, 0.0, 0.0, 0.0,
-          0.0, 0.0, 0.0, 0.0};
+   ee.K.Q = {0.0, 0.0, 0.0,
+          0.0, 0.0, 0.0,
+          0.0, 0.0, 0.0};
           
    // initial setting of posteriori estimation covariance matrix P (unity diagonal matrix)
   
-   ee.K.P = {1.0, 0.0, 0.0, 0.0,
-          0.0, 1.0, 0.0, 0.0,
-          0.0, 0.0, 1.0, 0.0,
-          0.0, 0.0, 0.0, 1.0};
+   ee.K.P = {1.0, 0.0, 0.0,
+          0.0, 1.0, 0.0, 
+          0.0, 0.0, 1.0};
 
    // initialize system state vector
 
@@ -602,7 +600,7 @@ public:
    
    DPRINT(F("start raw gas resistance               = "));  DDEC(_g_avg0);  DPRINTLN(F(" Ohm"));
    
-   ee.K.x = {_g_avg0/2.0, 0.0, 0.0, 0.0};
+   ee.K.x = {_g_avg0/2.0, 0.0, 0.0};
   
 
    // measurement covariance matrix
@@ -622,7 +620,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
 #endif
       
     // make observation model matrix state dependant
-    ee.K.H = {1.0, temperature, absolute_humidity, 1.0};
+    ee.K.H = {1.0, temperature, absolute_humidity};
     
     DPRINT(F("temperature                            = "));  DDEC(temperature);         DPRINTLN(F(" deg C"));
     DPRINT(F("aH                                     = "));  DDEC(absolute_humidity);   DPRINTLN(F(" g/m^3"));
@@ -900,7 +898,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       // save Kalman regression coefficients to eeprom variables
       ee.kalman_alpha                       = ee.K.x(1);
       ee.kalman_beta                        = ee.K.x(2);
-      ee.kalman_delta                       = ee.K.x(0)+ee.K.x(3);
+      ee.kalman_delta                       = ee.K.x(0);
       
       //calculate the compensated gas resistance in double precision, use the regression coefficients calculated by the Kalman filter for compensating the interference of temperature and absolute humidity
       residual = (int32_t)(gas_raw - ee.kalman_alpha*temp - ee.kalman_beta*ah); 
@@ -1047,7 +1045,6 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
     }
 
   }
-  
   
   // dedicated list of return variables for debugging only, limitation of payload of a event message to 17 Bytes!
   
