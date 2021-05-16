@@ -8,7 +8,7 @@
 kalman-filter](https://github.com/zziz/kalman-filter) repository. Thanks to Zaur for this great repository. 
 - The corresponding C++ implementation of the Kalman filter in '[sens_bme680_KF.h](../sensors/sens_bme680_KF.h)' is based on [Romain JL. FETICK's](https://github.com/rfetick) Github  [rfetick/Kalman](https://github.com/rfetick/Kalman) repository 'Implement Kalman filter for your Arduino projects'. Special thanks to Romain for this great repository.
 - For executing an online linear regression, it is essential to set the system model's covariance matrix Q to a zero matrix. Furthermore, the measurement covariance matrix R should bet set to a very small value, e.g. 0.0001 or smaller.
-**UPDATE 14. May 2021:** The N dimension of the Kalman filter has been reduced from 4 to 3 for improving the convergence (new state vector: VOC_resistance, alpha_temperature, beta_ah). This is avoiding multi-collinearity effects. The Python scripts are, however, not yet updated, but still for N=4. An update will be done later on.
+**UPDATE 14. May 2021:** The N dimension of the Kalman filter has been reduced from 4 to 3 for improving the convergence (new state vector: VOC_resistance, alpha_temperature, beta_ah). This is avoiding multicollinearity effects. 
 
 ## Required Python installations on your computer
 
@@ -72,8 +72,8 @@ kalman-filter](https://github.com/zziz/kalman-filter) repository. Thanks to Zaur
 
 # Prove of the correct online regression by the Kalman filter by using synthesized sensor data
 
-- A Jupyter notebook ["Prove_of_Kalman_filter_with_synthesized_data.ipynb"](./Prove_of_Kalman_filter_with_synthesized_data.ipynb) is provided.
-- It can be used for the following purposes for a better understanding and prove of the correct online regression by the Kalman filter by using synthesized sensor data:
+- a Jupyter notebook ["Prove_of_Kalman_filter_with_synthesized_data.ipynb"](./Prove_of_Kalman_filter_with_synthesized_data.ipynb) is provided.
+- it can be used for the following purposes for a better understanding and prove of the correct online regression by the Kalman filter by using synthesized sensor data:
 +	creation of synthesized sensor data (gas_resistance_raw, temperature, absolute humidity)
 +	gas_resistance_raw is synthesized as a linear equation of gas_resistance_compensated, temperature, and absolute_humidity
 +	the synthesis parameters 'alpha' and 'beta' can be set
