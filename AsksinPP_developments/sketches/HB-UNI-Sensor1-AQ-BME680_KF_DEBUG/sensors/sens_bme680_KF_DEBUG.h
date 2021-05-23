@@ -312,7 +312,7 @@ public:
       if (ee.kalman_alpha != 0.0 ) {
         // the temperature regression coefficient alpha can be quite small, therefore we also check for the absolute change 'delta'
         delta = fabs((ee.kalman_alpha - ee.previous_alpha));
-        ratio = delta / ee.kalman_alpha;
+        ratio = fabs(delta / ee.kalman_alpha);
 #ifdef DEEP_DEBUG
         DPRINT(F("ee.kalman_alpha                        = "));DDEC(ee.kalman_alpha);                       DPRINTLN(F(" "));
         DPRINT(F("ee.previous_alpha                      = "));DDEC(ee.previous_alpha);                     DPRINTLN(F(" "));
@@ -560,7 +560,7 @@ public:
   }
   
   
-  // initializethe Kalman filter
+  // initialize the Kalman filter
   
   void kalman_filter_init() {
       
@@ -697,10 +697,19 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       DPRINTLN(F("==================================================="));
 #endif
     
-      // Ensure that ee.max_decay_factor_upper_limit is bigger than ee.max_increase_factor_lower_limit
-      if (ee.max_decay_factor_upper_limit <= ee.max_increase_factor_lower_limit) {
-          ee.max_decay_factor_upper_limit = ee.max_increase_factor_lower_limit + 1;
+ 
+      // If ee.max_decay_factor_upper_limit and ee.max_increase_factor_lower_limit are set equal, then enter the strong unsettled decay / increase mode (special temporary setting)
+      if ( ee.max_decay_factor_upper_limit == ee.max_increase_factor_lower_limit ) {
+          ee.iir_filter_coefficient          =  IIR_FILTER_COEFFICIENT_KF_UNSETTLED;   // increase decay factor to about 10% in about 4h
       }
+      else {
+        // Ensure that ee.max_decay_factor_upper_limit is bigger than ee.max_increase_factor_lower_limit, reset ee.max_re, ee.min_res, ee.max_gas_resistance, ee.min_gas_resistance to start conditions, initiate the post-settling process  
+        if (ee.max_decay_factor_upper_limit <= ee.max_increase_factor_lower_limit) {
+            post_settling_index                = POST_SETTLING_NPHASE_NO_SAMPLES / NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING + 1;                   // non-zero during post-settling phase and after reset, down counted
+            ee.max_decay_factor_upper_limit = ee.max_increase_factor_lower_limit + 1;
+        }
+      }
+      
       
 #ifdef DEEP_DEBUG
 
@@ -768,6 +777,16 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       gas_raw   = (double)gas;  // without any limiting
       DPRINT("avg gas: ");DDECLN(gas);
       DPRINT(F("avg. gas resistance = "));DDECLN(gas);DPRINT(F("\n\n"));
+      
+      
+      // update ee.gas_upper_limit_min and ee.gas_lower_limit_max every 20th measurement in order to cope with updates of the device parameters ee.max_decay_factor_upper_limit and ee.max_increase_factor_lower_limit
+      if ( measurement_index % 20 == 0 ) {
+          // set lower limit for decay of ee.gas_upper_limit; ee.max_decay_factor_upper_limit is typically set to 70 as WebUI device parameter
+          ee.gas_upper_limit_min = ee.min_gas_resistance + (ee.max_gas_resistance - ee.min_gas_resistance) * (int32_t)ee.max_decay_factor_upper_limit / 100;
+          
+          // set upper limit for increase of ee.gas_lower_limit; ee.max_increase_factor_lower_limit is typically set to 30 as WebUI device parameter
+          ee.gas_lower_limit_max = ee.min_gas_resistance + (ee.max_gas_resistance - ee.min_gas_resistance) * (int32_t)ee.max_increase_factor_lower_limit / 100;
+      }
       
       // peak detectors for min/max ever measured gas resistances since last reset
       
