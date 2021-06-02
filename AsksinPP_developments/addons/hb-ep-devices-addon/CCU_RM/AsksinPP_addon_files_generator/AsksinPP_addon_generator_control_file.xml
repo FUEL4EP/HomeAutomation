@@ -3,7 +3,7 @@
   <addon_version>1.8</addon_version>
   <creator>FUEL4EP</creator>
   <creator_prefix>F6</creator_prefix>
-  <created_on>2021_06_02-10:46:13</created_on>
+  <created_on>2021_06_02-12:37:16</created_on>
   <generator_version>0.13</generator_version>
   <devices>
     <device id='HB-UNI-SENSOR-TH-SHT75' index='0' device_name='HB-UNI-Sensor-TH-SHT75' device_model='0xF603' device_small_case_name='hb-uni-sensor-TH-SHT75' rftypes_XML_version='0x10' VersionString='0.13'>

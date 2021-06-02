@@ -257,7 +257,7 @@ class Addon_generator {
         AsksinPP_addon_control_file.devices.device.each {
         
           println "\n.. working on device '${it.@id}' ..\n\n"
-          println "device id              : ${it.@id}"
+          println "device name            : ${it.@device_name}"
           println "device description     : ${it.device_description}"
           println "small case device name : ${it.@device_small_case_name}"
           println "XML version            : ${it.@rftypes_XML_version}"
@@ -266,14 +266,14 @@ class Addon_generator {
           
           isf.append "#------------------------------------------------------------------------------\n"
           isf.append "#------------------------------------------------------------------------------\n"
-          isf.append "# device name            : ${it.@id}\n"
+          isf.append "# device name            : ${it.@device_name}\n"
           isf.append "# small case device name : ${it.@device_small_case_name}\n"
           isf.append "# XML version            : ${it.@rftypes_XML_version}\n"
           isf.append "# index                  : ${it.@index}\n"
           isf.append "#------------------------------------------------------------------------------\n"
           isf.append "#------------------------------------------------------------------------------\n"
-          isf.append "# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name=\"${it.@id}\" id=\"${it.@id}\">\n"
-          isf.append "DEVICE=\"${it.@id}\"\n"
+          isf.append "# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name=\"${it.@device_name}\" id=\"${it.@device_name}\">\n"
+          isf.append "DEVICE=\"${it.@device_name}\"\n"
           isf.append "# in der WebUI angezeigte Gerätebeschreibung\n"
           String toEncode = it.device_description.toString()
           toEncode = my_encodeAsHTML(toEncode)
@@ -558,7 +558,7 @@ class Addon_generator {
         AsksinPP_addon_control_file.devices.device.each {
         
           println "\n.. working on device '${it.@id}' ..\n\n"
-          println "device id              : ${it.@id}"
+          println "device name            : ${it.@device_name}"
           println "device description     : ${it.device_description}"
           println "small case device name : ${it.@device_small_case_name}"
           println "XML version            : ${it.@rftypes_XML_version}"
@@ -567,14 +567,14 @@ class Addon_generator {
           
           uisf.append "#------------------------------------------------------------------------------\n"
           uisf.append "#------------------------------------------------------------------------------\n"
-          uisf.append "# device name            : ${it.@id}\n"
+          uisf.append "# device name            : ${it.@device_name}\n"
           uisf.append "# small case device name : ${it.@device_small_case_name}\n"
           uisf.append "# XML version            : ${it.@rftypes_XML_version}\n"
           uisf.append "# index                  : ${it.@index}\n"
           uisf.append "#------------------------------------------------------------------------------\n"
           uisf.append "#------------------------------------------------------------------------------\n"
-          uisf.append "# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name=\"${it.@id}\" id=\"${it.@id}\">\n"
-          uisf.append "DEVICE=\"${it.@id}\"\n"
+          uisf.append "# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name=\"${it.@device_name}\" id=\"${it.@device_name}\">\n"
+          uisf.append "DEVICE=\"${it.@device_name}\"\n"
           uisf.append "# in der WebUI angezeigte Gerätebeschreibung\n"
           String toEncode = it.device_description.toString()
           toEncode = my_encodeAsHTML(toEncode)

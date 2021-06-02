@@ -13,7 +13,7 @@ addon name                     : hb-ep-devices-addon
 addon version                  : 1.8
 creator                        : FUEL4EP
 creator prefix                 : F6
-created_on                     : 2021_06_02-10:46:13
+created_on                     : 2021_06_02-12:37:16
 extract_rftypes_XML version    : 0.13
 install script name    : install_hb-ep-devices-addon
 uninstall script name  : uninstall_hb-ep-devices-addon
@@ -26,7 +26,7 @@ uninstall script name  : uninstall_hb-ep-devices-addon
 .. working on device 'HB-UNI-SENSOR-TH-SHT75' ..
 
 
-device id              : HB-UNI-SENSOR-TH-SHT75
+device name            : HB-UNI-Sensor-TH-SHT75
 device description     : Sensor TH
 small case device name : hb-uni-sensor-TH-SHT75
 XML version            : 0x10
@@ -35,7 +35,7 @@ index                  : 0
 .. working on device 'HB-UNI-SENSOR-THPD-BME280' ..
 
 
-device id              : HB-UNI-SENSOR-THPD-BME280
+device name            : HB-UNI-Sensor-THPD-BME280
 device description     : Sensor THPD
 small case device name : hb-uni-sensor-THPD-BME280
 XML version            : 0x10
@@ -44,7 +44,7 @@ index                  : 1
 .. working on device 'HB-UNI-SENSOR-RAD-AL53' ..
 
 
-device id              : HB-UNI-SENSOR-RAD-AL53
+device name            : HB-UNI-Sensor-RAD-AL53
 device description     : Radioaktivitätssensor
 small case device name : hb-uni-sensor-RAD-AL53
 XML version            : 0x10
@@ -53,7 +53,7 @@ index                  : 2
 .. working on device 'HB-UNI-SENSOR-CO2-SCD30' ..
 
 
-device id              : HB-UNI-SENSOR-CO2-SCD30
+device name            : HB-UNI-Sensor-CO2-SCD30
 device description     : Sensor Kohlendioxid
 small case device name : hb-uni-sensor-CO2-SCD30
 XML version            : 0x10
@@ -62,7 +62,7 @@ index                  : 3
 .. working on device 'HB-UNI-SENSOR-CO2-SCD30-PLUGGED_IN' ..
 
 
-device id              : HB-UNI-SENSOR-CO2-SCD30-PLUGGED_IN
+device name            : HB-UNI-Sensor-CO2-SCD30-PLUGGED_IN
 device description     : Sensor Kohlendioxid Netzbetrieb
 small case device name : hb-uni-sensor-CO2-SCD30-PLUGGED_IN
 XML version            : 0x10
@@ -71,7 +71,7 @@ index                  : 4
 .. working on device 'HB-UNI-SENSOR-AQ-BME680' ..
 
 
-device id              : HB-UNI-SENSOR-AQ-BME680
+device name            : HB-UNI-Sensor-AQ-BME680
 device description     : universeller Luftgütesensor
 small case device name : hb-uni-sensor-AQ-BME680
 XML version            : 0x10
@@ -80,7 +80,7 @@ index                  : 5
 .. working on device 'HB-UNI-SENSOR-AQ-BME680_KF' ..
 
 
-device id              : HB-UNI-SENSOR-AQ-BME680_KF
+device name            : HB-UNI-Sensor-AQ-BME680_KF
 device description     : universeller Luftgütesensor mit Kalman Filter
 small case device name : hb-uni-sensor-AQ-BME680_KF
 XML version            : 0x10
@@ -89,7 +89,7 @@ index                  : 6
 .. working on device 'HB-UNI-SENSOR-AQ-BME680_KF_DEBUG' ..
 
 
-device id              : HB-UNI-SENSOR-AQ-BME680_KF_DEBUG
+device name            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG
 device description     : universeller Luftgütesensor mit Kalman Filter (Debug Version)
 small case device name : hb-uni-sensor-AQ-BME680_KF_DEBUG
 XML version            : 0x10
@@ -581,7 +581,7 @@ stringtable_identifier : stringTableHB_F6_OPERATING_VOLTAGE
 .. working on device 'HB-UNI-SENSOR-TH-SHT75' ..
 
 
-device id              : HB-UNI-SENSOR-TH-SHT75
+device name            : HB-UNI-Sensor-TH-SHT75
 device description     : Sensor TH
 small case device name : hb-uni-sensor-TH-SHT75
 XML version            : 0x10
@@ -590,7 +590,7 @@ index                  : 0
 .. working on device 'HB-UNI-SENSOR-THPD-BME280' ..
 
 
-device id              : HB-UNI-SENSOR-THPD-BME280
+device name            : HB-UNI-Sensor-THPD-BME280
 device description     : Sensor THPD
 small case device name : hb-uni-sensor-THPD-BME280
 XML version            : 0x10
@@ -599,7 +599,7 @@ index                  : 1
 .. working on device 'HB-UNI-SENSOR-RAD-AL53' ..
 
 
-device id              : HB-UNI-SENSOR-RAD-AL53
+device name            : HB-UNI-Sensor-RAD-AL53
 device description     : Radioaktivitätssensor
 small case device name : hb-uni-sensor-RAD-AL53
 XML version            : 0x10
@@ -608,7 +608,7 @@ index                  : 2
 .. working on device 'HB-UNI-SENSOR-CO2-SCD30' ..
 
 
-device id              : HB-UNI-SENSOR-CO2-SCD30
+device name            : HB-UNI-Sensor-CO2-SCD30
 device description     : Sensor Kohlendioxid
 small case device name : hb-uni-sensor-CO2-SCD30
 XML version            : 0x10
@@ -617,7 +617,7 @@ index                  : 3
 .. working on device 'HB-UNI-SENSOR-CO2-SCD30-PLUGGED_IN' ..
 
 
-device id              : HB-UNI-SENSOR-CO2-SCD30-PLUGGED_IN
+device name            : HB-UNI-Sensor-CO2-SCD30-PLUGGED_IN
 device description     : Sensor Kohlendioxid Netzbetrieb
 small case device name : hb-uni-sensor-CO2-SCD30-PLUGGED_IN
 XML version            : 0x10
@@ -626,7 +626,7 @@ index                  : 4
 .. working on device 'HB-UNI-SENSOR-AQ-BME680' ..
 
 
-device id              : HB-UNI-SENSOR-AQ-BME680
+device name            : HB-UNI-Sensor-AQ-BME680
 device description     : universeller Luftgütesensor
 small case device name : hb-uni-sensor-AQ-BME680
 XML version            : 0x10
@@ -635,7 +635,7 @@ index                  : 5
 .. working on device 'HB-UNI-SENSOR-AQ-BME680_KF' ..
 
 
-device id              : HB-UNI-SENSOR-AQ-BME680_KF
+device name            : HB-UNI-Sensor-AQ-BME680_KF
 device description     : universeller Luftgütesensor mit Kalman Filter
 small case device name : hb-uni-sensor-AQ-BME680_KF
 XML version            : 0x10
@@ -644,7 +644,7 @@ index                  : 6
 .. working on device 'HB-UNI-SENSOR-AQ-BME680_KF_DEBUG' ..
 
 
-device id              : HB-UNI-SENSOR-AQ-BME680_KF_DEBUG
+device name            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG
 device description     : universeller Luftgütesensor mit Kalman Filter (Debug Version)
 small case device name : hb-uni-sensor-AQ-BME680_KF_DEBUG
 XML version            : 0x10
