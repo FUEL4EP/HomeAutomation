@@ -32,15 +32,16 @@ run=""
 #                           P A R A M E T E R S
 #
 #========================================================================================================================
-ADDON_NAME=hb-ep-devices-addon                #adapt to your addon name, if needed
+ADDON_NAME=hb-ep-devices-addon                    #adapt to your addon name, if needed
 
 # ensure same definitions as in 'get_occu.bsh'!
 LIBRARY_DIR=./libraries
-OCCU_DIR=${LIBRARY_DIR}/occu                  #don't change, needs to be in sync with definition in 'get_occu.bsh'            
-SUBDIR1=firmware/rftypes/                     #don't change, needs to be in sync with definition in 'get_occu.bsh'
-SUBDIR2=WebUI/www/                            #don't change, needs to be in sync with definition in 'get_occu.bsh'
-OCCU_XML_DIR=${OCCU_DIR}/${SUBDIR1}           #don't change, needs to be in sync with definition in 'get_occu.bsh'
-OCCU_WEBUI_DIR=${OCCU_DIR}/${SUBDIR2}         #don't change, needs to be in sync with definition in 'get_occu.bsh'
+OCCU_DIR=${LIBRARY_DIR}/occu                      #don't change, needs to be in sync with definition in 'get_occu.bsh'            
+SUBDIR1=firmware/rftypes/                         #don't change, needs to be in sync with definition in 'get_occu.bsh'
+SUBDIR2=WebUI/www/                                #don't change, needs to be in sync with definition in 'get_occu.bsh'
+OCCU_XML_DIR=${OCCU_DIR}/${SUBDIR1}               #don't change, needs to be in sync with definition in 'get_occu.bsh'
+OCCU_WEBUI_DIR=${OCCU_DIR}/${SUBDIR2}             #don't change, needs to be in sync with definition in 'get_occu.bsh'
+EASYMODES_DIR=${OCCU_WEBUI_DIR}/config/easymodes 
 
 VERSION=0.11
 #========================================================================================================================
@@ -163,14 +164,19 @@ if [[ execute_part1 -eq 1 ]]; then
       ((iteration++))
       echo ".. iteration is ${iteration} .."
       if [[ iteration -eq 1 ]]; then
-        
-        echo "first run, clear option is set"
+        echo ""
+        echo "====> first run, clear option is set      <===="
+        echo ""
+        echo ".. working on ${xml}"
         # first iteration (with -c -y options)
-        /usr/bin/env groovy ./extract_rftypes_XML.groovy -c -y -eq3 ${LIBRARY_DIR} -occu ${OCCU_XML_DIR} -e -eq3_db ${LIBRARY_DIR}/EQ3_occu_extract_rftypes_translation_archive.db -a ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db -t ${LIBRARY_DIR}/AsksinPP_addon_generator_control_file_translation_source.xml -o AsksinPP_addon_generator_control_file.xml -n ${ADDON_NAME} ${xml}
+        /usr/bin/env groovy ./extract_rftypes_XML.groovy -c -y -eq3 ${LIBRARY_DIR} -occu ${OCCU_DIR} -easy ${EASYMODES_DIR} -e -eq3_db ${LIBRARY_DIR}/EQ3_occu_extract_rftypes_translation_archive.db -a ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db -t ${LIBRARY_DIR}/AsksinPP_addon_generator_control_file_translation_source.xml -o AsksinPP_addon_generator_control_file.xml -n ${ADDON_NAME} ${xml}
       else
         # > first iteration (add -m option)
-        echo "subsequent run, merge option is set"
-        /usr/bin/env groovy ./extract_rftypes_XML.groovy -m -eq3 ${LIBRARY_DIR} -occu ${OCCU_XML_DIR} -e -eq3_db ${LIBRARY_DIR}/EQ3_occu_extract_rftypes_translation_archive.db -a ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db -t ${LIBRARY_DIR}/AsksinPP_addon_generator_control_file_translation_source.xml -o AsksinPP_addon_generator_control_file.xml -n ${ADDON_NAME} ${xml} 
+        echo ""
+        echo "====> subsequent run, merge option is set <===="
+        echo ""
+        echo ".. working on ${xml}"
+        /usr/bin/env groovy ./extract_rftypes_XML.groovy -m -eq3 ${LIBRARY_DIR} -occu ${OCCU_DIR} -easy ${EASYMODES_DIR} -e -eq3_db ${LIBRARY_DIR}/EQ3_occu_extract_rftypes_translation_archive.db -a ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db -t ${LIBRARY_DIR}/AsksinPP_addon_generator_control_file_translation_source.xml -o AsksinPP_addon_generator_control_file.xml -n ${ADDON_NAME} ${xml} 
       fi
     fi
   done
@@ -231,3 +237,30 @@ if [ -d ${OCCU_DIR} ]; then
 fi
 
 
+FILE="${LIBRARY_DIR}/webui.js"
+if [[ -f $FILE ]];then
+  echo ""
+  echo ".. deleting file '${FILE}' .."
+  echo ""
+  /bin/rm -f $FILE
+fi
+
+FILE="${LIBRARY_DIR}/translate.lang.stringtable.js"
+if [[ -f $FILE ]];then
+  echo ""
+  echo ".. deleting file '${FILE}' .."
+  echo ""
+  /bin/rm -f $FILE
+fi
+
+FILE="${LIBRARY_DIR}/stringtable_de.txt"
+if [[ -f $FILE ]];then
+  echo ""
+  echo ".. deleting file '${FILE}' .."
+  echo ""
+  /bin/rm -f $FILE
+fi
+
+echo ""
+echo "make_all.bsh Version ${VERSION} done"
+echo ""

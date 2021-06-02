@@ -1,5 +1,5 @@
 
-make_all.bsh -check Version 0.1
+make_all.bsh -check Version 0.11
 
 
 .. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-AQ-BME680_KF_DEBUG.xml' ..
@@ -56,4 +56,7 @@ make_all.bsh -check Version 0.1
 .. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-TH-SHT75.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
 
 .. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-TH-SHT75.xml has been correctly validated ..
+
+
+make_all.bsh Version 0.11 done
 

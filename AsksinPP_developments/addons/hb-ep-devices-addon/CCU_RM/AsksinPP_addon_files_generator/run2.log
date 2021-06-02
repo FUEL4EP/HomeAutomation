@@ -2,7 +2,7 @@
 make_all.bsh -run2 Version 0.11
 
 
-AsksinPP addon script generator 0.94
+AsksinPP addon script generator 0.95
 
 
 
@@ -11,9 +11,9 @@ XML control file : AsksinPP_addon_generator_control_file.xml
 
 addon name                     : hb-ep-devices-addon
 addon version                  : 1.8
-creator                        : ewald
+creator                        : FUEL4EP
 creator prefix                 : F6
-created_on                     : 2021_05_12-14:58:15
+created_on                     : 2021_06_02-10:46:13
 extract_rftypes_XML version    : 0.13
 install script name    : install_hb-ep-devices-addon
 uninstall script name  : uninstall_hb-ep-devices-addon
@@ -23,6 +23,69 @@ uninstall script name  : uninstall_hb-ep-devices-addon
 
 
 
+.. working on device 'HB-UNI-SENSOR-TH-SHT75' ..
+
+
+device id              : HB-UNI-SENSOR-TH-SHT75
+device description     : Sensor TH
+small case device name : hb-uni-sensor-TH-SHT75
+XML version            : 0x10
+index                  : 0
+
+.. working on device 'HB-UNI-SENSOR-THPD-BME280' ..
+
+
+device id              : HB-UNI-SENSOR-THPD-BME280
+device description     : Sensor THPD
+small case device name : hb-uni-sensor-THPD-BME280
+XML version            : 0x10
+index                  : 1
+
+.. working on device 'HB-UNI-SENSOR-RAD-AL53' ..
+
+
+device id              : HB-UNI-SENSOR-RAD-AL53
+device description     : Radioaktivitätssensor
+small case device name : hb-uni-sensor-RAD-AL53
+XML version            : 0x10
+index                  : 2
+
+.. working on device 'HB-UNI-SENSOR-CO2-SCD30' ..
+
+
+device id              : HB-UNI-SENSOR-CO2-SCD30
+device description     : Sensor Kohlendioxid
+small case device name : hb-uni-sensor-CO2-SCD30
+XML version            : 0x10
+index                  : 3
+
+.. working on device 'HB-UNI-SENSOR-CO2-SCD30-PLUGGED_IN' ..
+
+
+device id              : HB-UNI-SENSOR-CO2-SCD30-PLUGGED_IN
+device description     : Sensor Kohlendioxid Netzbetrieb
+small case device name : hb-uni-sensor-CO2-SCD30-PLUGGED_IN
+XML version            : 0x10
+index                  : 4
+
+.. working on device 'HB-UNI-SENSOR-AQ-BME680' ..
+
+
+device id              : HB-UNI-SENSOR-AQ-BME680
+device description     : universeller Luftgütesensor
+small case device name : hb-uni-sensor-AQ-BME680
+XML version            : 0x10
+index                  : 5
+
+.. working on device 'HB-UNI-SENSOR-AQ-BME680_KF' ..
+
+
+device id              : HB-UNI-SENSOR-AQ-BME680_KF
+device description     : universeller Luftgütesensor mit Kalman Filter
+small case device name : hb-uni-sensor-AQ-BME680_KF
+XML version            : 0x10
+index                  : 6
+
 .. working on device 'HB-UNI-SENSOR-AQ-BME680_KF_DEBUG' ..
 
 
@@ -30,13 +93,13 @@ device id              : HB-UNI-SENSOR-AQ-BME680_KF_DEBUG
 device description     : universeller Luftgütesensor mit Kalman Filter (Debug Version)
 small case device name : hb-uni-sensor-AQ-BME680_KF_DEBUG
 XML version            : 0x10
-index                  : 0
+index                  : 7
 
 
 .. working on paramset 'MASTER' 'HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master' .. 
 
  
-index                  : 1
+index                  : 8
 parameter id           : TRANSMIT_TIME_INTERVAL
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master
@@ -47,7 +110,7 @@ stringtable_identifier : stringTableHB_F6_TRANSMIT_TIME_INTERVAL
 .. working on paramset 'MASTER' 'HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master' .. 
 
  
-index                  : 2
+index                  : 9
 parameter id           : ALTITUDE_ABOVE_SEA_LEVEL
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master
@@ -58,7 +121,163 @@ stringtable_identifier : stringTableHB_F6_ALTITUDE_ABOVE_SEA_LEVEL
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 3
+index                  : 10
+parameter id           : DEWPOINT
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-THPD-BME280_values
+channel                : WEATHER
+translated_string      : Taupunkttemperatur
+stringtable_identifier : stringTableHB_F6_DEWPOINT
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 11
+parameter id           : VAPOR_CONCENTRATION
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-THPD-BME280_values
+channel                : WEATHER
+translated_string      : absolute%20Luftfeuchte
+stringtable_identifier : stringTableHB_F6_VAPOR_CONCENTRATION
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 12
+parameter id           : ACCUMULATOR_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-CO2-SCD30_values
+channel                : WEATHER
+translated_string      : Akkumulatorbatteriespannung
+stringtable_identifier : stringTableHB_F6_ACCUMULATOR_VOLTAGE
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 13
+parameter id           : VCC_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-CO2-SCD30_values
+channel                : WEATHER
+translated_string      : VCC%20Spannung
+stringtable_identifier : stringTableHB_F6_VCC_VOLTAGE
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 14
+parameter id           : CO2
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-CO2-SCD30-PLUGGED_IN_values
+channel                : WEATHER
+translated_string      : CO2%20Konzentration
+stringtable_identifier : stringTableHB_F6_CO2
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 15
+parameter id           : mlr_alpha
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_master
+channel                : WEATHER
+translated_string      : Regressionskoeffizent%20alpha%20%28f%FCr%20Temperatur%29
+stringtable_identifier : stringTableHB_F6_mlr_alpha
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 16
+parameter id           : mlr_beta
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_master
+channel                : WEATHER
+translated_string      : Regressionskoeffizent%20beta%20%28f%FCr%20absolute%20Feuchte%29
+stringtable_identifier : stringTableHB_F6_mlr_beta
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 17
+parameter id           : mlr_delta
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_master
+channel                : WEATHER
+translated_string      : Regressionskoeffizent%20delta%20%28Achsenabschnitt%29
+stringtable_identifier : stringTableHB_F6_mlr_delta
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 18
+parameter id           : AIR_PRESSURE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_values
+channel                : WEATHER
+translated_string      : Luftdruck
+stringtable_identifier : stringTableHB_F6_AIR_PRESSURE
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 19
+parameter id           : MY_HUMIDITY
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_values
+channel                : WEATHER
+translated_string      : Rel.%20Luftfeuchtigkeit
+stringtable_identifier : stringTableHB_F6_MY_HUMIDITY
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 20
+parameter id           : AQ_GAS_RESISTANCE_RAW
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_values
+channel                : WEATHER
+translated_string      : Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_GAS_RESISTANCE_RAW
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 21
+parameter id           : AQ_GAS_RESISTANCE_MAX
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_values
+channel                : WEATHER
+translated_string      : max%20Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_GAS_RESISTANCE_MAX
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 22
+parameter id           : AQ_GAS_RESISTANCE_MIN
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_values
+channel                : WEATHER
+translated_string      : min%20Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_GAS_RESISTANCE_MIN
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 23
 parameter id           : TemperatureOffset
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
@@ -70,7 +289,7 @@ stringtable_identifier : stringTableHB_F6_TemperatureOffset
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 4
+index                  : 24
 parameter id           : HumidityOffset
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
@@ -82,7 +301,7 @@ stringtable_identifier : stringTableHB_F6_HumidityOffset
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 5
+index                  : 25
 parameter id           : PressureOffset
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
@@ -94,7 +313,7 @@ stringtable_identifier : stringTableHB_F6_PressureOffset
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 6
+index                  : 26
 parameter id           : max_decay_factor_upper_limit
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
@@ -106,7 +325,7 @@ stringtable_identifier : stringTableHB_F6_max_decay_factor_upper_limit
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 7
+index                  : 27
 parameter id           : max_increase_factor_lower_limit
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
@@ -118,7 +337,7 @@ stringtable_identifier : stringTableHB_F6_max_increase_factor_lower_limit
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 8
+index                  : 28
 parameter id           : AQ_LEVEL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -130,7 +349,7 @@ stringtable_identifier : stringTableHB_F6_AQ_LEVEL
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 9
+index                  : 29
 parameter id           : AQ_LOG10
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -142,7 +361,7 @@ stringtable_identifier : stringTableHB_F6_AQ_LOG10
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 10
+index                  : 30
 parameter id           : AQ_COMP_GAS_RES_RAW
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -154,7 +373,7 @@ stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_RAW
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 11
+index                  : 31
 parameter id           : AQ_COMP_GAS_RES_MIN
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -166,7 +385,7 @@ stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_MIN
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 12
+index                  : 32
 parameter id           : AQ_COMP_GAS_RES_MAX
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -178,7 +397,7 @@ stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_MAX
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 13
+index                  : 33
 parameter id           : AQ_ALPHA
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -190,19 +409,238 @@ stringtable_identifier : stringTableHB_F6_AQ_ALPHA
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 14
+index                  : 34
 parameter id           : AQ_BETA
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
 channel                : WEATHER
 translated_string      : Regressionskoeffizient%20beta%20%28aH%29
 stringtable_identifier : stringTableHB_F6_AQ_BETA
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 35
+parameter id           : OPERATING_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : Betriebsspannung
+stringtable_identifier : stringTableHB_F6_OPERATING_VOLTAGE
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 36
+parameter id           : HB_RAD_MEASURE_INTERVAL
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-RAD-AL53_master
+channel                : HB_GENERIC_RADIATION
+translated_string      : Messintervall%20f%FCr%20Radioaktivit%E4t
+stringtable_identifier : stringTableHB_F6_HB_RAD_MEASURE_INTERVAL
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 37
+parameter id           : HB_RAD_READ_RETRY_COUNT
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-RAD-AL53_master
+channel                : HB_GENERIC_RADIATION
+translated_string      : Anzahl%20der%20Leseversuche
+stringtable_identifier : stringTableHB_F6_HB_RAD_READ_RETRY_COUNT
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 38
+parameter id           : HB_ALARM_LEVEL_COUNTS_PER_HOUR
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-RAD-AL53_master
+channel                : HB_GENERIC_RADIATION
+translated_string      : Alarmwert%20Z%E4hlimpulse%20pro%20Stunde
+stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_HOUR
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 39
+parameter id           : HB_ALARM_LEVEL_COUNTS_PER_HOUR_FILTERED
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-RAD-AL53_master
+channel                : HB_GENERIC_RADIATION
+translated_string      : Alarmwert%20gefilterte%20Z%E4hlimpulse%20pro%20Stunde
+stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_HOUR_FILTERED
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 40
+parameter id           : COUNTS_PER_HOUR
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : Z%E4hlimpulse%20pro%20Stunde
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 41
+parameter id           : CONFIDENCE_INTERVALL
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : Vertrauensintervall
+stringtable_identifier : stringTableHB_F6_CONFIDENCE_INTERVALL
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 42
+parameter id           : COUNTS_PER_HOUR_MAX
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : max%20Z%E4hlimpulse%20pro%20Stunde
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR_MAX
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 43
+parameter id           : COUNTS_PER_HOUR_FILTERED
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : max%20gefilterte%20Z%E4hlimpulse%20pro%20Stunde
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR_FILTERED
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 44
+parameter id           : COUNTS_PER_SAMPLE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : Z%E4hlimpulse%20pro%20Messzeit
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_SAMPLE
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 45
+parameter id           : ACCUMULATOR_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : Akkumulatorbatteriespannung
+stringtable_identifier : stringTableHB_F6_ACCUMULATOR_VOLTAGE
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 46
+parameter id           : AL53_SUPPLY_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : AL53%20Betriebsspannung%20%28ADC%29
+stringtable_identifier : stringTableHB_F6_AL53_SUPPLY_VOLTAGE
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 47
+parameter id           : OPERATING_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : Betriebsspannung
+stringtable_identifier : stringTableHB_F6_OPERATING_VOLTAGE
 
 
 .. creating uninstall script 'uninstall_hb-ep-devices-addon' ..
 
 
 
+.. working on device 'HB-UNI-SENSOR-TH-SHT75' ..
+
+
+device id              : HB-UNI-SENSOR-TH-SHT75
+device description     : Sensor TH
+small case device name : hb-uni-sensor-TH-SHT75
+XML version            : 0x10
+index                  : 0
+
+.. working on device 'HB-UNI-SENSOR-THPD-BME280' ..
+
+
+device id              : HB-UNI-SENSOR-THPD-BME280
+device description     : Sensor THPD
+small case device name : hb-uni-sensor-THPD-BME280
+XML version            : 0x10
+index                  : 1
+
+.. working on device 'HB-UNI-SENSOR-RAD-AL53' ..
+
+
+device id              : HB-UNI-SENSOR-RAD-AL53
+device description     : Radioaktivitätssensor
+small case device name : hb-uni-sensor-RAD-AL53
+XML version            : 0x10
+index                  : 2
+
+.. working on device 'HB-UNI-SENSOR-CO2-SCD30' ..
+
+
+device id              : HB-UNI-SENSOR-CO2-SCD30
+device description     : Sensor Kohlendioxid
+small case device name : hb-uni-sensor-CO2-SCD30
+XML version            : 0x10
+index                  : 3
+
+.. working on device 'HB-UNI-SENSOR-CO2-SCD30-PLUGGED_IN' ..
+
+
+device id              : HB-UNI-SENSOR-CO2-SCD30-PLUGGED_IN
+device description     : Sensor Kohlendioxid Netzbetrieb
+small case device name : hb-uni-sensor-CO2-SCD30-PLUGGED_IN
+XML version            : 0x10
+index                  : 4
+
+.. working on device 'HB-UNI-SENSOR-AQ-BME680' ..
+
+
+device id              : HB-UNI-SENSOR-AQ-BME680
+device description     : universeller Luftgütesensor
+small case device name : hb-uni-sensor-AQ-BME680
+XML version            : 0x10
+index                  : 5
+
+.. working on device 'HB-UNI-SENSOR-AQ-BME680_KF' ..
+
+
+device id              : HB-UNI-SENSOR-AQ-BME680_KF
+device description     : universeller Luftgütesensor mit Kalman Filter
+small case device name : hb-uni-sensor-AQ-BME680_KF
+XML version            : 0x10
+index                  : 6
+
 .. working on device 'HB-UNI-SENSOR-AQ-BME680_KF_DEBUG' ..
 
 
@@ -210,13 +648,13 @@ device id              : HB-UNI-SENSOR-AQ-BME680_KF_DEBUG
 device description     : universeller Luftgütesensor mit Kalman Filter (Debug Version)
 small case device name : hb-uni-sensor-AQ-BME680_KF_DEBUG
 XML version            : 0x10
-index                  : 0
+index                  : 7
 
 
 .. working on paramset 'MASTER' 'HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master' .. 
 
  
-index                  : 1
+index                  : 8
 parameter id           : TRANSMIT_TIME_INTERVAL
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master
@@ -227,7 +665,7 @@ stringtable_identifier : stringTableHB_F6_TRANSMIT_TIME_INTERVAL
 .. working on paramset 'MASTER' 'HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master' .. 
 
  
-index                  : 2
+index                  : 9
 parameter id           : ALTITUDE_ABOVE_SEA_LEVEL
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master
@@ -238,7 +676,163 @@ stringtable_identifier : stringTableHB_F6_ALTITUDE_ABOVE_SEA_LEVEL
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 3
+index                  : 10
+parameter id           : DEWPOINT
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-THPD-BME280_values
+channel                : WEATHER
+translated_string      : Taupunkttemperatur
+stringtable_identifier : stringTableHB_F6_DEWPOINT
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 11
+parameter id           : VAPOR_CONCENTRATION
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-THPD-BME280_values
+channel                : WEATHER
+translated_string      : absolute%20Luftfeuchte
+stringtable_identifier : stringTableHB_F6_VAPOR_CONCENTRATION
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 12
+parameter id           : ACCUMULATOR_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-CO2-SCD30_values
+channel                : WEATHER
+translated_string      : Akkumulatorbatteriespannung
+stringtable_identifier : stringTableHB_F6_ACCUMULATOR_VOLTAGE
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 13
+parameter id           : VCC_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-CO2-SCD30_values
+channel                : WEATHER
+translated_string      : VCC%20Spannung
+stringtable_identifier : stringTableHB_F6_VCC_VOLTAGE
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 14
+parameter id           : CO2
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-CO2-SCD30-PLUGGED_IN_values
+channel                : WEATHER
+translated_string      : CO2%20Konzentration
+stringtable_identifier : stringTableHB_F6_CO2
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 15
+parameter id           : mlr_alpha
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_master
+channel                : WEATHER
+translated_string      : Regressionskoeffizent%20alpha%20%28f%FCr%20Temperatur%29
+stringtable_identifier : stringTableHB_F6_mlr_alpha
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 16
+parameter id           : mlr_beta
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_master
+channel                : WEATHER
+translated_string      : Regressionskoeffizent%20beta%20%28f%FCr%20absolute%20Feuchte%29
+stringtable_identifier : stringTableHB_F6_mlr_beta
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 17
+parameter id           : mlr_delta
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-AQ-BME680_master
+channel                : WEATHER
+translated_string      : Regressionskoeffizent%20delta%20%28Achsenabschnitt%29
+stringtable_identifier : stringTableHB_F6_mlr_delta
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 18
+parameter id           : AIR_PRESSURE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_values
+channel                : WEATHER
+translated_string      : Luftdruck
+stringtable_identifier : stringTableHB_F6_AIR_PRESSURE
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 19
+parameter id           : MY_HUMIDITY
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_values
+channel                : WEATHER
+translated_string      : Rel.%20Luftfeuchtigkeit
+stringtable_identifier : stringTableHB_F6_MY_HUMIDITY
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 20
+parameter id           : AQ_GAS_RESISTANCE_RAW
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_values
+channel                : WEATHER
+translated_string      : Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_GAS_RESISTANCE_RAW
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 21
+parameter id           : AQ_GAS_RESISTANCE_MAX
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_values
+channel                : WEATHER
+translated_string      : max%20Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_GAS_RESISTANCE_MAX
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 22
+parameter id           : AQ_GAS_RESISTANCE_MIN
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_values
+channel                : WEATHER
+translated_string      : min%20Gaswiderstand
+stringtable_identifier : stringTableHB_F6_AQ_GAS_RESISTANCE_MIN
+
+
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 23
 parameter id           : TemperatureOffset
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
@@ -250,7 +844,7 @@ stringtable_identifier : stringTableHB_F6_TemperatureOffset
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 4
+index                  : 24
 parameter id           : HumidityOffset
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
@@ -262,7 +856,7 @@ stringtable_identifier : stringTableHB_F6_HumidityOffset
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 5
+index                  : 25
 parameter id           : PressureOffset
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
@@ -274,7 +868,7 @@ stringtable_identifier : stringTableHB_F6_PressureOffset
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 6
+index                  : 26
 parameter id           : max_decay_factor_upper_limit
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
@@ -286,7 +880,7 @@ stringtable_identifier : stringTableHB_F6_max_decay_factor_upper_limit
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 7
+index                  : 27
 parameter id           : max_increase_factor_lower_limit
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master
@@ -298,7 +892,7 @@ stringtable_identifier : stringTableHB_F6_max_increase_factor_lower_limit
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 8
+index                  : 28
 parameter id           : AQ_LEVEL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -310,7 +904,7 @@ stringtable_identifier : stringTableHB_F6_AQ_LEVEL
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 9
+index                  : 29
 parameter id           : AQ_LOG10
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -322,7 +916,7 @@ stringtable_identifier : stringTableHB_F6_AQ_LOG10
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 10
+index                  : 30
 parameter id           : AQ_COMP_GAS_RES_RAW
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -334,7 +928,7 @@ stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_RAW
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 11
+index                  : 31
 parameter id           : AQ_COMP_GAS_RES_MIN
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -346,7 +940,7 @@ stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_MIN
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 12
+index                  : 32
 parameter id           : AQ_COMP_GAS_RES_MAX
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -358,7 +952,7 @@ stringtable_identifier : stringTableHB_F6_AQ_COMP_GAS_RES_MAX
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 13
+index                  : 33
 parameter id           : AQ_ALPHA
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -370,7 +964,7 @@ stringtable_identifier : stringTableHB_F6_AQ_ALPHA
 .. working on channel 'WEATHER' .. 
 
  
-index                  : 14
+index                  : 34
 parameter id           : AQ_BETA
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
@@ -379,9 +973,168 @@ translated_string      : Regressionskoeffizient%20beta%20%28aH%29
 stringtable_identifier : stringTableHB_F6_AQ_BETA
 
 
+.. working on channel 'WEATHER' .. 
+
+ 
+index                  : 35
+parameter id           : OPERATING_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values
+channel                : WEATHER
+translated_string      : Betriebsspannung
+stringtable_identifier : stringTableHB_F6_OPERATING_VOLTAGE
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 36
+parameter id           : HB_RAD_MEASURE_INTERVAL
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-RAD-AL53_master
+channel                : HB_GENERIC_RADIATION
+translated_string      : Messintervall%20f%FCr%20Radioaktivit%E4t
+stringtable_identifier : stringTableHB_F6_HB_RAD_MEASURE_INTERVAL
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 37
+parameter id           : HB_RAD_READ_RETRY_COUNT
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-RAD-AL53_master
+channel                : HB_GENERIC_RADIATION
+translated_string      : Anzahl%20der%20Leseversuche
+stringtable_identifier : stringTableHB_F6_HB_RAD_READ_RETRY_COUNT
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 38
+parameter id           : HB_ALARM_LEVEL_COUNTS_PER_HOUR
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-RAD-AL53_master
+channel                : HB_GENERIC_RADIATION
+translated_string      : Alarmwert%20Z%E4hlimpulse%20pro%20Stunde
+stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_HOUR
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 39
+parameter id           : HB_ALARM_LEVEL_COUNTS_PER_HOUR_FILTERED
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-RAD-AL53_master
+channel                : HB_GENERIC_RADIATION
+translated_string      : Alarmwert%20gefilterte%20Z%E4hlimpulse%20pro%20Stunde
+stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_HOUR_FILTERED
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 40
+parameter id           : COUNTS_PER_HOUR
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : Z%E4hlimpulse%20pro%20Stunde
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 41
+parameter id           : CONFIDENCE_INTERVALL
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : Vertrauensintervall
+stringtable_identifier : stringTableHB_F6_CONFIDENCE_INTERVALL
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 42
+parameter id           : COUNTS_PER_HOUR_MAX
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : max%20Z%E4hlimpulse%20pro%20Stunde
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR_MAX
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 43
+parameter id           : COUNTS_PER_HOUR_FILTERED
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : max%20gefilterte%20Z%E4hlimpulse%20pro%20Stunde
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR_FILTERED
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 44
+parameter id           : COUNTS_PER_SAMPLE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : Z%E4hlimpulse%20pro%20Messzeit
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_SAMPLE
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 45
+parameter id           : ACCUMULATOR_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : Akkumulatorbatteriespannung
+stringtable_identifier : stringTableHB_F6_ACCUMULATOR_VOLTAGE
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 46
+parameter id           : AL53_SUPPLY_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : AL53%20Betriebsspannung%20%28ADC%29
+stringtable_identifier : stringTableHB_F6_AL53_SUPPLY_VOLTAGE
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 47
+parameter id           : OPERATING_VOLTAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
+channel                : HB_GENERIC_RADIATION
+translated_string      : Betriebsspannung
+stringtable_identifier : stringTableHB_F6_OPERATING_VOLTAGE
+
+
 .. created install script 'install_hb-ep-devices-addon'
 .. created uninstall script 'uninstall_hb-ep-devices-addon'
 
 
-finished 'AsksinPP addon script generator 0.94'
+finished 'AsksinPP addon script generator 0.95'
+
+
+make_all.bsh Version 0.11 done
 

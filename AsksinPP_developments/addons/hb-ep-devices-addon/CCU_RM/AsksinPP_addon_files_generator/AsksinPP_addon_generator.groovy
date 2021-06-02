@@ -18,7 +18,7 @@ import java.lang.String
 
 class Addon_generator {
 
-    static VersionString = "0.94"
+    static VersionString = "0.95"
     
     static def String my_encodeAsHTML (String input_string) {
 
@@ -275,7 +275,7 @@ class Addon_generator {
           isf.append "# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name=\"${it.@id}\" id=\"${it.@id}\">\n"
           isf.append "DEVICE=\"${it.@id}\"\n"
           isf.append "# in der WebUI angezeigte Gerätebeschreibung\n"
-          String toEncode = "${it.device_description}".toString()
+          String toEncode = it.device_description.toString()
           toEncode = my_encodeAsHTML(toEncode)
           isf.append "DEVICE_DESC=\"${toEncode}\"\n"
 
@@ -338,7 +338,7 @@ class Addon_generator {
           println "paramset type          : ${it.@paramset_type}"
           println "paramset id            : ${it.@paramset_id}"
 
-          String toEncode = "${it.translation_de}"
+          String toEncode = it.translation_de.toString()
           println "translated_string      : ${toEncode.encodeURL()}"
           println "stringtable_identifier : ${it.stringtable_identifier}"
          
@@ -347,7 +347,7 @@ class Addon_generator {
           stringtable_de_txt_buffer.append( " \n" )
           translate_lang_stringtable_js_buffer.append( " \n" )
           
-          webuiInsert_buffer.append("\n# parameter id #${it.@index}: ${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          webuiInsert_buffer.append("\n# parameter id #${it.@index}: '${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           webuiInsert_buffer.append( "  \n")
           webuiInsert_buffer.append( "webuiInsertParam=\"${it.@id}\"\n" )
           webuiInsert_buffer.append( "webuiInsertValue=\"${it.stringtable_identifier}\"\n" )
@@ -361,7 +361,7 @@ class Addon_generator {
           
           
           
-          stringtable_de_txt_buffer.append("\n# parameter id #${it.@index}: ${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          stringtable_de_txt_buffer.append("\n# parameter id #${it.@index}: '${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           stringtable_de_txt_buffer.append( " \n" )
           stringtable_de_txt_buffer.append( "stringtable_deInsert=\"${it.@id}\\t\\\${${it.stringtable_identifier}}\"\n" )
           stringtable_de_txt_buffer.append( "if [ -z \"`cat \$stringtable_deFile | grep \\\"${it.@id}\\\"`\" ]; then\n" )
@@ -370,9 +370,9 @@ class Addon_generator {
           
           
           
-          translate_lang_stringtable_js_buffer.append("\n# parameter id #${it.@index}: ${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          translate_lang_stringtable_js_buffer.append("\n# parameter id #${it.@index}: '${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           translate_lang_stringtable_js_buffer.append( " \n" )
-          toEncode = "${it.translation_de}"
+          toEncode = it.translation_de.toString()
           translate_lang_stringtable_js_buffer.append( "translate_deInsert=\"\\n    \\\"${it.stringtable_identifier}\\\" : \\\"${toEncode.encodeURL()}\\\",\"\n" )
           translate_lang_stringtable_js_buffer.append( "if [ -z \"`cat \$translate_deFile | grep \\\"${it.stringtable_identifier}\\\"`\" ]; then\n" )
           translate_lang_stringtable_js_buffer.append( "      sed -i \"s/\\(\$translate_deSearch\\)/\\1\$translate_deInsert/g\" \$translate_deFile\n" )
@@ -381,7 +381,7 @@ class Addon_generator {
           
         }
         
-        AsksinPP_addon_control_file.channel.parameter.each
+        AsksinPP_addon_control_file.channels.channel.parameter.each
         {
           
           println "\n\n.. working on channel '${it.@channel}' .. \n"
@@ -392,7 +392,7 @@ class Addon_generator {
           println "paramset id            : ${it.@paramset_id}"
           println "channel                : ${it.@channel}"
 
-          String toEncode = "${it.translation_de}"
+          String toEncode = it.translation_de.toString()
           println "translated_string      : ${toEncode.encodeURL()}"
           println "stringtable_identifier : ${it.stringtable_identifier}"
 
@@ -408,7 +408,7 @@ class Addon_generator {
           stringtable_de_txt_buffer.append( " \n" )
           translate_lang_stringtable_js_buffer.append( " \n" )
           
-          webuiInsert_buffer.append("\n# parameter id #${it.@index}: ${my_channel_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} channel ${it.@channel} \n")
+          webuiInsert_buffer.append("\n# parameter id #${it.@index}: '${my_channel_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' channel '${it.@channel}' \n")
           webuiInsert_buffer.append( " \n" )
           webuiInsert_buffer.append( "webuiInsertParam=\"${my_channel_prefix}${it.@id}\"\n" )
           webuiInsert_buffer.append( "webuiInsertValue=\"${it.stringtable_identifier}\"\n" )
@@ -422,7 +422,7 @@ class Addon_generator {
           
           
           
-          stringtable_de_txt_buffer.append("\n#  parameter id #${it.@index}: ${my_channel_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} channel ${it.@channel} \n")
+          stringtable_de_txt_buffer.append("\n#  parameter id #${it.@index}: '${my_channel_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' channel '${it.@channel}' \n")
           stringtable_de_txt_buffer.append( " \n" )
           stringtable_de_txt_buffer.append( "stringtable_deInsert=\"${my_channel_prefix}${it.@id}\\t\\\${${it.stringtable_identifier}}\"\n" )
           stringtable_de_txt_buffer.append( "if [ -z \"`cat \$stringtable_deFile | grep \\\"${my_channel_prefix}${it.@id}\\\"`\" ]; then\n" )
@@ -431,9 +431,9 @@ class Addon_generator {
           
           
           
-          translate_lang_stringtable_js_buffer.append("\n#  parameter id #${it.@index}: ${my_channel_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} channel ${it.@channel} \n")
+          translate_lang_stringtable_js_buffer.append("\n#  parameter id #${it.@index}: '${my_channel_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' channel '${it.@channel}' \n")
           translate_lang_stringtable_js_buffer.append( " \n" )
-          toEncode = "${it.translation_de}"
+          toEncode = it.translation_de.toString()
           translate_lang_stringtable_js_buffer.append( "translate_deInsert=\"\\n    \\\"${it.stringtable_identifier}\\\" : \\\"${toEncode.encodeURL()}\\\",\"\n" )
           translate_lang_stringtable_js_buffer.append( "if [ -z \"`cat \$translate_deFile | grep \\\"${it.stringtable_identifier}\\\"`\" ]; then\n" )
           translate_lang_stringtable_js_buffer.append( "      sed -i \"s/\\(\$translate_deSearch\\)/\\1\$translate_deInsert/g\" \$translate_deFile\n" )
@@ -442,7 +442,7 @@ class Addon_generator {
           
         }
         
-        AsksinPP_addon_control_file.paramset_defs.parameter.each
+        AsksinPP_addon_control_file.paramset_defs.paramset.parameter.each
         {
           
           println "\n\n.. working on paramset_defs .. \n"
@@ -452,25 +452,25 @@ class Addon_generator {
           println "paramset id            : ${it.@paramset_id}"
 
 
-          toEncode = "${it.translation_de}"
+          def toEncode = it.translation_de.toString()
           println "translated_string      : ${toEncode.encodeURL()}"
           println "stringtable_identifier : ${it.stringtable_identifier}"
           
-          def my_key_prefix
-          if ( it.skip_key_prefix == "yes" ) {
-            my_key_prefix = ""
+          def my_paramset_prefix
+          if ( it.skip_paramset_prefix == "yes" ) {
+            my_paramset_prefix = ""
           }
           else {
-            my_key_prefix = "${it.key_prefix}|"
+            my_paramset_prefix = "${it.paramset_prefix}|"
           }
           
           webuiInsert_buffer.append( " \n" )
           stringtable_de_txt_buffer.append( " \n" )
           translate_lang_stringtable_js_buffer.append( " \n" )
           
-          webuiInsert_buffer.append("\n# parameter id #${it.@index}: ${my_key_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          webuiInsert_buffer.append("\n# parameter id #${it.@index}: '${my_paramset_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           webuiInsert_buffer.append( " \n" )
-          webuiInsert_buffer.append( "webuiInsertParam=\"${my_key_prefix}${it.@id}\"\n" )
+          webuiInsert_buffer.append( "webuiInsertParam=\"${my_paramset_prefix}${it.@id}\"\n" )
           webuiInsert_buffer.append( "webuiInsertValue=\"${it.stringtable_identifier}\"\n" )
           webuiInsert_buffer.append( "webuiInsert=\"\\n\"\n" )
           webuiInsert_buffer.append( "webuiInsert=\"\${webuiInsert}elvST['\$webuiInsertParam'] = '\\\${\$webuiInsertValue}';\"\n" )
@@ -482,18 +482,18 @@ class Addon_generator {
           
           
           
-          stringtable_de_txt_buffer.append("\n# parameter id #${it.@index}: ${my_key_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          stringtable_de_txt_buffer.append("\n# parameter id #${it.@index}: '${my_paramset_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           stringtable_de_txt_buffer.append( " \n" )
-          stringtable_de_txt_buffer.append( "stringtable_deInsert=\"${my_key_prefix}${it.@id}\\t\\\${${it.stringtable_identifier}}\"\n" )
-          stringtable_de_txt_buffer.append( "if [ -z \"`cat \$stringtable_deFile | grep \\\"${my_key_prefix}${it.@id}\\\"`\" ]; then\n" )
+          stringtable_de_txt_buffer.append( "stringtable_deInsert=\"${my_paramset_prefix}${it.@id}\\t\\\${${it.stringtable_identifier}}\"\n" )
+          stringtable_de_txt_buffer.append( "if [ -z \"`cat \$stringtable_deFile | grep \\\"${my_paramset_prefix}${it.@id}\\\"`\" ]; then\n" )
           stringtable_de_txt_buffer.append( "    echo -e \$stringtable_deInsert >> \$stringtable_deFile\n" )
           stringtable_de_txt_buffer.append( "fi\n" )
           
           
           
-          translate_lang_stringtable_js_buffer.append("\n# parameter id #${it.@index}: ${my_key_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          translate_lang_stringtable_js_buffer.append("\n# parameter id #${it.@index}: '${my_paramset_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           translate_lang_stringtable_js_buffer.append( " \n" )
-          toEncode = "${it.translation_de}"
+          toEncode = it.translation_de.toString()
           translate_lang_stringtable_js_buffer.append( "translate_deInsert=\"\\n    \\\"${it.stringtable_identifier}\\\" : \\\"${toEncode.encodeURL()}\\\",\"\n" )
           translate_lang_stringtable_js_buffer.append( "if [ -z \"`cat \$translate_deFile | grep \\\"${it.stringtable_identifier}\\\"`\" ]; then\n" )
           translate_lang_stringtable_js_buffer.append( "      sed -i \"s/\\(\$translate_deSearch\\)/\\1\$translate_deInsert/g\" \$translate_deFile\n" )
@@ -576,7 +576,7 @@ class Addon_generator {
           uisf.append "# in der WebUI angezeigter Gerätetyp, muss identisch sein mit dem Firmware-XML-Tag: <type name=\"${it.@id}\" id=\"${it.@id}\">\n"
           uisf.append "DEVICE=\"${it.@id}\"\n"
           uisf.append "# in der WebUI angezeigte Gerätebeschreibung\n"
-          String toEncode = "${it.device_description}".toString()
+          String toEncode = it.device_description.toString()
           toEncode = my_encodeAsHTML(toEncode)
           uisf.append "DEVICE_DESC=\"${toEncode}\"\n"
 
@@ -641,7 +641,7 @@ class Addon_generator {
           println "paramset type          : ${it.@paramset_type}"
           println "paramset id            : ${it.@paramset_id}"
 
-          def toEncode = "${it.translation_de}"
+          def toEncode = it.translation_de.toString()
           println "translated_string      : ${toEncode.encodeURL()}"
           println "stringtable_identifier : ${it.stringtable_identifier}"
           
@@ -649,27 +649,27 @@ class Addon_generator {
           stringtable_de_txt_buffer.append( " \n" )
           translate_lang_stringtable_js_buffer.append( " \n" )
           
-          webuiInsert_buffer.append("\n# parameter id #${it.@index}: ${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          webuiInsert_buffer.append("\n# parameter id #${it.@index}: '${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           webuiInsert_buffer.append(" \n")
           webuiInsert_buffer.append( "webuiSearch=\"${my_channel_type}${it.@id}\"\n" )
           webuiInsert_buffer.append( "sed -i \"/\\(\$webuiSearch\\)/d\" \$webuiFile\n\n" )
           
           
-          stringtable_de_txt_buffer.append("\n# parameter id #${it.@index}: ${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          stringtable_de_txt_buffer.append("\n# parameter id #${it.@index}: '${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           stringtable_de_txt_buffer.append( " \n" )
           stringtable_de_txt_buffer.append( "stringtable_deSearch=\"${it.@id}\"\n")
           stringtable_de_txt_buffer.append( "sed -i \"/\\(\$stringtable_deSearch\\)/d\" \$stringtable_deFile\n")
 
           
           
-          translate_lang_stringtable_js_buffer.append("\n# parameter id #${it.@index}: ${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          translate_lang_stringtable_js_buffer.append("\n# parameter id #${it.@index}: '${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           translate_lang_stringtable_js_buffer.append( " \n" )
           translate_lang_stringtable_js_buffer.append("translate_deSearch=\"${it.stringtable_identifier}\"\n")
           translate_lang_stringtable_js_buffer.append("sed -i \"/\\(\${translate_deSearch}\\)/d\" \$translate_deFile\n")
           
         }
         
-        AsksinPP_addon_control_file.channel.parameter.each
+        AsksinPP_addon_control_file.channels.channel.parameter.each
         {
           
           println "\n\n.. working on channel '${it.@channel}' .. \n"
@@ -680,7 +680,7 @@ class Addon_generator {
           println "paramset id            : ${it.@paramset_id}"
           println "channel                : ${it.@channel}"
 
-          def toEncode = "${it.translation_de}"
+          def toEncode = it.translation_de.toString()
           println "translated_string      : ${toEncode.encodeURL()}"
           println "stringtable_identifier : ${it.stringtable_identifier}"
 
@@ -696,27 +696,27 @@ class Addon_generator {
           stringtable_de_txt_buffer.append( " \n" )
           translate_lang_stringtable_js_buffer.append( " \n" )
           
-          webuiInsert_buffer.append("\n# parameter id #${it.@index}: ${my_channel_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} channel ${it.@channel} \n")
+          webuiInsert_buffer.append("\n# parameter id #${it.@index}: '${my_channel_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' channel '${it.@channel}' \n")
           webuiInsert_buffer.append(" \n")
           webuiInsert_buffer.append( "webuiSearch=\"${my_channel_prefix}${it.@id}\"\n" )
           webuiInsert_buffer.append( "sed -i \"/\\(\$webuiSearch\\)/d\" \$webuiFile\n\n" )
           
           
-          stringtable_de_txt_buffer.append("\n# parameter id #${it.@index}: ${my_channel_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} channel ${it.@channel} \n")
+          stringtable_de_txt_buffer.append("\n# parameter id #${it.@index}: '${my_channel_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' channel '${it.@channel}' \n")
           stringtable_de_txt_buffer.append( " \n" )
           stringtable_de_txt_buffer.append( "stringtable_deSearch=\"${my_channel_prefix}${it.@id}\"\n")
           stringtable_de_txt_buffer.append( "sed -i \"/\\(\$stringtable_deSearch\\)/d\" \$stringtable_deFile\n")
 
           
           
-          translate_lang_stringtable_js_buffer.append("\n# parameter id #${it.@index}: ${my_channel_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} channel ${it.@channel} \n")
+          translate_lang_stringtable_js_buffer.append("\n# parameter id #${it.@index}: '${my_channel_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' channel '${it.@channel}' \n")
           translate_lang_stringtable_js_buffer.append( " \n" )
           translate_lang_stringtable_js_buffer.append("translate_deSearch=\"${it.stringtable_identifier}\"\n")
           translate_lang_stringtable_js_buffer.append("sed -i \"/\\(\${translate_deSearch}\\)/d\" \$translate_deFile\n")
           
         }
         
-        AsksinPP_addon_control_file.paramset_defs.parameter.each
+        AsksinPP_addon_control_file.paramset_defs.paramset.parameter.each
         {
           
           println "\n\n.. working on paramset_defs .. \n"
@@ -726,16 +726,16 @@ class Addon_generator {
           println "paramset id            : ${it.@paramset_id}"
 
 
-          toEncode = "${it.translation_de}"
+          toEncode = it.translation_de.toString()
           println "translated_string      : ${toEncode.encodeURL()}"
           println "stringtable_identifier : ${it.stringtable_identifier}"
           
-          def my_key_prefix
-          if ( it.skip_key_prefix == "yes" ) {
-            my_key_prefix = ""
+          def my_paramset_prefix
+          if ( it.skip_paramset_prefix == "yes" ) {
+            my_paramset_prefix = ""
           }
           else {
-            my_key_prefix = "${it.key_prefix}|"
+            my_paramset_prefix = "${it.paramset_prefix}|"
           }
           
           
@@ -743,20 +743,20 @@ class Addon_generator {
           stringtable_de_txt_buffer.append( " \n" )
           translate_lang_stringtable_js_buffer.append( " \n" )
           
-          webuiInsert_buffer.append("\n# parameter id #${it.@index}: ${my_key_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          webuiInsert_buffer.append("\n# parameter id #${it.@index}: '${my_paramset_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           webuiInsert_buffer.append(" \n")
-          webuiInsert_buffer.append( "webuiSearch=\"${my_key_prefix}${it.@id}\"\n" )
+          webuiInsert_buffer.append( "webuiSearch=\"${my_paramset_prefix}${it.@id}\"\n" )
           webuiInsert_buffer.append( "sed -i \"/\\(\$webuiSearch\\)/d\" \$webuiFile\n\n" )
           
           
-          stringtable_de_txt_buffer.append("\n# parameter id #${it.@index}: ${my_key_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          stringtable_de_txt_buffer.append("\n# parameter id #${it.@index}: '${my_paramset_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           stringtable_de_txt_buffer.append( " \n" )
-          stringtable_de_txt_buffer.append( "stringtable_deSearch=\"${my_key_prefix}${it.@id}\"\n")
+          stringtable_de_txt_buffer.append( "stringtable_deSearch=\"${my_paramset_prefix}${it.@id}\"\n")
           stringtable_de_txt_buffer.append( "sed -i \"/\\(\$stringtable_deSearch\\)/d\" \$stringtable_deFile\n")
 
           
           
-          translate_lang_stringtable_js_buffer.append("\n# parameter id #${it.@index}: ${my_key_prefix}${it.@id} paramset ${it.@paramset_type} ${it.@paramset_id} \n")
+          translate_lang_stringtable_js_buffer.append("\n# parameter id #${it.@index}: '${my_paramset_prefix}${it.@id}' paramset '${it.@paramset_type}' '${it.@paramset_id}' \n")
           translate_lang_stringtable_js_buffer.append( " \n" )
           translate_lang_stringtable_js_buffer.append("translate_deSearch=\"${it.stringtable_identifier}\"\n")
           translate_lang_stringtable_js_buffer.append("sed -i \"/\\(\${translate_deSearch}\\)/d\" \$translate_deFile\n")

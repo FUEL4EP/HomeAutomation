@@ -30,6 +30,7 @@ class extract_rftypes_XML {
     static Occu_translation_archive_file       = "EQ3_occu_extract_rftypes_translation_archive.db"
     static Addon_name                          = "My_Addon"
     static Addon_control_XML_file_translation  = "AsksinPP_addon_generator_control_file_translation_source.xml"
+    static Easymode_tcl_directory              = "../src/addon/www/config/easymodes"  // relative path of easymode tcl files
     
     static def parse_webui_js(file_name){
  
@@ -253,7 +254,7 @@ class extract_rftypes_XML {
         
     } 
     
-    static def check_if_key_already_exists( key, Map translation_map, Map webui_js_map, Map StringTable_de_map, Map translate_lang_stringtable_map, parameters ) {
+    static def check_if_key_already_exists( key0, key, Map translation_map, Map webui_js_map, Map StringTable_de_map, Map translate_lang_stringtable_map, parameters ) {
     
         def key_already_exists = false
 
@@ -271,8 +272,8 @@ class extract_rftypes_XML {
             key_already_exists = true
           }
           else {
-            if ( translation_map.containsKey(key) ) {
-              def my_stringtable_key = translation_map[key]."stringTable_name"
+            if ( translation_map[key0].containsKey(key) ) {
+              def my_stringtable_key = translation_map[key0][key]."stringTable_name"
               if ( translate_lang_stringtable_map.containsKey(my_stringtable_key) ) {
                 if ( parameters.verbose ) {
                   println "=> '${key}' already defined in 'translate.lang.stringtable.js'"
@@ -282,8 +283,6 @@ class extract_rftypes_XML {
             }
           }
         }
-        
-        //println key_already_exists
           
         return key_already_exists
     
@@ -292,49 +291,58 @@ class extract_rftypes_XML {
     
     static def remove_duplicates_from_translation_map(Map translation_map, Map webui_js_map, Map StringTable_de_map, Map translate_lang_stringtable_map, parameters) {
     
-        def keys_to_be_deleted = []
+        def keys_to_be_deleted
         
     
-        translation_map.each{ key, var ->
+        translation_map.each{ key0, val0 ->
         
-          def key_str = ""
-          
-          /*println "key => '${key}'"
-          println "var = " + var["type"]
-          println "var = " + var["channel_type"]
-          println "'${key}'"*/
-          
-          key_str = key
-          
-          def key_already_exists = false
-          
-          key_already_exists |= check_if_key_already_exists ( key, translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map, parameters)
-          if ( var["type"] == "channel" ) {
-            key_str = var["channel_type"] + "|" + key
-            /*println "channel => '${key_str}'"
-            if ( key_str == "MAINTENANCE|UNREACH" ) {
-              println "match"
+           //println ".. working on primary key '" + key0 + "' .."
+           keys_to_be_deleted = []
+        
+           val0.each { key, var  ->
+        
+            
+            def key_str = ""
+            
+            key_str = key
+            
+            def key_already_exists = false
+            
+            //key_already_exists |= check_if_key_already_exists ( key0, key, translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map, parameters)
+            
+            if ( var["type"] == "channel" ) {
+              key_str = var["channel_type"] + "|" + key
+              key_already_exists |= check_if_key_already_exists ( key0, key_str, translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map, parameters)
+            } else {
+              if ( var["type"] == "param_defs" ) {
+              if (  var["channel"] != "" ) {
+                key_str = var["channel"] + "|" + key
+              }
+              else {
+               key_str = "KEY|" + key
+              }
+              key_already_exists |= check_if_key_already_exists ( key0, key_str, translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map, parameters)
+              }
             }
-            println webui_js_map.containsKey("MAINTENANCE|UNREACH")
-            println webui_js_map.containsKey(key_str) */
-            key_already_exists |= check_if_key_already_exists ( key_str, translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map, parameters)
+            
+            if ( key_already_exists ) {
+              keys_to_be_deleted.add(key)
+            }
           }
-          if ( var["type"] == "param_defs" ) {
-            key_str = "KEY|" + key
-            //println "channel => ${key_str}"
-            key_already_exists |= check_if_key_already_exists ( key_str, translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map, parameters)
+          
+          //println keys_to_be_deleted
+          // delete duplicated keys in translation_map[key0]: channel, paramset
+          if ( keys_to_be_deleted.size() > 0 ) {
+            println ".. ${keys_to_be_deleted.size()} duplicated entries were removed from primary key '${key0}' .."
+            //println ".. removed keys : " + keys_to_be_deleted
           }
-          if ( key_already_exists ) {
-            keys_to_be_deleted.add(key)
+          
+          // remove duplicated entries in translation_map
+          keys_to_be_deleted.each {
+            translation_map[key0].remove(it)
           }
+          
         }
-        
-        println ".. ${keys_to_be_deleted.size()} duplicated entries were removed .."
-        // remove duplicated entries in translation_map
-        keys_to_be_deleted.each {
-          translation_map.remove(it)
-        }
-        
         return translation_map
     }
     
@@ -344,27 +352,32 @@ class extract_rftypes_XML {
         
         println ".. working on '${map_name}'"
         
-        /*println ""
-        println map_target
-        println ""*/
         
-        map_target.each { key, val ->
+        map_target.each { key0, val0 ->
         
-          //println ".. working on key '${key}'"
-          if ( map_reference.containsKey(key) ) {
-            if ( parameters.verbose ) {
-              println "=> '${key}' already defined in EQ3's occu '${map_name}'"
+          println ".. working on primary key '${key0}' .."
+          //println map_reference[key0]
+          if ( map_reference.containsKey(key0) ) {
+            val0.each { key, var  ->
+                println ".. working on secondary key '${key}' .."
+                if ( map_reference[key0].containsKey(key) ) {
+                  //println "contained : " + map_reference[key0].containsKey(key)
+                  if ( parameters.verbose ) {
+                      println "=> '${key}' already defined in EQ3's occu '${map_name}'"
+                  }
+                  keys_to_be_deleted.add(key)
+                  //println keys_to_be_deleted
+                }
             }
-            keys_to_be_deleted.add(key)
           }
+          // remove duplicated entries in map_target
+          keys_to_be_deleted.each {
+            map_target[key0].remove(it)
+          }
+          
+          println ".. ${keys_to_be_deleted.size()} duplicated entries were removed from '${map_name}' and primary key '${key0}' .."
+          
         }
-        // remove duplicated entries in translation_map
-        keys_to_be_deleted.each {
-          map_target.remove(it)
-        }
-        
-        println ".. ${keys_to_be_deleted.size()} duplicated entries were removed from '${map_name}'"
-       
         return map_target
     }
     
@@ -372,18 +385,18 @@ class extract_rftypes_XML {
     static def remove_duplicates_from_addon_map ( Map addon_db_map, Map reference_db_map, Map parameters) {
     
         if ( parameters.verbose ) {
-          println "\n\n.. before removing duplicates the Addon master_parameter_translation_map has " + addon_db_map.master_parameters.size() + " entries"
-          println ".. before removing duplicates the Addon data_points_translation_map has " + addon_db_map.datapoints.size() + " entries"
-          println ".. before removing duplicates the Addon keys_translation_map has " + addon_db_map.keys.size() + " entries"
+          println "\n\n.. before removing duplicates the Addon master_parameter_translation_map has " + get_size_of_nested_map_depth_2(addon_db_map.master_parameters) + " entries"
+          println ".. before removing duplicates the Addon data_points_translation_map has " + get_size_of_nested_map_depth_2(addon_db_map.datapoints) + " entries"
+          println ".. before removing duplicates the Addon paramset_translation_map has " + get_size_of_nested_map_depth_2(addon_db_map.paramsets) + " entries"
           
-          println "\n\n.. before removing duplicates the Reference master_parameter_translation_map has " + reference_db_map.master_parameters.size() + " entries"
-          println ".. before removing duplicates the Reference data_points_translation_map has " + reference_db_map.datapoints.size() + " entries"
-          println ".. before removing duplicates the Reference keys_translation_map has " + reference_db_map.keys.size() + " entries\n\n"
+          println "\n\n.. before removing duplicates the Reference master_parameter_translation_map has " + get_size_of_nested_map_depth_2(reference_db_map.master_parameters) + " entries"
+          println ".. before removing duplicates the Reference data_points_translation_map has " + get_size_of_nested_map_depth_2(reference_db_map.datapoints) + " entries"
+          println ".. before removing duplicates the Reference paramset_translation_map has " + get_size_of_nested_map_depth_2(reference_db_map.paramsets) + " entries\n\n"
         }
 
         addon_db_map.master_parameters = remove_duplicates_from_map( addon_db_map.master_parameters, reference_db_map.master_parameters, parameters, "Master parameters map")
         addon_db_map.datapoints = remove_duplicates_from_map( addon_db_map.datapoints, reference_db_map.datapoints, parameters, "Datapoints map")
-        addon_db_map.keys = remove_duplicates_from_map( addon_db_map.keys, reference_db_map.keys, parameters, "Keys map")
+        addon_db_map.paramsets = remove_duplicates_from_map( addon_db_map.paramsets, reference_db_map.paramsets, parameters, "Keys map")
         
         return addon_db_map
 
@@ -429,12 +442,13 @@ class extract_rftypes_XML {
     }
     
     static def extract_string_translations_from_previous_xml_control_file( String XML_file_name ) {
-    
+
       def string_translation_maps    = [:]
       
       def string_translation_de_map  = [:]
       def string_translation_en_map  = [:]
       
+
       
       
       def file = new File(XML_file_name)
@@ -464,18 +478,23 @@ class extract_rftypes_XML {
                   }
                 }
               }
-              if (it.name() == "channel" ) {
+              if (it.name() == "channels" ) {
                 it.children().each {
-                  if (it.name() == "parameter" ) {
+                  if (it.name() == "channel" ) {
+                    //println it.@type
                     it.children().each {
-                      if ( it.name() == "stringtable_identifier" ) {
-                        my_stringtable_entry = it.toString()
-                      }
-                      if ( it.name() == "translation_de" ) {
-                        string_translation_de_map[my_stringtable_entry]=it.toString()
-                      }
-                      if ( it.name() == "translation_en" ) {
-                        string_translation_en_map[my_stringtable_entry]=it.toString()
+                      if (it.name() == "parameter" ) {
+                        it.children().each {
+                          if ( it.name() == "stringtable_identifier" ) {
+                            my_stringtable_entry = it.toString()
+                          }
+                          if ( it.name() == "translation_de" ) {
+                            string_translation_de_map[my_stringtable_entry]=it.toString()
+                          }
+                          if ( it.name() == "translation_en" ) {
+                            string_translation_en_map[my_stringtable_entry]=it.toString()
+                          }
+                        }
                       }
                     }
                   }
@@ -511,6 +530,9 @@ class extract_rftypes_XML {
       
       //println string_translation_de_map
       //println string_translation_en_map
+      
+      println ".. the extracted string_translation_de_map has " + string_translation_maps["de"].size() + " entries"
+      println ".. the extracted string_translation_en_map has " + string_translation_maps["en"].size() + " entries"
     
       return string_translation_maps
     }
@@ -548,8 +570,10 @@ class extract_rftypes_XML {
       else {
         println "\n\n.. a previous XML control file '${XML_file_name}' doesn't exist and therefore no device descriptions can be extracted! ..\n\n"
       }
-    
-      println device_descriptions_map
+      
+      println ".. the extracted device_descriptions_map has " + device_descriptions_map.size() + " entries"
+      
+      //println device_descriptions_map
     
       return device_descriptions_map
     }
@@ -577,7 +601,7 @@ class extract_rftypes_XML {
       //println string_containing_serialized_map
 
       def restored_map = Eval.me(string_containing_serialized_map)
-      
+
       return restored_map
     
     }
@@ -635,12 +659,13 @@ class extract_rftypes_XML {
         def devices_map                      = map.devices
         def master_parameter_translation_map = map.master_parameters
         def data_points_translation_map      = map.datapoints
-        def keys_translation_map             = map.keys
+        def paramset_translation_map         = map.paramsets
         
         def writer = new StringWriter()
         def xml = new MarkupBuilder(writer)
         
         def my_index = 0
+        
 
         xml.AsksinPP_addon_generator_control() {
           addon_name( parameters["addon_name"] )
@@ -656,8 +681,8 @@ class extract_rftypes_XML {
               devices_map.each { key, val ->
                 def ind_str = my_index.toString()
                 def device_id = key.toString() 
-                device ( ("id"):"${key}", "index":"${ind_str}", "device_name":"${val["device_name"]}", "device_model":"${val["device_model"]}", "device_small_case_name":"${val["device_small_case_name"]}",
-                "rftypes_XML_version":"${val["device_model_version"]}", "VersionString":"${val["VersionString"]}") {
+                device ( ("id"):"${key}", "index":ind_str, "device_name":val["device_name"], "device_model":val["device_model"], "device_small_case_name":val["device_small_case_name"],
+                "rftypes_XML_version":val["device_model_version"], "VersionString":val["VersionString"]) {
                   device_description ( update_device_description( device_id, device_descriptions_map ) )
                 }
                 //device ("${key}")
@@ -666,84 +691,143 @@ class extract_rftypes_XML {
             }
           }
 
-          if ( master_parameter_translation_map.size() > 0 )
+          if ( get_size_of_nested_map_depth_2(master_parameter_translation_map) > 0 )
           {
+            //println master_parameter_translation_map
             paramset {
-              master_parameter_translation_map.each { key, val ->
-                def my_paramset_id = val["paramset_id"].toString()
-                def my_paramset_type = val["paramset_type"].toString()
-                def my_channel = val["channel_type"].toString()
-                def ind_str = my_index.toString()
-                parameter ( ("id"):"${key}", "index":"${ind_str}", "paramset_type":"${my_paramset_type}" ,"paramset_id":"${my_paramset_id}" ) {
-                  stringtable_identifier ( val["stringTable_name"] )
-                  translation_de ( translate_string( val["stringTable_name"], string_translation_maps["de"] ) )
-                  translation_en ( translate_string( val["stringTable_name"], string_translation_maps["en"] ) )
-                  my_index = my_index + 1
-                }
-              }
-            }
-          }
-          
-          if ( data_points_translation_map.size() > 0 )
-          {
-            channel {
-              data_points_translation_map.each { key, val ->
-                def my_paramset_id = val["paramset_id"].toString()
-                def my_paramset_type = val["paramset_type"].toString()
-                def my_channel = val["channel_type"].toString()
-                def ind_str = my_index.toString()
-                parameter ( ("id"):"${key}", "index":"${ind_str}", "paramset_type":"${my_paramset_type}" ,"paramset_id":"${my_paramset_id}", "channel":"${my_channel}" ) {
-                  skip_channel_prefix ( "no" )
-                  stringtable_identifier ( val["stringTable_name"] )
-                  translation_de ( translate_string( val["stringTable_name"], string_translation_maps["de"] ) )
-                  translation_en ( translate_string( val["stringTable_name"], string_translation_maps["en"] ) )
-                  my_index = my_index + 1
-                }
-              }
-            }
-          }
-          
-          if ( keys_translation_map.size() > 0 )
-          {
-            paramset_defs {
-              keys_translation_map.each { key, val ->
-                def my_paramset_id = val["paramset_id"].toString()
-                def my_operations  = val["operations"].toString()
-                def ind_str = my_index.toString()
-                if ( val.containsKey("operations" ) && (my_operations != "" ) ) {
-                  parameter ( ("id"):"${key}", "index":"${ind_str}", "paramset_id":"${my_paramset_id}", "operations":"${my_operations}" ) {
-                    stringtable_identifier ( val["stringTable_name"].toString() )
-                    skip_key_prefix ( "yes" )
-                    key_prefix ( "KEY" )
+              master_parameter_translation_map.each { key0, val0 ->
+                val0.each { key, val  ->             
+                  def my_paramset_id = val["paramset_id"].toString()
+                  def my_paramset_type = val["paramset_type"].toString()
+                  def my_channel = val["channel_type"].toString()
+                  def ind_str = my_index.toString()
+                  parameter ( ("id"):"${key}", "index":ind_str, "paramset_type":my_paramset_type ,"paramset_id":my_paramset_id ) {
+                    stringtable_identifier ( val["stringTable_name"] )
                     translation_de ( translate_string( val["stringTable_name"], string_translation_maps["de"] ) )
                     translation_en ( translate_string( val["stringTable_name"], string_translation_maps["en"] ) )
                     my_index = my_index + 1
                   }
                 }
-                else {
-                  parameter ( ("id"):"${key}", "index":"${ind_str}", "paramset_id":"${my_paramset_id}" ) {
-                    stringtable_identifier ( val["stringTable_name"].toString() )
-                    skip_key_prefix ( "yes" )
-                    key_prefix ( "KEY" )
-                    translation_de ( translate_string( val["stringTable_name"], string_translation_maps["de"] ) )
-                    translation_en ( translate_string( val["stringTable_name"], string_translation_maps["en"] ) )
-                    my_index = my_index + 1
+              }
+            }
+          }
+          
+          if ( get_size_of_nested_map_depth_2(data_points_translation_map) > 0 )
+          {
+            //println data_points_translation_map
+            channels {
+              data_points_translation_map.each { key0, val0 ->
+                if ( val0.size() > 0 ) {
+                  channel( ("type"):"${key0}") {
+                    val0.each { key, val  ->
+                      def my_paramset_id = val["paramset_id"].toString()
+                      def my_paramset_type = val["paramset_type"].toString()
+                      def my_channel = val["channel_type"].toString()
+                      def ind_str = my_index.toString()
+                      parameter ( ("id"):"${key}", "index":ind_str, "paramset_type":my_paramset_type ,"paramset_id":my_paramset_id, "channel":my_channel ) {
+                        skip_channel_prefix ( "no" )
+                        stringtable_identifier ( val["stringTable_name"] )
+                        translation_de ( translate_string( val["stringTable_name"], string_translation_maps["de"] ) )
+                        translation_en ( translate_string( val["stringTable_name"], string_translation_maps["en"] ) )
+                        my_index = my_index + 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          
+          if ( get_size_of_nested_map_depth_2(paramset_translation_map) > 0 )
+          {
+            //println paramset_translation_map
+            paramset_defs {
+              paramset_translation_map.each { key0, val0 ->
+                if ( val0.size() > 0 ) {
+                  paramset( ("id"):"${key0}") {
+                    val0.each { key, val  ->
+                      def my_paramset_id = val["paramset_id"].toString()
+                      def my_operations  = val["operations"].toString()
+                      def my_channel = val["channel"].toString()
+                      def my_key_prefix = "KEY"
+                      def skip_paramset_prefix_flag = "yes"
+                      if ( my_channel != "" ) {
+                        my_key_prefix = my_channel
+                        skip_paramset_prefix_flag = "no"
+                      }
+                      def ind_str = my_index.toString()
+                      if ( val.containsKey("operations" ) && (my_operations != "" ) ) {
+                        parameter ( ("id"):"${key}", "index":ind_str, "paramset_id":my_paramset_id, "operations":my_operations, "channel":my_channel ) {
+                          stringtable_identifier ( val["stringTable_name"].toString() )
+                          skip_paramset_prefix ( skip_paramset_prefix_flag )
+                          paramset_prefix ( my_key_prefix )
+                          translation_de ( translate_string( val["stringTable_name"], string_translation_maps["de"] ) )
+                          translation_en ( translate_string( val["stringTable_name"], string_translation_maps["en"] ) )
+                          my_index = my_index + 1
+                        }
+                      }
+                      else {
+                        parameter ( ("id"):"${key}", "index":ind_str, "paramset_id":my_paramset_id, "channel":my_channel ) {
+                          stringtable_identifier ( val["stringTable_name"].toString() )
+                          skip_paramset_prefix ( skip_paramset_prefix_flag )
+                          paramset_prefix ( my_key_prefix )
+                          translation_de ( translate_string( val["stringTable_name"], string_translation_maps["de"] ) )
+                          translation_en ( translate_string( val["stringTable_name"], string_translation_maps["en"] ) )
+                          my_index = my_index + 1
+                        }
+                      }
+                    }
                   }
                 }
               }
             }
           }
         }
-
-        /*println ""
-        println writer*/
         
         return writer.toString()
     }
     
-    static def get_list_of_xml_files(String directory_name, Map parameters) {
+    static def check_correctness_of_occu_path ( Map parameters ) {
+      
+      def directory_name = parameters.occu_path
+      
+      if ( directory_name[-1] == "/" ) {
+        println "\n.. checking specified path of EQ3's occu repository .."
+        println ".. removing '/' at end of occu path .."
+        directory_name = directory_name[0..-2]
+        println ".. updated occu path is '" + directory_name + "' .."
+        parameters.occu_path = directory_name
+      }
+      
+      def fh = new File(directory_name)
+      
+      if ( ! fh.isDirectory() ) {
+        println "\nE R R O R : The specified path of EQ3's occu repository '" + directory_name + "' is not a directory!"
+          println "Aborting .."
+          System.exit(0)
+      }
+      
+      def test_dir_name = directory_name + "/firmware/rftypes"
+      def fh2 = new File(test_dir_name)
+      
+      if ( ! fh2.isDirectory() ) {
+        println "\nE R R O R : The specified EQ3's occu repository '" + directory_name + "' does not contain a subdirectory '" + test_dir_name + "'!"
+          println "Aborting .."
+          System.exit(0)
+      }
+      
+      test_dir_name = directory_name + "/WebUI/www/config/easymodes"
+      fh2 = new File(test_dir_name)
+      
+      if ( ! fh2.isDirectory() ) {
+        println "\nE R R O R : The specified EQ3's occu repository '" + directory_name + "' does not contain a subdirectory '" + test_dir_name + "'!"
+          println "Aborting .."
+          System.exit(0)
+      }
+    }
     
-    
+    static def get_list_of_xml_files(String directory_name) {
+        
         def fh = new File(directory_name)
         
         // search for XML files with extension '*.xml'
@@ -771,13 +855,73 @@ class extract_rftypes_XML {
           println "Aborting .."
           System.exit(0)
         }
-        println "\n..found ${count} XML files in directory '${directory_name}' ..\n"
+        println "\n.. found ${count} XML files in directory '${directory_name}' ..\n"
         
         if ( count < 50 ) {
-          println "\nW A R N I N G : The amount of XML files in the specified occu path '${parameters.occu_path}' is rather small: Only ${count} ! Please check the proper setting of the occu path!\n\n"
+          println "\nW A R N I N G : The amount of XML files in the specified occu path '${directory_name}' is rather small: Only ${count} ! Please check the proper setting of the occu path!\n\n"
         }
         
         return xml_file_list
+    }
+    
+    static def get_list_of_tcl_files( String directory_name, Map parameters ) {
+    
+        def tcl_file_list = []
+        
+        if ( ! parameters.no_easymodes ) {
+    
+          if ( directory_name[-1] == "/" ) {
+            println "\n.. checking specified path for easymodes tcl files .."
+            println ".. removing '/' at end of easymodes tcl path .."
+            directory_name = directory_name[0..-2]
+            println ".. updated easymodes tcl path is '" + directory_name + "' .."
+          }
+          
+          def fh = new File(directory_name)
+          
+          if ( ! fh.isDirectory() ) {
+            println "\nE R R O R : The specified path for easymodes tcl files '" + directory_name + "' is not a directory!"
+              println "Aborting .."
+              System.exit(0)
+          }
+          
+          String required_match_regex = /^#!\/bin\/tclsh$/
+          
+          // search for TCL files with extension '*.'
+          def p =  ~/.*\.tcl/
+
+          
+          def count = 0
+          
+          if ( fh.isDirectory() ) {
+
+            fh.eachFileMatch(p) { tcl_file ->
+            
+              def first_line
+              def fh_tcl = new File( tcl_file.toString() )
+              
+              fh_tcl.withReader { first_line = it.readLine() }  
+              
+              if ( ! ( first_line ==~ required_match_regex ) ) {
+                println "W A R N I N G: The TCL file '${tcl_file}' might not a valid  TCL file! Please check! The first line is not '#!/bin/tclsh'!"
+              }
+
+              def file_name_without_extension = tcl_file.name.replaceFirst(~/\.[^\.]+$/, '')
+              
+              tcl_file_list.add(file_name_without_extension.toString())
+              count++
+              
+            }
+          }
+          else {
+            println "E R R O R : The specified directory ${directory_name} is not a directory!\n"
+            println "Aborting .."
+            System.exit(0)
+          }
+          println "\n.. found ${count} TCL files in directory '${directory_name}' ..\n"
+        }
+        
+        return tcl_file_list
     }
     
     static def get_list_of_bck_files(String directory_name, Map parameters) {
@@ -818,7 +962,9 @@ class extract_rftypes_XML {
         // Create the list of options.
         cli.with {
             h longOpt: 'help', 'Show usage information'
-            occu longOpt: 'extract_occu_XMLs', args: 1, argName: 'occu_path', 'path for extracting defined names in EQ-3\'s occu repository @ firmware/rftypes'
+            occu longOpt: 'path_of_EQ3_occu_repository', args: 1, argName: 'occu_path', 'path of EQ-3\'s occu repository'
+            easy longOpt: 'check_easymode_tcl_files', args: 1, argName: 'easy_path', 'path for checking for easymode tcl files default: ../src/addon/www/config/easymodes'
+            ne longOpt: 'dont_extract_easymodes', args: 0, 'do not extract easymodes tcl files from easy path'
             o longOpt: 'output_XML_file', args: 1, argName: 'output_file_name', 'file name of generated XML control file'
             s longOpt: 'strict', args: 0, 'exact match of names without adding prefixes, e.g. channel_type'
             x longOpt: 'verbose', args: 0, 'verbose'
@@ -893,6 +1039,18 @@ class extract_rftypes_XML {
         }
         else {
           parameters.occu_path = "."
+        }
+        if ( options.easy ) {
+          parameters.easymode_path = options.easy
+        }
+        else {
+          parameters.easymode_path = Easymode_tcl_directory
+        }
+        if ( options.ne ) {
+          parameters.no_easymodes    = true
+        }
+        else {
+          parameters.no_easymodes    = false
         }
         if ( options.r ) {
           parameters.restore_db    = true
@@ -972,29 +1130,102 @@ class extract_rftypes_XML {
         return parameters
     } 
     
+    
+    static def get_size_of_nested_map_depth_2( Map nested_map ) {
+
+        def count = 0
+        nested_map.each { key, var ->
+          count = count + var.size()
+        }
+        
+        return count
+        
+    }
+  
+    
+    static def print_nested_map_depth_2( Map nested_map, String str1, String str2 ) {
+
+        nested_map.each{
+          print "=====>"
+          println ("${str1} : " + it.key )
+          it.value.each {
+              println ("${str2} ${it.key} : " + it.value)
+          }
+        }
+    }
+    
+    static def check_if_paramset_is_an_easymode( String paramset_id, List easymodes_tcl_list, Map subset_map ) {
+    
+      Boolean is_easymode_flag = false
+      String  keyset_comp_id
+      
+      // translate paramset_id by subset_map if it applies
+      if ( subset_map.containsKey( paramset_id ) ) {
+        keyset_comp_id = subset_map[paramset_id][0]
+        //println "=>" + paramset_id
+        //println "==>" + keyset_comp_id
+      }
+      else {
+        keyset_comp_id = paramset_id
+      }
+      
+      if ( easymodes_tcl_list.contains(keyset_comp_id) ) {
+        is_easymode_flag = true
+      }
+      
+      if ( is_easymode_flag ) {
+        println ".. found easymode '" + paramset_id + "' .."
+      }
+      
+      return is_easymode_flag
+      
+    }
+    
+    static def get_channel_from_subset_map( String paramset_id, Map subset_map ) {
+    
+      def channel_of_subset = ""
+      
+      if ( subset_map.containsKey( paramset_id ) ) {
+        channel_of_subset = subset_map[paramset_id][1]
+        //println "=>" + paramset_id
+        //println "==> channel : " + channel_of_subset
+      }
+      
+      return channel_of_subset
+      
+    }
+  
+    
     static def extract_rftypes_xml (Map db_map, Map eq3_db_map, my_xml_rftypes_XML_file_name, String string_prefix) {
     
         def devices_map                      = [:]
         def master_parameter_translation_map = [:]
         def data_points_translation_map      = [:]
-        def keys_translation_map             = [:]
+        def paramset_translation_map         = [:]
+        def easymodes_tcl_list               = []
         def parameters                       = [:]
         
         def webui_js_map                     = [:]
         def StringTable_de_map               = [:]
         def translate_lang_stringtable_map   = [:]
-            
-        devices_map                      = db_map.devices
-        master_parameter_translation_map = db_map.master_parameters
-        data_points_translation_map      = db_map.datapoints
-        keys_translation_map             = db_map.keys
-        parameters                       = db_map.parameters
-       
-        webui_js_map                     = eq3_db_map.webui_js
-        StringTable_de_map               = eq3_db_map.stringTable_de
-        translate_lang_stringtable_map   = eq3_db_map.translate_lang_stringtable
         
-    
+        def subset_map                       = [:]
+        
+       
+        devices_map                          = db_map.devices
+        master_parameter_translation_map     = db_map.master_parameters
+        
+        data_points_translation_map          = db_map.datapoints
+        paramset_translation_map             = db_map.paramsets
+        easymodes_tcl_list                   = db_map.easymodes
+        parameters                           = db_map.parameters
+       
+        webui_js_map                         = eq3_db_map.webui_js
+        StringTable_de_map                   = eq3_db_map.stringTable_de
+        translate_lang_stringtable_map       = eq3_db_map.translate_lang_stringtable
+        
+        
+        
         println "\n.. the specified rftypes XML file is '${my_xml_rftypes_XML_file_name}'"
             
         def device_name = ""
@@ -1039,7 +1270,7 @@ class extract_rftypes_XML {
         else {
           device_model     = xml.supported_types.type.parameter.@const_value[1]
         }
-        
+        println "\n\n======================================================================================================================\n\n"
         println "\n.. extracting rftypes XML file of ${device_id}.. \n\n"
 
         println ""
@@ -1074,12 +1305,7 @@ class extract_rftypes_XML {
         parameters["creator_prefix"]         = creator_prefix
         parameters["current_date_time"]      = get_current_date_time()
         parameters["creator"]                = System.getProperty("user.name").toString()
-        
-        /*parameters.each { key, var ->
-        println "${key} => ${var}"
-        }*/
 
-        // parse XML tree
             
         xml.children().each {
           //println "1 '${it.name()}'"
@@ -1093,6 +1319,9 @@ class extract_rftypes_XML {
           { if ( it.@type == "MASTER" ) {
               def paramset_type = it.@type.toString()
               def paramset_id   = it.@id.toString()
+              if ( ! master_parameter_translation_map.containsKey(paramset_type) ) {
+                master_parameter_translation_map[paramset_type]=[:]
+              }
               it.children().each {
                 def master_parameter_id
                 if ( it.name() == "parameter" ) {
@@ -1100,7 +1329,7 @@ class extract_rftypes_XML {
                   master_parameter_id = it.@id.toString()
                   def ui_flags = it.@ui_flags.toString()
                   if ( ui_flags != "invisible" ) {
-                    master_parameter_translation_map[master_parameter_id]=["type":"device_parameters", "paramset_type":"${paramset_type}", "paramset_id":"${paramset_id}", "stringTable_name":"stringTable" + string_prefix + "_"+creator_prefix+"_"+master_parameter_id,"options":[]]
+                    master_parameter_translation_map[paramset_type][master_parameter_id]=["type":"device_parameters", "paramset_type":paramset_type, "paramset_id":paramset_id, "stringTable_name":"stringTable" + string_prefix + "_"+creator_prefix+"_"+master_parameter_id,"options":[]]
                     // check for options
                     it.children().each {
                       if ( ( it.name() == "logical" ) && ( it.@type == "option" ) ) {
@@ -1108,11 +1337,15 @@ class extract_rftypes_XML {
                           //println "=====>  option '${master_parameter_id}=${it.@id}'"
                           def my_option = master_parameter_id + "=" + it.@id.toString()
                           //println my_option
-                          master_parameter_translation_map[master_parameter_id]."options".add(my_option)
+                          master_parameter_translation_map[paramset_type][my_option]=["type":"device_parameters", "paramset_type":paramset_type, "paramset_id":paramset_id, "stringTable_name":"stringTable" + string_prefix + "_"+creator_prefix+"_"+master_parameter_id+"_"+it.@id.toString(),"options":[my_option]]
                         }
                       }
                     }
                   }
+                }
+                if ( it.name() == "subset" ) {
+                  println ".. adding to subset_map: " + it.@ref.toString() + " -> " + paramset_id + " @ device 'MASTER'"
+                  subset_map[it.@ref.toString()] = [paramset_id, "MASTER"]
                 }
               }
             }
@@ -1124,18 +1357,20 @@ class extract_rftypes_XML {
               if ( it.name() == "channel" ) {
                 //println "=> channel  '${it.@type}' found"
                 def channel_type = it.@type.toString()
+                data_points_translation_map[channel_type]=[:]
                 it.children().each {
                   if (it.name() == "paramset" )
                   { //println "=> paramset '${it.@type}' found"
                     def paramset_type = it.@type.toString()
                     def paramset_id   = it.@id.toString()
+
                     it.children().each {
                       def datapoint_id
                       if ( it.name() == "parameter" ) {
                         //println "=====> datapoint '${channel_type}|${it.@id}' found"
                         datapoint_id = it.@id.toString()
                         //println datapoint_id
-                        data_points_translation_map[datapoint_id]=["type":"channel", "paramset_type":"${paramset_type}", "paramset_id":"${paramset_id}", "channel_type":"${channel_type}", "stringTable_name":"stringTable" + string_prefix + "_"+creator_prefix+"_"+datapoint_id,"options":[]]
+                        data_points_translation_map[channel_type][datapoint_id]=["type":"channel", "paramset_type":paramset_type, "paramset_id":paramset_id, "channel_type":channel_type, "stringTable_name":"stringTable" + string_prefix + "_"+creator_prefix+"_"+datapoint_id,"options":[]]
                       }
                       // check for options
                       it.children().each {
@@ -1144,12 +1379,16 @@ class extract_rftypes_XML {
                             //println "=====>  option '${datapoint_id}=${it.@id}'"
                             def my_option = datapoint_id + "=" + it.@id.toString()
                             //println my_option
-                            data_points_translation_map[datapoint_id]."options".add(my_option)
-                            //println data_points_translation_map[datapoint_id]
+                            data_points_translation_map[channel_type][my_option]=["type":"channel", "paramset_type":paramset_type, "paramset_id":paramset_id, "channel_type":channel_type, "stringTable_name":"stringTable" + string_prefix + "_"+creator_prefix+"_"+datapoint_id+"_"+it.@id.toString(),"options":[my_option]]
                           }
                         }
                       }
+                      if ( it.name() == "subset" ) {
+                        println ".. adding to subset_map: " + it.@ref.toString() + " -> " + paramset_id + " @ channel '" + channel_type + "'"
+                        subset_map[it.@ref.toString()] = [paramset_id, channel_type]
+                      }
                     }
+                    
                   } 
                 }
               }
@@ -1161,24 +1400,33 @@ class extract_rftypes_XML {
               if (it.name() == "paramset" )
               { //println "=> paramset '${it.@id}' found"
                 def paramset_type = it.@type.toString()
-                def keyset_id     = it.@id.toString()
-
-                it.children().each {
-                  if (it.name() == "parameter" )
-                  { 
-                    //println "===== KEY of '${keyset_id}': 'KEY|${it.@id}' found"
-                    def key_id = it.@id.toString()
-                    def my_operations = it.@operations.toString()
-                    if ( it.@ui_flags != "internal" ) {
+                def paramset_id     = it.@id.toString()
+                //println paramset_id
+                //println subset_map
+                //println easymodes_tcl_list
+                if ( check_if_paramset_is_an_easymode( paramset_id, easymodes_tcl_list, subset_map ) ) {
+                  //println check_if_paramset_is_an_easymode( paramset_id, easymodes_tcl_list, subset_map )
+                }
+                else {
+                  //println check_if_paramset_is_an_easymode( paramset_id, easymodes_tcl_list, subset_map )
+                  //println "=>>>> channel: " + get_channel_from_subset_map( paramset_id, subset_map )
+                  paramset_translation_map[paramset_id]=[:]
+                  it.children().each {
+                    if (it.name() == "parameter" )
+                    { 
+                      //println "===== KEY of '${paramset_id}': 'KEY|${it.@id}' found"
+                      def key_id = it.@id.toString()
+                      def my_operations = it.@operations.toString()
+                      def my_control = it.@control.toString()
                       //println "KEY: " + key_id
-                      keys_translation_map[key_id]=["type":"paramset_defs", "paramset_type":"${paramset_type}", "paramset_id": "${keyset_id}", "stringTable_name":"stringTable" + string_prefix + "_"+creator_prefix+"_"+key_id,"options":[], "operations":my_operations]
-                      //println keys_translation_map[key_id]
+                      paramset_translation_map[paramset_id][key_id]=["type":"paramset_defs", "paramset_type":paramset_type, "paramset_id": paramset_id, "stringTable_name":"stringTable" + string_prefix + "_"+creator_prefix+"_"+key_id,"options":[], "operations":my_operations, "control":my_control, "channel":get_channel_from_subset_map( paramset_id, subset_map )]
+                      //println paramset_translation_map[paramset_id][key_id]
                       it.children().each {
                         if ( ( it.name() == "logical" ) && ( it.@type == "option" ) ) {
                           it.children().each {
                               //println "=====>  option 'KEY|${key_id}': '${it.@id}'"
                               def my_key_option = key_id + "=" + it.@id.toString()
-                              keys_translation_map[key_id]."options".add(my_key_option)
+                              paramset_translation_map[paramset_id][my_key_option]=["type":"paramset_defs", "paramset_type":paramset_type, "paramset_id": paramset_id, "stringTable_name":"stringTable" + string_prefix + "_"+creator_prefix+"_"+key_id+"_"+it.@id.toString(),"options":[my_key_option], "operations":my_operations, "control":my_control, "channel":get_channel_from_subset_map( paramset_id, subset_map )]
                           }
                         }
                       }
@@ -1189,33 +1437,32 @@ class extract_rftypes_XML {
             } 
           }
         } 
+        
+        //println ""
+        //println master_parameter_translation_map
+        //println data_points_translation_map
+        //println paramset_translation_map
+        //println ""
             
         if ( parameters.verbose ) {
+        
+            println "\n\nExtracted subset map:\n\n"
+            
+            println subset_map
+            
+            println ""
             
             println "\n\nExtracted master parameter candidates for translation are:\n\n"
+            
+            print_nested_map_depth_2(master_parameter_translation_map,"channel", "parameter")
                 
-            master_parameter_translation_map.each{
-                print "=====>"
-                print it
-                println (" : " + master_parameter_translation_map[it])
-            }
+            println "\n\nExtracted channel parameter candidates for translation are:\n\n"
+            
+            print_nested_map_depth_2(data_points_translation_map,"channel", "parameter")
                 
-                
-            println "\n\nExtracted data point candidates for translation are:\n\n"
-                
-            data_points_translation_map.each{
-                print "=====>"
-                print it
-                println (" : " + data_points_translation_map[it])
-            }
-                
-            println "\n\nExtracted key_id candidates for translation are:\n\n"
-                
-            keys_translation_map.each{
-                print "=====>"
-                print it
-                println (" : " + keys_translation_map[it])
-            }
+            println "\n\nExtracted paramset parameter candidates for translation are:\n\n"
+            
+            print_nested_map_depth_2(paramset_translation_map,"paramset", "parameter")
             
         }
         
@@ -1225,38 +1472,33 @@ class extract_rftypes_XML {
         
         data_points_translation_map      = remove_duplicates_from_translation_map(data_points_translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map, parameters)
         
-        keys_translation_map             = remove_duplicates_from_translation_map(keys_translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map, parameters)
+        paramset_translation_map             = remove_duplicates_from_translation_map(paramset_translation_map, webui_js_map, StringTable_de_map, translate_lang_stringtable_map, parameters)
         
         if ( parameters.verbose ) {
         
           println "\n\nRemaining master parameter candidates for translation are:\n\n"
         
-          master_parameter_translation_map.each{
-            print "=====>"
-            print it
-            println (" : " + master_parameter_translation_map[it])
-          }
+          print_nested_map_depth_2(master_parameter_translation_map,"channel", "parameter")
         
           println "\n\nRemaining data point candidates for translation are:\n\n"
-        
-          data_points_translation_map.each{
-            print "=====>"
-            print it
-            println (" : " + data_points_translation_map[it])
-          }
-        
-          println "\n\nRemaining key_id candidates for translation are:\n\n"
-        
-          keys_translation_map.each{
-            print "=====>"
-            print it
-            println (" : " + keys_translation_map[it])
-          }
           
-          println ".. the master_parameter_translation_map has " + master_parameter_translation_map.size() + " entries"
-          println ".. the data_points_translation_map has " + data_points_translation_map.size() + " entries"
-          println ".. the keys_translation_map has " + keys_translation_map.size() + " entries"
+          print_nested_map_depth_2(data_points_translation_map,"channel", "parameter")
+        
+          println "\n\nRemaining paramset candidates for translation are:\n\n"
+        
+          print_nested_map_depth_2(paramset_translation_map,"paramset", "parameter")
+          
+          println ".. the master_parameter_translation_map has " + get_size_of_nested_map_depth_2(master_parameter_translation_map) + " entries"
+          println ".. the data_points_translation_map has " + get_size_of_nested_map_depth_2(data_points_translation_map) + " entries"
+          println ".. the paramset_translation_map has " + get_size_of_nested_map_depth_2(paramset_translation_map) + " entries"
         }
+        
+        db_map.devices                       = devices_map
+        db_map.master_parameters             = master_parameter_translation_map
+        db_map.datapoints                    = data_points_translation_map
+        db_map.paramsets                     = paramset_translation_map
+        db_map.easymodes                     = easymodes_tcl_list
+        db_map.parameters                    = parameters
         
         return db_map
     }
@@ -1383,13 +1625,13 @@ class extract_rftypes_XML {
       println addon_db_map*/
       
       if ( parameters.verbose ) {
-        println "\n\n.. before merging the Addon master_parameter_translation_map has " + addon_db_map.master_parameters.size() + " entries"
-        println ".. before merging the Addon data_points_translation_map has " + addon_db_map.datapoints.size() + " entries"
-        println ".. before merging the Addon keys_translation_map has " + addon_db_map.keys.size() + " entries"
+        println "\n\n.. before merging the Addon master_parameter_translation_map has " + get_size_of_nested_map_depth_2(addon_db_map.master_parameters) + " entries"
+        println ".. before merging the Addon data_points_translation_map has " + get_size_of_nested_map_depth_2(addon_db_map.datapoints) + " entries"
+        println ".. before merging the Addon paramset_translation_map has " + get_size_of_nested_map_depth_2(addon_db_map.paramsets) + " entries"
         
-        println "\n\n.. before merging the restored Addon master_parameter_translation_map has " + restore_db_map.master_parameters.size() + " entries"
-        println ".. before merging the restored Addon data_points_translation_map has " + restore_db_map.datapoints.size() + " entries"
-        println ".. before merging the restored Addon keys_translation_map has " + restore_db_map.keys.size() + " entries\n\n"
+        println "\n\n.. before merging the restored Addon master_parameter_translation_map has " + get_size_of_nested_map_depth_2(restore_db_map.master_parameters) + " entries"
+        println ".. before merging the restored Addon data_points_translation_map has " + get_size_of_nested_map_depth_2(restore_db_map.datapoints) + " entries"
+        println ".. before merging the restored Addon paramset_translation_map has " + get_size_of_nested_map_depth_2(restore_db_map.paramsets) + " entries\n\n"
       }
       
 
@@ -1401,9 +1643,9 @@ class extract_rftypes_XML {
       }
       
       println "\n\n.. the merged Addon devices_map has " + merged_db_map.devices.size() + " entries"
-      println ".. the merged Addon master_parameter_translation_map has " + merged_db_map.master_parameters.size() + " entries"
-      println ".. the merged Addon data_points_translation_map has " + merged_db_map.datapoints.size() + " entries"
-      println ".. the merged Addon keys_translation_map has " + merged_db_map.keys.size() + " entries"
+      println ".. the merged Addon master_parameter_translation_map has " + get_size_of_nested_map_depth_2(merged_db_map.master_parameters) + " entries"
+      println ".. the merged Addon data_points_translation_map has " + get_size_of_nested_map_depth_2(merged_db_map.datapoints) + " entries"
+      println ".. the merged Addon paramset_translation_map has " + get_size_of_nested_map_depth_2(merged_db_map.paramsets) + " entries"
     
       return merged_db_map
     }
@@ -1446,52 +1688,78 @@ class extract_rftypes_XML {
         def StringTable_de_map             =  parseStringTable(my_file_name)
         my_file_name = check_file(parameters.eQ3_path + "/" + "translate.lang.stringtable.js")
         def translate_lang_stringtable_map = parseJson(my_file_name)
-        
-        
+
         // define occu maps
         def occu_db_map                      = [:]
         // define eq3_map for webui.js, stringtable_de.txt, translate.lang.stringtable.js
         def eq3_db_map                       = [:]
         
-        // extract defined names in EQ3's OCCU repository at ${parameters.occu_path}/*.xml
+        // extract defined names in EQ3's OCCU repository at ${parameters.occu_path}/firmware/rftypes/*.xml
         if ( parameters.extract_XMLs ) {
         
+          check_correctness_of_occu_path( parameters )
+
           def devices_map                      = [:]
           def master_parameter_translation_map = [:]
           def data_points_translation_map      = [:]
-          def keys_translation_map             = [:]
+          def paramset_translation_map         = [:]
           def restored_database_maps           = [:]
+          def easymodes_tcl_list               = []
           
           //store maps into master occu_db_map
           occu_db_map.devices                       = devices_map
           occu_db_map.master_parameters             = master_parameter_translation_map
           occu_db_map.datapoints                    = data_points_translation_map
-          occu_db_map.keys                          = keys_translation_map
+          occu_db_map.paramsets                     = paramset_translation_map
+          occu_db_map.easymodes                     = easymodes_tcl_list
           occu_db_map.parameters                    = parameters
+          
           eq3_db_map.webui_js                       = webui_js_map
           eq3_db_map.stringTable_de                 = StringTable_de_map
           eq3_db_map.translate_lang_stringtable     = restored_database_maps
           
         
           // set prefix for EQ3 devices
-          def string_prefix = "EQ3"
-          def path_to_XMLs = parameters.occu_path
-          def list_of_xml_files = []
-          println "\nExtracting now defined names in the specified EQ-3\'s occu repository @ ${path_to_XMLs}/*.xml .. \n"
-          list_of_xml_files = get_list_of_xml_files( path_to_XMLs, parameters )
+          def string_prefix             = "EQ3"
+          def list_of_xml_files         = []
+          def list_of_easymode_tc_files = []
+          def easymode_tcl_directory    = parameters.occu_path + "/WebUI/www/config/easymodes"
+          def rftypes_xml_directory     = parameters.occu_path + "/firmware/rftypes"
+          
+          
+          println "\n.. extracting now easymode tcl files located in EQ-3\'s occu repository @ '${easymode_tcl_directory}/*.tcl' .. \n"
+          easymodes_tcl_list = get_list_of_tcl_files( easymode_tcl_directory, parameters )
+          occu_db_map.easymodes                     = easymodes_tcl_list
+          
+          if ( parameters.verbose ) {
+            println ".. extracted easymode tcl file names are:\n" 
+            println easymodes_tcl_list
+            println ""
+          }
+          
+          println "\n\n======================================================================================================================"
+          println "======================================================================================================================\n\n"
+          println "\n.. extracting now defined names in the specified EQ-3\'s occu repository @ '${parameters.occu_path}/firmware/rftypes/*.xml' .. \n"
+          list_of_xml_files = get_list_of_xml_files( rftypes_xml_directory )
           
           list_of_xml_files.each {
             println "\n\n.. working on '${it}' ..\n"
             occu_db_map = extract_rftypes_xml(occu_db_map, eq3_db_map, it, string_prefix )
+            
           }
           
           println "\n\n.. the EQ3 Occu devices_map has " + occu_db_map.devices.size() + " entries"
-          println ".. the EQ3 Occu master_parameter_translation_map has " + occu_db_map.master_parameters.size() + " entries"
-          println ".. the EQ3 Occu data_points_translation_map has " + occu_db_map.datapoints.size() + " entries"
-          println ".. the EQ3 Occu keys_translation_map has " + occu_db_map.keys.size() + " entries"
+          println ".. the EQ3 Occu master_parameter_translation_map has " + get_size_of_nested_map_depth_2(occu_db_map.master_parameters) + " entries"
+          println ".. the EQ3 Occu data_points_translation_map has " + get_size_of_nested_map_depth_2(occu_db_map.datapoints) + " entries"
+          println ".. the EQ3 Occu paramset_translation_map has " + get_size_of_nested_map_depth_2(occu_db_map.paramsets) + " entries"
+          println ".. the EQ3 Occu easymodes tcl list has " + occu_db_map.easymodes.size() + " entries"
           
           //save database
            save_maps_to_file(occu_db_map, parameters, parameters.eq3_db)
+          
+          println "\n\n.. finished extracting defined names in the specified EQ-3\'s occu repository @ '${parameters.occu_path}/firmware/rftypes/*.xml' .. \n"
+          println "======================================================================================================================"
+          println "======================================================================================================================\n\n"
         }
         
         
@@ -1502,16 +1770,18 @@ class extract_rftypes_XML {
         def devices_map                      = [:]
         def master_parameter_translation_map = [:]
         def data_points_translation_map      = [:]
-        def keys_translation_map             = [:]
+        def paramset_translation_map         = [:]
+        def easymodes_tcl_list               = []
         def string_translation_maps          = [:]
         def device_descriptions_map          = [:]
+        def occu_easymodes_tcl_list          = []
         
         
         // restore addon_db_map from previous run if specified as command line parameter
         if ( parameters.restore_db ) {
           // restore database
           println parameters.addon_db_file_name
-          println "\nRestoring database from file .. \n"
+          println "\nRestoring database from file '${parameters.addon_db_file_name}' .. \n"
           restore_db_map = read_maps_from_file(parameters.addon_db_file_name)
           
            if ( parameters.verbose ) {
@@ -1522,8 +1792,10 @@ class extract_rftypes_XML {
             println restore_db_map.master_parameters
             println "\n.. restored map of datapoints:\n"
             println restore_db_map.datapoints
-            println "\n.. restored map of keys:\n"
-            println restore_db_map.keys
+            println "\n.. restored map of paramsets:\n"
+            println restore_db_map.paramsets
+            println "\n.. restored list of easymodes:\n"
+            println restore_db_map.easymodes
             println ""
           }
         }
@@ -1532,17 +1804,43 @@ class extract_rftypes_XML {
         addon_db_map.devices                       = devices_map
         addon_db_map.master_parameters             = master_parameter_translation_map
         addon_db_map.datapoints                    = data_points_translation_map
-        addon_db_map.keys                          = keys_translation_map
+        addon_db_map.paramsets                     = paramset_translation_map
+        addon_db_map.easymodes                     = easymodes_tcl_list
         addon_db_map.parameters                    = parameters
         eq3_db_map.webui_js                        = webui_js_map
         eq3_db_map.stringTable_de                  = StringTable_de_map
         eq3_db_map.translate_lang_stringtable      = translate_lang_stringtable_map
+        
+
+        def easymode_tcl_directory                 = parameters.easymode_path 
+        
+        println "\n.. extracting now easymode tcl files located in specified easymodes tcl directory @ '${parameters.easymode_path}/*.tcl' .. \n"
+        easymodes_tcl_list = get_list_of_tcl_files( easymode_tcl_directory, parameters )
+        
+        def occu_easymode_tcl_directory    = parameters.occu_path + "/WebUI/www/config/easymodes"
+        println "\n.. extracting now easymode tcl files located in EQ-3\'s occu repository @ '${occu_easymode_tcl_directory}/*.tcl' .. \n"
+        occu_easymodes_tcl_list = get_list_of_tcl_files( occu_easymode_tcl_directory, parameters )
+        
+        //merge the two easymode tcl lists
+        def merged_easymodes_tcl_list = easymodes_tcl_list + occu_easymodes_tcl_list
+        //unify the merged easymode tcl list
+        def unique_merged_easymodes_tcl_list = merged_easymodes_tcl_list.unique()
+
+          
+        addon_db_map.easymodes                     = unique_merged_easymodes_tcl_list
+          
+        if ( parameters.verbose ) {
+          println ".. extracted easymode tcl file names are:\n" 
+          println easymodes_tcl_list
+          println ""
+        }
         
         
         // extract the specified HB rftypes XML file
         // set prefix for homebrew devices
         def string_prefix = "HB"
         addon_db_map = extract_rftypes_xml(addon_db_map, eq3_db_map, my_xml_rftypes_XML_file_name, string_prefix )
+        
         
         if ( parameters.extract_XMLs ) {
           // remove duplicated entries of addon_db_map and occu_db_map submaps
@@ -1558,14 +1856,17 @@ class extract_rftypes_XML {
             println "\nRestored_map\n\n"
             println restore_db_map
           }
+        
           println "\n\n.. removing duplicated entries of  addon_db_map and restore_db_map ..\n"
           addon_db_map = remove_duplicates_from_addon_map(addon_db_map, restore_db_map, parameters)
+          
         }
         
         println "\n\n.. the Addon device_map has " + addon_db_map.devices.size() + " entries"
-        println ".. the Addon master_parameter_translation_map has " + addon_db_map.master_parameters.size() + " entries"
-        println ".. the Addon data_points_translation_map has " + addon_db_map.datapoints.size() + " entries"
-        println ".. the Addon keys_translation_map has " + addon_db_map.keys.size() + " entries"
+        println ".. the Addon master_parameter_translation_map has " + get_size_of_nested_map_depth_2(addon_db_map.master_parameters) + " entries"
+        println ".. the Addon data_points_translation_map has " + get_size_of_nested_map_depth_2(addon_db_map.datapoints) + " entries"
+        println ".. the Addon paramset_translation_map has " + get_size_of_nested_map_depth_2(addon_db_map.paramsets) + " entries"
+        println ".. the Addon easymodes tcl list has " + addon_db_map.easymodes.size() + " entries"
         
         // extract German and English translation maps from a previous XML control file for addon generator (CLI paramater 't')
         string_translation_maps = extract_string_translations_from_previous_xml_control_file( parameters.translation_XML.toString() )
@@ -1579,6 +1880,7 @@ class extract_rftypes_XML {
           addon_db_map = merge_maps( addon_db_map, restore_db_map, parameters )
         }
         
+        println ".. saving addon data base to '${parameters.addon_db_file_name}' .. "
         //save database
         save_maps_to_file(addon_db_map, parameters, parameters.addon_db_file_name)
         

@@ -5,12 +5,25 @@
 ## IMPORTANT: UNDER CONSTRUCTION AND VALIDATION
 
 <br/>
-## IMPORTANT: Since this generator software has beta status only, please check the generated install and uninstall scripts very carefully before using them in a production version of an addon. Usage is at your own risk! In particular, the webuiInsert section may be incomplete, e.g. if the device needs specific DEV_HIGHLIGHT entries like ''hb-ou-mp3-led'. Please handle those entries manually. Thanks. Your feedback and enhancement proposals are welcome!
+## IMPORTANT: Since this generator software has beta status only, please check the generated install and uninstall scripts very carefully before using them in a production version of an addon. Usage is at your own risk! Thanks. Your feedback and enhancement proposals are welcome! Please let me know if the generator is creating wrong or incomplete install and uninstall scripts. Please send me a PN in such a case: FUEL4EP @ https://homematic-forum.de
 <br/>
 
- 
+# NEWS 2nd June 2021:
+- code has been restructured in order to support also subset definitions in rftypes XML
+- easymodes references are extracted and the concerning paramset definition are supressed in the translation XML control file
+- option ids are extracted
+- the addon generator has been proven to work correctly for 'hb-ep-devices-addon' installed on a RaspberryMatic 3.57.5.2021052
+- the addon generator tends to extract a few more entries than the manually generated install and uninstall scripts e.g. of JP-HB-Devices-addon
+- all entries are getting an author specific prefix, e.g. 'F6' in case of FUEL4EP
 
-- creates install and uninstall scripts required in [../src/addon/](../src/addon/)
+# Known unsupported features (currently no plan for support)
+
+- Modifications of '/www/rega/esp/channels.htm' are not supported, e..g for 'hb-ou-mot-servo'
+- if some extracted options turn out to be unnecessary, please delete them manually in the created XML control file for addon generator [AsksinPP_addon_generator_control_file.xml](./AsksinPP_addon_generator_control_file.xml)
+
+# Short description
+
+- creates the install and uninstall scripts required in [../src/addon/](../src/addon/)
 - a singular install 'install_<addon_name>' is newly introduced instead of the previous style of one install script per device
 - a singular uninstall 'uninstall_<addon_name>' is newly introduced instead of the previous style of one uninstall script per device
 
@@ -50,13 +63,14 @@
 	+	open and edit the generated XML control file for addon generator [./AsksinPP_addon_generator_control_file.xml](./AsksinPP_addon_generator_control_file.xml) with 'xmlcopyeditor
 	>xmlcopyeditor  ./AsksinPP_addon_generator_control_file.xml
 
-	![AsksinPP_addon_generator_control_file.xml](./Images/HB-UNI-Sensor-EXAMPLE_addon_control.xml.png  "AsksinPP_addon_generator_control_file.xml")
+	![AsksinPP_addon_generator_control_file.xml](./Images/AsksinPP_addon_generator_control_file.xml.png  "AsksinPP_addon_generator_control_file.xml")
 
 
     + then
     	+	check all entries of this control file for completeness and correctness
 		+ update the 'addon_name' if needed
 		+ update the 'addon_version' if needed
+		+ update the 'creator' if needed
 		+ replace all undefined device descriptions 'tbd' by the concerning description strings, the URL and HTML encoding for German 'Umlauts' is done automatically
 		+ replace all undefined translations 'tbd' by the concerning translation strings, the URL and HTML encoding for German 'Umlauts' is done automatically
 		+ save the edited XML control file
@@ -88,7 +102,18 @@
 	+	please invoke them with the command line option '-h' to see all options for manual execution<br/>
 - for pretty printing an XML file a script [make_pretty_print_XML.groovy](./make_pretty_print_XML.groovy) is provided
 
+# final tasks to be done by you
+
+- copy the created install and uninstall script to '<addon_directory>/CCU_RM/src/addon/'
+- update the VERSION file '<addon_directory>/CCU_RM/src/addon/VERSION' as needed
+- build the addon tgz file by invoking '<addon_directory>/CCU_RM/build.sh'
+- **MOST IMPORTANT**: create an system backup of your CCU3/RaspberryMatic before starting any testing with the newly created addon !
+- **CAREFULLY test the newly created addon**
+
+# have fun and give feedback
+
 - enjoy! Feedback and improvement suggestions are welcome!
+- please always provide suffiecient test data for debugging if you found some deficiencies
 
 
 ## Lizenz
