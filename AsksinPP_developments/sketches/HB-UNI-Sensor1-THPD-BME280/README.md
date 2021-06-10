@@ -13,9 +13,9 @@ Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/med
 
 Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=65320&p=642213#p642213) zu finden. Bitte dort auch Fragen stellen.
 
-## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.7 updaten
+## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.8 updaten
 
-- Die neue Version V1.7 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
+- Die neue Version V1.8 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
 - Bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
 
 

@@ -19,9 +19,9 @@
 -	Die Debug-Version [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) und die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) nutzen diesselbe Struktur für die Abspeicherung und Restaurierung von EEPROM-Daten. Daher kann der Sensor zwischen diesen beiden Versionen umprogrammiert werden. Dabei bitte die Hinweise unter 'Neuprogrammierung (Flashen)' unten beachten.
 **UPDATE 14. May 2021:** The N dimension of the Kalman filter has been reduced from 4 to 3 for improving the convergence (new state vector: VOC_resistance, alpha_temperature, beta_ah). The Python scripts are, however, not yet updated, but still for N=4. An update will be done later on.
 
-## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.7 updaten
+## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.8 updaten
 
-- Die neue Version V1.7 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
+- Die neue Version V1.8 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
 - Bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
 
 
