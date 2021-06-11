@@ -189,7 +189,7 @@
 7. Gegebenenfalls die Parameter Device ID und Device Serial in [HB-UNI-Sensor1-AQ-BME680_KF.ino](./HB-UNI-Sensor1-AQ-BME680_KF.ino) ändern. Jeder Sensor muss ein eineindeutiges Device ID als auch ein eindeutiges Device Serial haben!
 8. Die aktuelle Version des [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) Sketches herunterladen, siehe unten.
 9. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
-10. Dann den Sketch [HB-UNI-Sensor1-AQ-BME680_KF.ino]](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF/HB-UNI-Sensor1-AQ-BME680_KF.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
+10. Dann den Sketch [HB-UNI-Sensor1-AQ-BME680_KF.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF/HB-UNI-Sensor1-AQ-BME680_KF.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
 11. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
 12. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
 
