@@ -55,7 +55,7 @@
 using namespace as;
 
 #ifdef ADS1115
-   #include <Adafruit_ADS1015.h>
+   #include <Adafruit_ADS1X15.h>
    Adafruit_ADS1115 ads;  /* Use this for the 16-bit version */
    const float ADC0_FACTOR = 2 * 0.0625 * 3.509 / 3.486 ; // 2 is the uncorrected volate divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
                                                           // 3.509 / 3.486 is the voltage divider correction factor for ADCO0 based on a multimeter comparison
