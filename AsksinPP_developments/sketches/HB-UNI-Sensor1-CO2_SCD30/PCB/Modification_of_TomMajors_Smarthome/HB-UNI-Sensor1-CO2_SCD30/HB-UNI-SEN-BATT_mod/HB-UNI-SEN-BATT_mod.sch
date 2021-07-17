@@ -682,12 +682,12 @@ $EndComp
 $Comp
 L Device:R R3
 U 1 1 5F4DDD7A
-P 5650 1900
-F 0 "R3" H 5720 1946 50  0000 L CNN
-F 1 "100" H 5720 1855 50  0000 L CNN
-F 2 "" V 5580 1900 50  0001 C CNN
-F 3 "~" H 5650 1900 50  0001 C CNN
-	1    5650 1900
+P 5500 1900
+F 0 "R3" H 5570 1946 50  0000 L CNN
+F 1 "100" H 5570 1855 50  0000 L CNN
+F 2 "" V 5430 1900 50  0001 C CNN
+F 3 "~" H 5500 1900 50  0001 C CNN
+	1    5500 1900
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1027,15 +1027,15 @@ Wire Wire Line
 Wire Wire Line
 	5200 1800 5150 1800
 Wire Wire Line
-	2900 2050 5650 2050
+	2900 2050 5500 2050
 Wire Wire Line
-	5650 1750 5650 1700
+	5500 1750 5500 1700
 Wire Wire Line
-	5650 1700 5450 1700
+	5500 1700 5400 1700
 Wire Wire Line
-	5450 1700 5450 2000
+	5400 1700 5400 2000
 Wire Wire Line
-	5450 2000 5200 2000
+	5400 2000 5200 2000
 Wire Wire Line
 	5200 1700 5200 1600
 Wire Wire Line
@@ -1161,4 +1161,23 @@ Text Notes 3400 1750 0    50   ~ 0
 C2 has been added on 6th Sept 2020\n
 Text Notes 8100 1200 0    50   ~ 0
 A 470 uF decoupling capacitor attached to the I2C sockets has been removed !
+$Comp
+L Device:R R12
+U 1 1 60CE7B0C
+P 5750 1900
+F 0 "R12" H 5820 1946 50  0000 L CNN
+F 1 "220" H 5820 1855 50  0000 L CNN
+F 2 "" V 5680 1900 50  0001 C CNN
+F 3 "~" H 5750 1900 50  0001 C CNN
+	1    5750 1900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 1750 5750 1700
+Wire Wire Line
+	5750 1700 5500 1700
+Connection ~ 5500 1700
+Wire Wire Line
+	5750 2050 5500 2050
+Connection ~ 5500 2050
 $EndSCHEMATC

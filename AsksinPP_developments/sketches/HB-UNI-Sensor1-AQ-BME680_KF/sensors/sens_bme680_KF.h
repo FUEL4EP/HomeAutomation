@@ -64,13 +64,14 @@ using namespace BLA;
 #define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0.999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter
 #define IIR_FILTER_COEFFICIENT_KF_UNSETTLED              0.0376494 // 1.0 - 0.9623506 ; Decay to 0.1 in about 4 hours for a 4 min sampling period (in 60 sampling periods); unsettled status of Kalman filter
 #define IIR_FILTER_COEFFICIENT_KF_POST_SETTLED           0.0019009 // 1.0 - 0.9980991 ; Decay to 0.71 in about 12 hours for a 4 min sampling period (in 360 sampling periods); post settled status of Kalman filter
-#define POST_SETTLING_NPHASE_NO_SAMPLES                  720       // 2 days = 720 * 4 minutes
+#define POST_SETTLING_NPHASE_NO_SAMPLES                  360       // 1 days = 360 * 4 minutes
+#define POST_SETTLING_NPHASE_AFTER_RESET_NO_SAMPLES      60        // 4 h = 60 * 4 minutes
 #define EPSILON                                          0.0001
-#define MAX_BATTERY_VOLTAGE                              3300      // change to 6000 for debugging with FTDI Debugger, default: 3300
+#define MAX_BATTERY_VOLTAGE                              3320      // change to 6000 for debugging with FTDI Debugger, default: 3320
 #define EEPROM_START_ADDRESS                             512       // needs to be above reserved AsksinPP EEPROM area: Address Space: 32 - 110
 #define DEVICE_TYPE                                      "HB-UNI-Sensor1-AQ-BME680_KF"
 #define FINISH_STRING                                    "/HB-UNI-Sensor1-AQ-BME680_KF"
-#define STORE_TO_EEPROM_NO_CYCLES                        60        // store parameters once a day; 360 * 4 min
+#define STORE_TO_EEPROM_NO_CYCLES                        360       // store parameters once a day; 360 * 4 min
                                                                    // change to 10 for debugging with FTDI Debugger, default: 360
 #define START_RESISTANCE                                 4000000   // 4 Meg Ohm
                                               
@@ -86,8 +87,11 @@ using namespace BLA;
 #define n_obs 0.01
 #define NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING  60         // measurement index for resetting the residual boundaries if Kalman online regression parameters are not yet stable enough (check every 4 hours); default 60
 #define AVG_GAS_RESISTANCE                              200000.0   // raw average gas resistance of BME680 sensor; adjust to your sensor if convergence of the Kalman filter takes > 2 days
-#define REGRESSION_SETLLED_THRESHOLD                    0.15       // relative changes of Kalman online regression parameters alpha and beta need to be below this threshold for a settled regression
-#define REGRESSION_ABSOLUTE_ALPHA_CHANGE                1800       // allow absolute changes up to REGRESSION_ABSOLUTE_ALPHA_CHANGE for a settled 'alpha' temperature coefficient
+#define REGRESSION_SETLLED_THRESHOLD_UPPER              0.10       // upper bound of relative changes of Kalman online regression parameters alpha and beta, threshold for a settled Kalman filter state
+#define REGRESSION_SETLLED_THRESHOLD_LOWER              0.02       // lower bound of relative changes of Kalman online regression parameters alpha and beta            
+                                                                   // interpolation is done for ee.iir_filter_coefficient, see function interpolate_iir_filter_coefficient below
+#define NO_MEAS_CYCLES_FOR_ADJUST_MIN_MAX_LEVEL         11160      // adjust once a month max_gas_resistance, min_gas_resistance, min_res, max_res to current peak values (min/max)
+
 
 namespace as {
                                             
@@ -148,7 +152,7 @@ private:
   int16_t    _aq_beta_scaled;
   int16_t    _aq_delta_scaled;
   uint16_t   _height;
-  uint16_t   measurement_index;
+  uint16_t   measurement_index;                 // index of measurement
   uint16_t   _first_free_user_eeprom_address;   // EEPROM starting address for storing essential data
    
   AQ_eeprom_data ee;                            // EEPROM structure for saving essential parameters
@@ -157,6 +161,8 @@ private:
   uint32_t   crc32_checksum_recreated;
   bool       lowbat_save_to_eeprom_flag;        // indcates that parameters need to be saved to eeprom due to lowbat
   uint16_t   post_settling_index;               // non-zero during post-settling phase, down counted from POST_SETTLING_NPHASE_NO_SAMPLES
+  
+  double     alpha_ref, beta_ref;               // reference values for regression coefficients alpha and beta:  alpha_ref = Rgas/Temperature   beta_ref=Rgas/Absolute Humidity
 
  
   
@@ -201,6 +207,7 @@ public:
     DPRINT(F("ee.previous_alpha                      = "));DDECLN(ee.previous_alpha);
     DPRINT(F("ee.previous_beta                       = "));DDECLN(ee.previous_beta);
     DPRINT(F("ee.iir_filter_coefficient              = "));DDECLN(ee.iir_filter_coefficient);
+    DPRINT(F("ee.non_convergence_factor              = "));DDECLN(ee.non_convergence_factor);
     if (ee.settled_flag) {
       DPRINTLN(F("ee.settled_flag                        = true"));
     }
@@ -225,9 +232,9 @@ public:
 
     DPRINT(", Chip ID=0x"); DHEXLN(_bme680.getChipID());
 
-      // BME680 oversampling: humidity = x4, temperature = x4, pressure = x4
-    _bme680.setOversampling(BME680_OVERSAMPLING_X4, BME680_OVERSAMPLING_X4, BME680_OVERSAMPLING_X4);
-    _bme680.setIIRFilter(BME680_FILTER_3); // supresses spikes 
+      // BME680 oversampling: humidity = x2, temperature = x2, pressure = x4
+    _bme680.setOversampling(BME680_OVERSAMPLING_X2, BME680_OVERSAMPLING_X2, BME680_OVERSAMPLING_X4);
+    _bme680.setIIRFilter(BME680_FILTER_1); // supresses spikes 
     _bme680.setGasOn(310, 300); // 310 degree Celsius and 300 milliseconds; please check in debug mode whether '-> Gas heat_stab_r   = 1' is achieved. If '-> Gas heat_stab_r   = 0' then the heating time is to short or the temp target too high
     _bme680.setForcedMode();
     
@@ -251,9 +258,12 @@ public:
     ee.kalman_delta                    = 0.0;
     measurement_index                  = 0;
     
-    post_settling_index                = POST_SETTLING_NPHASE_NO_SAMPLES / NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING + 1;                   // non-zero during post-settling phase and after reset, down counted
+    post_settling_index                = POST_SETTLING_NPHASE_AFTER_RESET_NO_SAMPLES / NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING + 1;                   // non-zero during post-settling phase or after reset, down counted
     
     _first_free_user_eeprom_address = max(first_free_user_eeprom_address,(uint16_t)EEPROM_START_ADDRESS); // needs to be equal of above first_free_user_eeprom_address
+    
+    
+ 
     
 #ifdef DEEP_DEBUG
     strcpy(ee.device_type_string, DEVICE_TYPE);
@@ -271,6 +281,9 @@ public:
 #endif
     DPRINTLN(F("====== Initialize Kalman Filter ========\n\n"));
     kalman_filter_init();
+    
+    alpha_ref                          = ee.K.x(0)*2.0/20.0;         // initial value, typical room temperature: 20 deg C
+    beta_ref                           = ee.K.x(0)*2.0/8.0;          // initial value, typical absolute humidity: 8g/m³
     
     lowbat_save_to_eeprom_flag = false;
     ee.previous_alpha          = 0.0;                               // initial value
@@ -292,14 +305,30 @@ public:
       
   }
   
-  void check_if_Kalman_filter_regression_is_settled () {
+  void interpolate_iir_filter_coefficient(void) {
+      
+      double ratio = ee.non_convergence_factor / 100.0;
+      
+      if ( ratio <= REGRESSION_SETLLED_THRESHOLD_LOWER ) {
+        ee.iir_filter_coefficient            =  IIR_FILTER_COEFFICIENT_KF_SETTLED;             // kalman filter online regression is well settled
+      } else  {
+        if ( ratio >= REGRESSION_SETLLED_THRESHOLD_UPPER ) {
+          ee.iir_filter_coefficient          =  IIR_FILTER_COEFFICIENT_KF_UNSETTLED;           // kalman filter online regression is unsettled
+        } else
+        {                                                                                      // kalman filter is somehow settled: do linear interplation
+           ee.iir_filter_coefficient         = (( ratio - REGRESSION_SETLLED_THRESHOLD_LOWER )/( REGRESSION_SETLLED_THRESHOLD_UPPER - REGRESSION_SETLLED_THRESHOLD_LOWER )) * ( IIR_FILTER_COEFFICIENT_KF_UNSETTLED - IIR_FILTER_COEFFICIENT_KF_SETTLED) + IIR_FILTER_COEFFICIENT_KF_SETTLED;             
+        }  
+      }
+  }
+  
+  void check_if_Kalman_filter_regression_is_settled (double alpha_ref, double beta_ref) {
   // check id Kalman filter has already settled; check is done every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
       
     // ee.settled_flag is true if Kalman filter is settled
     double ratio = 0.0;
     double delta;
     
-    // check settling of the Kalman filter's online regression coefficients every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle
+    // check settling of the Kalman filter's online regression coefficients every NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING th measurement cycle, typically every 4 hours
     if (( measurement_index % NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING) == 1 ){
 
 #ifdef DEEP_DEBUG
@@ -312,18 +341,16 @@ public:
       if (ee.kalman_alpha != 0.0 ) {
         // the temperature regression coefficient alpha can be quite small, therefore we also check for the absolute change 'delta'
         delta = fabs((ee.kalman_alpha - ee.previous_alpha));
-        ratio = fabs(delta / ee.kalman_alpha);
+        ratio = fabs(delta / alpha_ref);
 #ifdef DEEP_DEBUG
         DPRINT(F("ee.kalman_alpha                        = "));DDEC(ee.kalman_alpha);                       DPRINTLN(F(" "));
         DPRINT(F("ee.previous_alpha                      = "));DDEC(ee.previous_alpha);                     DPRINTLN(F(" "));
         DPRINT(F("Convergence ratio of alpha coefficient = "));DDEC(ratio);                                 DPRINTLN(F(" "));
         DPRINT(F("Absolute change of alpha coefficient   = "));DDEC(delta);                                 DPRINTLN(F(" "));
 #endif
-        // check if relative change of regression coefficient alpha is above REGRESSION_SETLLED_THRESHOLD
-        if ( ratio >= REGRESSION_SETLLED_THRESHOLD) {
-          if ( delta > REGRESSION_ABSOLUTE_ALPHA_CHANGE ) {
-            ee.settled_flag = false;
-          }
+        // check if relative change of regression coefficient alpha is above REGRESSION_SETLLED_THRESHOLD_UPPER
+        if ( ratio >= REGRESSION_SETLLED_THRESHOLD_UPPER) {
+          ee.settled_flag = false;
         }
       }
       else {
@@ -335,14 +362,14 @@ public:
       
       // check online regression coefficient beta
       if (ee.kalman_beta != 0.0 ) { 
-        ratio = fabs((ee.kalman_beta - ee.previous_beta) / ee.kalman_beta) ;
+        ratio = fabs((ee.kalman_beta - ee.previous_beta) / beta_ref) ;
 #ifdef DEEP_DEBUG
         DPRINT(F("ee.kalman_beta                         = "));DDEC(ee.kalman_beta);                        DPRINTLN(F(" "));
         DPRINT(F("ee.previous_beta                       = "));DDEC(ee.previous_beta);                      DPRINTLN(F(" "));
         DPRINT(F("Convergence ratio of beta coefficient  = "));DDEC(ratio);                                 DPRINTLN(F(" "));
 #endif
-        // check if relative change of regression coefficient beta is above REGRESSION_SETLLED_THRESHOLD
-        if ( ratio >= REGRESSION_SETLLED_THRESHOLD) {
+        // check if relative change of regression coefficient beta is above REGRESSION_SETLLED_THRESHOLD_UPPER
+        if ( ratio >= REGRESSION_SETLLED_THRESHOLD_UPPER) {
           ee.settled_flag = false;
         }
       }
@@ -350,10 +377,12 @@ public:
         ee.settled_flag = false;
       }
       
+      // set ee.non_convergence_factor to bigger convergenge ratio of coefficient alpha and beta
       if ( ratio > ee.non_convergence_factor ) {
         ee.non_convergence_factor = ratio;
       }
       
+      // limit ee.non_convergence_factor to range 0.0 .. 100.0
       ee.non_convergence_factor = constrain( ee.non_convergence_factor * 100.0, 0.0, 100.0 );
       
       // update previous regression coefficients
@@ -368,7 +397,7 @@ public:
         ee.min_res                         =  START_RESISTANCE;                      // initial value
         ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
         ee.min_gas_resistance              =  START_RESISTANCE;                      // initial value
-        ee.iir_filter_coefficient          =  IIR_FILTER_COEFFICIENT_KF_UNSETTLED;   // increase decay factor to about 10% in about 4h
+        interpolate_iir_filter_coefficient();
         post_settling_index                =  POST_SETTLING_NPHASE_NO_SAMPLES / NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING + 1;
 #ifdef DEEP_DEBUG
         DPRINTLN(F("\n\n\n\n==================================================="));
@@ -379,19 +408,33 @@ public:
       else {
         // Kalman filter online regression did settle
         if ( post_settling_index > 0 ) {
-          post_settling_index--;   // decrement post_settling_index until 0 is reached
+          post_settling_index--;            // decrement post_settling_index until 0 is reached
           ee.iir_filter_coefficient          = IIR_FILTER_COEFFICIENT_KF_POST_SETTLED; // increase decay factor to 71% in about 0.5 days for the first POST_SETTLING_NPHASE_NO_SAMPLES after settling has been achieved
-          // reset upper and lower borders
-          ee.max_res                         = -START_RESISTANCE;                      // initial value
-          ee.min_res                         =  START_RESISTANCE;                      // initial value
-          ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
-          ee.min_gas_resistance              =  START_RESISTANCE;                      // initial value
+          if ( post_settling_index == 0 ) { // reset upper and lower borders after post settling phase
+            ee.max_res                         = -START_RESISTANCE;                      // initial value
+            ee.min_res                         =  START_RESISTANCE;                      // initial value
+            ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
+            ee.min_gas_resistance              =  START_RESISTANCE;                      // initial value
+          }
         }
         else
         {
-          ee.iir_filter_coefficient = IIR_FILTER_COEFFICIENT_KF_SETTLED;            // set decay factor to about 71% in about 14 days
+          // normal operation: calculate the IIR filter coefficient ee.iir_filter_coefficient by interpolation based on  the current non-convergence factor ee.non_convergence_factor
+          interpolate_iir_filter_coefficient();            
         }
       }
+      
+#ifdef DEEP_DEBUG     
+      DPRINT(F("ee.non_convergence_factor              = "));DDECLN(ee.non_convergence_factor);
+      DPRINT(F("ee.iir_filter_coefficient              = "));DDECLN(ee.iir_filter_coefficient);
+      if (ee.settled_flag) {
+        DPRINTLN(F("ee.settled_flag                        = true"));
+      }
+      else {
+        DPRINTLN(F("ee.settled_flag                        = false"));
+      }
+      DPRINT(F("post_settling_index                    = "));DDECLN(post_settling_index);
+#endif
       
     }
     
@@ -666,7 +709,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
 #endif
       
       // check if the Kalman filter online regression is settled, min/max ever boundaries and ee.iir_filter_coefficient are adapted in case of a non yet settled Kalman filter
-      check_if_Kalman_filter_regression_is_settled();
+      check_if_Kalman_filter_regression_is_settled(alpha_ref, beta_ref);
 #ifdef DEEP_DEBUG
       if (ee.settled_flag) {
         DPRINTLN(F("\nConvergence of Kalman filter           = GOOD\n"));
@@ -697,19 +740,28 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       DPRINTLN(F("==================================================="));
 #endif
     
+      // special modes controlled by special setting of ee.max_decay_factor_upper_limit and ee.max_increase_factor_lower_limit
  
       // If ee.max_decay_factor_upper_limit and ee.max_increase_factor_lower_limit are set equal, then enter the strong unsettled decay / increase mode (special temporary setting)
       if ( ee.max_decay_factor_upper_limit == ee.max_increase_factor_lower_limit ) {
           ee.iir_filter_coefficient          =  IIR_FILTER_COEFFICIENT_KF_UNSETTLED;   // increase decay factor to about 10% in about 4h
+          ee.max_res                         = -START_RESISTANCE;                      // initial value
+          ee.min_res                         =  START_RESISTANCE;                      // initial value
+          ee.max_gas_resistance              = -START_RESISTANCE;                      // initial value
+          ee.min_gas_resistance              =  START_RESISTANCE;                      // initial value
       }
       else {
         // Ensure that ee.max_decay_factor_upper_limit is bigger than ee.max_increase_factor_lower_limit, reset ee.max_re, ee.min_res, ee.max_gas_resistance, ee.min_gas_resistance to start conditions, initiate the post-settling process  
         if (ee.max_decay_factor_upper_limit <= ee.max_increase_factor_lower_limit) {
-            post_settling_index                = POST_SETTLING_NPHASE_NO_SAMPLES / NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING + 1;                   // non-zero during post-settling phase and after reset, down counted
+            post_settling_index     = POST_SETTLING_NPHASE_NO_SAMPLES / NO_MEAS_CYCLES_TO_CHECK_KALMAN_FILTER_SETTLING + 1;                   // non-zero during post-settling phase and after reset, down counted
             ee.max_decay_factor_upper_limit = ee.max_increase_factor_lower_limit + 1;
+            ee.max_gas_resistance   =  ee.gas_upper_limit;
+            ee.min_gas_resistance   =  ee.gas_lower_limit;
+            ee.max_res              =  ee.res_upper_limit;
+            ee.min_res              =  ee.res_lower_limit;
         }
       }
-      
+    
       
 #ifdef DEEP_DEBUG
 
@@ -778,6 +830,13 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       DPRINT("avg gas: ");DDECLN(gas);
       DPRINT(F("avg. gas resistance = "));DDECLN(gas);DPRINT(F("\n\n"));
       
+       // adjust once a month max_gas_resistance, min_gas_resistance, min_res, max_res to current peak values (min/max) in order to cope with long term drift effects
+      if ( measurement_index % NO_MEAS_CYCLES_FOR_ADJUST_MIN_MAX_LEVEL == 0 ) {
+          ee.max_gas_resistance   =  ee.gas_upper_limit;
+          ee.min_gas_resistance   =  ee.gas_lower_limit;
+          ee.max_res              =  ee.res_upper_limit;
+          ee.min_res              =  ee.res_lower_limit;
+      }
       
       // update ee.gas_upper_limit_min and ee.gas_lower_limit_max every 20th measurement in order to cope with updates of the device parameters ee.max_decay_factor_upper_limit and ee.max_increase_factor_lower_limit
       if ( measurement_index % 20 == 0 ) {
@@ -930,6 +989,16 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
 #endif
       
       
+      // update ee.res_upper_limit_min and ee.res_upper_limit_max every 20th measurement in order to cope with updates of the device parameters ee.max_decay_factor_upper_limit and ee.max_increase_factor_lower_limit
+      if ( measurement_index % 20 == 0 ) {
+          // set lower limit for decay of ee.res_upper_limit_min; ee.max_decay_factor_upper_limit is typically set to 70 as WebUI device parameter
+          ee.res_upper_limit_min = ee.min_res + (ee.max_res - ee.min_res) * (int32_t)ee.max_decay_factor_upper_limit / 100;
+          
+          // set upper limit for increase of ee.res_lower_limit_max; ee.max_increase_factor_lower_limit is typically set to 30 as WebUI device parameter
+          ee.res_lower_limit_max = ee.min_res + (ee.max_res - ee.min_res) * (int32_t)ee.max_increase_factor_lower_limit / 100;
+      }
+      
+      
       // peak detectors for min/max ever calculated residual since last reset
       
       
@@ -937,7 +1006,7 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
         ee.max_res = residual;
          if ( ee.max_res > ee.min_res ) {
              
-             // set lower limit for decay of ee.res_upper_limit_min; ee.max_decay_factor_upper_limit is typically set to 70 as WebUI device parameter
+            // set lower limit for decay of ee.res_upper_limit_min; ee.max_decay_factor_upper_limit is typically set to 70 as WebUI device parameter
             ee.res_upper_limit_min = ee.min_res + (ee.max_res - ee.min_res) * (int32_t)ee.max_decay_factor_upper_limit / 100;
             
             // set upper limit for increase of ee.res_lower_limit_max; ee.max_increase_factor_lower_limit is typically set to 30 as WebUI device parameter
@@ -1044,12 +1113,23 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
       DPRINT(F("_aq_delta_scaled                       = "));DDEC(_aq_delta_scaled);                         DPRINTLN(F(" "));
 #endif
       
+      
+      // calculate reference values for alpha and beta regression coefficients
+      if ( temp != 0.0 ) {
+        alpha_ref = gas_raw / temp;
+      }
+      if ( ah != 0.0 ) {
+        beta_ref  = gas_raw / ah;
+      }
+      
 #ifdef DEEP_DEBUG
+      DPRINT(F("alpha_ref                              = "));DDEC(alpha_ref);                               DPRINTLN(F(" "));
+      DPRINT(F("beta_ref                               = "));DDEC(beta_ref);                                DPRINTLN(F(" "));
       unsigned long MeasureFinishTime  = millis();
       unsigned long MeasureElapsedTime = MeasureFinishTime - MeasureStartTime;
       Serial << "Executiom time of measurement method   = " << MeasureElapsedTime << " msec" << '\n';
 #endif
-
+     
     }
     
     // reset indication of the Kalman filter's settling state to pin A0 = pin 37 of ATMega1284P of Tindie Pro Mini XL V2, active high for status 'settled', reset here to 'LOW'
@@ -1060,9 +1140,11 @@ void kalman_filter(double raw_gas_resistance, double temperature, double absolut
     // such the non-setlled state can easily be observed without an additinal LED
     if (! ee.settled_flag) {
         _aqState_scaled = 33333;                              // during settling AQ_LOG10 is set to 3.3333
-        _aqLevel        = (uint8_t)ee.non_convergence_factor;  // indicates the non convergence ( ee.non_convergence_factor higher than REGRESSION_SETLLED_THRESHOLD * 100.0; > 15 .. 100 poor convergence )
+        _aqLevel        = (uint8_t)ee.non_convergence_factor;  // indicates the non convergence ( ee.non_convergence_factor higher than REGRESSION_SETLLED_THRESHOLD_UPPER * 100.0; > 15 .. 100 poor convergence )
     }
+    
 
+    
   }
   
   // list of return variables, please notice the limitation of payload of a event message to max. 17 Bytes!
