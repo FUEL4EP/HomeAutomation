@@ -72,26 +72,30 @@
     </channel>
     <channel autoregister="true" index="1" type="HB_GENERIC_RADIATION" count_from_sysinfo="23.0:0.3">
       <paramset type="MASTER" id="HB-UNI-Sensor-RAD-AL53_master">
-        <parameter id="HB_RAD_MEASURE_INTERVAL">                       
-          <logical type="integer" min="10" max="28200" unit="s" default="600"/>
-          <physical type="integer" interface="config" list="1" index="1" size="2"/>
-       </parameter>
-       <parameter id="HB_RAD_READ_RETRY_COUNT">                       
-         <logical type="integer" min="0" max="6" unit="s" default="3"/>
-         <physical type="integer" interface="config" list="1" index="3" size="1"/>
-       </parameter>
        <parameter id="HB_ALARM_LEVEL_COUNTS_PER_MEASUREMENT_INTERVAL">
           <logical type="float" min="0.0" max="65535.0" default="200.0" unit="cpi"/>
-          <physical type="integer" signed="true" interface="config" list="1" index="4" size="2"/>
+          <physical type="integer" signed="true" interface="config" list="1" index="1" size="2"/>
           <conversion type="float_integer_scale" factor="1"/>
         </parameter>
         <parameter id="HB_ALARM_LEVEL_MOVING_AVERAGE">
           <logical type="float" min="0.0" max="655.35" default="200.0" unit="cpi"/>
-          <physical type="integer" signed="true" interface="config" list="1" index="6" size="2"/>
+          <physical type="integer" signed="true" interface="config" list="1" index="3" size="2"/>
           <conversion type="float_integer_scale" factor="100"/>
         </parameter>
       </paramset>
       <paramset type="VALUES" id="HB-UNI-Sensor-RAD-AL53_values">
+        <parameter id="HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL" operations="read,event">
+          <logical type="boolean"/>
+          <physical type="integer" interface="command" value_id="HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL">
+            <event frame="MEASURE_EVENT"/>
+          </physical>
+        </parameter>
+        <parameter id="HB_ALARM_MOVING_AVERAGE" operations="read,event">
+          <logical type="boolean"/>
+          <physical type="integer" interface="command" value_id="HB_ALARM_MOVING_AVERAGE">
+            <event frame="MEASURE_EVENT"/>
+          </physical>
+        </parameter>
         <parameter id="COUNTS_PER_MEASUREMENT_INTERVAL" operations="read,event">
           <logical type="float" min="0.0" max="65535.0" unit="cpi"/>
           <physical type="integer" interface="command" value_id="COUNTS_PER_MEASUREMENT_INTERVAL">
@@ -130,21 +134,21 @@
         <parameter id="ACCUMULATOR_VOLTAGE" operations="read,event">
           <logical type="float" min="0.5" max="5.5" unit="V"/>
           <physical type="integer" interface="command" value_id="ACCUMULATOR_VOLTAGE" no_init="true">
-            <event frame="WEATHER_EVENT"/>
+            <event frame="MEASURE_EVENT"/>
           </physical>
           <conversion type="float_integer_scale" factor="1000.0"/>
         </parameter>
         <parameter id="AL53_SUPPLY_VOLTAGE" operations="read,event">
           <logical type="float" min="0.5" max="5.5" unit="V"/>
           <physical type="integer" interface="command" value_id="AL53_SUPPLY_VOLTAGE" no_init="true">
-            <event frame="WEATHER_EVENT"/>
+            <event frame="MEASURE_EVENT"/>
           </physical>
           <conversion type="float_integer_scale" factor="1000.0"/>
         </parameter>
         <parameter id="OPERATING_VOLTAGE" operations="read,event">
           <logical type="float" min="0.5" max="5.5" unit="V"/>
           <physical type="integer" interface="command" value_id="OPERATING_VOLTAGE" no_init="true">
-            <event frame="WEATHER_EVENT"/>
+            <event frame="MEASURE_EVENT"/>
           </physical>
           <conversion type="float_integer_scale" factor="1000.0"/>
         </parameter>
@@ -153,7 +157,9 @@
     </channel>
   </channels>
   <frames>
-    <frame id="MEASURE_EVENT" direction="from_device" event="true" channel_field="9" type="0x53">
+    <frame id="MEASURE_EVENT" direction="from_device" event="true" channel_field="10" type="0x53">
+      <parameter type="integer" index="9.0" size="0.1" param="HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL"/>
+      <parameter type="integer" index="9.1" size="0.1" param="HB_ALARM_MOVING_AVERAGE"/>
       <parameter type="integer" index="10.0" size="2.0" param="COUNTS_PER_MEASUREMENT_INTERVAL"/>
       <parameter type="integer" index="12.0" size="2.0" param="MOVING_AVERAGE_COUNT"/>
       <parameter type="integer" index="14.0" size="2.0" param="WIDTH_CONFIDENCE_INTERVALL"/>
@@ -162,6 +168,9 @@
       <parameter type="integer" index="20.0" size="2.0" param="ACCUMULATOR_VOLTAGE"/>
       <parameter type="integer" index="22.0" size="2.0" param="AL53_SUPPLY_VOLTAGE"/>
       <parameter type="integer" index="24.0" size="2.0" param="OPERATING_VOLTAGE"/>
+    </frame>
+    <frame id="MEASURE_EV_BAT" direction="from_device" event="true" type="0x53" fixed_channel="*">
+      <parameter type="integer" index="9.7" size="0.1" param="LOWBAT" />
     </frame>
   </frames>
   <paramset_defs/>

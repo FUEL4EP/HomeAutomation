@@ -1,9 +1,9 @@
-﻿<AsksinPP_addon_generator_control>
+<AsksinPP_addon_generator_control>
   <addon_name>hb-ep-devices-addon</addon_name>
   <addon_version>1.8</addon_version>
-  <creator>FUEL4EP</creator>
+  <creator>ewald</creator>
   <creator_prefix>F6</creator_prefix>
-  <created_on>2021_06_02-12:37:16</created_on>
+  <created_on>2021_08_25-12:36:24</created_on>
   <generator_version>0.13</generator_version>
   <devices>
     <device id='HB-UNI-SENSOR-TH-SHT75' index='0' device_name='HB-UNI-Sensor-TH-SHT75' device_model='0xF603' device_small_case_name='hb-uni-sensor-TH-SHT75' rftypes_XML_version='0x10' VersionString='0.13'>
@@ -203,59 +203,59 @@
       </parameter>
     </channel>
     <channel type='HB_GENERIC_RADIATION'>
-      <parameter id='HB_RAD_MEASURE_INTERVAL' index='36' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_LEVEL_COUNTS_PER_MEASUREMENT_INTERVAL' index='36' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_HB_RAD_MEASURE_INTERVAL</stringtable_identifier>
-        <translation_de>Messintervall für Radioaktivität</translation_de>
-        <translation_en>measurement intervall for radioactivity</translation_en>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_MEASUREMENT_INTERVAL</stringtable_identifier>
+        <translation_de>Alarmwert Impulszähler</translation_de>
+        <translation_en>alarm level event counter per measurement interval</translation_en>
       </parameter>
-      <parameter id='HB_RAD_READ_RETRY_COUNT' index='37' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_LEVEL_MOVING_AVERAGE' index='37' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_HB_RAD_READ_RETRY_COUNT</stringtable_identifier>
-        <translation_de>Anzahl der Leseversuche</translation_de>
-        <translation_en>read retry count</translation_en>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_LEVEL_MOVING_AVERAGE</stringtable_identifier>
+        <translation_de>Alarmwert gleitender Mittelwert</translation_de>
+        <translation_en>alarm level moving average of event counter</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_LEVEL_COUNTS_PER_HOUR' index='38' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL' index='38' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_HOUR</stringtable_identifier>
-        <translation_de>Alarmwert Zählimpulse pro Stunde</translation_de>
-        <translation_en>alarm level counts per hous</translation_en>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL</stringtable_identifier>
+        <translation_de>Alarm Impulszähler</translation_de>
+        <translation_en>alarm event counter</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_LEVEL_COUNTS_PER_HOUR_FILTERED' index='39' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_MOVING_AVERAGE' index='39' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_HOUR_FILTERED</stringtable_identifier>
-        <translation_de>Alarmwert gefilterte Zählimpulse pro Stunde</translation_de>
-        <translation_en>alarm level filtered counts per hous</translation_en>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_MOVING_AVERAGE</stringtable_identifier>
+        <translation_de>Alarm gleitender Mittelwert</translation_de>
+        <translation_en>alarm moving average</translation_en>
       </parameter>
-      <parameter id='COUNTS_PER_HOUR' index='40' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL' index='40' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_COUNTS_PER_HOUR</stringtable_identifier>
-        <translation_de>Zählimpulse pro Stunde</translation_de>
-        <translation_en>counts per hous</translation_en>
+        <stringtable_identifier>stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL</stringtable_identifier>
+        <translation_de>Zählimpulse pro Messintervall</translation_de>
+        <translation_en>event count per measurement interval</translation_en>
       </parameter>
-      <parameter id='CONFIDENCE_INTERVALL' index='41' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='MOVING_AVERAGE_COUNT' index='41' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_CONFIDENCE_INTERVALL</stringtable_identifier>
-        <translation_de>Vertrauensintervall</translation_de>
-        <translation_en>confidence intervall</translation_en>
+        <stringtable_identifier>stringTableHB_F6_MOVING_AVERAGE_COUNT</stringtable_identifier>
+        <translation_de>Gleitender Mittelwert Zählimpulse</translation_de>
+        <translation_en>moving average of event count</translation_en>
       </parameter>
-      <parameter id='COUNTS_PER_HOUR_MAX' index='42' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='WIDTH_CONFIDENCE_INTERVALL' index='42' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_COUNTS_PER_HOUR_MAX</stringtable_identifier>
-        <translation_de>max Zählimpulse pro Stunde</translation_de>
-        <translation_en>max counts per hour</translation_en>
+        <stringtable_identifier>stringTableHB_F6_WIDTH_CONFIDENCE_INTERVALL</stringtable_identifier>
+        <translation_de>Breite Konfidenzintervall</translation_de>
+        <translation_en>width of confidence interval</translation_en>
       </parameter>
-      <parameter id='COUNTS_PER_HOUR_FILTERED' index='43' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='MOVING_AVERAGE_COUNT_MAX' index='43' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_COUNTS_PER_HOUR_FILTERED</stringtable_identifier>
-        <translation_de>max gefilterte Zählimpulse pro Stunde</translation_de>
-        <translation_en>max filtered counts per hour</translation_en>
+        <stringtable_identifier>stringTableHB_F6_MOVING_AVERAGE_COUNT_MAX</stringtable_identifier>
+        <translation_de>max. gleitender Mittelwert Zählimpulse</translation_de>
+        <translation_en>max. moving average event count</translation_en>
       </parameter>
-      <parameter id='COUNTS_PER_SAMPLE' index='44' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL_MAX' index='44' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_COUNTS_PER_SAMPLE</stringtable_identifier>
-        <translation_de>Zählimpulse pro Messzeit</translation_de>
-        <translation_en>counts per measurement period</translation_en>
+        <stringtable_identifier>stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL_MAX</stringtable_identifier>
+        <translation_de>max. Zählimpulse pro Messintervall </translation_de>
+        <translation_en>max. event count per measurement interval</translation_en>
       </parameter>
       <parameter id='ACCUMULATOR_VOLTAGE' index='45' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>

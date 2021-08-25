@@ -11,9 +11,9 @@ XML control file : AsksinPP_addon_generator_control_file.xml
 
 addon name                     : hb-ep-devices-addon
 addon version                  : 1.8
-creator                        : FUEL4EP
+creator                        : ewald
 creator prefix                 : F6
-created_on                     : 2021_06_02-12:37:16
+created_on                     : 2021_08_25-12:36:24
 extract_rftypes_XML version    : 0.13
 install script name    : install_hb-ep-devices-addon
 uninstall script name  : uninstall_hb-ep-devices-addon
@@ -434,108 +434,108 @@ stringtable_identifier : stringTableHB_F6_OPERATING_VOLTAGE
 
  
 index                  : 36
-parameter id           : HB_RAD_MEASURE_INTERVAL
+parameter id           : HB_ALARM_LEVEL_COUNTS_PER_MEASUREMENT_INTERVAL
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-RAD-AL53_master
 channel                : HB_GENERIC_RADIATION
-translated_string      : Messintervall%20f%FCr%20Radioaktivit%E4t
-stringtable_identifier : stringTableHB_F6_HB_RAD_MEASURE_INTERVAL
+translated_string      : Alarmwert%20Impulsz%E4hler
+stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_MEASUREMENT_INTERVAL
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 37
-parameter id           : HB_RAD_READ_RETRY_COUNT
+parameter id           : HB_ALARM_LEVEL_MOVING_AVERAGE
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-RAD-AL53_master
 channel                : HB_GENERIC_RADIATION
-translated_string      : Anzahl%20der%20Leseversuche
-stringtable_identifier : stringTableHB_F6_HB_RAD_READ_RETRY_COUNT
+translated_string      : Alarmwert%20gleitender%20Mittelwert
+stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_MOVING_AVERAGE
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 38
-parameter id           : HB_ALARM_LEVEL_COUNTS_PER_HOUR
-paramset type          : MASTER
-paramset id            : HB-UNI-Sensor-RAD-AL53_master
+parameter id           : HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : Alarmwert%20Z%E4hlimpulse%20pro%20Stunde
-stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_HOUR
+translated_string      : Alarm%20Impulsz%E4hler
+stringtable_identifier : stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 39
-parameter id           : HB_ALARM_LEVEL_COUNTS_PER_HOUR_FILTERED
-paramset type          : MASTER
-paramset id            : HB-UNI-Sensor-RAD-AL53_master
+parameter id           : HB_ALARM_MOVING_AVERAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : Alarmwert%20gefilterte%20Z%E4hlimpulse%20pro%20Stunde
-stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_HOUR_FILTERED
+translated_string      : Alarm%20gleitender%20Mittelwert
+stringtable_identifier : stringTableHB_F6_HB_ALARM_MOVING_AVERAGE
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 40
-parameter id           : COUNTS_PER_HOUR
+parameter id           : COUNTS_PER_MEASUREMENT_INTERVAL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : Z%E4hlimpulse%20pro%20Stunde
-stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR
+translated_string      : Z%E4hlimpulse%20pro%20Messintervall
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 41
-parameter id           : CONFIDENCE_INTERVALL
+parameter id           : MOVING_AVERAGE_COUNT
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : Vertrauensintervall
-stringtable_identifier : stringTableHB_F6_CONFIDENCE_INTERVALL
+translated_string      : Gleitender%20Mittelwert%20Z%E4hlimpulse
+stringtable_identifier : stringTableHB_F6_MOVING_AVERAGE_COUNT
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 42
-parameter id           : COUNTS_PER_HOUR_MAX
+parameter id           : WIDTH_CONFIDENCE_INTERVALL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : max%20Z%E4hlimpulse%20pro%20Stunde
-stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR_MAX
+translated_string      : Breite%20Konfidenzintervall
+stringtable_identifier : stringTableHB_F6_WIDTH_CONFIDENCE_INTERVALL
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 43
-parameter id           : COUNTS_PER_HOUR_FILTERED
+parameter id           : MOVING_AVERAGE_COUNT_MAX
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : max%20gefilterte%20Z%E4hlimpulse%20pro%20Stunde
-stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR_FILTERED
+translated_string      : max.%20gleitender%20Mittelwert%20Z%E4hlimpulse
+stringtable_identifier : stringTableHB_F6_MOVING_AVERAGE_COUNT_MAX
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 44
-parameter id           : COUNTS_PER_SAMPLE
+parameter id           : COUNTS_PER_MEASUREMENT_INTERVAL_MAX
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : Z%E4hlimpulse%20pro%20Messzeit
-stringtable_identifier : stringTableHB_F6_COUNTS_PER_SAMPLE
+translated_string      : max.%20Z%E4hlimpulse%20pro%20Messintervall%20
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL_MAX
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
@@ -989,108 +989,108 @@ stringtable_identifier : stringTableHB_F6_OPERATING_VOLTAGE
 
  
 index                  : 36
-parameter id           : HB_RAD_MEASURE_INTERVAL
+parameter id           : HB_ALARM_LEVEL_COUNTS_PER_MEASUREMENT_INTERVAL
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-RAD-AL53_master
 channel                : HB_GENERIC_RADIATION
-translated_string      : Messintervall%20f%FCr%20Radioaktivit%E4t
-stringtable_identifier : stringTableHB_F6_HB_RAD_MEASURE_INTERVAL
+translated_string      : Alarmwert%20Impulsz%E4hler
+stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_MEASUREMENT_INTERVAL
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 37
-parameter id           : HB_RAD_READ_RETRY_COUNT
+parameter id           : HB_ALARM_LEVEL_MOVING_AVERAGE
 paramset type          : MASTER
 paramset id            : HB-UNI-Sensor-RAD-AL53_master
 channel                : HB_GENERIC_RADIATION
-translated_string      : Anzahl%20der%20Leseversuche
-stringtable_identifier : stringTableHB_F6_HB_RAD_READ_RETRY_COUNT
+translated_string      : Alarmwert%20gleitender%20Mittelwert
+stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_MOVING_AVERAGE
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 38
-parameter id           : HB_ALARM_LEVEL_COUNTS_PER_HOUR
-paramset type          : MASTER
-paramset id            : HB-UNI-Sensor-RAD-AL53_master
+parameter id           : HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : Alarmwert%20Z%E4hlimpulse%20pro%20Stunde
-stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_HOUR
+translated_string      : Alarm%20Impulsz%E4hler
+stringtable_identifier : stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 39
-parameter id           : HB_ALARM_LEVEL_COUNTS_PER_HOUR_FILTERED
-paramset type          : MASTER
-paramset id            : HB-UNI-Sensor-RAD-AL53_master
+parameter id           : HB_ALARM_MOVING_AVERAGE
+paramset type          : VALUES
+paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : Alarmwert%20gefilterte%20Z%E4hlimpulse%20pro%20Stunde
-stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_HOUR_FILTERED
+translated_string      : Alarm%20gleitender%20Mittelwert
+stringtable_identifier : stringTableHB_F6_HB_ALARM_MOVING_AVERAGE
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 40
-parameter id           : COUNTS_PER_HOUR
+parameter id           : COUNTS_PER_MEASUREMENT_INTERVAL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : Z%E4hlimpulse%20pro%20Stunde
-stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR
+translated_string      : Z%E4hlimpulse%20pro%20Messintervall
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 41
-parameter id           : CONFIDENCE_INTERVALL
+parameter id           : MOVING_AVERAGE_COUNT
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : Vertrauensintervall
-stringtable_identifier : stringTableHB_F6_CONFIDENCE_INTERVALL
+translated_string      : Gleitender%20Mittelwert%20Z%E4hlimpulse
+stringtable_identifier : stringTableHB_F6_MOVING_AVERAGE_COUNT
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 42
-parameter id           : COUNTS_PER_HOUR_MAX
+parameter id           : WIDTH_CONFIDENCE_INTERVALL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : max%20Z%E4hlimpulse%20pro%20Stunde
-stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR_MAX
+translated_string      : Breite%20Konfidenzintervall
+stringtable_identifier : stringTableHB_F6_WIDTH_CONFIDENCE_INTERVALL
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 43
-parameter id           : COUNTS_PER_HOUR_FILTERED
+parameter id           : MOVING_AVERAGE_COUNT_MAX
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : max%20gefilterte%20Z%E4hlimpulse%20pro%20Stunde
-stringtable_identifier : stringTableHB_F6_COUNTS_PER_HOUR_FILTERED
+translated_string      : max.%20gleitender%20Mittelwert%20Z%E4hlimpulse
+stringtable_identifier : stringTableHB_F6_MOVING_AVERAGE_COUNT_MAX
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
 index                  : 44
-parameter id           : COUNTS_PER_SAMPLE
+parameter id           : COUNTS_PER_MEASUREMENT_INTERVAL_MAX
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
 channel                : HB_GENERIC_RADIATION
-translated_string      : Z%E4hlimpulse%20pro%20Messzeit
-stringtable_identifier : stringTableHB_F6_COUNTS_PER_SAMPLE
+translated_string      : max.%20Z%E4hlimpulse%20pro%20Messintervall%20
+stringtable_identifier : stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL_MAX
 
 
 .. working on channel 'HB_GENERIC_RADIATION' .. 
