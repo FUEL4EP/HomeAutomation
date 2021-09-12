@@ -6,9 +6,10 @@
 - here first snapshot of software status
 - documentation is missing, will be provided later on
 
-## Sensor for alpha, beta, and gamma radiation
-
-- based on
+## AsksinPP DIY Homematic sensor for alpha, beta, and gamma radiation
+- Picture of current prototype ![pic](Images/HB-UNI-Sensor1-RAD-AL53.png)
+- Based on
+    - universal AsksinPP PCB for DIY-kits from Alexander Reinert [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt)
 	- [Teviso AL53](https://www.teviso.com/file/pdf/al53-data-specification.pdf) radiation sensor
     	+ IMPORTANT: amplitude of output pulse is Vsupply, a voltage divider is needed to interface to the counter ABLIC S-35770
 	- I2C counter [ABLIC S-35770](https://www.ablic.com/en/doc/datasheet/counter_ic/S35770_I_E.pdf)
