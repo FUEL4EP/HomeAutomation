@@ -33,5 +33,4 @@
 	- radiation event counter is sampled every 10 minutes
 	- typical radiation event rate is ~5 counts per 10 minutes, ~30 events per hour
 	- cycling ring buffer of depth 1008 for calculating the moving average of radiation events, i.e. averaging over 1 week = 10 minutes * 1008
-	- please post questions [here](https://homematic-forum.de/forum/viewforum.php?f=76). Please use as topic 'HB-UNI-Sensor1-RAD-AL53 Radioaktivitätssensor'
-	
+	- please post questions in the homematic forum [here](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53).
