@@ -2,12 +2,24 @@
 
 # Under construction
 
-## Coming soon
+## Coming soon, first prototype is now running well
+- here first snapshot of software status
+- documentation is missing, will be provided later on
 
 ## Sensor for alpha, beta, and gamma radiation
 
 - based on
-	- [Teviso AL53](https://www.teviso.com/file/pdf/al53-data-specification.pdf) sensor
+	- [Teviso AL53](https://www.teviso.com/file/pdf/al53-data-specification.pdf) radiation sensor
+    	+ IMPORTANT: amplitude of output pulse is Vsupply, a voltage divider is needed to interface to the counter ABLIC S-35770
 	- I2C counter [ABLIC S-35770](https://www.ablic.com/en/doc/datasheet/counter_ic/S35770_I_E.pdf)
+	    + an Arduino library is [here](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/ABLIC_S35770)
+	- [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)
+	    + an ATMega328P Pro Mini will NOT work
+	- ADS1115 ADC, e.g. from Amazon
+	- supply by 2x NiMH accumulator batteries 2700 mAH (currently use of external charger)
+	- MT3608 boost converter, e.g. from Amazon, for creating supply voltage of AL53 sensor, max 15V!!
+	- [TPS61221 boost converter](https://www.tindie.com/products/closedcube/tps61221-low-input-from-07v-boost-33v-breakout/) for 3.3V supply of ATMega1284P (Tindie Pro Mini XL - v2)
 	- Ultra low power
-	- AsksinPP
+	- [AsksinPP](https://github.com/pa-pa/AskSinPP)
+	- Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/addons/hb-ep-devices-addon) > version 1.8
+	- e-paper display will be added later on

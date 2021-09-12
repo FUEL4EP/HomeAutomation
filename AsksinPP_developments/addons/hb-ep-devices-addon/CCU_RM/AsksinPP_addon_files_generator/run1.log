@@ -51,100 +51,6 @@ Von https://github.com/eq-3/occu
  * [neues Tag]         3.57.5     -> 3.57.5
 Von https://github.com/eq-3/occu
  * branch              master     -> FETCH_HEAD
-error: Die folgenden unversionierten Dateien im Arbeitsverzeichnis würden durch
-den Merge überschrieben werden:
-	WebUI/www/addons
-	WebUI/www/api/backup/binfile.cgi
-	WebUI/www/api/backup/common.tcl
-	WebUI/www/api/backup/links.cgi
-	WebUI/www/api/backup/login.cgi
-	WebUI/www/api/backup/logout.cgi
-	WebUI/www/api/backup/paramset.cgi
-	WebUI/www/api/backup/run-script.cgi
-	WebUI/www/api/backup/tarfile.cgi
-	WebUI/www/api/backup/textfile.cgi
-	WebUI/www/api/backup/version.cgi
-	WebUI/www/api/eq3/checksid.hms
-	WebUI/www/api/eq3/common.tcl
-	WebUI/www/api/eq3/event.tcl
-	WebUI/www/api/eq3/getupl.hms
-	WebUI/www/api/eq3/hmscript.tcl
-	WebUI/www/api/eq3/ipc.tcl
-	WebUI/www/api/eq3/json.tcl
-	WebUI/www/api/eq3/jsonrpc.tcl
-	WebUI/www/api/eq3/rega.tcl
-	WebUI/www/api/eq3/session.tcl
-	WebUI/www/api/homematic.cgi
-	WebUI/www/api/methods.conf
-	WebUI/www/api/methods/bidcos/changeLanGatewayKey.tcl
-	WebUI/www/api/methods/bidcosrf/createkeyfile.tcl
-	WebUI/www/api/methods/bidcosrf/getconfiguration-rf.tcl
-	WebUI/www/api/methods/bidcosrf/iskeyset.tcl
-	WebUI/www/api/methods/bidcosrf/setconfiguration-rf.tcl
-	WebUI/www/api/methods/bidcosrf/validatekey.tcl
-	WebUI/www/api/methods/bidcoswired/getconfiguration-wired.tcl
-	WebUI/www/api/methods/bidcoswired/setconfiguration-wired.tcl
-	WebUI/www/api/methods/ccu/createfile.tcl
-	WebUI/www/api/methods/ccu/downloadFirmware.tcl
-	WebUI/www/api/methods/ccu/existsfile.tcl
-	WebUI/www/api/methods/ccu/getaddress.tcl
-	WebUI/www/api/methods/ccu/getauthenabled.tcl
-	WebUI/www/api/methods/ccu/getheatinggrouplist.tcl
-	WebUI/www/api/methods/ccu/gethttpsredirectenabled.tcl
-	WebUI/www/api/methods/ccu/getinfoledconfig.tcl
-	WebUI/www/api/methods/ccu/getlistofdraps.tcl
-	WebUI/www/api/methods/ccu/getsecuritylevel.tcl
-	WebUI/www/api/methods/ccu/getserial.tcl
-	WebUI/www/api/methods/ccu/getsnmpenabled.tcl
-	WebUI/www/api/methods/ccu/getsshstate.tcl
-	WebUI/www/api/methods/ccu/getstickyunreachstate.tcl
-	WebUI/www/api/methods/ccu/restartReGa.tcl
-	WebUI/www/api/methods/ccu/restartsshdaemon.tcl
-	WebUI/www/api/methods/ccu/setauthenabled.tcl
-	WebUI/www/api/methods/ccu/setfirewallconfigured.tcl
-	WebUI/www/api/methods/ccu/sethttpsredirectenabled.tcl
-	WebUI/www/api/methods/ccu/setinfoledconfig.tcl
-	WebUI/www/api/methods/ccu/setsecurityhint.tcl
-	WebUI/www/api/methods/ccu/setsecuritylevel.tcl
-	WebUI/www/api/methods/ccu/setsnmpenabled.tcl
-	WebUI/www/api/methods/ccu/setssh.tcl
-	WebUI/www/api/methods/ccu/setsshpassword.tcl
-	WebUI/www/api/methods/ccu/setstickyunreach.tcl
-	WebUI/www/api/methods/ccu/setuserackinstallwizard.tcl
-	WebUI/www/api/methods/channel/getchanneltype.tcl
-	WebUI/www/api/methods/channel/getname.tcl
-	WebUI/www/api/methods/channel/getvalue.tcl
-	WebUI/www/api/methods/channel/hasprogramids.tcl
-	WebUI/www/api/methods/channel/listprogramids.tcl
-	WebUI/www/api/methods/channel/pollcomtest.tcl
-	WebUI/www/api/methods/channel/setlogging.tcl
-	WebUI/www/api/methods/channel/setmode.tcl
-	WebUI/www/api/methods/channel/setname.tcl
-	WebUI/www/api/methods/channel/setusability.tcl
-	WebUI/www/api/methods/channel/setvisibility.tcl
-	WebUI/www/api/methods/channel/startcomtest.tcl
-	WebUI/www/api/methods/device/get.tcl
-	WebUI/www/api/methods/device/getnewdevicecount.tcl
-	WebUI/www/api/methods/device/getregaidbyaddress.tcl
-	WebUI/www/api/methods/device/getrfaddressbyaddress.tcl
-	WebUI/www/api/methods/device/getrfaddressofalldevices.tcl
-	WebUI/www/api/methods/device/haslinksorprograms.tcl
-	WebUI/www/api/methods/device/hasprograms.tcl
-	WebUI/www/api/methods/device/listall.tcl
-	WebUI/www/api/methods/device/listalldetail.tcl
-	WebUI/www/api/methods/device/listprogramids.tcl
-	WebUI/www/api/methods/device/pollcomtest.tcl
-	WebUI/www/api/methods/device/setname.tcl
-	WebUI/www/api/methods/device/setoperategrouponly.tcl
-	WebUI/www/api/methods/device/setvisibility.tcl
-	WebUI/www/api/methods/device/startcomtest.tcl
-	WebUI/www/api/methods/diagram/getDataSourceGroups.tcl
-	WebUI/www/api/methods/diagram/getDiagrams.tcl
-	WebUI/www/api/methods/event/poll.tcl
-	WebUI/www/api/methods/event/subscribe.tcl
-	WebUI/www/api/methods/event/unsubscribe.tcl
-	WebUI/www/api/methods/firewall/getconfiguration.t
-Abbruch
 
 .. sparseCheckout download of EQ3's github repository 'occu' is finished
 .. the downloaded rftypes XMLs are in the directory './libraries/occu/firmware/rftypes'
@@ -167,7 +73,7 @@ AsksinPP rftypes XML extractor 0.13
 
 
 
-Current data and time : 2021_08_25-12:35:48
+Current data and time : 2021_09_08-12:32:03
 
 
 
@@ -183,7 +89,10 @@ Current data and time : 2021_08_25-12:35:48
 
 The file './libraries/Addon_extract_rftypes_XML_translation_archive.db' is NOT existing
 
-The file './libraries/EQ3_occu_extract_rftypes_translation_archive.db' is NOT existing
+.. do you want the EQ3 database file 'null' be deleted?
+
+.. default answer 'yes' has been set as CLI parameter ..
+.. deleting file  './libraries/EQ3_occu_extract_rftypes_translation_archive.db'
 
 .. working on XML file '../src/addon/firmware/rftypes/hb-uni-sensor-AQ-BME680_KF_DEBUG.xml’
 
@@ -4508,8 +4417,8 @@ creator prefix       = F6
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's translations ..
 
-.. the extracted string_translation_de_map has 38 entries
-.. the extracted string_translation_en_map has 38 entries
+.. the extracted string_translation_de_map has 42 entries
+.. the extracted string_translation_en_map has 42 entries
 
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's device descriptions ..
@@ -4524,7 +4433,7 @@ creator prefix       = F6
 
 
 W A R N I N G: The file 'AsksinPP_addon_generator_control_file.xml' is already existing!
-File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_08_25-12:35:51'
+File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_09_08-12:32:06'
 
 .. done
 
@@ -4545,7 +4454,7 @@ AsksinPP rftypes XML extractor 0.13
 
 
 
-Current data and time : 2021_08_25-12:35:53
+Current data and time : 2021_09_08-12:32:08
 
 
 
@@ -8764,7 +8673,7 @@ creator prefix       = EQ3
 
 
 W A R N I N G: The file './libraries/EQ3_occu_extract_rftypes_translation_archive.db' is already existing!
-File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_08_25-12:35:56.bck'
+File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_09_08-12:32:10.bck'
 
 
 .. finished extracting defined names in the specified EQ-3's occu repository @ './libraries/occu/firmware/rftypes/*.xml' .. 
@@ -8908,8 +8817,8 @@ creator prefix       = F6
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's translations ..
 
-.. the extracted string_translation_de_map has 38 entries
-.. the extracted string_translation_en_map has 38 entries
+.. the extracted string_translation_de_map has 42 entries
+.. the extracted string_translation_en_map has 42 entries
 
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's device descriptions ..
@@ -8929,7 +8838,7 @@ creator prefix       = F6
 
 
 W A R N I N G: The file './libraries/Addon_extract_rftypes_XML_translation_archive.db' is already existing!
-File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_08_25-12:35:56.bck'
+File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_09_08-12:32:11.bck'
 
 
 .. creating XML control file for addon generator 'AsksinPP_addon_generator_control_file.xml'
@@ -8938,7 +8847,7 @@ File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be rena
 
 
 W A R N I N G: The file 'AsksinPP_addon_generator_control_file.xml' is already existing!
-File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_08_25-12:35:56'
+File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_09_08-12:32:11'
 
 .. done
 
@@ -8959,7 +8868,7 @@ AsksinPP rftypes XML extractor 0.13
 
 
 
-Current data and time : 2021_08_25-12:35:58
+Current data and time : 2021_09_08-12:32:12
 
 
 
@@ -13178,7 +13087,7 @@ creator prefix       = EQ3
 
 
 W A R N I N G: The file './libraries/EQ3_occu_extract_rftypes_translation_archive.db' is already existing!
-File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_08_25-12:36:00.bck'
+File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_09_08-12:32:15.bck'
 
 
 .. finished extracting defined names in the specified EQ-3's occu repository @ './libraries/occu/firmware/rftypes/*.xml' .. 
@@ -13328,8 +13237,8 @@ creator prefix       = F6
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's translations ..
 
-.. the extracted string_translation_de_map has 38 entries
-.. the extracted string_translation_en_map has 38 entries
+.. the extracted string_translation_de_map has 42 entries
+.. the extracted string_translation_en_map has 42 entries
 
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's device descriptions ..
@@ -13349,7 +13258,7 @@ creator prefix       = F6
 
 
 W A R N I N G: The file './libraries/Addon_extract_rftypes_XML_translation_archive.db' is already existing!
-File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_08_25-12:36:01.bck'
+File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_09_08-12:32:16.bck'
 
 
 .. creating XML control file for addon generator 'AsksinPP_addon_generator_control_file.xml'
@@ -13358,7 +13267,7 @@ File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be rena
 
 
 W A R N I N G: The file 'AsksinPP_addon_generator_control_file.xml' is already existing!
-File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_08_25-12:36:01'
+File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_09_08-12:32:16'
 
 .. done
 
@@ -13379,7 +13288,7 @@ AsksinPP rftypes XML extractor 0.13
 
 
 
-Current data and time : 2021_08_25-12:36:02
+Current data and time : 2021_09_08-12:32:19
 
 
 
@@ -17598,7 +17507,7 @@ creator prefix       = EQ3
 
 
 W A R N I N G: The file './libraries/EQ3_occu_extract_rftypes_translation_archive.db' is already existing!
-File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_08_25-12:36:05.bck'
+File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_09_08-12:32:23.bck'
 
 
 .. finished extracting defined names in the specified EQ-3's occu repository @ './libraries/occu/firmware/rftypes/*.xml' .. 
@@ -17725,8 +17634,8 @@ creator prefix       = F6
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's translations ..
 
-.. the extracted string_translation_de_map has 38 entries
-.. the extracted string_translation_en_map has 38 entries
+.. the extracted string_translation_de_map has 42 entries
+.. the extracted string_translation_en_map has 42 entries
 
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's device descriptions ..
@@ -17746,7 +17655,7 @@ creator prefix       = F6
 
 
 W A R N I N G: The file './libraries/Addon_extract_rftypes_XML_translation_archive.db' is already existing!
-File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_08_25-12:36:05.bck'
+File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_09_08-12:32:23.bck'
 
 
 .. creating XML control file for addon generator 'AsksinPP_addon_generator_control_file.xml'
@@ -17755,7 +17664,7 @@ File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be rena
 
 
 W A R N I N G: The file 'AsksinPP_addon_generator_control_file.xml' is already existing!
-File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_08_25-12:36:05'
+File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_09_08-12:32:24'
 
 .. done
 
@@ -17776,7 +17685,7 @@ AsksinPP rftypes XML extractor 0.13
 
 
 
-Current data and time : 2021_08_25-12:36:07
+Current data and time : 2021_09_08-12:32:27
 
 
 
@@ -21995,7 +21904,7 @@ creator prefix       = EQ3
 
 
 W A R N I N G: The file './libraries/EQ3_occu_extract_rftypes_translation_archive.db' is already existing!
-File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_08_25-12:36:10.bck'
+File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_09_08-12:32:31.bck'
 
 
 .. finished extracting defined names in the specified EQ-3's occu repository @ './libraries/occu/firmware/rftypes/*.xml' .. 
@@ -22126,8 +22035,8 @@ creator prefix       = F6
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's translations ..
 
-.. the extracted string_translation_de_map has 38 entries
-.. the extracted string_translation_en_map has 38 entries
+.. the extracted string_translation_de_map has 42 entries
+.. the extracted string_translation_en_map has 42 entries
 
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's device descriptions ..
@@ -22147,7 +22056,7 @@ creator prefix       = F6
 
 
 W A R N I N G: The file './libraries/Addon_extract_rftypes_XML_translation_archive.db' is already existing!
-File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_08_25-12:36:10.bck'
+File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_09_08-12:32:32.bck'
 
 
 .. creating XML control file for addon generator 'AsksinPP_addon_generator_control_file.xml'
@@ -22156,7 +22065,7 @@ File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be rena
 
 
 W A R N I N G: The file 'AsksinPP_addon_generator_control_file.xml' is already existing!
-File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_08_25-12:36:10'
+File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_09_08-12:32:32'
 
 .. done
 
@@ -22177,7 +22086,7 @@ AsksinPP rftypes XML extractor 0.13
 
 
 
-Current data and time : 2021_08_25-12:36:12
+Current data and time : 2021_09_08-12:32:35
 
 
 
@@ -26396,7 +26305,7 @@ creator prefix       = EQ3
 
 
 W A R N I N G: The file './libraries/EQ3_occu_extract_rftypes_translation_archive.db' is already existing!
-File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_08_25-12:36:14.bck'
+File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_09_08-12:32:38.bck'
 
 
 .. finished extracting defined names in the specified EQ-3's occu repository @ './libraries/occu/firmware/rftypes/*.xml' .. 
@@ -26504,15 +26413,15 @@ creator prefix       = F6
 
 .. the Addon device_map has 1 entries
 .. the Addon master_parameter_translation_map has 0 entries
-.. the Addon data_points_translation_map has 12 entries
+.. the Addon data_points_translation_map has 16 entries
 .. the Addon paramset_translation_map has 0 entries
 .. the Addon easymodes tcl list has 110 entries
 
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's translations ..
 
-.. the extracted string_translation_de_map has 38 entries
-.. the extracted string_translation_en_map has 38 entries
+.. the extracted string_translation_de_map has 42 entries
+.. the extracted string_translation_en_map has 42 entries
 
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's device descriptions ..
@@ -26526,13 +26435,13 @@ creator prefix       = F6
 
 .. the merged Addon devices_map has 6 entries
 .. the merged Addon master_parameter_translation_map has 2 entries
-.. the merged Addon data_points_translation_map has 36 entries
+.. the merged Addon data_points_translation_map has 40 entries
 .. the merged Addon paramset_translation_map has 0 entries
 .. saving addon data base to './libraries/Addon_extract_rftypes_XML_translation_archive.db' .. 
 
 
 W A R N I N G: The file './libraries/Addon_extract_rftypes_XML_translation_archive.db' is already existing!
-File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_08_25-12:36:15.bck'
+File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_09_08-12:32:39.bck'
 
 
 .. creating XML control file for addon generator 'AsksinPP_addon_generator_control_file.xml'
@@ -26541,7 +26450,7 @@ File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be rena
 
 
 W A R N I N G: The file 'AsksinPP_addon_generator_control_file.xml' is already existing!
-File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_08_25-12:36:15'
+File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_09_08-12:32:39'
 
 .. done
 
@@ -26562,7 +26471,7 @@ AsksinPP rftypes XML extractor 0.13
 
 
 
-Current data and time : 2021_08_25-12:36:16
+Current data and time : 2021_09_08-12:32:41
 
 
 
@@ -30781,7 +30690,7 @@ creator prefix       = EQ3
 
 
 W A R N I N G: The file './libraries/EQ3_occu_extract_rftypes_translation_archive.db' is already existing!
-File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_08_25-12:36:19.bck'
+File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_09_08-12:32:45.bck'
 
 
 .. finished extracting defined names in the specified EQ-3's occu repository @ './libraries/occu/firmware/rftypes/*.xml' .. 
@@ -30915,8 +30824,8 @@ creator prefix       = F6
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's translations ..
 
-.. the extracted string_translation_de_map has 38 entries
-.. the extracted string_translation_en_map has 38 entries
+.. the extracted string_translation_de_map has 42 entries
+.. the extracted string_translation_en_map has 42 entries
 
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's device descriptions ..
@@ -30930,13 +30839,13 @@ creator prefix       = F6
 
 .. the merged Addon devices_map has 7 entries
 .. the merged Addon master_parameter_translation_map has 2 entries
-.. the merged Addon data_points_translation_map has 38 entries
+.. the merged Addon data_points_translation_map has 42 entries
 .. the merged Addon paramset_translation_map has 0 entries
 .. saving addon data base to './libraries/Addon_extract_rftypes_XML_translation_archive.db' .. 
 
 
 W A R N I N G: The file './libraries/Addon_extract_rftypes_XML_translation_archive.db' is already existing!
-File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_08_25-12:36:19.bck'
+File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_09_08-12:32:46.bck'
 
 
 .. creating XML control file for addon generator 'AsksinPP_addon_generator_control_file.xml'
@@ -30945,7 +30854,7 @@ File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be rena
 
 
 W A R N I N G: The file 'AsksinPP_addon_generator_control_file.xml' is already existing!
-File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_08_25-12:36:19'
+File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_09_08-12:32:46'
 
 .. done
 
@@ -30966,7 +30875,7 @@ AsksinPP rftypes XML extractor 0.13
 
 
 
-Current data and time : 2021_08_25-12:36:21
+Current data and time : 2021_09_08-12:32:49
 
 
 
@@ -35185,7 +35094,7 @@ creator prefix       = EQ3
 
 
 W A R N I N G: The file './libraries/EQ3_occu_extract_rftypes_translation_archive.db' is already existing!
-File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_08_25-12:36:24.bck'
+File './libraries/EQ3_occu_extract_rftypes_translation_archive.db' will be renamed to './libraries/EQ3_occu_extract_rftypes_translation_archive.db.2021_09_08-12:32:53.bck'
 
 
 .. finished extracting defined names in the specified EQ-3's occu repository @ './libraries/occu/firmware/rftypes/*.xml' .. 
@@ -35309,8 +35218,8 @@ creator prefix       = F6
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's translations ..
 
-.. the extracted string_translation_de_map has 38 entries
-.. the extracted string_translation_en_map has 38 entries
+.. the extracted string_translation_de_map has 42 entries
+.. the extracted string_translation_en_map has 42 entries
 
 
 .. reading the previous XML control file './libraries/AsksinPP_addon_generator_control_file_translation_source.xml' and extracting it's device descriptions ..
@@ -35324,13 +35233,13 @@ creator prefix       = F6
 
 .. the merged Addon devices_map has 8 entries
 .. the merged Addon master_parameter_translation_map has 2 entries
-.. the merged Addon data_points_translation_map has 38 entries
+.. the merged Addon data_points_translation_map has 42 entries
 .. the merged Addon paramset_translation_map has 0 entries
 .. saving addon data base to './libraries/Addon_extract_rftypes_XML_translation_archive.db' .. 
 
 
 W A R N I N G: The file './libraries/Addon_extract_rftypes_XML_translation_archive.db' is already existing!
-File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_08_25-12:36:24.bck'
+File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be renamed to './libraries/Addon_extract_rftypes_XML_translation_archive.db.2021_09_08-12:32:53.bck'
 
 
 .. creating XML control file for addon generator 'AsksinPP_addon_generator_control_file.xml'
@@ -35339,7 +35248,7 @@ File './libraries/Addon_extract_rftypes_XML_translation_archive.db' will be rena
 
 
 W A R N I N G: The file 'AsksinPP_addon_generator_control_file.xml' is already existing!
-File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_08_25-12:36:24'
+File 'AsksinPP_addon_generator_control_file.xml' will be renamed to 'AsksinPP_addon_generator_control_file.xml.bck_2021_09_08-12:32:54'
 
 .. done
 

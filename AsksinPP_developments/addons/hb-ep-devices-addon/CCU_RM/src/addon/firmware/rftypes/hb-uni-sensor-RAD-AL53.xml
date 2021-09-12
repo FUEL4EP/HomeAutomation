@@ -48,9 +48,12 @@
           <logical type="boolean"/>
           <physical type="integer" interface="internal" value_id="CONFIG_PENDING"/>
         </parameter>
-        <parameter id="LOWBAT" operations="read,event" ui_flags="service">
-        <logical type="boolean"/>
-          <physical type="integer" interface="internal" value_id="LOWBAT"/>
+        <parameter id="LOWBAT" operations="read,event" ui_flags="service" control="NONE">
+          <logical type="boolean" />
+          <physical type="integer" interface="command" value_id="LOWBAT">
+            <event frame="INFO_LEVEL"/>
+            <event frame="MEASURE_EV_BAT" />
+          </physical>
         </parameter>
         <parameter id="RSSI_DEVICE" operations="read,event">
           <logical type="integer"/>
@@ -84,14 +87,20 @@
         </parameter>
       </paramset>
       <paramset type="VALUES" id="HB-UNI-Sensor-RAD-AL53_values">
-        <parameter id="HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL" operations="read,event">
-          <logical type="boolean"/>
+        <parameter id="HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL" operations="read,event" ui_flags="service" control="NONE">
+          <logical type="option">
+            <option id="NORMAL" index="0" default="true"/>
+            <option id="ALARM" index="1"/>
+          </logical>
           <physical type="integer" interface="command" value_id="HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL">
             <event frame="MEASURE_EVENT"/>
           </physical>
-        </parameter>
-        <parameter id="HB_ALARM_MOVING_AVERAGE" operations="read,event">
-          <logical type="boolean"/>
+        </parameter> 
+        <parameter id="HB_ALARM_MOVING_AVERAGE" operations="read,event" ui_flags="service" control="NONE">
+          <logical type="option">
+            <option id="NORMAL" index="0" default="true"/>
+            <option id="ALARM" index="1"/>
+          </logical>
           <physical type="integer" interface="command" value_id="HB_ALARM_MOVING_AVERAGE">
             <event frame="MEASURE_EVENT"/>
           </physical>
@@ -139,7 +148,7 @@
           <conversion type="float_integer_scale" factor="1000.0"/>
         </parameter>
         <parameter id="AL53_SUPPLY_VOLTAGE" operations="read,event">
-          <logical type="float" min="0.5" max="5.5" unit="V"/>
+          <logical type="float" min="0.5" max="24.0" unit="V"/>
           <physical type="integer" interface="command" value_id="AL53_SUPPLY_VOLTAGE" no_init="true">
             <event frame="MEASURE_EVENT"/>
           </physical>
@@ -157,7 +166,7 @@
     </channel>
   </channels>
   <frames>
-    <frame id="MEASURE_EVENT" direction="from_device" event="true" channel_field="10" type="0x53">
+    <frame id="MEASURE_EVENT" direction="from_device" event="true" fixed_channel="1" type="0x53">
       <parameter type="integer" index="9.0" size="0.1" param="HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL"/>
       <parameter type="integer" index="9.1" size="0.1" param="HB_ALARM_MOVING_AVERAGE"/>
       <parameter type="integer" index="10.0" size="2.0" param="COUNTS_PER_MEASUREMENT_INTERVAL"/>
@@ -172,6 +181,9 @@
     <frame id="MEASURE_EV_BAT" direction="from_device" event="true" type="0x53" fixed_channel="*">
       <parameter type="integer" index="9.7" size="0.1" param="LOWBAT" />
     </frame>
+    <frame id="INFO_LEVEL" direction="from_device" allowed_receivers="BROADCAST,CENTRAL,OTHER" event="true" type="0x10" subtype="6" subtype_index="9" fixed_channel="*">
+       <parameter type="integer" index="9.7" size="0.1" param="LOWBAT"/>
+     </frame>
   </frames>
   <paramset_defs/>
 </device>
