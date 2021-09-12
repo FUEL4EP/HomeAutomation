@@ -8,6 +8,9 @@
 
 ## AsksinPP DIY Homematic sensor for alpha, beta, and gamma radiation
 - Picture of current prototype ![pic](Images/HB-UNI-Sensor1-RAD-AL53.png)
+- Picture 1 of WebUI ![pic](Images/WebUI_1.png)
+- Picture 2 of WebUI ![pic](Images/WebUI_2.png)
+- Picture 3 of WebUI ![pic](Images/WebUI_3.png)
 - Based on
     - universal AsksinPP PCB for DIY-kits from Alexander Reinert [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt)
 	- [Teviso AL53](https://www.teviso.com/file/pdf/al53-data-specification.pdf) radiation sensor
@@ -23,10 +26,11 @@
 	- Ultra low power
 	- [AsksinPP](https://github.com/pa-pa/AskSinPP)
 	- uses a [fork](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/avr_stl) of Giampaolo Mancini (manchoz) [avr_stl](https://github.com/manchoz/avr_stl.git) implementation of a C++ standard library packaged as an Arduino library. The library is based on the library from Mike Matera.
-	- Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/addons/hb-ep-devices-addon) > version 1.8
+	- addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/addons/hb-ep-devices-addon) >= version 1.8
+    	+ install and uninstall scripts were automatically created by [AsksinPP_addon_files_generator](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/AsksinPP_addon_files_generator)
 	- e-paper display will be added later on
 	- NiMH charger will be added later on
 	- radiation event counter is sampled every 10 minutes
 	- typical radiation event rate is ~5 counts per 10 minutes, ~30 events per hour
 	- cycling ring buffer of depth 1008 for calculating the moving average of radiation events, i.e. averaging over 1 week = 10 minutes * 1008
-	- Please post questions [here](https://homematic-forum.de/forum/viewforum.php?f=76). Please use as topic 'HB-UNI-Sensor1-RAD-AL53 Radioaktivitätssensor'
+	- please post questions [here](https://homematic-forum.de/forum/viewforum.php?f=76). Please use as topic 'HB-UNI-Sensor1-RAD-AL53 Radioaktivitätssensor'
