@@ -24,3 +24,7 @@
 	- [AsksinPP](https://github.com/pa-pa/AskSinPP)
 	- Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/addons/hb-ep-devices-addon) > version 1.8
 	- e-paper display will be added later on
+	- NiMH charger will be added later on
+	- radiation event counter is sampled every 10 minutes
+	- typical radiation event rate is ~5 counts per 10 minutes, ~30 events per hour
+	- cycling ring buffer of depth 1008 for calculating the moving average of radiation events, i.e. averaging over 1 week = 10 minutes * 1008
