@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Tindie_Pro_Mini_XL_V2
+D PCB with same size and pin locations as a Arduino Pro Mini, requires setup according https://prominimicros.com/how-to-use-the-pro-mini-xl-or-atmega-1284p-with-the-arduino-ide/
+K ATMega1284P MCU 
+F https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/
+$ENDCMP
+#
+#End Doc Library
