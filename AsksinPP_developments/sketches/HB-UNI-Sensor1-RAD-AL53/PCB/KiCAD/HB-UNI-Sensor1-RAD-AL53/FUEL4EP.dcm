@@ -1,8 +1,49 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP ABLIC_S35770
+D IC in TMSOP-8 package
+K supplier: ABLIC, distributors: Mouser, Digikey
+F https://www.ablic.com/en/doc/datasheet/counter_ic/S35770_I_E.pdf
+$ENDCMP
+#
+$CMP ABLIC_S35770_DIP
+D SMD to DIP Adapter from Amazon
+F https://www.amazon.de/SOIC8-Adapter-Board-Convertor-Double/dp/B00JK8EYTG
+$ENDCMP
+#
+$CMP ADS1115_ADC_module
+D https://paradisetronic.com/en/add-on-boards/ads1115-4-channel-16-bit-analog-to-digital-converter-adc-module-i2c
+K available @ e.g. Paradiseelectronic or amazon !!!!!  Warning: Many fakes !!!!!!
+F https://www.ti.com/lit/ds/symlink/ads1115.pdf
+$ENDCMP
+#
+$CMP CC1101_transceiver_module
+D TI CC1101 868.3 MHz tranceiver module
+K Pinout: https://www.makershop.de/download/cc1101-pinout-v.png
+F https://www.ti.com/lit/ds/symlink/cc1101.pdf
+$ENDCMP
+#
+$CMP MT3608_step_up
+D https://chips-and-more.com/cm/pdf/K3608.pdf
+K available e.g. at Amazon
+F https://www.olimex.com/Products/Breadboarding/BB-PWR-3608/resources/MT3608.pdf
+$ENDCMP
+#
+$CMP TPS61221_step_up_3.3V
+D https://www.tindie.com/products/closedcube/tps61221-low-input-from-07v-boost-33v-breakout/
+K Tindie module
+F https://www.ti.com/lit/ds/symlink/tps61221.pdf
+$ENDCMP
+#
+$CMP Teviso_AL53_RAD_sensor
+D https://www.teviso.com/en/downloads.htm
+K alpha, beta, gamma radiation detector based on PIN diode
+F https://www.teviso.com/file/pdf/al53-data-specification.pdf
+$ENDCMP
+#
 $CMP Tindie_Pro_Mini_XL_V2
 D PCB with same size and pin locations as a Arduino Pro Mini, requires setup according https://prominimicros.com/how-to-use-the-pro-mini-xl-or-atmega-1284p-with-the-arduino-ide/
-K ATMega1284P MCU 
+K ATMega1284P MCU
 F https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/
 $ENDCMP
 #
