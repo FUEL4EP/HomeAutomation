@@ -1,7 +1,14 @@
 # avr_stl
-This is an implementation of a C++ standard library packaged as an Arduino library. The library is based on the library from Mike Matera:
+This is an implementation of a C++ standard library packaged as an Arduino library (arduinoSTL). The library is based on the library from Mike Matera:
 
 https://github.com/mike-matera/ArduinoSTL
+
+**Changes are:**
+
+remove avr_stl/src/del_ops.cpp<br/>
+remove avr_stl/src/del_opvs.cpp
+
+for avoiding duplicated definitions
 
 ## Using printf() and scanf()
 The ArduinoSTL header file contains code to bind a serial port of your choice to

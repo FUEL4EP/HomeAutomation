@@ -1,37 +1,315 @@
-# HB-UNI-Sensor1-RAD-AL53 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2FAsksinPP_developments%2Fsketches%2FHB-UNI-Sensor1-RAD-AL53&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+# HB-UNI-Sensor1-RAD-AL53
 
-# Under construction
+AsksinPP Homematic DIY Sensor für alpha, beta- und gamma-Strahlung basierend auf dem [Teviso AL53 Sensor](https://www.teviso.com/file/pdf/al53-data-specification.pdf)
 
-## Coming soon, first prototype is now running well
-- here first snapshot of software status
-- documentation is missing, will be provided later on
+<p align="center"><img src="Images/AL53_shielded_with_copper_foil.png?raw=true"/></p>
 
-## AsksinPP DIY Homematic sensor for alpha, beta, and gamma radiation
-- Picture of current prototype ![pic](Images/HB-UNI-Sensor1-RAD-AL53.png)
-- Picture 1 of WebUI ![pic](Images/WebUI_1.png)
-- Picture 2 of WebUI ![pic](Images/WebUI_2.png)
-- Picture 3 of WebUI ![pic](Images/WebUI_3.png)
-- Based on
-    - universal AsksinPP PCB for DIY-kits from Alexander Reinert [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt)
-	- [Teviso AL53](https://www.teviso.com/file/pdf/al53-data-specification.pdf) radiation sensor
-    	+ IMPORTANT: amplitude of output pulse is Vsupply, a voltage divider is needed to interface to the counter ABLIC S-35770
-	- I2C counter [ABLIC S-35770](https://www.ablic.com/en/doc/datasheet/counter_ic/S35770_I_E.pdf)
-	    + an Arduino library is [here](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/ABLIC_S35770)
-	- [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)
-	    + an ATMega328P Pro Mini will NOT work!
-	- 16 bit ADS1115 ADC, e.g. from Amazon
-	- supply by 2x NiMH accumulator batteries 2700 mAH (currently use of external charger)
-	- ultra low power, current consumption is about 0.83 mA in sleep mode, i.e. expected run time with one NiMH battery charge is > 2 months
-	- MT3608 boost converter, e.g. from Amazon, for creating supply voltage of AL53 sensor, max 15V, recommended supply voltage is 8.0V
-	- [TPS61221 boost converter](https://www.tindie.com/products/closedcube/tps61221-low-input-from-07v-boost-33v-breakout/) for 3.3V supply of ATMega1284P (Tindie Pro Mini XL - v2)
-	- [AsksinPP](https://github.com/pa-pa/AskSinPP)
-	- uses a [fork](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/avr_stl) of Giampaolo Mancini (manchoz) [avr_stl](https://github.com/manchoz/avr_stl.git) implementation of a C++ standard library packaged as an Arduino library. The library is based on the library from Mike Matera.
-	- addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/addons/hb-ep-devices-addon) >= version 1.8
-    	+ install and uninstall scripts were automatically created by [AsksinPP_addon_files_generator](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/AsksinPP_addon_files_generator)
-    - radiation event counter is sampled every 10 minutes
-	- typical radiation event rate is ~5 counts per 10 minutes, ~30 events per hour
-	- cycling ring buffer of depth 1008 for calculating the moving average of radiation events, i.e. averaging over 1 week = 10 minutes * 1008
-	- Modules that will be added later on
-	    +    e-paper display
-	    +    NiMH charger
-	- please post questions in the homematic forum [here](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53).
+## Inhaltsverzeichnis
+
+- noch zu erstellen
+   
+## Neuerungen
+- dies ist zur Zeit nur ein Vorabdatensatz, ein erster Prototyp von HB-UNI-Sensor1-RAD-AL53 ist funktionsfähig, die Systemvalidierung läuft allerdings noch
+- viele Tests waren bisher in Ordnung, manche Tests haben Laufzeiten > 1 Woche und laufen noch
+- Pilottester können sich gerne an der Validierung beteiligen, Rückmeldung dann bitte [im Homematic Forum](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53)
+- wer einen fertig entwickelten Sensor haben möchte, sollte bis zur Freigabe warten
+- Rückmeldungen und Hinweise zur Verbesserung der Dokumentation sind [im Homematic Forum](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53) willkommen oder auch als private Nachricht an [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum.
+- die Dokumentation ist noch im Aufbau, Hinweise auf Fehler oder Unvollständigkeiten sind bis zur Freigabe als private Nachricht willkommen 
+
+## Einsteiger
+
+- wer noch nicht mit Homematic DIY AsksinPP vertraut ist, sollte zuerst die folgenden Grundlagen lesen
+	+	[AsksinPP Grundlagen](https://asksinpp.de/Grundlagen/)
+- Bitte alle Kapitel vor dem Fragestellen im Homematic Forum durchlesen
+
+##  Hinweise
+- geplante Erweiterungen
+    + e-Paper Anzeige mit [1.54 inch e-Paper Module von Waveshare](https://www.waveshare.com/wiki/1.54inch_e-Paper_Module) mit SPI-Schnittstelle 
+    + Akkulademodul mit 5V USB Ladebuche
+    + 3D Druck Gehäuse
+    + eventuell weiteren Signaleingang für externen Geigerzähler, z.B. [Taschen-Geiger-Strahlungssensor - Typ 5](https://www.robotshop.com/de/de/taschen-geiger-strahlungssensor-typ-5.html) oder [Stuttgarter Geigerle](http://www.opengeiger.de/BauanleitungV1_1.pdf)
+- Mitwirkende sind willkommen, Interesse bitte per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) melden
+    
+    
+## Wichtige Hinweise, unbedingt beachten!
+- beim Umgang mit radioaktiven Stoffen sind die zutreffenden gesetzlichen Sicherheitsvorkehrungen zu beachten, ohne Anspruch auf Vollständigkeit ist [hier](https://www.buzer.de/StrlSchV.htm) eine Übersicht zu finden. Für die Beachtung aller Sicherheitsvorschriften ist der Nutzer selbst verantwortlich!
+- beim Aufbau bitte unbedingt die Ausgangsspannung des MT3608 Boost Konverters auf 8,0V einstellen **bevor** der Teviso AL53 Sensor angeschlossen wird
+- das Aluminiumfenster des Teviso AL53 Sensors absolut nicht berühren!
+- den Teviso AL53 Sensor mit dem bereitgestellten [3D Druckgehäuse](3D_print_files/AL53_case.stl) schützen:
+<p align="center"><img src="Images/AL53_case.png?raw=true"/></p>
+
+- dazu zuerst in die Vertiefung des 3D Druckgehäuses ein zurechtgeschnittenes Rechteck eines [Bewehrungsnetzes](https://www.amazon.de/Bewehrungsnetz-V4A-Edelstahl-300-Kunststoffschweissen/dp/B00UVS7GM6) mit 2-Komponentenkleber einkleben.
+- dann den Teviso AL53 Sensor vorsichtig ohne Verkantung in das 3D Druckgehäuse eindrücken
+- nun die überstehenden 'Nasen' des Teviso AL53 Sensors vorsichtig und mit wenig Erschütterungen mit einer Modellbaufeile abfeilen.
+- als Letztes dann zur EMV Abschirmung das 3D Druckgehäuse und den eingedrückten Teviso AL53 Sensor von außen mit [selbstklebender Kupferfolie](https://www.amazon.de/Kupferfolie-Selbstklebend-Abschirmband-beidseitig-Abschirmung/dp/B076Q7NJ6G) bekleben, das Sensorfenster dabei freilassen, siehe Bild oben. Darauf achten, dass die Anschlüsse des Teviso AL53 Sensors nicht kurzgeschlossen werden.
+- die drei Lötfahnen des Teviso AL53 vorsichtig mit einem Seitenschneider kürzen, so dass das Sensorgehäuse zwischen die Batteriehalterungen der [Basisplatine HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) von Alexander Reinert passt.
+- direkt an die Versorgungsanschlüsse einen keramischen Kondensator 4,7uF und einen Elektrolytkondensator 22uF (>10V) anlöten:
+
+<p align="center"><img src="Images/AL53_decoupling_capacitors.png?raw=true"/></p>
+
+- da die EMV Kupferfolie elektrisch leitfähig ist, bitte zuerst **vorübergehend** die I2C Platinenanschlüsse unter dem Sensorgehäuse mit einem Klebefilm isolieren. Sonst besteht Kurzschlussgefahr! Der Klebefilm ist im obigen Bild erkennbar.
+- **erst nach erfolgreicher Inbetriebnahme** und Test des gesamten Geräts wird mit Zweikomponentenkleber der 3D gedruckte [Abstandshalter](./3D_print_files/AL53_case_distance-BodyPad.stl)  zwischen das 3D Druckgehäuse und die Platine geklebt. 
+ 
+
+## Eigenschaften
+-    basierend auf dem [Teviso AL53 Sensor](https://www.teviso.com/file/pdf/al53-data-specification.pdf) Sensor
+-    misst alpha-, beta- und gamma-Strahlung
+-    die Absorptionscharakteristik für gamma-Strahlung ist ähnlich der PIN-Diode [X100-7 THD von First Sensor](https://www.first-sensor.com/cms/upload/datasheets/X100-7_THD_5000040.pdf) und auf gamma Energien von < ca. 10keV beschränkt.
+-    geringer Energieverbrauch: nur ca 0,83 mA im Messbetrieb
+-    Versorgung mit zwei aufladbaren NiMH Akkumulatorzellen: Laufzeit > 2 Monate mit einer Akkuladung
+-    die Ausgangspulse des AL53 Sensors werden mit einem [ABLIC S-35770 24-Bit Zählerbausstein](https://www.ablic.com/en/doc/datasheet/counter_ic/S35770_I_E.pdf) gezählt und per I2C alle 10 Minuten ausgelesen.
+- die typische Zählrate bedingt durch die natürliche Hintergrundstrahlung beträgt ca. ~5 Ereignisse in 10 Minuten (Einheit: cpi = counts per interval, interval := 10 Minuten) oder ~30 Ereignisse in einer Stunde. **Daher ist der Sensor nicht geeignet für die schnelle Erfassung von Radioaktivität oder einer schnellen Änderung der Radioaktivität.**
+-    ein gleitender Mittelwert wird mit einem zyklischen Ringpuffer der Tiefe 1008 aus den ausgelesenen Zählerständen gebildet, d.h. die gleitende Mittelwertbildung wird über den Zeitraum der letzten 1008 * 10 Minuten = 7 Tage durchgeführt. Es wird jeweils  das älteste Zählergebnis verworfen, wenn ein neues Zählergebnis eingelesen wird.
+-    es wird die Breite des 95% Vertrauensintervalls für die Zählrate (cpi) online berechnet und im WebUI ausgegeben.
+-    als Mikrokontrollerplatine wird der auf einem ATMega1284P basierende Arduino [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verwandt. WICHTIG: Ein Arduino Pro Mini mit einem AT328P passt wegen zu geringem Speicherplatz nicht!
+-    zwei Alarmsignale werden direkt vom AsksinPP Sensor zur als binäre Datenpunkte Verfügung gestellt:
++    der Datenpunkt HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL signalisiert, wenn die aktuelle Anzahl von Zählimpulsen den als Geräteparameter eingestellten Schwellwert 'Alarmwert Zählimpulse pro Messintervall' überschreitet
++    der Datenpunkt HB_ALARM_MOVING_AVERAGE signalisiert, wenn der aktuelle gleitende Mittelwert von Zählimpulsen den als Geräteparameter eingestellten Schwellwert 'Alarmwert Zählimpulse gleitender Mittelwert' überschreitet
++    eine Überschreitung der Grenzwerte löst in der Zentrale einen Alarm aus
+
+## Bilder
+
+-    WebUI in der RasperryMatic: Startseite > Status und Bedienung > Gewerke
+
+![pic](Images/WebUI_1.png)
+
+-  das Gerät im Gerätemanager: Startseite > Einstellungen > Geräte
+  
+![pic](Images/WebUI_2.png)
+
+- mögliche Parameter zum Einstellen: Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen
+
+![pic](Images/WebUI_3.png)
+
+- Datenpunkte des HB-UNI-Sensor1-RAD-AL53 Sensors (in dem CCU Historian)
+
+![pic](Images/Datapoints.png)
+
+- Beispiel eines Histogramms der Zählrate per Messintervall (im CCU Historian)
+
+![pic](Images/Counts_per_interval_histogram_24h.png)
+
+- Beispiel eines Histogramms des gleitenden Mittelwerts (im CCU Historian)
+
+    - noch einzufügen sobald verfügbar
+
+
+## Schaltplan
+
+- KiCAD [Schaltplan](./PCB/schematics/HB-UNI-Sensor1-RAD-AL53.pdf) oder KiCAD [Datenbasis](./PCB/KiCAD/HB-UNI-Sensor1-RAD-AL53/)
+
+## Platine
+
+- universal AsksinPP PCB for DIY-kits from Alexander Reinert [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt)
+    +    zu kaufen z.B. beim [Smartkramshop](https://smartkram.de/shop/produkte/bauteile-zentralen/diy-bausaetze/luftfeuchtigkeit-temperatur-bausaetze/universalplatine-fuer-diy-bausatze-von-alex-reinert/) 
+    +    oder im Homematic Forum nachfragen, ob jemand eine Platine verkauft.
+-    die folgenden Änderungen sind notwendig:
+
+![pic](PCB/HB-UNI-SEN-BATT/Modifications_HB-UNI-SEN-BATT.png)
+
+
+## Gehäuse
+
+- ein passendes 3D Druckgehäuse muss noch entworfen werden (in Planung). Basis wird das [Gehäuse HB-UNI-SEN-BATT snap in V2 von wpatrick](https://www.thingiverse.com/thing:3540481) sein. Die Grundplatte bleibt. Das Oberteil wird mit größerer Bauhöhe neu erstellt.  Auf die Grundplatte werden die  [Abstandhalter](./3D_print_files/Spacer_sleeve.stl) geklebt, so dass die Module auf die Unterseite der Platine geklebt werden können.
+
+
+## Aufbau
+
+-   Die KiCAD BOM Liste ist [hier](./PCB/KiCAD/HB-UNI-Sensor1-RAD-AL53/HB-UNI-Sensor1-RAD-AL53_BOM.html) (HTML Format).
+-    Bild des Prototypen ![pic](./Images/HB-UNI-Sensor1-RAD-AL53.png)
+-    Bild des Prototypen mit AL53 Kupferschirmung ![pic](Images/AL53_shielded_with_copper_foil.png)
+
+-   folgende Module werden benötigt:
+    -    Teviso [AL53 Sensor](https://www.teviso.com/file/pdf/al53-data-specification.pdf), Bezugsquelle: Teviso [sales@teviso.com](https://www.teviso.com/en/contact.htm)
+           *    WICHTIG: Der Ausgangspegel des OUT Signals vom Teviso AL53 Sensor beträgt 8,0V ( = Betriebsspannung AL53). Daher ist ein Spannungsteiler (R19, R13, D1, D2 siehe [Schaltplan](./PCB/schematics/HB-UNI-Sensor1-RAD-AL53.pdf) oder KiCAD [Datenbasis](./PCB/KiCAD/HB-UNI-Sensor1-RAD-AL53/))
+           * typischer Ausgangspuls des AL53 Sensors @ 8,0V Betriebsspannung siehe Bildschirmabzug eines Speicheroszilloskops
+          * die Pulsbreite beträgt nur ca. 150 .. 200 us, aufgrund der normalen Hintergrundstrahlung werden im Mittel nur ca. 0,5 Pulse zufällig pro Minute (!!) erzeugt
+           
+  ![pic](Images/Output_pulse_Teviso_AL53.png)
+  
+
+- 
+   	-	16 bit [ADS1115](https://www.ti.com/lit/ds/symlink/ads1115.pdf) AD-Wandlermodul, schmale Bauform, Bezugsquelle z.B. [Amazon](https://www.amazon.de/dp/B01N8ODF5C) oder [Paradisetronic](https://paradisetronic.com/en/add-on-boards/ads1115-4-channel-16-bit-analog-to-digital-converter-adc-module-i2c)
+    - I2C Zählerbaustein [ABLIC S-35770](https://www.ablic.com/en/doc/datasheet/counter_ic/S35770_I_E.pdf), Bezugsquelle z.B. [Mouser](https://www.mouser.de/ProductDetail/ABLIC/S-35770E01I-K8T2U?qs=vLWxofP3U2yvSXNQEw14rA%3D%3D), [Digikey](https://www.digikey.de/product-detail/de/ablic-u-s-a-inc/S-35770E01I-K8T2U/1662-3409-1-ND/9974503)
+    	+	der IC ABLIC S-35770 wird auf einen [SMD to DIP8 Adapter PCB Board Convertor ](https://www.amazon.de/SOIC8-Adapter-Board-Convertor-Double/dp/B00JK8EYTG) aufgelötet.
+        +    eine Arduino Bibliothek für den ABLIC S-35770 ist [hier](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/ABLIC_S35770), 
+    -  [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/), Bezugsquelle: [Tindie](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)
+    - CC1101 868 MHz Wireless Funk Modul Transciever, Bezugsquelle z.B. [Makershop](https://www.makershop.de/module/funk/cc1101-868-mhz/)
+    - [MT3608](https://www.olimex.com/Products/Breadboarding/BB-PWR-3608/resources/MT3608.pdf) Aufwärtswandler, Bezugsquelle z.B. [Amazon](https://www.amazon.com/-/de/dp/B07TLJR2S9)
+        +    für die Erzeugung der Betriebsspannung des AL53 Sensors: 8,0V, bitte keine höhere Spannung einstellen, sonst erzeugt der AL53 Sensor Doppel- oder Mehrfachpulse 
+	- [TPS61221 Aufwärtswandler](https://www.tindie.com/products/closedcube/tps61221-low-input-from-07v-boost-33v-breakout/), Bezugsquelle [Tindie]((https://www.tindie.com/products/closedcube/tps61221-low-input-from-07v-boost-33v-breakout/))
+	    +    für die Erzeugung der Betriebsspannung von 3,3V für den ATMega1284P (Tindie Pro Mini XL - v2)
+    - Lochrasterplatine 14,5 mm x 14,5 mm zum Aufbau von
+        + Betriebsspannungsfilters AL53: R15, R16, C2
+        + Begrenzer Ausgangssignal AL53: R13, R19, D1, D2, D4
+    -    zwei NiMH Akkumlatorbatterien 2700 mA
+    - zur Zeit wird noch ein externes Ladegerät benötigt, das später durch ein in das Gehäuseoberteil eingeklebtes NiMH Lademodul ersetzt wird
+        
+- vor den Lötarbeiten werden die [Modifikation der Basisplatine PCB HB-UNI-SEN-BATT](./PCB/HB-UNI-SEN-BATT/Modifications_HB-UNI-SEN-BATT.png) durchgeführt
+
+- der Lötaufbau erfolgt zuerst weitgehend entsprechend der [Beschreibung von Smartkramshop](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/) mit folgenden Änderungen:
+	+ 	statt des Arduino Pro Mini wird ein  [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/), Bezugsquelle: [Tindie](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verbaut
+	+	der BME280 Sensor wird weggelassen
+	+	die I2C Pullup-Widerstände R4 und R5 werden eingelötet
+	+	es wird empfohlen, den CC1101 Tranceiver und den Tindie Pro Mini XL - v2 auf Stecksockeln anzubringen, 2 mm Buchsenleisten und Stiftleisten gibt es z.B. Bei Conrad Electronics
+	+	R14 wird auf der PCB Oberseite an den Lötpins A0 und A1 eingelötet
+	+	für den ISP Programmer wird die 6-polige Steckerleiste J10 eingelötet
+	+	wer auf die Verpolungsschutz verzichten kann (will), kann die Lötbrücke J8 anbringen (dann Q1 und R3 weglassen)
+	
+- nach diesem Lötaufbau sollte zuerst mal eine [Ruhestrommessung mit Sleeeptest_ATMega184P.ino](./Sleeeptest_ATMega184P/Sleeeptest_ATMega184P.ino) durchgeführt werden. Anleitung ist oben im Quelltext als Kommentar oder [hier](https://github.com/TomMajor/SmartHome/tree/master/Info/Ruhestrom). Der gemessene Ruhestrom in der Schlafphase des Mikrokontrollers sollte weniger als 10uA betragen. 
+ 
+ - der IC ABLIC S-35770 und der Reset-Pullup-Widerstand R18 wird auf einen [SMD to DIP8 Adapter PCB Board Convertor ](https://www.amazon.de/SOIC8-Adapter-Board-Convertor-Double/dp/B00JK8EYTG) mit Flußmittel aufgelötet:
+ 
+  ![pic](Images/AdapterPCB.png)
+ 
+- nach der erfolgreichen Ruhestrommessung werden für die Module werden auf die Rückseite der [modifizierten Platine](PCB/HB-UNI-SEN-BATT/Modifications_HB-UNI-SEN-BATT.png) (siehe oben) die folgenden Halterungen mit Zweikomponentenkleber verklebt:
+
+-    Position der aufzuklebenden Modulhalterungen auf der Rückseite der Basisplatine:
+
+ ![pic](Images/glueing_of_modules_on_PCB_backside_with_labels.png)
+ 
+- [MT3608 Halterung](./3D_print_files/MT3608_step-up.stl) 
+- [TPS61221 Halterung](./3D_print_files/Step-Up_3.3V_TPS61221.stl) 
+- [Lochrasterplatinenhalterung](./3D_print_files/Breadboard_for_AL53_Supply_RC_Filter.stl)
+- [ADS1115 Halterung](./3D_print_files/ADS1115.stl)
+- [S35770 Halterung](./3D_print_files/S35770_case.stl)
+ 
+ - auf 24 Stunden Trockenzeit des Zweikomponentenklebers achten
+ - bitte darauf achten, dass die Module noch einsetzt werden können
+ 
+ - die Module nach dem Einsetzen nur mit ganz wenig Zweikomponentenkleber punktförmig einkleben, so dass später im Reparaturfall ein Chance besteht, sie wieder zerstörungsfrei herauszulösen
+ 
+- auf 24 Stunden Trockenzeit des Zweikomponentenklebers achten
+ - bitte darauf achten, dass die Module noch einsetzt werden können
+ 
+ - nun in 'Freileitungsverdrahtung' mit isolierter farbig kodierten Flachbandkabellitze die restlichen Verdrahtungen entsprechend dem Schaltplan verlöten. Dabei die Schaltung unbedingt schrittweise aufbauen, dabei Modul per Modul testen, z.B. zuerst die Aufwärtswandler ohne Last, oder das AL53 RC Filter. Vor dem Einlegen der geladenen Akkus alle Verbindungen nochmals mit einem Messgerät durchmessen auf eventuelle nicht beabsichtigte Kurzschlüsse prüfen.
+ 	+ beim Aufbau bitte unbedingt die Ausgangsspannung des MT3608 Aufwärtswandlers auf 8,0V einstellen **bevor** der Teviso AL53 Sensor angeschlossen wird
+
+- auf die Grundplatte des Gehäuses werden die  [Abstandhalter](./3D_print_files/Spacer_sleeve.stl) geklebt, so dass die Module auf die Unterseite der Platine passen und dorthin geklebt werden können.
+
+- die modifizierte Basisplatine mit aufgeklebten Modulen nach dem erfolgreichen Systemtest auf die  Grundplatte des Gehäuses aufschrauben.
+ 	
+
+
+## Software Installation
+
+- zuerst vorab ein paar Pfaddefinitionen für die spätere Verwendung:
+    + der Arduino IDE Sketchbook-Speicherort wird im Arduino IDE definiert unter
+        * Datei => Voreinstellungen
+        * siehe dort der Eintrag für 'Sketchbook-Speicherort'
+    * der Bibliothekspfad ist dann '\<Sketchbook-Speicherort>/libraries'
+    + da das hier benötigte [Homeautomation Github Repository](https://github.com/FUEL4EP/HomeAutomation) alle veröffentlichten AsksinPP-Geräte und -Bibliotheken von FUEL4EP in einem Sammelrepository zusammenfasst, wird ein angepasster Installationsvorgang vorgeschlagen (Experten können das auch anders machen):
+    + lege ein Verzeichnis '\<Sketchbook-Speicherort>/collective_repositories' an, falls es noch nicht existiert
+    + dieses Verzeichnis für Github-Sammeldepots wird hier mit<br/> \<Sammeldepotpfad> := '\<Sketchbook-Speicherort>/collective_repositories'<br/> abgekürzt
+- Installation des Github-Sammeldepots ['FUEL4EP Homeautomation'](https://github.com/FUEL4EP/HomeAutomation):
+    * dazu bitte von [Github](https://github.com/FUEL4EP/HomeAutomation) das gesamte Repository in das lokale Verzeichnis für Github-Sammeldepots \<Sammeldepotpfad> installieren
+        * entweder auf der Kommandozeile mit 'git clone https://github.com/FUEL4EP/HomeAutomation.git'
+        * oder durch Herunterladen des 'Download ZIP' von Github Depot [Homeautomation Github Repository](https://github.com/FUEL4EP/HomeAutomation) und Auspacken der ZIP Datei in das Verzeichnis für Github-Sammeldepots \<Sammeldepotpfad>
+        * bitte regelmäßig prüfen, ob Updates auf Github verfügbar sind
+- Installation von Bibliotheken
+    * bitte alle unten aufgeführten benötigten Bibliotheken in das Arduino IDE Bibliotheksverzeichnis \<Bibliothekspfad> installieren, falls noch nicht vorhanden
+        +  entweder mit 'git clone <repository Github URL>' auf der Kommandozeile oder
+        +  durch Herunterladen des 'Download ZIP' von Github und Auspacken in das Bibliotheksverzeichnis 
+        +  bitte beachten, das alle Bibliotheken eineindeutig sein müssen, d.h. bitte darauf achten, dass nicht für ein 'include <library.h>' mehrere Bibliotheken installiert sind, die diese Include-Referenz bedienen. Gegebenenfalls die nicht benötigten, mehrfachen Bibliotheken in ein Verzeichnis auslagern, das nicht im Bibliothekspfad \<Bibliothekspfad> des Arduino IDEs ist.
+        +  bitte regelmäßig prüfen, ob Updates auf Github verfügbar sind
+    -  benötigte Bibliotheken:
+        + [AskSinPP Library (Master Version!)](https://github.com/pa-pa/AskSinPP)
+        + [EnableInterrupt](https://github.com/GreyGnome/EnableInterrupt)
+        + [Low-Power](https://github.com/rocketscream/Low-Power)
+        + [Adafruit_ADS1X15](https://github.com/adafruit/Adafruit_ADS1X15)
+        + [Adafruit Bus IO Library](https://github.com/adafruit/Adafruit_BusIO)
+        + **ABLIC_S35770**: Bitte das **gesamte** Verzeichnis '\<Sammeldepotpfad>/HomeAutomation/AsksinPP_developments/libraries/**ABLIC_S35770**/' nach '\<Bibliothekspfad>/' kopieren
+        + **avr_stl**: bitte das **gesamte** Verzeichnis '\<Sammeldepotpfad>/HomeAutomation/AsksinPP_developments/libraries/**avr_stl**/' nach '\<Bibliothekspfad>/' kopieren
+            * dies ist eine modifizierte **ArduinoSTL**-Bibliothek von Giampaolo Mancini (manchoz), siehe [README.md](../../libraries/avr_stl/README.md)
+            * bitte sicherstellen, dass im Bibliothekspfad keine andere ArduinoSTL-Bibliothek installiert ist (siehe oben)
+- benötigtes Addon: [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) Version >= 1.9
+    + dieses Addon auf die CCU3 / RaspberryMatic Zentrale als Zusatzsoftware über 'Startseite > Einstellungen > Systemsteuerung Zusatzsoftware' installieren. Bitte unbedingt die Installationsanweisung beachten (vorher alte Version von hb-ep-devices-addon deinstallieren)
+    + die Addon install and uninstall Skripte wurden automatisch mit dem Generator [AsksinPP_addon_files_generator](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/AsksinPP_addon_files_generator) erzeugt.
+- für die Unterstützung des benutzten ATMega1284P des [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) im Arduino IDE ist folgende Anleitung abzuarbeiten:
+    + [How to use the Pro Mini XL or Atmega 1284p with the Arduino IDE
+](https://prominimicros.com/how-to-use-the-pro-mini-xl-or-atmega-1284p-with-the-arduino-ide/)
+
+## Konfiguration
+
+- nachdem alle oben beschriebenen Punkte der Software Installation erfolgreich abgearbeitet worden sind, sind noch einige Punkte zur Konfiguration durchzuführen, bevor der Sketch [HB-UNI-Sensor1-RAD-AL53.ino](HB-UNI-Sensor1-RAD-AL53.ino) kompiliert wird:
+- bitte in [Device_AL53.h](./Cfg/Device_AL53.h) die Definition von Device ID und Device Serial entsprechend Kommentar im untenstehenden Code-Fragment ändern, falls gewünscht:
+```
+//---------------------------------------------------------
+// Definition von Device ID und Device Serial
+// Bei mehreren Geräten des gleichen Typs (HB-UNI-Sensor1) muss Device ID und Device Serial unterschiedlich sein!
+#define cDEVICE_ID      { 0xF6, 0x08, 0x01 }       //change second 0x01 to your sensor's numeration index
+#define cDEVICE_SERIAL  "AL53RAD001"               //change 'AL53RAD001' to your sensor name's abbreviation
+                   //   1234567890   IMPORTANT: exact 10 characters are required!
+```
+- die Anpassung der Spannungsteilerfaktoren der ADC-Konverter kann zu einem späteren Zeitpunkt erfolgen (siehe unten). Die initialen Ausgaben für die gemessenen Spannungen sind dann noch nicht genau.
+## Kompilation, Hochladen und erste Inbetriebnahme
+- das #define NDEBUG im Sketch [HB-UNI-Sensor1-RAD-AL53.ino](HB-UNI-Sensor1-RAD-AL53.ino) zuerst noch auskommentiert lassen: //#define NDEBUG
+- für das Programmierern und Setzen der Fuses des ATmega1284P ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
+- Setzten der richtigen Fuses mit dem [avrdude script](./avrdude/avrdude_m1284p_ext_20MHz.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xF7  High Byte:0xD4  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
+- erforderliche Einstellungen im Arduino IDE unter 'Werkzeuge':
+    + Board: "ATmega1284"
+    + Clock: "External 20MHz"
+    + BOD: "BOD disabled"
+    + EEPROM: "EEPROM retained"
+    + Compiler LTO: "LTO disabled"
+    + Variant "1284P"
+    + Pinout: "Standard pinout"
+    + Bootloader: "Yes(UART0)"
+- nun kann die Kompilation des Sketchs [HB-UNI-Sensor1-RAD-AL53.ino](HB-UNI-Sensor1-RAD-AL53.ino) im Arduino IDE gestartet werden: Sketch=>Überprüfen/Kompilieren
+- die erfolgreiche Kompilation sollte am Ende des Konsole-Fensters diese [Sketchgöße](./documentation/code_size.txt) ausgeben.
+- die Empfehlung ist, den kompilierten Sketch mittels eines ISP-Programmers z.B. [Diamex ISP USB Programmer für All AVR, XMEGA, ATMEL, ATMEGA, ATtiny](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0), der an die 6-polige ISP-Schnittstelle J10 unten rechts auf der Basisplatine angeschlossen wird, hochzuladen.
+    + **WICHTIG**: vor dem Anschliessen den ISP Programmer auf 3,3V Ausgangsspannung einstellen (siehe Anleitung des Programmers) !!
+    + Hochladen im Arduino IDE mit: Sketch=>Hochladen mit Programmer
+- das Debugging wird wie üblich über den seriellen Monitor mit einem 'FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino' gemacht. Als Baudrate **38400 Baud** einstellen.
+    * bei korrektem Aufbau und korrekter Softwareinstallation ist die Ausgabe im seriellen Monitor [hier](./documentation/serial_monitor_output.txt)
+    * bei der Initialisierung werden am Pin PC3 des ATMega1284P 16384 Testpulse erzeugt und vom ABLIC S-35770 Zähler gezählt. Bei falschem Aufbau erfolgt eine Fehlermeldung im seriellen Monitor:
+        * ERROR: Test read count is wrong!!! Please check your hardware!
+
+
+# Kalibrierung
+
+- die folgenden Kalibrierwerte können im Code eingestellt werden:
+
+    + #define SYSCLOCK_FACTOR    0.89
+    + #define BAT_SENSOR tmBatteryResDiv<A0, A1, 3000>
+    + const float       ADC0_FACTOR = 2220.0 / 220.0 * 0.0625 * 8.000 / 8.000 ;
+    + const float       ADC1_FACTOR = 2.0 * 0.0625 * 3.300 / 3.300 ;
+    + const float       ADC2_FACTOR = 2.0 * 0.0625 * 2.600 / 2.600 ; 
+    
+- zu ergänzen
+
+## Anmelden an der Zentrale
+
+- zu ergänzen
+
+## Diverse Infos und Links
+
+- [Strahlenschutz und Dosimetrie](https://www.hzdr.de/FWR/DOCS/Archiv/RC_2009_02.pdf)
+- [Teviso AL53 @ Opengeiger](http://www.opengeiger.de/TevisoModul.pdf)
+- [Kostengünstige  Gamma-Spektroskopie  mit  einer  PIN-Diode  und  aufgesetztem 
+Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
+- [Beta, Gamma Detektor mit BPW 34 Photodioden, optimierte Schaltung](https://www.mikrocontroller.net/topic/344882)
+- noch zu ergänzen
+
+## Akkulebensdauer
+
+- noch zu schreiben
+
+## Unterstützung, Fragen und Antworten
+- bitte Fragen, Erfahrungen und Anregungen [im Homematic Forum](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53) stellen bzw. eintragen.
+
+## Disclaimer
+
+-   Die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr.
+
+## Lizenz 
+
+**Creative Commons BY-NC-SA**<br>
+Give Credit, NonCommercial, ShareAlike
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+
+-EOF
+	
+

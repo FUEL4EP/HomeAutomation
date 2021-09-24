@@ -18,7 +18,7 @@
 // Definition von Device ID und Device Serial
 // Bei mehreren Geräten des gleichen Typs (HB-UNI-Sensor1) muss Device ID und Device Serial unterschiedlich sein!
 #define cDEVICE_ID      { 0xF6, 0x08, 0x01 }       //change second 0x01 to your sensor's numeration index
-#define cDEVICE_SERIAL  "AL53RAD001"               //change 'SENS' to your name's abbreviation
+#define cDEVICE_SERIAL  "AL53RAD001"               //change 'AL53RAD001' to your name's abbreviation
                     //   1234567890   IMPORTANT: exact 10 characters are required!
 
 
@@ -75,8 +75,8 @@
 // start with Faktor = 3000
 // check in serial monitor the reported V2='accumulator voltage(MCU ADC) (x1000.0)' and compare with the reported V1='accumulator batteries voltage (x1000.0)'
 // calculate voltage correction factor V1/V2
-// calculaate total factor = 3000 * V2/V1 = 3000 * 3141 / 3157 = 2985
-#define BAT_SENSOR tmBatteryResDiv<A0, A1, 2985> 
+// calculaate total factor = 3000 * V2/V1 = 3000 * 3141 / 3157 = 2985 (example)
+#define BAT_SENSOR tmBatteryResDiv<A0, A1, 3000> 
 //------------
 // 3) Echte Batteriespannungsmessung unter Last, siehe README und Thema "Babbling Idiot Protection"
 // tmBatteryLoad: sense pin A0, activation pin D9, Faktor = Rges/Rlow*1000, z.B. 10/30 Ohm, Faktor 40/10*1000 = 4000, 200ms Belastung vor Messung

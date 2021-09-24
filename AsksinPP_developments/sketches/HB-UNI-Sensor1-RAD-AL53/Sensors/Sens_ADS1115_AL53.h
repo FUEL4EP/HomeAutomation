@@ -35,12 +35,12 @@ private:
   Adafruit_ADS1115 ads;  /* Use this for the 16-bit version */
   
   // ADC adjustment factors per channel
-  const float       ADC0_FACTOR = 2220.0 / 220.0 * 0.0625 * 9.10 / 8.859 ;  // 2200.0 / 220.0 is the uncorrected voltage divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
-                                                                            // 8.98 / 8.859 is the voltage divider correction factor for ADCO0 based on a multimeter comparison
-  const float       ADC1_FACTOR = 2.0 * 0.0625 * 3.314 / 3.292 ;            // 2 .0is the uncorrected volate divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
-                                                                            // 3.314 / 3.292 is the voltage divider correction factor for ADC1 based on a multimeter comparison
-  const float       ADC2_FACTOR = 2.0 * 0.0625 * 3.227 / 3.172 ;            // 2.0 is the uncorrected volate divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
-                                                                            // 3.227 / 3.172 is the voltage divider correction factor for ADC2 based on a multimeter comparison
+  const float       ADC0_FACTOR = 2220.0 / 220.0 * 0.0625 * 8.00 / 8.00 ;   // 2200.0 / 220.0 is the uncorrected voltage divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
+                                                                            // 8.00 / 8.00 is the voltage divider correction factor for ADCO0 based on a multimeter comparison of the AL53 supply voltage
+  const float       ADC1_FACTOR = 2.0 * 0.0625 * 3.300 / 3.300 ;            // 2 .0is the uncorrected volate divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
+                                                                            // 3.300 / 3.300 is the voltage divider correction factor for ADC1 based on a multimeter comparison of the VCC supply voltage
+  const float       ADC2_FACTOR = 2.0 * 0.0625 * 2.600 / 2.600 ;            // 2.0 is the uncorrected volate divider ratio; 0.0625 is the ADS115 ADC resolution for the selected gain of TWO
+                                                                            // 2.600 / 2.600 is the voltage divider correction factor for ADC2 based on a multimeter comparison of the accumulator battery voltage
                                                               
   int16_t adc0_AL53,  adc1_VCC,   adc2_ACCU;
   float adc0_AL53_f,  adc1_VCC_f, adc2_ACCU_f;
