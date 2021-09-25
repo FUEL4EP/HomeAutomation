@@ -205,7 +205,7 @@
         * bitte regelmäßig prüfen, ob Updates auf Github verfügbar sind
 - Installation von Bibliotheken
     * bitte alle unten aufgeführten benötigten Bibliotheken in das Arduino IDE Bibliotheksverzeichnis \<Bibliothekspfad> installieren, falls noch nicht vorhanden
-        +  entweder mit 'git clone <repository Github URL>' auf der Kommandozeile oder
+        +  entweder mit 'git clone \<repository Github URL>' auf der Kommandozeile oder
         +  durch Herunterladen des 'Download ZIP' von Github und Auspacken in das Bibliotheksverzeichnis 
         +  bitte beachten, das alle Bibliotheken eineindeutig sein müssen, d.h. bitte darauf achten, dass nicht für ein 'include <library.h>' mehrere Bibliotheken installiert sind, die diese Include-Referenz bedienen. Gegebenenfalls die nicht benötigten, mehrfachen Bibliotheken in ein Verzeichnis auslagern, das nicht im Bibliothekspfad \<Bibliothekspfad> des Arduino IDEs ist.
         +  bitte regelmäßig prüfen, ob Updates auf Github verfügbar sind
@@ -240,7 +240,10 @@
    ```
 - die Anpassung der Spannungsteilerfaktoren der ADC-Konverter kann zu einem späteren Zeitpunkt erfolgen (siehe unten). Die initialen Ausgaben für die gemessenen Spannungen sind dann noch nicht genau.
 ## Kompilation, Hochladen und erste Inbetriebnahme
-- das #define NDEBUG im Sketch [HB-UNI-Sensor1-RAD-AL53.ino](HB-UNI-Sensor1-RAD-AL53.ino) zuerst noch auskommentiert lassen: //#define NDEBUG
+- das #define NDEBUG im Sketch [HB-UNI-Sensor1-RAD-AL53.ino](HB-UNI-Sensor1-RAD-AL53.ino) zuerst noch auskommentiert lassen:
+    ```
+    //#define NDEBUG
+    ```
 - für das Programmierern und Setzen der Fuses des ATmega1284P wird ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
 - Setzten der richtigen Fuses mit dem [avrdude script](./avrdude/avrdude_m1284p_ext_20MHz.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xF7  High Byte:0xD4  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
 - erforderliche Einstellungen im Arduino IDE unter 'Werkzeuge':
