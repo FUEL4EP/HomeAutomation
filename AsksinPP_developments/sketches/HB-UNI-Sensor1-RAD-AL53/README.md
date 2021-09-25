@@ -61,7 +61,7 @@
 - ein gleitender Mittelwert wird mit einem zyklischen Ringpuffer der Tiefe 1008 aus den ausgelesenen Zählerständen gebildet, d.h. die gleitende Mittelwertbildung wird über den Zeitraum der letzten 1008 * 10 Minuten = 7 Tage durchgeführt. Es wird jeweils  das älteste Zählergebnis verworfen, wenn ein neues Zählergebnis eingelesen wird.
 - es wird die Breite des 95% Vertrauensintervalls für die Zählrate (cpi) online berechnet und im WebUI ausgegeben.
     + ob es sinnvoller ist, stattdessen das 95% Vertrauensintervall des gleitenden Mittelwerts zu berechnen, muss noch evaluiert werden.
-- als Mikrokontrollerplatine wird der auf einem ATMega1284P basierende Arduino [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verwandt. WICHTIG: Ein Arduino Pro Mini mit einem AT328P passt wegen zu geringem Speicherplatz nicht!
+- als Mikrokontrollerplatine wird der auf einem ATMega1284P basierende Arduino [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verwandt. WICHTIG: Ein Arduino Pro Mini mit einem ATmega328P passt wegen zu geringem Speicherplatz nicht!
 - zwei Alarmsignale werden direkt vom AsksinPP Sensor zur als binäre Datenpunkte Verfügung gestellt:
 + der Datenpunkt HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL signalisiert, wenn die aktuelle Anzahl von Zählimpulsen den als Geräteparameter eingestellten Schwellwert 'Alarmwert Zählimpulse pro Messintervall' überschreitet
 + der Datenpunkt HB_ALARM_MOVING_AVERAGE signalisiert, wenn der aktuelle gleitende Mittelwert von Zählimpulsen den als Geräteparameter eingestellten Schwellwert 'Alarmwert Zählimpulse gleitender Mittelwert' überschreitet
@@ -91,7 +91,7 @@
 
 - Beispiel eines Histogramms des gleitenden Mittelwerts (im CCU Historian)
 
-    - noch einzufügen sobald verfügbar
+    - wird später eingefügt, sobald verfügbar
 
 
 ## Schaltplan
@@ -230,14 +230,14 @@
 
 - nachdem alle oben beschriebenen Punkte der Software Installation erfolgreich abgearbeitet worden sind, sind noch einige Punkte zur Konfiguration durchzuführen, bevor der Sketch [HB-UNI-Sensor1-RAD-AL53.ino](HB-UNI-Sensor1-RAD-AL53.ino) kompiliert wird:
 - bitte in [Device_AL53.h](./Cfg/Device_AL53.h) die Definition von Device ID und Device Serial entsprechend Kommentar im untenstehenden Code-Fragment ändern, falls gewünscht:
-```
+   ```
 	//---------------------------------------------------------
 	// Definition von Device ID und Device Serial
 	// Bei mehreren Geräten des gleichen Typs (HB-UNI-Sensor1) muss Device ID und Device Serial unterschiedlich sein!
 	#define cDEVICE_ID      { 0xF6, 0x08, 0x01 }       //change second 0x01 to your sensor's numeration index
 	#define cDEVICE_SERIAL  "AL53RAD001"               //change 'AL53RAD001' to your sensor name's abbreviation
-	                       //   1234567890   IMPORTANT: exact 10 characters are required!
-```
+	                    //   1234567890                IMPORTANT: exact 10 characters are required!
+   ```
 - die Anpassung der Spannungsteilerfaktoren der ADC-Konverter kann zu einem späteren Zeitpunkt erfolgen (siehe unten). Die initialen Ausgaben für die gemessenen Spannungen sind dann noch nicht genau.
 ## Kompilation, Hochladen und erste Inbetriebnahme
 - das #define NDEBUG im Sketch [HB-UNI-Sensor1-RAD-AL53.ino](HB-UNI-Sensor1-RAD-AL53.ino) zuerst noch auskommentiert lassen: //#define NDEBUG
@@ -269,45 +269,39 @@
 
   + Kalibrierung des Messintervalls
 
-    +  Das Messintervall wird im Debug Modus auf 10 Minuten = 600 Sekunden eingestellt, d.h. Ziel ist es, dass exakt alle 600 Sekunden eine neue Messwertausgabe erfolgt
+    + Das Messintervall wird im Debug Modus auf 10 Minuten = 600 Sekunden eingestellt, d.h. Ziel ist es, dass exakt alle 600 Sekunden eine neue Messwertausgabe erfolgt
 
     + dazu wird der SYSCLOCK_FACTOR in [HB-UNI-Sensor1-RAD-AL53.ino](./HB-UNI-Sensor1-RAD-AL53.ino) geeignet eingestellt 
-
-      `#define SYSCLOCK_FACTOR    0.89    // adjust to get sampling data every 600 seconds`
-
-  + 
-    
-        * Das Messintervall wird im Debug Modus auf 10 Minuten = 600 Sekunden eingestellt, d.h. Ziel ist es, dass exakt alle 600 Sekunden eine neue Messwertausgabe erfolgt
-        * dazu wird der SYSCLOCK_FACTOR geeignet eingestellt 
-            ```
-            #define SYSCLOCK_FACTOR    0.89 
-            ```
-
+      ```
+      #define SYSCLOCK_FACTOR    0.89    // adjust to get sampling data every 600 seconds
+      ```
   + Kalibrierung des Tiefentladungsschutzes der NiMH Batterien:
   	* der interne ADC des ATmega1284P misst die Akkumulatorspannung. Der Sensepin ist A0, der Activationpin ist A1, siehe auch Schaltplan.
   	* zuerst in [Device_AL53.h](./Cfg/Device_AL53.h) die initiale Definition belassen, wie sie ist
-            ```
-            #define BAT_SENSOR tmBatteryResDiv<A0, A1, 3000>
-            ```
+         ```
+         #define BAT_SENSOR tmBatteryResDiv<A0, A1, 3000>
+         ```
   	* dann mit einem genauen Messgerät die Akkumulatorspannung *Vakku_mess* messen und im seriellen Monitor die Ausgabe für 'accumulator voltage(MCU ADC) (x1000.0)' *Vakku_SerMon* ablesen. Den neuen Skalierungsfaktor *ratio_ADCmcu* als **ganze** Zahl mit einem Taschenrechner bestimmen als
-            ```
-            ratio_ADCmcu = 3000 * Vakku_mess/Vakku_SerMon (ganze Zahl ohne Nachkommastellen)
-             ```
+         ```
+         ratio_ADCmcu = 3000 * Vakku_mess/Vakku_SerMon (ganze Zahl ohne Nachkommastellen)
+         ```
   	* dann die Definition in [Device_AL53.h](./Cfg/Device_AL53.h) abändern auf
-            ```
-            #define BAT_SENSOR tmBatteryResDiv<A0, A1, ratio_ADCmcu>
-            ```
+         ```
+         #define BAT_SENSOR tmBatteryResDiv<A0, A1, ratio_ADCmcu>
+         ```
     
   + Kalibrierung der WebUI AL53 Betriebsspannung (ADC):
   	* der externe ADS1115 ADC misst die AL53 Betriebsspannung (ADC) am Ausgang des Aufwärtswandlers MT3608
   	
     * zuerst in [Sens_ADS1115_AL53.h](./Sensors/Sens_ADS1115_AL53.h) die initiale Definition von ADC0_FACTOR belassen, wie sie ist
-         
-            `const float       ADC0_FACTOR = 2220.0 / 220.0 * 0.0625 * 8.000 / 8.000 ;`
-         
+       ```
+       const float       ADC0_FACTOR = 2220.0 / 220.0 * 0.0625 * 8.000 / 8.000 ;`
+       ```
     * dann mit einem genauen Messgerät die AL53 Betriebsspannung (ADC) *VAL53_mess* am Ausgang des Aufwärtswandlers MT3608 messen und im WebUI der Zentrale die Ausgabe für die AL53 Betriebsspannung (ADC) *VAL53_WebUI* ablesen. Den neuen Skalierungsfaktor *ADC0_FACTOR* ändern nach 
     
-  	         const float       ADC0_FACTOR = 2220.0 / 220.0 * 0.0625 * VAL53_mess / VAL53_WebUI ;
+  	   ```
+       const float       ADC0_FACTOR = 2220.0 / 220.0 * 0.0625 * VAL53_mess / VAL53_WebUI ;
+       ```
     
     * dabei *VAL53_mess* und *VAL53_WebUI* als Dezimalzahl (float) eintragen.
     
@@ -315,20 +309,28 @@
     
   	* der externe ADS1115 ADC misst VCC Betriebsspannung des ATmega1284P Mikrokontrollers am Ausgang des Aufwärtswandlers TPS61221 
     * zuerst in [Sens_ADS1115_AL53.h](./Sensors/Sens_ADS1115_AL53.h) die initiale Definition von ADC1_FACTOR belassen, wie sie ist
-            `const float       ADC0_FACTOR = 2220.0 / 220.0 * 0.0625 * 3.300 / 3.300 ;`
-         
-    * dann mit einem genauen Messgerät die VCC Betriebsspannung *VVCC_mess* des ATmega1284P Mikrokontrollers am Ausgang des Aufwärtswandlers TPS61221  messen und im WebUI der Zentrale die Ausgabe für die Betriebsspannung *VVCC_WebUI* ablesen. Den neuen Skalierungsfaktor *ADC1_FACTOR* ändern nach
-  	     `const float       ADC1_FACTOR = 2220.0 / 220.0 * 0.0625 * VVCC_mess / VVCC_WebUI ;`
-    * dabei *VVCC_mess* und *VVCC_WebUI* als Dezimalzahl (float) eintragen
     
+      ```
+      const float       ADC0_FACTOR = 2220.0 / 220.0 * 0.0625 * 3.300 / 3.300 ;  
+      ```
+    
+    * dann mit einem genauen Messgerät die VCC Betriebsspannung VVCC_mess des ATmega1284P Mikrokontrollers am Ausgang des Aufwärtswandlers TPS61221  messen und im WebUI der Zentrale die Ausgabe für die Betriebsspannung VVCC_WebUI ablesen. Den neuen Skalierungsfaktor ADC1_FACTOR ändern nach
+    
+  	  ```
+  	  const float       ADC1_FACTOR = 2220.0 / 220.0 * 0.0625 * VVCC_mess / VVCC_WebUI ;
+  	  ```
+  	
+  	* dabei *VVCC_mess* und *VVCC_WebUI* als Dezimalzahl (float) eintragen
   + Kalibrierung der Akkumulatorspannung:
   	* der externe ADS1115 ADC misst die Akkumulatorspannung
-  	* zuerst in [Sens_ADS1115_AL53.h](./Sensors/Sens_ADS1115_AL53.h) die initiale Definition von ADC2_FACTOR belassen, wie sie ist
-            `const float       ADC2_FACTOR = 2220.0 / 220.0 * 0.0625 * 2.600 / 2.600 ;`
+  	* zuerst in [Sens_ADS1115_AL53.h](./Sensors/Sens_ADS1115_AL53.h) die initiale Definition von ADC2_FACTOR belassen, wie sie ist 
+        ```
+        const float       ADC2_FACTOR = 2220.0 / 220.0 * 0.0625 * 2.600 / 2.600 ;
+        ```
     * dann mit einem genauen Messgerät die Akkumulatorspannung *Vakku_mess* messen und im WebUI der Zentrale die Ausgabe für die Akkumulatorspannung *Vakku_WebUI* ablesen. Den neuen Skalierungsfaktor *ADC2_FACTOR* als 
-            ```
-            const float       ADC2_FACTOR = 2220.0 / 220.0 * 0.0625 * Vakku_mess / Vakku_WebUI ;
-            ```
+        ```
+        const float       ADC2_FACTOR = 2220.0 / 220.0 * 0.0625 * Vakku_mess / Vakku_WebUI ;
+        ```
     * dabei *Vakku_mess* und *Vakku_WebUI* als Dezimalzahl (float) eintragen.
 
 
