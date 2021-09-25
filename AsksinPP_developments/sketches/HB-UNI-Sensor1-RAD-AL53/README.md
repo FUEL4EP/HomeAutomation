@@ -244,8 +244,17 @@
     ```
     //#define NDEBUG
     ```
+    
+- nach der erfolgreichen initialen  Inbetriebnahme, Anlernen und vollständigem Test sollten die Kommentarzeichen entfernt werden:
+
+    ```
+    #define NDEBUG
+    ```
+
 - für das Programmierern und Setzen der Fuses des ATmega1284P wird ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
+
 - Setzten der richtigen Fuses mit dem [avrdude script](./avrdude/avrdude_m1284p_ext_20MHz.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xF7  High Byte:0xD4  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
+
 - erforderliche Einstellungen im Arduino IDE unter 'Werkzeuge':
 >    + Board: "ATmega1284"
 >    + Clock: "External 20MHz"
@@ -314,7 +323,7 @@
     * zuerst in [Sens_ADS1115_AL53.h](./Sensors/Sens_ADS1115_AL53.h) die initiale Definition von ADC1_FACTOR belassen, wie sie ist
     
       ```
-      const float       ADC0_FACTOR = 2220.0 / 220.0 * 0.0625 * 3.300 / 3.300 ;  
+      const float       ADC1_FACTOR = 2220.0 / 220.0 * 0.0625 * 3.300 / 3.300 ;  
       ```
     
     * dann mit einem genauen Messgerät die VCC Betriebsspannung VVCC_mess des ATmega1284P Mikrokontrollers am Ausgang des Aufwärtswandlers TPS61221  messen und im WebUI der Zentrale die Ausgabe für die Betriebsspannung VVCC_WebUI ablesen. Den neuen Skalierungsfaktor ADC1_FACTOR ändern nach
