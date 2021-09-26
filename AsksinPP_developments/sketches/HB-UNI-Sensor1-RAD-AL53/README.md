@@ -377,7 +377,17 @@
 - [Kostengünstige  Gamma-Spektroskopie  mit  einer  PIN-Diode  und  aufgesetztem 
 Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
 - [Beta, Gamma Detektor mit BPW 34 Photodioden, optimierte Schaltung](https://www.mikrocontroller.net/topic/344882)
-- noch zu ergänzen
+- [Multi Sensor Data Acquisition System Design for Monitoring the Radiation Dose Based on Wireless Sensor Network](https://www.ripublication.com/irph/ijert19/ijertv12n6_19.pdf)
+- [PocketGeigerType5_ARDUINO Schaltplan](https://radiation-watch.sakuraweb.com/share/type5_circuit_diagram.pdf)
+- [PocketGeigerType5_ARDUINO Gehäuse](https://radiation-watch.sakuraweb.com/share/type2345_plastic_case.pdf)
+- [Scintillation Crystals](https://physicsopenlab.org/2017/08/10/scintillator-crystals/)
+- [DIY Alpha Spectrometer](https://physicsopenlab.org/2016/10/28/diy-alpha-spectrometry/)
+- [Alpha Detector with BPX61 Photodiode](https://physicsopenlab.org/2020/06/15/alpha-detector-with-bpx61-photodiode/)
+- [KVANT Radiation Detector](https://physicsopenlab.org/2020/05/16/kvant-radiation-detector/)
+- [Si-PIN Photodiode β Detector](https://physicsopenlab.org/2017/04/28/si-pin-photodiode-%CE%B2-detector/)
+- [Build and Test of A Gamma Radiation Detector ](https://ttu-ir.tdl.org/bitstream/handle/2346/58537/RODRIGUEZ-THESIS-2014.pdf)
+- [Konfidenzintervall](https://de.wikipedia.org/wiki/Konfidenzintervall)
+- [Mean and Variance of Sample Mean](https://online.stat.psu.edu/stat414/lesson/24/24.4)
 
 ## Akkulebensdauer
 
