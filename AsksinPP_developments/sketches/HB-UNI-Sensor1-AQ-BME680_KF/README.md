@@ -2,7 +2,7 @@
 # HB-UNI-Sensor1-AQ-BME680_KF [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2FAsksinPP_developments%2Fsketches%2FHB-UNI-Sensor1-AQ-BME680_KF&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 <br/>
 
- 
+
 # Universeller selbstkalibrierender Luftgütesensor auf der Basis von dem Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680_KF) mit vollautomatischer Kompensation der Abhängigkeiten von Temperatur und absoluter Luftfeuchte mit einem Kalman Filter
 - abgeleitet von Jérômes ([jp112sdl](https://github.com/jp112sdl)) [HB-UNI-Sen-IAQ](https://github.com/jp112sdl/HB-UNI-Sen-IAQ)
 - ein herzliches Dankeschön für die Basisarbeit geht an Jérôme (jp112sdl)
@@ -24,9 +24,9 @@
 - **Update 10. Juni 2021**: Da sich die linearen Regressionskoeffizienten, die vom Kalman Filter online berechnet werden, auch über längere Zeiträume je nach Wetterbedingungen ändern können, kann es vorkommen, dass über längere Zeiträume der maximale und/oder der minimale Luftgütewert AQ_LOG10 nicht mehr erreicht wird. Dies passiert dann, wenn sich die Regressionskoeffizienten stärker verändert haben als es der IIR-Abklingfunktion/IIR-Aufklingfunktion entspricht. In diesen Fall, kann die IIR-Abklingfunktion/IIR-Aufklingfunktion vorübergehend vergrößert werden. Dazu muss in der Einstellung der Kanalparameter [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Special_Thresholds.png) vorübergehend die relative untere Schwelle für die Abklingfunktion kleiner als die relative obere Schwelle für die Aufklingfunktion gesetzt werden (zB.: 45% / 46%). **Bitte nicht vergessen**, nach ca. 1..2 Tagen wieder die relative untere Schwelle für die Abklingfunktion größer als die relative obere Schwelle für die Aufklingfunktion (zB.: 54% / 46%) zu setzen. Die Validierung in meinen Sensoren war erfolgreich.
 
 
-## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.8 updaten
+## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.9 updaten
 
-- Die neue Version V1.8 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
+- Die neue Version V1.9 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
 - Bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
 
 
@@ -105,7 +105,7 @@
 - Tägliche Abspeicherung der Parameter der Autokalibrierung und des Kalman Filters.
 	- Die letzten EEPROM Daten werden bei einem Batteriewechsel zurückgespeichert
 	- Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset NICHT zurückgespeichert (Kriterium ist eine gemessene Betriebsspannung > 3.3V)
-	 
+	
 
 
 ## Schaltung
@@ -128,7 +128,7 @@
 	+ die I2C-Verbindungen zwischen HB-UNI-SEN-BATT PCB und BME680 Breakout mit flexiblem Flachbandkabel
 	+ 2x 10 kOhm I2C Abschlusswiderstände auf HB-UNI-SEN-BATT PCB einlöten
 	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](./3D%20print%20files/BME680_protection.stl) für eine BME680 Halterung zu finden:
-![pic](Images/BME680_holding.png)	
+		![pic](Images/BME680_holding.png)	
 		* wird auf das HB-UNI-SEN-BATT PCB mit 2-Komponentenkleber aufgeklebt
 		* eine Nase muss mit einer Flachfeile entfernt werden
 		* eine Halterung ohne Nase wird auch bereitgestellt: [STL Datei](./3D%20print%20files/BME680_protection_without_nose.stl). Sie muss geeignet gedreht gedruckt werden, damit die Supportstrukturen nicht stören.
@@ -137,8 +137,8 @@
 
 - Bitte vor dem Aufspielen des eigentlichen Sketches HB-UNI-Sensor1-AQ-BME680_KF UNBEDINGT einen [Frequenztest ATMega1284P](FreqTest_1284P/FreqTest_1284P.ino) durchführen. Viele CC1101 Module lassen sich ohne diesen Frequenztest nicht anlernen!
 - Eine Beschreibung des Frequenztests ist [hier](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) zu finden.
- 
-		
+
+	​	
 ## Verringerung des Ruhestroms
 
 - auf dem Tindie Pro Mini XL - v2 - ATmega 1284p die markierte LED auslöten:
@@ -182,9 +182,9 @@
 
 1. Bitte zuerst nochmals vergewissern, dass der verbaute Arduino Pro Mini ein 3,3V/8MHz Typ ist.
 2. Das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren.
-3. Für das Programmierern und Setzen der Fuses des ATmega328P ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
-4. Setzten der richtigen Fuses mit dem [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xFF  High Byte:0xD6  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
-5. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [FreqTest.ino Sketch](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
+3. Für das Programmierern und Setzen der Fuses des ATmega1284P ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
+4. Setzten der richtigen Fuses mit dem [avrdude script](avrdude/avrdude_1284P.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xE2  High Byte:0xD4  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
+5. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [FreqTest_1284P.ino Sketch](./FreqTest_1284P/FreqTest_1284P.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
 6. Den Config-Taster ganz lange drücken (ca. 6..8 Sekunden) bis die rote LED erlischt und im seriellen Monitor 'RESET' ausgegeben wird. Damit wird ein 'Werksreset' durchgeführt und das EEPROM gelöscht. Damit gehen auch alle im EEPROM gespeicherten Einstellungen verloren.  Die ermittelte Frequenzeinstellung des Frequenztests bleibt aber erhalten.
 7. Gegebenenfalls die Parameter Device ID und Device Serial in [HB-UNI-Sensor1-AQ-BME680_KF.ino](./HB-UNI-Sensor1-AQ-BME680_KF.ino) ändern. Jeder Sensor muss ein eineindeutiges Device ID als auch ein eindeutiges Device Serial haben!
 8. Die aktuelle Version des [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) Sketches herunterladen, siehe unten.
@@ -229,7 +229,7 @@
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
 - [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) zum Setzen der Fuses für 8MHz interner RC Oszillator (Linux version)
-	- wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega328P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
+	- wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega1284P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
 
 
 - die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
@@ -256,7 +256,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - die Ausführungszeiten werden mit eingeschaltetem DEBUG und DEEP_DEBUG Mode im seriellen Monitor ausgegeben: 
 
 	//#define NDEBUG   // disable all serial debug messages  
-	  
+	
 	#define DEEP_DEBUG               // comment out if deep serial monitor debugging is not necessary
 
 ## Benötigte Libraries
