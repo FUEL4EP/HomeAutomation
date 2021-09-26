@@ -5,8 +5,26 @@
 ![pic](Images/AL53_shielded_with_copper_foil.png)
 
 ## Inhaltsverzeichnis
-
-- noch zu erstellen
+  \- [Neuerungen](#neuerungen) 
+  \- [Einsteiger](#einsteiger) 
+  \- [Hinweise](#hinweise) 
+  \- [Wichtige Hinweise, unbedingt beachten!](#wichtige-hinweise-unbedingt-beachten) 
+  \- [Eigenschaften](#eigenschaften) 
+  \- [Bilder](#bilder) 
+  \- [Schaltplan](#schaltplan) 
+  \- [Platine](#platine) 
+  \- [Gehäuse](#gehäuse) 
+  \- [Aufbau](#aufbau) 
+  \- [Software Installation](#software-installation) 
+  \- [Konfiguration](#konfiguration) 
+  \- [Kompilation, Hochladen und erste Inbetriebnahme](#kompilation-hochladen-und-erste-inbetriebnahme) 
+  \- [Kalibrierung](#kalibrierung) 
+  \- [Anmelden an der Zentrale](#anmelden-an-der-zentrale) 
+  \- [Diverse Infos und Links](#diverse-infos-und-links) 
+  \- [Akkulebensdauer](#akkulebensdauer) 
+  \- [Unterstuetzung, Fragen und Antworten](#unterstuetzung-fragen-und-antworten) 
+  \- [Disclaimer](#disclaimer) 
+  \- [Lizenz](#lizenz)
 
 ## Neuerungen
 - dies ist zur Zeit nur ein Vorabdatensatz, ein erster Prototyp von HB-UNI-Sensor1-RAD-AL53 ist funktionsfähig, die Systemvalidierung läuft allerdings noch
@@ -60,7 +78,7 @@
 - die typische Zählrate bedingt durch die natürliche Hintergrundstrahlung beträgt ca. ~5 Ereignisse in 10 Minuten (Einheit: cpi = counts per interval, interval := 10 Minuten) oder ~30 Ereignisse in einer Stunde. **Daher ist der Sensor nicht für die schnelle Erfassung von Radioaktivität oder einer schnellen Änderung der Radioaktivität geeignet.**
 - ein gleitender Mittelwert wird mit einem zyklischen Ringpuffer der Tiefe 1008 aus den ausgelesenen Zählerständen gebildet, d.h. die gleitende Mittelwertbildung wird über den Zeitraum der letzten 1008 * 10 Minuten = 7 Tage durchgeführt. Es wird jeweils  das älteste Zählergebnis verworfen, wenn ein neues Zählergebnis eingelesen wird.
 - es wird die Breite des 95% Vertrauensintervalls für die Zählrate (cpi) online berechnet und im WebUI ausgegeben.
-    + ob es sinnvoller ist, stattdessen das 95% Vertrauensintervall des gleitenden Mittelwerts zu berechnen, muss noch evaluiert werden.
+    + das Konfidenzintervall des gleitenden Mittelwerts lässt sich daraus mathematisch ableiten, siehe [hier](./Images/confidence_interval.png)
 - als Mikrokontrollerplatine wird der auf einem ATMega1284P basierende Arduino [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verwandt. WICHTIG: Ein Arduino Pro Mini mit einem ATmega328P passt wegen zu geringem Speicherplatz nicht!
 - zwei Alarmsignale werden direkt vom AsksinPP Sensor zur als binäre Datenpunkte Verfügung gestellt:
 + der Datenpunkt HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL signalisiert, wenn die aktuelle Anzahl von Zählimpulsen den als Geräteparameter eingestellten Schwellwert 'Alarmwert Zählimpulse pro Messintervall' überschreitet
