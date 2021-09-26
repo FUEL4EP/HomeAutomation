@@ -29,9 +29,7 @@
 - die relative Luftfeuchtigkeit wird mit 0,1 % rLF Genauigkeit ausgegeben
 - die Batteriespannung wird mit 10 mV Genauigkeit und jeden Zyklus ausgegeben 
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smart-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
-	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png)
-	+ Wegen eines Bugs in der eQ3 Software OCCU ['Fehler in ProofAndSetValue bei Gleitkommawerten #1058'](https://github.com/jens-maus/RaspberryMatic/issues/1058) funktioniert die Offseteinstellung im WebUI nur eingeschränkt: Es können nur ganzzahlige Offsets eingegeben werden. In den RaspberryMatic Versionen [3.55.10.20210213 und 3.57.4.20210320](https://github.com/jens-maus/RaspberryMatic/labels/%3Alabel%3A%20WebUI) ist der Bug noch nicht gefixt! Beim mir half der Workaround von Baxxy [hier](https://homematic-forum.de/forum/viewtopic.php?p=652376#p652376). CCU3 Nutzer sollten auf die neueste Firmware 3.55.10 upgraden, 3.55.5 scheint hier einen Bug zu haben.
-
+	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png).
 	+ Bitte beachten: Der LazyConfig Modus funktioniert NUR bei einem angelernten Sensor. Wird der Resettaster nach dem Anlernen gedrückt oder die Batterien gewechselt, funktioniert der LazyConfig Modus nicht mehr. Ein erneutes Anlernen ist dann notwendig, um den LazyConfig Mode wieder zum Funktionieren zu bringen.
 	
 - Ausgabe des Luftgütegrads AQ_LEVEL: normierter BME680 Gaswiderstand 0..100% (ohne Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftgüte)
@@ -55,7 +53,7 @@
 - Tägliche Abspeicherung der Parameter der Autokalibrierung und der Multiplen Linearen Regression.
 	+ Die letzten EEPROM Daten werden bei einem Batteriewechsel zurückgespeichert
 	+ Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset NICHT zurückgespeichert (wenn Betriebsspannung > 3.3V)
-	 
+	
 
 
 ## Schaltung
@@ -78,7 +76,7 @@
 	+ die I2C-Verbindungen zwischen HB-UNI-SEN-BATT PCB und BME680 Breakout mit flexiblem Flachbandkabel
 	+ 2x 10 kOhm I2C Abschlusswiderstände auf HB-UNI-SEN-BATT PCB einlöten
 	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](./3D%20print%20files/BME680_protection.stl) für eine BME680 Halterung zu finden:
-![pic](Images/BME680_holding.png)	
+		![pic](Images/BME680_holding.png)	
 		* wird auf das HB-UNI-SEN-BATT PCB mit 2-Komponentenkleber aufgeklebt
 		* eine Nase muss mit einer Flachfeile entfernt werden
 		* eine Halterung ohne Nase wird auch bereitgestellt: [STL Datei](./3D%20print%20files/BME680_protection_without_nose.stl). Sie muss geeignet gedreht gedruckt werden, damit die Supportstrukturen nicht stören. 
@@ -147,7 +145,7 @@ Globale Variablen verwenden 1706 Bytes (10%) des dynamischen Speichers, 14678 By
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
 - [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) zum Setzen der Fuses für 8MHz interner RC Oszillator (Linux version)
-	- wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega328P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
+	- wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega1284P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
 
 
 - Die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
@@ -202,7 +200,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 	+ der relativen Luftfeuchte
 	
 - bestimmen und im WebUI setzten. Dabei zuerst das Einschwingen der korrigierten Temperatur abwarten, bevor die Luftfeuchte korrigiert wird. Zum Bestimmen der Offsets eine 24h Aufzeichnung mit dem CCU-Historian mit einer genauen Referenztemperatur / -luftfeuchte machen ('golden' TH-Sensor daneben stellen).
-- die Multiple Lineare Regression (MLR) erfordert 'nur', den Sensor HB-UNI-Sensor1-AQ-BME680 nach Abgleich des Temperatur- und Luftfeuchteoffsets für 2..4 Wochen laufen zu lassen, dann eine Historie mit dem CCU Historian rauszuschreiben, dann einen Jupyterlab Skript in der Cloud anzustarten und dann die berechneten Regressionsparameter wieder als Device Parameter in das WebUI einzugeben. Das ist einfach zu machen und kein großer Aufwand! Die Mathematik dahin müsst ihr dazu nicht verstehen. Alles Nähere ist in [README.md](Multiple_Linear_Regression/README.md) auf Englisch beschrieben.
+- die Multiple Lineare Regression (MLR) erfordert 'nur', den Sensor HB-UNI-Sensor1-AQ-BME680 nach Abgleich des Temperatur- und Luftfeuchteoffsets für ca. 4..8 Wochen laufen zu lassen, dann eine Historie mit dem CCU Historian rauszuschreiben, dann einen Jupyterlab Skript in der Cloud anzustarten und dann die berechneten Regressionsparameter wieder als Device Parameter in das WebUI einzugeben. Das ist einfach zu machen und kein großer Aufwand! Die Mathematik dahin müsst ihr dazu nicht verstehen. Alles Nähere ist in [README.md](Multiple_Linear_Regression/README.md) auf Englisch beschrieben.
 - die in diesen Release noch extern durchgeführte Multiple Lineare Regression wurde im Sensor [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) durch eine auf dem ATmega1284P durchgeführte Kalman Filterung ersetzt werden. Beide Berechnungen sind mathematisch gleichwertig und führen zu (fast) identischen Regressionsparametern. Dadurch entfällt das externe Berechnen der Koeffizienten für die Temperatur- und Luftfeuchtekompensation. Der Sensor [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) ist dadurch viel einfacher in Betrieb zu nehmen.
 	- Details zur Kalman Filterung sind im Unterverzeichnis [Kalman Filter](./Kalman_Filter) zu finden. Der Algorithmus ist schon in einem Jupyter Notebook beschrieben.
 
