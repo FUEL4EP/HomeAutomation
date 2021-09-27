@@ -109,7 +109,10 @@
 
 - Beispiel eines Histogramms des gleitenden Mittelwerts (im CCU Historian)
 
-    - wird später eingefügt, sobald verfügbar
+    - Hochlauframpe des gleitenden Mittelwerts in den ersten 7 Tagen
+    - der gleitende Mittelwert pendelt sich hier nach 7 Tagen auf ca. 4.1 cpi ein 
+    
+![pic](Images/Moving_average_histogram_7_day_ramp_up.png)
 
 
 ## Schaltplan
