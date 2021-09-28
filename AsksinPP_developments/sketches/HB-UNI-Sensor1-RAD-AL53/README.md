@@ -114,6 +114,11 @@
     
 ![pic](Images/Moving_average_histogram_7_day_ramp_up.png)
 
+- Beispiel eines Histogramms des gleitenden Mittelwerts (im CCU Historian). Die Varianz des gleitenden Mittelwerts ist deutlich reduziert.
+
+![pic](Images/Moving_average_histogram.png)
+
+
 
 ## Schaltplan
 
