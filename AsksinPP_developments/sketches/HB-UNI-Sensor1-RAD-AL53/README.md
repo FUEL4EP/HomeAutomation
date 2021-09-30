@@ -105,7 +105,7 @@
 
 - Beispiel eines Histogramms der Zählrate per Messintervall (im CCU Historian)
 
-![pic](Images/Counts_per_interval_histogram_24h.png)
+![pic](Images/Counts_per_interval_histogram_72h.png)
 
 - Beispiel eines Histogramms des gleitenden Mittelwerts (im CCU Historian)
 
