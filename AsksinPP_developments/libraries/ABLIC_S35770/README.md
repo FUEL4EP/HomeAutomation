@@ -8,6 +8,7 @@
 - An Arduino example is provided at [ABLIC_S35770_Demo.ino](./ABLIC_S35770_Demo/ABLIC_S35770_Demo.ino)
 - This example sketch requires this [hardware setup](./ABLIC_S35770_Demo/Hardware_setup_for_example_sketch.png)
 - The expected output of the example sketch is given [here](./ABLIC_S35770_Demo/Expected_output_of_serial_monitor)
+- This Arduino library is used in the AsksinPP DIY radiation sensor [HB-UNI-Sensor1-RAD-AL53](../../sketches/HB-UNI-Sensor1-RAD-AL53/README.md)
 - **IMPORTANT**: As documented in the data sheet, the ABLIC S-35770 counter stops counting between an I2C start and I2C stop condition, even if this I2C traffic is related to another I2C slave. Therefore, it is strongly recommended to refrain from I2C traffic during the counting periods of the ABLIC S-35770 counter!The provided example sketch is proving this unexpected behaviour.
 
 
