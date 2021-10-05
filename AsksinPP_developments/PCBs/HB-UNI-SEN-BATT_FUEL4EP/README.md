@@ -1,4 +1,4 @@
-# HB-UNI-SEN-BATT_FUEL4EP [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)][![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%2FHB-UNI-SEN-BATT_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+# HB-UNI-SEN-BATT_FUEL4EP [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)]
 
 **Platine für DIY AsksinPP basierend auf [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)**
 
@@ -7,9 +7,12 @@
 - diese Platine ist von Alexander Reinerts Platine [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) abgeleitet.
 - vielen Dank an Alexander Reinert für die Vorarbeit.
 
-## Noch in Entwicklung
+## In Entwicklung
 
-- diese Platine ist noch in Entwicklung, der Schaltplan ist schon fertig
+- diese Platine ist noch in Entwicklung, es ist meine erste Platine, die ich mit KiCAD entwickle
+- Entwicklung mit KiCAD 5.1.7
+- diese Platine ist noch nicht gefertigt und verifiziert!
+- eine Fertigung bei JLCPCB ist geplant
 - der Arduino Pro Mini ist durch einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) ersetzt
 
 ## Inhaltsverzeichnis

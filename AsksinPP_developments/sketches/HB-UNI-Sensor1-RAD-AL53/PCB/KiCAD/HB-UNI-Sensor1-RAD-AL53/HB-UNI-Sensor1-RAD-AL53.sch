@@ -17,8 +17,8 @@ $Comp
 L FUEL4EP:Tindie_Pro_Mini_XL_V2 Module5
 U 1 1 6145CA3D
 P 8750 3700
-F 0 "Module5" H 8700 3600 50  0000 C CNN
-F 1 "Tindie_Pro_Mini_XL_V2" V 9300 4900 50  0000 C CNB
+F 0 "Module5" H 8950 3400 50  0000 C CNN
+F 1 "Tindie_Pro_Mini_XL_V2" V 9200 4700 50  0000 C CNB
 F 2 "" H 8400 3900 50  0001 C CNN
 F 3 "https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/" H 8400 3900 50  0001 C CNN
 	1    8750 3700
@@ -173,12 +173,12 @@ $EndComp
 $Comp
 L Device:LED D3
 U 1 1 61466EC2
-P 7650 2450
-F 0 "D3" H 7450 2550 50  0000 C CNN
-F 1 "LED" H 7643 2576 50  0000 C CNN
-F 2 "" H 7650 2450 50  0001 C CNN
-F 3 "~" H 7650 2450 50  0001 C CNN
-	1    7650 2450
+P 7650 2700
+F 0 "D3" H 7450 2800 50  0000 C CNN
+F 1 "LED" H 7643 2826 50  0000 C CNN
+F 2 "" H 7650 2700 50  0001 C CNN
+F 3 "~" H 7650 2700 50  0001 C CNN
+	1    7650 2700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -206,71 +206,58 @@ $EndComp
 $Comp
 L Device:R R1
 U 1 1 61484341
-P 8100 2450
-F 0 "R1" V 7893 2450 50  0000 C CNN
-F 1 "470" V 7984 2450 50  0000 C CNN
-F 2 "" V 8030 2450 50  0001 C CNN
-F 3 "~" H 8100 2450 50  0001 C CNN
-	1    8100 2450
+P 8100 2700
+F 0 "R1" V 7893 2700 50  0000 C CNN
+F 1 "470" V 7984 2700 50  0000 C CNN
+F 2 "" V 8030 2700 50  0001 C CNN
+F 3 "~" H 8100 2700 50  0001 C CNN
+	1    8100 2700
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7950 2450 7800 2450
+	7950 2700 7800 2700
 $Comp
 L power:GND #PWR0101
 U 1 1 6148E6D3
-P 7050 2550
-F 0 "#PWR0101" H 7050 2300 50  0001 C CNN
-F 1 "GND" H 7055 2377 50  0000 C CNN
-F 2 "" H 7050 2550 50  0001 C CNN
-F 3 "" H 7050 2550 50  0001 C CNN
-	1    7050 2550
+P 7050 2800
+F 0 "#PWR0101" H 7050 2550 50  0001 C CNN
+F 1 "GND" H 7055 2627 50  0000 C CNN
+F 2 "" H 7050 2800 50  0001 C CNN
+F 3 "" H 7050 2800 50  0001 C CNN
+	1    7050 2800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7500 2450 7400 2450
+	7500 2700 7400 2700
 Wire Wire Line
-	7050 2450 7050 2550
-Text Notes 7600 2600 0    50   ~ 0
+	7050 2700 7050 2800
+Text Notes 7600 2850 0    50   ~ 0
 red
 $Comp
 L Switch:SW_DIP_x01 SW1
 U 1 1 61490989
-P 7700 2850
-F 0 "SW1" H 7800 2650 50  0000 C CNN
-F 1 "Config Button" H 7700 3026 50  0000 C CNN
-F 2 "" H 7700 2850 50  0001 C CNN
-F 3 "~" H 7700 2850 50  0001 C CNN
-	1    7700 2850
+P 7700 3100
+F 0 "SW1" H 7800 2900 50  0000 C CNN
+F 1 "Config Button" H 7700 3276 50  0000 C CNN
+F 2 "" H 7700 3100 50  0001 C CNN
+F 3 "~" H 7700 3100 50  0001 C CNN
+	1    7700 3100
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	7400 2850 7400 2450
-Connection ~ 7400 2450
+	7400 3100 7400 2700
+Connection ~ 7400 2700
 Wire Wire Line
-	7400 2450 7050 2450
-$Comp
-L FUEL4EP:CC1101_transceiver_module Module6
-U 1 1 6145F643
-P 9000 5800
-F 0 "Module6" H 9150 5750 50  0000 C CNN
-F 1 "CC1101_transceiver_module" V 9400 6350 50  0000 C CNB
-F 2 "" H 9200 5700 50  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/symlink/cc1101.pdf" H 9200 5700 50  0001 C CNN
-	1    9000 5800
-	1    0    0    -1  
-$EndComp
+	7400 2700 7050 2700
 Wire Wire Line
-	8350 4300 8350 2250
+	8350 2500 8550 2500
 Wire Wire Line
-	8350 2250 8550 2250
+	8550 2700 8250 2700
 Wire Wire Line
-	8550 2450 8250 2450
-Wire Wire Line
-	8550 2850 8000 2850
-Text Label 8000 2850 0    50   ~ 0
+	8550 3100 8000 3100
+Text Label 8000 3100 0    50   ~ 0
 CONFIG
-Text Label 8400 2450 0    50   ~ 0
+Text Label 8400 2700 0    50   ~ 0
 LED
 Wire Wire Line
 	4800 5450 5300 5450
@@ -331,8 +318,6 @@ Wire Wire Line
 	900  1200 1650 1200
 Wire Wire Line
 	1650 1550 850  1550
-Wire Wire Line
-	11150 5700 11150 5500
 $Comp
 L Device:R R4
 U 1 1 6146137D
@@ -665,94 +650,23 @@ Wire Wire Line
 	2550 6150 2550 7000
 Text Label 2650 6650 0    50   ~ 0
 max8.0V
-Text Label 10000 3350 0    50   ~ 0
+Text Label 10200 3350 0    50   ~ 0
 SCL
-Text Label 10000 3450 0    50   ~ 0
+Text Label 10200 3450 0    50   ~ 0
 SDA
 Wire Wire Line
 	9950 3350 10200 3350
 Wire Wire Line
 	9950 3450 10200 3450
-Connection ~ 10350 5500
-Wire Wire Line
-	11150 5500 10350 5500
-Wire Wire Line
-	10250 5700 10250 5750
-Connection ~ 10250 5700
-Wire Wire Line
-	10850 5700 10250 5700
-Wire Wire Line
-	10250 5600 10250 5700
-Text Label 10000 4300 0    50   ~ 0
-D2
-Wire Wire Line
-	10100 4300 8350 4300
-Wire Wire Line
-	10100 5100 10100 4300
-Wire Wire Line
-	9950 5100 10100 5100
-Wire Wire Line
-	9950 5500 10350 5500
-Wire Wire Line
-	9950 4900 10350 4900
-Text Label 10200 2950 0    50   ~ 0
-SS
-Wire Wire Line
-	10350 2950 9950 2950
-Wire Wire Line
-	10350 4900 10350 2950
-Text Label 10200 2850 0    50   ~ 0
-MOSI
-Text Label 10200 2750 0    50   ~ 0
-MISO
-Text Label 10200 2650 0    50   ~ 0
-SCK
-Text Label 10200 2050 0    50   ~ 0
-RST
-Wire Wire Line
-	10750 2050 9950 2050
-Wire Wire Line
-	10750 5750 10750 2050
-Wire Wire Line
-	10650 5200 10650 2750
-Connection ~ 10650 5200
-Wire Wire Line
-	9950 5200 10650 5200
-Wire Wire Line
-	10650 2750 9950 2750
-Wire Wire Line
-	10650 5750 10650 5200
-Wire Wire Line
-	10550 5300 10550 2650
-Connection ~ 10550 5300
-Wire Wire Line
-	9950 5300 10550 5300
-Wire Wire Line
-	10550 2650 9950 2650
-Wire Wire Line
-	10550 5750 10550 5300
-Wire Wire Line
-	10450 5400 10450 2850
-Connection ~ 10450 5400
-Wire Wire Line
-	9950 5400 10450 5400
-Wire Wire Line
-	10450 2850 9950 2850
-Wire Wire Line
-	10450 5750 10450 5400
-Wire Wire Line
-	10350 5750 10350 5500
-Text Notes 10250 6200 0    50   ~ 0
-ISP Programmer
 $Comp
 L Connector_Generic:Conn_01x06 J10
 U 1 1 61465AD3
-P 10550 5950
-F 0 "J10" V 10600 5400 50  0000 L CNN
-F 1 "Conn_01x06" V 10650 5700 50  0000 L CNN
-F 2 "" H 10550 5950 50  0001 C CNN
-F 3 "~" H 10550 5950 50  0001 C CNN
-	1    10550 5950
+P 10700 6200
+F 0 "J10" V 10750 5650 50  0000 L CNN
+F 1 "ISP Programmer" V 10850 5900 50  0000 L CNN
+F 2 "" H 10700 6200 50  0001 C CNN
+F 3 "~" H 10700 6200 50  0001 C CNN
+	1    10700 6200
 	0    1    1    0   
 $EndComp
 $Comp
@@ -775,17 +689,6 @@ F 1 "GND" H 10955 3177 50  0000 C CNN
 F 2 "" H 10950 3350 50  0001 C CNN
 F 3 "" H 10950 3350 50  0001 C CNN
 	1    10950 3350
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0106
-U 1 1 6179ED74
-P 10600 3950
-F 0 "#PWR0106" H 10600 3700 50  0001 C CNN
-F 1 "GND" H 10605 3777 50  0000 C CNN
-F 2 "" H 10600 3950 50  0001 C CNN
-F 3 "" H 10600 3950 50  0001 C CNN
-	1    10600 3950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -834,10 +737,10 @@ Wire Wire Line
 Text Notes 8950 1250 0    50   ~ 0
 FTDI connector
 Wire Wire Line
-	8550 2150 7050 2150
+	8550 2400 7050 2400
 Wire Wire Line
-	7050 2150 7050 2450
-Connection ~ 7050 2450
+	7050 2400 7050 2700
+Connection ~ 7050 2700
 $Comp
 L power:GND #PWR0109
 U 1 1 617E6817
@@ -864,27 +767,15 @@ Wire Wire Line
 Connection ~ 1650 3600
 NoConn ~ 1500 4000
 NoConn ~ 1500 4400
-NoConn ~ 9950 5000
-NoConn ~ 8800 5100
-NoConn ~ 8800 5300
 NoConn ~ 9050 3900
 NoConn ~ 9150 3900
 NoConn ~ 9250 3900
-NoConn ~ 9350 3900
-NoConn ~ 9450 3900
-NoConn ~ 9550 3900
 NoConn ~ 9000 1300
 NoConn ~ 9100 1300
 NoConn ~ 9200 1300
 NoConn ~ 9300 1300
 NoConn ~ 9400 1300
 NoConn ~ 9500 1300
-NoConn ~ 8550 2350
-NoConn ~ 8550 2550
-NoConn ~ 8550 2650
-NoConn ~ 8550 1850
-NoConn ~ 8550 1950
-NoConn ~ 8550 2050
 $Comp
 L Device:R R3
 U 1 1 614A62EC
@@ -1046,16 +937,12 @@ Wire Wire Line
 	9950 2350 10200 2350
 Wire Wire Line
 	9950 2450 10200 2450
-Wire Wire Line
-	9950 2550 10200 2550
 Text Label 10200 2250 0    50   ~ 0
 A3
 Text Label 10200 2350 0    50   ~ 0
 A2
 Text Label 10200 2450 0    50   ~ 0
 A1
-Text Label 10200 2550 0    50   ~ 0
-A0
 Text Label 5650 3300 0    50   ~ 0
 A0
 Text Label 5650 3700 0    50   ~ 0
@@ -1280,65 +1167,31 @@ Text Notes 4150 3050 0    50   ~ 0
 detect exhaustive discharge\nof NiMH accumulator batteries
 Wire Notes Line
 	4150 3050 4150 3300
-Wire Wire Line
-	10250 5600 9950 5600
 $Comp
 L power:GND #PWR0110
 U 1 1 61CAF748
-P 11150 5200
-F 0 "#PWR0110" H 11150 4950 50  0001 C CNN
-F 1 "GND" H 11155 5027 50  0000 C CNN
-F 2 "" H 11150 5200 50  0001 C CNN
-F 3 "" H 11150 5200 50  0001 C CNN
-	1    11150 5200
+P 8600 4450
+F 0 "#PWR0110" H 8600 4200 50  0001 C CNN
+F 1 "GND" H 8605 4277 50  0000 C CNN
+F 2 "" H 8600 4450 50  0001 C CNN
+F 3 "" H 8600 4450 50  0001 C CNN
+	1    8600 4450
 	-1   0    0    1   
-$EndComp
-$Comp
-L power:VCC #PWR0111
-U 1 1 61CD0DE5
-P 10850 5200
-F 0 "#PWR0111" H 10850 5050 50  0001 C CNN
-F 1 "VCC" H 10865 5373 50  0000 C CNN
-F 2 "" H 10850 5200 50  0001 C CNN
-F 3 "" H 10850 5200 50  0001 C CNN
-	1    10850 5200
-	1    0    0    -1  
 $EndComp
 $Comp
 L Device:CP C1
 U 1 1 6146D5D1
-P 11000 5700
-F 0 "C1" V 11150 5700 50  0000 C CNN
-F 1 "10u" V 10850 5700 50  0000 C CNN
-F 2 "" H 11038 5550 50  0001 C CNN
-F 3 "~" H 11000 5700 50  0001 C CNN
-	1    11000 5700
+P 8350 4600
+F 0 "C1" V 8500 4600 50  0000 C CNN
+F 1 "10u" V 8200 4600 50  0000 C CNN
+F 2 "" H 8388 4450 50  0001 C CNN
+F 3 "~" H 8350 4600 50  0001 C CNN
+	1    8350 4600
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	10850 5200 10850 5700
-Connection ~ 10850 5700
-Wire Wire Line
-	11150 5500 11150 5200
-Connection ~ 11150 5500
-Wire Wire Line
 	6200 1200 6550 1200
-$Comp
-L Device:Antenna AE1
-U 1 1 61DBC624
-P 8500 4800
-F 0 "AE1" H 8580 4789 50  0000 L CNN
-F 1 "Antenna" H 8580 4698 50  0000 L CNN
-F 2 "" H 8500 4800 50  0001 C CNN
-F 3 "~" H 8500 4800 50  0001 C CNN
-	1    8500 4800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8800 5200 8500 5200
-Wire Wire Line
-	8500 5200 8500 5000
-Text Notes 8050 4650 0    50   ~ 0
+Text Notes 10300 5150 0    50   ~ 0
 8.6 cm isolated wire
 NoConn ~ 5200 1950
 Wire Wire Line
@@ -1397,14 +1250,14 @@ Connection ~ 3600 7200
 Wire Wire Line
 	3600 7200 4000 7200
 Wire Wire Line
-	8550 2950 8200 2950
+	8550 3200 8200 3200
 Wire Wire Line
-	8200 2950 8200 3250
+	8200 3200 8200 3500
 Wire Wire Line
-	8200 3250 7700 3250
-Text Label 7700 3250 0    50   ~ 0
+	8200 3500 7700 3500
+Text Label 7700 3500 0    50   ~ 0
 PC3
-Text Notes 7300 3450 0    50   ~ 0
+Text Notes 7300 3700 0    50   ~ 0
 to 1N4148 diode D4\n(test pulses for S35770)
 Wire Wire Line
 	3600 6700 3600 6600
@@ -1425,12 +1278,12 @@ Wire Wire Line
 	3950 6650 4300 6650
 Connection ~ 3950 5450
 Wire Wire Line
-	8450 2750 8450 3650
+	8450 3000 8450 3900
 Wire Wire Line
-	8450 3650 7700 3650
-Text Label 7700 3650 0    50   ~ 0
+	8450 3900 7700 3900
+Text Label 7700 3900 0    50   ~ 0
 PD7
-Text Notes 7300 3750 0    50   ~ 0
+Text Notes 7300 4000 0    50   ~ 0
 to RSTB pin of S35770
 Wire Wire Line
 	3950 5450 3950 6350
@@ -1440,10 +1293,137 @@ Connection ~ 4300 6650
 Wire Wire Line
 	4300 6650 4450 6650
 Wire Wire Line
-	8450 2750 8550 2750
+	8450 3000 8550 3000
 Text Label 4300 6250 0    50   ~ 0
 PD7
 NoConn ~ 4000 6800
 Text Notes 3200 2700 0    50   ~ 0
 J8 on PCB
+Text Notes 10450 5250 0    50   ~ 0
+as antenna
+Text Notes 10450 5050 0    50   ~ 0
+connect an
+Text Label 8350 2500 0    50   ~ 0
+D2
+Wire Wire Line
+	9950 2550 10200 2550
+Wire Wire Line
+	9950 2650 10200 2650
+Wire Wire Line
+	9950 2750 10200 2750
+Wire Wire Line
+	9950 2850 10200 2850
+Wire Wire Line
+	9950 2950 10200 2950
+Text Label 10200 2550 0    50   ~ 0
+A0
+Text Label 10200 2650 0    50   ~ 0
+SCK
+Text Label 10200 2750 0    50   ~ 0
+MISO
+Text Label 10200 2850 0    50   ~ 0
+MOSI
+Text Label 10200 2950 0    50   ~ 0
+SS
+$Comp
+L FUEL4EP:CC1101_transceiver_module Module6
+U 1 1 6145F643
+P 9000 5650
+F 0 "Module6" H 9150 5600 50  0000 C CNN
+F 1 "CC1101_transceiver_module" V 9450 6200 50  0000 C CNB
+F 2 "" H 9200 5550 50  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/cc1101.pdf" H 9200 5550 50  0001 C CNN
+	1    9000 5650
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	10050 5100 10250 5100
+Wire Wire Line
+	10400 6000 10400 5800
+Wire Wire Line
+	10500 6000 10500 5800
+Wire Wire Line
+	10600 6000 10600 5800
+Wire Wire Line
+	10700 6000 10700 5800
+Wire Wire Line
+	10800 6000 10800 5800
+Wire Wire Line
+	10900 6000 10900 5800
+Wire Wire Line
+	8800 4900 8600 4900
+Wire Wire Line
+	8800 5000 8600 5000
+Wire Wire Line
+	8800 5100 8600 5100
+Wire Wire Line
+	8800 5200 8600 5200
+Wire Wire Line
+	8800 5300 8600 5300
+Wire Wire Line
+	9950 2050 10200 2050
+Text Label 10400 5800 1    50   ~ 0
+VCC
+Text Label 10500 5800 1    50   ~ 0
+GND
+Text Label 10600 5800 1    50   ~ 0
+MOSI
+Text Label 10700 5800 1    50   ~ 0
+SCK
+Text Label 10800 5800 1    50   ~ 0
+MISO
+Text Label 10900 5800 1    50   ~ 0
+RSET
+Text Label 10200 2050 0    50   ~ 0
+RSET
+Wire Wire Line
+	8800 5400 8600 5400
+Wire Wire Line
+	8800 5500 8600 5500
+$Comp
+L power:VCC #PWR0111
+U 1 1 61CD0DE5
+P 8050 4500
+F 0 "#PWR0111" H 8050 4350 50  0001 C CNN
+F 1 "VCC" H 8065 4673 50  0000 C CNN
+F 2 "" H 8050 4500 50  0001 C CNN
+F 3 "" H 8050 4500 50  0001 C CNN
+	1    8050 4500
+	1    0    0    -1  
+$EndComp
+Text Label 8600 5500 2    50   ~ 0
+SS
+Text Label 8600 5300 2    50   ~ 0
+D2
+Text Label 8600 5200 2    50   ~ 0
+MISO
+Text Label 8600 5100 2    50   ~ 0
+SCK
+Text Label 8600 5000 2    50   ~ 0
+MOSI
+Wire Wire Line
+	8050 4800 8050 4600
+Wire Wire Line
+	8050 4800 8800 4800
+Wire Wire Line
+	8200 4600 8050 4600
+Connection ~ 8050 4600
+Wire Wire Line
+	8050 4600 8050 4500
+Wire Wire Line
+	8600 4900 8600 4600
+Wire Wire Line
+	8600 4600 8500 4600
+Connection ~ 8600 4600
+Wire Wire Line
+	8600 4600 8600 4450
+NoConn ~ 8600 5400
+NoConn ~ 8550 2100
+NoConn ~ 8550 2200
+NoConn ~ 8550 2300
+NoConn ~ 8550 2600
+NoConn ~ 8550 2800
+NoConn ~ 8550 2900
+NoConn ~ 8850 3900
+NoConn ~ 8950 3900
 $EndSCHEMATC
