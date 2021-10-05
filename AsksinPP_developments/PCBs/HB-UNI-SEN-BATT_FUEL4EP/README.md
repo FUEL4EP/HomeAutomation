@@ -7,12 +7,9 @@
 - diese Platine ist von Alexander Reinerts Platine [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) abgeleitet.
 - vielen Dank an Alexander Reinert für die Vorarbeit.
 
-## In Entwicklung
+## Noch in Entwicklung
 
-- diese Platine ist noch in Entwicklung, es ist meine erste Platine, die ich mit KiCAD entwickle
-- Entwicklung mit KiCAD 5.1.7
-- diese Platine ist noch nicht gefertigt und verifiziert!
-- eine Fertigung bei JLCPCB ist geplant
+- diese Platine ist noch in Entwicklung, der Schaltplan ist schon fertig
 - der Arduino Pro Mini ist durch einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) ersetzt
 
 ## Inhaltsverzeichnis
