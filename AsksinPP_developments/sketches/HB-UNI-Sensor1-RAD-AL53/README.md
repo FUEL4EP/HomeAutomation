@@ -134,6 +134,9 @@
 
 ![pic](PCB/HB-UNI-SEN-BATT/Modifications_HB-UNI-SEN-BATT.png)
 
+- oder alternativ [HB-UNI-SEN-BATT_FUEL4EP](../../PCBs/HB-UNI-SEN-BATT_FUEL4EP)
+    + WARNUNG: diese Platine ist noch Entwicklung und noch nicht validiert!
+
 
 ## Gehäuse
 

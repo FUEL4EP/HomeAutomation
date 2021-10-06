@@ -2,6 +2,8 @@
 
 **Platine für DIY AsksinPP basierend auf [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)**
 
+![pic](PNGs/HB-UNI-SEN-BATT_FUEL4EP_top_view.png)
+
 ## Credits
 
 - diese Platine ist von Alexander Reinerts Platine [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) abgeleitet.
@@ -9,7 +11,9 @@
 
 ## Noch in Entwicklung
 
-- diese Platine ist noch in Entwicklung, der Schaltplan ist schon fertig
+- diese Platine ist noch in Entwicklung, **Nutzung auf eigene Gefahr**
+- entwickelt mit KiCAD 5.1.10
+- es ist geplant, diese Platine bei JLCPCB fertigen zu lassen und dann zu validieren
 - der Arduino Pro Mini ist durch einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) ersetzt
 
 ## Inhaltsverzeichnis

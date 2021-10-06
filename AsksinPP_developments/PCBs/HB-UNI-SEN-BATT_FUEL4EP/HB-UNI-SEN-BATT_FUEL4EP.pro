@@ -1,4 +1,4 @@
-update=Di 05 Okt 2021 17:27:55 CEST
+update=Mi 06 Okt 2021 13:00:30 CEST
 version=1
 last_client=kicad
 [general]
@@ -17,7 +17,7 @@ PageLayoutDescrFile=
 LastNetListRead=HB-UNI-SEN-BATT_FUEL4EP.net
 CopperLayerCount=2
 BoardThickness=1.6002
-AllowMicroVias=0
+AllowMicroVias=1
 AllowBlindVias=0
 RequireCourtyardDefinitions=1
 ProhibitOverlappingCourtyards=1
@@ -26,7 +26,7 @@ MinViaDiameter=0.6
 MinViaDrill=0.3
 MinMicroViaDiameter=0.2
 MinMicroViaDrill=0.09999999999999999
-MinHoleToHole=0.4
+MinHoleToHole=0.5
 TrackWidth1=0.25
 TrackWidth2=0.15
 TrackWidth3=0.2

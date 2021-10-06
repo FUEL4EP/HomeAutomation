@@ -799,4 +799,79 @@ Wire Wire Line
 	2100 950  2400 950 
 Text Notes 3600 5500 0    60   ~ 0
 alternatively an Arduino Pro Mini\ncan be used, too.
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 615CD389
+P 9850 6050
+F 0 "H2" H 9950 6096 50  0000 L CNN
+F 1 "MountingHole" H 9950 6005 50  0000 L CNN
+F 2 "FUEL4EP:MountingHole_2.2mm_M2_Pad_Via" H 9850 6050 50  0001 C CNN
+F 3 "~" H 9850 6050 50  0001 C CNN
+	1    9850 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 615D61D1
+P 9850 5850
+F 0 "H1" H 9950 5896 50  0000 L CNN
+F 1 "MountingHole" H 9950 5805 50  0000 L CNN
+F 2 "FUEL4EP:MountingHole_2.2mm_M2_Pad_Via" H 9850 5850 50  0001 C CNN
+F 3 "~" H 9850 5850 50  0001 C CNN
+	1    9850 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 615EB334
+P 10550 5850
+F 0 "H3" H 10650 5896 50  0000 L CNN
+F 1 "MountingHole" H 10650 5805 50  0000 L CNN
+F 2 "FUEL4EP:MountingHole_2.2mm_M2_Pad_Via" H 10550 5850 50  0001 C CNN
+F 3 "~" H 10550 5850 50  0001 C CNN
+	1    10550 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 615F62AC
+P 10550 6050
+F 0 "H4" H 10650 6096 50  0000 L CNN
+F 1 "MountingHole" H 10650 6005 50  0000 L CNN
+F 2 "FUEL4EP:MountingHole_2.2mm_M2_Pad_Via" H 10550 6050 50  0001 C CNN
+F 3 "~" H 10550 6050 50  0001 C CNN
+	1    10550 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO1
+U 1 1 615DEE46
+P 10250 5400
+F 0 "LOGO1" H 10250 5675 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 10250 5175 50  0001 C CNN
+F 2 "FUEL4EP:CC-BY-ND-SA" H 10250 5400 50  0001 C CNN
+F 3 "~" H 10250 5400 50  0001 C CNN
+	1    10250 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 615DE0A0
+P 3250 6850
+F 0 "#PWR?" H 3250 6600 50  0001 C CNN
+F 1 "GND" H 3255 6677 50  0000 C CNN
+F 2 "" H 3250 6850 50  0001 C CNN
+F 3 "" H 3250 6850 50  0001 C CNN
+	1    3250 6850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 6500 3250 6500
+Wire Wire Line
+	3250 6500 3250 6700
+Wire Wire Line
+	3150 6700 3250 6700
+Connection ~ 3250 6700
+Wire Wire Line
+	3250 6700 3250 6850
 $EndSCHEMATC

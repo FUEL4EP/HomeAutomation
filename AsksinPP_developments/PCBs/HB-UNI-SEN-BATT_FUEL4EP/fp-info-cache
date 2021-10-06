@@ -1,4 +1,4 @@
-18988271186485424
+19204243531118424
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -50756,6 +50756,13 @@ JLCPCB Tooling Hole
 0
 0
 0
+FUEL4EP
+MountingHole_2.2mm_M2_Pad_Via
+Mounting Hole 2.2mm, M2
+mounting hole 2.2mm m2
+0
+9
+1
 FUEL4EP
 MountingHole_M2.5
 Mounting Hole 2.7mm, no annular, M2.5, ISO7380
