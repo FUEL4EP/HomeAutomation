@@ -20,9 +20,33 @@
 
 - noch zu erstellen
 
+### Benötigte Bauteile:
+* [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)
+    - mit deutlich mehr Programm-, RAM- und EEPROM-Speicher als Arduino Pro Mini: 128kByte Programmspeicher, 16kByte SRAM, 4kByte EEPROM
+* CC1101 Modulplatine 868MHz
+* 1x LEDs 3mm Low Current (Pin 4)
+* 1x 470Ohm Widerstände (Vorwiderstand für LED)
+* Elko 10uF 1,5mm
+* 2x Goobay Batteriehalter Mignon Print
+* Mikroschalter 6*6mm
+* Stiftleiste RM 2mm 1x8 Pin (für CC1101)
+* Stiftleiste RM 2,54mm (nach Bedarf)
+* IRLU024N (optional für Verpolungsschutz)
+* 100KOhm Widerstand (optional für Verpolungsschutz)
+* 2x 10KOhm Widerstand (Pullup für I2C)
+* Versorgung durch NiMH Akkumulatoren und Aufwärtswandler ist vorbereitet (JP2)
+
+### Passendes Gehäuse
+* Camdenboss CBRS01SWH und CBRS01VWH
+* oder [Gehäuse HB-UNI-SEN-BATT snap in V2 von wpatrick](https://www.thingiverse.com/thing:3540481) für 3D-Druck
+
+### Hinweise
+* Achtung: Kein Überspannungschutz vorhanden
+* der Verpolungsschutz ist optional. Dafür Bauteil Q1 (IRLU024N) und R3 (100KOhm Widerstand) bestücken. Alternativ JP1 auf der Platinenrückseite brücken um ohne Verpolungsschutz zu arbeiten.
+
 ## Disclaimer
 
--   Die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr.
+-   die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr.
 
 ## Lizenz 
 
