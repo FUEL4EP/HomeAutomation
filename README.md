@@ -40,6 +40,16 @@
 | [ABLIC_S35770](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/ABLIC_S35770) | Arduino Bibliothek für ABLIC S-35770<br/>24-Bit Binärzähler mit I2C Schnittstelle | [datasheet](https://www.ablic.com/en/doc/datasheet/counter_ic/S35770_I_E.pdf)|
 | [avr_stl](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/avr_stl) | Arduino C++ Standard Library (ArduinoSTL)<br/>abgeleitet von [Giampaolo Mancini](https://github.com/manchoz/avr_stl.git) | [README.md](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/avr_st/README.md)|
 
+<br/>
+
+#### PCBs:
+
+| Name | Beschreibung | 3D Ansicht |
+|--------|--------|:--------:|
+| [HB-UNI-SEN-BATT_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP) | AsksinPP Platine basierend auf [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) | [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP/PNGs/HB-UNI-SEN-BATT_FUEL4EP_top_view.png)|
+| [HB-UNI-SEN-BATTE07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP) | Platine für DIY AsksinPP basierend auf<br/> [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)<br/> und [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf)| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP/PNGs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP_top_view.png)|
+
+<br/>
 
 #### Installation von Sensoren auf lokalem Computer
 
