@@ -23,6 +23,12 @@ K Pinout: https://www.makershop.de/download/cc1101-pinout-v.png
 F https://www.ti.com/lit/ds/symlink/cc1101.pdf
 $ENDCMP
 #
+$CMP E07-868MS10
+D TI CC1101 868.3 MHz tranceiver module
+K Pinout: https://www.makershop.de/download/cc1101-pinout-v.png
+F https://www.ti.com/lit/ds/symlink/cc1101.pdf
+$ENDCMP
+#
 $CMP MT3608_step_up
 D https://chips-and-more.com/cm/pdf/K3608.pdf
 K available e.g. at Amazon
