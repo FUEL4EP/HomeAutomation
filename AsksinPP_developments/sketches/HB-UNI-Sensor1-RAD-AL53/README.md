@@ -114,9 +114,13 @@
     
 ![pic](Images/Moving_average_histogram_7_day_ramp_up.png)
 
-- Beispiel eines Histogramms des gleitenden Mittelwerts (im CCU Historian). Die Varianz des gleitenden Mittelwerts ist deutlich reduziert.
+- Beispiel eines Histogramms des gleitenden Mittelwerts (im CCU Historian). Die Varianz des gleitenden Mittelwerts ist deutlich reduziert, siehe [hier](./Images/confidence_interval.png). 
 
 ![pic](Images/Moving_average_histogram.png)
+
+- Beispiel einer Messung einer radioaktiven Probe: Gartendünger  in 70mmx30mmx40mm [Plastikquader mit Aluminiumfolie als Abdeckung](./Images/box_with_fertilizer.png) ab 20:55 Uhr direkt vor den Sensor gelegt, siehe auch [Kaliumisotope](https://www.internetchemie.info/chemische-elemente/kalium-isotope.php), [Radon-Exhalationsmessungen an Düngemitteln](http://www.opengeiger.de/RadonDuenger/RadonDuenger.html), [Giftiges Uran im Gartendünger](https://www.youtube.com/watch?v=AQva8Ez1Tp4). Die gemessene Radioaktivität ist deutlich erhöht.
+
+![pic](./Images/potassium_fertilizer.png)
 
 
 
