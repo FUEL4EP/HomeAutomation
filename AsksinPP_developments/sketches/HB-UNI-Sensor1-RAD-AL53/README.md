@@ -403,6 +403,16 @@ Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
 - [Build and Test of A Gamma Radiation Detector ](https://ttu-ir.tdl.org/bitstream/handle/2346/58537/RODRIGUEZ-THESIS-2014.pdf)
 - [Konfidenzintervall](https://de.wikipedia.org/wiki/Konfidenzintervall)
 - [Mean and Variance of Sample Mean](https://online.stat.psu.edu/stat414/lesson/24/24.4)
+- [Uran im Boden und im Wasser ? – Testen Sie Ihr Düngemittel !](http://www.opengeiger.de/DuengerRadonTest.pdf)
+- [Uran in Boden und Wasser vom Bundesumweltamt](https://www.umweltbundesamt.de/sites/default/files/medien/461/publikationen/4336.pdf)
+- [RADIOACTIVITY IN CHEMICAL FERTILIZERS](https://inis.iaea.org/collection/NCLCollectionStore/_Public/44/128/44128586.pdf)
+- [Use of Fertilizers in Agriculture: Individual Effective Dose Estimate](https://mdpi-res.com/d_attachment/environments/environments-07-00007/article_deploy/environments-07-00007-v2.pdf)
+- [Fertilizer-Derived Uranium and itsThreat to Human Health](https://pubs.acs.org/doi/pdf/10.1021/es4002357)
+- [Nachweis von Uran in Düngemitteln mit dem Stuttgarter Geigerle](http://www.opengeiger.de/UranNachweisDuengerGeigerle.pdf)
+- [Ein Beitrag zur Gefährdungsabschätzung der Kontamination der Nahrungskette durch Uran aus phosphorhaltigen Düngemitteln, Lebensmittel- und Futtermittelzusatzstoffen](https://publikationsserver.tu-braunschweig.de/servlets/MCRFileNodeServlet/dbbs_derivate_00046859/Diss_Windmann_Heike.pdf
+)
+- [Strahlenbelastung durch natürliche Radionuklide in der Nahrung](https://www.bfs.de/DE/themen/ion/umwelt/lebensmittel/dosisbeitrag-ernaehrung/dosisbeitrag-ernaehrung.html)
+- [Radon-Handbuch Deutschland vom BfS](https://www.bfs.de/SharedDocs/Downloads/BfS/DE/broschueren/ion/radon-handbuch.pdf?__blob=publicationFile&v=9)
 
 ## Akkulebensdauer
 
