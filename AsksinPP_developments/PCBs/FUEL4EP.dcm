@@ -23,6 +23,12 @@ K Pinout: https://www.makershop.de/download/cc1101-pinout-v.png
 F https://www.ti.com/lit/ds/symlink/cc1101.pdf
 $ENDCMP
 #
+$CMP Conn_01x08
+D Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
 $CMP E07-868MS10
 D TI CC1101 868.3 MHz tranceiver module
 K Pinout: https://www.makershop.de/download/cc1101-pinout-v.png
@@ -41,6 +47,12 @@ K Tindie module
 F https://www.ti.com/lit/ds/symlink/tps61221.pdf
 $ENDCMP
 #
+$CMP TS-1187A-B-A-B
+D SMD Push Button Switch JLCPCB Basic
+K JLCPCB Basic
+F https://datasheet.lcsc.com/lcsc/2002271431_XKB-Connectivity-TS-1187A-B-A-B_C318884.pdf
+$ENDCMP
+#
 $CMP Teviso_AL53_RAD_sensor
 D https://www.teviso.com/en/downloads.htm
 K alpha, beta, gamma radiation detector based on PIN diode
@@ -51,6 +63,10 @@ $CMP Tindie_Pro_Mini_XL_V2
 D PCB with same size and pin locations as a Arduino Pro Mini, requires setup according https://prominimicros.com/how-to-use-the-pro-mini-xl-or-atmega-1284p-with-the-arduino-ide/
 K ATMega1284P MCU
 F https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/
+$ENDCMP
+#
+$CMP Waveshare_1.54_inch_epaper_dummy
+F https://www.waveshare.com/product/1.54inch-e-paper-module.htm
 $ENDCMP
 #
 #End Doc Library

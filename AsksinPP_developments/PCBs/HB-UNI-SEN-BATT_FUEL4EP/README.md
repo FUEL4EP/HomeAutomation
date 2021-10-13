@@ -27,7 +27,7 @@
 * 1x LEDs 3mm Low Current (Pin 4)
 * 1x 470Ohm Widerstände (Vorwiderstand für LED)
 * Elko 10uF 1,5mm
-* 2x Goobay Batteriehalter Mignon Print
+* 2x Keystone 2460 Batteriehalter 1xAA
 * Mikroschalter 6*6mm
 * Stiftleiste RM 2mm 1x8 Pin (für CC1101)
 * Stiftleiste RM 2,54mm (nach Bedarf)

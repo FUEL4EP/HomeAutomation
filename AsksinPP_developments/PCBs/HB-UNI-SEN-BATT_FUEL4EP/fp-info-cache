@@ -1,4 +1,4 @@
-19204243531118424
+19214047458553424
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -50729,6 +50729,13 @@ BATTERY_HOLDER_GOOBAY_AA
 2
 2
 FUEL4EP
+BatteryHolder_Keystone_2460_1xAA
+https://www.keyelco.com/product-pdf.cfm?p=1025
+AA battery cell holder
+0
+2
+2
+FUEL4EP
 CC-BY-ND-SA
 
 
@@ -50742,6 +50749,13 @@ CC1101
 0
 19
 11
+FUEL4EP
+Crystal_SMD_5032-2Pin_5.0x3.2mm_HandSoldering
+SMD Crystal SERIES SMD2520/2 http://www.icbase.com/File/PDF/HKC/HKC00061008.pdf, hand-soldering, 5.0x3.2mm^2 package
+SMD SMT crystal hand-soldering
+0
+2
+2
 FUEL4EP
 FTDI232_PCB
 
@@ -50771,6 +50785,20 @@ mounting hole 2.7mm no annular m2.5 iso7380
 0
 0
 FUEL4EP
+PinPads_1x08_P2.00mm_Vertical
+Through hole straight pin header, 1x08, 2.00mm pitch, single row
+Through hole pin header THT 1x08 2.00mm single row
+0
+8
+8
+FUEL4EP
+SW_TS-1187A-B-A-B
+
+
+0
+4
+4
+FUEL4EP
 SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm
 SMD Solder Jumper, 1x1.5mm Pads, 0.3mm gap, open
 solder jumper open
@@ -50791,6 +50819,20 @@ USB-MICRO-MK5P
 0
 9
 6
+FUEL4EP
+Waveshare_ePaper_module
+
+
+0
+4
+1
+FUEL4EP
+eByte_E07-868MS10
+
+
+0
+19
+10
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
