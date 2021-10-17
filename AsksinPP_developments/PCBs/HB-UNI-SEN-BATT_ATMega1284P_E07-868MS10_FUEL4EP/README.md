@@ -20,6 +20,7 @@
 - entwickelt mit KiCAD 5.1.10
 - hier zuerst nur als Diskussionsbasis veröffentlicht
 - es ist geplant, diese Platine bei JLCPCB fertigen zu lassen und dann zu validieren
+- JLCPCB BOM and CPL Dateien für SMT Service werden bereitgestellt (noch nicht getestet!!!)
 - der Arduino Pro Mini ist durch einen ATMega1284P im SMD Gehäuse ersetzt
 - als Funkmodul wird das [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf) verwendet
 
