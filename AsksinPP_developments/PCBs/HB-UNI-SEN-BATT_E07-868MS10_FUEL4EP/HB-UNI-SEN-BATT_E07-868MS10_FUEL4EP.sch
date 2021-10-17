@@ -169,8 +169,6 @@ Wire Wire Line
 Wire Wire Line
 	1350 950  2100 950 
 Wire Wire Line
-	2400 950  2400 1150
-Wire Wire Line
 	2000 1350 2000 1450
 Wire Wire Line
 	1350 1350 1350 1450
@@ -624,19 +622,18 @@ Wire Wire Line
 Wire Wire Line
 	2800 1150 2800 1000
 $Comp
-L Connector_Generic:Conn_01x02 J10
+L Connector_Generic:Conn_01x03 J10
 U 1 1 615781C9
 P 2600 1150
-F 0 "J10" H 2550 1300 50  0000 L CNN
-F 1 "charge" H 2500 900 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2600 1150 50  0001 C CNN
+F 0 "J10" H 2525 1350 50  0000 L CNN
+F 1 "charge" H 2475 950 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 2600 1150 50  0001 C CNN
 F 3 "~" H 2600 1150 50  0001 C CNN
 	1    2600 1150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	2400 1150 2800 1150
-Connection ~ 2400 1150
 Wire Wire Line
 	2000 6500 1700 6500
 Wire Wire Line
@@ -743,13 +740,10 @@ F 3 "" H 4600 3600 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 NoConn ~ 750  4550
-Text Label 2100 850  0    60   ~ 0
+Text Label 2100 850  2    60   ~ 0
 plusBAT
 Wire Wire Line
 	2100 850  2100 950 
-Connection ~ 2100 950 
-Wire Wire Line
-	2100 950  2400 950 
 Text Notes 3600 5500 0    60   ~ 0
 alternatively an Arduino Pro Mini\ncan be used, too.
 $Comp
@@ -946,4 +940,27 @@ Wire Wire Line
 Connection ~ 1550 1450
 Wire Wire Line
 	1550 1450 1700 1450
+Wire Wire Line
+	2400 1150 2275 1150
+Wire Wire Line
+	2275 1150 2275 950 
+Wire Wire Line
+	2275 950  2100 950 
+Connection ~ 2400 1150
+Connection ~ 2100 950 
+$Comp
+L power:VCC #PWR?
+U 1 1 616B928E
+P 2400 1000
+F 0 "#PWR?" H 2400 850 50  0001 C CNN
+F 1 "VCC" H 2415 1173 50  0000 C CNN
+F 2 "" H 2400 1000 50  0001 C CNN
+F 3 "" H 2400 1000 50  0001 C CNN
+	1    2400 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 1000 2400 1050
+Text Notes 650  825  0    60   ~ 0
+2x Keystone 2460\nbattery holders\n
 $EndSCHEMATC
