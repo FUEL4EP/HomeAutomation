@@ -76,7 +76,7 @@
 - Versorgung mit zwei aufladbaren NiMH Akkumulatorzellen: Laufzeit > 2 Monate mit einer Akkuladung
 - die Ausgangspulse des AL53 Sensors werden mit einem [ABLIC S-35770 24-Bit Zählerbausstein](https://www.ablic.com/en/doc/datasheet/counter_ic/S35770_I_E.pdf) gezählt und per I2C alle 10 Minuten ausgelesen.
 - die typische Zählrate bedingt durch die natürliche Hintergrundstrahlung beträgt ca. ~5 Ereignisse in 10 Minuten (Einheit: cpi = counts per interval, interval := 10 Minuten) oder ~30 Ereignisse in einer Stunde. **Daher ist der Sensor nicht für die schnelle Erfassung von Radioaktivität oder einer schnellen Änderung der Radioaktivität geeignet.**
-- ein gleitender Mittelwert wird mit einem zyklischen Ringpuffer der Tiefe 1008 aus den ausgelesenen Zählerständen gebildet, d.h. die gleitende Mittelwertbildung wird über den Zeitraum der letzten 1008 * 10 Minuten = 7 Tage durchgeführt. Es wird jeweils  das älteste Zählergebnis verworfen, wenn ein neues Zählergebnis eingelesen wird.
+- ein gleitender Mittelwert wird mit einem zyklischen Ringpuffer der Tiefe 1008 aus den ausgelesenen Zählerständen gebildet, d.h. die gleitende Mittelwertbildung wird über den Zeitraum der letzten 1008 * 10 Minuten = 7 Tage durchgeführt. Es wird jeweils  das älteste Zählergebnis verworfen, wenn ein neues Zählergebnis eingelesen wird. Das Füllen des Ringpuffers dauert 7 Tage. Währenddessen steigt der gleitende Mittelwert 'semi' linear an.
 - es wird die Breite des 95% Vertrauensintervalls für die Zählrate (cpi) online berechnet und im WebUI ausgegeben.
     + das Konfidenzintervall des gleitenden Mittelwerts lässt sich daraus mathematisch ableiten, siehe [hier](./Images/confidence_interval.png)
 - als Mikrokontrollerplatine wird der auf einem ATMega1284P basierende Arduino [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verwandt. WICHTIG: Ein Arduino Pro Mini mit einem ATmega328P passt wegen zu geringem Speicherplatz nicht!
@@ -118,11 +118,16 @@
 
 ![pic](Images/Moving_average_histogram.png)
 
-- Beispiel einer Messung einer radioaktiven Probe: Gartendünger  in 70mmx30mmx40mm [Plastikquader mit Aluminiumfolie als Abdeckung](./Images/box_with_fertilizer.png) ab 20:55 Uhr direkt vor den Sensor gelegt, siehe auch [Kaliumisotope](https://www.internetchemie.info/chemische-elemente/kalium-isotope.php), [Radon-Exhalationsmessungen an Düngemitteln](http://www.opengeiger.de/RadonDuenger/RadonDuenger.html), [Giftiges Uran im Gartendünger](https://www.youtube.com/watch?v=AQva8Ez1Tp4). Die gemessene Radioaktivität ist deutlich erhöht.
+- Beispiel einer Messung einer radioaktiven Probe: Gartendünger  in 70mmx30mmx40mm [Plastikquader mit Aluminiumfolie als Abdeckung](./Images/box_with_fertilizer.png) ab 20:55 Uhr direkt vor den Sensor gelegt, siehe auch [Kaliumisotope](https://www.internetchemie.info/chemische-elemente/kalium-isotope.php), [Radon-Exhalationsmessungen an Düngemitteln](http://www.opengeiger.de/RadonDuenger/RadonDuenger.html), [Giftiges Uran im Gartendünger](https://www.youtube.com/watch?v=AQva8Ez1Tp4). Die gemessene Radioaktivität ist ca. um einen Faktor 3 (!!) höher als die normale Hintergrundstrahlung.
 
 ![pic](./Images/potassium_fertilizer.png)
 
+Hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x erhöhten Wert:
 
+![pic](./Images/potassium_fertilizer_moving_average_ramp_up.png)
+
+- als Nächstes werde ich eine Radonmessung mit dem Dünger machen:
+    - [Uran im Boden und im Wasser ? – Testen Sie Ihr Düngemittel !](http://www.opengeiger.de/DuengerRadonTest.pdf)
 
 ## Schaltplan
 
@@ -413,6 +418,9 @@ Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
 )
 - [Strahlenbelastung durch natürliche Radionuklide in der Nahrung](https://www.bfs.de/DE/themen/ion/umwelt/lebensmittel/dosisbeitrag-ernaehrung/dosisbeitrag-ernaehrung.html)
 - [Radon-Handbuch Deutschland vom BfS](https://www.bfs.de/SharedDocs/Downloads/BfS/DE/broschueren/ion/radon-handbuch.pdf?__blob=publicationFile&v=9)
+- [Geoportal des Bundesamts für Strahlenschutz](https://www.imis.bfs.de/geoportal/)
+- [DORIS - Digitales Online Repositorium und Informations-System des Bundesamts für Strahlenschutz: Auflistung der Inhalte](https://doris.bfs.de/jspui/handle/urn:nbn:de:0221-2015060312762/browse?type=title&sort_by=2&order=DESC)
+- [Umweltradioaktivität und Strahlenbelastung Jahresbericht 2018](https://doris.bfs.de/jspui/bitstream/urn:nbn:de:0221-2021011124821/1/JB2018_2020.pdf)
 
 ## Akkulebensdauer
 
