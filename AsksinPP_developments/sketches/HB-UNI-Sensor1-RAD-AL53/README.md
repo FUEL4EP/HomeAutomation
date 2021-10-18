@@ -143,8 +143,8 @@ Hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x e
 
 ![pic](PCB/HB-UNI-SEN-BATT/Modifications_HB-UNI-SEN-BATT.png)
 
-- oder alternativ [HB-UNI-SEN-BATT_FUEL4EP](../../PCBs/HB-UNI-SEN-BATT_FUEL4EP)
-    + WARNUNG: diese Platine ist noch Entwicklung und noch nicht validiert!
+- oder alternativ [HB-UNI-SEN-BATT_FUEL4EP](../../PCBs/HB-UNI-SEN-BATT_FUEL4EP) oder [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP)
+    + WARNUNG: diese Platinen sind z.Z. noch Entwicklung und noch nicht validiert!
 
 
 ## Gehäuse
