@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/ewald/Arduino/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP.sch)
-    (date "So 17 Okt 2021 18:27:11 CEST")
+    (date "Mo 18 Okt 2021 09:33:32 CEST")
     (tool "Eeschema 5.1.10-88a1d61d58~88~ubuntu18.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block

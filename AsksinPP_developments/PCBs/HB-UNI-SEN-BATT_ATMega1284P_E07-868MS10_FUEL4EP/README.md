@@ -1,9 +1,10 @@
-# HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)]
+# HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)
 
 **Platine für DIY AsksinPP für**
-- [eingebauter SMD ATMega1284P mit 128kByte Programmspeicher, 16kByte SRAM, 4kByte EEPROM]()
+- eingebauter SMD TQFP-44 [ATMega1284P](https://ww1.microchip.com/downloads/en/DeviceDoc/doc8059.pdf) mit 128kByte Programmspeicher, 16kByte SRAM, 4kByte EEPROM
 - [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf)
-- [Bestückungsoption für Waveshare ePaper Modul (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
+- Bestückungsoption für [Waveshare ePaper Modul (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
+- Bestückungsoption für [TPS61221 Aufwärtswandler](https://www.ti.com/lit/ds/symlink/tps61221.pdf?ts=1634546965861&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61221) bei NiMH Akkumulatorbetrieb
 
 ![pic](PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_top_view.png)
 
@@ -19,8 +20,9 @@
 - diese Platine ist noch in Entwicklung, **Nutzung auf eigene Gefahr**
 - entwickelt mit KiCAD 5.1.10
 - hier zuerst nur als Diskussionsbasis veröffentlicht
-- es ist geplant, diese Platine bei JLCPCB fertigen zu lassen und dann zu validieren
+- diese Platine wird gerade bei JLCPCB gefertigt und anschließend validiert
 - JLCPCB BOM and CPL Dateien für SMT Service werden bereitgestellt (noch nicht getestet!!!)
+- der TPS61221 ist zur Zeit nicht lieferbar
 - der Arduino Pro Mini ist durch einen ATMega1284P im SMD Gehäuse ersetzt
 - als Funkmodul wird das [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf) verwendet
 

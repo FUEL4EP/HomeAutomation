@@ -1,5 +1,5 @@
 ** Drc report for /home/ewald/Arduino/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP.kicad_pcb **
-** Created on 2021-10-17 10:01:56 **
+** Created on 2021-10-18 09:35:07 **
 
 ** Found 1 DRC errors **
 ErrType(46): Footprint hat keinen Sperrbereich definiert

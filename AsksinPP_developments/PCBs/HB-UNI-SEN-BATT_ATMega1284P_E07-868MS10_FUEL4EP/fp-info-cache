@@ -1,4 +1,4 @@
-19217317280707424
+19218952337379424
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -50812,6 +50812,13 @@ solder jumper open
 0
 2
 2
+FUEL4EP
+TO-251-3_Vertical
+TO-251-3, Vertical, RM 2.29mm, IPAK, see https://www.diodes.com/assets/Package-Files/TO251.pdf
+TO-251-3 Vertical RM 2.29mm IPAK
+0
+3
+3
 FUEL4EP
 Tindie_ArduinoProMiniXL_1284P_V2
 
