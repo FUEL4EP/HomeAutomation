@@ -22,10 +22,10 @@
 - ein Werksreset, der durch ein > 6 Sekunden langes Drücken der Config-Taste ausgelöst wird, stellt die Tx Sendeleistung auf maximal +10dBm zurück. Dadurch wird allerdings auch die Adresse einer angelernten Zentrale vergessen, so dass ein erneutes Anlernen des Sensors an der Zentrale vonnöten ist. Der Sensor muss vor dem erneuten Anlernen **NICHT** aus der Zentrale gelöscht werden. Beim erneuten Anlernen erscheint der Sensor **NICHT** im Posteingangskorb. Wird das erneute Anlernen vergessen, funktioniert z.B. das 'Lazy Config' nicht mehr.
 
 - folgendes Vorgehen wird zur Einstellung einer geringeren Sendeleistung empfohlen:
-    + Sensor wird späteren Aufstellungsort platziert.
+    + Sensor wird am späteren Aufstellungsort platziert.
     + die Ausgaben im seriellen Monitor verfolgen, auf TxPower achten (siehe oben)
     + die Sendeleistung wird nun schrittweise, bei der maximalen Sendeleistung von +10dBm beginnend, um jeweils eine Stufe reduziert.
-    + Nach dem Einstellen der geringeren Sendeleistung in der Zentrale unter 'Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter' dort auf 'Übernehmen' klicken. Es erscheint ein Verküpfungs- und Programmstatus Fenster (Sensorbezeichnungen können anders sein): 
+    + nach dem Einstellen der geringeren Sendeleistung in der Zentrale unter 'Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter' dort auf 'Übernehmen' klicken. Es erscheint ein Verküpfungs- und Programmstatus Fenster (Sensorbezeichnungen können anders sein): 
       ![pic](status_pop_up_widow.png)
      -  anschließend zur Übernahme der neuen Geräteparameter am Sensor sehr kurz  auf die Config-Taste drücken. 
     -  dann im 'Verküpfungs- und Programmstatus Fenster' auf 'Erneut prüfen' klicken.
@@ -33,7 +33,7 @@
     ![pic](Success.png)
     dann ist die eingestellte Sendeleistung noch ausreichend für eine Rückmeldung des Sensors an die Zentrale.
     - nun kann eine weitere Iteration mit der nächst kleineren Tx Sendeleistung gemacht werden
-    - erfolgt keine Bestätigung mehr, dass die Übertragung der Daten zum Gerät erfolgreich abgeschlossen wurde, ist die eingestellte Tx Sendeleistung zu klein. Die dabei eingestellt Tx Sendeleistung bitte merken.
+    - erfolgt keine Bestätigung mehr, dass die Übertragung der Daten zum Gerät erfolgreich abgeschlossen wurde, ist die eingestellte Tx Sendeleistung zu klein. Die dabei eingestellt Tx Sendeleistung bitte merken (siehe unten).
     - dann bitte am Sensor die Config-Taste für > 6 Sekunden für einen Werksreset drücken. Das stellt die Tx Sendeleistung wieder auf die maximale Sendeleistung von +10dBm.
     - nun abschließend als Tx Sendeleistung **zwei** Stufen über der Sendeleistung einstellen, bei der keine Bestätigung mehr erfolgte (1 Stufe für mehr Sicherheit für die Übertragung).
     - als letzter Schritt muss  bei einem durchgeführten Werksreset (siehe oben) der Sensor nochmals neu angelernt werden. Der Sensor muss vor dem erneuten Anlernen **NICHT** aus der Zentrale gelöscht werden. Beim erneuten Anlernen erscheint der Sensor **NICHT** im Posteingangskorb. Wird das erneute Anlernen vergessen, funktioniert z.B. das 'Lazy Config' nicht mehr.
