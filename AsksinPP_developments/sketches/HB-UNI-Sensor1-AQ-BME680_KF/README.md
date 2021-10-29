@@ -288,7 +288,11 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
 - Bitte dieses Addon 'hb-ep-devices-addon.tgz' herunterladen und vor dem Anlernen des HB-UNI-Sensor1-AQ-BME680 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
-- Minimal benötigte Version des Addons: 1.4
+- Minimal benötigte Version des Addons: 1.10
+
+## Verringerung der Tx Sendeleistung
+
+- nur Experten wird empfohlen, die Tx Sendeleistung zu verringern. Die Beschreibung ist [hier](./Reduction_of_Tx_RF_power/README.md).
 
 ## Autokalibrierung und Kalman Filter
 

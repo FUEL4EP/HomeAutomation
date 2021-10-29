@@ -1,146 +1,159 @@
-09:42:04.165 -> AskSin++ v5.0.0 (Sep 12 2021 09:41:37)
-09:42:04.198 -> 
-09:42:04.198 -> 
-09:42:04.198 -> Welcome to HB-UNI-Sensor1-RAD-AL53 (C) 2021 FUEL4EP (Creative Commons)
-09:42:04.198 -> 
-09:42:04.198 -> 
-09:42:04.198 -> 
-09:42:04.198 -> 
-09:42:04.198 -> IMPORTANT: Remove accumulator batteries during debugging with a FTDI Debugger in the serial monitor or a programming with an ISP Programmer
-09:42:04.282 ->            This avoids a deep discharge of them by the boost converter
-09:42:04.282 -> 
-09:42:04.282 -> 
-09:42:04.282 -> initializing ABLIC S35770 counter
-09:42:04.282 -> initializing AL53 radiation statistics data base
-09:42:04.282 -> initializing ADS1115 ADC
-09:42:04.298 -> ADS1115 init
-09:42:04.298 -> SUCCESS: ABLIC S-35770 counter IC device found at I2C address 0x32 !
-09:42:04.298 -> ABLIC S-35770 counter IC with I2C interface seems to be present !
-09:42:04.331 -> ABLIC S-35770 counter IC is accessible
-09:42:04.364 -> ADS1115 measurement ..
-09:42:04.364 -> AL53 supply voltage (x1000.0)                                                            : 12127
-09:42:04.364 -> VCC supply voltage (x1000.0)                                                             : 3467
-09:42:04.397 -> accumulator batteries voltage (x1000.0)                                                  : 3139
-09:42:04.431 -> alarm level counts per measurement interval                                              : 65535
-09:42:04.464 -> alarm level moving average  (x1000.0)                                                    : 65535
-09:42:05.462 -> creating fixed number of test pulses at pin PC3                                          : 16384
-09:42:06.261 -> read count register                                                                      : 16384
-09:42:06.261 -> check if the count register result was                                                   : 16384
-09:42:06.327 -> Sensor setup done
-09:42:06.327 -> Serial: AL53RAD001
-09:42:06.327 -> Clock is SYSCLOCK
-09:42:06.327 -> SYSCLOCK correction factor                                                               : 0.8899999618
-09:42:06.361 -> Address Space: 32 - 74
-09:42:06.361 -> CC init1
-09:42:06.361 -> CC Version: 14
-09:42:06.361 ->  - ready
-09:42:06.427 -> Battery set low:  25
-09:42:06.427 -> Battery set crit: 22
-09:42:06.427 -> Config Changed: List0
-09:42:06.427 -> ledMode: 1
-09:42:06.427 -> lowBatLimit: 25
-09:42:06.427 -> Battery set low:  25
-09:42:06.427 -> transmitDevTryMax: 6
-09:42:06.427 -> updCycle: 600
-09:42:06.549 -> alarm level counts per measurement interval : 65535
-09:42:06.549 -> alarm level moving average                  : 65535
-09:42:06.549 -> 
-09:42:06.549 -> 
-09:42:06.549 -> Welcome to HB-UNI-Sensor1-RAD-AL53 (C) 2021 FUEL4EP (Creative Commons)
-09:42:06.549 -> 
-09:42:06.549 -> 
-09:42:06.549 -> 
-09:42:06.549 -> 
-09:42:06.549 -> IMPORTANT: Remove accumulator batteries during debugging with a FTDI Debugger in the serial monitor or a programming with an ISP Programmer
-09:42:06.549 ->            This avoids a deep discharge of them by the boost converter
-09:42:06.549 -> 
-09:42:06.549 -> 
-09:42:06.549 -> initializing ABLIC S35770 counter
-09:42:06.567 -> initializing AL53 radiation statistics data base
-09:42:06.567 -> initializing ADS1115 ADC
-09:42:06.567 -> ADS1115 init
-09:42:06.567 -> SUCCESS: ABLIC S-35770 counter IC device found at I2C address 0x32 !
-09:42:06.626 -> ABLIC S-35770 counter IC with I2C interface seems to be present !
-09:42:06.626 -> ABLIC S-35770 counter IC is accessible
-09:42:06.626 -> ADS1115 measurement ..
-09:42:06.659 -> AL53 supply voltage (x1000.0)                                                            : 12117
-09:42:06.692 -> VCC supply voltage (x1000.0)                                                             : 3460
-09:42:06.692 -> accumulator batteries voltage (x1000.0)                                                  : 3139
-09:42:06.726 -> alarm level counts per measurement interval                                              : 65535
-09:42:06.726 -> alarm level moving average  (x1000.0)                                                    : 65535
-09:42:07.756 -> creating fixed number of test pulses at pin PC3                                          : 16384
-09:42:08.554 -> read count register                                                                      : 16384
-09:42:08.587 -> check if the count register result was                                                   : 16384
-09:42:08.587 -> ignore 0F 90 86 10 610CE4 000000 0A 60 E4 08 00 00  - 4417
-09:42:11.877 -> 
-09:42:11.877 -> 
-09:42:11.877 -> readout of the last radiation measurement interval's results ... 
-09:42:11.918 -> 
-09:42:11.918 -> index of measurement interval                                                            : 1
-09:42:11.918 -> number of radiation event counts per measurement interval                                : 0  <===
-09:42:11.976 -> moving average of radiation event counts per measurement interval (x100.0)               : 0
-09:42:11.976 -> width of confidence interval of radiation event counts per measurement interval (x100.0) : 0
-09:42:12.010 -> maximum moving average of radiation event counts per measurement interval                : 0
-09:42:12.010 -> maximum of number of radiation event counts per measurement interval                     : 0
-09:42:12.043 -> AL53 supply voltage (x1000.0)                                                            : 12117
-09:42:12.076 -> VCC supply voltage (x1000.0)                                                             : 3499
-09:42:12.109 -> accumulator batteries voltage (x1000.0)                                                  : 3139
-09:42:12.109 -> alarm count per measurement interval                                                     : 0
-09:42:12.142 -> alarm moving average                                                                     : 0
-09:42:12.175 -> executiom time of measurement method                                                     : 274 msec
-09:42:12.209 -> accumulator voltage(MCU ADC) (x1000.0)                                                   : 3141
-09:42:12.308 -> <- 1A 01 84 53 F60801 000000 00 00 00 00 00 00 00 00 00 00 00 0C 43 2F 55 0D AB  - 4862
-09:52:12.336 -> 
-09:52:12.336 -> 
-09:52:12.336 -> readout of the last radiation measurement interval's results ... 
-09:52:12.369 -> 
-09:52:12.369 -> index of measurement interval                                                            : 2
-09:52:12.369 -> number of radiation event counts per measurement interval                                : 7  <===
-09:52:12.403 -> moving average of radiation event counts per measurement interval (x100.0)               : 0
-09:52:12.435 -> width of confidence interval of radiation event counts per measurement interval (x100.0) : 86
-09:52:12.435 -> maximum moving average of radiation event counts per measurement interval                : 0
-09:52:12.502 -> maximum of number of radiation event counts per measurement interval                     : 7
-09:52:12.502 -> AL53 supply voltage (x1000.0)                                                            : 12106
-09:52:12.535 -> VCC supply voltage (x1000.0)                                                             : 3497
-09:52:12.568 -> accumulator batteries voltage (x1000.0)                                                  : 3139
-09:52:12.601 -> alarm count per measurement interval                                                     : 0
-09:52:12.601 -> alarm moving average                                                                     : 0
-09:52:12.635 -> executiom time of measurement method                                                     : 273 msec
-09:52:12.667 -> accumulator voltage(MCU ADC) (x1000.0)                                                   : 3141
-09:52:12.734 -> <- 1A 02 86 53 F60801 000000 00 00 07 00 00 00 56 00 00 00 07 0C 43 2F 4A 0D A9  - 5312
-10:02:12.522 -> 
-10:02:12.522 -> 
-10:02:12.522 -> readout of the last radiation measurement interval's results ... 
-10:02:12.555 -> 
-10:02:12.555 -> index of measurement interval                                                            : 3
-10:02:12.555 -> number of radiation event counts per measurement interval                                : 13  <===
-10:02:12.588 -> moving average of radiation event counts per measurement interval (x100.0)               : 1
-10:02:12.621 -> width of confidence interval of radiation event counts per measurement interval (x100.0) : 182
-10:02:12.654 -> maximum moving average of radiation event counts per measurement interval                : 1
-10:02:12.688 -> maximum of number of radiation event counts per measurement interval                     : 13
-10:02:12.721 -> AL53 supply voltage (x1000.0)                                                            : 12096
-10:02:12.721 -> VCC supply voltage (x1000.0)                                                             : 3497
-10:02:12.754 -> accumulator batteries voltage (x1000.0)                                                  : 3139
-10:02:12.754 -> alarm count per measurement interval                                                     : 0
-10:02:12.787 -> alarm moving average                                                                     : 0
-10:02:12.820 -> executiom time of measurement method                                                     : 275 msec
-10:02:12.853 -> accumulator voltage(MCU ADC) (x1000.0)                                                   : 3141
-10:02:12.953 -> <- 1A 03 84 53 F60801 000000 00 00 0D 00 01 00 B6 00 01 00 0D 0C 43 2F 40 0D A9  - 5763
-10:12:12.661 -> 
-10:12:12.661 -> 
-10:12:12.661 -> readout of the last radiation measurement interval's results ... 
-10:12:12.694 -> 
-10:12:12.694 -> index of measurement interval                                                            : 4
-10:12:12.694 -> number of radiation event counts per measurement interval                                : 10  <===
-10:12:12.761 -> moving average of radiation event counts per measurement interval (x100.0)               : 2
-10:12:12.761 -> width of confidence interval of radiation event counts per measurement interval (x100.0) : 219
-10:12:12.794 -> maximum moving average of radiation event counts per measurement interval                : 2
-10:12:12.827 -> maximum of number of radiation event counts per measurement interval                     : 13
-10:12:12.860 -> AL53 supply voltage (x1000.0)                                                            : 12096
-10:12:12.860 -> VCC supply voltage (x1000.0)                                                             : 3497
-10:12:12.894 -> accumulator batteries voltage (x1000.0)                                                  : 3139
-10:12:12.894 -> alarm count per measurement interval                                                     : 0
-10:12:12.960 -> alarm moving average                                                                     : 0
-10:12:12.960 -> executiom time of measurement method                                                     : 274 msec
-10:12:12.993 -> accumulator voltage(MCU ADC) (x1000.0)                                                   : 3141
-10:12:13.093 -> <- 1A 04 84 53 F60801 000000 00 00 0A 00 02 00 DB 00 02 00 0D 0C 43 2F 40 0D A9  - 6213
+09:03:55.320 -> AskSin++ v5.0.0 (Oct 29 2021 09:03:25)
+09:03:55.320 -> 
+09:03:55.320 -> 
+09:03:55.320 -> Welcome to HB-UNI-Sensor1-RAD-AL53 (C) 2021 FUEL4EP (Creative Commons)
+09:03:55.320 -> 
+09:03:55.320 -> 
+09:03:55.320 -> 
+09:03:55.320 -> 
+09:03:55.320 -> IMPORTANT: Remove accumulator batteries during debugging with a FTDI Debugger in the serial monitor or a programming with an ISP Programmer
+09:03:55.375 ->            This avoids a deep discharge of them by the boost converter
+09:03:55.375 -> 
+09:03:55.375 -> 
+09:03:55.375 -> initializing ABLIC S35770 counter
+09:03:55.375 -> initializing AL53 radiation statistics data base
+09:03:55.448 -> initializing ADS1115 ADC
+09:03:55.448 -> ADS1115 init
+09:03:55.448 -> SUCCESS: ABLIC S-35770 counter IC device found at I2C address 0x32 !
+09:03:55.448 -> ABLIC S-35770 counter IC with I2C interface seems to be present !
+09:03:55.448 -> ABLIC S-35770 counter IC is accessible
+09:03:55.448 -> ADS1115 measurement ..
+09:03:55.448 -> AL53 supply voltage (x1000.0)                                                            : 8033
+09:03:55.508 -> VCC supply voltage (x1000.0)                                                             : 3314
+09:03:55.541 -> accumulator batteries voltage (x1000.0)                                                  : 2600
+09:03:55.541 -> alarm level counts per measurement interval                                              : 65535
+09:03:55.575 -> alarm level moving average  (x1000.0)                                                    : 65535
+09:03:56.573 -> creating fixed number of test pulses at pin PC3                                          : 16384
+09:03:57.371 -> read count register                                                                      : 16384
+09:03:57.371 -> check if the count register result was                                                   : 16384
+09:03:57.404 -> Sensor setup done
+09:03:57.404 -> Serial: AL53RAD001
+09:03:57.404 -> Clock is SYSCLOCK
+09:03:57.437 -> SYSCLOCK correction factor                                                               : 0.8899999618
+09:03:57.437 -> Address Space: 32 - 75
+09:03:57.470 -> CC init1
+09:03:57.470 -> CC Version: 14
+09:03:57.470 ->  - ready
+09:03:57.537 -> Battery set low:  25
+09:03:57.537 -> Battery set crit: 22
+09:03:57.537 -> Config Changed: List0
+09:03:57.537 -> ledMode: 1
+09:03:57.537 -> lowBatLimit: 25
+09:03:57.537 -> Battery set low:  25
+09:03:57.570 -> transmitDevTryMax: 6
+09:03:57.570 -> updCycle: 600
+09:03:57.570 -> txPower: 7
+09:03:58.005 -> alarm level counts per measurement interval : 65535
+09:03:58.005 -> alarm level moving average                  : 65535
+09:03:58.005 -> 
+09:03:58.005 -> 
+09:03:58.005 -> Welcome to HB-UNI-Sensor1-RAD-AL53 (C) 2021 FUEL4EP (Creative Commons)
+09:03:58.005 -> 
+09:03:58.005 -> 
+09:03:58.005 -> 
+09:03:58.005 -> 
+09:03:58.005 -> IMPORTANT: Remove accumulator batteries during debugging with a FTDI Debugger in the serial monitor or a programming with an ISP Programmer
+09:03:58.005 ->            This avoids a deep discharge of them by the boost converter
+09:03:58.005 -> 
+09:03:58.005 -> 
+09:03:58.005 -> initializing ABLIC S35770 counter
+09:03:58.005 -> initializing AL53 radiation statistics data base
+09:03:58.005 -> initializing ADS1115 ADC
+09:03:58.005 -> ADS1115 init
+09:03:58.005 -> SUCCESS: ABLIC S-35770 counter IC device found at I2C address 0x32 !
+09:03:58.005 -> ABLIC S-35770 counter IC with I2C interface seems to be present !
+09:03:58.005 -> ABLIC S-35770 counter IC is accessible
+09:03:58.005 -> ADS1115 measurement ..
+09:03:58.005 -> AL53 supply voltage (x1000.0)                                                            : 8043
+09:03:58.005 -> VCC supply voltage (x1000.0)                                                             : 3311
+09:03:58.005 -> accumulator batteries voltage (x1000.0)                                                  : 2590
+09:03:58.005 -> alarm level counts per measurement interval                                              : 65535
+09:03:58.005 -> alarm level moving average  (x1000.0)                                                    : 65535
+09:03:58.865 -> creating fixed number of test pulses at pin PC3                                          : 16384
+09:03:59.663 -> read count register                                                                      : 16384
+09:03:59.696 -> check if the count register result was                                                   : 16384
+09:04:02.989 -> 
+09:04:02.989 -> 
+09:04:02.989 -> readout of the last radiation measurement interval's results ... 
+09:04:03.046 -> 
+09:04:03.046 -> index of measurement interval                                                            : 1
+09:04:03.046 -> number of radiation event counts per measurement interval                                : 0  <===
+09:04:03.093 -> moving average of radiation event counts per measurement interval (x100.0)               : 0
+09:04:03.093 -> width of confidence interval of radiation event counts per measurement interval (x100.0) : 0
+09:04:03.140 -> maximum moving average of radiation event counts per measurement interval                : 0
+09:04:03.140 -> maximum of number of radiation event counts per measurement interval                     : 0
+09:04:03.189 -> AL53 supply voltage (x1000.0)                                                            : 8033
+09:04:03.189 -> VCC supply voltage (x1000.0)                                                             : 3311
+09:04:03.249 -> accumulator batteries voltage (x1000.0)                                                  : 2608
+09:04:03.249 -> alarm count per measurement interval                                                     : 0
+09:04:03.298 -> alarm moving average                                                                     : 0
+09:04:03.298 -> executiom time of measurement method                                                     : 273 msec
+09:04:03.298 -> accumulator voltage(MCU ADC) (x1000.0)                                                   : 2611
+09:04:03.407 -> <- 1A 01 84 53 F60801 000000 00 00 00 00 00 00 00 00 00 00 00 0A 30 1F 61 0C EF  - 4852
+09:04:39.155 ->  released
+09:04:39.236 -> ⸮&$LL⸮⸮1 01  - 4929
+09:04:39.236 -> 
+09:04:39.421 -> ignore 0C 3E 86 70 591B48 000000 02 2E 64  - 5160
+09:04:40.219 -> -> 10 01 A0 01 123456 F60801 00 05 00 00 00 00 00  - 5960
+09:04:40.353 -> <- 0A 01 80 02 F60801 123456 00  - 6082
+09:04:40.403 -> -> 13 0A A0 01 123456 F60801 00 08 02 01 0A 19 0B 57 0C 4D  - 6119
+09:04:40.519 -> <- 0A 0A 80 02 F60801 123456 00  - 6243
+09:04:40.577 -> -> 0B 13 A0 01 123456 F60801 00 06  - 6271
+09:04:40.577 -> Config Changed: List0
+09:04:40.577 -> ledMode: 1
+09:04:40.577 -> lowBatLimit: 25
+09:04:40.577 -> Battery set low:  25
+09:04:40.577 -> transmitDevTryMax: 6
+09:04:40.577 -> updCycle: 600
+09:04:40.577 -> txPower: 7
+09:04:40.652 -> <- 0A 13 82 02 F60801 123456 00  - 6393
+09:04:40.697 -> -> 10 1C A0 01 123456 F60801 00 04 00 00 00 00 00  - 6429
+09:04:40.911 -> <- 1A 1C A0 10 F60801 123456 02 0A 19 0B 57 0C 4D 05 40 12 19 14 06 20 02 21 58  - 6567
+09:04:41.448 -> waitAck: 00
+09:04:41.494 -> <- 1A 1C A0 10 F60801 123456 02 0A 19 0B 57 0C 4D 05 40 12 19 14 06 20 02 21 58  - 7214
+09:04:42.079 -> waitAck: 00
+09:04:42.126 -> <- 1A 1C A0 10 F60801 123456 02 0A 19 0B 57 0C 4D 05 40 12 19 14 06 20 02 21 58  - 7861
+09:04:42.245 -> -> 0A 1C 80 02 123456 F60801 00  - 7975
+09:04:42.245 -> waitAck: 01
+09:04:42.292 -> <- 0E 1C 80 10 F60801 123456 02 24 07 00 00  - 8006
+09:04:42.292 -> -> 10 25 A0 01 123456 F60801 01 04 00 00 00 00 01  - 8041
+09:04:42.445 -> <- 14 25 80 10 F60801 123456 02 01 FF 02 FF 03 FF 04 FF 00 00  - 8172
+09:04:46.769 -> Packet too big: 34
+09:07:11.112 -> - 1A 03 80 00 F60801 123456 10 F6 08 41 4C 35 33 52 41 44 30 30 31 53 01 01 01  - 24979
+09:07:11.145 -> 
+09:07:11.245 -> -> 10 0C A0 01 123456 F60801 00 05 00 00 00 00 00  - 25124
+09:07:11.378 -> <- 0A 0C 80 02 F60801 123456 00  - 25242
+09:07:11.411 -> -> 0D 15 A0 01 123456 F60801 00 08 24 04  - 25273
+09:07:11.511 -> <- 0A 15 80 02 F60801 123456 00  - 25392
+09:07:11.678 -> -> 0D 15 A0 01 123456 F60801 00 08 24 04  - 25549
+09:07:11.811 -> <- 0A 15 80 02 F60801 123456 00  - 25672
+09:07:11.844 -> -> 0B 1E A0 01 123456 F60801 00 06  - 25700
+09:07:11.844 -> Config Changed: List0
+09:07:11.844 -> ledMode: 1
+09:07:11.844 -> lowBatLimit: 25
+09:07:11.844 -> Battery set low:  25
+09:07:11.877 -> transmitDevTryMax: 6
+09:07:11.877 -> updCycle: 600
+09:07:11.877 -> txPower: 4
+09:07:11.944 -> <- 0A 1E 82 02 F60801 123456 00  - 25822
+09:07:16.502 -> ignore 0C 29 86 70 20DD41 000000 00 DE 2B  - 30382
+09:07:18.495 -> ignore 0F 2D 86 5E 4D1660 000000 08 D7 05 00 EF 10  - 32368
+09:13:51.544 -> 
+09:13:51.544 -> 
+09:13:51.544 -> readout of the last radiation measurement interval's results ... 
+09:13:51.577 -> 
+09:13:51.577 -> index of measurement interval                                                            : 2
+09:13:51.577 -> number of radiation event counts per measurement interval                                : 19  <===
+09:13:51.610 -> moving average of radiation event counts per measurement interval (x100.0)               : 1
+09:13:51.676 -> width of confidence interval of radiation event counts per measurement interval (x100.0) : 234
+09:13:51.676 -> maximum moving average of radiation event counts per measurement interval                : 1
+09:13:51.709 -> maximum of number of radiation event counts per measurement interval                     : 19
+09:13:51.742 -> AL53 supply voltage (x1000.0)                                                            : 8043
+09:13:51.742 -> VCC supply voltage (x1000.0)                                                             : 3309
+09:13:51.775 -> accumulator batteries voltage (x1000.0)                                                  : 2610
+09:13:51.808 -> alarm count per measurement interval                                                     : 0
+09:13:51.842 -> alarm moving average                                                                     : 0
+09:13:51.876 -> executiom time of measurement method                                                     : 274 msec
+09:13:51.876 -> accumulator voltage(MCU ADC) (x1000.0)                                                   : 2611
+09:13:51.975 -> <- 1A 04 84 53 F60801 000000 00 00 13 00 01 00 EA 00 01 00 13 0A 32 1F 6B 0C ED  - 45403
+

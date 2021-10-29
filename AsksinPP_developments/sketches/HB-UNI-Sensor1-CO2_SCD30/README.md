@@ -10,11 +10,6 @@ Die CO2 Konzentration ist ein wichtiger Indikator für die Luftqualität in Inne
 
 [Auswirkung hoher CO2 Konzentrationen](https://www.cik-solutions.com/content/images/co2-konzentration.png)
 
-## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.7 updaten
-
-- Die neue Version V1.7 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
-- Bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
-
 ## Hardware
 
 Als Ausgangspunkt wird die Platine Alex Reinert und der Sketch  HB-UNI-SEN-BATT von Tom Major genommen und geeignet modifiziert.
@@ -368,6 +363,10 @@ Nur bei ausgeschaltetem DEBUG Modus wird bei einem kritischen Akkuladezustand de
 ### Benötigtes Addon auf CCUx/RaspberryMatic:
 
 **Update 08.12.2020:** **Vor** dem Anlernen des HB-UNI-Sensor1-CO2_SCD30 Sensors ist das Addon [ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf der CCUx/RaspberryMatic zu installieren. Dazu die 'hb-ep-devices-addon.tgz' von dort bitte herunterladen und als Zusatzsoftware in der CCU3/RaspberryMatic installieren. Die 'tgz'-Datei muss nicht unzipped werden!
+
+### Verringerung der Tx Sendeleistung
+
+- nur Experten wird empfohlen, die Tx Sendeleistung zu verringern. Die Beschreibung ist [hier](./Reduction_of_Tx_RF_power/README.md).
 
 ### Hinweise zum reinen Netzbetrieb des HB-UNI-Sensor1-CO2_SCD30 Sensors
 

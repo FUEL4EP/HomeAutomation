@@ -32,7 +32,9 @@
 #include <Register.h>
 #include "Sensors/tmBattery.h"
 
-//please install the addon hb-ep-devices-addon before pairing the sensor with the CCU/RaspberryMatic
+// #define EByte_E07_868MS10   // uncomment if an EByte E07-868MS10 module (red color) is used as CC1101 transceiver
+
+// please install the addon hb-ep-devices-addon version >= 1.10 before pairing the sensor with the CCU/RaspberryMatic
 
 //---------------------------------------------------------
 // Alle Device Parameter werden aus einer .h Datei (hier Cfg/Sens_BME280.h) geholt um mehrere Geräte ohne weitere Änderungen des
@@ -195,8 +197,9 @@ public:
 // die "freien" Register 0x20/21 werden hier als 16bit memory für das Update
 // Intervall in Sek. benutzt siehe auch hb-uni-sensor1.xml, <parameter
 // id="Sendeintervall"> .. ausserdem werden die Register 0x22/0x23 für den
-// konf. Parameter Höhe benutztF
-DEFREGISTER(Reg0, MASTERID_REGS, DREG_LEDMODE, DREG_LOWBATLIMIT, DREG_TRANSMITTRYMAX, 0x20, 0x21, 0x22, 0x23)
+// konf. Parameter Höhe benutzt
+// das Register 0x24 wird für die Einstellung der CC1101 Tx Sendeleistung verwendet
+DEFREGISTER(Reg0, MASTERID_REGS, DREG_LEDMODE, DREG_LOWBATLIMIT, DREG_TRANSMITTRYMAX, 0x20, 0x21, 0x22, 0x23, 0x24)
 class SensorList0 : public RegList0<Reg0> {
 public:
     SensorList0(uint16_t addr)
@@ -209,6 +212,9 @@ public:
 
     bool     altitude(uint16_t value) const { return this->writeRegister(0x22, (value >> 8) & 0xff) && this->writeRegister(0x23, value & 0xff); }
     uint16_t altitude() const { return (this->readRegister(0x22, 0) << 8) + this->readRegister(0x23, 0); }
+    
+    bool     txPower(uint8_t v) const { return this->writeRegister(0x24,v); }
+    uint8_t  txPower() const { return this->readRegister(0x24,0); }
 
     void defaults()
     {
@@ -217,6 +223,7 @@ public:
         lowBatLimit(BAT_VOLT_LOW);
         transmitDevTryMax(6);
         updIntervall(240);
+        txPower(7);               // maximum tx power as initial value: +10dB
         altitude(84);             // height of sensor's location above sea level; adjust to your sensor's location in WebUI device / device/channel parameter page
     }
 };
@@ -423,10 +430,24 @@ public:
         uint16_t updCycle = this->getList0().updIntervall();
         DPRINT(F("updCycle: "));
         DDECLN(updCycle);
-   
+
         uint16_t altitude = this->getList0().altitude();
         DPRINT(F("altitude: "));
         DDECLN(altitude);
+        
+        // Einstellung der CC1101 Tx Sendeleistung
+
+        // setting of CC1101's PATABLE Tx output power settings according tables 37 (wire-wound inductors, e.g. EByte E07-868MS10)  and 39 (multi-layer inductors, e.g. no name green module) of TI CC1101 data sheet https://www.ti.com/lit/ds/symlink/cc1101.pdf
+#ifdef EByte_E07_868MS10
+        const byte powerMode[8] = { 0x03, 0x17, 0x1D, 0x26, 0x50, 0x81, 0xCD, 0xC0 };  // wire-wound inductor Tx output levels (e.g. red color PCB EByte E07-868MS10), see table 37 of CC1101 data sheet
+                                                                                       // 0xC0 allows +11/dBm+12dBm Tx output power, change 0xC0 to 0xC5 for max. 10 dBm Tx output power
+#else
+        const byte powerMode[8] = { 0x03, 0x0F, 0x1E, 0x27, 0x50, 0x81, 0xCB, 0xC2 };  // multi-layer inductor Tx output levels (e.g. no name green color PCB CC1101 module), see table 39 of CC1101 data sheet
+#endif
+        uint8_t txPower = min(this->getList0().txPower(), 7);
+        radio().initReg(CC1101_PATABLE, powerMode[txPower]);
+        DPRINT(F("txPower: "));DDECLN(txPower);
+        
     }
 };
 

@@ -149,6 +149,10 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-Sensor1-TH-SHT75 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
 - Bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
 
+## Verringerung der Tx Sendeleistung
+
+- nur Experten wird empfohlen, die Tx Sendeleistung zu verringern. Die Beschreibung ist [hier](./Reduction_of_Tx_RF_power/README.md).
+
 ## Lizenz
 
 **Creative Commons BY-NC-SA**<br>

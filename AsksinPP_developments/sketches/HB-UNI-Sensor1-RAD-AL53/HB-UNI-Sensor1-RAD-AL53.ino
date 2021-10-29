@@ -28,6 +28,10 @@
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+// the sensor HB-UNI-Sensor1-RAD-AL53 requires mandatorily an ATMega1284P MCU (Pro Mini XL - v2 - ATmega 1284p https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)
+
+// please set the baud rate in the serial monitor as 38400 baud 
+
 #define SENSOR_ONLY
 
 #define EI_NOTEXTERNAL
@@ -39,6 +43,7 @@
 #include <MultiChannelDevice.h>
 #include "Sensors/tmBattery.h"
 #include "Sensors/Sens_AL53.h"
+ 
 
 //---------------------------------------------------------
 // Alle wesentlichen Device Parameter werden aus einer Sens_AL53.h Datei  geholt um mehrere Geräte ohne weitere Änderungen des
@@ -56,7 +61,9 @@
                                           // currently no direct links are supported
 #define SAMPLINGINTERVALL_IN_SECONDS 600  // read the radiation event counter every 10 minutes = 600 seconds
 
+// #define EByte_E07_868MS10   // uncomment if an EByte E07-868MS10 module (red color) is used as CC1101 transceiver
 
+// please install the addon hb-ep-devices-addon version >= 1.10 before pairing the sensor with the CCU/RaspberryMatic
 
 
 // all library classes are placed in the namespace 'as'
@@ -193,7 +200,7 @@ class MeasureEventMsg : public Message {
 
 
 
-DEFREGISTER(Reg0, MASTERID_REGS, DREG_LEDMODE, DREG_LOWBATLIMIT, DREG_TRANSMITTRYMAX, 0x20, 0x21)
+DEFREGISTER(Reg0, MASTERID_REGS, DREG_LEDMODE, DREG_LOWBATLIMIT, DREG_TRANSMITTRYMAX, 0x20, 0x21, 0x24)
 class SensorList0 : public RegList0<Reg0> {
 public:
     SensorList0(uint16_t addr)
@@ -203,6 +210,9 @@ public:
 
     bool     updInterval(uint16_t value) const { return this->writeRegister(0x20, (value >> 8) & 0xff) && this->writeRegister(0x21, value & 0xff); }
     uint16_t updInterval() const { return (this->readRegister(0x20, 0) << 8) + this->readRegister(0x21, 0); }
+    
+    bool    txPower(uint8_t v) const { return this->writeRegister(0x24,v); }
+    uint8_t txPower() const { return this->readRegister(0x24,0); }
 
 
     void defaults()
@@ -211,6 +221,7 @@ public:
         ledMode(1);
         lowBatLimit(BAT_VOLT_LOW);
         transmitDevTryMax(6);
+        txPower(7);                                       // maximum tx power as initial value: +10dB
         updInterval(SAMPLINGINTERVALL_IN_SECONDS);        // sampling intervall 600 seconds          ; adjust to your needs in WebUI device / device/channel parameter page
         powerSupply(true);                                // true = battery mode
     }
@@ -370,26 +381,43 @@ public:
 
     virtual void configChanged()
     {
-        TSDevice::configChanged();
-        DPRINTLN(F("Config Changed: List0"));
+      TSDevice::configChanged();
+      DPRINTLN(F("Config Changed: List0"));
 
-        uint8_t ledMode = this->getList0().ledMode();
-        DPRINT(F("ledMode: "));
-        DDECLN(ledMode);
+      uint8_t ledMode = this->getList0().ledMode();
+      DPRINT(F("ledMode: "));
+      DDECLN(ledMode);
 
-        uint8_t lowBatLimit = this->getList0().lowBatLimit();
-        DPRINT(F("lowBatLimit: "));
-        DDECLN(lowBatLimit);
-        battery().low(lowBatLimit);
+      uint8_t lowBatLimit = this->getList0().lowBatLimit();
+      DPRINT(F("lowBatLimit: "));
+      DDECLN(lowBatLimit);
+      battery().low(lowBatLimit);
 
-        uint8_t txDevTryMax = this->getList0().transmitDevTryMax();
-        DPRINT(F("transmitDevTryMax: "));
-        DDECLN(txDevTryMax);
+      uint8_t txDevTryMax = this->getList0().transmitDevTryMax();
+      DPRINT(F("transmitDevTryMax: "));
+      DDECLN(txDevTryMax);
 
-        uint16_t updCycle = this->getList0().updInterval();
-        DPRINT(F("updCycle: "));
-        DDECLN(updCycle);
+      uint16_t updCycle = this->getList0().updInterval();
+      DPRINT(F("updCycle: "));
+      DDECLN(updCycle);
 
+      // Einstellung der CC1101 Tx Sendeleistung
+
+      // setting of CC1101's PATABLE Tx output power settings according tables 37 (wire-wound inductors, e.g. EByte E07-868MS10)  and 39 (multi-layer inductors, e.g. no name green module) of TI CC1101 data sheet https://www.ti.com/lit/ds/symlink/cc1101.pdf
+#ifdef EByte_E07_868MS10
+      const byte powerMode[8] = { 0x03, 0x17, 0x1D, 0x26, 0x50, 0x81, 0xCD, 0xC0 };  // wire-wound inductor Tx output levels (e.g. red color PCB EByte E07-868MS10), see table 37 of CC1101 data sheet
+                                                                                      // 0xC0 allows +11/dBm+12dBm Tx output power, change 0xC0 to 0xC5 for max. 10 dBm Tx output power
+#else
+      const byte powerMode[8] = { 0x03, 0x0F, 0x1E, 0x27, 0x50, 0x81, 0xCB, 0xC2 };  // multi-layer inductor Tx output levels (e.g. no name green color PCB CC1101 module), see table 39 of CC1101 data sheet
+#endif
+      uint8_t txPower = this->getList0().txPower();
+      // the used libary ArduinoSTL seems to disable the min function !? Therefore here a standard if is used instead
+      if ( txPower > 7 ) {
+        txPower = 7;
+      }
+      radio().initReg(CC1101_PATABLE, powerMode[txPower]);
+      DPRINT(F("txPower: "));DDECLN(txPower);
+      
     }
 };
 

@@ -32,7 +32,9 @@
 #include <Register.h>
 #include "Sensors/tmBattery.h"
 
-//please install the addon hb-ep-devices-addon before pairing the sensor with the CCU/RaspberryMatic
+// #define EByte_E07_868MS10   // uncomment if an EByte E07-868MS10 module (red color) is used as CC1101 transceiver
+
+//please install the addon hb-ep-devices-addon version >= 1.10 before pairing the sensor with the CCU/RaspberryMatic
 
 //---------------------------------------------------------
 // Alle Device Parameter werden aus einer .h Datei (hier Cfg/Sens_SHT75.h) geholt um mehrere Geräte ohne weitere Änderungen des
@@ -80,7 +82,11 @@ const struct DeviceInfo PROGMEM devinfo = {
     cDEVICE_ID,        // Device ID           defined in ./Cfg/Device_SHT75.h
     cDEVICE_SERIAL,    // Device Serial       defined in ./Cfg/Device_SHT75.h
     { 0xF6, 0x03 },    // Device Model        needs to fit to Addon XML hb-uni-sensor-TH-SHT75.xml line 6:
-                       //                     <parameter index="10.0" size="2.0" const_value="0xF603" 
+                       //                     <parameter index="10.0" size="2.0" const_value="0xF603" /
+    // Firmware Version
+    // die CCU Addon xml Datei ist mit der Zeile <parameter index="9.0" size="1.0" cond_op="E" const_value="0x13" />
+    // fest an diese Firmware Version gebunden! cond_op: E Equal, GE Greater or Equal
+    // bei Änderungen von Payload, message layout, Datenpunkt-Typen usw. muss die Version an beiden Stellen hochgezogen werden!
     0x10,
     as::DeviceType::THSensor,    // Device Type
     { 0x01, 0x01 }               // Info Bytes
@@ -178,7 +184,8 @@ public:
 // Intervall in Sek. benutzt siehe auch hb-uni-sensor1.xml, <parameter
 // id="Sendeintervall"> .. ausserdem werden die Register 0x22/0x23 für den
 // konf. Parameter Höhe benutzt
-DEFREGISTER(Reg0, MASTERID_REGS, DREG_LEDMODE, DREG_LOWBATLIMIT, DREG_TRANSMITTRYMAX, 0x20, 0x21)
+// das Register 0x24 wird für die Einstellung der CC1101 Tx Sendeleistung verwendet
+DEFREGISTER(Reg0, MASTERID_REGS, DREG_LEDMODE, DREG_LOWBATLIMIT, DREG_TRANSMITTRYMAX, 0x20, 0x21, 0x24)
 class SensorList0 : public RegList0<Reg0> {
 public:
     SensorList0(uint16_t addr)
@@ -188,6 +195,10 @@ public:
 
     bool     updIntervall(uint16_t value) const { return this->writeRegister(0x20, (value >> 8) & 0xff) && this->writeRegister(0x21, value & 0xff); }
     uint16_t updIntervall() const { return (this->readRegister(0x20, 0) << 8) + this->readRegister(0x21, 0); }
+    
+    bool     txPower(uint8_t v) const { return this->writeRegister(0x24,v); }
+    uint8_t  txPower() const { return this->readRegister(0x24,0); }
+
 
     void defaults()
     {
@@ -195,6 +206,7 @@ public:
         ledMode(1);
         lowBatLimit(BAT_VOLT_LOW);
         transmitDevTryMax(6);
+        txPower(7);               // maximum tx power as initial value: +10dB
         updIntervall(240);
     }
 };
@@ -392,7 +404,19 @@ public:
         uint16_t updCycle = this->getList0().updIntervall();
         DPRINT(F("updCycle: "));
         DDECLN(updCycle);
+        
+// Einstellung der CC1101 Tx Sendeleistung
 
+        // setting of CC1101's PATABLE Tx output power settings according tables 37 (wire-wound inductors, e.g. EByte E07-868MS10)  and 39 (multi-layer inductors, e.g. no name green module) of TI CC1101 data sheet https://www.ti.com/lit/ds/symlink/cc1101.pdf
+#ifdef EByte_E07_868MS10
+        const byte powerMode[8] = { 0x03, 0x17, 0x1D, 0x26, 0x50, 0x81, 0xCD, 0xC0 };  // wire-wound inductor Tx output levels (e.g. red color PCB EByte E07-868MS10), see table 37 of CC1101 data sheet
+                                                                                       // 0xC0 allows +11/dBm+12dBm Tx output power, change 0xC0 to 0xC5 for max. 10 dBm Tx output power
+#else
+        const byte powerMode[8] = { 0x03, 0x0F, 0x1E, 0x27, 0x50, 0x81, 0xCB, 0xC2 };  // multi-layer inductor Tx output levels (e.g. no name green color PCB CC1101 module), see table 39 of CC1101 data sheet
+#endif
+        uint8_t txPower = min(this->getList0().txPower(), 7);
+        radio().initReg(CC1101_PATABLE, powerMode[txPower]);
+        DPRINT(F("txPower: "));DDECLN(txPower);
     }
 };
 

@@ -276,7 +276,8 @@ Hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x e
 	#define cDEVICE_SERIAL  "AL53RAD001"               //change 'AL53RAD001' to your sensor name's abbreviation
 	                    //   1234567890                IMPORTANT: exact 10 characters are required!
    ```
-- die Anpassung der Spannungsteilerfaktoren der ADC-Konverter kann zu einem späteren Zeitpunkt erfolgen (siehe unten). Die initialen Ausgaben für die gemessenen Spannungen sind dann noch nicht genau.
+- die Anpassung der Spannungsteilerfaktoren der ADC-Konverter kann zu einem späteren Zeitpunkt erfolgen (siehe unten). Die initialen Ausgaben für die gemessenen Spannungen sind dann noch nicht genau
+.
 ## Kompilation, Hochladen und erste Inbetriebnahme
 - das #define NDEBUG im Sketch [HB-UNI-Sensor1-RAD-AL53.ino](HB-UNI-Sensor1-RAD-AL53.ino) zuerst noch auskommentiert lassen:
     ```
@@ -387,8 +388,12 @@ Hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x e
 ## Anmelden an der Zentrale
 - diese [Anleitung](https://asksinpp.de/Grundlagen/03_ccu.html) befolgen
 - der Anlernknopf ist der ConfigButton SW1 auf der Basisplatine
-- vor den Anlernen sicherstellen, dass das Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) Version >= 1.9 auf der Zentrale installiert ist
+- vor den Anlernen sicherstellen, dass das Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) Version >= 1.10 auf der Zentrale installiert ist
 - falls sich der Sensor nicht anlernen lässt, einen [Frequenztest ATMega1284P](FreqTest_1284P/FreqTest_1284P.ino) durchführen. Viele CC1101 Module lassen sich ohne diesen Frequenztest nicht anlernen! Eine Beschreibung des Frequenztests ist [hier](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) zu finden.
+
+## Verringerung der Tx Sendeleistung
+
+- nur Experten wird empfohlen, die Tx Sendeleistung zu verringern. Die Beschreibung ist [hier](./Reduction_of_Tx_RF_power/README.md). 
 
 ## Diverse Infos und Links
 
@@ -428,6 +433,7 @@ Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
 - die Kapazität von NiMH Akkus lässt nach 50..100 Ladezyklen nach
 - diese [Grafik](https://www.pocketnavigation.de/wp-content/uploads/2015/02/ansmann_2850_zyklen_verglei-550x308.jpg) zeigt die Entladekurve eines NiMH Akkus über der Anzahl von Entladezyklen
 - hier ein interessanter Artikel zu [NiMH-Akkus Zyklen und Lebenserwartung](https://www.pocketnavigation.de/2015/03/mignon-aa-akkus-test-vergleich/5/)
+- Ein gelegentliches Auffrischen der NiMH Akkumulatoren mit einem professionellen Akkuladegerät erhält die Ladekapazität der Akkumulatoren.
 
 ## Unterstützung, Fragen und Antworten
 - bitte Fragen, Erfahrungen und Anregungen [im Homematic Forum](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53) stellen bzw. eintragen.
