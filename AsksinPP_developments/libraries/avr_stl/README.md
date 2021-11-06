@@ -1,6 +1,10 @@
 # avr_stl
 This is an implementation of a C++ standard library packaged as an Arduino library (arduinoSTL). The library is based on the library from Mike Matera:
 
+git clone https://github.com/manchoz/avr_stl.git
+
+which is a fork of
+
 https://github.com/mike-matera/ArduinoSTL
 
 **Changes are:**

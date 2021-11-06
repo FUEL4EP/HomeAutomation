@@ -1,9 +1,9 @@
 # HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)]
 
 **Platine für DIY AsksinPP für**
-- [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)
+- [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) oder Arduino Pro Mini
 - [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf)
-- Stecker für [Waveshare ePaper Modul (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
+- Steckerleiste für [Waveshare ePaper Modul (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
 
 ![pic](PNGs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP_top_view.png)
 
@@ -12,37 +12,59 @@
 - diese Platine ist von Alexander Reinerts Platine [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) abgeleitet.
 - vielen Dank an Alexander Reinert für die Vorarbeit.
 
-## Noch in Entwicklung
+## Platine wurde nach Fertigung bei JLCPCB erfolgreich validiert
 
-- diese Platine ist noch in Entwicklung, **Nutzung auf eigene Gefahr**
 - entwickelt mit KiCAD 5.1.10
-- hier zuerst nur als Diskussionsbasis veröffentlicht
-- es ist geplant, diese Platine bei JLCPCB fertigen zu lassen und dann zu validieren
+- die Platine wurde bei JLCPCB gefertigt
+![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP_PCB.png)
+- die gefertigte Platine wurde erfolgreich mit dem Sketch [HB-UNI-SENSOR1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) validiert:
+![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-Sensor1-THPD-SHT85_build_with_HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP_PCB.png)
+
+
+## Eigenschaften
+
+- abgeleitet aus [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT)
+- kompletter Datensatz für KiCAD 5.1.10 auf Github verfügbar:
+    + 'git clone https://github.com/FUEL4EP/HomeAutomation.git' oder als [ZIP-Datei](https://github.com/FUEL4EP/HomeAutomation/archive/refs/heads/master.zip)
+    + die Platinendaten sind dann unter 'HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP' direkt mit KiCAD aufrufbar
 - der Arduino Pro Mini ist durch einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) ersetzt
+- alternativ kann stattdessen ein Arduino Pro Mini verbaut werden
+- neue Eigenschaften:
+    + nur eine LED
+    + dafür optionale Unterstützung von Akkumulatorbetrieb mit einem 'Huckepack' Aufwärtswandlermodul (siehe z.B. [HB-UNI-SENSOR1-CO2-SCD30](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30): Bitte für Akkubetrieb den Lötjumper JP2 auftrennen
+    + Stiftleiste J10 mit Versorgungspannungen zum Gehäuseoberteil oder Akkulademodul
+    + Korrektur der Abstandfehlers bei einem Batteriehalter. Beim [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) hat das schon mal gerne zu thermischen Ausfällen durch mechanische Spannungen geführt.
 - als Funkmodul wird das [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf) verwendet
-- das schafft Platz für eine 8-polige Stiftleiste zum optionalen Anschluss eines [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
-
-## Inhaltsverzeichnis
-
-- noch zu erstellen
+- das schafft Platz für eine 8-polige Stiftleiste J11 zum optionalen Anschluss eines [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm). Der ATMega1284P hat auch genügend RAM für die Programmierung eines 200 Pixel x 200 Pixel e-Papermoduls.
 
 ### Benötigte Bauteile:
 * [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)
     - mit deutlich mehr Programm-, RAM- und EEPROM-Speicher als Arduino Pro Mini: 128kByte Programmspeicher, 16kByte SRAM, 4kByte EEPROM
+* oder alternativ ein Arduino Pro Mini
 * eByte E07-868MS10 Sendemodul 868MHz
 * e-Paper [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm) (optional, Anschluss an J11)
+* 2x Keystone 2460 Batteriehalter 1xAA (oder Goobay 1xAA Batteriehalter)
 * 1x LEDs 3mm Low Current (Pin 4)
 * 1x 470Ohm Widerstände (Vorwiderstand für LED)
 * Elko 10uF 1,5mm
-* 2x Keystone 2460 Batteriehalter 1xAA
 * Mikroschalter 6*6mm
-* Stiftleiste RM 2mm 1x8 Pin (für CC1101)
-* Stiftleiste RM 2mm 1x8 Pin (für ePaper)
-* Stiftleiste RM 2,54mm (nach Bedarf)
+* Stiftleiste RM 1.27mm 1x8 Pin (für eByte E07-868MS10 Sendemodul 868MHz)
+* Stiftleiste RM 2.0mm 1x8 Pin (für e-Paper [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm))
+* Stiftleisten RM 2,54mm (nach Bedarf)
 * IRLU024N (optional für Verpolungsschutz)
 * 100KOhm Widerstand (optional für Verpolungsschutz)
 * 2x 10KOhm Widerstand (Pullup für I2C)
 * Versorgung durch NiMH Akkumulatoren und Aufwärtswandler ist vorbereitet (JP2)
+
+
+### Aufbauhinweise
+
+- es wird dringend angeraten, vor dem Einbau der I2C Sensoren durchzuführen
+    + einen Frequenztest. Hier der Frequenztest für einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) : [FreqTest_1284P.ino](../Supplements/FreqTest_1284P/FreqTest_1284P.ino)
+    + einen Leckagetest. Hier der Leckagetest für einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) : [SleepTest_1284P.ino](../Supplements/SleepTest_1284P/SleepTest_1284P.ino)
+        + der Leckagestrom im Sleepmode sollte < 10 uA betragen
+    + für einen Arduino Pro Mini die entsprechenden Standardsketche für den Frequenztest und den SleepTest verwenden.
+    + am besten diese beiden Tests in einem Testaufbau mit Stecksockeln vor dem Einlöten durchführen
 
 ### Passendes Gehäuse
 * Camdenboss CBRS01SWH und CBRS01VWH

@@ -228,7 +228,7 @@ public:
 };
 
 // alarm levels (not yet used, only prepared here)
-DEFREGISTER(UReg1, 0x01, 0x02, 0x03, 0x04)
+DEFREGISTER(UReg1, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08)
 class SensorList1 : public RegList1<UReg1> {
   public:
     SensorList1 (uint16_t addr) : RegList1<UReg1>(addr) {}
@@ -246,25 +246,45 @@ class SensorList1 : public RegList1<UReg1> {
           ((uint16_t)(this->readRegister(0x02, 0)))
           ;
     }
-
-    bool alarm_level_moving_average (uint16_t value) const {
+    
+    bool alarm_level_moving_average (int32_t value) const {
       return
-          this->writeRegister(0x03, (value >> 8) & 0xff) &&
-          this->writeRegister(0x04, (value) & 0xff)
+          this->writeRegister(0x03, (value >> 24) & 0xff) &&
+          this->writeRegister(0x04, (value >> 16) & 0xff) &&
+          this->writeRegister(0x05, (value >> 8) & 0xff) &&
+          this->writeRegister(0x06, (value) & 0xff)
           ;
     }
 
-    uint16_t alarm_level_moving_average () const {
+    int32_t alarm_level_moving_average () const {
       return
-          ((uint16_t)(this->readRegister(0x03, 0)) << 8) +
-          ((uint16_t)(this->readRegister(0x04, 0)))
+          ((int32_t)(this->readRegister(0x03, 0)) << 24) +
+          ((int32_t)(this->readRegister(0x04, 0)) << 16) +
+          ((int32_t)(this->readRegister(0x05, 0)) << 8) +
+          ((int32_t)(this->readRegister(0x06, 0)))
+          ;
+    }
+    
+    bool reset_counters_after_number_of_measurements (uint16_t value) const {
+      return
+          this->writeRegister(0x07, (value >> 8) & 0xff) &&
+          this->writeRegister(0x08, (value) & 0xff)
+          ;
+    }
+
+    uint16_t reset_counters_after_number_of_measurements () const {
+      return
+          ((uint16_t)(this->readRegister(0x07, 0)) << 8) +
+          ((uint16_t)(this->readRegister(0x08, 0)))
           ;
     }
 
     void defaults () {
       clear();
       alarm_level_counts_per_measurement_interval(65535);     // set default to max
-      alarm_level_moving_average(65535);                      // set default to max    
+      alarm_level_moving_average(65535);                      // set default to max value of moving_average_count, scaling of HB_ALARM_LEVEL_MOVING_AVERAGE in rftypes HB-UNI-Sensor-RAD-AL53.xml is 100.0, i.e. 635.35  as float value
+      reset_counters_after_number_of_measurements(0);         // set to 0 := disable resetting, i.e. count forever
+      DPRINTLN(F("Init of channel parameters List1 done"));
     }
 };
 
@@ -333,7 +353,8 @@ class MeasureChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
     {
 
 #ifdef SENSOR_AL53
-        al53.init((int16_t)this->getList1().alarm_level_counts_per_measurement_interval(), (int16_t)this->getList1().alarm_level_moving_average());  // set threshold levels for alarm signals as parameters
+        DPRINTLN(F("Initial init of sensor .."));
+        al53.init((uint16_t)this->getList1().alarm_level_counts_per_measurement_interval(), (int32_t)this->getList1().alarm_level_moving_average(), (uint16_t)this->getList1().reset_counters_after_number_of_measurements());  // set threshold levels for alarm signals as parameters
 #endif
 
         DPRINTLN(F("Sensor setup done"));
@@ -356,9 +377,11 @@ class MeasureChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
     }
 
     void configChanged() {
+      DPRINTLN(F("Config Changed: List1"));
       DPRINT(F("alarm level counts per measurement interval : ")); DDECLN(this->getList1().alarm_level_counts_per_measurement_interval());
-      DPRINT(F("alarm level moving average                  : ")); DDECLN(this->getList1().alarm_level_moving_average());
-      al53.init((int16_t)this->getList1().alarm_level_counts_per_measurement_interval(), (int16_t)this->getList1().alarm_level_moving_average()); // set threshold levels for alarm signals as parameters
+      DPRINT(F("alarm level moving average                  : ")); DDECLN( (double)(this->getList1().alarm_level_moving_average()) / 100.0 );
+      DPRINT(F("reset counters after number of measurements : ")); DDECLN(this->getList1().reset_counters_after_number_of_measurements());
+      al53.update_channel_parameters((uint16_t)this->getList1().alarm_level_counts_per_measurement_interval(), (int32_t)this->getList1().alarm_level_moving_average(), (uint16_t)this->getList1().reset_counters_after_number_of_measurements()); // set threshold levels for alarm signals as channel parameters, set reset counter
     }
     
     uint8_t status() const { return 0; }

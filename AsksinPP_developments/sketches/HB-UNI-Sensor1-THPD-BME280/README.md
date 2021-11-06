@@ -13,9 +13,8 @@ Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/med
 
 Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=65320&p=642213#p642213) zu finden. Bitte dort auch Fragen stellen.
 
-## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.8 updaten
+## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.11 updaten
 
-- Die neue Version V1.8 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
 - Bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
 
 
@@ -35,6 +34,7 @@ Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, 
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smart-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
 	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/BME280_Setting_of_device_parameters_in_WebUI.png)
 	+ Alle drei Offsetwerte (T, rLF, P) müssen für die Eingabe mit dem Faktor 10 multipliziert werden.
+- die Tx Sendeleistung des 868MHz Funkmoduls kann eingestellt werden (nur für Experten!)
 	
 
 ## Taupunkttemperatur und absolute Luftfeuchtigkeit
@@ -45,12 +45,12 @@ Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, 
 
 ## Kalibrierung von Temperatur, relativer Luftfeuchtigkeit   
 
-- Um eine Offsetkalibrierung der Temperatur- und relativen Luftfeuchtemessung des BME2980 Sensors durchzuführen, zeichne diese beiden Messgrößen z.B. im CCU Historian und vergleiche sie mit den entsprechenden Messwerten eines 'goldenen' Referenzsensors. Extrahiere die Differenzen zwischen den Referenzmesswerten des 'goldenen' Referenzsensors und den entsprechenden des BME280 Sensors, am Besten in einer Messreihe über Nacht mit geringen Messwertschwankungen und daher flachen Messverläufen. Gebe die Differenzen in das [WebUI Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png) ein.
+- Um eine Offsetkalibrierung der Temperatur- und relativen Luftfeuchtemessung des BME280 Sensors durchzuführen, zeichne diese beiden Messgrößen z.B. im CCU Historian und vergleiche sie mit den entsprechenden Messwerten eines 'goldenen' Referenzsensors. Extrahiere die Differenzen zwischen den Referenzmesswerten des 'goldenen' Referenzsensors und den entsprechenden des BME280 Sensors, am Besten in einer Messreihe über Nacht mit geringen Messwertschwankungen und daher flachen Messverläufen. Gebe die Differenzen in das [WebUI Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png) ein.
 
 - Bitte führe die Offsetkalibrierung in zwei getrennten Schritten durch:
 	+ Kalibriere die BME280 Temperatur in einem ersten Schritt (erste Nacht)
 	+ Kalibriere die BME280 relative Luftfeuchtigkeit in einem zweiten Schritt (zweite Nacht)
-	+ Kalibriere die BME280 Temperatur and relative Luftfeuchtigkeit NICHT gemeinsam in einem Schritt, da diese beiden Größen physikalisch voneinander abhängen
+	+ Kalibriere die BME280 Temperatur und relative Luftfeuchtigkeit NICHT gemeinsam in einem Schritt, da diese beiden Größen physikalisch voneinander abhängen
 	
 ## Schaltung
 
@@ -58,14 +58,25 @@ Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, 
 - eine mögliche und von mir empfohlene Hardwarebasis sieht so aus:
 	+ Universalplatine für DIY-Bausätze von Alexander Reinert
 		* Github [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt)
-		* Bezugsquelle: [Smartkram WebShop](https://smartkram.de/produkt/universalplatine-fuer-diy-bausatze-von-alex-reinert/)
-    + Sensorgehäuse
+		    + direkt bei JLCPCB oder bei Alexander Reichert nachfragen
+		    + kommerzielle Bezugsquelle: [Smartkram WebShop](https://smartkram.de/produkt/universalplatine-fuer-diy-bausatze-von-alex-reinert/)
+		* oder alternativ mit anderem Batteriehalter [HB-UNI-SEN-BATT_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP)
+		  + der Abstandsfehler für einen Batteriehalter in [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt) ist korrigiert
+		  + als Batteriehalter wird der Keystone 2460 verwendet
+		  + statt des Tindie Pro Mini XL V2 bitte einen Arduino Pro Mini einsetzen, er passt auch, für den Tindie Pro Mini XL V2 müsste der Sketch angepasst werden
+		  + Bestellung direkt bei JLCPCB oder per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) anfragen		
+    * Sensorgehäuse
 	    * 3D-Druck [HB-UNI-SEN-BATT snap Gehaeuse und Deckel](https://www.thingiverse.com/thing:3512767)	auf Thingiverse
 	    * oder [fertiges Gehäuse](https://smartkram.de/produkt/sensorgehaeuse-passend-fuer-platine-von-alexander-reinert/) von Smartkram Webshop
-	+ Bauteile [HB-UNI-SEN-BATT](https://smartkram.de/produkt/bauteile-fuer-homematic-diy-projekt-thermometer-hydrometer/) von Smartkram Webshop
+	+ Bauteile 
+       + Reichelt [Bestelliste](https://www.reichelt.de/my/1882914
+)
+           + Arduino Pro Mini, CC1101 Tranceiver, Batteriehalter und eventuell BME280 müssen separat bestellt werden
+           + Arduino Pro Mini un CC1101 Tranceiver sind gesockelt
+	   + [HB-UNI-SEN-BATT](https://smartkram.de/produkt/bauteile-fuer-homematic-diy-projekt-thermometer-hydrometer/) von Smartkram Webshop
 	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/)
 	+ 2x 10 kOhm I2C Abschlusswiderstände für SCL und SDA auf HB-UNI-SEN-BATT PCB einlöten
-	+ Bitte darauf achten, das der Arduino Pro Mini die 3,3V/8MHz Version ist!
+	+ Bitte darauf achten, dass der Arduino Pro Mini die 3,3V/8MHz Version ist!
 	
 ## Frequenztest des CC1101 RF Moduls
 
@@ -141,14 +152,14 @@ Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, 
 > //#define NDEBUG
 
 - als Taktfrequenz des ATmega328P 8 MHz @ 3.3V externer Quarz einstellen
-- Der Sketch verwendet 30200 Bytes (98%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes. Globale Variablen verwenden 1172 Bytes (57%) des dynamischen Speichers, 876 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
+- der Sketch verwendet 29994 Bytes (97%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes. Globale Variablen verwenden 1163 Bytes (56%) des dynamischen Speichers, 885 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega328P
 
 - [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version)
 	- wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega328P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
 
-- Die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
+- die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
 RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerleiste einlöten.
 - ISP Programmer auf 3.3V einstellen!
 - Einstellungen Arduino IDE: 8MHz, 3.3V

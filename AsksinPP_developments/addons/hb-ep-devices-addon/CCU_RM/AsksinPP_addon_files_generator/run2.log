@@ -10,10 +10,10 @@ The specified XML control file name is :  'AsksinPP_addon_generator_control_file
 XML control file : AsksinPP_addon_generator_control_file.xml
 
 addon name                     : hb-ep-devices-addon
-addon version                  : 1.10
+addon version                  : 1.11
 creator                        : FUEL4EP
 creator prefix                 : F6
-created_on                     : 2021_10_20-09:40:39
+created_on                     : 2021_11_01-10:52:18
 extract_rftypes_XML version    : 0.13
 install script name    : install_hb-ep-devices-addon
 uninstall script name  : uninstall_hb-ep-devices-addon
@@ -557,6 +557,18 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_MOVING_AVERAGE
 
  
 index                  : 47
+parameter id           : HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-RAD-AL53_master
+channel                : HB_GENERIC_RADIATION
+translated_string      : Zur%FCcksetzen%20der%20Statistiken%20nach%20Anzahl%20von%20Messungen%20%280%20%3D%20niemals%29
+stringtable_identifier : stringTableHB_F6_HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 48
 parameter id           : HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -568,7 +580,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERV
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 48
+index                  : 49
 parameter id           : HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=NORMAL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -580,7 +592,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERV
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 49
+index                  : 50
 parameter id           : HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=ALARM
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -592,7 +604,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERV
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 50
+index                  : 51
 parameter id           : HB_ALARM_MOVING_AVERAGE
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -604,7 +616,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_MOVING_AVERAGE
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 51
+index                  : 52
 parameter id           : HB_ALARM_MOVING_AVERAGE=NORMAL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -616,7 +628,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_MOVING_AVERAGE_NORMAL
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 52
+index                  : 53
 parameter id           : HB_ALARM_MOVING_AVERAGE=ALARM
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -628,7 +640,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_MOVING_AVERAGE_ALARM
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 53
+index                  : 54
 parameter id           : COUNTS_PER_MEASUREMENT_INTERVAL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -640,7 +652,7 @@ stringtable_identifier : stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 54
+index                  : 55
 parameter id           : MOVING_AVERAGE_COUNT
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -652,7 +664,7 @@ stringtable_identifier : stringTableHB_F6_MOVING_AVERAGE_COUNT
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 55
+index                  : 56
 parameter id           : WIDTH_CONFIDENCE_INTERVALL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -664,7 +676,7 @@ stringtable_identifier : stringTableHB_F6_WIDTH_CONFIDENCE_INTERVALL
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 56
+index                  : 57
 parameter id           : MOVING_AVERAGE_COUNT_MAX
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -676,7 +688,7 @@ stringtable_identifier : stringTableHB_F6_MOVING_AVERAGE_COUNT_MAX
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 57
+index                  : 58
 parameter id           : COUNTS_PER_MEASUREMENT_INTERVAL_MAX
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -688,7 +700,7 @@ stringtable_identifier : stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL_MAX
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 58
+index                  : 59
 parameter id           : ACCUMULATOR_VOLTAGE
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -700,7 +712,7 @@ stringtable_identifier : stringTableHB_F6_ACCUMULATOR_VOLTAGE
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 59
+index                  : 60
 parameter id           : AL53_SUPPLY_VOLTAGE
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -712,7 +724,7 @@ stringtable_identifier : stringTableHB_F6_AL53_SUPPLY_VOLTAGE
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 60
+index                  : 61
 parameter id           : OPERATING_VOLTAGE
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1259,6 +1271,18 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_LEVEL_MOVING_AVERAGE
 
  
 index                  : 47
+parameter id           : HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS
+paramset type          : MASTER
+paramset id            : HB-UNI-Sensor-RAD-AL53_master
+channel                : HB_GENERIC_RADIATION
+translated_string      : Zur%FCcksetzen%20der%20Statistiken%20nach%20Anzahl%20von%20Messungen%20%280%20%3D%20niemals%29
+stringtable_identifier : stringTableHB_F6_HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS
+
+
+.. working on channel 'HB_GENERIC_RADIATION' .. 
+
+ 
+index                  : 48
 parameter id           : HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1270,7 +1294,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERV
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 48
+index                  : 49
 parameter id           : HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=NORMAL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1282,7 +1306,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERV
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 49
+index                  : 50
 parameter id           : HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=ALARM
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1294,7 +1318,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERV
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 50
+index                  : 51
 parameter id           : HB_ALARM_MOVING_AVERAGE
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1306,7 +1330,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_MOVING_AVERAGE
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 51
+index                  : 52
 parameter id           : HB_ALARM_MOVING_AVERAGE=NORMAL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1318,7 +1342,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_MOVING_AVERAGE_NORMAL
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 52
+index                  : 53
 parameter id           : HB_ALARM_MOVING_AVERAGE=ALARM
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1330,7 +1354,7 @@ stringtable_identifier : stringTableHB_F6_HB_ALARM_MOVING_AVERAGE_ALARM
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 53
+index                  : 54
 parameter id           : COUNTS_PER_MEASUREMENT_INTERVAL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1342,7 +1366,7 @@ stringtable_identifier : stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 54
+index                  : 55
 parameter id           : MOVING_AVERAGE_COUNT
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1354,7 +1378,7 @@ stringtable_identifier : stringTableHB_F6_MOVING_AVERAGE_COUNT
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 55
+index                  : 56
 parameter id           : WIDTH_CONFIDENCE_INTERVALL
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1366,7 +1390,7 @@ stringtable_identifier : stringTableHB_F6_WIDTH_CONFIDENCE_INTERVALL
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 56
+index                  : 57
 parameter id           : MOVING_AVERAGE_COUNT_MAX
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1378,7 +1402,7 @@ stringtable_identifier : stringTableHB_F6_MOVING_AVERAGE_COUNT_MAX
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 57
+index                  : 58
 parameter id           : COUNTS_PER_MEASUREMENT_INTERVAL_MAX
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1390,7 +1414,7 @@ stringtable_identifier : stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL_MAX
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 58
+index                  : 59
 parameter id           : ACCUMULATOR_VOLTAGE
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1402,7 +1426,7 @@ stringtable_identifier : stringTableHB_F6_ACCUMULATOR_VOLTAGE
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 59
+index                  : 60
 parameter id           : AL53_SUPPLY_VOLTAGE
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values
@@ -1414,7 +1438,7 @@ stringtable_identifier : stringTableHB_F6_AL53_SUPPLY_VOLTAGE
 .. working on channel 'HB_GENERIC_RADIATION' .. 
 
  
-index                  : 60
+index                  : 61
 parameter id           : OPERATING_VOLTAGE
 paramset type          : VALUES
 paramset id            : HB-UNI-Sensor-RAD-AL53_values

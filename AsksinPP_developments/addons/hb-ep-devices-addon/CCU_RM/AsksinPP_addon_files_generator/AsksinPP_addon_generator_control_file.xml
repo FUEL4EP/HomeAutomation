@@ -1,9 +1,9 @@
 <AsksinPP_addon_generator_control>
   <addon_name>hb-ep-devices-addon</addon_name>
-  <addon_version>1.10</addon_version>
+  <addon_version>1.11</addon_version>
   <creator>FUEL4EP</creator>
   <creator_prefix>F6</creator_prefix>
-  <created_on>2021_10_20-09:40:39</created_on>
+  <created_on>2021_11_01-10:52:18</created_on>
   <generator_version>0.13</generator_version>
   <devices>
     <device id='HB-UNI-SENSOR-TH-SHT75' index='0' device_name='HB-UNI-Sensor-TH-SHT75' device_model='0xF603' device_small_case_name='hb-uni-sensor-TH-SHT75' rftypes_XML_version='0x10' VersionString='0.13'>
@@ -260,85 +260,91 @@
         <translation_de>Alarmwert Zählimpulse gleitender Mittelwert</translation_de>
         <translation_en>alarm level moving average</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL' index='47' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS' index='47' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS</stringtable_identifier>
+        <translation_de>Zurücksetzen der Statistiken nach Anzahl von Messungen (0 = niemals)</translation_de>
+        <translation_en>reset of statistics after number of measurements (0 = never)</translation_en>
+      </parameter>
+      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL' index='48' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL</stringtable_identifier>
         <translation_de>Alarm für Zählimpulse pro Messintervall</translation_de>
         <translation_en>alarm for counts per measuremnt interval</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=NORMAL' index='48' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=NORMAL' index='49' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL_NORMAL</stringtable_identifier>
         <translation_de>normale Zählimpulsrate</translation_de>
         <translation_en>normal counts per measurement interval</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=ALARM' index='49' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=ALARM' index='50' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL_ALARM</stringtable_identifier>
         <translation_de>Alarm für Zählimpulse pro Messintervall</translation_de>
         <translation_en>alarm for counts per measuremnt interval</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_MOVING_AVERAGE' index='50' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_MOVING_AVERAGE' index='51' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_MOVING_AVERAGE</stringtable_identifier>
         <translation_de>Alarm für gleitenden Mittelwert</translation_de>
         <translation_en>alarm for moving average</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_MOVING_AVERAGE=NORMAL' index='51' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_MOVING_AVERAGE=NORMAL' index='52' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_MOVING_AVERAGE_NORMAL</stringtable_identifier>
         <translation_de>normaler gleitender Mittelwert</translation_de>
         <translation_en>normal moving average</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_MOVING_AVERAGE=ALARM' index='52' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_MOVING_AVERAGE=ALARM' index='53' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_MOVING_AVERAGE_ALARM</stringtable_identifier>
         <translation_de>Alarm für gleitenden Mittelwert</translation_de>
         <translation_en>alarm for moving average</translation_en>
       </parameter>
-      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL' index='53' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL' index='54' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL</stringtable_identifier>
         <translation_de>Zählimpulse pro Messintervall</translation_de>
         <translation_en>counts per measurement interval</translation_en>
       </parameter>
-      <parameter id='MOVING_AVERAGE_COUNT' index='54' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='MOVING_AVERAGE_COUNT' index='55' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_MOVING_AVERAGE_COUNT</stringtable_identifier>
         <translation_de>gleitender Mittelwert</translation_de>
         <translation_en>moving average</translation_en>
       </parameter>
-      <parameter id='WIDTH_CONFIDENCE_INTERVALL' index='55' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='WIDTH_CONFIDENCE_INTERVALL' index='56' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_WIDTH_CONFIDENCE_INTERVALL</stringtable_identifier>
         <translation_de>Breite des Konfidenzintervalls</translation_de>
         <translation_en>width of confidence interval</translation_en>
       </parameter>
-      <parameter id='MOVING_AVERAGE_COUNT_MAX' index='56' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='MOVING_AVERAGE_COUNT_MAX' index='57' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_MOVING_AVERAGE_COUNT_MAX</stringtable_identifier>
         <translation_de>max. gleitender Mittelwert</translation_de>
         <translation_en>max. moving average</translation_en>
       </parameter>
-      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL_MAX' index='57' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL_MAX' index='58' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL_MAX</stringtable_identifier>
         <translation_de>max. Zählimpulsrate</translation_de>
         <translation_en>max counts per measurement interval</translation_en>
       </parameter>
-      <parameter id='ACCUMULATOR_VOLTAGE' index='58' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='ACCUMULATOR_VOLTAGE' index='59' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_ACCUMULATOR_VOLTAGE</stringtable_identifier>
         <translation_de>Akkumulatorbatteriespannung (ADC)</translation_de>
         <translation_en>accumulator voltage</translation_en>
       </parameter>
-      <parameter id='AL53_SUPPLY_VOLTAGE' index='59' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='AL53_SUPPLY_VOLTAGE' index='60' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AL53_SUPPLY_VOLTAGE</stringtable_identifier>
         <translation_de>AL53 Betriebsspannung (ADC)</translation_de>
         <translation_en>AL53 supply voltage (ADC)</translation_en>
       </parameter>
-      <parameter id='OPERATING_VOLTAGE' index='60' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='OPERATING_VOLTAGE' index='61' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_OPERATING_VOLTAGE</stringtable_identifier>
         <translation_de>Betriebsspannung (ADC)</translation_de>

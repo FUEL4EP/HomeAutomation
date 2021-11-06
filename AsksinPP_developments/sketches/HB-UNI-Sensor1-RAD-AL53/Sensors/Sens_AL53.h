@@ -1,6 +1,6 @@
 //---------------------------------------------------------
 // Sens_AL53
-// 2021-06-03 FUELEP
+// 2021-11-01 FUELEP
 // https://creativecommons.org/licenses/by-nc-sa/4.0/
 // You are free to Share & Adapt under the following terms:
 // Give Credit, NonCommercial, ShareAlike
@@ -37,9 +37,11 @@ class Sens_AL53 : public Sensor {
     bool         _alarm_moving_average;
     uint16_t     _alarm_level_counts_per_measurement_interval;
     uint16_t     _alarm_level_moving_average;
+    uint16_t     _reset_counters_after_number_of_measurements;
     
     
     uint32_t     _count_index;
+    uint16_t     _down_counter_for_resetting_statistics_data_base;
 
     
     // This sketch is assuming the following hardware connections between an S-35770 IC and an Pro Mini XL - v2 - ATmega 1284p from Tindie
@@ -88,12 +90,14 @@ public:
           _alarm_moving_average(0),
           _alarm_level_counts_per_measurement_interval(65535),
           _alarm_level_moving_average(65535),
-          _count_index(0)
+          _reset_counters_after_number_of_measurements(0),
+          _count_index(0),
+          _down_counter_for_resetting_statistics_data_base(0)
         
     {
     }
 
-    void init( uint16_t alarm_level_counts_per_measurement_interval, uint16_t alarm_level_moving_average )
+    void init( uint16_t alarm_level_counts_per_measurement_interval, int32_t alarm_level_moving_average, uint16_t reset_counters_after_number_of_measurements ) // alarm_level_moving_average is scaled by x100.0
     {
         
         DPRINTLN(F("\n\nWelcome to HB-UNI-Sensor1-RAD-AL53 (C) 2021 FUEL4EP (Creative Commons)\n\n"));
@@ -135,9 +139,16 @@ public:
         _counts_per_measurement_interval_max      = 0;
         _accumulator_voltage                      = 0;
         
-        // initialize alarm levels 
+        // initialize alarm levels and reset counter
         _alarm_level_counts_per_measurement_interval = alarm_level_counts_per_measurement_interval;
-        _alarm_level_moving_average                  = alarm_level_moving_average;
+        if ( alarm_level_moving_average < 1 ) {       // set to minimum value
+          _alarm_level_moving_average = 1;            
+        }
+        else {                                        // convert to unit16_t  (=float value of WebUI multiplied by 100.0)
+          _alarm_level_moving_average                  = (uint16_t)abs(alarm_level_moving_average);
+        }
+        _reset_counters_after_number_of_measurements     = reset_counters_after_number_of_measurements;
+        _down_counter_for_resetting_statistics_data_base = _reset_counters_after_number_of_measurements;
         
         DPRINTLN(F("ADS1115 measurement .."));
         ADS115_ADC.measure();
@@ -154,7 +165,7 @@ public:
         DDECLN(_accumulator_voltage);
         DPRINT(F("alarm level counts per measurement interval                                              : "));
         DDECLN(_alarm_level_counts_per_measurement_interval); 
-        DPRINT(F("alarm level moving average  (x1000.0)                                                    : "));
+        DPRINT(F("alarm level moving average  (x100.0)                                                     : "));
         DDECLN(_alarm_level_moving_average); 
 
         
@@ -189,6 +200,21 @@ public:
         ABLIC_S35770_counter.enable_counting();
         
     }
+    
+    void update_channel_parameters( uint16_t alarm_level_counts_per_measurement_interval, int32_t alarm_level_moving_average, uint16_t reset_counters_after_number_of_measurements ) // alarm_level_moving_average is scaled by x100.0
+    {
+        DPRINTLN(F("\nUpdating channel parameters ..\n"));
+  
+        // update alarm levels 
+        _alarm_level_counts_per_measurement_interval = alarm_level_counts_per_measurement_interval;
+        if ( alarm_level_moving_average < 1 ) {       // set to minimum value
+          _alarm_level_moving_average = 1;
+        }
+        else {                                        // convert to unit16_t  (=float value of WebUI multiplied by 100.0)
+          _alarm_level_moving_average                  = (uint16_t)abs(alarm_level_moving_average);
+        }
+        _reset_counters_after_number_of_measurements   = reset_counters_after_number_of_measurements;
+    }
 
     void measure()
     {
@@ -196,6 +222,7 @@ public:
             
 #ifdef DEEP_DEBUG    
             unsigned long MeasureStartTime = millis();
+
 #endif
           
             _counts_per_measurement_interval = ABLIC_S35770_counter.getCount();
@@ -253,6 +280,8 @@ public:
             
             if ( _counts_per_measurement_interval > _alarm_level_counts_per_measurement_interval ) {
               _alarm_count_per_measurement_interval = 1;
+              DPRINTLN(F("\n\nWARNUNG: Der Alarmwert für Zählereignisse pro Messintervall wurde überschritten\n\n"));
+              
             }
             else
             { _alarm_count_per_measurement_interval = 0;
@@ -262,6 +291,7 @@ public:
              
             if ( _moving_average_count > _alarm_level_moving_average ) {
               _alarm_moving_average = 1;
+              DPRINTLN(F("\n\nWARNUNG: Der Alarmwert für den gleitenden Mittelwert wurde überschritten\n\n"));
             }
             else
             { _alarm_moving_average = 0;
@@ -270,7 +300,24 @@ public:
             DPRINT(F("alarm count per measurement interval                                                     : "));
             DDECLN(_alarm_count_per_measurement_interval);
             DPRINT(F("alarm moving average                                                                     : "));
-            DDECLN(_alarm_moving_average); 
+            DDECLN(_alarm_moving_average);
+            
+            // check if statistics data base shall be periodically resetted
+            if ( _reset_counters_after_number_of_measurements != 0 ) {
+              DPRINT(F("\ndown counter for resetting statistics data base periodically                             : "));
+              DDECLN(_down_counter_for_resetting_statistics_data_base);
+              // decrement the down counter
+              _down_counter_for_resetting_statistics_data_base--;  //decrement down counter
+              // reset statistics data base if the down counter is zero
+              if ( _down_counter_for_resetting_statistics_data_base == 0 ) {
+                DPRINTLN(F("resetting AL53 radiation statistics data base now"));
+                AL53_rad_statistics.clear_buffer();
+                _down_counter_for_resetting_statistics_data_base = _reset_counters_after_number_of_measurements;
+              }
+            }
+            else {
+              DPRINTLN(F("periodical reset of AL53 radiation statistics is inactive"));
+            }
             
 #ifdef DEEP_DEBUG
             unsigned long MeasureFinishTime  = millis();

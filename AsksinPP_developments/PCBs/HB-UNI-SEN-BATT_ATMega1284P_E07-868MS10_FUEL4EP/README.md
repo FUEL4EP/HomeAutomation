@@ -5,6 +5,7 @@
 - [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf)
 - Bestückungsoption für [Waveshare ePaper Modul (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
 - Bestückungsoption für [TPS61221 Aufwärtswandler](https://www.ti.com/lit/ds/symlink/tps61221.pdf?ts=1634546965861&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61221) bei NiMH Akkumulatorbetrieb
+- alle SMD Bausteine sind mit dem JLCPCB SMT Bestückungsservice kostengünstig und qualitativ hochwertig bestückbar, das ist also auch für Grobmotoriker wie mich gegeignet :-)
 
 ![pic](PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_top_view.png)
 
@@ -15,24 +16,55 @@
 - diese Platine ist von Alexander Reinerts Platine [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) abgeleitet.
 - vielen Dank an Alexander Reinert für die Vorarbeit.
 
-## Noch in Entwicklung
+## Platine wurde nach Fertigung bei JLCPCB erfolgreich validiert
 
-- diese Platine ist noch in Entwicklung, **Nutzung auf eigene Gefahr**
 - entwickelt mit KiCAD 5.1.10
-- hier zuerst nur als Diskussionsbasis veröffentlicht
-- diese Platine wird gerade bei JLCPCB gefertigt und anschließend validiert
-- JLCPCB BOM and CPL Dateien für SMT Service werden bereitgestellt (noch nicht getestet!!!)
-- der TPS61221 ist zur Zeit nicht lieferbar
-- der Arduino Pro Mini ist durch einen ATMega1284P im SMD Gehäuse ersetzt
-- als Funkmodul wird das [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf) verwendet
+- die Platine wurde bei JLCPCB gefertigt und mit den SMD Bauteilen bestückt
+![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_PCB.png); die nicht SMD Bauteile müssen von Hand verlötet werden
+- mangels Verfügbarkeit des [TPS61221 Aufwärtswandlers](https://www.ti.com/lit/ds/symlink/tps61221.pdf?ts=1634546965861&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61221) trifft dies später auch auf die Bestückungsoption Aufwärtswandler zu
+- die gefertigte Platine wurde erfolgreich mit dem Sketch [HB-UNI-SENSOR1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) validiert:
+![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-Sensor1-AQ-BME680_KF_build_with_HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_PCB.png)
 
-## Inhaltsverzeichnis
+## Eigenschaften
 
-- noch zu erstellen
+- abgeleitet aus [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT)
+- kompletter Datensatz für KiCAD 5.1.10 auf Github verfügbar:
+    + 'git clone https://github.com/FUEL4EP/HomeAutomation.git' oder als [ZIP-Datei](https://github.com/FUEL4EP/HomeAutomation/archive/refs/heads/master.zip)
+    + die Platinendaten sind dann unter 'HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP' direkt mit KiCAD aufrufbar
+- neue Eigenschaften:
+    + SMD Bestückung, wo möglich
+    + SMD TQFP-44 [ATMega1284P](https://ww1.microchip.com/downloads/en/DeviceDoc/doc8059.pdf) mit 128kByte Programmspeicher, 16kByte SRAM, 4kByte EEPROM
+    + Bestückungsoption für [Waveshare ePaper Modul (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
+    + Bestückungsoption für [TPS61221 Aufwärtswandler](https://www.ti.com/lit/ds/symlink/tps61221.pdf?ts=1634546965861&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61221) bei NiMH Akkumulatorbetrieb
+    + alle SMD Bausteine sind mit dem JLCPCB SMT Bestückungsservice kostengünstig und qualitativ hochwertig bestückbar, das ist also auch für Grobmotoriker wie mich gegeignet :-)
+    + Stiftleiste J10 mit Versorgungspannungen zum Gehäuseoberteil oder Akkulademodul
+    + Korrektur der Abstandfehlers bei einem Batteriehalter. Beim [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) hat das schon mal gerne zu thermischen Ausfällen durch mechanische Spannungen geführt.
+    + als Funkmodul wird das [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf) verwendet. Dieses ist qualitativ viel besser als die üblichen grünen noname 868 MHz Funkmodule.
+    + das schafft Platz für eine 8-polige Stiftleiste J11 zum optionalen Anschluss eines [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm). Der ATMega1284P hat auch genügend RAM für die Programmierung eines 200 Pixel x 200 Pixel e-Papermoduls.
+    + JLCPCB BOM and CPL Dateien für SMT Service werden [bereitgestellt](./JLCPCB_SMT_Service/)
+- Hinweis: der TPS61221 ist zur Zeit von nirgendwo lieferbar
 
 ### Benötigte Bauteile:
-* noch zu erstellen
 
+- bedingt durch die SMT Service von JLCPCB sind nur noch wenige Durchsteckbauteile von Hand zu verlöten:
+* eByte E07-868MS10 Sendemodul 868MHz
+* e-Paper [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm) (optional, Anschluss an J11)
+* 2x Keystone 2460 Batteriehalter 1xAA
+* Stiftleiste RM 1.27mm 1x8 Pin (für eByte E07-868MS10 Sendemodul 868MHz)
+* Stiftleiste RM 2mm 1x8 Pin (für ePaper)
+* Stiftleisten RM 2,54mm (nach Bedarf)
+* IRLU024N (optional für Verpolungsschutz)
+* Versorgung durch NiMH Akkumulatoren und Aufwärtswandler ist vorbereitet (JP2)
+* Bestückungsoption Aufwärtswandler siehe [Schaltplan](Schematics/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP.pdf), unter KiCAD sind alle Referenzen eingetragen
+
+
+### Aufbauhinweise
+
+- es wird dringend angeraten, vor dem Einbau der I2C Sensoren durchzuführen
+    + einen Frequenztest. Hier der Frequenztest für einen ATmega 1284p : [FreqTest_1284P.ino](../Supplements/FreqTest_1284P/FreqTest_1284P.ino)
+    + einen Leckagetest. Hier der Leckagetest für einen ATmega 1284p : [SleepTest_1284P.ino](../Supplements/SleepTest_1284P/SleepTest_1284P.ino)
+        + der Leckagestrom im Sleepmode sollte < 10 uA betragen
+        
 ### Passendes Gehäuse
 * Camdenboss CBRS01SWH und CBRS01VWH
 * oder [Gehäuse HB-UNI-SEN-BATT snap in V2 von wpatrick](https://www.thingiverse.com/thing:3540481) für 3D-Druck

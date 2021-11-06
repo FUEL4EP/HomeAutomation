@@ -1,9 +1,9 @@
 <AsksinPP_addon_generator_control>
   <addon_name>hb-ep-devices-addon</addon_name>
-  <addon_version>1.10</addon_version>
+  <addon_version>1.11</addon_version>
   <creator>FUEL4EP</creator>
   <creator_prefix>F6</creator_prefix>
-  <created_on>2021_10_19-10:18:06</created_on>
+  <created_on>2021_11_01-09:12:16</created_on>
   <generator_version>0.13</generator_version>
   <devices>
     <device id='HB-UNI-SENSOR-TH-SHT75' index='0' device_name='HB-UNI-Sensor-TH-SHT75' device_model='0xF603' device_small_case_name='hb-uni-sensor-TH-SHT75' rftypes_XML_version='0x10' VersionString='0.13'>
@@ -32,60 +32,60 @@
     </device>
   </devices>
   <paramset>
-    <parameter id='RF_TX_POWER' index='8' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-THPD-BME280_dev_master'>
-      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER</stringtable_identifier>
-      <translation_de>HF Sendeleistung</translation_de>
-      <translation_en>RF transmission power</translation_en>
-    </parameter>
-    <parameter id='RF_TX_POWER=TX_MINUS_30DB' index='9' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-THPD-BME280_dev_master'>
-      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_30DB</stringtable_identifier>
-      <translation_de>minimal (-30dBm)</translation_de>
-      <translation_en>minimum (-30dBm)</translation_en>
-    </parameter>
-    <parameter id='RF_TX_POWER=TX_MINUS_20DB' index='10' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-THPD-BME280_dev_master'>
-      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_20DB</stringtable_identifier>
-      <translation_de>extrem gering (-20dBm)</translation_de>
-      <translation_en>extreme low (-20dBm)</translation_en>
-    </parameter>
-    <parameter id='RF_TX_POWER=TX_MINUS_15DB' index='11' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-THPD-BME280_dev_master'>
-      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_15DB</stringtable_identifier>
-      <translation_de>sehr gering (-15dBm)</translation_de>
-      <translation_en>very low (-15dBm)</translation_en>
-    </parameter>
-    <parameter id='RF_TX_POWER=TX_MINUS_10DB' index='12' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-THPD-BME280_dev_master'>
-      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_10DB</stringtable_identifier>
-      <translation_de>gering (-10dBm)</translation_de>
-      <translation_en>low (-10dBm)</translation_en>
-    </parameter>
-    <parameter id='RF_TX_POWER=TX_0DB' index='13' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-THPD-BME280_dev_master'>
-      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_0DB</stringtable_identifier>
-      <translation_de>normal (0dBm)</translation_de>
-      <translation_en>normal (0dBm)</translation_en>
-    </parameter>
-    <parameter id='RF_TX_POWER=TX_PLUS_5DB' index='14' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-THPD-BME280_dev_master'>
-      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_PLUS_5DB</stringtable_identifier>
-      <translation_de>hoch (+5dBm)</translation_de>
-      <translation_en>high (+5dBm)</translation_en>
-    </parameter>
-    <parameter id='RF_TX_POWER=TX_PLUS_7DB' index='15' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-THPD-BME280_dev_master'>
-      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_PLUS_7DB</stringtable_identifier>
-      <translation_de>sehr hoch (+7dBm)</translation_de>
-      <translation_en>very high (+7dBm)</translation_en>
-    </parameter>
-    <parameter id='RF_TX_POWER=TX_PLUS_10DB' index='16' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-THPD-BME280_dev_master'>
-      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_PLUS_10DB</stringtable_identifier>
-      <translation_de>maximal (+10dBm)</translation_de>
-      <translation_en>maximum (+10dBm)</translation_en>
-    </parameter>
-    <parameter id='TRANSMIT_TIME_INTERVAL' index='17' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='TRANSMIT_TIME_INTERVAL' index='8' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_TRANSMIT_TIME_INTERVAL</stringtable_identifier>
       <translation_de>Sendeintervall</translation_de>
       <translation_en>transmit time interval</translation_en>
     </parameter>
-    <parameter id='ALTITUDE_ABOVE_SEA_LEVEL' index='18' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='ALTITUDE_ABOVE_SEA_LEVEL' index='9' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_ALTITUDE_ABOVE_SEA_LEVEL</stringtable_identifier>
       <translation_de>Höhe über NN</translation_de>
       <translation_en>altitude above sea level</translation_en>
+    </parameter>
+    <parameter id='RF_TX_POWER' index='10' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER</stringtable_identifier>
+      <translation_de>HF Sendeleistung</translation_de>
+      <translation_en>RF transmission power</translation_en>
+    </parameter>
+    <parameter id='RF_TX_POWER=TX_MINUS_30DB' index='11' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_30DB</stringtable_identifier>
+      <translation_de>minimal (-30dBm)</translation_de>
+      <translation_en>minimum (-30dBm)</translation_en>
+    </parameter>
+    <parameter id='RF_TX_POWER=TX_MINUS_20DB' index='12' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_20DB</stringtable_identifier>
+      <translation_de>extrem gering (-20dBm)</translation_de>
+      <translation_en>extreme low (-20dBm)</translation_en>
+    </parameter>
+    <parameter id='RF_TX_POWER=TX_MINUS_15DB' index='13' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_15DB</stringtable_identifier>
+      <translation_de>sehr gering (-15dBm)</translation_de>
+      <translation_en>very low (-15dBm)</translation_en>
+    </parameter>
+    <parameter id='RF_TX_POWER=TX_MINUS_10DB' index='14' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_10DB</stringtable_identifier>
+      <translation_de>gering (-10dBm)</translation_de>
+      <translation_en>low (-10dBm)</translation_en>
+    </parameter>
+    <parameter id='RF_TX_POWER=TX_0DB' index='15' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_0DB</stringtable_identifier>
+      <translation_de>normal (0dBm)</translation_de>
+      <translation_en>normal (0dBm)</translation_en>
+    </parameter>
+    <parameter id='RF_TX_POWER=TX_PLUS_5DB' index='16' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_PLUS_5DB</stringtable_identifier>
+      <translation_de>hoch (+5dBm)</translation_de>
+      <translation_en>high (+5dBm)</translation_en>
+    </parameter>
+    <parameter id='RF_TX_POWER=TX_PLUS_7DB' index='17' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_PLUS_7DB</stringtable_identifier>
+      <translation_de>sehr hoch (+7dBm)</translation_de>
+      <translation_en>very high (+7dBm)</translation_en>
+    </parameter>
+    <parameter id='RF_TX_POWER=TX_PLUS_10DB' index='18' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+      <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_PLUS_10DB</stringtable_identifier>
+      <translation_de>maximal (+10dBm)</translation_de>
+      <translation_en>maximum (+10dBm)</translation_en>
     </parameter>
   </paramset>
   <channels>
@@ -260,85 +260,91 @@
         <translation_de>Alarmwert Zählimpulse gleitender Mittelwert</translation_de>
         <translation_en>alarm level moving average</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL' index='47' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS' index='47' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS</stringtable_identifier>
+        <translation_de>Zurücksetzen der Statistiken nach Anzahl von Messungen (0 = niemals)</translation_de>
+        <translation_en>reset of statistics after number of measurements (0 = never)</translation_en>
+      </parameter>
+      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL' index='48' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL</stringtable_identifier>
         <translation_de>Alarm für Zählimpulse pro Messintervall</translation_de>
         <translation_en>alarm for counts per measuremnt interval</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=NORMAL' index='48' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=NORMAL' index='49' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL_NORMAL</stringtable_identifier>
         <translation_de>normale Zählimpulsrate</translation_de>
         <translation_en>normal counts per measurement interval</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=ALARM' index='49' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=ALARM' index='50' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL_ALARM</stringtable_identifier>
         <translation_de>Alarm für Zählimpulse pro Messintervall</translation_de>
         <translation_en>alarm for counts per measuremnt interval</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_MOVING_AVERAGE' index='50' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_MOVING_AVERAGE' index='51' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_MOVING_AVERAGE</stringtable_identifier>
         <translation_de>Alarm für gleitenden Mittelwert</translation_de>
         <translation_en>alarm for moving average</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_MOVING_AVERAGE=NORMAL' index='51' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_MOVING_AVERAGE=NORMAL' index='52' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_MOVING_AVERAGE_NORMAL</stringtable_identifier>
         <translation_de>normaler gleitender Mittelwert</translation_de>
         <translation_en>normal moving average</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_MOVING_AVERAGE=ALARM' index='52' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_MOVING_AVERAGE=ALARM' index='53' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_MOVING_AVERAGE_ALARM</stringtable_identifier>
         <translation_de>Alarm für gleitenden Mittelwert</translation_de>
         <translation_en>alarm for moving average</translation_en>
       </parameter>
-      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL' index='53' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL' index='54' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL</stringtable_identifier>
         <translation_de>Zählimpulse pro Messintervall</translation_de>
         <translation_en>counts per measurement interval</translation_en>
       </parameter>
-      <parameter id='MOVING_AVERAGE_COUNT' index='54' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='MOVING_AVERAGE_COUNT' index='55' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_MOVING_AVERAGE_COUNT</stringtable_identifier>
         <translation_de>gleitender Mittelwert</translation_de>
         <translation_en>moving average</translation_en>
       </parameter>
-      <parameter id='WIDTH_CONFIDENCE_INTERVALL' index='55' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='WIDTH_CONFIDENCE_INTERVALL' index='56' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_WIDTH_CONFIDENCE_INTERVALL</stringtable_identifier>
         <translation_de>Breite des Konfidenzintervalls</translation_de>
         <translation_en>width of confidence interval</translation_en>
       </parameter>
-      <parameter id='MOVING_AVERAGE_COUNT_MAX' index='56' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='MOVING_AVERAGE_COUNT_MAX' index='57' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_MOVING_AVERAGE_COUNT_MAX</stringtable_identifier>
         <translation_de>max. gleitender Mittelwert</translation_de>
         <translation_en>max. moving average</translation_en>
       </parameter>
-      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL_MAX' index='57' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL_MAX' index='58' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL_MAX</stringtable_identifier>
         <translation_de>max. Zählimpulsrate</translation_de>
         <translation_en>max counts per measurement interval</translation_en>
       </parameter>
-      <parameter id='ACCUMULATOR_VOLTAGE' index='58' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='ACCUMULATOR_VOLTAGE' index='59' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_ACCUMULATOR_VOLTAGE</stringtable_identifier>
         <translation_de>Akkumulatorbatteriespannung (ADC)</translation_de>
         <translation_en>accumulator voltage</translation_en>
       </parameter>
-      <parameter id='AL53_SUPPLY_VOLTAGE' index='59' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='AL53_SUPPLY_VOLTAGE' index='60' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AL53_SUPPLY_VOLTAGE</stringtable_identifier>
         <translation_de>AL53 Betriebsspannung (ADC)</translation_de>
         <translation_en>AL53 supply voltage (ADC)</translation_en>
       </parameter>
-      <parameter id='OPERATING_VOLTAGE' index='60' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='OPERATING_VOLTAGE' index='61' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_OPERATING_VOLTAGE</stringtable_identifier>
         <translation_de>Betriebsspannung (ADC)</translation_de>

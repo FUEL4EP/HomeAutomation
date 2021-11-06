@@ -1,0 +1,34 @@
+13:02:12.944 -> Freq 0x21654A 868.287 MHz: AskSin++ v5.0.0 (Nov  5 2021 12:59:29)
+13:05:13.423 -> CC init1
+13:05:13.423 -> CC Version: 14
+13:05:13.423 ->  - ready
+13:05:13.423 -> Start searching ...
+13:05:13.423 -> Freq 0x21656A 868.300 MHz: 610DBB.  1 / -70dBm     <= should not be empty (0)
+13:05:21.790 -> Search for upper bound
+13:05:21.790 -> Freq 0x21657A 868.306 MHz: 610D12.  1 / -68dBm
+13:05:35.243 -> Freq 0x21658A 868.313 MHz: 1CCB7E.  1 / -61dBm
+13:05:51.346 -> Freq 0x21659A 868.319 MHz: 61573F.  1 / -96dBm
+13:05:53.537 -> Freq 0x2165AA 868.325 MHz: F60301.  1 / -78dBm
+13:05:56.294 -> Freq 0x2165BA 868.332 MHz: 341AEB.  1 / -78dBm
+13:05:57.489 -> Freq 0x2165CA 868.338 MHz: 20DD41.  1 / -53dBm
+13:05:57.887 -> Freq 0x2165DA 868.344 MHz: 2C79C1.  1 / -41dBm
+13:06:07.983 -> Freq 0x2165EA 868.351 MHz: 3389D4.  1 / -68dBm
+13:06:13.064 -> Freq 0x2165FA 868.357 MHz: 4B4E85.  1 / -69dBm
+13:06:17.845 -> Freq 0x21660A 868.363 MHz: 591B48.  1 / -66dBm
+13:06:24.421 -> Freq 0x21661A 868.370 MHz: 3E3395.  1 / -69dBm
+13:06:27.707 -> Freq 0x21662A 868.376 MHz: F60702.  1 / -59dBm    <= last entry of search for upper bound must be > 868.3 MHz 
+13:06:30.097 -> Freq 0x21663A 868.382 MHz:   0                    
+13:07:30.312 -> Search for lower bound
+13:07:30.312 -> Freq 0x21655A 868.294 MHz: F60101.  1 / -66dBm
+13:07:45.345 -> Freq 0x21654A 868.287 MHz: 610DBB.  1 / -68dBm    <= last entry of search for lower bound must be < 868.3 MHz
+13:07:57.009 -> Freq 0x21653A 868.281 MHz:   0
+13:08:57.218 -> 
+13:08:57.218 -> Done: 0x21654A - 0x21662A
+13:08:57.315 -> Calculated Freq: 0x2165BA 868.332 MHz             <= calculated frequency must be close to 868.3 MHz
+13:08:57.315 -> Store into config area: 65BA...stored!
+13:09:44.493 -> 2C7878.  1 / -66dBm
+13:09:44.527 -> 
+13:09:44.527 -> Done: 0x21654A - 0x21662A
+13:09:44.527 -> Calculated Freq: 0x2165BA 868.332 MHz
+13:09:44.527 -> Store into config area: 65BA...stored!
+

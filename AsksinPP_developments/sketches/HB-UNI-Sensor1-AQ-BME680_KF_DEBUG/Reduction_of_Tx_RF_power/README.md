@@ -23,6 +23,7 @@
 
 - folgendes Vorgehen wird zur Einstellung einer geringeren Sendeleistung empfohlen:
     + Sensor wird am späteren Aufstellungsort platziert.
+    + bitte die bisherigen Geräte- und Kanalparameter notieren
     + die Ausgaben im seriellen Monitor verfolgen, auf TxPower achten (siehe oben)
     + die Sendeleistung wird nun schrittweise, bei der maximalen Sendeleistung von +10dBm beginnend, um jeweils eine Stufe reduziert.
     + nach dem Einstellen der geringeren Sendeleistung in der Zentrale unter 'Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter' dort auf 'Übernehmen' klicken. Es erscheint ein Verküpfungs- und Programmstatus Fenster (Sensorbezeichnungen können anders sein): 

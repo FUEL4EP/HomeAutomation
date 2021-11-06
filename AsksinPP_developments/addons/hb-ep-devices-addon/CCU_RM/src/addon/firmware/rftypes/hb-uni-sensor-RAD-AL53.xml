@@ -96,17 +96,20 @@
         </parameter>
       </paramset>
     </channel>
-    <channel autoregister="true" index="1" type="HB_GENERIC_RADIATION" count_from_sysinfo="23.0:0.3">
+    <channel autoregister="true" index="1" type="HB_GENERIC_RADIATION" count="1">
       <paramset type="MASTER" id="HB-UNI-Sensor-RAD-AL53_master">
        <parameter id="HB_ALARM_LEVEL_COUNTS_PER_MEASUREMENT_INTERVAL">
-          <logical type="float" min="0.0" max="65535.0" default="200.0" unit="cpi"/>
-          <physical type="integer" signed="true" interface="config" list="1" index="1" size="2"/>
-          <conversion type="float_integer_scale" factor="1"/>
+          <logical type="integer" min="1" max="65535" default="65535" unit="cpi"/>
+          <physical type="integer" interface="config" list="1" index="1" size="2"/>
         </parameter>
         <parameter id="HB_ALARM_LEVEL_MOVING_AVERAGE">
-          <logical type="float" min="0.0" max="655.35" default="200.0" unit="cpi"/>
-          <physical type="integer" signed="true" interface="config" list="1" index="3" size="2"/>
-          <conversion type="float_integer_scale" factor="100"/>
+          <logical type="float" min="0.01" max="655.35" default="655.35" unit="cpi"/>
+          <physical type="integer" signed="true" interface="config" list="1" index="3" size="4"/>
+          <conversion type="float_integer_scale" factor="100.0"/>
+        </parameter>
+        <parameter id="HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS">
+          <logical type="integer" min="0" max="65535" default="0" unit=" "/>
+          <physical type="integer" interface="config" list="1" index="7" size="2"/>
         </parameter>
       </paramset>
       <paramset type="VALUES" id="HB-UNI-Sensor-RAD-AL53_values">

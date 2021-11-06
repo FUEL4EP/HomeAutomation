@@ -1,5 +1,20 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 1_channel_relay_module
+D https://www.mcucity.com/product/2413/12v-1-2-4-8-channel-12v-relay-module-optocoupler-isolation-support-hgh-and-low-level-trigger
+F https://www.mcucity.com/product/2413/12v-1-2-4-8-channel-12v-relay-module-optocoupler-isolation-support-hgh-and-low-level-trigger
+$ENDCMP
+#
+$CMP 2_channel_relay_module
+D Saintsmart, https://www.sainsmart.com/products/2-channel-5v-relay-module http://s3.amazonaws.com/s3.image.smart/download/101-70-100/101-70-100.docx
+F http://s3.amazonaws.com/s3.image.smart/download/101-70-100/2%2Brelay.rar
+$ENDCMP
+#
+$CMP 4_channel_LOGIC_LEVEL_CONVERTER
+D 4_channel_LOGIC_LEVEL_CONVERTER
+F https://cdn.sparkfun.com/datasheets/BreakoutBoards/Logic_Level_Bidirectional.pdf
+$ENDCMP
+#
 $CMP ABLIC_S35770
 D IC in TMSOP-8 package
 K supplier: ABLIC, distributors: Mouser, Digikey
@@ -17,22 +32,28 @@ K available @ e.g. Paradiseelectronic or amazon !!!!!  Warning: Many fakes !!!!!
 F https://www.ti.com/lit/ds/symlink/ads1115.pdf
 $ENDCMP
 #
+$CMP Arduino_Pro_Mini_328P_1
+D PCB with same size and pin locations as a Arduino Pro Mini, requires setup according https://prominimicros.com/how-to-use-the-pro-mini-xl-or-atmega-1284p-with-the-arduino-ide/
+K ATMega1284P MCU
+F https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/
+$ENDCMP
+#
 $CMP CC1101_transceiver_module
 D TI CC1101 868.3 MHz tranceiver module
 K Pinout: https://www.makershop.de/download/cc1101-pinout-v.png
 F https://www.ti.com/lit/ds/symlink/cc1101.pdf
 $ENDCMP
 #
-$CMP Conn_01x08
-D Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)
-K connector
+$CMP Cold_Device_Socket
+D 3-pin Cold Device Socket with Earth wire (230VAC)
+K Cold Device Socket 230V AC
 F ~
 $ENDCMP
 #
-$CMP E07-868MS10
-D TI CC1101 868.3 MHz tranceiver module
-K Pinout: https://www.makershop.de/download/cc1101-pinout-v.png
-F https://www.ti.com/lit/ds/symlink/cc1101.pdf
+$CMP LM2596_buck
+D https://chips-and-more.com/cm/pdf/K3608.pdf
+K available e.g. at Amazon
+F https://www.olimex.com/Products/Breadboarding/BB-PWR-3608/resources/MT3608.pdf
 $ENDCMP
 #
 $CMP MT3608_step_up
@@ -41,16 +62,15 @@ K available e.g. at Amazon
 F https://www.olimex.com/Products/Breadboarding/BB-PWR-3608/resources/MT3608.pdf
 $ENDCMP
 #
+$CMP PSU_PS60-W1V24
+D power supply 24V 2.5A
+F https://www.sanpupower.com/wp-content/uploads/2018/09/PS60-W1V.pdf
+$ENDCMP
+#
 $CMP TPS61221_step_up_3.3V
 D https://www.tindie.com/products/closedcube/tps61221-low-input-from-07v-boost-33v-breakout/
 K Tindie module
 F https://www.ti.com/lit/ds/symlink/tps61221.pdf
-$ENDCMP
-#
-$CMP TS-1187A-B-A-B
-D SMD Push Button Switch JLCPCB Basic
-K JLCPCB Basic
-F https://datasheet.lcsc.com/lcsc/2002271431_XKB-Connectivity-TS-1187A-B-A-B_C318884.pdf
 $ENDCMP
 #
 $CMP Teviso_AL53_RAD_sensor
@@ -63,10 +83,6 @@ $CMP Tindie_Pro_Mini_XL_V2
 D PCB with same size and pin locations as a Arduino Pro Mini, requires setup according https://prominimicros.com/how-to-use-the-pro-mini-xl-or-atmega-1284p-with-the-arduino-ide/
 K ATMega1284P MCU
 F https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/
-$ENDCMP
-#
-$CMP Waveshare_1.54_inch_epaper_dummy
-F https://www.waveshare.com/product/1.54inch-e-paper-module.htm
 $ENDCMP
 #
 #End Doc Library

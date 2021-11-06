@@ -27,12 +27,10 @@
   - [Lizenz](#lizenz)
 
 ## Neuerungen
-- dies ist zur Zeit nur ein Vorabdatensatz, ein erster Prototyp von HB-UNI-Sensor1-RAD-AL53 ist funktionsfähig, die Systemvalidierung läuft allerdings noch
-- viele Tests waren bisher in Ordnung, manche Tests haben Laufzeiten > 1 Woche und laufen noch
-- Pilottester können sich gerne an der Validierung beteiligen, Rückmeldung dann bitte [im Homematic Forum](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53)
-- wer einen fertig entwickelten Sensor haben möchte, sollte bis zur Freigabe warten
-- Rückmeldungen und Hinweise zur Verbesserung der Dokumentation sind [im Homematic Forum](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53) willkommen oder auch als private Nachricht an [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum.
-- die Dokumentation ist noch im Aufbau, Hinweise auf Fehler oder Unvollständigkeiten sind bis zur Freigabe als private Nachricht willkommen 
+- dies ist eine initiale Freigabe, ein erster Prototyp von HB-UNI-Sensor1-RAD-AL53 ist voll funktionsfähig und läuft seit mehreren Wochen
+- ein e-Paper und ein NiMH-Lademodul fehlen in dieser initialen Freigabe noch
+- Rückmeldungen, Fragen und Hinweise zur Verbesserung der Dokumentation sind [im Homematic Forum](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53) willkommen oder auch als private Nachricht an [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum.
+- die Dokumentation ist noch im Aufbau, Hinweise auf Fehler oder Unvollständigkeiten sind als private Nachricht willkommen 
 
 ## Einsteiger
 
@@ -66,6 +64,7 @@
 
 - da die EMV Kupferfolie elektrisch leitfähig ist, bitte zuerst **vorübergehend** die I2C Platinenanschlüsse unter dem Sensorgehäuse mit einem Klebefilm isolieren. Sonst besteht Kurzschlussgefahr! Der Klebefilm ist im obigen Bild erkennbar.
 - **erst nach erfolgreicher Inbetriebnahme** und Test des gesamten Geräts wird mit Zweikomponentenkleber der 3D gedruckte [Abstandshalter](./3D_print_files/AL53_case_distance-BodyPad.stl)  zwischen das 3D Druckgehäuse und die Platine geklebt. 
+- **Beim Programmieren mit einem ISP Programmer oder beim Debuggen über den seriellen Monitor mit einem FTDI Debugger dürfen die Akkumulatoren nur kurz (wenige Minuten zum Funktionstest des AL53) eingelegt bleiben, sonst werden sie tiefentladen, da der Aufwärtswandler gegen die Betriebsspannung des ISP Programmers oder/und des FTDI Debuggers arbeitet.**
 
 
 ## Eigenschaften
@@ -73,7 +72,7 @@
 - misst alpha-, beta- und gamma-Strahlung
 - die Absorptionscharakteristik für gamma-Strahlung ist ähnlich der PIN-Diode [X100-7 THD von First Sensor](https://www.first-sensor.com/cms/upload/datasheets/X100-7_THD_5000040.pdf) und auf gamma Energien von < ca. 10keV beschränkt.
 - geringer Energieverbrauch: nur ca 0,83 mA im Messbetrieb
-- Versorgung mit zwei aufladbaren NiMH Akkumulatorzellen: Laufzeit > 2 Monate mit einer Akkuladung
+- Versorgung mit zwei aufladbaren 2700mAh NiMH Akkumulatorzellen: Laufzeit > 2 Monate mit einer Akkuladung
 - die Ausgangspulse des AL53 Sensors werden mit einem [ABLIC S-35770 24-Bit Zählerbausstein](https://www.ablic.com/en/doc/datasheet/counter_ic/S35770_I_E.pdf) gezählt und per I2C alle 10 Minuten ausgelesen.
 - die typische Zählrate bedingt durch die natürliche Hintergrundstrahlung beträgt ca. ~5 Ereignisse in 10 Minuten (Einheit: cpi = counts per interval, interval := 10 Minuten) oder ~30 Ereignisse in einer Stunde. **Daher ist der Sensor nicht für die schnelle Erfassung von Radioaktivität oder einer schnellen Änderung der Radioaktivität geeignet.**
 - ein gleitender Mittelwert wird mit einem zyklischen Ringpuffer der Tiefe 1008 aus den ausgelesenen Zählerständen gebildet, d.h. die gleitende Mittelwertbildung wird über den Zeitraum der letzten 1008 * 10 Minuten = 7 Tage durchgeführt. Es wird jeweils  das älteste Zählergebnis verworfen, wenn ein neues Zählergebnis eingelesen wird. Das Füllen des Ringpuffers dauert 7 Tage. Währenddessen steigt der gleitende Mittelwert 'semi' linear an.
@@ -81,9 +80,9 @@
     + das Konfidenzintervall des gleitenden Mittelwerts lässt sich daraus mathematisch ableiten, siehe [hier](./Images/confidence_interval.png)
 - als Mikrokontrollerplatine wird der auf einem ATMega1284P basierende Arduino [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verwandt. WICHTIG: Ein Arduino Pro Mini mit einem ATmega328P passt wegen zu geringem Speicherplatz nicht!
 - zwei Alarmsignale werden direkt vom AsksinPP Sensor zur als binäre Datenpunkte Verfügung gestellt:
-+ der Datenpunkt HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL signalisiert, wenn die aktuelle Anzahl von Zählimpulsen den als Geräteparameter eingestellten Schwellwert 'Alarmwert Zählimpulse pro Messintervall' überschreitet
-+ der Datenpunkt HB_ALARM_MOVING_AVERAGE signalisiert, wenn der aktuelle gleitende Mittelwert von Zählimpulsen den als Geräteparameter eingestellten Schwellwert 'Alarmwert Zählimpulse gleitender Mittelwert' überschreitet
-+ eine Überschreitung der Grenzwerte löst in der Zentrale einen Alarm aus
+    + der Datenpunkt HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL signalisiert, wenn die aktuelle Anzahl von Zählimpulsen den als Geräteparameter eingestellten Schwellwert 'Alarmwert Zählimpulse pro Messintervall' überschreitet
+    + der Datenpunkt HB_ALARM_MOVING_AVERAGE signalisiert, wenn der aktuelle gleitende Mittelwert von Zählimpulsen den als Geräteparameter eingestellten Schwellwert 'Alarmwert Zählimpulse gleitender Mittelwert' überschreitet
+    + eine Überschreitung der Grenzwerte löst in der Zentrale einen Alarm aus
 
 ## Bilder
 
@@ -128,6 +127,7 @@ Hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x e
 
 - als Nächstes werde ich eine Radonmessung mit dem Dünger machen:
     - [Uran im Boden und im Wasser ? – Testen Sie Ihr Düngemittel !](http://www.opengeiger.de/DuengerRadonTest.pdf)
+- aktuell läuft eine Messung mit Kaliumchlorid in Lebensmittelqualität (E508), das aufgrund seines natürlichen K-40 Gehalts ein Beta-Strahler ist
 
 ## Schaltplan
 
@@ -143,8 +143,7 @@ Hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x e
 
 ![pic](PCB/HB-UNI-SEN-BATT/Modifications_HB-UNI-SEN-BATT.png)
 
-- oder alternativ [HB-UNI-SEN-BATT_FUEL4EP](../../PCBs/HB-UNI-SEN-BATT_FUEL4EP) oder [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP)
-    + WARNUNG: diese Platinen sind z.Z. noch Entwicklung und noch nicht validiert!
+- oder auch alternativ [HB-UNI-SEN-BATT_FUEL4EP](../../PCBs/HB-UNI-SEN-BATT_FUEL4EP) oder [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) (siehe auch Hinweise dort)
 
 
 ## Gehäuse
@@ -257,7 +256,7 @@ Hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x e
         + **avr_stl**: bitte das **gesamte** Verzeichnis '\<Sammeldepotpfad>/HomeAutomation/AsksinPP_developments/libraries/**avr_stl**/' nach '\<Bibliothekspfad>/' kopieren
             * dies ist eine modifizierte **ArduinoSTL**-Bibliothek von Giampaolo Mancini (manchoz), siehe [README.md](../../libraries/avr_stl/README.md)
             * bitte sicherstellen, dass im Bibliothekspfad keine andere ArduinoSTL-Bibliothek installiert ist (siehe oben)
-- benötigtes Addon: [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) Version >= 1.9
+- benötigtes Addon: [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) Version >= 1.11
     + dieses Addon auf die CCU3 / RaspberryMatic Zentrale als Zusatzsoftware über 'Startseite > Einstellungen > Systemsteuerung Zusatzsoftware' installieren. Bitte unbedingt die Installationsanweisung beachten (vorher alte Version von hb-ep-devices-addon deinstallieren)
     + die Addon install and uninstall Skripte wurden automatisch mit dem Generator [AsksinPP_addon_files_generator](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/AsksinPP_addon_files_generator) erzeugt.
 - für die Unterstützung des benutzten ATMega1284P des [Tindie Pro Mini XL - v2](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) im Arduino IDE ist folgende Anleitung abzuarbeiten:
@@ -387,8 +386,12 @@ Hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x e
 ## Anmelden an der Zentrale
 - diese [Anleitung](https://asksinpp.de/Grundlagen/03_ccu.html) befolgen
 - der Anlernknopf ist der ConfigButton SW1 auf der Basisplatine
-- vor den Anlernen sicherstellen, dass das Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) Version >= 1.9 auf der Zentrale installiert ist
+- vor den Anlernen sicherstellen, dass das Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) Version >= 1.11 auf der Zentrale installiert ist
 - falls sich der Sensor nicht anlernen lässt, einen [Frequenztest ATMega1284P](FreqTest_1284P/FreqTest_1284P.ino) durchführen. Viele CC1101 Module lassen sich ohne diesen Frequenztest nicht anlernen! Eine Beschreibung des Frequenztests ist [hier](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) zu finden.
+
+## Verringerung der Tx Sendeleistung
+
+- nur Experten wird empfohlen, die Tx Sendeleistung zu verringern. Die Beschreibung ist [hier](./Reduction_of_Tx_RF_power/README.md).
 
 ## Diverse Infos und Links (unsortiert)
 

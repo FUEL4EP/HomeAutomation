@@ -158,7 +158,7 @@ class  rad_statistics {
         
       count_index += 1;
         
-      cnt_params.tail                         = circular_count_buffer[circular_index];                     // save tail value
+      cnt_params.tail                         = circular_count_buffer[circular_index];                               // save tail value
       cnt_params.head                         = count;
       cnt_params.current_value                = count;
       // set head value to count
@@ -169,7 +169,7 @@ class  rad_statistics {
       //calculate moving average
       mov_av_params.old_value                 = mov_av_params.current_value;
       moving_sum                              = moving_sum + (uint32_t)cnt_params.head - (uint32_t)cnt_params.tail;  // calculate change of moving_sum by dropped tail value and added head value
-      mov_av_params.current_value             = (double)moving_sum / CIRCULAR_BUFFER_SIZE;                 // calculate moving_average
+      mov_av_params.current_value             = (double)moving_sum / CIRCULAR_BUFFER_SIZE;                           // calculate moving_average
       
       // check for new maximum of mov_av_params
       if ( mov_av_params.current_value > mov_av_params.max ) {
