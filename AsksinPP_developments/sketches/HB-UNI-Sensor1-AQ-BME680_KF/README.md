@@ -9,25 +9,19 @@
 - ein herzliches Dankeschön an alle, die im Homematic Forum geholfen haben, meine Probleme zu lösen
 - der Homematic Forum [Diskussionsstrang](https://homematic-forum.de/forum/viewtopic.php?t=49422)
 - hilfreich ist auch die Diskussion zu den [rftypes XMLs](https://homematic-forum.de/forum/viewtopic.php?f=76&t=62578&sid=cf0f4cd99f7ee2bf070e9f39391ee652)
-- **WICHTIG:** Zur Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die Luftgütemessung wird ein selbstlernendes Kalman Filter verwendet. Das initiale Lernen des zur online Regression benutzten Kalman Filters dauert ca. 14..21 Tage bis ausreichend Konvergenz erreicht ist. Details siehe unten. Die Empfehlung ist, den aufgebauten und programmierten Sensor einfach 14..21 Tage laufen zu lassen, ohne ihm viel Beachtung zu schenken. Das Anlernen kann beschleunigt werden, wenn der Sensor in dieser Zeit möglichst vielen Wechseln von Luftgüte, Temperatur und absoluter Luftfeuchte ausgesetzt wird. Am besten wird der Sensor in dieser Zeit in die Nähe eines zum Lüften vollständig geöffneten Fensters aufgestellt. Bitte 3x am Tag gründlich lüften (morgens, mittags, abends). Zur deutlichen Beschleunigung und Verbesserung des Lernens des Kalman Filters wird empfohlen, **am Besten mehrfach direkt nach dem Flashen des Sensors** Folgendes zu tun:
-	+ den Sensor für ca. 30 Minuten höherer Temperatur und geringerer Luftfeuchte aussetzen, z.B. durch Platzieren auf einem Ofen oder einem Heizkörper oder direkter Sonneneinstrahlung bei geöffnetem Gehäuse
-	+ den Sensor für ca. 30 Minuten hoher Luftfeuchte und geringer Temperatur aussetzen, z.B. durch Auflegen eines gut mit Wasser durchfeuchteten Papiertaschentuchs bei geöffnetem Gehäuse auf den Sensor. Die Verdampfung von Wasser bewirkt eine Temperaturverringerung!
+- **WICHTIG:** Zur Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die Luftgütemessung wird ein selbstlernendes Kalman Filter verwendet. Das initiale Lernen des zur online Regression benutzten Kalman Filters dauert ca. 14..21 Tage bis ausreichend Konvergenz erreicht ist. Details siehe unten. Die Empfehlung ist, den aufgebauten und programmierten Sensor einfach 14..21 Tage laufen zu lassen, ohne ihm viel Beachtung zu schenken. Die vom Kalman Filter ermittelten Regressionskoeffizient können sich noch über Monate hinweg leicht verändern.
 - zur Verifizierung und besserem Verständnis des Kalman Filters wird ein Jupyter Notebook [Prove_of_Kalman_filter_with_synthesized_data.ipynb](./Kalman_Filter/Prove_of_Kalman_filter_with_synthesized_data.ipynb) zur Verfügung gestellt. Auf Github kann das Notebook direkt angesehen werden.
-- ausschliesslich für DEBUG Zwecke gibt es eine DEBUG Version des Sensors [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG). Die Empfehlung ist, initial während des Lernvorgangs des Kalman Filters diese DEBUG Version auszuspielen und den Lernvorgang zu beobachten und zu kontrollieren. Details dazu hier: [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG). Wenn das Kalman-Filter nach 2..3 Wochen konvergiert hat, kann die DEBUG Version in die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) umprogrammiert werden. Die erlernten und im EEPRO abgespeicherten Kalman Regressionskoeffizienten bleiben beim Umprogrammieren erhalten.
+- ausschliesslich für DEBUG Zwecke gibt es eine DEBUG Version des Sensors [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG). Wer Interesse an der Detailfunktion des Kalman Filters hat, kann initial während des Lernvorgangs des Kalman Filters diese DEBUG Version auszuspielen und den Lernvorgang zu beobachten und zu kontrollieren. Details dazu hier: [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG). Wenn das Kalman-Filter nach 2..3 Wochen konvergiert hat, kann die DEBUG Version in die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) umprogrammiert werden. Die erlernten und im EEPROM abgespeicherten Kalman Regressionskoeffizienten bleiben beim Umprogrammieren erhalten.
 - Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=66058&sid=8555144b99f475b251fc1b9d958e9f8b) zu finden. Bitte dort auch Fragen stellen. 
 
 ## Neuerungen
 
-
-- **UPDATE 14. Mai 2021:** Die Dimension N des Kalman Filter wurde von 4 auf 3 reduziert, um die Konvergenz zu verbessern (neuer Zustandsvektor: VOC_resistance, alpha_temperature, beta_ah). Die Validierung in meinen Sensoren war erfolgreich.
-
 - **Update 10. Juni 2021**: Da sich die linearen Regressionskoeffizienten, die vom Kalman Filter online berechnet werden, auch über längere Zeiträume je nach Wetterbedingungen ändern können, kann es vorkommen, dass über längere Zeiträume der maximale und/oder der minimale Luftgütewert AQ_LOG10 nicht mehr erreicht wird. Dies passiert dann, wenn sich die Regressionskoeffizienten stärker verändert haben als es der IIR-Abklingfunktion/IIR-Aufklingfunktion entspricht. In diesen Fall, kann die IIR-Abklingfunktion/IIR-Aufklingfunktion vorübergehend vergrößert werden. Dazu muss in der Einstellung der Kanalparameter [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Special_Thresholds.png) vorübergehend die relative untere Schwelle für die Abklingfunktion kleiner als die relative obere Schwelle für die Aufklingfunktion gesetzt werden (zB.: 45% / 46%). **Bitte nicht vergessen**, nach ca. 1..2 Tagen wieder die relative untere Schwelle für die Abklingfunktion größer als die relative obere Schwelle für die Aufklingfunktion (zB.: 54% / 46%) zu setzen. Die Validierung in meinen Sensoren war erfolgreich.
 
 
-## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.9 updaten
+## Bitte Addon 'ep-hb-devices-addon' auf die Version >= 1.11 updaten
 
-- Die neue Version V1.9 des Addons '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)' behebt einige fehlende Übersetzungen.
-- Bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
+- bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
 
 
 ## Bitte immer die aktuellste Version von AsksinPP nutzen
@@ -38,7 +32,7 @@
 ## ACHTUNG: EEPROM Nutzung
 
 -	die EEPROM Software zur regelmässigen Zwischenspeicherung von wichtigen Sensorparametern wurde überarbeitet. Sie verwendet jetzt eine Structure für alle relevanten Parameter und eine CRC32 Prüfsumme. Die Abspeicherung erfolgt einmal am Tag. 318 Bytes EEPROM-Speicher werden verwendet. Eine EEPROM Zelle des ATmega1284P kann laut [Datenblatt](https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega164A_PA-324A_PA-644A_PA-1284_P_Data-Sheet-40002070B.pdf) 100000 mal gelöscht/beschrieben werden. Bei einem Schreibvorgang pro Tag reicht das für 273 Jahre! Das Schreiben eines Bytes in das EEPROM dauert ca. 1 Millisekunde, so dass das Schreiben der Structure ca. 300 Millisekunden dauert.
--	Die Debug-Version [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) und die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) nutzen diesselbe Struktur für die Abspeicherung und Restaurierung von EEPROM-Daten. Daher kann der Sensor zwischen diesen beiden Versionen umprogrammiert werden. Dabei bitte die Hinweise unter 'Neuprogrammierung (Flashen)' unten beachten.
+-	die Debug-Version [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) und die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) nutzen diesselbe Struktur für die Abspeicherung und Restaurierung von EEPROM-Daten. Daher kann der Sensor zwischen diesen beiden Versionen umprogrammiert werden. Dabei bitte die Hinweise unter 'Neuprogrammierung (Flashen)' unten beachten.
 
 
 
@@ -58,13 +52,16 @@
 	+ die herausgenommene Batterie wieder einlegen
 	+ den ISP Programmer entfernen
 - diese Sequenz stellt sicher, dass ein korrekter Reset durchgeführt wird. Bedingung dafür ist, dass die OPERATING VOLTAGE größer als 3.3V ist.
-- soll eine Neuprogrammierung ohne Reset und Neustart der Autokalibrierung durchgeführt werden, bitte die Batterien während des Programmiervorgangs eingelegt lassen.
+- soll eine Neuprogrammierung **ohne Reset und Neustart der Autokalibrierung** durchgeführt werden, bitte die Batterien während des Programmiervorgangs eingelegt lassen und darauf achten, dass die OPERATING VOLTAGE **kleiner** als 3.3V ist. Das wird zum Beispiel dann benötigt, wenn die Debugversion HB-UNI-Sensor1-AQ-BME680_KF_DEBUG zur Normalversion HB-UNI-Sensor1-AQ-BME680_KF umprogrammiert werden soll.
 
 	 
 ## Initiales Lernen des Kalman Filters
 
-- das Kalman Filter zur Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessenen Gaswiderstände braucht zu Beginn eines Autokalibrierzyklus ca. 14..21 Tage um auf stabile Regressionskoeffizienten einzuschwingen. Solange sich die geschätzten Regressionskoeffizienten sich noch mehr als 15% innerhalb von 4 Stunden ändern, ist keine Konvergenz gegeben. Dies wird mit der Ausgabe des Werts 3.333 im Datenpunkt AQ_LOG10 gekennzeichnet. Der Datenpunkt AQ_LEVEL zeigt währen der Phase des Lernens (=Nichtkonvergenz) einen 'Nichtkonvergenzgrad' an, der sich zwischen 0% und 100% bewegt. Werte oberhalb von 15% kennzeichnen eine Nichtkonvergenz. Die absolute Änderung des Temperatur-Regressionskoeffizienten 'alpha' darf im Konvergenzfall maximal 1800 Ohm/K (#define REGRESSION_ABSOLUTE_ALPHA_CHANGE                1800) betragen. Das Lernen des Kalman Filters findet hauptsächlich bei Veränderungen der Temperatur und absoluten Luftfeuchte statt, also beim Lüften. Häufigeres und intensives Lüften kann den Lernprozess beschleunigen. Seltenes Lüften kann den Lernvorgang verlangsamen!
-- zur deutlichen Beschleunigung und Verbesserung des Lernens des Kalman Filters wird empfohlen, **am Besten mehrfach direkt nach dem Flashen des Sensors** Folgendes zu tun:
+- das Kalman Filter zur Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessenen Gaswiderstände braucht zu Beginn eines Autokalibrierzyklus ca. 14..21 Tage um auf einigermaßen stabile Regressionskoeffizienten einzuschwingen. Solange sich die geschätzten Regressionskoeffizienten sich noch mehr als 10% innerhalb von 4 Stunden ändern, ist keine Konvergenz gegeben. Dies wird mit der Ausgabe des Werts 3.333 im Datenpunkt AQ_LOG10 gekennzeichnet. Der Datenpunkt AQ_LEVEL zeigt währen der Phase des Lernens (=Nichtkonvergenz) einen 'Nichtkonvergenzgrad' an, der sich zwischen 0% und 100% bewegt. Werte oberhalb von 10% kennzeichnen eine Nichtkonvergenz.
+- solange die Änderungen der geschätzten Regressionskoeffizienten zwischen 2% und 10% innerhalb von 4 Stunden betragen, werden der obere und untere Referenzwert für 100% bzw. 0% Luftgüte mit einer schnelleren Abkling- bzw. Aufklingfunktion beaufschlagt. Die Zeitkonstante wird mit einer lineaaren Interpolation bestimmt.
+- erst wenn die Änderungen <= 2% sind, beträgt die Abkling- bzw. Aufklingzeitkonstante 2 Wochen.
+- das Lernen des Kalman Filters findet hauptsächlich bei Veränderungen der Temperatur und absoluten Luftfeuchte statt, also beim Lüften. Häufigeres und intensives Lüften kann den Lernprozess beschleunigen. Seltenes Lüften kann den Lernvorgang verlangsamen!
+- zur deutlichen Beschleunigung und Verbesserung des Lernens des Kalman Filters kann man (muss aber nicht), **am Besten mehrfach direkt nach dem Flashen des Sensors**, Folgendes zu tun:
 	+ den Sensor für ca. 30 Minuten höherer Temperatur und geringerer Luftfeuchte aussetzen, z.B. durch Platzieren auf einem Ofen oder einem Heizkörper oder direkter Sonneneinstrahlung bei geöffnetem Gehäuse
 	+ den Sensor für ca. 30 Minuten hoher Luftfeuchte und geringer Temperatur aussetzen, z.B. durch Auflegen eines gut mit Wasser durchfeuchteten Papiertaschentuchs bei geöffnetem Gehäuse auf den Sensor. Die Verdampfung von Wasser bewirkt eine Temperaturverringerung!
 
@@ -95,16 +92,14 @@
 
 ![pic](Images/AQ_mapping_linear_to_log.png)
 
-- Autokalibrierung für den Luftgütegrad und die logarithmische Luftqualität: Zur Kalibrierung muss der Sensor nur in Betrieb genommen werden. Es sollte nur regelmäßig für ca. 10..30 Minuten bei völlig geöffneten Fenstern quer gelüftet werden, je nach Außentemperaturen. Die Autokalibrierung ist adaptiv und wird im Laufe der Zeit immer besser. Der Adaptionsprozess kann mehrere Tage dauern. 24 Stunden nach dem Start einer Autokalibrierung wird die Autokalibrierung nochmals erneut gestartet, nachdem das Kalman Filter initial eingeschwungen ist. Während der ersten Tage nach Beginn einer Autokalibrierung kann es zu stärkere Schwankungen der ausgegebenen Luftgüte AQ_LOG10 geben, die aber schnell kleiner werden, wenn der Kalibriervorgang voranschreitet.
-	
+- Autokalibrierung für den Luftgütegrad und die logarithmische Luftqualität: Zur Kalibrierung muss der Sensor nur in Betrieb genommen werden. Es sollte nur regelmäßig für ca. 10..30 Minuten bei völlig geöffneten Fenstern quer gelüftet werden, je nach Außentemperaturen. Die Autokalibrierung ist adaptiv und wird im Laufe der Zeit immer besser. Der Adaptionsprozess kann mehrere Wochen dauern. Kleinere Koeffizentenänderungen der online Regression gibt es sogar noch nach Monaten! 24 Stunden nach dem Start einer Autokalibrierung wird die Autokalibrierung nochmals erneut gestartet, nachdem das Kalman Filter initial eingeschwungen ist. Während der ersten Tage nach Beginn einer Autokalibrierung kann es zu stärkere Schwankungen der ausgegebenen Luftgüte AQ_LOG10 geben, die aber schnell kleiner werden, wenn der Kalibriervorgang voranschreitet.
 - Details zur Autokalibrierung sind [hier](./Autocalibration/README.md) auf Englisch nachzulesen.
-	
 - vollautomatische Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte auf die gemessene Luftgüte LOG10 durch ein in der Sensorsoftware integriertes Kalman Filter
-	- Ein Kalman Filter mit einer Null-Kovarianzmatrix für das Prozessrauschen ist bekannt als ein rekursives Minimum Least-Square Error (LMMSE) Filter für ein lineares System unter bestimmten Annahmen für Auto- und Kreuzkorrelation des Prozess- und Messrauschens und dem initialen Zustand.
+	- ein Kalman Filter mit einer Null-Kovarianzmatrix für das Prozessrauschen ist bekannt als ein rekursives Minimum Least-Square Error (LMMSE) Filter für ein lineares System unter bestimmten Annahmen für Auto- und Kreuzkorrelation des Prozess- und Messrauschens und dem initialen Zustand.
 	- die absolute Luftfeuchte wird im Sensor auf der ATmega1284P MCU aus Temperatur und relativer Luftfeuchte [berechnet](https://www.kompf.de/weather/vent.html) 
-- Tägliche Abspeicherung der Parameter der Autokalibrierung und des Kalman Filters.
-	- Die letzten EEPROM Daten werden bei einem Batteriewechsel zurückgespeichert
-	- Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset NICHT zurückgespeichert (Kriterium ist eine gemessene Betriebsspannung > 3.3V)
+- tägliche Abspeicherung der Parameter der Autokalibrierung und des Kalman Filters.
+	- die letzten EEPROM Daten werden bei einem Batteriewechsel zurückgespeichert
+	- bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset NICHT zurückgespeichert (Kriterium ist eine gemessene Betriebsspannung > 3.3V)
 	
 
 
@@ -112,26 +107,37 @@
 
 - basierend auf einer ATmega1284P MCU mit CC1101 Sendemodul, Eigenbau möglich
 - eine mögliche und von mir empfohlene Hardwarebasis sieht so aus:
-	+ Universalplatine für DIY-Bausätze von Alexander Reinert
-		* Github [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt)
+    +  Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) mit einem Ebyte E07 868MS10 Funkmodul (rote Platine), das ein wenig teurer als das noname grüne CC1101 Funkmodul ist, aber weniger Ärger macht, und JLCPCB SMD-Bestückung
+        + der Abstandsfehler für einen Batteriehalter in [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt) ist korrigiert
+	    + als Batteriehalter wird der Keystone 2460 verwendet, ein Goobay 1xAA Batteeriehalter passt auch
+	    + Bestellung direkt bei JLCPCB oder per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) anfragen
+  * oder alternativ die Platine [HB-UNI-SEN-BATT_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP)
+    + der Abstandsfehler für einen Batteriehalter in [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt) ist korrigiert
+	+ als Batteriehalter wird der Keystone 2460 verwendet, ein Goobay 1xAA Batteeriehalter passt auch
+	+ Bestellung direkt bei JLCPCB oder per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) anfragen
+  * oder alternativ die Platine [HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP) mit einem Ebyte E07 868MS10 Funkmodul (rote Platine), das ein wenig teurer als das noname grüne CC1101 Funkmodul ist, aber weniger Ärger macht
+	  + der Abstandsfehler für einen Batteriehalter in [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt) ist korrigiert
+	  + als Batteriehalter wird der Keystone 2460 verwendet, ein Goobay 1xAA Batteeriehalter passt auch
+	  + Bestellung direkt bei JLCPCB oder per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) anfragen 
+  + oder alternativ die Universalplatine für DIY-Bausätze von Alexander Reinert
+      * Github [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt)
 		* Bezugsquelle: [Smartkram WebShop](https://smartkram.de/produkt/universalplatine-fuer-diy-bausatze-von-alex-reinert/)
-    + Sensorgehäuse
+   + Sensorgehäuse
 	    * 3D-Druck [HB-UNI-SEN-BATT snap Gehaeuse und Deckel](https://www.thingiverse.com/thing:3512767)	auf Thingiverse
 	    * oder [fertiges Gehäuse](https://smartkram.de/produkt/sensorgehaeuse-passend-fuer-platine-von-alexander-reinert/) von Smartkram Webshop
-	+ Bosch BME 680 Breakout Board (bitte keinen China Billigclone)
-		* Bezugsquelle: Pimoroni [BME680 Breakout - Air Quality, Temperature, Pressure, Humidity Sensor](https://shop.pimoroni.com/products/bme680-breakout)
-	+ Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)
-	+ Bauteile [HB-UNI-SEN-BATT](https://smartkram.de/produkt/bauteile-fuer-homematic-diy-projekt-thermometer-hydrometer/) von Smartkram Webshop
-		* Der gelieferte Arduino Pro Mini wird durch Tindie Pro Mini XL - v2 - ATmega 1284p ersetzt
-		* Das gelieferte BME280 Sensor Breakout wird durch das BME680 Breakout ersetzt
-	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/), bitte geeignet abändern
-	+ die I2C-Verbindungen zwischen HB-UNI-SEN-BATT PCB und BME680 Breakout mit flexiblem Flachbandkabel
-	+ 2x 10 kOhm I2C Abschlusswiderstände auf HB-UNI-SEN-BATT PCB einlöten
+	+ Bauteile (ohne SMD Bestückung), Batteriehalter, Arduino, Sensoren bitte gegebenenfalls separat bestellen
+	    * Reichelt [Bestellliste](https://www.reichelt.de/my/1891627)
+	    * oder Smartkram Webshop [HB-UNI-SEN-BATT](https://smartkram.de/produkt/bauteile-fuer-homematic-diy-projekt-thermometer-hydrometer/) (mit Arduino, BME280 und Batteriehalter)
+	        * dort den Arduino Pro Mini durch einen Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) ersetzen
+	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/), dort den BME280 durch den BME680 ersetzen
+	+ 2x 10 kOhm I2C Abschlusswiderstände für SCL und SDA auf HB-UNI-SEN-BATT PCB einlöten
 	+ im Unterverzeichnis 3D_Druck ist eine 3D-Druck [STL Datei](./3D%20print%20files/BME680_protection.stl) für eine BME680 Halterung zu finden:
 		![pic](Images/BME680_holding.png)	
 		* wird auf das HB-UNI-SEN-BATT PCB mit 2-Komponentenkleber aufgeklebt
 		* eine Nase muss mit einer Flachfeile entfernt werden
 		* eine Halterung ohne Nase wird auch bereitgestellt: [STL Datei](./3D%20print%20files/BME680_protection_without_nose.stl). Sie muss geeignet gedreht gedruckt werden, damit die Supportstrukturen nicht stören.
+		* die I2C-Verbindungen zwischen HB-UNI-SEN-BATT PCB und BME680 Breakout mit flexiblem Flachbandkabel
+	
 		
 ## Frequenztest des CC1101 RF Moduls
 
@@ -146,6 +152,7 @@
 ![pic](Images/Tindie_Pro_Mini_XL_Pro_1284P_LED.png)	
 
 - Brown-Out_Detektor des ATmega1284P  (BOD) ausschalten, siehe Einstellungen Arduino IDE unten unter Punkt **Benötigter Sketch**
+- Nach dem Aufbau und **vor** dem Einlöten der Sensoren den Ruhestrom mit [SleepTest_1284P](./SleepTest_1284P/SleepTest_1284P.ino) durchführen. Der gemessene Ruhestrom sollte < 10 uA betragen. Ist der gemessene Strom nach ein paar Sekunden höher, ist ein Bauteil defekt und muss ausgetauscht werden. Da das Auslöten immer schwierig ist, ist ein gesockelter Einbau zu empfehlen.
 	       
 
 ## Das angemeldete Gerät im RaspberryMatic WebUI
@@ -210,7 +217,8 @@
   	+ mache bitte regelmäßig ein Update mit 'git pull'
  -	enthalten ist auch das notwendige Addon '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)'
  -	den HB-UNI-Sensor1-AQ-BME680_KF Sensor findest Du unter './HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF'
-
+ 
+- alternativ kann vom Github [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) die ZIP-Datei HomeAutomation-master.zip heruntergeladen und auf dem lokalen Rechner ausgepackt werden. Bitte dann regelmäßig auf Github nach Updates schauen.
 
 - nach erfolgreicher Inbetriebnahme können die Debugausgaben im serial Monitor ausgeschaltet werden. Dazu bitte im Sketch HB-UNI-Sensor1-AQ-BME680_KF.ino auskommentieren:
 
@@ -224,7 +232,8 @@
 
 - als Taktfrequenz des ATmega1284P 8 MHz interner RC Oszillator einstellen (es gibt zur Zeit leider nur die 20 MHz Quarz Version bei Tindie)
 
-- der Sketch verwendet 55462 Bytes (42%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 2303 Bytes (14%) des dynamischen Speichers, 14081 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
+- der Sketch verwendet 56690 Bytes (43%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes.
+Globale Variablen verwenden 2130 Bytes (13%) des dynamischen Speichers, 14254 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
@@ -288,7 +297,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
 - Bitte dieses Addon 'hb-ep-devices-addon.tgz' herunterladen und vor dem Anlernen des HB-UNI-Sensor1-AQ-BME680 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
-- Minimal benötigte Version des Addons: 1.10
+- Minimal benötigte Version des Addons: 1.11
 
 ## Verringerung der Tx Sendeleistung
 
@@ -308,11 +317,14 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 		* die eingelegten Batterien vorübergehend entfernt werden und der Sensorstart mit einer Versorgung durch einen ISP Programmiergerät oder durch den FTDI Debugger erfolgt (OPERATING_VOLTAGE >= 3.3V)
 		* Flashen mit einem ISP Programmiergerät bei vorübergehend entfernten Batterien (OPERATING_VOLTAGE >= 3.3V)
 		* solange die durch das Kalman Filter online berechneten linearen Regressionskoeffizienten zur Kompensation der Einflüsse von Temperatur und absoluter Luftfeuchte noch nicht ausreichend konvergieren, wird dieser Nichtkonvergenz-Status durch Ausgabe des Werts 3.333 auf dem Datenpunkt AQ_LOG10 angezeigt.
-		* die oberen und unteren Referenzwerte AQ_GAS_RESISTANCE_MIN, AQ_GAS_RESISTANCE_MAX, AQ_COMP_GAS_RES_MIN und AQ_COMP_GAS_RES_MAX werden mit einem 'IIR Infinite Impulse Response'-Filter mit einer Abfall-/Anstiegsrate auf 10% in 4 Stunden angepasst, d.h. eine sehr starke Filterung (#define IIR_FILTER_COEFFICIENT_KF_UNSETTLED              0.0376494).
+		* die oberen und unteren Referenzwerte AQ_GAS_RESISTANCE_MIN, AQ_GAS_RESISTANCE_MAX, AQ_COMP_GAS_RES_MIN und AQ_COMP_GAS_RES_MAX werden mit einem 'IIR Infinite Impulse Response'-Filter mit einer Abfall-/Anstiegsrate auf 71% in 4 Stunden angepasst, d.h. eine sehr starke Filterung (#define IIR_FILTER_COEFFICIENT_KF_UNSETTLED              0.0376494).
 		* die Konvergenz wird alle 4 Stunden geprüft.
-		* die Konvergenz kann während dessen am Datenpunkt AQ_LEVEL beobachtet werde. Dort wird dann der Konvergenzgrad 0%..100% ausgegeben. Bei <15% ist eine ausreichende Konvergenz zum Übergang in die Phase 2 erreicht. Das Konvergenzkriterium wird alle 4 Stunden geprüft. Bei >15% Änderungerungen der Regressionskoeffizienten innerhalb von 4 Stunden (auch in den Phasen 2 und 3) wird der Nichtkonvergenzzustand eingenommen.
+		* die Konvergenz kann während dessen am Datenpunkt AQ_LEVEL beobachtet werde. Dort wird dann der Konvergenzgrad 0%..100% ausgegeben. Bei <10% ist eine ausreichende Konvergenz zum Übergang in die Phase 2 erreicht. Das Konvergenzkriterium wird alle 4 Stunden geprüft. Bei >10% Änderungerungen der Regressionskoeffizienten innerhalb von 4 Stunden (auch in den Phasen 2 und 3) wird der Nichtkonvergenzzustand eingenommen.
 	+ Phase 2: Das Kalman Filter ist ausreichend konvergiert. Der kompensierte logarithmische Luftgütewert wird als Datenpunkt AQ_LOG10 ausgegeben. Der lineare, nicht kompensierte Luftgütewert wird als Datenpunkt AQ_LEVEL ausgegeben. Für die ersten 48 Stunden nach dem Erreichen der ausreichenden Konvergenz des Kalman Filters werden die oberen und unteren Referenzwerte AQ_GAS_RESISTANCE_MIN, AQ_GAS_RESISTANCE_MAX, AQ_COMP_GAS_RES_MIN und AQ_COMP_GAS_RES_MAX werden mit einem 'IIR Infinite Impulse Response'-Filter mit einer Abfall-/Anstiegsrate auf 71% in 12 Stunden angepasst,  d.h. eine mittlere Filterung (#define IIR_FILTER_COEFFICIENT_KF_POST_SETTLED           0.0019009). Alle 4 Stunden werden die maximalen und minimalen Spitzenwerte zurückgesetzt.
-	+ Phase 3: Normalbetrieb, beginnt 48 Stunden nach dem letzten Erreichen  einer ausreichenden Konvergenz des Kalman Filters.  Die oberen und unteren Referenzwerte AQ_GAS_RESISTANCE_MIN, AQ_GAS_RESISTANCE_MAX, AQ_COMP_GAS_RES_MIN und AQ_COMP_GAS_RES_MAX werden mit einem 'IIR Infinite Impulse Response'-Filter mit einer Abfall-/Anstiegsrate auf 71% in 14 Tagen angepasst,  d.h. eine geringe Filterung (#define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0.999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter).
+    + Phase 3: Normalbetrieb, beginnt 48 Stunden nach dem letzten Erreichen  einer ausreichenden Konvergenz des Kalman Filters.  Die oberen und unteren Referenzwerte AQ_GAS_RESISTANCE_MIN, AQ_GAS_RESISTANCE_MAX, AQ_COMP_GAS_RES_MIN und AQ_COMP_GAS_RES_MAX werden mit einem 71%-'IIR Infinite Impulse Response'-Filter mit einer Abfall-/Anstiegsrate je nach Koeffizientenänderung der linearen Regressionsparameter innerhalb von 4 Stunden angepasst:
+        - Koeffizientenänderung >10%: 71%-IIR-Abfall-/Anstiegszeitkonstante von 4 Stunden
+        - Koeffizientenänderung zwischen 2% und 10%: lineare Interpolation der 71%-IIR-Abfall-/Anstiegszeitkonstante auf 71% zwischen 2 Wochen (2%) und 4 Stunden (10%)
+        - Koeffizientenänderung <2% 71%-IIR-Abfall-/Anstiegszeitkonstante von 2 Wochen
 	+ beispielhafte CCU-Historian Histogramme der Lernphasen sind abgespeichert unter
 	
       [Histogramme der Lernphasen](Kalman_Filter/ccu_historian_histograms)
@@ -339,7 +351,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - Die letzten EEPROM Daten werden bei einem Batteriewechsel oder/und einem RESET als aktuelle Parameter bzw. Variablen zurückgespeichert. Bedingung dafür ist, dass die VCC Betriebsspannung <= 3.3V ist.
 - Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset **NICHT** zurückgespeichert. Vor der Rückspeicherung wird geprüft, ob die Betriebsspannung kleiner als 3.3V ist. Bei einem Betrieb mit ISP Programmer oder FTDI Debugger ist die Betriebsspannung größer als 3.3V.
 - Bei einer Neuprogrammierung mit einem ISP Programmer wird immer eine neue Autokalibrierung eingeleitet, da dann die Betriebsspannung größer als 3.3V ist.
-- Ein Batteriesatz hält > 5 Monate (konkrete Erfahrungswerte stehen noch aus und werden später hier veröffentlicht). Wer die Batterielebensdauer verlängern will, kann statt 5 Messungen z.B. nur 2 Messungen in jeder Messperiode vornehmen. Dazu bitte in [sens_bme680_KF.h](sensors/sens_bme680_KF.h) den Parameter '#define AVG_COUNT                                        5' auf z.B. '#define AVG_COUNT                                        2' setzen. Dieselbe Änderung gegebenenfalls auch für die DEBUG Version in 'sens_bme680_KF_DEBUG.h'  durchführen! Der Stromverbrauch wird fast linear von der Anzahl der Heizperioden des BME680 Sensors innerhalb einer Messperiode bestimmt.
+- Ein Batteriesatz hält > 6 Monate (konkrete Erfahrungswerte stehen noch aus und werden später hier veröffentlicht). Wer die Batterielebensdauer verlängern will, kann statt 5 Messungen z.B. nur 2 Messungen in jeder Messperiode vornehmen. Dazu bitte in [sens_bme680_KF.h](sensors/sens_bme680_KF.h) den Parameter '#define AVG_COUNT                                        5' auf z.B. '#define AVG_COUNT                                        2' setzen. Dieselbe Änderung gegebenenfalls auch für die DEBUG Version in 'sens_bme680_KF_DEBUG.h'  durchführen! Der Stromverbrauch wird fast linear von der Anzahl der Heizperioden des BME680 Sensors innerhalb einer Messperiode bestimmt.
 
 ## Vergleich des Bosch BME680 Sensors mit Sensoren anderer Hersteller
 - Hier ist eine interessante [Publikation "Development of a Compact, IoT-Enabled Electronic
@@ -350,8 +362,9 @@ Nose for Breath Analysis"](https://www.mdpi.com/2079-9292/9/1/84/pdf) dazu zu fi
 - Der BME680 Sensor ist **nicht** empfindlich für (nur wenn auffällig)
 	+ Lösemittel des Pattex Klebers (Ethylacetat, Methycyclohexan)
 	+ .. wird fortgesetzt, bitte informiert Eure Erfahrungen per PN and mich. Danke!
-- Der BME680 Sensor ist empfindlich für (nur Auswahl)
+- Der BME680 Sensor reagiert sehr empfindlich auf (nur Auswahl)
 	+ Isopropanol
+	+ Schwefelwasserstoffgase
 	+ .. wird fortgesetzt, bitte informiert Eure Erfahrungen per PN and mich. Danke!
 
 ## Lizenz

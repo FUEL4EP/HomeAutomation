@@ -18,7 +18,7 @@ An autocalibration algorithm has been implemented in the code [sens_bme680_KF.h]
 ### gas_upper_limit = AQ_GAS_RESISTANCE_MAX in CCU Historian
 
 - gas_upper_limit is basically the min peak (largest) value of the so far measured gas resistances
-- As long as the currently measured gas resistance is lower than the gas_upper_limit,  gas_upper_limit is **decaying** every sampling cycle by a factor IIR_FILTER_COEFFICIENT
+- As long as the currently measured gas resistance is lower than the gas_upper_limit,  gas_upper_limit is **decaying** every sampling cycle by a factor IIR_FILTER_COEFFICIENT, e.g.
 
 >  #define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0,999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter
 <BR/><BR/>
@@ -36,7 +36,7 @@ An autocalibration algorithm has been implemented in the code [sens_bme680_KF.h]
 ### gas_lower_limit = AQ_GAS_RESISTANCE_MIN in CCU Historian
 
 - gas_lower_limit is basically the min peak value (smallest) of the so far measured gas resistances
-- As long as the currently measured gas resistance is larger than the gas_lower_limit,  gas_lower_limit is **increasing** every sampling cycle by a factor IIR_FILTER_COEFFICIENT
+- As long as the currently measured gas resistance is larger than the gas_lower_limit,  gas_lower_limit is **increasing** every sampling cycle by a factor IIR_FILTER_COEFFICIENT, e.g.
 
 >  #define IIR_FILTER_COEFFICIENT_KF_SETTLED                0.00006795212 // 1.0 - 0,999932047882471 ; Decay to 0.71 in about two weeks for a 4 min sampling period (in 5040 sampling periods); settled status of Kalman filter
 <BR/><BR/>
