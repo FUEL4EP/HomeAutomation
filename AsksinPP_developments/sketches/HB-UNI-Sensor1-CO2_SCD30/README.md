@@ -49,7 +49,7 @@ Da die Infrarotdiode des Sensirion SCD30 Moduls immer angeschaltet sein muss (si
 Ein wichtiges Entwicklungsziel war ein portabler CO2 Sensor, der nicht immer mit Netzspannung versorgt werden muss.
 Daher kann der HB-UNI-Sensor1-CO2_SCD30 Sensor auf drei Arten mit Strom versorgt werden:
 
-1. Akkubetrieb 2x 2400 mA AA NiMH Akkus und Step-Up Wandler auf 3.7V VCC Spannung. Damit kann der CO2 Sensor mehrere Tage ohne Netzspeisung betrieben werden.
+1. Akkubetrieb 2x 200 mA AA NiMH Akkus und Step-Up Wandler auf 3.7V VCC Spannung. Damit kann der CO2 Sensor mehrere Tage ohne Netzspeisung betrieben werden.
 2. Netzbetrieb mit 6V DC Eingang und Step-Down Wandler auf 3.8V VCC Spannung
 3. Solarunterstützung und -ladung mit 70 mm x 70 mm 3V 100 mA Solarpanel und Step-Up Wandler auf max. 3.9V VCC Spannung <br />(3.7x .. 3.9V je nach Sonneneinstrahlung).
 
@@ -171,6 +171,8 @@ Die verwendete Basisplatine ist z.B. beim Smartkram Onlineshop käuflich erwerbb
 
 Siehe schwarzer Strich oben rechts: **Hier Leiterbahn durchtrennen**. Damit sind die beiden Akkumulatoren von der VCC Versorgungsspannung getrennt.
 Für die Durchführung der gelben Ladeleitung vom Akkulademodul ist ein geeignetes Loch ganz oben rechts zu bohren (siehe auch Aufbaubilder).<br />
+
+Alternativ können auch die Platinen [HB-UNI-SEN-BATT_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP) oder [HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP) verwendet werden (siehe auch Hinweise dort). Die Auftrennung der VCC Leiterbahn ist dort vorgesehen. Auch das Löcherbohren für die Ladeleitung entfällt, da Stiftleisten verfügbar sind.
 
 ### Einstellung der Spannungen der Step-Up und Step-Down Wandler
 
@@ -297,6 +299,7 @@ Die daraus abgeleiteten Modifikationen und Ergänzungen sind:
   	+ mache bitte regelmäßig ein Update mit 'git pull'
  -	enthalten ist auch das notwendige Addon '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)'
  -	den HB-UNI-Sensor1-CO2_SCD30 Sensor findest Du unter './HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30'
+ -	alternativ kann vom Github [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) die ZIP-Datei HomeAutomation-master.zip heruntergeladen und auf dem lokalen Rechner ausgepackt werden. Bitte dann regelmäßig auf Github nach Updates schauen.
 
 
 **Update 08.12.2020:** Bitte im CCU3/RaspberryMatic WebUI sind unter 'Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen' die folgenden Parameter einstellen:
@@ -335,7 +338,8 @@ Im obigen Beispiel ADC0_FACTOR ist 3.509 die mit dem Voltmeter gemessene VCC Spa
 	- [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega328P
 
 	- [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version)
-		- wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega328P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
+	  - wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega328P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
+	- bitte danach den [SleepTest](https://github.com/TomMajor/SmartHome/blob/master/Info/Ruhestrom/SleepTest/SleepTest.ino) durchführen. Der gemessene Ruhestrom im Sleep-Modus sollte < 10 uA betragen. Ist der gemessene Strom nach ein paar Sekunden höher, ist ein Bauteil defekt und muss ausgetauscht werden. Da das Auslöten immer schwierig ist, ist ein Test mit einem gesockeltern Testtaufbau vorab zu empfehlen.
 
 ### Benötigte Arduino Libraries:
 
@@ -352,21 +356,24 @@ Im obigen Beispiel ADC0_FACTOR ist 3.509 die mit dem Voltmeter gemessene VCC Spa
 
 ### Speicherbedarf des Sketches:
 
-**Update 08.12.2020:** Der Sketch verwendet 23142 Bytes (75%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
-Globale Variablen verwenden 928 Bytes (45%) des dynamischen Speichers, 1120 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes. Diese Werte gelten für den eingeschalteten DEBUG Modus.<br/>
+**Update 08.12.2020:** Der Sketch verwendet 28670 Bytes (93%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
+Globale Variablen verwenden 1345 Bytes (65%) des dynamischen Speichers, 703 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
+Diese Werte gelten für den eingeschalteten DEBUG Modus.<br/>
 **Bitte nach der erfolgreichen Inbetriebnahme UNBEDINGT die Debugoption ausschalten:
 **
 > //#define NDEBUG   // uncomment in case of stability issues
 
-Nur bei ausgeschaltetem DEBUG Modus wird bei einem kritischen Akkuladezustand der Sensor in den Tiefschlaf versetzt!
-
+**Nur bei ausgeschaltetem DEBUG Modus wird bei einem kritischen Akkuladezustand der Sensor in den Tiefschlaf versetzt!
+**
 ### Benötigtes Addon auf CCUx/RaspberryMatic:
 
 **Update 08.12.2020:** **Vor** dem Anlernen des HB-UNI-Sensor1-CO2_SCD30 Sensors ist das Addon [ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf der CCUx/RaspberryMatic zu installieren. Dazu die 'hb-ep-devices-addon.tgz' von dort bitte herunterladen und als Zusatzsoftware in der CCU3/RaspberryMatic installieren. Die 'tgz'-Datei muss nicht unzipped werden!
 
+Die minimal benötigte Addon Version is 1.11.
+
 ### Verringerung der Tx Sendeleistung
 
-- nur Experten wird empfohlen, die Tx Sendeleistung zu verringern. Die Beschreibung ist [hier](./Reduction_of_Tx_RF_power/README.md).
+Nur Experten wird empfohlen, die Tx Sendeleistung zu verringern. Die Beschreibung ist [hier](./Reduction_of_Tx_RF_power/README.md).
 
 ### Hinweise zum reinen Netzbetrieb des HB-UNI-Sensor1-CO2_SCD30 Sensors
 
