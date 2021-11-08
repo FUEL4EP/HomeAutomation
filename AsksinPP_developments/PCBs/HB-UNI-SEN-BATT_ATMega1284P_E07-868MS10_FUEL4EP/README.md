@@ -64,7 +64,32 @@
     + einen Frequenztest. Hier der Frequenztest für einen ATmega 1284p : [FreqTest_1284P.ino](../Supplements/FreqTest_1284P/FreqTest_1284P.ino)
     + einen Leckagetest. Hier der Leckagetest für einen ATmega 1284p : [SleepTest_1284P.ino](../Supplements/SleepTest_1284P/SleepTest_1284P.ino)
         + der Leckagestrom im Sleepmode sollte < 10 uA betragen
-        
+
+### Passende AsksinPP Projekte von FUEL4EP
+   + [HB-UNI-Sensor1-AQ-BME680](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680)
+   + [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF)
+   + [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG)
+   + [HB-UNI-Sensor1-RAD-AL53](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-RAD-AL53)
+   + [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85)
+   
+### Notwendige Änderung der Betriebsspannungsmessung in Sketchen
+- da die Platine einen fest verdrahteten Spannungsteiler R7 und R8 für die Betriebsspannung / Akkuspannungsmessung verwendet, muss in Sketchen folgende Anpassung gegebenenfalls durchgeführt werden:
+
+- von bisher
+```
+// 1) Standard: tmBattery, UBatt = Betriebsspannung AVR
+#define BAT_SENSOR tmBattery
+```
+- nach
+```
+// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A0 (=pin 24), activation pin A1 (=pin 25) , Faktor = Rges/Rlow*1000, z.B. 141k/47k, Faktor (3*47k)/(1*47k)*1000 = 3000 (ATMega1284P)
+// start with Faktor = 3000
+// check in serial monitor the reported V2='accumulator voltage(MCU ADC) (x1000.0)' and compare with the reported V1='accumulator batteries voltage (x1000.0)'
+// calculate voltage correction factor V1/V2
+// calculate total factor = 3000 * V2/V1 = 3000 * 3141 / 3157 = 2985
+#define BAT_SENSOR tmBatteryResDiv<A0, A2, 2985> 
+```
+
 ### Passendes Gehäuse
 * Camdenboss CBRS01SWH und CBRS01VWH
 * oder [Gehäuse HB-UNI-SEN-BATT snap in V2 von wpatrick](https://www.thingiverse.com/thing:3540481) für 3D-Druck
