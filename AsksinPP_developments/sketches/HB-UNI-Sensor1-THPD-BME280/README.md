@@ -13,7 +13,7 @@ Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/med
 
 Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=65320&p=642213#p642213) zu finden. Bitte dort auch Fragen stellen.
 
-## Bitte Addon 'ep-hb-devices-addon' auf die Version 1.11 updaten
+## Bitte Addon 'ep-hb-devices-addon' auf die Version >= 1.11 updaten
 
 - Bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
 
@@ -76,7 +76,8 @@ Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, 
        + Reichelt [Bestellliste](https://www.reichelt.de/my/1882914
 )
            + Arduino Pro Mini, CC1101 Tranceiver, Batteriehalter und eventuell BME280 müssen separat bestellt werden
-           + Arduino Pro Mini un CC1101 Tranceiver sind gesockelt
+           + Arduino Pro Mini und CC1101 Tranceiver sind gesockelt
+       + oder Smartkram Webshop [HB-UNI-SEN-BATT](https://smartkram.de/produkt/bauteile-fuer-homematic-diy-projekt-thermometer-hydrometer/) 
 	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/)
 	+ 2x 10 kOhm I2C Abschlusswiderstände für SCL und SDA auf HB-UNI-SEN-BATT PCB einlöten
 	+ Bitte darauf achten, dass der Arduino Pro Mini die 3,3V/8MHz Version ist!

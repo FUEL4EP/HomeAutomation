@@ -33,15 +33,32 @@ Inzwischen gibt es auch dafür einen Sketch [HB-UNI-Sensor1-THPD-SHT85](https://
 - eine mögliche und von mir empfohlene Hardwarebasis sieht so aus:
 	+ Universalplatine für DIY-Bausätze von Alexander Reinert
 		* Github [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt)
-		* Bezugsquelle: [Smartkram WebShop](https://smartkram.de/produkt/universalplatine-fuer-diy-bausatze-von-alex-reinert/)
-    + Sensorgehäuse
+		    + direkt bei JLCPCB oder bei Alexander Reichert nachfragen
+		    + kommerzielle Bezugsquelle: [Smartkram WebShop](https://smartkram.de/produkt/universalplatine-fuer-diy-bausatze-von-alex-reinert/)
+		* oder alternativ [HB-UNI-SEN-BATT_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP)
+		  + der Abstandsfehler für einen Batteriehalter in [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt) ist korrigiert
+		  + als Batteriehalter wird der Keystone 2460 verwendet, ein Goobay 1xAA Batteeriehalter passt auch
+		  + statt des Tindie Pro Mini XL V2 bitte einen Arduino Pro Mini einsetzen, er passt auch, für den Tindie Pro Mini XL V2 müsste der Sketch angepasst werden
+		  + Bestellung direkt bei JLCPCB oder per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) anfragen
+	  * oder alternativ [HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP) mit einem Ebyte E07 868MS10 Funkmodul (rote Platine), das ein wenig teurer als das noname grüne CC1101 Funkmodul ist, aber weniger Ärger macht
+		  + der Abstandsfehler für einen Batteriehalter in [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt) ist korrigiert
+		  + als Batteriehalter wird der Keystone 2460 verwendet, ein Goobay 1xAA Batteeriehalter passt auch
+		  + statt des Tindie Pro Mini XL V2 bitte einen Arduino Pro Mini einsetzen, er passt auch, für den Tindie Pro Mini XL V2 müsste der Sketch angepasst werden
+		  + Bestellung direkt bei JLCPCB oder per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) anfragen				
+    * Sensorgehäuse
 	    * 3D-Druck [HB-UNI-SEN-BATT snap Gehaeuse und Deckel](https://www.thingiverse.com/thing:3512767)	auf Thingiverse
 	    * oder [fertiges Gehäuse](https://smartkram.de/produkt/sensorgehaeuse-passend-fuer-platine-von-alexander-reinert/) von Smartkram Webshop
-	+ Sensirion SHT75 Sensor
-		* Bezugsquelle: [Conrad](https://www.conrad.de/de/p/temperatursensoren-sht-75-humidity-temperature-sensor-1-8-rh-0-3-c-sbus-sil4-503493.html)
-	+ Bauteile [HB-UNI-SEN-BATT](https://smartkram.de/produkt/bauteile-fuer-homematic-diy-projekt-thermometer-hydrometer/) von Smartkram Webshop
-		* Das gelieferte BME280 Sensor Breakout wird durch den SHT75 Sensor ersetzt
-	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/), bitte geeignet abändern
+	+ Bauteile
+	    + Reichelt [Bestellliste](https://www.reichelt.de/my/1882914
+)
+           + Arduino Pro Mini, CC1101 Tranceiver, Batteriehalter und SHT75 müssen separat bestellt werden, den BME280 bitte weglassen
+
+	    + oder Smartkram Webshop [HB-UNI-SEN-BATT](https://smartkram.de/produkt/bauteile-fuer-homematic-diy-projekt-thermometer-hydrometer/). Der BME280 ist dann übrig :-(
+       + Arduino Pro Mini und CC1101 Tranceiver sind gesockelt
+       + Sensirion SHT75 Sensor
+	       + Bezugsquelle: [Conrad](https://www.conrad.de/de/p/temperatursensoren-sht-75-humidity-temperature-sensor-1-8-rh-0-3-c-sbus-sil4-503493.html)
+	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/), bitte geeignet anpassen
+	+ bitte darauf achten, dass der Arduino Pro Mini die 3,3V/8MHz Version ist
 	+ die Verbindungen zwischen HB-UNI-SEN-BATT PCB und SHT75 mit flexiblem Flachbandkabel ausführen
 	+ Schnittstelle des SHT75 Sensors zur MCU isst kein I2C. Details sind im [Datenblatt](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT7x_Datasheet.pdf) in dem Kapitel 2, Seite 4 zu finden. Notwendige Verbindungen sind:
 		* PCB SCL <-> SHT75 Pin 1
@@ -49,15 +66,21 @@ Inzwischen gibt es auch dafür einen Sketch [HB-UNI-Sensor1-THPD-SHT85](https://
 		* PCB VCC <-> SHT75 Pin 2
 		* PCB GND <-> SHT75 Pin 3
 	+ 1x 10 kOhm Abschlusswiderstand für SDA auf HB-UNI-SEN-BATT PCB einlöten
+	
+## Frequenztest des CC1101 RF Moduls
+
+- Bitte vor dem Aufspielen des eigentlichen Sketches HB-UNI-Sensor1-TH-SHT75 UNBEDINGT einen [Frequenztest ATMega328P](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) durchführen. Viele CC1101 Module lassen sich ohne diesen Frequenztest nicht anlernen!
+- Eine Beschreibung des Frequenztests ist [hier](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) zu finden.
 		
 ## Verringerung des Ruhestroms: [siehe auch Referenz von TomMajor](https://github.com/TomMajor/SmartHome/tree/master/Info/Ruhestrom)
 
-- Auf dem Arduino Pro Mini sollte der LDO Spannungsregler (die Stelle ist im Bild mit 1 markiert) sowie die Power-LED (2) entfernt werden, um den Ruhestrom wesentlich zu verringern.  
-- Weiterhin kann die zweite LED am Arduino Pin 13 (SCK) entfernt werden (3). Deren Einfluß auf den Ruhestrom ist kleiner als bei LDO und Power-LED, trotzdem kann es sich auf lange Sicht lohnen da diese bei jeder CC1101 Kommunikation für kurze Zeit aktiv ist, besonders im BurstDetector Mode.
+- auf dem Arduino Pro Mini sollte der LDO Spannungsregler (die Stelle ist im Bild mit 1 markiert) sowie die Power-LED (2) entfernt werden, um den Ruhestrom wesentlich zu verringern.  
+- weiterhin kann die zweite LED am Arduino Pin 13 (SCK) entfernt werden (3). Deren Einfluß auf den Ruhestrom ist kleiner als bei LDO und Power-LED, trotzdem kann es sich auf lange Sicht lohnen da diese bei jeder CC1101 Kommunikation für kurze Zeit aktiv ist, besonders im BurstDetector Mode.
 
 ![pic](Images/ProMini_LDO_LED.png)	
 
 - Brown-Out_Detektor des ATmega328P  (BOD) ausschalten, siehe Einstellungen Arduino IDE unten unter Punkt **Benötigter Sketch**
+- bitte danach den [SleepTest](https://github.com/TomMajor/SmartHome/blob/master/Info/Ruhestrom/SleepTest/SleepTest.ino) durchführen. Der gemessene Ruhestrom im Sleep-Modus sollte < 10 uA betragen. Ist der gemessene Strom nach ein paar Sekunden höher, ist ein Bauteil defekt und muss ausgetauscht werden. Da das Auslöten immer schwierig ist, ist ein gesockelter Einbau zu empfehlen.
 	       
 
 ## Das angemeldete Gerät im RaspberryMatic WebUI
@@ -67,7 +90,7 @@ Inzwischen gibt es auch dafür einen Sketch [HB-UNI-Sensor1-THPD-SHT85](https://
 
 ## Vor dem Aufspielen von Software
 
-- Bitte macht Euch zuerst mit den Grundlagen von AsksinPP [hier](https://asksinpp.de/Grundlagen/) vertraut.
+- bitte macht Euch zuerst mit den Grundlagen von AsksinPP [hier](https://asksinpp.de/Grundlagen/) vertraut.
 
 ## Bitte immer die aktuellste Version von AsksinPP nutzen
 
@@ -77,15 +100,15 @@ Inzwischen gibt es auch dafür einen Sketch [HB-UNI-Sensor1-THPD-SHT85](https://
 
 - Details sind gegebenenfalls weiter unten zu finden
 
-1. Bitte zuerst nochmals vergewissern, dass der verbaute Arduino Pro Mini ein 3,3V/8MHz Typ ist.
-2. Das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren.
-3. Für das Programmierern und Setzen der Fuses des ATmega328P ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
+1. bitte zuerst nochmals vergewissern, dass der verbaute Arduino Pro Mini ein 3,3V/8MHz Typ ist.
+2. das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren.
+3. für das Programmierern und Setzen der Fuses des ATmega328P ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
 4. Setzten der richtigen Fuses mit dem [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xFF  High Byte:0xD2  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
-5. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [FreqTest.ino Sketch](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
-6. Gegebenenfalls die Parameter cDEVICE_und cDEVICE_in [Device_SHT75.h](Device_SHT75.h) ändern. Jeder Sensor muss ein eineindeutiges cDEVICE_und cDEVICE haben!
-7. Die aktuelle Version des [HB-UNI-Sensor1-TH-SHT75](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75) Sketches herunterladen, siehe unten.
-8. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
-9. Dann den Sketch [HB-UNI-Sensor1-TH-SHT75.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75/HB-UNI-Sensor1-TH-SHT75.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
+5. dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [FreqTest.ino Sketch](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
+6. gegebenenfalls die Parameter cDEVICE_und cDEVICE_in [Device_SHT75.h](Device_SHT75.h) ändern. Jeder Sensor muss ein eineindeutiges cDEVICE_und cDEVICE haben!
+7. die aktuelle Version des [HB-UNI-Sensor1-TH-SHT75](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75) Sketches herunterladen, siehe unten.
+8. die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
+9. dann den Sketch [HB-UNI-Sensor1-TH-SHT75.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75/HB-UNI-Sensor1-TH-SHT75.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
 10. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
 11. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
 
@@ -106,6 +129,8 @@ Inzwischen gibt es auch dafür einen Sketch [HB-UNI-Sensor1-THPD-SHT85](https://
   	+ mache bitte regelmäßig ein Update mit 'git pull'
  -	enthalten ist auch das notwendige Addon '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)'
  -	den HB-UNI-Sensor1-TH-SHT75 Sensor findest Du unter './HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75'
+ 
+- alternativ kann vom Github [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) die ZIP-Datei HomeAutomation-master.zip heruntergeladen und auf dem lokalen Rechner ausgepackt werden. Bitte dann regelmäßig auf Github nach Updates schauen.
 
 - nach erfolgreicher Inbetriebnahme können die Debugausgaben im serial Monitor ausgeschaltet werden. Dazu bitte im Sketch HB-UNI-Sensor1-TH-SHT75.ino auskommentieren:
 
@@ -116,7 +141,8 @@ Inzwischen gibt es auch dafür einen Sketch [HB-UNI-Sensor1-THPD-SHT85](https://
 > //#define NDEBUG
 
 - als Taktfrequenz des ATmega328P 8 MHz @ 3.3V externer Quarz einstellen
-- Der Sketch verwendet 24616 Bytes (80%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes. Globale Variablen verwenden 1081 Bytes (52%) des dynamischen Speichers, 967 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
+- Der Sketch verwendet 24384 Bytes (79%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
+Globale Variablen verwenden 1046 Bytes (51%) des dynamischen Speichers, 1002 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega328P
 
@@ -147,7 +173,8 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
 - bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-Sensor1-TH-SHT75 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
-- Bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
+- bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
+- die minimale Version des Addons ist 1.11.
 
 ## Verringerung der Tx Sendeleistung
 
