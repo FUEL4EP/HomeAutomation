@@ -73,7 +73,7 @@ Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, 
 	    * 3D-Druck [HB-UNI-SEN-BATT snap Gehaeuse und Deckel](https://www.thingiverse.com/thing:3512767)	auf Thingiverse
 	    * oder [fertiges Gehäuse](https://smartkram.de/produkt/sensorgehaeuse-passend-fuer-platine-von-alexander-reinert/) von Smartkram Webshop
 	+ Bauteile 
-       + Reichelt [Bestelliste](https://www.reichelt.de/my/1882914
+       + Reichelt [Bestellliste](https://www.reichelt.de/my/1882914
 )
            + Arduino Pro Mini, CC1101 Tranceiver, Batteriehalter und eventuell BME280 müssen separat bestellt werden
            + Arduino Pro Mini un CC1101 Tranceiver sind gesockelt
