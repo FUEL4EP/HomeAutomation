@@ -89,6 +89,9 @@
 // calculate total factor = 3000 * V2/V1 = 3000 * 3141 / 3157 = 2985
 #define BAT_SENSOR tmBatteryResDiv<A0, A2, 2985> 
 ```
+### Anschluss eines FTDI Debuggers
+
+- zum Anschluss eines FTDI Debuggers an die 6-polige Stiftleiste J12 bitte ein [6 Pin Dupontkabel 2.54mm Buchse-Buchse 20 cm](https://www.roboter-bausatz.de/p/6-pin-dupontkabel-2.54mm-buchse-buchse-20-cm) verwenden
 
 ### Passendes Gehäuse
 * Camdenboss CBRS01SWH und CBRS01VWH

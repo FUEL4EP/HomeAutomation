@@ -5,25 +5,29 @@
 ![pic](Images/AL53_shielded_with_copper_foil.png)
 
 ## Inhaltsverzeichnis
-  - [Neuerungen](#neuerungen) 
-  - [Einsteiger](#einsteiger) 
-  - [Hinweise](#hinweise) 
-  - [Wichtige Hinweise, unbedingt beachten!](#wichtige-hinweise-unbedingt-beachten) 
-  - [Eigenschaften](#eigenschaften) 
-  - [Bilder](#bilder) 
-  - [Schaltplan](#schaltplan) 
-  - [Platine](#platine) 
-  - [Gehäuse](#gehäuse) 
-  - [Aufbau](#aufbau) 
-  - [Software Installation](#software-installation) 
-  - [Konfiguration](#konfiguration) 
-  - [Kompilation, Hochladen und erste Inbetriebnahme](#kompilation-hochladen-und-erste-inbetriebnahme) 
-  - [Kalibrierung](#kalibrierung) 
-  - [Anmelden an der Zentrale](#anmelden-an-der-zentrale) 
-  - [Diverse Infos und Links](#diverse-infos-und-links) 
-  - [Akkulebensdauer](#akkulebensdauer) 
-  - [Unterstuetzung, Fragen und Antworten](#unterstuetzung-fragen-und-antworten) 
-  - [Disclaimer](#disclaimer) 
+  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
+  - [Neuerungen](#neuerungen)
+  - [Einsteiger](#einsteiger)
+  - [Hinweise](#hinweise)
+  - [Wichtige Hinweise, unbedingt beachten!](#wichtige-hinweise-unbedingt-beachten)
+  - [Eigenschaften](#eigenschaften)
+  - [Bilder](#bilder)
+  - [Experimente](#experimente)
+  - [Schaltplan](#schaltplan)
+  - [Platine](#platine)
+  - [Gehäuse](#gehäuse)
+  - [Aufbau](#aufbau)
+  - [Software Installation](#software-installation)
+  - [Konfiguration](#konfiguration)
+  - [Kompilation, Hochladen und erste Inbetriebnahme](#kompilation-hochladen-und-erste-inbetriebnahme)
+  - [Kalibrierung](#kalibrierung)
+  - [Anmelden an der Zentrale](#anmelden-an-der-zentrale)
+  - [Verringerung der Tx Sendeleistung](#verringerung-der-tx-sendeleistung)
+  - [Zurücksetzen der statistischen Zähler](#zurücksetzen-der-statistischen-zähler)
+  - [Diverse Infos und Links (unsortiert)](#diverse-infos-und-links-unsortiert)
+  - [Akkulebensdauer](#akkulebensdauer)
+  - [Unterstützung, Fragen und Antworten](#unterstützung-fragen-und-antworten)
+  - [Disclaimer](#disclaimer)
   - [Lizenz](#lizenz)
 
 ## Neuerungen
@@ -83,6 +87,7 @@
     + der Datenpunkt HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL signalisiert, wenn die aktuelle Anzahl von Zählimpulsen den als Geräteparameter eingestellten Schwellwert 'Alarmwert Zählimpulse pro Messintervall' überschreitet
     + der Datenpunkt HB_ALARM_MOVING_AVERAGE signalisiert, wenn der aktuelle gleitende Mittelwert von Zählimpulsen den als Geräteparameter eingestellten Schwellwert 'Alarmwert Zählimpulse gleitender Mittelwert' überschreitet
     + eine Überschreitung der Grenzwerte löst in der Zentrale einen Alarm aus
+- die interne statistische Datenbasis, die z.B. für die Bildung des gleitenden Mittelwerts benutzt wird, kann periodisch per Kanalparameter zurückgesetzt werden (nach 1..65535 Messintervalle) oder für immer laufen (Eingabe 0: für immer)
 
 ## Bilder
 
@@ -121,13 +126,28 @@
 
 ![pic](./Images/potassium_fertilizer.png)
 
-Hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x erhöhten Wert:
+- hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x erhöhten Wert:
 
 ![pic](./Images/potassium_fertilizer_moving_average_ramp_up.png)
+
+- Auslösen von einem Alarm bei Überschreitung eines im WebUI setzbaren Grenzwerts für die Zählimpulse pro Messintervall. Gesetzt war ein Grenzwert von 55 cpi:
+
+![pic](./Images/Alarm_counts_per_measurement_interval_above_threshold_1.png)
+
+- Auslösen von einem Alarm bei Überschreitung eines im WebUI setzbaren Grenzwerts für den gleitenden Mittelwert. Gesetzt war ein Grenzwert von 23.7 cpi. Gemessen wurde eine Kaliumchloridsalz-Probe:
+
+![pic](./Images/Alarm_moving_average_above_threshold_1.png)
+
+- und die zugehörige Alarm Statusmeldung:
+
+![pic](./Images/Alarm_moving_average_above_threshold_2.png)
+
+## Experimente
 
 - als Nächstes werde ich eine Radonmessung mit dem Dünger machen:
     - [Uran im Boden und im Wasser ? – Testen Sie Ihr Düngemittel !](http://www.opengeiger.de/DuengerRadonTest.pdf)
 - aktuell läuft eine Messung mit Kaliumchlorid in Lebensmittelqualität (E508), das aufgrund seines natürlichen K-40 Gehalts ein Beta-Strahler ist
+- noch nicht verfügbar, wird später ergänzt
 
 ## Schaltplan
 
@@ -143,7 +163,7 @@ Hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x e
 
 ![pic](PCB/HB-UNI-SEN-BATT/Modifications_HB-UNI-SEN-BATT.png)
 
-- oder auch alternativ [HB-UNI-SEN-BATT_FUEL4EP](../../PCBs/HB-UNI-SEN-BATT_FUEL4EP) oder [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) (siehe auch Hinweise dort)
+- oder auch alternativ [HB-UNI-SEN-BATT_FUEL4EP](../../PCBs/HB-UNI-SEN-BATT_FUEL4EP) oder [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) (siehe auch Hinweise dort). Der manuelle Bestückungsaufwand für HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP ist nur noch minimal.
 
 
 ## Gehäuse
@@ -392,6 +412,17 @@ Hier das Hochlaufen des gleitenden Mittelwerts über eine Woche auf den ca. 3x e
 ## Verringerung der Tx Sendeleistung
 
 - nur Experten wird empfohlen, die Tx Sendeleistung zu verringern. Die Beschreibung ist [hier](./Reduction_of_Tx_RF_power/README.md).
+
+## Zurücksetzen der statistischen Zähler
+
+- Alle Sensor internen statistischen Zähler können zurückgesetzt werden
+    + entweder durch Drücken des RESET-Knopfs des ATMega1284Ps
+    + oder im WebUI:
+    
+    ![pic](Images/Reset_of_statistical_counters_in_WebUI.png)
+
+    + Eingabe von 0: Die statistischen Zähler laufen immer und werden nicht zurückgesetzt
+    + Eingabe 1..65535: Die statistischen Zähler werden nach der eingegebenen Anzahl von Messintervallen (Standard: 10min) periodisch zurückgesetzt
 
 ## Diverse Infos und Links (unsortiert)
 
