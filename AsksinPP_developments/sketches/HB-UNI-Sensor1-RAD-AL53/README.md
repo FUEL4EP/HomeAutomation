@@ -134,6 +134,10 @@
 
 ![pic](./Images/Alarm_counts_per_measurement_interval_above_threshold_1.png)
 
+- und die zugehörige Alarm Statusmeldung(en):
+
+![pic](./Images/Alarm_counts_per_measurement_interval_above_threshold_2.png)
+
 - Auslösen von einem Alarm bei Überschreitung eines im WebUI setzbaren Grenzwerts für den gleitenden Mittelwert. Gesetzt war ein Grenzwert von 23.7 cpi. Gemessen wurde eine Kaliumchloridsalz-Probe:
 
 ![pic](./Images/Alarm_moving_average_above_threshold_1.png)
