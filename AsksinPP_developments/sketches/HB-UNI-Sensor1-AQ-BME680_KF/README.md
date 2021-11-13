@@ -357,6 +357,9 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - Hier ist eine interessante [Publikation "Development of a Compact, IoT-Enabled Electronic
 Nose for Breath Analysis"](https://www.mdpi.com/2079-9292/9/1/84/pdf) dazu zu finden.
 
+## Aufstellung des Sensors
+- Nach dem Einlernen des Kalman Filters sollte der Sensor an einem schattigen Ort aufgestellt werden, so dass er keiner direkten Sonnenstrahlung ausgesetzt ist.
+
 ## Erfahrungen zur Geruchsempfindlichkeit des BME680 Sensors
 
 - Der BME680 Sensor ist **nicht** empfindlich für (nur wenn auffällig)
