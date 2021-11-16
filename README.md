@@ -28,7 +28,7 @@
 
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
-- bitte als Zusatzsoftware auf der CCU3/RaspberryMatic installieren
+- bitte die .tgz Datei als Zusatzsoftware auf der CCU3/RaspberryMatic installieren
 
 <br/>
 
@@ -49,6 +49,7 @@
 | [HB-UNI-SEN-BATT_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP) | AsksinPP Platine basierend auf [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) | [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP/PNGs/HB-UNI-SEN-BATT_FUEL4EP_top_view.png)|
 | [HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP) | AsksinPP Platine basierend auf<br/> [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)<br/> und [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf)| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP/PNGs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP_top_view.png)|
 | [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) | AsksinPP Platine mit SMD Bestückung:<br/> ATMega1284P <br/>[eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf)<br/>optionalem Aufwärtwandler TPS61221<br/>[optionalem e-Paper Waveshare 1,54 Zoll](https://www.waveshare.com/wiki/1.54inch_e-Paper_Module)| [3D Ansicht 1](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_top_view.png)<br/>[3D Ansicht 2](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_PCB_KiCAD_with_epaper_option.png)|
+| [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP) | AsksinPP Platine mit SMD Bestückung:<br/> ATMega1284P <br/>[eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf)<br/>optionalem Aufwärtwandler TPS61221<br/>[optionalem e-Paper Waveshare 1,54 Zoll](https://www.waveshare.com/wiki/1.54inch_e-Paper_Module)<br/>optionalen 2x 2Mbit FRAM MB85RS2MTPF| [3D Ansicht 1](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP/PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_top_view.png)<br/>[3D Ansicht 2](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP/PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB_KiCAD_with_epaper_option.png)|
 
 <br/>
 
@@ -56,6 +57,7 @@
 
 - Herunterladen des Sammelrepositories in ein lokales Zielverzeichnis mit dem Kommando:
 	+	git clone https://github.com/FUEL4EP/HomeAutomation.git
+	+	alternativ kann vom Github [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) die ZIP-Datei HomeAutomation-master.zip heruntergeladen und auf dem lokalen Rechner ausgepackt werden. Bitte dann regelmäßig auf Github nach Updates schauen.
 - alle zu einem Sensor <Sensorname\> gehörenden Installationsdaten stehen dann unter
 	+ HomeAutomation/AsksinPP_developments/sketches/<Sensorname\>
 - der Sensor Sketch
@@ -67,6 +69,7 @@
 
 - Herunterladen des Sammelrepositories in ein lokales Zielverzeichnis mit dem Kommando:
 	+	git clone https://github.com/FUEL4EP/HomeAutomation.git
+	+	alternativ kann vom Github [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) die ZIP-Datei HomeAutomation-master.zip heruntergeladen und auf dem lokalen Rechner ausgepackt werden. Bitte dann regelmäßig auf Github nach Updates schauen.
 - bereitgestellte Bibliotheken sind als ganze Verzeichnisse von HomeAutomation/AsksinPP_developments/libraries in das lokale Bibliotheksverzeichnis der Arduino IDE Entwicklungsumgebung zu kopieren
 <br/>
 

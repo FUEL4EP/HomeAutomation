@@ -56,6 +56,12 @@ K available e.g. at Amazon
 F https://www.olimex.com/Products/Breadboarding/BB-PWR-3608/resources/MT3608.pdf
 $ENDCMP
 #
+$CMP MB85RS2MTPF-G-JNERE2
+D Memory FRAM 2 MBit (256 K ×  8) Bit SPI MB85RS2MT
+K SPI FRAM 3.3V
+F https://www.fujitsu.com/us/Images/MB85RS2MT-DS501-00023-1v0-E.pdf
+$ENDCMP
+#
 $CMP MT3608_step_up
 D https://chips-and-more.com/cm/pdf/K3608.pdf
 K available e.g. at Amazon
@@ -65,6 +71,12 @@ $ENDCMP
 $CMP PSU_PS60-W1V24
 D power supply 24V 2.5A
 F https://www.sanpupower.com/wp-content/uploads/2018/09/PS60-W1V.pdf
+$ENDCMP
+#
+$CMP Sensirion_SCD41
+D CO2 Sensor
+K CO2 Sensor Sensirion Photoacoustic sensor
+F https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/9.5_CO2/Sensirion_CO2_Sensors_SCD40_SCD41_Datasheet.pdf
 $ENDCMP
 #
 $CMP TPS61221_step_up_3.3V
