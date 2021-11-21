@@ -1,0 +1,10 @@
+** Drc report for /home/ewald/Arduino/PCBs/HB-UNI-SenAct-4-4-SC_DS/HB-UNI-SenAct-4-4-SC_DS_SZ_PCB.kicad_pcb **
+** Created on 2021-11-21 09:48:55 **
+
+** Found 1 DRC errors **
+ErrType(46): Footprint hat keinen Sperrbereich definiert
+    @(40.386 mm, 20.066 mm): Footprint LOGO1 auf F.Cu
+
+** Found 0 unconnected pads **
+
+** End of Report **

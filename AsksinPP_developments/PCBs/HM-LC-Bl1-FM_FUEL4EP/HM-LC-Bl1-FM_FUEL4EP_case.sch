@@ -1,0 +1,684 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "HM-LC-Bl1-FM_FUEL4EP"
+Date "2021-10-01"
+Rev "1.0"
+Comp "FUEL4EP"
+Comment1 "24V Polwendeaktor für VELUX Rolladen AsksinPP Gehäusebauteile"
+Comment2 "Creative Commons License, non-commercial"
+Comment3 "Vorsicht 230V: Nutzung auf eigene Gefahr"
+Comment4 "Nur für ausgebildete Elektofachleute"
+$EndDescr
+$Comp
+L Graphic:Logo_Open_Hardware_Small LOGO1
+U 1 1 615DEE46
+P 6500 7350
+F 0 "LOGO1" H 6500 7625 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Small" H 6500 7125 50  0001 C CNN
+F 2 "FUEL4EP:CC-BY-ND-SA" H 6500 7350 50  0001 C CNN
+F 3 "~" H 6500 7350 50  0001 C CNN
+	1    6500 7350
+	1    0    0    -1  
+$EndComp
+Text Notes 1775 2650 2    60   ~ 0
+4x AA NiMH\n 2700mA  accu\nin battery holder\n
+$Comp
+L Motor:Motor_DC M1
+U 1 1 617CA7E1
+P 9425 4725
+F 0 "M1" H 9250 4425 50  0000 L CNN
+F 1 "24V Velux Motor" V 9625 4350 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 9425 4635 50  0001 C CNN
+F 3 "~" H 9425 4635 50  0001 C CNN
+	1    9425 4725
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D6
+U 1 1 617CBF2C
+P 9550 5800
+F 0 "D6" V 9675 5725 50  0000 C CNN
+F 1 "rot" H 9500 5900 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 9550 5800 50  0001 C CNN
+F 3 "~" H 9550 5800 50  0001 C CNN
+	1    9550 5800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D5
+U 1 1 617D818F
+P 9250 5800
+F 0 "D5" V 9125 5875 50  0000 C CNN
+F 1 "grün" H 9300 5700 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 9250 5800 50  0001 C CNN
+F 3 "~" H 9250 5800 50  0001 C CNN
+	1    9250 5800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 618DE3FF
+P 4300 6250
+F 0 "D2" V 4339 6132 50  0000 R CNN
+F 1 "rot" V 4248 6132 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 4300 6250 50  0001 C CNN
+F 3 "~" H 4300 6250 50  0001 C CNN
+	1    4300 6250
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:LED D3
+U 1 1 618F0889
+P 4950 6250
+F 0 "D3" V 4989 6132 50  0000 R CNN
+F 1 "grün" V 4898 6132 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 4950 6250 50  0001 C CNN
+F 3 "~" H 4950 6250 50  0001 C CNN
+	1    4950 6250
+	1    0    0    1   
+$EndComp
+$Comp
+L FUEL4EP:PSU_PS60-W1V24 Module1
+U 1 1 617757CE
+P 8500 725
+F 0 "Module1" V 8675 975 60  0000 C CNN
+F 1 "PSU_PS60-W1V24" V 8425 300 60  0000 C CNN
+F 2 "FUEL4EP:PSU_PS60-W1V24" H 8995 -335 60  0001 C CNN
+F 3 "https://www.sanpupower.com/wp-content/uploads/2018/09/PS60-W1V.pdf" H 8995 -335 60  0001 C CNN
+	1    8500 725 
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 6194D1D7
+P 875 950
+F 0 "BT1" H 993 1046 50  0000 L CNN
+F 1 "2700mAh NiMH acccucell" H 993 955 50  0000 L CNN
+F 2 "" V 875 1010 50  0001 C CNN
+F 3 "~" V 875 1010 50  0001 C CNN
+	1    875  950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT2
+U 1 1 6194DAA8
+P 875 1325
+F 0 "BT2" H 993 1421 50  0000 L CNN
+F 1 "2700mAh NiMH acccucell" H 993 1330 50  0000 L CNN
+F 2 "" V 875 1385 50  0001 C CNN
+F 3 "~" V 875 1385 50  0001 C CNN
+	1    875  1325
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT3
+U 1 1 6194E236
+P 875 1700
+F 0 "BT3" H 993 1796 50  0000 L CNN
+F 1 "2700mAh NiMH acccucell" H 993 1705 50  0000 L CNN
+F 2 "" V 875 1760 50  0001 C CNN
+F 3 "~" V 875 1760 50  0001 C CNN
+	1    875  1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT4
+U 1 1 6194E845
+P 875 2075
+F 0 "BT4" H 993 2171 50  0000 L CNN
+F 1 "2700mAh NiMH acccucell" H 993 2080 50  0000 L CNN
+F 2 "" V 875 2135 50  0001 C CNN
+F 3 "~" V 875 2135 50  0001 C CNN
+	1    875  2075
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW1
+U 1 1 6194ED42
+P 2000 3275
+F 0 "SW1" V 1954 3423 50  0000 L CNN
+F 1 "Down Button" V 2045 3423 50  0000 L CNN
+F 2 "" H 2000 3475 50  0001 C CNN
+F 3 "~" H 2000 3475 50  0001 C CNN
+	1    2000 3275
+	0    1    1    0   
+$EndComp
+$Comp
+L Switch:SW_Push SW2
+U 1 1 6194F2D4
+P 2000 3925
+F 0 "SW2" V 1954 4073 50  0000 L CNN
+F 1 "Down Button" V 2045 4073 50  0000 L CNN
+F 2 "" H 2000 4125 50  0001 C CNN
+F 3 "~" H 2000 4125 50  0001 C CNN
+	1    2000 3925
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED_Dual_AAC D1
+U 1 1 6194FE2A
+P 2250 4675
+F 0 "D1" H 2250 5100 50  0000 C CNN
+F 1 "Dual LED" H 2250 5009 50  0000 C CNN
+F 2 "" H 2250 4675 50  0001 C CNN
+F 3 "~" H 2250 4675 50  0001 C CNN
+	1    2250 4675
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW3
+U 1 1 61950652
+P 2000 5775
+F 0 "SW3" V 1954 5923 50  0000 L CNN
+F 1 "Config Button" V 2045 5923 50  0000 L CNN
+F 2 "" H 2000 5975 50  0001 C CNN
+F 3 "~" H 2000 5975 50  0001 C CNN
+	1    2000 5775
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D4
+U 1 1 619521F0
+P 5675 6250
+F 0 "D4" V 5714 6132 50  0000 R CNN
+F 1 "gelb" V 5623 6132 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 5675 6250 50  0001 C CNN
+F 3 "~" H 5675 6250 50  0001 C CNN
+	1    5675 6250
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D7
+U 1 1 61955391
+P 9625 3950
+F 0 "D7" V 9725 3900 50  0000 R CNN
+F 1 "blau" H 9700 4075 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 9625 3950 50  0001 C CNN
+F 3 "~" H 9625 3950 50  0001 C CNN
+	1    9625 3950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L FUEL4EP:1_channel_relay_module Module2
+U 1 1 619589FA
+P 9075 2300
+F 0 "Module2" H 9825 1469 60  0000 C CNN
+F 1 "230V power supply relais" H 9825 1363 60  0000 C CNN
+F 2 "" H 9025 2630 60  0001 C CNN
+F 3 "https://www.mcucity.com/product/2413/12v-1-2-4-8-channel-12v-relay-module-optocoupler-isolation-support-hgh-and-low-level-trigger" H 9025 2630 60  0001 C CNN
+	1    9075 2300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:Fuse F1
+U 1 1 6195C121
+P 6225 2150
+F 0 "F1" H 6165 2104 50  0000 R CNN
+F 1 "1A fast" H 6165 2195 50  0000 R CNN
+F 2 "" V 6155 2150 50  0001 C CNN
+F 3 "~" H 6225 2150 50  0001 C CNN
+	1    6225 2150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	875  1050 875  1125
+Wire Wire Line
+	875  1425 875  1500
+Wire Wire Line
+	875  1800 875  1875
+$Comp
+L Connector:Conn_01x02_Male J6
+U 1 1 619754A5
+P 2650 1500
+F 0 "J6" H 2622 1382 50  0000 R CNN
+F 1 "Conn_01x02_Male" H 2622 1473 50  0000 R CNN
+F 2 "" H 2650 1500 50  0001 C CNN
+F 3 "~" H 2650 1500 50  0001 C CNN
+	1    2650 1500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	875  750  2050 750 
+Wire Wire Line
+	875  2175 2050 2175
+Wire Wire Line
+	2050 2175 2050 1500
+Wire Wire Line
+	2050 1500 2450 1500
+Wire Wire Line
+	2050 750  2050 1400
+Wire Wire Line
+	2050 1400 2450 1400
+Wire Notes Line
+	675  2325 675  625 
+Wire Notes Line
+	675  625  2175 625 
+Wire Notes Line
+	2175 625  2175 2325
+Wire Notes Line
+	2175 2325 675  2325
+$Comp
+L Connector:Conn_01x02_Male J1
+U 1 1 6198640A
+P 1300 3325
+F 0 "J1" H 1273 3207 50  0000 R CNN
+F 1 "Down button" H 1273 3298 50  0000 R CNN
+F 2 "" H 1300 3325 50  0001 C CNN
+F 3 "~" H 1300 3325 50  0001 C CNN
+	1    1300 3325
+	1    0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J2
+U 1 1 61986D4D
+P 1300 4000
+F 0 "J2" H 1273 3882 50  0000 R CNN
+F 1 "Up Button" H 1273 3973 50  0000 R CNN
+F 2 "" H 1300 4000 50  0001 C CNN
+F 3 "~" H 1300 4000 50  0001 C CNN
+	1    1300 4000
+	1    0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x03_Male J3
+U 1 1 61987A45
+P 1300 4875
+F 0 "J3" H 1250 4825 50  0000 R CNN
+F 1 "Dual LED" H 1250 4925 50  0000 R CNN
+F 2 "" H 1300 4875 50  0001 C CNN
+F 3 "~" H 1300 4875 50  0001 C CNN
+	1    1300 4875
+	1    0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J4
+U 1 1 61988560
+P 1300 5850
+F 0 "J4" H 1273 5732 50  0000 R CNN
+F 1 "Config Button" H 1273 5823 50  0000 R CNN
+F 2 "" H 1300 5850 50  0001 C CNN
+F 3 "~" H 1300 5850 50  0001 C CNN
+	1    1300 5850
+	1    0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J7
+U 1 1 6198916C
+P 4225 6775
+F 0 "J7" V 4050 6725 50  0000 L CNN
+F 1 "LED rot" V 4150 6625 50  0000 L CNN
+F 2 "" H 4225 6775 50  0001 C CNN
+F 3 "~" H 4225 6775 50  0001 C CNN
+	1    4225 6775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J8
+U 1 1 61989820
+P 4900 6775
+F 0 "J8" V 4725 6800 50  0000 R CNN
+F 1 "LED grün" V 4825 6900 50  0000 R CNN
+F 2 "" H 4900 6775 50  0001 C CNN
+F 3 "~" H 4900 6775 50  0001 C CNN
+	1    4900 6775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J9
+U 1 1 6198A0AA
+P 5625 6775
+F 0 "J9" V 5450 6775 50  0000 R CNN
+F 1 "LED gelb" V 5550 6875 50  0000 R CNN
+F 2 "" H 5625 6775 50  0001 C CNN
+F 3 "~" H 5625 6775 50  0001 C CNN
+	1    5625 6775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J13
+U 1 1 6198BCD3
+P 10200 4850
+F 0 "J13" H 10125 4725 50  0000 R CNN
+F 1 "Velux Motor" H 10125 4850 50  0000 R CNN
+F 2 "" H 10200 4850 50  0001 C CNN
+F 3 "~" H 10200 4850 50  0001 C CNN
+	1    10200 4850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J14
+U 1 1 6198C3CD
+P 10200 5850
+F 0 "J14" H 10100 5750 50  0000 R CNN
+F 1 "Motor direction LEDs" H 10100 5850 50  0000 R CNN
+F 2 "" H 10200 5850 50  0001 C CNN
+F 3 "~" H 10200 5850 50  0001 C CNN
+	1    10200 5850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J15
+U 1 1 6198CCF9
+P 10200 4000
+F 0 "J15" H 10172 3882 50  0000 R CNN
+F 1 "charge indication LED" H 10172 3973 50  0000 R CNN
+F 2 "" H 10200 4000 50  0001 C CNN
+F 3 "~" H 10200 4000 50  0001 C CNN
+	1    10200 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x03_Male J12
+U 1 1 6198D647
+P 10200 2850
+F 0 "J12" H 10172 2782 50  0000 R CNN
+F 1 "230V supply relais" H 10172 2873 50  0000 R CNN
+F 2 "" H 10200 2850 50  0001 C CNN
+F 3 "~" H 10200 2850 50  0001 C CNN
+	1    10200 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J11
+U 1 1 6198F27B
+P 10200 1625
+F 0 "J11" H 10172 1507 50  0000 R CNN
+F 1 "24V PSU" H 10172 1598 50  0000 R CNN
+F 2 "" H 10200 1625 50  0001 C CNN
+F 3 "~" H 10200 1625 50  0001 C CNN
+	1    10200 1625
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Fuse F2
+U 1 1 61A3A1F0
+P 9375 1525
+F 0 "F2" V 9178 1525 50  0000 C CNN
+F 1 "3A fast" V 9269 1525 50  0000 C CNN
+F 2 "" V 9305 1525 50  0001 C CNN
+F 3 "~" H 9375 1525 50  0001 C CNN
+	1    9375 1525
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1500 3225 1650 3225
+Wire Wire Line
+	1650 3225 1650 3075
+Wire Wire Line
+	1650 3075 2000 3075
+Wire Wire Line
+	1500 3325 1650 3325
+Wire Wire Line
+	1650 3325 1650 3475
+Wire Wire Line
+	1650 3475 2000 3475
+Wire Wire Line
+	1625 3900 1625 3725
+Wire Wire Line
+	1625 3725 2000 3725
+Wire Wire Line
+	1500 4000 1625 4000
+Wire Wire Line
+	1625 4000 1625 4125
+Wire Wire Line
+	1625 4125 2000 4125
+Wire Wire Line
+	1500 3900 1625 3900
+Wire Wire Line
+	1950 4575 1625 4575
+Wire Wire Line
+	1625 4575 1625 4775
+Wire Wire Line
+	1625 4775 1500 4775
+Wire Wire Line
+	1950 4775 1950 4875
+Wire Wire Line
+	1950 4875 1500 4875
+Wire Wire Line
+	2550 4675 2550 4975
+Wire Wire Line
+	2550 4975 1500 4975
+Text Notes 1650 4550 0    50   ~ 0
+grün\n
+Text Notes 1650 4875 0    50   ~ 0
+rot
+Wire Wire Line
+	1500 5750 1650 5750
+Wire Wire Line
+	1650 5750 1650 5575
+Wire Wire Line
+	1650 5575 2000 5575
+Wire Wire Line
+	2000 5975 1650 5975
+Wire Wire Line
+	1650 5975 1650 5850
+Wire Wire Line
+	1650 5850 1500 5850
+Wire Wire Line
+	4150 6250 4150 6425
+Wire Wire Line
+	4150 6425 4225 6425
+Wire Wire Line
+	4225 6425 4225 6575
+Wire Wire Line
+	4450 6250 4450 6425
+Wire Wire Line
+	4450 6425 4325 6425
+Wire Wire Line
+	4325 6425 4325 6575
+Wire Wire Line
+	4800 6250 4800 6425
+Wire Wire Line
+	4800 6425 4900 6425
+Wire Wire Line
+	4900 6425 4900 6575
+Wire Wire Line
+	5100 6250 5100 6425
+Wire Wire Line
+	5100 6425 5000 6425
+Wire Wire Line
+	5000 6425 5000 6575
+Wire Wire Line
+	5525 6250 5525 6425
+Wire Wire Line
+	5525 6425 5625 6425
+Wire Wire Line
+	5625 6425 5625 6575
+Wire Wire Line
+	5825 6250 5825 6425
+Wire Wire Line
+	5825 6425 5725 6425
+Wire Wire Line
+	5725 6425 5725 6575
+Wire Wire Line
+	9250 5950 9250 6075
+Wire Wire Line
+	9250 6075 9550 6075
+Wire Wire Line
+	9825 6075 9825 5850
+Wire Wire Line
+	9825 5850 10000 5850
+Wire Wire Line
+	9550 5950 9550 6075
+Connection ~ 9550 6075
+Wire Wire Line
+	9550 6075 9825 6075
+Wire Wire Line
+	10000 5750 9825 5750
+Wire Wire Line
+	9825 5750 9825 5500
+Wire Wire Line
+	9825 5500 9550 5500
+Wire Wire Line
+	9250 5500 9250 5650
+Wire Wire Line
+	9550 5500 9550 5650
+Connection ~ 9550 5500
+Wire Wire Line
+	9550 5500 9250 5500
+Wire Wire Line
+	9825 4750 9825 4425
+Wire Wire Line
+	9825 4425 9425 4425
+Wire Wire Line
+	9425 4425 9425 4525
+Wire Wire Line
+	9825 4750 10000 4750
+Wire Wire Line
+	10000 4850 9825 4850
+Wire Wire Line
+	9825 4850 9825 5150
+Wire Wire Line
+	9825 5150 9425 5150
+Wire Wire Line
+	9425 5150 9425 5025
+Wire Wire Line
+	9625 3800 9625 3700
+Wire Wire Line
+	9625 3700 9825 3700
+Wire Wire Line
+	9825 3700 9825 3900
+Wire Wire Line
+	9825 3900 10000 3900
+Wire Wire Line
+	10000 4000 9825 4000
+Wire Wire Line
+	9825 4000 9825 4200
+Wire Wire Line
+	9825 4200 9625 4200
+Wire Wire Line
+	9625 4200 9625 4100
+Wire Wire Line
+	10000 2750 9835 2750
+Wire Wire Line
+	10000 2850 9835 2850
+Wire Wire Line
+	10000 2950 9275 2950
+Text Label 9450 2750 0    50   ~ 0
+Vrelais
+Text Label 9450 2850 0    50   ~ 0
+GND
+Text Label 9475 2950 0    50   ~ 0
+A5
+Text Notes 9450 3050 0    50   ~ 0
+rote LED
+Text Notes 4125 7100 0    50   ~ 0
+PSU on
+Text Notes 5425 7175 0    50   ~ 0
+direction setting\n\n
+Text Notes 4775 7100 0    50   ~ 0
+motor on\n
+Wire Wire Line
+	10000 1525 9525 1525
+Wire Wire Line
+	9225 1525 8400 1525
+Wire Wire Line
+	8400 1525 8400 1475
+Wire Wire Line
+	10000 1625 8300 1625
+Wire Wire Line
+	8300 1625 8300 1475
+$Comp
+L FUEL4EP:Cold_Device_Socket J16
+U 1 1 6195DFA8
+P 6475 850
+F 0 "J16" V 6439 888 50  0000 L CNN
+F 1 "Cold_Device_Socket" V 6348 888 50  0000 L CNN
+F 2 "" H 6100 700 50  0001 C CNN
+F 3 "~" H 6100 700 50  0001 C CNN
+	1    6475 850 
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	7800 1475 7800 1525
+Wire Wire Line
+	6425 1150 6425 1650
+Wire Wire Line
+	6425 1650 7900 1650
+Wire Wire Line
+	7900 1650 7900 1475
+Wire Wire Line
+	8000 1475 8000 1775
+Wire Wire Line
+	8000 1775 6025 1775
+Wire Wire Line
+	6025 1775 6025 1150
+Wire Notes Line
+	5750 575  11000 575 
+Wire Notes Line
+	11000 575  11000 3425
+Wire Notes Line
+	11000 3425 5750 3425
+Wire Notes Line
+	5750 3425 5750 575 
+Wire Wire Line
+	8575 2100 8575 2025
+Wire Wire Line
+	8575 2025 8825 2025
+Wire Wire Line
+	8825 2025 8825 2100
+NoConn ~ 8375 2100
+Wire Wire Line
+	6225 1150 6225 2000
+Wire Wire Line
+	6225 2300 6225 2800
+Wire Wire Line
+	6225 2800 7375 2800
+Wire Wire Line
+	7375 2700 7200 2700
+Wire Wire Line
+	7200 2700 7200 1980
+Wire Wire Line
+	7200 1525 7800 1525
+NoConn ~ 7375 2600
+Text Notes 5750 3625 0    50   ~ 0
+230V part\nonly skilled and trained persons must assemble this part  !!
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 619B0656
+P 7200 1980
+F 0 "#FLG0101" H 7200 2055 50  0001 C CNN
+F 1 "PWR_FLAG" V 7200 2108 50  0000 L CNN
+F 2 "" H 7200 1980 50  0001 C CNN
+F 3 "~" H 7200 1980 50  0001 C CNN
+	1    7200 1980
+	0    1    1    0   
+$EndComp
+Connection ~ 7200 1980
+Wire Wire Line
+	7200 1980 7200 1525
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 619B157A
+P 9835 2750
+F 0 "#FLG0102" H 9835 2825 50  0001 C CNN
+F 1 "PWR_FLAG" H 9835 2923 50  0000 C CNN
+F 2 "" H 9835 2750 50  0001 C CNN
+F 3 "~" H 9835 2750 50  0001 C CNN
+	1    9835 2750
+	1    0    0    -1  
+$EndComp
+Connection ~ 9835 2750
+Wire Wire Line
+	9835 2750 9275 2750
+$Comp
+L power:PWR_FLAG #FLG0103
+U 1 1 619B345A
+P 9835 3035
+F 0 "#FLG0103" H 9835 3110 50  0001 C CNN
+F 1 "PWR_FLAG" H 9835 3208 50  0000 C CNN
+F 2 "" H 9835 3035 50  0001 C CNN
+F 3 "~" H 9835 3035 50  0001 C CNN
+	1    9835 3035
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9835 3035 9835 2850
+Connection ~ 9835 2850
+Wire Wire Line
+	9835 2850 9275 2850
+$EndSCHEMATC

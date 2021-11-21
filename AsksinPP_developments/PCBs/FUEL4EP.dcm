@@ -15,6 +15,11 @@ D 4_channel_LOGIC_LEVEL_CONVERTER
 F https://cdn.sparkfun.com/datasheets/BreakoutBoards/Logic_Level_Bidirectional.pdf
 $ENDCMP
 #
+$CMP 4_channel_relay_module
+D Saintsmart, https://www.sainsmart.com/products/2-channel-5v-relay-module http://s3.amazonaws.com/s3.image.smart/download/101-70-100/101-70-100.docx
+F http://s3.amazonaws.com/s3.image.smart/download/101-70-100/2%2Brelay.rar
+$ENDCMP
+#
 $CMP ABLIC_S35770
 D IC in TMSOP-8 package
 K supplier: ABLIC, distributors: Mouser, Digikey
@@ -66,6 +71,12 @@ $CMP MT3608_step_up
 D https://chips-and-more.com/cm/pdf/K3608.pdf
 K available e.g. at Amazon
 F https://www.olimex.com/Products/Breadboarding/BB-PWR-3608/resources/MT3608.pdf
+$ENDCMP
+#
+$CMP NIUP11TA_NiMH_charger
+D NIUP11TA; http://www.canton-electronics.com/power-converter-modules-c-4/battery-charger-and-discharger-module-c-4_9/other-voltage-c-4_9_35/eletechsup-7s-12v96v-nimh-nicd-rechargeable-battery-charger-charging-module-board-input-dc-5v-p-1210.html
+K CJC5288
+F https://aitendo3.sakura.ne.jp/aitendo_data/product_img/ic/charger/CJC5288/CJC5288.pdf
 $ENDCMP
 #
 $CMP PSU_PS60-W1V24

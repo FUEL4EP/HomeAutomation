@@ -45,7 +45,7 @@
     + dedizierte passende Stiftleisten für verschiedene Sensoren / Sensorbreakouts
         * J6: SHT75, SHT85
         * J7: AHT15, AHT25
-        * J8: AHT20+BMP280 Breakout (z.B. eBay)
+        * J8: AHT20+BMP280 Breakout (z.B. [eBay](https://www.ebay.de/itm/174883359464)
         * J9: BME280/BMP280 Breakout
         * J13: BME680 Breakout (Pimoroni)
     + Korrektur der Abstandfehlers bei einem Batteriehalter. Beim [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) hat das schon mal gerne zu thermischen Ausfällen durch mechanische Spannungen geführt.
