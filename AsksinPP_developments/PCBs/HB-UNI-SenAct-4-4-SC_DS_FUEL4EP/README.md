@@ -2,6 +2,9 @@
 
 **Platine für DIY AsksinPP für**
 - 3x Schaltaktor für Betrieb an einem Netzfreischalter
+- Akkubetrieb im Standby, automatische Ladeschaltung
+- bei Aktivierung eines Aktors wird die Netzspannung zugeschaltet und am Ende wieder abgeschaltet
+- (fast) kein Standby-Verbrauch
 - diese Schaltung und Platine darf ausschließlich von ausgebildeten elektrischen Fachkräften verwendet werden, siehe Disclaimer unten!
 - diese Schaltung und Platine ist noch nicht validiert!
 - ein geeigneter Sketch kann auf Nachfrage zur Verfügung gestellt werden.
