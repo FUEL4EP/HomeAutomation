@@ -5,9 +5,12 @@
 - Akkubetrieb im Standby, automatische Ladeschaltung
 - bei Aktivierung eines Aktors wird die Netzspannung zugeschaltet und am Ende wieder abgeschaltet
 - (fast) kein Standby-Verbrauch
-- diese Schaltung und Platine darf ausschließlich von ausgebildeten elektrischen Fachkräften verwendet werden, siehe Disclaimer unten!
+- ein handelsübliches [4 Kanal Relais Modul](https://www.amazon.de/dp/B078Q8S9S9/) wird mit Distanzhaltern "huckepack" auf die Basisplatine montiert
+- die angestrebte Gehäusegröße beträgt 15 cm (Breite) x 11 cm (Tiefe) x 5,5 cm (Höhe), ein passendes 3D-Druckgehäuse ist noch zu entwerfen
+- 3x Einbausteckdosen 45 mm x 45 mm, z.B. DELOCK 81321 Easy 45 Schutzkontakt-Steckdose, werden an der Rückseite des Gehäuses angebracht
+- **diese Schaltung und Platine darf ausschließlich von ausgebildeten elektrischen Fachkräften verwendet werden, siehe Disclaimer unten!**
 - diese Schaltung und Platine ist noch nicht validiert!
-- ein geeigneter Sketch kann auf Nachfrage zur Verfügung gestellt werden.
+- ein geeigneter Sketch kann auf Nachfrage zur Verfügung gestellt werden
 
 
 ## Disclaimer

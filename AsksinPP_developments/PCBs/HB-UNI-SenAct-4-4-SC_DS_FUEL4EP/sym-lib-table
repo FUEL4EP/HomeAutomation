@@ -1,4 +1,3 @@
 (sym_lib_table
   (lib (name FUEL4EP)(type Legacy)(uri ${KIPRJMOD}/../FUEL4EP.lib)(options "")(descr ""))
-  (lib (name Sparkfun_Boards)(type Legacy)(uri /home/ewald/Arduino/kicad/libraries/SparkFun-KiCad-Libraries/Libraries/SparkFun-Boards.lib)(options "")(descr ""))
 )

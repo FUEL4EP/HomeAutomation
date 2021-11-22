@@ -159,12 +159,12 @@ $EndComp
 $Comp
 L Device:Fuse F1
 U 1 1 61981757
-P 9390 1050
-F 0 "F1" V 9470 1000 50  0000 L CNN
-F 1 "1A flink" V 9300 900 50  0000 L CNN
-F 2 "" V 9320 1050 50  0001 C CNN
-F 3 "~" H 9390 1050 50  0001 C CNN
-	1    9390 1050
+P 6220 6060
+F 0 "F1" V 6300 6010 50  0000 L CNN
+F 1 "1A flink" V 6130 5910 50  0000 L CNN
+F 2 "" V 6150 6060 50  0001 C CNN
+F 3 "~" H 6220 6060 50  0001 C CNN
+	1    6220 6060
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -529,10 +529,6 @@ $EndComp
 Wire Wire Line
 	6180 1050 6180 2310
 Wire Wire Line
-	6430 5660 6070 5660
-Wire Wire Line
-	6070 5660 6070 6060
-Wire Wire Line
 	6070 6060 5945 6060
 Wire Wire Line
 	10100 3400 10650 3400
@@ -748,4 +744,35 @@ $EndComp
 Connection ~ 2150 2950
 Wire Wire Line
 	2150 2950 4050 2950
+$Comp
+L Device:Fuse F2
+U 1 1 619FC656
+P 9390 1050
+F 0 "F2" V 9193 1050 50  0000 C CNN
+F 1 "5A flink" V 9284 1050 50  0000 C CNN
+F 2 "" V 9320 1050 50  0001 C CNN
+F 3 "~" H 9390 1050 50  0001 C CNN
+	1    9390 1050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6370 6060 6370 5660
+Wire Wire Line
+	6370 5660 6430 5660
+$Comp
+L power:PWR_FLAG #FLG0110
+U 1 1 61A0DFAA
+P 6370 6060
+F 0 "#FLG0110" H 6370 6135 50  0001 C CNN
+F 1 "PWR_FLAG" V 6370 6188 50  0000 L CNN
+F 2 "" H 6370 6060 50  0001 C CNN
+F 3 "~" H 6370 6060 50  0001 C CNN
+	1    6370 6060
+	0    1    1    0   
+$EndComp
+Connection ~ 6370 6060
+Text Notes 10595 775  0    50   ~ 0
+max.5A
+Text Notes 4215 1565 0    50   ~ 0
+mounted on top of base PCB by spacers
 $EndSCHEMATC
