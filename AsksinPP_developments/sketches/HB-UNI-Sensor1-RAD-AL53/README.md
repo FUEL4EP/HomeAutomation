@@ -123,6 +123,7 @@
 ![pic](Images/Moving_average_histogram.png)
 
 - Beispiel einer Messung einer radioaktiven Probe: Gartendünger  in 70mmx30mmx40mm [Plastikquader mit Aluminiumfolie als Abdeckung](./Images/box_with_fertilizer.png) ab 20:55 Uhr direkt vor den Sensor gelegt, siehe auch [Kaliumisotope](https://www.internetchemie.info/chemische-elemente/kalium-isotope.php), [Radon-Exhalationsmessungen an Düngemitteln](http://www.opengeiger.de/RadonDuenger/RadonDuenger.html), [Giftiges Uran im Gartendünger](https://www.youtube.com/watch?v=AQva8Ez1Tp4). Die gemessene Radioaktivität ist ca. um einen Faktor 3 (!!) höher als die normale Hintergrundstrahlung.
+- Der Messbehälter für 3D-Druck ist hier: [Behälter](./3D_print_files/Measurement_cell_bottom.stl) und [Deckel](./3D_print_files/Measurement_cell_top.stl). Die Öffnung mit einer dünnen Haushaltsaluminiumfolie verschließen.
 
 ![pic](./Images/potassium_fertilizer.png)
 
@@ -148,10 +149,10 @@
 
 ## Experimente
 
-- als Nächstes werde ich eine Radonmessung mit dem Dünger machen:
+- Ergebnisse werden nach und nach [hier](./measurement_examples) abgelegt
+- Messung von Kaliumchlorid in Lebensmittelqualität (E508), das aufgrund seines natürlichen K-40 Gehalts ein Beta-Strahler ist
+- Radonmessung mit dem Dünger ist geplant:
     - [Uran im Boden und im Wasser ? – Testen Sie Ihr Düngemittel !](http://www.opengeiger.de/DuengerRadonTest.pdf)
-- aktuell läuft eine Messung mit Kaliumchlorid in Lebensmittelqualität (E508), das aufgrund seines natürlichen K-40 Gehalts ein Beta-Strahler ist
-- noch nicht verfügbar, wird später ergänzt
 
 ## Schaltplan
 
@@ -167,12 +168,13 @@
 
 ![pic](PCB/HB-UNI-SEN-BATT/Modifications_HB-UNI-SEN-BATT.png)
 
-- oder auch alternativ [HB-UNI-SEN-BATT_FUEL4EP](../../PCBs/HB-UNI-SEN-BATT_FUEL4EP) oder [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) (siehe auch Hinweise dort). Der manuelle Bestückungsaufwand für HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP ist nur noch minimal.
+- oder auch alternativ [HB-UNI-SEN-BATT_FUEL4EP](../../PCBs/HB-UNI-SEN-BATT_FUEL4EP) oder [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) (siehe auch Hinweise dort). Der manuelle Bestückungsaufwand für HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP ist nur noch minimal. Alle SMD-Bauteile sind von JLCPCB vorbestückt, nur noch THT-Bauteile müssen händisch eingelötet werden.
 
 
 ## Gehäuse
 
-- ein passendes 3D Druckgehäuse muss noch entworfen werden (in Planung). Basis wird das [Gehäuse HB-UNI-SEN-BATT snap in V2 von wpatrick](https://www.thingiverse.com/thing:3540481) sein. Die Grundplatte bleibt. Das Oberteil wird mit größerer Bauhöhe neu erstellt.  Auf die Grundplatte werden die  [Abstandhalter](./3D_print_files/Spacer_sleeve.stl) geklebt, so dass die Module auf die Unterseite der Platine geklebt werden können. 
+- ein passendes 3D Druckgehäuse muss noch entworfen werden (in Planung). Basis wird das [Gehäuse HB-UNI-SEN-BATT snap in V2 von wpatrick](https://www.thingiverse.com/thing:3540481) sein. Die Grundplatte bleibt. Das Oberteil wird mit größerer Bauhöhe neu erstellt.  Auf die Grundplatte werden die  [Abstandhalter](./3D_print_files/Spacer_sleeve.stl) geklebt, so dass die Module auf die Unterseite der Platine geklebt werden können.
+- Ein passendes Unterteil für 3D-Druck ist [hier](./3D_print_files/Case_bottom_with_10mm_spacers). 
 
 
 ## Aufbau

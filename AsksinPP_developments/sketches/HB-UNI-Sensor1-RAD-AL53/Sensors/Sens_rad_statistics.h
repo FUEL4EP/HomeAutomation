@@ -9,12 +9,13 @@
 //
 // used libraries:
 //
-// none
+// ArduinoSTL.h (https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/avr_stl)
 //
 //---------------------------------------------------------
 //
 // Required by:
 //
+// Sens_AL53.h
 //
 //---------------------------------------------------------
 //
@@ -28,6 +29,8 @@
 // 3. double            variance, min variance, max variance
 // 4. double            standard deviation, min standard deviation, max standard deviation
 // 5. double            width of 95% confidence interval, min width of 95% confidence interval, max width of 95% confidence interval
+//
+// for memory size reasons, this library is running on an ATMega1284P, but not on a ATMega328P!
 //
 //---------------------------------------------------------
 
