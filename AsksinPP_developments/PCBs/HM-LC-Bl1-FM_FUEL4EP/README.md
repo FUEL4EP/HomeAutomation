@@ -4,6 +4,7 @@
 - 24V Polwendesteuerung für Velux Rolladen und Betrieb an einem Netzfreischalter
 - Akkubetrieb im Standby, automatische Ladeschaltung
 - am Beginn einer Rolladenfahrt wird die Netzspannung zugeschaltet und am Ende wieder abgeschaltet
+- die Relay-Module werden mit 1,5mm² Adernendhülsen 'huckepack' auf die Platine gelötet, die Adernendhülsen zuerst auf die Relay-Module auflöten, dann in die Platine einstecken und in der Platine festlöten
 - (fast) kein Standby-Verbrauch
 - diese Schaltung und Platine darf ausschließlich von ausgebildeten elektrischen Fachkräften verwendet werden, siehe Disclaimer unten!
 - diese Schaltung und Platine ist noch nicht validiert!
