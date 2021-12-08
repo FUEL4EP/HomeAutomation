@@ -2,7 +2,7 @@
 <br/>
 
 
-# Temperatur-, Luftfeuchte und Luftdrucksensor auf der Basis von den [Sensirion SHT85](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT85_Datasheet.pdf) und [Bosch BME280 Sensoren](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) (HB-UNI-Sensor1-THPD-SHT85) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte und Batteriespannung und WebUI Offseteinstellung
+# Hoch genauer und sehr schneller Temperatur-, Luftfeuchte und Luftdrucksensor auf der Basis von den [Sensirion SHT85](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT85_Datasheet.pdf) und [Bosch BME280 Sensoren](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) (HB-UNI-Sensor1-THPD-SHT85) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte, 24 Stunden und 7 Tagestemperaturmittelwerten und Batteriespannung und WebUI Offseteinstellung
 
 - abgeleitet von Toms ([TomMajor](https://github.com/TomMajor)) [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)
 - ein herzliches Dankeschön für die Basisarbeit geht an Tom (TomMajor)
@@ -13,8 +13,17 @@
 - Das Datenblatt des SHT85 Sensors ist [hier](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT85_Datasheet.pdf) zu finden.
 - Das Datenblatt des BME280 Sensors ist [hier](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) zu finden.
 
-- Der Diskussionsstrang im Homematic Forum dazu ist [hier](tbd) zu finden. Bitte dort auch Fragen stellen.
-![pic](Images/HB-UNI-Sensor1-THPD-SHT85.png)	
+- Der Diskussionsstrang im Homematic Forum dazu ist bald [hier](tbd) zu finden. Bitte dort auch Fragen stellen.
+
+## Vergleich der Temperaturtransiente des HB-UNI-Sensor1-THPD-SHT85 Sensor mit dem [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) 
+
+- grüne Linie: HB-UNI-Sensor1-THPD-SHT85
+- blaue Linie: [HM-WDS40-TH-I-2](https://de.elv.com/homematic-funk-innensensor-ith-hm-wds40-th-i-2-fuer-smart-home-hausautomation-132095) (original HomeMatic von EQ-3)
+- rote, violette und türkise Linie: [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280)
+- alle 5 Sensoren stehen direkt nebeneinander, die Homebrew Sensoren ohne Gehäusedecke
+- Temperaturtransiente ist durch Lüften bedingt
+
+![pic](Images/SHT85_green_line_versus_BME280_other_line_colors.png)	
 
 
 ## Neue Eigenschaften im Vergleich zum [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1) Sensor
@@ -27,19 +36,23 @@
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smart-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
 	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/SHT85_Setting_of_device_parameters_in_WebUI.png)
 	+ Alle drei Offsetwerte (T, rLF, P) müssen für die Eingabe mit dem Faktor 10 multipliziert werden.
-	+ Wegen eines Bugs in der eQ3 Software OCCU ['Fehler in ProofAndSetValue bei Gleitkommawerten #1058'](https://github.com/jens-maus/RaspberryMatic/issues/1058) funktioniert die Offseteinstellung im WebUI nur eingeschränkt: Es können nur ganzzahlige Offsets eingegeben werden. In den RaspberryMatic Versionen [3.55.10.20210213 und 3.57.4.20210320](https://github.com/jens-maus/RaspberryMatic/labels/%3Alabel%3A%20WebUI) ist der Bug noch nicht gefixt! Beim mir half der Workaround von Baxxy [hier](https://homematic-forum.de/forum/viewtopic.php?p=652376#p652376). CCU3 Nutzer sollten auf die neueste Firmware 3.55.10 upgraden, 3.55.5 scheint hier einen Bug zu haben.
+- **NEU**: für die gemessene Temperatur können die gleitenden Mittelwerte über die Zeiträume 24 Stunden und 7 Tage berechnet werden
+    + programmierbare Option, die einen ATMega1284P benötigt, das RAM eines ATMega328P reicht für die Speicherung der Temperaturwerte über eine Woche nicht aus
+    + diese Option wird mit '#define CALCULATE_MOVING_AVERAGES' aktiviert
+    + die gemessenen Temperaturwerte werden in Ringpuffern der Größe 360 (24 Stunden Ringpuffer) bzw. 2520 (7 Tage Ringpuffer) als int16_t Typ abgespeichert
+    + die gleitenden Mittelwerte brauchen mindesten 24 Stunden bzw. 7 Tage zum 'Einschwingen' bis alle Speicherwerte der Ringpuffer mindestens einmal mit Messwerten befüllt wurden
+    + bei einem Batteriewechsel oder einem Reset werden die historischen gleitenden Mittelwerte nicht gesichert, da sie nach maximal 7 Tagen vollständig neu berechnet sind
 
-## Neue Eigenschaften im Vergleich zum [HB-UNI-Sensor1-THPD-BME280]((https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) Sensor
+## Neue Eigenschaften im Vergleich zum [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) Sensor
 
 - **Zusätzlich** zum BOSCH BME280 Sensor wird für die hoch genaue und schnelle Messung der Temperatur und der relativen Luftfeuchte der Sensirion SHT85 verwendet. Der SHT85 Sensor ist aufgrund seiner kleinen Bauform thermisch viel geringer an die Basisplatine angeschlossen und reagiert daher viel schneller auf Änderungen der Temperatur oder der Luftfeuchte.
-- Da der Flashspeicher eines ATmega328P für den HB-UNI-Sensor1-THPD-SHT85 Sensor nicht ausreicht, wird hier ein Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verwendet. 
-	
+- Da der Flashspeicher eines ATmega328P für den HB-UNI-Sensor1-THPD-SHT85 Sensor nicht ausreicht, wird hier ein Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) oder die Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) verwendet.
+- **Hinweis:** Wer auf das Debuggen mit den seriellen Monitor und die gleitenden Mittelwerte verzichten kann, kann den HB-UNI-Sensor1-THPD-SHT85 Sketch mit '#define NDEBUG' für einen ATmega328P / Arduino Pro Mini (3,3V/8MHz) kompilieren. Das '#define  M1284P' ist dann auszukommentieren. Der HB-UNI-Sensor1-THPD-SHT85 Sketch passt dann in den Flash Speicher des ATmega328P. Damit können z.B. HB-UNI-Sensor1-THPD-BME280 Sensoren nach dem  Auflöten eines zusätzlichen SHT85 Sensors zu einem HB-UNI-Sensor1-THPD-SHT85 umgeflasht werden.
 
 ## Taupunkttemperatur und absolute Luftfeuchtigkeit
 
-- Die angezeigte Taupunkttemperatur kann zur Bewertung der Gefährdung einer Schimmelbildung in einem Raum verwendet werden: Der kälteste Punkt eines Raums (in der Regel die untere oder oberere Ecke einer Außenwand) sollte eine mit einem Infrarotthermometer gemessene Temperatur haben, die mindestens 2..4 Grad Celsius über der angezeigten Taupunkttemperatur liegt.
-- Die angezeigte absolute Luftfeuchtigkeit kann dazu verwendet werden zu entscheiden, ob das Öffnen der Fenster eine Entfeuchtung eines Raums bewirkt: Wenn die absolute Luftfeuchte außen um mindestens 1 g/m³ kleiner ist als im Innenraum, dann wird beim Lüften der Raum entfeuchtet.
-- Die absolute Luftfeuchte wird in [Sens_SHT85_BME280.h](Sensors/Sens_SHT85_BME280.h) berechnet, aber zur Zeit nicht an die CCU3/RaspberryMatic gesendet. Auf Wunsch kann das geändert werden.
+- Die angezeigte Taupunkttemperatur kann zur Bewertung der Gefährdung einer Schimmelbildung in einem Raum verwendet werden: Der kälteste Punkt eines Raums (in der Regel die untere oder oberere Ecke einer Außenwand) sollte eine mit einem Infrarotthermometer gemessene Temperatur haben, die mindestens 3..4 Grad Celsius über der angezeigten Taupunkttemperatur liegt. Ein Online-Luftfeuchterechner ist z.B. [hier](http://www.thestorff.de/luftfeuchte-rechner.php) zu finden.
+- Die angezeigte absolute Luftfeuchtigkeit kann dazu verwendet werden zu entscheiden, ob das Öffnen der Fenster eine Entfeuchtung eines Raums bewirkt: Wenn die absolute Luftfeuchte außen um mindestens 1 g/m³ kleiner ist als im Innenraum, dann wird beim Lüften der Raum entfeuchtet. 
 
 
 ## Kalibrierung von Temperatur, relativer Luftfeuchtigkeit   
@@ -55,14 +68,28 @@
 
 - basierend auf einem Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) mit CC1101 Sendemodul, Eigenbau mit einem ATmega 1284p möglich
 - eine mögliche und von mir empfohlene Hardwarebasis sieht so aus:
-	+ Universalplatine für DIY-Bausätze von Alexander Reinert
-		* Github [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt)
+    - Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) mit einem Ebyte E07 868MS10 Funkmodul (rote Platine), das ein wenig teurer als das noname grüne CC1101 Funkmodul ist, aber weniger Ärger macht, und JLCPCB SMD-Bestückung
+	  + der Abstandsfehler für einen Batteriehalter in [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt) ist korrigiert
+	  + als Batteriehalter wird der Keystone 2460 verwendet, ein Goobay 1xAA Batteeriehalter passt auch
+	  + Bestellung direkt bei JLCPCB oder per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) anfragen
+  * oder alternativ die Platine [HB-UNI-SEN-BATT_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP)
+    + der Abstandsfehler für einen Batteriehalter in [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt) ist korrigiert
+	  + als Batteriehalter wird der Keystone 2460 verwendet, ein Goobay 1xAA Batteeriehalter passt auch
+	  + Bestellung direkt bei JLCPCB oder per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) anfragen
+  * oder alternativ die Platine [HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP) mit einem Ebyte E07 868MS10 Funkmodul (rote Platine), das ein wenig teurer als das noname grüne CC1101 Funkmodul ist, aber weniger Ärger macht
+	  + der Abstandsfehler für einen Batteriehalter in [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt) ist korrigiert
+	  + als Batteriehalter wird der Keystone 2460 verwendet, ein Goobay 1xAA Batteeriehalter passt auch
+	  + Bestellung direkt bei JLCPCB oder per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) anfragen 
+  + oder alternativ die Universalplatine für DIY-Bausätze von Alexander Reinert
+      * Github [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt)
 		* Bezugsquelle: [Smartkram WebShop](https://smartkram.de/produkt/universalplatine-fuer-diy-bausatze-von-alex-reinert/)
-    + Sensorgehäuse
+   + Sensorgehäuse
 	    * 3D-Druck [HB-UNI-SEN-BATT snap Gehaeuse und Deckel](https://www.thingiverse.com/thing:3512767)	auf Thingiverse
 	    * oder [fertiges Gehäuse](https://smartkram.de/produkt/sensorgehaeuse-passend-fuer-platine-von-alexander-reinert/) von Smartkram Webshop
-	+ Bauteile [HB-UNI-SEN-BATT](https://smartkram.de/produkt/bauteile-fuer-homematic-diy-projekt-thermometer-hydrometer/) von Smartkram Webshop
-	+ dort den Arduino Pro Mini durch einen Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) ersetzen
+	+ Bauteile (ohne SMD Bestückung), Batteriehalter, Arduino, Sensoren bitte gegebenenfalls separat bestellen
+	    * Reichelt [Bestellliste](https://www.reichelt.de/my/1882914)
+	    * oder Smartkram Webshop [HB-UNI-SEN-BATT](https://smartkram.de/produkt/bauteile-fuer-homematic-diy-projekt-thermometer-hydrometer/) (mit Arduino, BME280 und Batteriehalter)
+	        * dort den Arduino Pro Mini durch einen Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) ersetzen
 	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/)
 	+ 2x 10 kOhm I2C Abschlusswiderstände für SCL und SDA auf HB-UNI-SEN-BATT PCB einlöten
 	+ zusätzlich den SHT85 Sensor als I2C Sensor einlöten: VDD<=>VDD, GND<=>VSS, SCL<=>SCL, SDA<=>SDA mit **möglichst dünnen isolierten** Drähten von der Basisplatine zum Sensor verbinden, damit die thermische Kopplung gering ist und der Sensor dadurch schneller wird. Eine mögliche Bezugsquelle für den SHT85 Sensor ist [hier](https://www.soselectronic.com/products/sensirion/sht-85-1-305843). Bitte unbedingt den richtigen Anschluss von VSS und VDD des SHT85 Sensors prüfen. Eine Vertauschung zerstört den Sensor!
@@ -79,12 +106,19 @@
 ![pic](Images/Tindie_Pro_Mini_XL_Pro_1284P_LED.png)	
 
 - Brown-Out_Detektor des ATmega1284P  (BOD) ausschalten, siehe Einstellungen Arduino IDE unten unter Punkt **Benötigter Sketch**
+
+- Nach dem Aufbau und **vor** dem Einlöten der Sensoren den Ruhestrom mit [SleepTest_1284P](./SleepTest_1284P/SleepTest_1284P.ino) durchführen. Der gemessene Ruhestrom sollte < 10 uA betragen.
 	       
 
 ## Das angemeldete Gerät im RaspberryMatic WebUI
 
+- ohne gleitende Mittelwerte (alte RM Version):
+
 ![pic](Images/WebUI.png)
 
+- mit gleitenden Mittelwerten (unmittelbar nach Reset):
+
+![pic](Images/WebUI_MA.png)
 
 ## Vor dem Aufspielen von Software
 
@@ -98,17 +132,18 @@
 
 - Details sind gegebenenfalls weiter unten zu finden
 
-1. Bitte zuerst nochmals vergewissern, dass ein Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) verbaut wurde.
-2. Das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren.
+1. Bitte zuerst nochmals vergewissern, dass ein Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) oder die Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) verbaut wurde.
+2. Das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren. Die minimal benötigte Version ist die Version 1.12
 3. Für das Programmierern und Setzen der Fuses des ATmega1284p ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
-4. Setzten der richtigen Fuses mit [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) (LINUX version)
-5. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [Frequenztest ATMega1284P](FreqTest_1284P/FreqTest_1284P.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
-6. Gegebenenfalls die Parameter cDEVICE_und cDEVICE_in [Device_SHT85_BME280.h](Cfg/Device_SHT85_BME280.h) ändern. Jeder Sensor muss ein eineindeutiges cDEVICE_und cDEVICE haben!
-7. Die aktuelle Version des [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) Sketches herunterladen, siehe unten.
-8. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
-9. Dann den Sketch [HB-UNI-Sensor1-THPD-SHT85.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85/HB-UNI-Sensor1-THPD-SHT85.ino) kompilieren und mit dem ISP Programmer auf den Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) hochladen. Details siehe unten.
-10. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
-11. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
+4. Setzten der richtigen Fuses mit [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xE2  High Byte:0xD4  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
+5. Den Config-Taster ganz lange drücken (ca. 6..8 Sekunden) bis die rote LED erlischt und im seriellen Monitor 'RESET' ausgegeben wird. Damit wird ein 'Werksreset' durchgeführt und das EEPROM gelöscht. Damit gehen auch alle im EEPROM gespeicherten Einstellungen verloren.  Die ermittelte Frequenzeinstellung des Frequenztests bleibt aber erhalten. 
+6. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [Frequenztest ATMega1284P](FreqTest_1284P/FreqTest_1284P.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
+7. Gegebenenfalls die Parameter cDEVICE_und cDEVICE_in [Device_SHT85_BME280.h](Cfg/Device_SHT85_BME280.h) ändern. Jeder Sensor muss ein eineindeutiges cDEVICE_und cDEVICE haben!
+8. Die aktuelle Version des [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) Sketches herunterladen, siehe unten.
+9. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
+10. Dann den Sketch [HB-UNI-Sensor1-THPD-SHT85.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85/HB-UNI-Sensor1-THPD-SHT85.ino) kompilieren und mit dem ISP Programmer auf den Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) hochladen. Details siehe unten.
+11. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
+12. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
  
 
 ## Benötiger Sketch
@@ -137,7 +172,12 @@
 > //#define NDEBUG
 
 - als Taktfrequenz des Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) 'Internal 8 HHz' einstellen
-- der Sketch verwendet 34206 Bytes (26%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 1299 Bytes (7%) des dynamischen Speichers, 15085 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
+- die Berechnung von gleitenden Mittelwerten wird in [HB-UNI-Sensor1-THPD-SHT85.ino](./HB-UNI-Sensor1-THPD-SHT85.ino) mit
+    + '#define CALCULATE_MOVING_AVERAGES' aktiviert
+    + durch Auskommentieren mit '// #define CALCULATE_MOVING_AVERAGES' deaktiviert
+- ohne Berechnung von gleitenden Mittelwerten benötigt der Sketch 34206 Bytes (26%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 1299 Bytes (7%) des dynamischen Speichers, 15085 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
+- mit Berechnung von gleitenden Mittelwerten benötigt der Sketch 38706 Bytes (29%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes.
+Globale Variablen verwenden 7422 Bytes (45%) des dynamischen Speichers, 8962 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
 - [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) zum Setzen der Fuses für 8MHz interner RC Oszillator (Linux version)
@@ -177,7 +217,13 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
+- die minimal benötigte Version ist die Version 1.12.
+
 - bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-Sensor1-THPD-SHT85 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
+
+## Verringerung der Tx Sendeleistung
+
+- nur Experten wird empfohlen, die Tx Sendeleistung zu verringern. Die Beschreibung ist [hier](./Reduction_of_Tx_RF_power/README.md).
 
 ## Lizenz
 

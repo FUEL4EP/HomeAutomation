@@ -37,7 +37,7 @@
 #define  M1284P
 
 #ifdef M1284P
-// comment '#define CALCULATE_MOVING_AVERAGES' if 24h and 7 days mving averages shall be calculated, this option requires an ATMega1284P
+// define '#define CALCULATE_MOVING_AVERAGES' if 24h and 7 days mving averages shall be calculated, this option requires an ATMega1284P
 #define CALCULATE_MOVING_AVERAGES
 #endif
 
