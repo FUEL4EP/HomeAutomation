@@ -42,8 +42,8 @@ Nach einem Upgrade der CCU/RaspberryMatic Firmware kann es notwendig sein, diese
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-TH-SHT75_thumb.png" width=25/> | [HB-UNI-SENSOR1-TH-SHT75](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75) | hoch genauer TH Sensor<br/>_basierend auf Sensirion SHT75_ | 🔋 |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THPD-BME280_thumb.png" width=25/> | [HB-UNI-SENSOR1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) | THPD Sensor<br/>basierend auf Bosch BME280<br/>mit Taupunkttemperatur<br/>und absoluter Luftfeuchte| 🔋 |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THPD-BME280_thumb.png" width=25/> | [HB-UNI-SENSOR1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) | hoch genauer und sehr schneller THPD Sensor<br/>basierend auf Sensirion SHT85 und Bosch BME280<br/>mit Taupunkttemperatur<br/>und absoluter Luftfeuchte| 🔋 |
-|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THPD-BME280_thumb.png" width=25/> | [HB-UNI-SENSOR1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) | hoch genauer und sehr schneller THPD Sensor<br/>basierend auf Sensirion SHT85 und Bosch BME280<br/>mit Taupunkttemperatur<br/>und absoluter Luftfeuchte| 🔋 |
-|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-RAD-AL53_thumb.png" width=25/> | [HB-UNI-SENSOR1-RAD-AL53](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-RAD-AL53)<br/>- NEU -<br/>nur Prototyp | Radioaktivitätssensor mit PIN-Dioden Detektor<br/>basierend auf Teviso AL53<br/>für Alpha-, Beta- und Gammastrahlung| 🔋 |
+|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THPD-BME280_thumb.png" width=25/> | [HB-UNI-SENSOR1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) | hoch genauer und sehr schneller THPD Sensor<br/>basierend auf Sensirion SHT85 und Bosch BME280<br/>mit Taupunkttemperatur<br/>und absoluter Luftfeuchte<br/>optional: gleitender Mittelwert der Temperatur über 24 Stunden und 7 Tage bei ATMega1284P| 🔋 |
+|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-RAD-AL53_thumb.png" width=25/> | [HB-UNI-SENSOR1-RAD-AL53](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-RAD-AL53)<br/>| Radioaktivitätssensor mit PIN-Dioden Detektor<br/>basierend auf Teviso AL53<br/>für Alpha-, Beta- und Gammastrahlung| 🔋 |
 
 
 
@@ -60,6 +60,7 @@ Nach einem Upgrade der CCU/RaspberryMatic Firmware kann es notwendig sein, diese
 |F6 06 | HB-UNI-SENSOR1-AQ-BME680_KF |
 |F6 07 | HB-UNI-SENSOR1-AQ-BME680_KF_DEBUG |
 |F6 08 | HB-UNI-SENSOR1-RAD-AL53 |
+|F6 09 | HB-UNI-SENSOR1-THPD-SHT85 |
 
 <br/>
 

@@ -36,6 +36,11 @@
 // comment '#define  M1284P' if an ATMega328P based Arduino Pro Mini is used, this requires to uncomment '// #define NDEBUG' above, a serial monitoring is NOT possible for an ATMega328P based Arduino Pro Mini
 #define  M1284P
 
+#ifdef M1284P
+// comment '#define CALCULATE_MOVING_AVERAGES' if 24h and 7 days mving averages shall be calculated, this option requires an ATMega1284P
+#define CALCULATE_MOVING_AVERAGES
+#endif
+
 #define EI_NOTEXTERNAL
 #include <EnableInterrupt.h>
 #include <AskSinPP.h>
@@ -112,8 +117,13 @@ using namespace as;
 const struct DeviceInfo PROGMEM devinfo = {
     cDEVICE_ID,        // Device ID           defined in ./Cfg/Device_SHT85_BME280.h
     cDEVICE_SERIAL,    // Device Serial       defined in ./Cfg/Device_SHT85_BME280.h
-    { 0xF6, 0x04 },    // Device Model        needs to fit to Addon XML hb-uni-sensor-THPD-SHT85.xml line 6:
-                       //                     <parameter index="10.0" size="2.0" const_value="0xF604" 
+#ifdef CALCULATE_MOVING_AVERAGES
+    { 0xF6, 0x09 },    // Device Model        needs to fit to Addon XML hb-uni-sensor-THPD-SHT85.xml line 6:
+                       //                     <parameter index="10.0" size="2.0" const_value="0xF609" 
+#else
+    { 0xF6, 0x04 },    // Device Model        needs to fit to Addon XML hb-uni-sensor-THPD-BME280.xml line 6:
+                       //                     <parameter index="10.0" size="2.0" const_value="0xF604"
+#endif
     0x10,
     as::DeviceType::THSensor,    // Device Type
     { 0x01, 0x01 }               // Info Bytes
@@ -160,7 +170,11 @@ public:
 
 class WeatherEventMsg : public Message {
 public:
+#ifdef CALCULATE_MOVING_AVERAGES
+    void init(uint8_t msgcnt, int16_t temp, uint16_t my_humidity10, uint16_t airPressure10, int16_t dewpoint10, uint16_t vaporConcentration100, uint16_t operatingVoltage1000, bool batLow, int16_t MA_24H_temp10, int16_t MA_7D_temp10)
+#else
     void init(uint8_t msgcnt, int16_t temp, uint16_t my_humidity10, uint16_t airPressure10, int16_t dewpoint10, uint16_t vaporConcentration100, uint16_t operatingVoltage1000, bool batLow)
+#endif
     {
 
         uint8_t t1 = (temp >> 8) & 0x7f;
@@ -175,7 +189,13 @@ public:
         DDEC(airPressure10);;DPRINT("/");
         DDEC(dewpoint10);DPRINT("/");
         DDEC(vaporConcentration100);DPRINT("/");
+#ifdef CALCULATE_MOVING_AVERAGES
+        DDEC(operatingVoltage1000);DPRINT("/");
+        DDEC(MA_24H_temp10);DPRINT("/");
+        DDEC(MA_7D_temp10);DPRINTLN(" ");
+#else
         DDEC(operatingVoltage1000);DPRINTLN(" ");
+#endif
 
         // als Standard wird BCAST gesendet um Energie zu sparen, siehe Beschreibung unten.
         // Bei jeder 40. Nachricht senden wir stattdessen BIDI|WKMEUP, um eventuell anstehende Konfigurationsänderungen auch
@@ -186,8 +206,11 @@ public:
         }
         DPRINT(F("msgcnt    : ")); DDECLN(msgcnt);
         
-        
-        Message::init(0x15, msgcnt, 0x70, flags, t1, t2); //  length 21 = 0x15 bytes (see also addon hb-ep-devices-addon/CCU_RM/src/addon/firmware/rftypes/hb-uni-sensor-THPD-SHT85.xml)
+ #ifdef CALCULATE_MOVING_AVERAGES       
+        Message::init(0x19, msgcnt, 0x70, flags, t1, t2); //  length 25 = 0x19 bytes (see also addon hb-ep-devices-addon/CCU_RM/src/addon/firmware/rftypes/hb-uni-sensor-THPD-SHT85.xml); + 4 additional Bytes for moving averages
+#else
+        Message::init(0x15, msgcnt, 0x70, flags, t1, t2); //  length 21 = 0x15 bytes (see also addon hb-ep-devices-addon/CCU_RM/src/addon/firmware/rftypes/hb-uni-sensor-THPD-BME280.xml)
+#endif
         // Message Length (first byte param.): 11 + payload
         //  1 Byte payload -> length 12
         // 12 Byte payload -> length 23
@@ -231,6 +254,16 @@ public:
         //operatingVoltage1000
         pload[8] =  (operatingVoltage1000 >> 8) & 0xff;
         pload[9] =  (operatingVoltage1000 >> 0) & 0xff;
+        
+#ifdef CALCULATE_MOVING_AVERAGES        
+        //MA_24H_temp10
+        pload[10] =  (MA_24H_temp10 >> 8) & 0xff;
+        pload[11] =  (MA_24H_temp10 >> 0) & 0xff;
+        
+        //MA_7D_temp10
+        pload[12] =  (MA_7D_temp10 >> 8) & 0xff;
+        pload[13] =  (MA_7D_temp10 >> 0) & 0xff;
+#endif
     }
 };
 
@@ -253,8 +286,8 @@ public:
     bool     altitude(uint16_t value) const { return this->writeRegister(0x22, (value >> 8) & 0xff) && this->writeRegister(0x23, value & 0xff); }
     uint16_t altitude() const { return (this->readRegister(0x22, 0) << 8) + this->readRegister(0x23, 0); }
     
-    bool     txPower(uint8_t v) const { return this->writeRegister(0x24,v); }
-    uint8_t  txPower() const { return this->readRegister(0x24,0); }
+    bool    txPower(uint8_t v) const { return this->writeRegister(0x24,v); }
+    uint8_t txPower() const { return this->readRegister(0x24,0); }
 
 
     void defaults()
@@ -264,8 +297,8 @@ public:
         lowBatLimit(BAT_VOLT_LOW);
         transmitDevTryMax(6);
         updIntervall(240);
-        altitude(84);             // height of sensor's location above sea level; adjust to your sensor's location in WebUI device / device/channel parameter page
         txPower(7);               // maximum tx power as initial value: +10dB
+        altitude(84);             // height of sensor's location above sea level; adjust to your sensor's location in WebUI device / device/channel parameter page
     }
 };
 
@@ -330,6 +363,10 @@ class WeatherChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
     uint16_t  vaporConcentration100;
     uint16_t  operatingVoltage1000;
     bool      regularWakeUp;
+#ifdef CALCULATE_MOVING_AVERAGES
+    int16_t   MA_24H_temp10;
+    int16_t   MA_7D_temp10;
+#endif
 
 #ifdef SENSORS_SHT85_BME280
     Sens_SHT85_Bme280   SHT85_BME280;
@@ -346,6 +383,10 @@ public:
         , vaporConcentration100(0)
         , operatingVoltage1000(0)
         , regularWakeUp(true)
+#ifdef CALCULATE_MOVING_AVERAGES
+        , MA_24H_temp10(0)
+        , MA_7D_temp10(0)
+#endif
     {
     }
     virtual ~WeatherChannel() {}
@@ -359,7 +400,11 @@ public:
         DPRINT("battery voltage x1000 = ");       DDECLN(operatingVoltage1000);
         
         uint8_t msgcnt = device().nextcount();
+#ifdef CALCULATE_MOVING_AVERAGES
+        msg.init(msgcnt, temperature10, humidity10, airPressure10, dewpoint10, vaporConcentration100, operatingVoltage1000, device().battery().low(), MA_24H_temp10, MA_7D_temp10);
+#else
         msg.init(msgcnt, temperature10, humidity10, airPressure10, dewpoint10, vaporConcentration100, operatingVoltage1000, device().battery().low());
+#endif
         if (msg.flags() & Message::BCAST) {
             device().broadcastEvent(msg, *this);
         } else {
@@ -401,6 +446,14 @@ public:
         DDEC(dewpoint10);DPRINT("/");
         DDEC(vaporConcentration100);DPRINTLN(" ");
 #endif
+#ifdef CALCULATE_MOVING_AVERAGES
+        MA_24H_temp10        = SHT85_BME280.moving_average_24h_temperature10();
+        MA_7D_temp10         = SHT85_BME280.moving_average_7D_temperature10();
+        
+        DPRINT("MA T (x10) = ");
+        DDEC(MA_24H_temp10);DPRINT("/");
+        DDEC(MA_7D_temp10);DPRINTLN(" ");
+#endif 
     }
 
     void initSensors()
@@ -485,7 +538,11 @@ public:
 #else
         const byte powerMode[8] = { 0x03, 0x0F, 0x1E, 0x27, 0x50, 0x81, 0xCB, 0xC2 };  // multi-layer inductor Tx output levels (e.g. no name green color PCB CC1101 module), see table 39 of CC1101 data sheet
 #endif
-        uint8_t txPower = min(this->getList0().txPower(), 7);
+        uint8_t txPower = this->getList0().txPower();
+        // the used libary ArduinoSTL seems to disable the min function !? Therefore here a standard if is used instead
+        if ( txPower > 7 ) {
+          txPower = 7;
+        }
         radio().initReg(CC1101_PATABLE, powerMode[txPower]);
         DPRINT(F("txPower: "));DDECLN(txPower);
     }
