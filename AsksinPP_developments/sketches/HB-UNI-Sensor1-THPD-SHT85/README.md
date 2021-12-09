@@ -2,9 +2,6 @@
 <br/>
 
 
-# **Bitte noch nicht verwenden!** Es ist leider noch eine kleine Unzulänglichkeit im Code: Der Taktgenerator muss noch abgeglichen werden, so dass die Messungen immer exakt nach 4 Minuten erfolgen. Das ist bisher nicht der Fall. Daher sind die gleitenden Mittelwerte verfälscht.
-
-
 # Hoch genauer und sehr schneller Temperatur-, Luftfeuchte und Luftdrucksensor auf der Basis von den [Sensirion SHT85](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT85_Datasheet.pdf) und [Bosch BME280 Sensoren](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) (HB-UNI-Sensor1-THPD-SHT85) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte, 24 Stunden und 7 Tagestemperaturmittelwerten und Batteriespannung und WebUI Offseteinstellung
 
 - abgeleitet von Toms ([TomMajor](https://github.com/TomMajor)) [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)
@@ -42,6 +39,7 @@
 - **NEU**: für die gemessene Temperatur können die gleitenden Mittelwerte über die Zeiträume 24 Stunden und 7 Tage berechnet werden
     + programmierbare Option, die einen ATMega1284P benötigt, das RAM eines ATMega328P reicht für die Speicherung der Temperaturwerte über eine Woche nicht aus
     + diese Option wird mit '#define CALCULATE_MOVING_AVERAGES' aktiviert
+    + diese Option erfordert die Kalibrierung des SYSCLOCK_FACTOR, siehe unten unter Kalibrierung, so dass neue Temperaturmessungen exakt im Abstand von 240 Sekunden erfolgen. Ohne diese Kalibrierung sind die gleitenden Mittelwerte verfälscht!
     + die gemessenen Temperaturwerte werden in Ringpuffern der Größe 360 (24 Stunden Ringpuffer) bzw. 2520 (7 Tage Ringpuffer) als int16_t Typ abgespeichert
     + die gleitenden Mittelwerte brauchen mindesten 24 Stunden bzw. 7 Tage zum 'Einschwingen' bis alle Speicherwerte der Ringpuffer mindestens einmal mit Messwerten befüllt wurden
     + bei einem Batteriewechsel oder einem Reset werden die historischen gleitenden Mittelwerte nicht gesichert, da sie nach maximal 7 Tagen vollständig neu berechnet sind
@@ -223,6 +221,19 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - die minimal benötigte Version ist die Version 1.12.
 
 - bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-Sensor1-THPD-SHT85 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
+
+## Kalibrierung
+
+- die folgenden Kalibrierwerte können im Code eingestellt werden:
+
+  + Kalibrierung des Messintervalls
+
+    + Das Messintervall wird im Debug Modus auf 4 Minuten = 240 Sekunden eingestellt, d.h. Ziel ist es, dass exakt alle 240 Sekunden eine neue Messwertausgabe erfolgt
+
+    + dazu wird der SYSCLOCK_FACTOR in [HB-UNI-Sensor1-THPD-SHT85.ino](./HB-UNI-Sensor1-THPD-SHT85.ino) geeignet eingestellt 
+      ```
+      #define SYSCLOCK_FACTOR    0.924    // adjust to get sampling data every 240 seconds (4 minutes)
+      ```
 
 ## Verringerung der Tx Sendeleistung
 

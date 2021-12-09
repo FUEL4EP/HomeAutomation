@@ -15,7 +15,7 @@
 
 #define SENSOR_ONLY
 #define NORTC
-#define SIMPLE_CC1101_INIT
+
 //---------------------------------------------------------
 // !! NDEBUG sollte aktiviert werden wenn die Sensorentwicklung und die Tests abgeschlossen sind und das Gerät in den 'Produktionsmodus' geht.
 // Insbesondere die RAM-Einsparungen sind wichtig für die Stabilität / dynamische Speicherzuweisungen etc.
@@ -91,12 +91,14 @@
 // all library classes are placed in the namespace 'as'
 using namespace as;
 
+//correction factor of the clock inaccuracy (ceramic resonator is default on Arduino boards), if no quartz RTC is used, wee also HB-UNI-Sen-CURRENT from Jérôme ( jp112sdl )
+#define SYSCLOCK_FACTOR    0.924    // adjust to get sampling data every 240 seconds
+
 // both a Sensirion SHT85 as well as a Bosch BME280 are required
 
 #ifdef SENSORS_SHT85_BME280
 #include "Sensors/Sens_SHT85_BME280.h"    // HB-UNI-Sensor1 custom sensor class
 #endif
-
 
 #ifdef CLOCK_SYSCLOCK
 #define CLOCK sysclock
@@ -412,7 +414,7 @@ public:
         }
         // reactivate for next measure
         uint16_t updCycle = this->device().getList0().updIntervall();
-        set(seconds2ticks(updCycle));
+        set((seconds2ticks(updCycle) * SYSCLOCK_FACTOR));
         CLOCK.add(*this);
         
         regularWakeUp = true;
@@ -468,6 +470,8 @@ public:
         DPRINTLN(cDEVICE_SERIAL);
 #ifdef CLOCK_SYSCLOCK
         DPRINTLN(F("Clock SYSCLOCK"));
+        DPRINT(F("SYSCLOCK correction factor                                                               : "));
+        DDECLN(SYSCLOCK_FACTOR);
 #elif defined CLOCK_RTC
         DPRINTLN(F("Clock RTC"));
 #endif

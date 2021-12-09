@@ -360,7 +360,7 @@ class MeasureChannel : public Channel<Hal, SensorList1, EmptyList, List4, PEERS_
         DPRINTLN(F("Sensor setup done"));
         DPRINT(F("Serial: "));
         DPRINTLN(cDEVICE_SERIAL);
-        #ifdef CLOCK_SYSCLOCK
+#ifdef CLOCK_SYSCLOCK
         DPRINTLN(F("Clock is SYSCLOCK"));
         DPRINT(F("SYSCLOCK correction factor                                                               : "));
         DDECLN(SYSCLOCK_FACTOR);
