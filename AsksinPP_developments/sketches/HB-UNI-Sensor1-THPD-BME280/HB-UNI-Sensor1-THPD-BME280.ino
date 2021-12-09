@@ -24,6 +24,8 @@
 // define this to read the device id, serial and device type from bootloader section
 // #define USE_OTA_BOOTLOADER
 
+#define SENSOR_ONLY
+
 #define EI_NOTEXTERNAL
 #include <EnableInterrupt.h>
 #include <AskSinPP.h>
@@ -50,7 +52,7 @@
 #include "Cfg/Device_BME280.h"
 
 // number of available peers per channel
-#define PEERS_PER_CHANNEL 6
+#define PEERS_PER_CHANNEL 0
 
 // all library classes are placed in the namespace 'as'
 using namespace as;

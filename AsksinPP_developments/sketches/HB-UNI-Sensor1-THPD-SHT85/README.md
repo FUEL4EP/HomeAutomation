@@ -2,6 +2,9 @@
 <br/>
 
 
+# **Bitte noch nicht verwenden!** Es ist leider noch eine kleine Unzulänglichkeit im Code: Der Taktgenerator muss noch abgeglichen werden, so dass die Messungen immer exakt nach 4 Minuten erfolgen. Das ist bisher nicht der Fall. Daher sind die gleitenden Mittelwerte verfälscht.
+
+
 # Hoch genauer und sehr schneller Temperatur-, Luftfeuchte und Luftdrucksensor auf der Basis von den [Sensirion SHT85](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT85_Datasheet.pdf) und [Bosch BME280 Sensoren](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) (HB-UNI-Sensor1-THPD-SHT85) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte, 24 Stunden und 7 Tagestemperaturmittelwerten und Batteriespannung und WebUI Offseteinstellung
 
 - abgeleitet von Toms ([TomMajor](https://github.com/TomMajor)) [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)

@@ -117,7 +117,7 @@ template<typename T, typename P, int CIRCULAR_BUFFER_SIZE> class  weather_statis
       //calculate moving average
       mov_av_params.old_value                = mov_av_params.current_value;
       moving_sum                             = moving_sum + (P)weather_params.head - (P)weather_params.tail;     // calculate change of moving_sum by dropped tail value and added head value
-      mov_av_params.current_value            = (double)moving_sum / BUFSIZE;                           // calculate moving_average
+      mov_av_params.current_value            = (double)moving_sum / BUFSIZE;                                     // calculate moving_average
       
       // check for new maximum of circular_buffer_weather_datapoint
       if ( mov_av_params.current_value > mov_av_params.max ) {

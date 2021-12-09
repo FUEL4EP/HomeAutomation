@@ -58,8 +58,8 @@ class Sens_SHT85_Bme280 : public Sensor {
   SHTSensor _sht;
   
 #if defined CALCULATE_MOVING_AVERAGES
-  weather_statistics<int16_t, int32_t,  360>  _24h_moving_average_temperature_statitistics;              // 1 * 24 * 60 / 4 measurement samples int16_t =  720 Bytes RAM memory for circular buffer
-  weather_statistics<int16_t, int32_t, 2520>  _7days_moving_average_temperature_statitistics;            // 7 * 24 * 60 / 4 measurement samples int16_t = 5040 Bytes RAM memory for circular buffer
+  weather_statistics<int16_t, int32_t,  360>  _24h_moving_average_temperature_statistics;              // 1 * 24 * 60 / 4 measurement samples int16_t =  720 Bytes RAM memory for circular buffer
+  weather_statistics<int16_t, int32_t, 2520>  _7days_moving_average_temperature_statistics;            // 7 * 24 * 60 / 4 measurement samples int16_t = 5040 Bytes RAM memory for circular buffer
 #endif
 
 public:
@@ -119,8 +119,8 @@ public:
   }
   
 #if defined CALCULATE_MOVING_AVERAGES
-  _24h_moving_average_temperature_statitistics.clear_buffer();
-  _7days_moving_average_temperature_statitistics.clear_buffer();
+  _24h_moving_average_temperature_statistics.clear_buffer();
+  _7days_moving_average_temperature_statistics.clear_buffer();
 #endif
   
   _present = _present_BME280 && _present_SHT85;
@@ -148,8 +148,8 @@ public:
 
       _temperature10           = (int16_t)(round(temp * 10.0));
 #if defined CALCULATE_MOVING_AVERAGES
-      _24h_moving_average_temperature_statitistics.add_measurement(_temperature10);
-      _7days_moving_average_temperature_statitistics.add_measurement(_temperature10);
+      _24h_moving_average_temperature_statistics.add_measurement(_temperature10);
+      _7days_moving_average_temperature_statistics.add_measurement(_temperature10);
 #endif
       _pressure10              = (uint16_t)(round(pres * 10.0));
       _pressureNN10            = (uint16_t)(round(EnvironmentCalculations::EquivalentSeaLevelPressure(float(_altitude), temp, pres) * 10.0));
@@ -158,8 +158,8 @@ public:
       _vaporConcentration100   = (uint16_t)(EnvironmentCalculations::AbsoluteHumidity(temp, hum, EnvironmentCalculations::TempUnit_Celsius) * 100.0);
       
 #if defined CALCULATE_MOVING_AVERAGES
-      _24h_moving_average_temperature10   = _24h_moving_average_temperature_statitistics.get_moving_average();
-      _7days_moving_average_temperature10 = _7days_moving_average_temperature_statitistics.get_moving_average();
+      _24h_moving_average_temperature10   = _24h_moving_average_temperature_statistics.get_moving_average();
+      _7days_moving_average_temperature10 = _7days_moving_average_temperature_statistics.get_moving_average();
 #endif
       
       DPRINTLN(F("SHT85 and BME280 (all x10 except vapour x100):"));
