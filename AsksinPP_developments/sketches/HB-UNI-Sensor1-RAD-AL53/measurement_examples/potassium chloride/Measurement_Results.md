@@ -20,7 +20,7 @@
 
 - Measurement interval: 10 minutes
 - 7D Moving average event rate: 44.09 cpi
-- Maximum 7D moving average event rate: 44.85 cpi (too high)
+- Maximum 7D moving average event rate: 44.85 cpi
 - Maximum event rate: 65 cpi
 - 95% Confidence interval width: 27.09 cpi / sqrt(1008) = 0.853 cpi
-- 95% Confidence interval: 43.663 .. 44.516 (max. 7D moving average event rate is above upper limit!)
+- 95% Confidence interval: 43.237 .. 44.943
