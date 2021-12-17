@@ -36,8 +36,8 @@
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smart-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
 	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/SHT85_Setting_of_device_parameters_in_WebUI.png)
 	+ Alle drei Offsetwerte (T, rLF, P) müssen für die Eingabe mit dem Faktor 10 multipliziert werden.
-- **NEU**: für die gemessene Temperatur können die gleitenden Mittelwerte über die Zeiträume 24 Stunden und 7 Tage berechnet werden
-    + programmierbare Option, die einen ATMega1284P benötigt, das RAM eines ATMega328P reicht für die Speicherung der Temperaturwerte über eine Woche nicht aus
+- **NEU**: für die gemessene Temperatur können die gleitenden Mittelwerte über die [Zeiträume 24 Stunden](./Images/24h_moving_average_histogram.png) und [7 Tage (hier mit Startrampe zu Beginn der Aufzeichnung)](./Images/7days_moving_average_histogram_with_ramp_up.png) berechnet werden. Die Beispielhistogramme zeigen gemessene Innentemperaturen!
+    + programmierbare Option, die einen ATMega1284P benötigt, da das RAM eines ATMega328P nicht für die Speicherung der Temperaturwerte über eine Woche ausreicht
     + diese Option wird mit '#define CALCULATE_MOVING_AVERAGES' aktiviert
     + diese Option erfordert die Kalibrierung des SYSCLOCK_FACTOR, siehe unten unter Kalibrierung, so dass neue Temperaturmessungen exakt im Abstand von 240 Sekunden erfolgen. Ohne diese Kalibrierung sind die gleitenden Mittelwerte verfälscht!
     + die gemessenen Temperaturwerte werden in Ringpuffern der Größe 360 (24 Stunden Ringpuffer) bzw. 2520 (7 Tage Ringpuffer) als int16_t Typ abgespeichert
