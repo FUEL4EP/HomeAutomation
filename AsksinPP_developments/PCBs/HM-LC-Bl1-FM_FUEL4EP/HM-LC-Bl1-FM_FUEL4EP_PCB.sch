@@ -249,7 +249,7 @@ U 1 1 6178075E
 P 1450 1950
 F 0 "R2" V 1550 1800 50  0000 L CNN
 F 1 "200k" V 1450 1850 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 1380 1950 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 1380 1950 50  0001 C CNN
 F 3 "~" H 1450 1950 50  0001 C CNN
 	1    1450 1950
 	0    1    1    0   
@@ -544,17 +544,6 @@ Wire Wire Line
 Wire Wire Line
 	8450 1000 8600 1000
 Connection ~ 8600 1000
-$Comp
-L FUEL4EP:LM2596_buck Module4
-U 1 1 6211B9A9
-P 6950 1000
-F 0 "Module4" H 7525 1161 50  0000 C CNN
-F 1 "LM2596_buck 24V->6.3V" H 7525 1070 50  0000 C CNB
-F 2 "FUEL4EP:LM2596_buck" H 7104 596 50  0001 C CNN
-F 3 "https://www.olimex.com/Products/Breadboarding/BB-PWR-3608/resources/MT3608.pdf" H 7104 596 50  0001 C CNN
-	1    6950 1000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8600 1300 8450 1300
 Wire Wire Line
@@ -625,21 +614,8 @@ Wire Wire Line
 	6750 1200 6650 1200
 Wire Wire Line
 	6650 1200 6650 1250
-$Comp
-L Diode:1N4148 D7
-U 1 1 62437A5C
-P 6500 1100
-F 0 "D7" H 6500 1317 50  0000 C CNN
-F 1 "1N4148" H 6500 1226 50  0000 C CNN
-F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 6500 925 50  0001 C CNN
-F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 6500 1100 50  0001 C CNN
-	1    6500 1100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6650 1100 6750 1100
-Wire Wire Line
-	6350 1100 6250 1100
 Text Notes 3400 4650 1    50   ~ 0
 without LDO regulator
 Connection ~ 4700 3750
@@ -1040,20 +1016,6 @@ Wire Wire Line
 Connection ~ 2400 4000
 Wire Wire Line
 	2400 4000 2600 4000
-$Comp
-L power:PWR_FLAG #FLG0104
-U 1 1 6302B5F2
-P 6250 1100
-F 0 "#FLG0104" H 6250 1175 50  0001 C CNN
-F 1 "PWR_FLAG" H 6250 1273 50  0000 C CNN
-F 2 "" H 6250 1100 50  0001 C CNN
-F 3 "~" H 6250 1100 50  0001 C CNN
-	1    6250 1100
-	-1   0    0    1   
-$EndComp
-Connection ~ 6250 1100
-Wire Wire Line
-	6250 1100 6200 1100
 Text Notes 2250 800  2    39   ~ 0
 VCC max. 6.2V\n
 Text Notes 4000 2150 2    50   ~ 0
@@ -1300,7 +1262,7 @@ U 1 1 61C1D8C7
 P 1750 1050
 F 0 "R22" H 1850 1050 50  0000 L CNN
 F 1 "2.7" V 1750 950 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 1680 1050 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 1680 1050 50  0001 C CNN
 F 3 "~" H 1750 1050 50  0001 C CNN
 	1    1750 1050
 	1    0    0    -1  
@@ -1973,4 +1935,42 @@ F 3 "~" H 4150 1050 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Connection ~ 4150 1050
+$Comp
+L Diode:1N4148 D7
+U 1 1 62437A5C
+P 6500 1100
+F 0 "D7" H 6500 1317 50  0000 C CNN
+F 1 "1N4148" H 6500 1226 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 6500 925 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 6500 1100 50  0001 C CNN
+	1    6500 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 1100 6250 1100
+Wire Wire Line
+	6250 1100 6200 1100
+Connection ~ 6250 1100
+$Comp
+L power:PWR_FLAG #FLG0104
+U 1 1 6302B5F2
+P 6250 1100
+F 0 "#FLG0104" H 6250 1175 50  0001 C CNN
+F 1 "PWR_FLAG" H 6250 1273 50  0000 C CNN
+F 2 "" H 6250 1100 50  0001 C CNN
+F 3 "~" H 6250 1100 50  0001 C CNN
+	1    6250 1100
+	-1   0    0    1   
+$EndComp
+$Comp
+L FUEL4EP:LM2596_buck Module4
+U 1 1 6211B9A9
+P 6950 1300
+F 0 "Module4" H 7525 1461 50  0000 C CNN
+F 1 "LM2596_buck 24V->6.3V" H 7525 1370 50  0000 C CNB
+F 2 "FUEL4EP:LM2596_buck" H 7104 896 50  0001 C CNN
+F 3 "https://www.olimex.com/Products/Breadboarding/BB-PWR-3608/resources/MT3608.pdf" H 7104 896 50  0001 C CNN
+	1    6950 1300
+	1    0    0    1   
+$EndComp
 $EndSCHEMATC

@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/ewald/Arduino/PCBs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.sch)
-    (date "Do 09 Dez 2021 10:47:15 CET")
+    (date "Mi 22 Dez 2021 16:50:00 CET")
     (tool "Eeschema 5.1.12-84ad8e8a86~92~ubuntu18.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -77,7 +77,7 @@
       (tstamp 6177D57F))
     (comp (ref R2)
       (value 200k)
-      (footprint Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal)
+      (footprint Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal)
       (datasheet ~)
       (libsource (lib Device) (part R) (description Resistor))
       (sheetpath (names /) (tstamps /))
