@@ -1,5 +1,5 @@
 ** Drc report for /home/ewald/Arduino/PCBs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_pcb **
-** Created on 2021-12-22 16:56:39 **
+** Created on 2021-12-27 11:50:38 **
 
 ** Found 1 DRC errors **
 ErrType(46): Footprint hat keinen Sperrbereich definiert

@@ -11,6 +11,7 @@
 - **diese Schaltung und Platine darf ausschließlich von ausgebildeten elektrischen Fachkräften verwendet werden, siehe Disclaimer unten!**
 - diese Schaltung und Platine ist noch nicht validiert!
 - ein geeigneter Sketch kann auf Nachfrage zur Verfügung gestellt werden
+- die Platine V1.2 behebt Fehler, die bei der Validierung eines Prototypen festgestellt und korrigiert wurden. Bitte keine Platinen der Versionen V1.0 und V1.1 verwenden.
 
 
 ## Disclaimer

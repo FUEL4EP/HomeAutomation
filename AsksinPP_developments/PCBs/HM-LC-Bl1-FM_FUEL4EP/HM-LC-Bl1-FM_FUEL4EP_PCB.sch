@@ -308,11 +308,8 @@ Wire Wire Line
 	2850 6750 2850 6950
 Wire Wire Line
 	2850 6950 2450 6950
-NoConn ~ 3000 6950
 Wire Wire Line
 	2450 7050 3000 7050
-Wire Wire Line
-	3000 6850 2950 6850
 Wire Wire Line
 	1150 7050 900  7050
 Wire Wire Line
@@ -378,8 +375,6 @@ F 3 "http://www.vishay.com/docs/88525/1n5817.pdf" H 2650 7350 50  0001 C CNN
 	1    2650 7350
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2950 6850 2950 7550
 Wire Wire Line
 	5500 3300 5650 3300
 $Comp
@@ -1973,4 +1968,33 @@ F 3 "https://www.olimex.com/Products/Breadboarding/BB-PWR-3608/resources/MT3608.
 	1    6950 1300
 	1    0    0    1   
 $EndComp
+Wire Wire Line
+	3000 6950 2950 6950
+Wire Wire Line
+	2950 6950 2950 7550
+NoConn ~ 3000 6850
+$Comp
+L Connector_Generic:Conn_01x01 J19
+U 1 1 61CB1B7F
+P 5800 4350
+F 0 "J19" H 5880 4392 50  0000 L CNN
+F 1 "GND" H 5880 4301 50  0000 L CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical" H 5800 4350 50  0001 C CNN
+F 3 "~" H 5800 4350 50  0001 C CNN
+	1    5800 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 61CB2C60
+P 5600 4450
+F 0 "#PWR03" H 5600 4200 50  0001 C CNN
+F 1 "GND" H 5605 4277 50  0000 C CNN
+F 2 "" H 5600 4450 50  0001 C CNN
+F 3 "" H 5600 4450 50  0001 C CNN
+	1    5600 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 4450 5600 4350
 $EndSCHEMATC

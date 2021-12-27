@@ -262,11 +262,8 @@ Wire Wire Line
 	3550 6725 3550 6925
 Wire Wire Line
 	3550 6925 3150 6925
-NoConn ~ 3700 6925
 Wire Wire Line
 	3150 7025 3700 7025
-Wire Wire Line
-	3700 6825 3650 6825
 Wire Wire Line
 	1850 7025 1600 7025
 Wire Wire Line
@@ -330,8 +327,6 @@ F 3 "http://www.vishay.com/docs/88525/1n5817.pdf" H 3350 7325 50  0001 C CNN
 	1    3350 7325
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	3650 6825 3650 7525
 Wire Wire Line
 	7625 2625 7775 2625
 $Comp
@@ -1489,4 +1484,33 @@ Text Label 8620 1000 0    60   ~ 0
 minusBAT
 Text Label 7980 3175 3    60   ~ 0
 VCC_S
+Wire Wire Line
+	3650 7525 3650 6925
+Wire Wire Line
+	3650 6925 3700 6925
+NoConn ~ 3700 6825
+$Comp
+L Connector_Generic:Conn_01x01 J7
+U 1 1 61CCA473
+P 1575 3075
+F 0 "J7" H 1655 3117 50  0000 L CNN
+F 1 "GND" H 1655 3026 50  0000 L CNN
+F 2 "Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical" H 1575 3075 50  0001 C CNN
+F 3 "~" H 1575 3075 50  0001 C CNN
+	1    1575 3075
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 61CCAE83
+P 1375 3275
+F 0 "#PWR07" H 1375 3025 50  0001 C CNN
+F 1 "GND" H 1380 3102 50  0000 C CNN
+F 2 "" H 1375 3275 50  0001 C CNN
+F 3 "" H 1375 3275 50  0001 C CNN
+	1    1375 3275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1375 3075 1375 3275
 $EndSCHEMATC
