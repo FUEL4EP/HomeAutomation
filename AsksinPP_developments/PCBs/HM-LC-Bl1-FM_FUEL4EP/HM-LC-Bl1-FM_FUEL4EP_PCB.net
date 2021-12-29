@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/ewald/Arduino/PCBs/HM-LC-Bl1-FM_FUEL4EP/HM-LC-Bl1-FM_FUEL4EP_PCB.sch)
-    (date "Mo 27 Dez 2021 10:56:44 CET")
+    (date "Mi 29 Dez 2021 15:06:12 CET")
     (tool "Eeschema 5.1.12-84ad8e8a86~92~ubuntu18.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -241,7 +241,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 617DA973))
     (comp (ref R18)
-      (value 22)
+      (value 180)
       (footprint Resistor_THT:R_Axial_DIN0614_L14.3mm_D5.7mm_P15.24mm_Horizontal)
       (datasheet ~)
       (libsource (lib Device) (part R) (description Resistor))
