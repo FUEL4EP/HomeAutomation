@@ -12,6 +12,16 @@
 - diese Schaltung und Platine ist noch nicht validiert!
 - ein geeigneter Sketch kann auf Nachfrage zur Verfügung gestellt werden
 - die Platine V1.2 behebt Fehler, die bei der Validierung eines Prototypen festgestellt und korrigiert wurden. Bitte keine Platinen der Versionen V1.0 und V1.1 verwenden.
+- **wichtige Aufbauhinweise:**
+    + zuerst die Niederspannungsplatine HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB Schritt für Schritt aufbauen, in Betrieb nehmen und testen:
+        + für den Arduino Pro Mini und den CC1101 Tranceiver **vor Einbau** in einem externen Testbed den Ruhestrom prüfen (<10uA) und einen Frequenztest durchführen!
+        + das 'Huckepack'-4-Kanal-Relaismodul noch nicht anbringen
+    + die 230V Schaltungsteile erst dann anschließen, wenn der Rest vollständig geprüft wurde und die Software alle notwendigen Funktionen zeigt.
+        * als Erstes dann das 'Huckepack'-4-Kanal-Relaismodul anbringen und nur die Steuersignale verbinden, noch keine 230V Spannungen an den Relaisausgängen anschließen
+        * dann die Funktion testen
+        * erst als Letztes die 230V Verdrahtung mit der gebotenen Vorsicht anbringen
+        * die Sicherungen nicht vergessen
+        * Zugentlastungen für das Netzkabel anbringen!
 
 
 ## Disclaimer

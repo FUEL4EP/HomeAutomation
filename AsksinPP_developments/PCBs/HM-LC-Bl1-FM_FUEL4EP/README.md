@@ -10,6 +10,11 @@
 - diese Schaltung und Platine ist noch nicht validiert!
 - ein geeigneter Sketch kann auf Nachfrage zur Verfügung gestellt werden.
 - V1.2 der Platine behebt Fehler, die bei der Bestückung eines Prototypen erkannt wurden, bitte keine V1.0 und V1.1 Platinen verwenden!
+- **wichtige Aufbauhinweise:**
+    + zuerst die Niederspannungsplatine HM-LC-Bl1-FM_FUEL4EP_PCB Schritt für Schritt aufbauen, in Betrieb nehmen und testen:
+        + für den Arduino Pro Mini und den CC1101 Tranceiver **vor Einbau** in einem externen Testbed den Ruhestrom prüfen (<10uA) und einen Frequenztest durchführen!
+        + das Modul 4 'LM2596 buck 24V->6.3V' zuerst außerhalb auf eine Ausgangsspannung von 6,3 Volt einstellen und dann erst einbauen!
+    + die 230V Schaltungsteile erst dann anschließen, wenn der Rest vollständig geprüft wurde und die Software alle notwendigen Funktionen zeigt.
 
 
 ## Disclaimer
