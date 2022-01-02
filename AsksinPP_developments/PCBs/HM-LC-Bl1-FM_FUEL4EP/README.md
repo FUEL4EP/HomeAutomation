@@ -15,6 +15,8 @@
         + für den Arduino Pro Mini und den CC1101 Tranceiver **vor Einbau** in einem externen Testbed den Ruhestrom prüfen (<10uA) und einen Frequenztest durchführen!
         + das Modul 4 'LM2596 buck 24V->6.3V' zuerst außerhalb auf eine Ausgangsspannung von 6,3 Volt einstellen und dann erst einbauen!
     + die 230V Schaltungsteile erst dann anschließen, wenn der Rest vollständig geprüft wurde und die Software alle notwendigen Funktionen zeigt.
+- Zum Programmieren des ATMega328P mit einem ISP Programmierer bitte statt 4 NiMH Akkumulatoren nur 2 AAA Alkalibatterien verwenden (VCC=3,0..3,2V). Sonst muss avrdude zweimal gestartet werden, siehe Diskussionfaden im nächsten Punkt.
+- Ein Diskussionsfaden ist im Homematic Forum unter [Nachbau HM-LC-Bl1-FM für Velux Rolladen und Netzfreischalter](https://homematic-forum.de/forum/viewtopic.php?f=76&t=71683&sid=71b7e84664ec8bed7b9e50bd442664ad) zu finden
 
 
 ## Disclaimer

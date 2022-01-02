@@ -11,16 +11,16 @@
 
 - Sample Separation: -
 
-- Measurement duration: 16 days
+- Measurement duration: 31 days
 
-- Date: 11th December 2021
+- Date: 2nd Jan 2022
 
 
 ## Results
 
 - Measurement interval: 10 minutes
-- 7D Moving average event rate: 3.94 cpi
+- 7D Moving average event rate: 3.91 cpi
 - Maximum 7D moving average event rate: 4.04 cpi
-- Maximum event rate: 15 cpi
-- 95% Confidence interval width: 8.94 cpi / sqrt(1008) = 0.282 cpi
-- 95% Confidence interval: 3.658 .. 4.222 
+- Maximum event rate: 13 cpi
+- 95% Confidence interval width: 8.73 cpi / sqrt(1008) = 0.275 cpi
+- 95% Confidence interval: 3.635 .. 4.185 
