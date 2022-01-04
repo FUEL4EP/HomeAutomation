@@ -464,6 +464,7 @@ Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
 - [Radium-Nachweis in radioaktiven Proben durch Messung der Halbwertszeit des exhalierten Radons](http://www.opengeiger.de/RadiumNachweis.pdf)
 - [Kaliumchlorid - Prüfstrahler  selber basteln](http:/www.chetan.homepage.t-online.de/sonstig/KCL_PR1.HTM)
 - [Kalibrierung des „Stuttgarter Geigerle“ PIN-Dioden Zählers](http://www.opengeiger.de/Kalibrierung.pdf)
+- [Natürliche Radioaktivität in Lebensmitteln und Gebrauchsgegenständen](https://www4.unifr.ch/sfsn/pdf/voelklegebrauchsgegenstaende-SSP.pdf)
 
 ## Akkulebensdauer
 
