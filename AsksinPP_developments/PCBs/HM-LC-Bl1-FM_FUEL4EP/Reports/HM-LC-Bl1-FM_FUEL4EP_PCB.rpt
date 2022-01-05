@@ -1,5 +1,5 @@
 ** Drc report for /home/ewald/Arduino/PCBs/HM-LC-Bl1-FM_FUEL4EP/HM-LC-Bl1-FM_FUEL4EP_PCB.kicad_pcb **
-** Created on 2021-12-29 15:07:27 **
+** Created on 2022-01-05 19:56:16 **
 
 ** Found 1 DRC errors **
 ErrType(46): Footprint hat keinen Sperrbereich definiert

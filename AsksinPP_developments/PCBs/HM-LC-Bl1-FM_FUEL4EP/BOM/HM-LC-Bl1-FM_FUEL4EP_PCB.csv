@@ -1,5 +1,5 @@
 "Source:","PCBs/HM-LC-Bl1-FM_FUEL4EP/HM-LC-Bl1-FM_FUEL4EP_PCB.sch",,,,,,,,,,
-"Date:","Mi 29 Dez 2021 18:06:25 CET",,,,,,,,,,
+"Date:","Mi 05 Jan 2022 19:55:30 CET",,,,,,,,,,
 "Tool:","Eeschema 5.1.12-84ad8e8a86~92~ubuntu18.04.1",,,,,,,,,,
 "Generator:","/usr/share/kicad/plugins/bom_csv_grouped_by_value.py",,,,,,,,,,
 "Component Count:","69",,,,,,,,,,
@@ -54,7 +54,7 @@
 ,,"Q4","2N7000","Transistor_FET:2N7000","Package_TO_SOT_THT:TO-92_Inline","https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF",,,,,
 ,,"Q5","MCP1702-2802E_TO","FUEL4EP:MCP1702-2802E_TO","FUEL4EP:TO127P254X533-3",,"MCP1702-2802E/TO","1331485","34M7419","TO-92","Microchip"
 ,,"R1","330","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
-,,"R2","200k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal","~",,,,,
+,,"R2","470k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal","~",,,,,
 ,,"R3","100K","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
 ,,"R4","100k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
 ,,"R5","10k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
@@ -122,7 +122,7 @@
 "38","1","Q4","2N7000","Transistor_FET:2N7000","Package_TO_SOT_THT:TO-92_Inline","https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF",,,,,
 "39","1","Q5","MCP1702-2802E_TO","FUEL4EP:MCP1702-2802E_TO","FUEL4EP:TO127P254X533-3",,"MCP1702-2802E/TO","1331485","34M7419","TO-92","Microchip"
 "40","6","R1, R7, R10, R11, R12, R23","330","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"41","1","R2","200k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal","~",,,,,
+"41","1","R2","470k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal","~",,,,,
 "42","1","R3","100K","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
 "43","1","R4","100k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
 "44","3","R5, R6, R17","10k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,

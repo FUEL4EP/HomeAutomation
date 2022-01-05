@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/ewald/Arduino/PCBs/HM-LC-Bl1-FM_FUEL4EP/HM-LC-Bl1-FM_FUEL4EP_PCB.sch)
-    (date "Mi 29 Dez 2021 15:06:12 CET")
+    (date "Mi 05 Jan 2022 19:55:07 CET")
     (tool "Eeschema 5.1.12-84ad8e8a86~92~ubuntu18.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -90,7 +90,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 6177D57F))
     (comp (ref R2)
-      (value 200k)
+      (value 470k)
       (footprint Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal)
       (datasheet ~)
       (libsource (lib Device) (part R) (description Resistor))
