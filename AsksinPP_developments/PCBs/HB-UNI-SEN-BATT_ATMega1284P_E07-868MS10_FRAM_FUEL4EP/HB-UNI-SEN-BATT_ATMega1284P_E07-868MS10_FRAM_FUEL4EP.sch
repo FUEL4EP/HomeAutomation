@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "HB-UNI-SEN-BATT_ATMega1284P_FUEL4EP"
-Date "2021-10-01"
-Rev "1.0"
+Date "2022-01-10"
+Rev "1.1"
 Comp "FUEL4EP"
 Comment1 "Creative Commons License, non-commercial"
 Comment2 "connector for Waveshare e-paper module (B) 1.54inch (J11)"
@@ -1164,11 +1164,11 @@ L Device:R R8
 U 1 1 616A6E4F
 P 8175 2775
 F 0 "R8" V 8275 2775 50  0000 C CNN
-F 1 "200k" V 8175 2775 50  0000 C CNN
+F 1 "47k" V 8175 2775 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" V 8105 2775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/lcsc/1810111610_UNI-ROYAL-Uniroyal-Elec-0805W8F2003T5E_C17539.pdf" H 8175 2775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/lcsc/1809281715_UNI-ROYAL-Uniroyal-Elec-0805W8F4702T5E_C17713.pdf" H 8175 2775 50  0001 C CNN
 F 4 "0805" H 8175 2775 50  0001 C CNN "JLCPCB BOM"
-F 5 "C17539" H 8175 2775 50  0001 C CNN "LCSC Part"
+F 5 "C17713" H 8175 2775 50  0001 C CNN "LCSC Part"
 	1    8175 2775
 	0    1    1    0   
 $EndComp
@@ -2076,4 +2076,6 @@ F 5 "C101406" H 3825 1325 50  0001 C CNN "LCSC Part"
 	1    3825 1325
 	1    0    0    -1  
 $EndComp
+Text Notes 7475 2550 0    60   ~ 0
+battery voltage measurement\nmax. measurement voltage is 3.76V for R8 = 47kOhm
 $EndSCHEMATC

@@ -1,8 +1,8 @@
 (export (version D)
   (design
-    (source /home/ewald/Arduino/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP.sch)
-    (date "Mo 18 Okt 2021 09:33:32 CEST")
-    (tool "Eeschema 5.1.10-88a1d61d58~88~ubuntu18.04.1")
+    (source /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP.sch)
+    (date "Mo 10 Jan 2022 10:31:29 CET")
+    (tool "Eeschema 5.1.12-84ad8e8a86~92~ubuntu18.04.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title HB-UNI-SEN-BATT_ATMega1284P_FUEL4EP)
@@ -224,7 +224,7 @@
       (datasheet ~)
       (fields
         (field (name "JLCPCB BOM") 0))
-      (libsource (lib FUEL4EP) (part Conn_01x08) (description "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"))
+      (libsource (lib FUEL4EP) (part Conn_01x08) (description ""))
       (sheetpath (names /) (tstamps /))
       (tstamp 615F5EDC))
     (comp (ref R1)
@@ -323,7 +323,7 @@
       (datasheet https://www.ti.com/lit/ds/symlink/cc1101.pdf)
       (fields
         (field (name "JLCPCB BOM") 0))
-      (libsource (lib FUEL4EP) (part E07-868MS10) (description "TI CC1101 868.3 MHz tranceiver module"))
+      (libsource (lib FUEL4EP) (part E07-868MS10) (description ""))
       (sheetpath (names /) (tstamps /))
       (tstamp 615E7D6B))
     (comp (ref C1)
@@ -396,7 +396,7 @@
         (field (name MAXIMUM_PACKAGE_HEIGHT) 1.5mm)
         (field (name PARTREV) A0)
         (field (name STANDARD) "Manufacturer Recommendations"))
-      (libsource (lib FUEL4EP) (part TS-1187A-B-A-B) (description "SMD Push Button Switch JLCPCB Basic"))
+      (libsource (lib FUEL4EP) (part TS-1187A-B-A-B) (description ""))
       (sheetpath (names /) (tstamps /))
       (tstamp 6163E34D))
     (comp (ref SW2)
@@ -410,7 +410,7 @@
         (field (name MAXIMUM_PACKAGE_HEIGHT) 1.5mm)
         (field (name PARTREV) A0)
         (field (name STANDARD) "Manufacturer Recommendations"))
-      (libsource (lib FUEL4EP) (part TS-1187A-B-A-B) (description "SMD Push Button Switch JLCPCB Basic"))
+      (libsource (lib FUEL4EP) (part TS-1187A-B-A-B) (description ""))
       (sheetpath (names /) (tstamps /))
       (tstamp 6163ACFF))
     (comp (ref Dummy1)
@@ -433,7 +433,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 616A5D31))
     (comp (ref R8)
-      (value 200k)
+      (value 47k)
       (footprint Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder)
       (datasheet https://datasheet.lcsc.com/lcsc/1810111610_UNI-ROYAL-Uniroyal-Elec-0805W8F2003T5E_C17539.pdf)
       (fields
@@ -707,8 +707,6 @@
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive))))
     (libpart (lib FUEL4EP) (part Conn_01x08)
-      (description "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)")
-      (docs ~)
       (footprints
         (fp Connector*:*_1x??_*))
       (fields
@@ -725,8 +723,6 @@
         (pin (num 7) (name Pin_7) (type passive))
         (pin (num 8) (name Pin_8) (type passive))))
     (libpart (lib FUEL4EP) (part E07-868MS10)
-      (description "TI CC1101 868.3 MHz tranceiver module")
-      (docs https://www.ti.com/lit/ds/symlink/cc1101.pdf)
       (fields
         (field (name Reference) Module)
         (field (name Value) E07-868MS10))
@@ -738,12 +734,10 @@
         (pin (num 3C) (name ~CSN) (type input))
         (pin (num 4C) (name SCK) (type input))
         (pin (num 5C) (name MOSI) (type input))
-        (pin (num 6C) (name MISO/GDO1) (type output))
+        (pin (num 6C) (name MISO/GDO1) (type 3state))
         (pin (num 7C) (name GDO2) (type output))
         (pin (num 8C) (name GND) (type power_in))))
     (libpart (lib FUEL4EP) (part TS-1187A-B-A-B)
-      (description "SMD Push Button Switch JLCPCB Basic")
-      (docs https://datasheet.lcsc.com/lcsc/2002271431_XKB-Connectivity-TS-1187A-B-A-B_C318884.pdf)
       (fields
         (field (name Reference) S)
         (field (name Value) TS-1187A-B-A-B)
@@ -758,7 +752,6 @@
         (pin (num C) (name ~) (type passive))
         (pin (num D) (name ~) (type passive))))
     (libpart (lib FUEL4EP) (part Waveshare_1.54_inch_epaper_dummy)
-      (docs https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
       (fields
         (field (name Reference) Dummy)
         (field (name Value) Waveshare_1.54_inch_epaper_dummy)
@@ -886,7 +879,7 @@
     (library (logical Device)
       (uri /usr/share/kicad/library/Device.lib))
     (library (logical FUEL4EP)
-      (uri /home/ewald/Arduino/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/../FUEL4EP.lib))
+      (uri /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/../FUEL4EP.lib))
     (library (logical Graphic)
       (uri /usr/share/kicad/library/Graphic.lib))
     (library (logical Jumper)

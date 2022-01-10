@@ -1,10 +1,16 @@
-** Drc report for /home/ewald/Arduino/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP.kicad_pcb **
-** Created on 2021-10-18 09:35:07 **
+** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP.kicad_pcb **
+** Created on 2022-01-10 11:59:12 **
 
 ** Found 1 DRC errors **
 ErrType(46): Footprint hat keinen Sperrbereich definiert
     @(116.250 mm, 101.000 mm): Footprint LOGO1 auf F.Cu
 
-** Found 0 unconnected pads **
+** Found 2 unconnected pads **
+ErrType(2): Nicht verbundene Elemente
+    @(141.732 mm, 143.891 mm): Leiterbahn 0.200 mm [/SCL] auf F.Cu, Länge: 2.540 mm
+    @(140.970 mm, 143.383 mm): Pad 4 auf J8 von Alle Kupferlagen
+ErrType(2): Nicht verbundene Elemente
+    @(140.970 mm, 148.463 mm): Pad 2 auf J8 von Alle Kupferlagen
+    @(143.383 mm, 148.336 mm): Leiterbahn 0.200 mm [/SDA] auf F.Cu, Länge: 5.842 mm
 
 ** End of Report **

@@ -93,13 +93,16 @@
 ```
 - nach
 ```
-// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A0 (=pin 24), activation pin A1 (=pin 25) , Faktor = Rges/Rlow*1000, z.B. 141k/47k, Faktor (3*47k)/(1*47k)*1000 = 3000 (ATMega1284P)
-// start with Faktor = 3000
+// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A0 (=pin 24), activation pin A1 (=pin 25) , Faktor = Rges/Rlow*1000, z.B. (100kOhm+47kOhm/100kOhm), Faktor (147k)/(100k)*1000 = 1470 (ATMega1284P)
+// start with Faktor = 1470
 // check in serial monitor the reported V2='accumulator voltage(MCU ADC) (x1000.0)' and compare with the reported V1='accumulator batteries voltage (x1000.0)'
 // calculate voltage correction factor V1/V2
-// calculate total factor = 3000 * V2/V1 = 3000 * 3141 / 3157 = 2985
-#define BAT_SENSOR tmBatteryResDiv<A0, A2, 2985> 
+// calculate total Faktor = 1470 * V2/V1 = 1470 * 3141 / 3157 = 1463
+#define BAT_SENSOR tmBatteryResDiv<A0, A2, 1463>
 ```
+- zur Berechnung von Faktor in tmBatteryResDiv wird ein Libreoffice Calc Sheet [tmBattery_tmBatteryResDiv_calculator.ods](../../tools/tmBattery_tmBatteryResDiv_calculator.ods) zur Verfügung gestellt
+- in der Version 1.0 war R8 = 200kOhm, daher Faktor = 3000 (ohne Kalibrierung)
+- in der Version 1.1 ist R8 = 47kOhm, daher Faktor = 1470 (ohne Kalibrierung)
 ### Anschluss eines FTDI Debuggers
 
 - zum Anschluss eines FTDI Debuggers an die 6-polige Stiftleiste J12 bitte ein [6 Pin Dupontkabel 2.54mm Buchse-Buchse 20 cm](https://www.roboter-bausatz.de/p/6-pin-dupontkabel-2.54mm-buchse-buchse-20-cm) verwenden
@@ -112,10 +115,15 @@
 ### Hinweise
 * Achtung: Kein Überspannungschutz vorhanden
 * der Verpolungsschutz ist optional. Dafür Bauteil Q1 (IRLU024N) und R3 (100KOhm Widerstand) bestücken. Alternativ JP1 auf der Platinenrückseite brücken um ohne Verpolungsschutz zu arbeiten.
-
+ * bei der Nutzung des JLCPCB SMT Bestückungsservice ist darauf zu achten, dass **alle** benötigten SMD Bauteile als im Lager **verfügbar** angezeigt werden. Sonst bitte **NICHT** bestellen!
+ * aktuell ist der benötigte ATMega1284P-AU beim JLCPCP SMT Service nicht verfügbar. Daher wurde auch noch kein Prototyp gebaut.
 ## Disclaimer
 
 -   die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr.
+
+## Versionsverlauf
+
+-    V1.1 10. Januar 2022: R8 auf 47kOhm geändert, zusätzliche Aufdrucktexte
 
 ## Lizenz 
 
