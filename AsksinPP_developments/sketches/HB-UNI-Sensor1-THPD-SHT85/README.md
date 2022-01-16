@@ -37,6 +37,7 @@
 	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/SHT85_Setting_of_device_parameters_in_WebUI.png)
 	+ Alle drei Offsetwerte (T, rLF, P) müssen für die Eingabe mit dem Faktor 10 multipliziert werden.
 - **NEU**: für die gemessene Temperatur können die gleitenden Mittelwerte über die [Zeiträume 24 Stunden](./Images/24h_moving_average_histogram.png) und [7 Tage (hier mit Startrampe zu Beginn der Aufzeichnung)](./Images/7days_moving_average_histogram_with_ramp_up.png) berechnet werden. Die Beispielhistogramme zeigen gemessene Innentemperaturen!
+![pic](Images/Moving_averages_example_histogram.png)	
     + programmierbare Option, die einen ATMega1284P benötigt, da das RAM eines ATMega328P nicht für die Speicherung der Temperaturwerte über eine Woche ausreicht
     + diese Option wird mit '#define CALCULATE_MOVING_AVERAGES' aktiviert
     + diese Option erfordert die Kalibrierung des SYSCLOCK_FACTOR, siehe unten unter Kalibrierung, so dass neue Temperaturmessungen exakt im Abstand von 240 Sekunden erfolgen. Ohne diese Kalibrierung sind die gleitenden Mittelwerte verfälscht!
@@ -145,6 +146,7 @@
 10. Dann den Sketch [HB-UNI-Sensor1-THPD-SHT85.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85/HB-UNI-Sensor1-THPD-SHT85.ino) kompilieren und mit dem ISP Programmer auf den Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) hochladen. Details siehe unten.
 11. Den neuen Sensor in der CCU/RaspBerryMatic anlernen.
 12. Den neuen Sensor in der CCU3/RaspberryMatic dem Gewerk 'Wetter' zuordnen.
+13. Wenn eine Aktualisierung der Sensorfirmware mit der Option '#define CALCULATE_MOVING_AVERAGES' zur Berechnung von gleitenden Mittelwerten gemacht wurde, bitte zuerst die letzte Addon Version [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf die CCU3/RaspberryMatic als Zusatzsoftware aufspielen, dann den Sensor HB-UNI-Sensor1-THPD-SHT85 zuerst komplett von der Zentrale CCU3/Raspberrymatic ablernen und löschen, danach den Sensor HB-UNI-Sensor1-THPD-SHT85 wieder erneut an der Zentrale CCU3/Raspberrymatic anlernen.
  
 
 ## Benötiger Sketch
