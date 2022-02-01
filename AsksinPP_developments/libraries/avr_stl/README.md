@@ -10,7 +10,8 @@ https://github.com/mike-matera/ArduinoSTL
 **Changes are:**
 
 remove avr_stl/src/del_ops.cpp<br/>
-remove avr_stl/src/del_opvs.cpp
+remove avr_stl/src/del_opvs.cpp<br/>
+remove avr_stl/src/new_handler.cpp
 
 for avoiding duplicated definitions
 

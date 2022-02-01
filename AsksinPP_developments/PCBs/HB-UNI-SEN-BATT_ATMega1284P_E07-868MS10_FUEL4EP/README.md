@@ -109,6 +109,12 @@
 * der Verpolungsschutz ist optional. Dafür Bauteil Q1 (IRLU024N) und R3 (100KOhm Widerstand) bestücken. Alternativ JP1 auf der Platinenrückseite brücken um ohne Verpolungsschutz zu arbeiten.
 * bei der Nutzung des JLCPCB SMT Bestückungsservice ist darauf zu achten, dass **alle** benötigten SMD Bauteile als im Lager **verfügbar** angezeigt werden. Sonst bitte **NICHT** bestellen!
 
+
+## Bestellen von Platinen
+
+- die Platine kann entweder direkt bei JLCPCB bestellt werden
+- oder per PN bei FUEL4EP nachfragen. Aus der Bestellung der Prototypen sind noch wenige Platinen kostengünstig abzugeben.
+
 ## Disclaimer
 
 -   die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr.

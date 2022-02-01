@@ -50,8 +50,8 @@ class Sens_SHT85_Bme280 : public Sensor {
   int16_t   _dewPoint10;                           // dewpoint x10
   uint16_t  _vaporConcentration100;                // absolute humidity concentration x100
 #if defined CALCULATE_MOVING_AVERAGES
-  int16_t   _24h_moving_average_temperature10;     // 24 h moving average of temperature,  scaled with 10.0
-  int16_t   _7days_moving_average_temperature10;   // 7 days moving average of temperature, scaled with 10.0
+  int16_t   _24h_moving_average_temperature100;     // 24 h moving average of temperature,  scaled with 10.0
+  int16_t   _7days_moving_average_temperature100;   // 7 days moving average of temperature, scaled with 10.0
 #endif
 
   BME280I2C _bme280;        // Default : forced mode, standby time = 1000 ms, Oversampling = pressure ×1, temperature ×1, humidity ×1, filter off
@@ -154,12 +154,12 @@ public:
       _pressure10              = (uint16_t)(round(pres * 10.0));
       _pressureNN10            = (uint16_t)(round(EnvironmentCalculations::EquivalentSeaLevelPressure(float(_altitude), temp, pres) * 10.0));
       _humidity10              = (uint16_t)(round(hum * 10.0));
-      _dewPoint10              = (int16_t)(EnvironmentCalculations::DewPoint(temp, hum, EnvironmentCalculations::TempUnit_Celsius) * 10.0);
+      _dewPoint10              = (int16_t)(round(EnvironmentCalculations::DewPoint(temp, hum, EnvironmentCalculations::TempUnit_Celsius) * 10.0));
       _vaporConcentration100   = (uint16_t)(EnvironmentCalculations::AbsoluteHumidity(temp, hum, EnvironmentCalculations::TempUnit_Celsius) * 100.0);
       
 #if defined CALCULATE_MOVING_AVERAGES
-      _24h_moving_average_temperature10   = _24h_moving_average_temperature_statistics.get_moving_average();
-      _7days_moving_average_temperature10 = _7days_moving_average_temperature_statistics.get_moving_average();
+      _24h_moving_average_temperature100   = (int16_t)(round(_24h_moving_average_temperature_statistics.get_moving_average()*10.0));      // temperature scaled by 100.0: 10.0 by _temperature10 and 10.0 here
+      _7days_moving_average_temperature100 = (int16_t)(round(_7days_moving_average_temperature_statistics.get_moving_average()*10.0));    // temperature scaled by 100.0: 10.0 by _temperature10 and 10.0 here
 #endif
       
       DPRINTLN(F("SHT85 and BME280 (all x10 except vapour x100):"));
@@ -170,8 +170,8 @@ public:
       DPRINT(F("SHT85  -DP   : ")); DDECLN(_dewPoint10);
       DPRINT(F("SHT85  -aH   : ")); DDECLN(_vaporConcentration100);
 #if defined CALCULATE_MOVING_AVERAGES
-      DPRINT(F("24h MA -T    : ")); DDECLN(_24h_moving_average_temperature10);
-      DPRINT(F("7D MA  -T    : ")); DDECLN(_7days_moving_average_temperature10);
+      DPRINT(F("24h MA -T    : ")); DDECLN(_24h_moving_average_temperature100);
+      DPRINT(F("7D MA  -T    : ")); DDECLN(_7days_moving_average_temperature100);
 #endif
     }
   }
@@ -183,8 +183,8 @@ public:
   int16_t  dewPoint ()                              { return _dewPoint10; }
   uint16_t vaporConcentration ()                    { return _vaporConcentration100; }
 #if defined CALCULATE_MOVING_AVERAGES
-  int16_t  moving_average_24h_temperature10 ()      { return _24h_moving_average_temperature10; }
-  int16_t  moving_average_7D_temperature10 ()       { return _7days_moving_average_temperature10; }
+  int16_t  moving_average_24h_temperature100 ()      { return _24h_moving_average_temperature100; }
+  int16_t  moving_average_7D_temperature100 ()       { return _7days_moving_average_temperature100; }
 #endif
 };
 

@@ -6,7 +6,8 @@
 #conda install -c conda-forge jupyterlab ipywidgets nodejs
 pip install ipywidgets
 pip install ipympl
-conda install -y nodejs
+conda install -y nodejs -c conda-forge --repodata-fn=repodata.json #necessary to get the required version of nodejs
+#conda install -y nodejs
 pip install --upgrade jupyterlab
 jupyter labextension list
 jupyter lab clean --all

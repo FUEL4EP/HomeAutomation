@@ -18,6 +18,15 @@ Die Genauigkeit der Luftfeuchtemessung des SHT75 Sensors ist typisch +-1.8% rH.
 **Es gibt von Sensirion inzwischen das Nachfolgemodell SHT85.** Der Übergang von SHT75 auf SHT85 ist [hier](https://media.digikey.com/pdf/Data%20Sheets/Sensirion%20PDFs/HT_AN_SHT85_Transitioning_SHT7x_to_SHT85_V0.9_D1.pdf) beschrieben. Der SHT85 Sensor nutzt einen I2C Bus und ist daher **NICHT** Software kompatibelzu SHT75!. 
 Inzwischen gibt es auch dafür einen Sketch [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85)
 
+## Update auf Firmware 1.1 verfügbar
+
+- die neue Firmwareversion 1.1 unterstützt die Berechnung eines gleitenden Mittelwerts der gemessenen Temperatur über 24 Stunden
+- hier am Beispiel der Oberflächentemperatur eines Grundofens, der einmal pro Tag befeuert wird:
+![pic](Images/24h_moving_average_example.png)
+- da mit dieser Option der RAM Speicherplatz fast vollständig ausgeknautscht wird, bitte keine weiteren Code-Änderungen vornehmen.
+- nach erfolgreichem Anlernen an die Zentrale und Test, bitte die NDEBUG Option aktivieren (siehe unten).
+- vor dem Aufspielen der neuen Firmware bitte den Sensor in der Zentrale komplett ablernen und dann mit der neu geflashten Firmware wieder anlernen
+- der 24h gleitende Mittelwert braucht 24 Stunden zum Einschwingen. Nach einem Reset startet der gleitende Mittelwert bei Null.
 
 ## Neue Eigenschaften im Vergleich zum HB-UNI-Sensor1 Sensor
 
@@ -141,8 +150,10 @@ Inzwischen gibt es auch dafür einen Sketch [HB-UNI-Sensor1-THPD-SHT85](https://
 > //#define NDEBUG
 
 - als Taktfrequenz des ATmega328P 8 MHz @ 3.3V externer Quarz einstellen
-- Der Sketch verwendet 24384 Bytes (79%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
-Globale Variablen verwenden 1046 Bytes (51%) des dynamischen Speichers, 1002 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
+- Der Sketch verwendet 27636 Bytes (89%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
+Globale Variablen verwenden 1876 Bytes (91%) des dynamischen Speichers, 172 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
+- Beim Kompilieren und Linken gibt es eine Warnung:
+    + Wenig Arbeitsspeicher verfügbar, es können Stabilitätsprobleme auftreten.
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega328P
 
@@ -174,7 +185,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 - bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-Sensor1-TH-SHT75 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
 - bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
-- die minimale Version des Addons ist 1.11.
+- die minimale Version des Addons ist 1.13.
 
 ## Verringerung der Tx Sendeleistung
 

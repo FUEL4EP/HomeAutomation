@@ -15,6 +15,14 @@
 
 - Der Diskussionsstrang im Homematic Forum dazu ist bald [hier](tbd) zu finden. Bitte dort auch Fragen stellen.
 
+## Update auf Firmware 1.1 verfügbar
+
+- die neue Firmwareversion 1.1 unterstützt die Berechnung von gleitenden Mittelwerten der gemessenen Temperatur über 24 Stunden und 7 Tage. **Die neue Auflösung der gleitenden Mittelwerte beträgt 0,01 Grad Kelvin** (vorher 0,1 Grad Kelvin).
+- vor dem Aufspielen der neuen Firmware
+    + das Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) mit der Version >= 1.13 als Zusatzsoftware in der Zentrale installieren (siehe README.md des Addons)
+    + falls der Sensor in einer früheren Firmwareversion schon an der Zentrale angelernt war, bitte den Sensor zuerst in der Zentrale komplett ablernen und dann mit der neu geflashten Firmware wieder anlernen
+- der 24h 7 Tage gleitende Mittelwert braucht 24 Stunden / 7 Tage zum Einschwingen. Nach einem Reset starten die gleitenden Mittelwerte bei Null.
+
 ## Vergleich der Temperaturtransiente des HB-UNI-Sensor1-THPD-SHT85 Sensor mit dem [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) 
 
 - grüne Linie: HB-UNI-Sensor1-THPD-SHT85
@@ -36,7 +44,7 @@
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smart-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
 	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/SHT85_Setting_of_device_parameters_in_WebUI.png)
 	+ Alle drei Offsetwerte (T, rLF, P) müssen für die Eingabe mit dem Faktor 10 multipliziert werden.
-- **NEU**: für die gemessene Temperatur können die gleitenden Mittelwerte über die [Zeiträume 24 Stunden](./Images/24h_moving_average_histogram.png) und [7 Tage (hier mit Startrampe zu Beginn der Aufzeichnung)](./Images/7days_moving_average_histogram_with_ramp_up.png) berechnet werden. Die Beispielhistogramme zeigen gemessene Innentemperaturen!
+- **NEU**: für die gemessene Temperatur können die gleitenden Mittelwerte über die [Zeiträume 24 Stunden](./Images/24h_moving_average_histogram.png) und [7 Tage (hier mit Startrampe zu Beginn der Aufzeichnung)](./Images/7days_moving_average_histogram_with_ramp_up.png) berechnet werden. Hier ein Beispiel (noch mit der 0,1 Grad Kelvin Auflösung):
 ![pic](Images/Moving_averages_example_histogram.png)	
     + programmierbare Option, die einen ATMega1284P benötigt, da das RAM eines ATMega328P nicht für die Speicherung der Temperaturwerte über eine Woche ausreicht
     + diese Option wird mit '#define CALCULATE_MOVING_AVERAGES' aktiviert
@@ -179,8 +187,8 @@
     + '#define CALCULATE_MOVING_AVERAGES' aktiviert
     + durch Auskommentieren mit '// #define CALCULATE_MOVING_AVERAGES' deaktiviert
 - ohne Berechnung von gleitenden Mittelwerten benötigt der Sketch 34206 Bytes (26%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes. Globale Variablen verwenden 1299 Bytes (7%) des dynamischen Speichers, 15085 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
-- mit Berechnung von gleitenden Mittelwerten benötigt der Sketch 38706 Bytes (29%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes.
-Globale Variablen verwenden 7422 Bytes (45%) des dynamischen Speichers, 8962 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
+- mit Berechnung von gleitenden Mittelwerten benötigt der Sketch 39824 Bytes (30%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes.
+Globale Variablen verwenden 7332 Bytes (44%) des dynamischen Speichers, 9052 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
 - [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) zum Setzen der Fuses für 8MHz interner RC Oszillator (Linux version)
@@ -220,7 +228,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
-- die minimal benötigte Version ist die Version 1.12.
+- die minimal benötigte Version ist die Version 1.13.
 
 - bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-Sensor1-THPD-SHT85 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
 

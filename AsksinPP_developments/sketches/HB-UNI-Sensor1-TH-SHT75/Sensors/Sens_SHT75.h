@@ -19,6 +19,11 @@
 #include <Sensors.h>
 #include <Sensirion.h>    // https://github.com/spease/Sensirion
 
+//calculate 24h moving average
+#if defined CALCULATE_MOVING_AVERAGES
+#include "Sens_weather_statistics_RAM.h"
+#endif
+
 namespace as {
 
 template <uint8_t DATAPIN, uint8_t CLOCKPIN> class Sens_SHT75 : public Sensor {
@@ -28,6 +33,10 @@ template <uint8_t DATAPIN, uint8_t CLOCKPIN> class Sens_SHT75 : public Sensor {
     uint16_t  _humidity;
     float     _temperature_correction;
     float     _humidity_correction;
+#if defined CALCULATE_MOVING_AVERAGES
+    int16_t   _24h_moving_average_temperature100;     // 24 h moving average of temperature,  scaled with 100.0
+    weather_statistics<int16_t, int32_t,  360>  _24h_moving_average_temperature_statistics;              // 1 * 24 * 60 / 4 measurement samples int16_t =  720 Bytes RAM memory for circular buffer
+#endif
 
     void i2cDisable()
     {
@@ -60,6 +69,9 @@ public:
 
     bool init(int16_t temperature_correction, int16_t humidity_correction)
     {
+#if defined CALCULATE_MOVING_AVERAGES
+        _24h_moving_average_temperature_statistics.clear_buffer();
+#endif
         i2cDisable();
         uint8_t stat, i = 10;
         while (i > 0) {
@@ -67,12 +79,9 @@ public:
                 _present = true;
                 DPRINTLN(F("SHT75 found"));
                 i2cEnable();
-                _temperature_correction = (float)(temperature_correction) / 10.0;
-                _humidity_correction = (float)(humidity_correction) / 10.0;
-                DPRINT("SHT75 Temperature correction  : ");
-                DDECLN(_temperature_correction);
-                DPRINT("SHT75 Humidity correction     : ");
-                DDECLN(_humidity_correction);
+                _temperature_correction = (float)(temperature_correction / 10);
+                _humidity_correction    = (float)(humidity_correction    / 10);
+                
                 return true;
             }
             delay(100);
@@ -99,17 +108,28 @@ public:
                     bRet      = true;
                 }
             }
-            DPRINT("SHT75    Temperature x10  : ");
+#if defined CALCULATE_MOVING_AVERAGES
+            _24h_moving_average_temperature_statistics.add_measurement(_temperature);
+            DDECLN(_24h_moving_average_temperature_statistics.get_moving_average());
+            _24h_moving_average_temperature100   = (int16_t)(round(_24h_moving_average_temperature_statistics.get_moving_average() * 10.0 )); // scale by 10.0 in order to get 0.01 K resolution
+#endif      
+            DPRINT(F("SHT75    Temperature x10  : "));
             DDECLN(_temperature);
-            DPRINT("SHT75    Humidity x10     : ");
+            DPRINT(F("SHT75    Humidity    x10  : "));
             DDECLN(_humidity);
+#if defined CALCULATE_MOVING_AVERAGES
+            DPRINT(F("SHT75    24h MA -T  x100  : ")); DDECLN(_24h_moving_average_temperature100);
+#endif
             i2cEnable();
         }
         return bRet;
     }
 
-    int16_t  temperature() { return _temperature; }
-    uint16_t humidity()    { return _humidity; }
+    int16_t  temperature()                             { return _temperature; }
+    uint16_t humidity()                                { return _humidity; }
+#if defined CALCULATE_MOVING_AVERAGES
+    int16_t  moving_average_24h_temperature100 ()      { return _24h_moving_average_temperature100; }
+#endif
 };
 
 }
