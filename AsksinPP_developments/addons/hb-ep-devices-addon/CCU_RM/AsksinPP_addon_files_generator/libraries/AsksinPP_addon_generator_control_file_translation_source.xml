@@ -1,264 +1,385 @@
 <AsksinPP_addon_generator_control>
   <addon_name>hb-ep-devices-addon</addon_name>
-  <addon_version>1.13</addon_version>
+  <addon_version>1.14</addon_version>
   <creator>FUEL4EP</creator>
   <creator_prefix>F6</creator_prefix>
-  <created_on>2022_01_17-15:37:56</created_on>
+  <created_on>2022_02_08-10:32:54</created_on>
   <generator_version>0.13</generator_version>
   <devices>
-    <device id='HB-UNI-SENSOR-TH-SHT75' index='0' device_name='HB-UNI-Sensor-TH-SHT75' device_model='0xF603' device_small_case_name='hb-uni-sensor-TH-SHT75' rftypes_XML_version='0x10' VersionString='0.13'>
+    <device id='HB-LC-BL1-FM-HYBRID' index='0' device_name='accu powered / mains operation with demand switch radio-controlled blind actuator 1-channel for Velux blind shutter' device_model='0xf60b' device_small_case_name='hb-LC-Bl1-FM-HYBRID' rftypes_XML_version='0x10' VersionString='0.13'>
+      <device_description>hybrider Rolladenaktor für Velux Rolladen mit Akkumulator-/Netzbetrieb an Netzfreischalter</device_description>
+    </device>
+    <device id='HB-UNI-SENSOR-TH-SHT75' index='1' device_name='HB-UNI-Sensor-TH-SHT75' device_model='0xF603' device_small_case_name='hb-uni-sensor-TH-SHT75' rftypes_XML_version='0x10' VersionString='0.13'>
       <device_description>Sensor TH</device_description>
     </device>
-    <device id='HB-UNI-SENSOR-TH-SHT75_MA' index='1' device_name='HB-UNI-Sensor-TH-SHT75_MA' device_model='0xF60A' device_small_case_name='hb-uni-sensor-TH-SHT75_MA' rftypes_XML_version='0x11' VersionString='0.13'>
+    <device id='HB-UNI-SENSOR-TH-SHT75_MA' index='2' device_name='HB-UNI-Sensor-TH-SHT75_MA' device_model='0xF60A' device_small_case_name='hb-uni-sensor-TH-SHT75_MA' rftypes_XML_version='0x11' VersionString='0.13'>
       <device_description>Sensor TH mit Mittelwertfilter</device_description>
     </device>
-    <device id='HB-UNI-SENSOR-THPD-SHT85' index='2' device_name='HB-UNI-Sensor-THPD-SHT85' device_model='0xF609' device_small_case_name='hb-uni-sensor-THPD-SHT85' rftypes_XML_version='0x10' VersionString='0.13'>
+    <device id='HB-UNI-SENSOR-THPD-SHT85' index='3' device_name='HB-UNI-Sensor-THPD-SHT85' device_model='0xF609' device_small_case_name='hb-uni-sensor-THPD-SHT85' rftypes_XML_version='0x11' VersionString='0.13'>
       <device_description>Sensor THPD mit Mittelwertfilter</device_description>
     </device>
-    <device id='HB-UNI-SENSOR-THPD-BME280' index='3' device_name='HB-UNI-Sensor-THPD-BME280' device_model='0xF604' device_small_case_name='hb-uni-sensor-THPD-BME280' rftypes_XML_version='0x10' VersionString='0.13'>
+    <device id='HB-UNI-SENSOR-THPD-BME280' index='4' device_name='HB-UNI-Sensor-THPD-BME280' device_model='0xF604' device_small_case_name='hb-uni-sensor-THPD-BME280' rftypes_XML_version='0x10' VersionString='0.13'>
       <device_description>Sensor THPD</device_description>
     </device>
-    <device id='HB-UNI-SENSOR-RAD-AL53' index='4' device_name='HB-UNI-Sensor-RAD-AL53' device_model='0xF608' device_small_case_name='hb-uni-sensor-RAD-AL53' rftypes_XML_version='0x10' VersionString='0.13'>
+    <device id='HB-UNI-SENSOR-RAD-AL53' index='5' device_name='HB-UNI-Sensor-RAD-AL53' device_model='0xF608' device_small_case_name='hb-uni-sensor-RAD-AL53' rftypes_XML_version='0x10' VersionString='0.13'>
       <device_description>Radioaktivitätssensor</device_description>
     </device>
-    <device id='HB-UNI-SENSOR-CO2-SCD30' index='5' device_name='HB-UNI-Sensor-CO2-SCD30' device_model='0xF601' device_small_case_name='hb-uni-sensor-CO2-SCD30' rftypes_XML_version='0x10' VersionString='0.13'>
+    <device id='HB-UNI-SENSOR-CO2-SCD30' index='6' device_name='HB-UNI-Sensor-CO2-SCD30' device_model='0xF601' device_small_case_name='hb-uni-sensor-CO2-SCD30' rftypes_XML_version='0x10' VersionString='0.13'>
       <device_description>Sensor Kohlendioxid</device_description>
     </device>
-    <device id='HB-UNI-SENSOR-CO2-SCD30-PLUGGED_IN' index='6' device_name='HB-UNI-Sensor-CO2-SCD30-PLUGGED_IN' device_model='0xF605' device_small_case_name='hb-uni-sensor-CO2-SCD30-PLUGGED_IN' rftypes_XML_version='0x10' VersionString='0.13'>
+    <device id='HB-UNI-SENSOR-CO2-SCD30-PLUGGED_IN' index='7' device_name='HB-UNI-Sensor-CO2-SCD30-PLUGGED_IN' device_model='0xF605' device_small_case_name='hb-uni-sensor-CO2-SCD30-PLUGGED_IN' rftypes_XML_version='0x10' VersionString='0.13'>
       <device_description>Sensor Kohlendioxid Netzbetrieb</device_description>
     </device>
-    <device id='HB-UNI-SENSOR-AQ-BME680' index='7' device_name='HB-UNI-Sensor-AQ-BME680' device_model='0xF602' device_small_case_name='hb-uni-sensor-AQ-BME680' rftypes_XML_version='0x10' VersionString='0.13'>
+    <device id='HB-UNI-SENSOR-AQ-BME680' index='8' device_name='HB-UNI-Sensor-AQ-BME680' device_model='0xF602' device_small_case_name='hb-uni-sensor-AQ-BME680' rftypes_XML_version='0x10' VersionString='0.13'>
       <device_description>universeller Luftgütesensor</device_description>
     </device>
-    <device id='HB-UNI-SENSOR-AQ-BME680_KF' index='8' device_name='HB-UNI-Sensor-AQ-BME680_KF' device_model='0xF606' device_small_case_name='hb-uni-sensor-AQ-BME680_KF' rftypes_XML_version='0x10' VersionString='0.13'>
+    <device id='HB-UNI-SENSOR-AQ-BME680_KF' index='9' device_name='HB-UNI-Sensor-AQ-BME680_KF' device_model='0xF606' device_small_case_name='hb-uni-sensor-AQ-BME680_KF' rftypes_XML_version='0x10' VersionString='0.13'>
       <device_description>universeller Luftgütesensor mit Kalman Filter</device_description>
     </device>
-    <device id='HB-UNI-SENSOR-AQ-BME680_KF_DEBUG' index='9' device_name='HB-UNI-Sensor-AQ-BME680_KF_DEBUG' device_model='0xF607' device_small_case_name='hb-uni-sensor-AQ-BME680_KF_DEBUG' rftypes_XML_version='0x10' VersionString='0.13'>
+    <device id='HB-UNI-SENSOR-AQ-BME680_KF_DEBUG' index='10' device_name='HB-UNI-Sensor-AQ-BME680_KF_DEBUG' device_model='0xF607' device_small_case_name='hb-uni-sensor-AQ-BME680_KF_DEBUG' rftypes_XML_version='0x10' VersionString='0.13'>
       <device_description>universeller Luftgütesensor mit Kalman Filter (Debug Version)</device_description>
     </device>
   </devices>
   <paramset>
-    <parameter id='TRANSMIT_TIME_INTERVAL' index='10' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='TRANSMIT_TIME_INTERVAL' index='11' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_TRANSMIT_TIME_INTERVAL</stringtable_identifier>
       <translation_de>Sendeintervall</translation_de>
       <translation_en>transmit time interval</translation_en>
     </parameter>
-    <parameter id='ALTITUDE_ABOVE_SEA_LEVEL' index='11' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='ALTITUDE_ABOVE_SEA_LEVEL' index='12' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_ALTITUDE_ABOVE_SEA_LEVEL</stringtable_identifier>
       <translation_de>Höhe über NN</translation_de>
       <translation_en>altitude above sea level</translation_en>
     </parameter>
-    <parameter id='RF_TX_POWER' index='12' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='RF_TX_POWER' index='13' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_RF_TX_POWER</stringtable_identifier>
       <translation_de>HF Sendeleistung</translation_de>
       <translation_en>RF transmission power</translation_en>
     </parameter>
-    <parameter id='RF_TX_POWER=TX_MINUS_30DB' index='13' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='RF_TX_POWER=TX_MINUS_30DB' index='14' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_30DB</stringtable_identifier>
       <translation_de>minimal (-30dBm)</translation_de>
       <translation_en>minimum (-30dBm)</translation_en>
     </parameter>
-    <parameter id='RF_TX_POWER=TX_MINUS_20DB' index='14' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='RF_TX_POWER=TX_MINUS_20DB' index='15' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_20DB</stringtable_identifier>
       <translation_de>extrem gering (-20dBm)</translation_de>
       <translation_en>extreme low (-20dBm)</translation_en>
     </parameter>
-    <parameter id='RF_TX_POWER=TX_MINUS_15DB' index='15' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='RF_TX_POWER=TX_MINUS_15DB' index='16' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_15DB</stringtable_identifier>
       <translation_de>sehr gering (-15dBm)</translation_de>
       <translation_en>very low (-15dBm)</translation_en>
     </parameter>
-    <parameter id='RF_TX_POWER=TX_MINUS_10DB' index='16' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='RF_TX_POWER=TX_MINUS_10DB' index='17' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_MINUS_10DB</stringtable_identifier>
       <translation_de>gering (-10dBm)</translation_de>
       <translation_en>low (-10dBm)</translation_en>
     </parameter>
-    <parameter id='RF_TX_POWER=TX_0DB' index='17' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='RF_TX_POWER=TX_0DB' index='18' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_0DB</stringtable_identifier>
       <translation_de>normal (0dBm)</translation_de>
       <translation_en>normal (0dBm)</translation_en>
     </parameter>
-    <parameter id='RF_TX_POWER=TX_PLUS_5DB' index='18' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='RF_TX_POWER=TX_PLUS_5DB' index='19' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_PLUS_5DB</stringtable_identifier>
       <translation_de>hoch (+5dBm)</translation_de>
       <translation_en>high (+5dBm)</translation_en>
     </parameter>
-    <parameter id='RF_TX_POWER=TX_PLUS_7DB' index='19' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='RF_TX_POWER=TX_PLUS_7DB' index='20' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_PLUS_7DB</stringtable_identifier>
       <translation_de>sehr hoch (+7dBm)</translation_de>
       <translation_en>very high (+7dBm)</translation_en>
     </parameter>
-    <parameter id='RF_TX_POWER=TX_PLUS_10DB' index='20' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
+    <parameter id='RF_TX_POWER=TX_PLUS_10DB' index='21' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_dev_master'>
       <stringtable_identifier>stringTableHB_F6_RF_TX_POWER_TX_PLUS_10DB</stringtable_identifier>
       <translation_de>maximal (+10dBm)</translation_de>
       <translation_en>maximum (+10dBm)</translation_en>
     </parameter>
   </paramset>
   <channels>
-    <channel type='WEATHER'>
-      <parameter id='MOVING_AVG_24H_TEMPERATURE' index='21' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-THPD-SHT85_values' channel='WEATHER'>
+    <channel type='HB_ACCU_CHARGE_DS'>
+      <parameter id='HB_MAXIMUM_CHARGING_CYCLES' index='22' paramset_type='MASTER' paramset_id='HB_ACCU_CHARGE_DS_master' channel='HB_ACCU_CHARGE_DS'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_MOVING_AVG_24H_TEMPERATURE</stringtable_identifier>
-        <translation_de>24h Temperaturmittelwert</translation_de>
-        <translation_en>24h moving average temperature</translation_en>
+        <stringtable_identifier>stringTableHB_F6_HB_MAXIMUM_CHARGING_CYCLES</stringtable_identifier>
+        <translation_de>maximale Anzahl von Akkumulatorladeperioden</translation_de>
+        <translation_en>maximum number of accumulator charging intervalls</translation_en>
       </parameter>
-      <parameter id='MOVING_AVG_7D_TEMPERATURE' index='22' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-THPD-SHT85_values' channel='WEATHER'>
+      <parameter id='HB_ALARM_DEEP_DISCHARGE_ERROR' index='23' paramset_type='VALUES' paramset_id='HB_ACCU_CHARGE_DS_values' channel='HB_ACCU_CHARGE_DS'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_MOVING_AVG_7D_TEMPERATURE</stringtable_identifier>
-        <translation_de>7 Tage Temperaturmittelwert</translation_de>
-        <translation_en>7D moving average temperature</translation_en>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_DEEP_DISCHARGE_ERROR</stringtable_identifier>
+        <translation_de>Akkumlatorbatterien sind tiefentladen</translation_de>
+        <translation_en>accumulator batteries are deeply discharged</translation_en>
       </parameter>
-      <parameter id='DEWPOINT' index='23' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-THPD-BME280_values' channel='WEATHER'>
+      <parameter id='HB_ALARM_DEEP_DISCHARGE_ERROR=NORMAL' index='24' paramset_type='VALUES' paramset_id='HB_ACCU_CHARGE_DS_values' channel='HB_ACCU_CHARGE_DS'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_DEWPOINT</stringtable_identifier>
-        <translation_de>Taupunkttemperatur</translation_de>
-        <translation_en>dewpoint</translation_en>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_DEEP_DISCHARGE_ERROR_NORMAL</stringtable_identifier>
+        <translation_de>Akkumlatorbatterien sind nicht tiefentladen</translation_de>
+        <translation_en>accumulator batteries are OK</translation_en>
       </parameter>
-      <parameter id='VAPOR_CONCENTRATION' index='24' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-THPD-BME280_values' channel='WEATHER'>
+      <parameter id='HB_ALARM_DEEP_DISCHARGE_ERROR=ALARM' index='25' paramset_type='VALUES' paramset_id='HB_ACCU_CHARGE_DS_values' channel='HB_ACCU_CHARGE_DS'>
         <skip_channel_prefix>no</skip_channel_prefix>
-        <stringtable_identifier>stringTableHB_F6_VAPOR_CONCENTRATION</stringtable_identifier>
-        <translation_de>absolute Luftfeuchte</translation_de>
-        <translation_en>vapor concentration</translation_en>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_DEEP_DISCHARGE_ERROR_ALARM</stringtable_identifier>
+        <translation_de>Akkumlatorbatterien sind tiefentladen</translation_de>
+        <translation_en>accumulator batteries are deeply discharged</translation_en>
       </parameter>
-      <parameter id='ACCUMULATOR_VOLTAGE' index='25' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-CO2-SCD30_values' channel='WEATHER'>
+      <parameter id='HB_ALARM_OVER_VOLTAGE_ERROR' index='26' paramset_type='VALUES' paramset_id='HB_ACCU_CHARGE_DS_values' channel='HB_ACCU_CHARGE_DS'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_OVER_VOLTAGE_ERROR</stringtable_identifier>
+        <translation_de>Akkumulatorbatterien haben Überspannung</translation_de>
+        <translation_en>accumulator battery voltage is too high</translation_en>
+      </parameter>
+      <parameter id='HB_ALARM_OVER_VOLTAGE_ERROR=NORMAL' index='27' paramset_type='VALUES' paramset_id='HB_ACCU_CHARGE_DS_values' channel='HB_ACCU_CHARGE_DS'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_OVER_VOLTAGE_ERROR_NORMAL</stringtable_identifier>
+        <translation_de>Akkumulatorbatterien haben keine Überspannung</translation_de>
+        <translation_en>accumulator battery voltage is OK</translation_en>
+      </parameter>
+      <parameter id='HB_ALARM_OVER_VOLTAGE_ERROR=ALARM' index='28' paramset_type='VALUES' paramset_id='HB_ACCU_CHARGE_DS_values' channel='HB_ACCU_CHARGE_DS'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_OVER_VOLTAGE_ERROR_ALARM</stringtable_identifier>
+        <translation_de>Akkumulatorbatterien haben Überspannung</translation_de>
+        <translation_en>accumulator battery voltage is too high</translation_en>
+      </parameter>
+      <parameter id='HB_ACCU_CHARGING_STATUS' index='29' paramset_type='VALUES' paramset_id='HB_ACCU_CHARGE_DS_values' channel='HB_ACCU_CHARGE_DS'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ACCU_CHARGING_STATUS</stringtable_identifier>
+        <translation_de>Akkumulatorbatterien werden geladen</translation_de>
+        <translation_en>accumulator batteries are being charged</translation_en>
+      </parameter>
+      <parameter id='HB_ACCU_CHARGING_STATUS=NORMAL' index='30' paramset_type='VALUES' paramset_id='HB_ACCU_CHARGE_DS_values' channel='HB_ACCU_CHARGE_DS'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ACCU_CHARGING_STATUS_NORMAL</stringtable_identifier>
+        <translation_de>Akkumulatorbatterien werden nicht geladen</translation_de>
+        <translation_en>accumulator batteries are not being charged</translation_en>
+      </parameter>
+      <parameter id='HB_ACCU_CHARGING_STATUS=CHARGE' index='31' paramset_type='VALUES' paramset_id='HB_ACCU_CHARGE_DS_values' channel='HB_ACCU_CHARGE_DS'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ACCU_CHARGING_STATUS_CHARGE</stringtable_identifier>
+        <translation_de>Akkumulatorbatterien werden geladen</translation_de>
+        <translation_en>accumulator batteries are being charged</translation_en>
+      </parameter>
+      <parameter id='ACCUMULATOR_VOLTAGE' index='32' paramset_type='VALUES' paramset_id='HB_ACCU_CHARGE_DS_values' channel='HB_ACCU_CHARGE_DS'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_ACCUMULATOR_VOLTAGE</stringtable_identifier>
         <translation_de>Akkumulatorbatteriespannung (ADC)</translation_de>
         <translation_en>accumulator voltage</translation_en>
       </parameter>
-      <parameter id='VCC_VOLTAGE' index='26' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-CO2-SCD30_values' channel='WEATHER'>
+    </channel>
+    <channel type='HB_ON_CHIP_TEMP'>
+      <parameter id='HB_MAX_ON_CHIP_TEMPERATURE' index='33' paramset_type='MASTER' paramset_id='HB_ON_CHIP_TEMP_master' channel='HB_ON_CHIP_TEMP'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_MAX_ON_CHIP_TEMPERATURE</stringtable_identifier>
+        <translation_de>maximale Chiptemperatur</translation_de>
+        <translation_en>maximale on-chip temperature</translation_en>
+      </parameter>
+      <parameter id='HB_ON_CHIP_TEMP_OFFSET' index='34' paramset_type='MASTER' paramset_id='HB_ON_CHIP_TEMP_master' channel='HB_ON_CHIP_TEMP'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ON_CHIP_TEMP_OFFSET</stringtable_identifier>
+        <translation_de>Offset für die Chiptemperaturberechnung</translation_de>
+        <translation_en>offset for on-chip temperature</translation_en>
+      </parameter>
+      <parameter id='HB_ON_CHIP_TEMP_GAIN' index='35' paramset_type='MASTER' paramset_id='HB_ON_CHIP_TEMP_master' channel='HB_ON_CHIP_TEMP'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ON_CHIP_TEMP_GAIN</stringtable_identifier>
+        <translation_de>Verstärkung für die Chiptemperaturberechnung</translation_de>
+        <translation_en>gain for on-chip temperature</translation_en>
+      </parameter>
+      <parameter id='HB_THRESHOLD_TEMP_FOR_CLOSING_SHUTTER' index='36' paramset_type='MASTER' paramset_id='HB_ON_CHIP_TEMP_master' channel='HB_ON_CHIP_TEMP'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_THRESHOLD_TEMP_FOR_CLOSING_SHUTTER</stringtable_identifier>
+        <translation_de>Temperatur für die Schließung des Rolladens</translation_de>
+        <translation_en>temperature for closing the shutter</translation_en>
+      </parameter>
+      <parameter id='HB_ALARM_ON_CHIP_OVER_TEMP_ERROR' index='37' paramset_type='VALUES' paramset_id='HB_ON_CHIP_TEMPERATURE_values' channel='HB_ON_CHIP_TEMP'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_ON_CHIP_OVER_TEMP_ERROR</stringtable_identifier>
+        <translation_de>Alarm: Übertemperatur</translation_de>
+        <translation_en>alarm: too high on-chip temperature</translation_en>
+      </parameter>
+      <parameter id='HB_ALARM_ON_CHIP_OVER_TEMP_ERROR=NORMAL' index='38' paramset_type='VALUES' paramset_id='HB_ON_CHIP_TEMPERATURE_values' channel='HB_ON_CHIP_TEMP'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_ON_CHIP_OVER_TEMP_ERROR_NORMAL</stringtable_identifier>
+        <translation_de>keine Übertemperatur</translation_de>
+        <translation_en>on-chip temperature normal</translation_en>
+      </parameter>
+      <parameter id='HB_ALARM_ON_CHIP_OVER_TEMP_ERROR=ALARM' index='39' paramset_type='VALUES' paramset_id='HB_ON_CHIP_TEMPERATURE_values' channel='HB_ON_CHIP_TEMP'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ALARM_ON_CHIP_OVER_TEMP_ERROR_ALARM</stringtable_identifier>
+        <translation_de>Alarm: Übertemperatur</translation_de>
+        <translation_en>alarm: too high on-chip temperature</translation_en>
+      </parameter>
+      <parameter id='HB_ON_CHIP_TEMPERATURE' index='40' paramset_type='VALUES' paramset_id='HB_ON_CHIP_TEMPERATURE_values' channel='HB_ON_CHIP_TEMP'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_HB_ON_CHIP_TEMPERATURE</stringtable_identifier>
+        <translation_de>Chiptemperatur</translation_de>
+        <translation_en>on-chip temperature</translation_en>
+      </parameter>
+    </channel>
+    <channel type='WEATHER'>
+      <parameter id='MOVING_AVG_24H_TEMPERATURE' index='41' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-THPD-SHT85_values' channel='WEATHER'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_MOVING_AVG_24H_TEMPERATURE</stringtable_identifier>
+        <translation_de>24h Temperaturmittelwert</translation_de>
+        <translation_en>24h moving average temperature</translation_en>
+      </parameter>
+      <parameter id='MOVING_AVG_7D_TEMPERATURE' index='42' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-THPD-SHT85_values' channel='WEATHER'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_MOVING_AVG_7D_TEMPERATURE</stringtable_identifier>
+        <translation_de>7 Tage Temperaturmittelwert</translation_de>
+        <translation_en>7D moving average temperature</translation_en>
+      </parameter>
+      <parameter id='DEWPOINT' index='43' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-THPD-BME280_values' channel='WEATHER'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_DEWPOINT</stringtable_identifier>
+        <translation_de>Taupunkttemperatur</translation_de>
+        <translation_en>dewpoint</translation_en>
+      </parameter>
+      <parameter id='VAPOR_CONCENTRATION' index='44' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-THPD-BME280_values' channel='WEATHER'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_VAPOR_CONCENTRATION</stringtable_identifier>
+        <translation_de>absolute Luftfeuchte</translation_de>
+        <translation_en>vapor concentration</translation_en>
+      </parameter>
+      <parameter id='ACCUMULATOR_VOLTAGE' index='45' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-CO2-SCD30_values' channel='WEATHER'>
+        <skip_channel_prefix>no</skip_channel_prefix>
+        <stringtable_identifier>stringTableHB_F6_ACCUMULATOR_VOLTAGE</stringtable_identifier>
+        <translation_de>Akkumulatorbatteriespannung (ADC)</translation_de>
+        <translation_en>accumulator voltage</translation_en>
+      </parameter>
+      <parameter id='VCC_VOLTAGE' index='46' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-CO2-SCD30_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_VCC_VOLTAGE</stringtable_identifier>
         <translation_de>VCC Spannung</translation_de>
         <translation_en>VCC voltage</translation_en>
       </parameter>
-      <parameter id='CO2' index='27' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-CO2-SCD30-PLUGGED_IN_values' channel='WEATHER'>
+      <parameter id='CO2' index='47' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-CO2-SCD30-PLUGGED_IN_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_CO2</stringtable_identifier>
         <translation_de>CO2 Konzentration</translation_de>
         <translation_en>CO2 concentration</translation_en>
       </parameter>
-      <parameter id='mlr_alpha' index='28' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_master' channel='WEATHER'>
+      <parameter id='mlr_alpha' index='48' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_master' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_mlr_alpha</stringtable_identifier>
         <translation_de>Regressionskoeffizent alpha (für Temperatur)</translation_de>
         <translation_en>regression coefficient alpha (for temperature)</translation_en>
       </parameter>
-      <parameter id='mlr_beta' index='29' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_master' channel='WEATHER'>
+      <parameter id='mlr_beta' index='49' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_master' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_mlr_beta</stringtable_identifier>
         <translation_de>Regressionskoeffizent beta (für absolute Feuchte)</translation_de>
         <translation_en>regression coefficient beta (for absolute humidity)</translation_en>
       </parameter>
-      <parameter id='mlr_delta' index='30' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_master' channel='WEATHER'>
+      <parameter id='mlr_delta' index='50' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_master' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_mlr_delta</stringtable_identifier>
         <translation_de>Regressionskoeffizent delta (Achsenabschnitt)</translation_de>
         <translation_en>regression coefficient delta (intercept)</translation_en>
       </parameter>
-      <parameter id='AIR_PRESSURE' index='31' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_values' channel='WEATHER'>
+      <parameter id='AIR_PRESSURE' index='51' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AIR_PRESSURE</stringtable_identifier>
         <translation_de>Luftdruck</translation_de>
         <translation_en>air pressure</translation_en>
       </parameter>
-      <parameter id='MY_HUMIDITY' index='32' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_values' channel='WEATHER'>
+      <parameter id='MY_HUMIDITY' index='52' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_MY_HUMIDITY</stringtable_identifier>
         <translation_de>Rel. Luftfeuchtigkeit</translation_de>
         <translation_en>rel. humidity</translation_en>
       </parameter>
-      <parameter id='AQ_GAS_RESISTANCE_RAW' index='33' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_values' channel='WEATHER'>
+      <parameter id='AQ_GAS_RESISTANCE_RAW' index='53' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AQ_GAS_RESISTANCE_RAW</stringtable_identifier>
         <translation_de>Gaswiderstand</translation_de>
         <translation_en>gas resistance</translation_en>
       </parameter>
-      <parameter id='AQ_GAS_RESISTANCE_MAX' index='34' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_values' channel='WEATHER'>
+      <parameter id='AQ_GAS_RESISTANCE_MAX' index='54' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AQ_GAS_RESISTANCE_MAX</stringtable_identifier>
         <translation_de>max Gaswiderstand</translation_de>
         <translation_en>max gas resistance</translation_en>
       </parameter>
-      <parameter id='AQ_GAS_RESISTANCE_MIN' index='35' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_values' channel='WEATHER'>
+      <parameter id='AQ_GAS_RESISTANCE_MIN' index='55' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AQ_GAS_RESISTANCE_MIN</stringtable_identifier>
         <translation_de>min Gaswiderstand</translation_de>
         <translation_en>min gas resistance</translation_en>
       </parameter>
-      <parameter id='TemperatureOffset' index='36' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
+      <parameter id='TemperatureOffset' index='56' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_TemperatureOffset</stringtable_identifier>
         <translation_de>Temperaturoffset</translation_de>
         <translation_en>temperature offset</translation_en>
       </parameter>
-      <parameter id='HumidityOffset' index='37' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
+      <parameter id='HumidityOffset' index='57' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HumidityOffset</stringtable_identifier>
         <translation_de>Luftfeuchtigkeitsoffset</translation_de>
         <translation_en>humidity offset</translation_en>
       </parameter>
-      <parameter id='PressureOffset' index='38' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
+      <parameter id='PressureOffset' index='58' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_PressureOffset</stringtable_identifier>
         <translation_de>Luftdruckoffset</translation_de>
         <translation_en>pressure offset</translation_en>
       </parameter>
-      <parameter id='max_decay_factor_upper_limit' index='39' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
+      <parameter id='max_decay_factor_upper_limit' index='59' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_max_decay_factor_upper_limit</stringtable_identifier>
         <translation_de>relative untere Schwelle der Abklingfunktion</translation_de>
         <translation_en>relative lower border of decay function</translation_en>
       </parameter>
-      <parameter id='max_increase_factor_lower_limit' index='40' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
+      <parameter id='max_increase_factor_lower_limit' index='60' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_master' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_max_increase_factor_lower_limit</stringtable_identifier>
         <translation_de>relative obere Schwelle der Aufklingfunktion</translation_de>
         <translation_en>relative upper border of rise function</translation_en>
       </parameter>
-      <parameter id='AQ_LEVEL' index='41' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <parameter id='AQ_LEVEL' index='61' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AQ_LEVEL</stringtable_identifier>
         <translation_de>Luftgütegrad</translation_de>
         <translation_en>air quality level</translation_en>
       </parameter>
-      <parameter id='AQ_LOG10' index='42' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <parameter id='AQ_LOG10' index='62' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AQ_LOG10</stringtable_identifier>
         <translation_de>Luftqualität Log10</translation_de>
         <translation_en>air quality Log10</translation_en>
       </parameter>
-      <parameter id='AQ_COMP_GAS_RES_RAW' index='43' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <parameter id='AQ_COMP_GAS_RES_RAW' index='63' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AQ_COMP_GAS_RES_RAW</stringtable_identifier>
         <translation_de>T/aH kompensierter Gaswiderstand</translation_de>
         <translation_en>T/aH compensated gas resistance</translation_en>
       </parameter>
-      <parameter id='AQ_COMP_GAS_RES_MIN' index='44' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <parameter id='AQ_COMP_GAS_RES_MIN' index='64' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AQ_COMP_GAS_RES_MIN</stringtable_identifier>
         <translation_de>min T/aH kompensierter Gaswiderstand</translation_de>
         <translation_en>min T/aH compensated gas resistance</translation_en>
       </parameter>
-      <parameter id='AQ_COMP_GAS_RES_MAX' index='45' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <parameter id='AQ_COMP_GAS_RES_MAX' index='65' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AQ_COMP_GAS_RES_MAX</stringtable_identifier>
         <translation_de>max T/aH kompensierter Gaswiderstand</translation_de>
         <translation_en>max T/aH compensated gas resistance</translation_en>
       </parameter>
-      <parameter id='AQ_ALPHA' index='46' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <parameter id='AQ_ALPHA' index='66' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AQ_ALPHA</stringtable_identifier>
         <translation_de>Regressionskoeffizient alpha (T)</translation_de>
         <translation_en>regression coefficient alpha (T)</translation_en>
       </parameter>
-      <parameter id='AQ_BETA' index='47' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <parameter id='AQ_BETA' index='67' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AQ_BETA</stringtable_identifier>
         <translation_de>Regressionskoeffizient beta (aH)</translation_de>
         <translation_en>regression coefficient beta (aH)</translation_en>
       </parameter>
-      <parameter id='OPERATING_VOLTAGE' index='48' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
+      <parameter id='OPERATING_VOLTAGE' index='68' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-AQ-BME680_KF_DEBUG_values' channel='WEATHER'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_OPERATING_VOLTAGE</stringtable_identifier>
         <translation_de>Betriebsspannung (ADC)</translation_de>
@@ -266,103 +387,103 @@
       </parameter>
     </channel>
     <channel type='HB_GENERIC_RADIATION'>
-      <parameter id='HB_ALARM_LEVEL_COUNTS_PER_MEASUREMENT_INTERVAL' index='49' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_LEVEL_COUNTS_PER_MEASUREMENT_INTERVAL' index='69' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_LEVEL_COUNTS_PER_MEASUREMENT_INTERVAL</stringtable_identifier>
         <translation_de>Alarmwert Zählimpulse pro Messintervall</translation_de>
         <translation_en>alarm level counts per measuremnt interval</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_LEVEL_MOVING_AVERAGE' index='50' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_LEVEL_MOVING_AVERAGE' index='70' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_LEVEL_MOVING_AVERAGE</stringtable_identifier>
         <translation_de>Alarmwert Zählimpulse gleitender Mittelwert</translation_de>
         <translation_en>alarm level moving average</translation_en>
       </parameter>
-      <parameter id='HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS' index='51' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS' index='71' paramset_type='MASTER' paramset_id='HB-UNI-Sensor-RAD-AL53_master' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_RESET_COUNTERS_AFTER_NUMBER_OF_MEASUREMENTS</stringtable_identifier>
         <translation_de>Zurücksetzen der Statistiken nach Anzahl von Messungen (0 = niemals)</translation_de>
         <translation_en>reset of statistics after number of measurements (0 = never)</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL' index='52' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL' index='72' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL</stringtable_identifier>
         <translation_de>Alarm für Zählimpulse pro Messintervall</translation_de>
         <translation_en>alarm for counts per measuremnt interval</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=NORMAL' index='53' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=NORMAL' index='73' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL_NORMAL</stringtable_identifier>
         <translation_de>normale Zählimpulsrate</translation_de>
         <translation_en>normal counts per measurement interval</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=ALARM' index='54' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL=ALARM' index='74' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL_ALARM</stringtable_identifier>
         <translation_de>Alarm für Zählimpulse pro Messintervall</translation_de>
         <translation_en>alarm for counts per measuremnt interval</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_MOVING_AVERAGE' index='55' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_MOVING_AVERAGE' index='75' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_MOVING_AVERAGE</stringtable_identifier>
         <translation_de>Alarm für gleitenden Mittelwert</translation_de>
         <translation_en>alarm for moving average</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_MOVING_AVERAGE=NORMAL' index='56' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_MOVING_AVERAGE=NORMAL' index='76' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_MOVING_AVERAGE_NORMAL</stringtable_identifier>
         <translation_de>normaler gleitender Mittelwert</translation_de>
         <translation_en>normal moving average</translation_en>
       </parameter>
-      <parameter id='HB_ALARM_MOVING_AVERAGE=ALARM' index='57' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='HB_ALARM_MOVING_AVERAGE=ALARM' index='77' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_HB_ALARM_MOVING_AVERAGE_ALARM</stringtable_identifier>
         <translation_de>Alarm für gleitenden Mittelwert</translation_de>
         <translation_en>alarm for moving average</translation_en>
       </parameter>
-      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL' index='58' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL' index='78' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL</stringtable_identifier>
         <translation_de>Zählimpulse pro Messintervall</translation_de>
         <translation_en>counts per measurement interval</translation_en>
       </parameter>
-      <parameter id='MOVING_AVERAGE_COUNT' index='59' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='MOVING_AVERAGE_COUNT' index='79' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_MOVING_AVERAGE_COUNT</stringtable_identifier>
         <translation_de>gleitender Mittelwert</translation_de>
         <translation_en>moving average</translation_en>
       </parameter>
-      <parameter id='WIDTH_CONFIDENCE_INTERVALL' index='60' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='WIDTH_CONFIDENCE_INTERVALL' index='80' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_WIDTH_CONFIDENCE_INTERVALL</stringtable_identifier>
         <translation_de>Breite des Konfidenzintervalls</translation_de>
         <translation_en>width of confidence interval</translation_en>
       </parameter>
-      <parameter id='MOVING_AVERAGE_COUNT_MAX' index='61' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='MOVING_AVERAGE_COUNT_MAX' index='81' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_MOVING_AVERAGE_COUNT_MAX</stringtable_identifier>
         <translation_de>max. gleitender Mittelwert</translation_de>
         <translation_en>max. moving average</translation_en>
       </parameter>
-      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL_MAX' index='62' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='COUNTS_PER_MEASUREMENT_INTERVAL_MAX' index='82' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_COUNTS_PER_MEASUREMENT_INTERVAL_MAX</stringtable_identifier>
         <translation_de>max. Zählimpulsrate</translation_de>
         <translation_en>max counts per measurement interval</translation_en>
       </parameter>
-      <parameter id='ACCUMULATOR_VOLTAGE' index='63' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='ACCUMULATOR_VOLTAGE' index='83' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_ACCUMULATOR_VOLTAGE</stringtable_identifier>
         <translation_de>Akkumulatorbatteriespannung (ADC)</translation_de>
         <translation_en>accumulator voltage</translation_en>
       </parameter>
-      <parameter id='AL53_SUPPLY_VOLTAGE' index='64' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='AL53_SUPPLY_VOLTAGE' index='84' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_AL53_SUPPLY_VOLTAGE</stringtable_identifier>
         <translation_de>AL53 Betriebsspannung (ADC)</translation_de>
         <translation_en>AL53 supply voltage (ADC)</translation_en>
       </parameter>
-      <parameter id='OPERATING_VOLTAGE' index='65' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
+      <parameter id='OPERATING_VOLTAGE' index='85' paramset_type='VALUES' paramset_id='HB-UNI-Sensor-RAD-AL53_values' channel='HB_GENERIC_RADIATION'>
         <skip_channel_prefix>no</skip_channel_prefix>
         <stringtable_identifier>stringTableHB_F6_OPERATING_VOLTAGE</stringtable_identifier>
         <translation_de>Betriebsspannung (ADC)</translation_de>
