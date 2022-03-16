@@ -465,6 +465,9 @@ Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
 - [Kaliumchlorid - Prüfstrahler  selber basteln](http:/www.chetan.homepage.t-online.de/sonstig/KCL_PR1.HTM)
 - [Kalibrierung des „Stuttgarter Geigerle“ PIN-Dioden Zählers](http://www.opengeiger.de/Kalibrierung.pdf)
 - [Natürliche Radioaktivität in Lebensmitteln und Gebrauchsgegenständen](https://www4.unifr.ch/sfsn/pdf/voelklegebrauchsgegenstaende-SSP.pdf)
+- [Prüfstrahler selber basteln](http://www.chetan.homepage.t-online.de/sonstig/KCL_PR1.HTM)
+- [Aktuelle Themen rund um die Radioaktivität](http://www.opengeiger.de/themen.html)
+- [Teststrahler](https://stoppi-homemade-physics.de/teststrahler/)
 
 ## Akkulebensdauer
 
