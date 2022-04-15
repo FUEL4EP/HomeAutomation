@@ -468,6 +468,10 @@ Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
 - [Prüfstrahler selber basteln](http://www.chetan.homepage.t-online.de/sonstig/KCL_PR1.HTM)
 - [Aktuelle Themen rund um die Radioaktivität](http://www.opengeiger.de/themen.html)
 - [Teststrahler](https://stoppi-homemade-physics.de/teststrahler/)
+- [Ein Beitrag zur Gefährdungsabschätzung der Kontamination der Nahrungskette durch Uran aus phosphorhaltigen Düngemitteln, Lebensmittel- und Futtermittelzusatzstoffen](https://publikationsserver.tu-braunschweig.de/servlets/MCRFileNodeServlet/dbbs_derivate_00046859/Diss_Windmann_Heike.pdf)
+- [Auch Geschirreiniger enthalten Uran](http://www.strahlentelex.de/Stx_12_616_S04-05.pdf)
+- [Herstellung eines Alpha- Beta- Gamma-empfindlichen Strahlungsdetektors
+auf Basis einer kostengünstigen PIN-Diode](http://www.opengeiger.de/ABGDetektor.pdf)
 
 ## Akkulebensdauer
 

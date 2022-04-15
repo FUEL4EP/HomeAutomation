@@ -8,6 +8,8 @@
 - ein herzliches Dankeschön an alle, die im Homematic Forum geholfen haben, meine Probleme zu lösen
 - hilfreich ist auch die Diskussion zu den [rftypes XMLs](https://homematic-forum.de/forum/viewtopic.php?f=76&t=62578&sid=cf0f4cd99f7ee2bf070e9f39391ee652)
 
+![pic](Images/HB-UNI-Sensor1_SHT75.png)	
+
 Der Sensirion SHT75 ist ein ein wenig betagter Temperatur- und Luftfeuchtesensor mit hoher Genauigkeit: **SHT7x reached end-of-life. Last order date: 31.12.2018 / Last delivery date: 31.12.2019 SHT7x is replaced by SHT85. For more information, please contact info@sensirion.com.**
 
 Das Datenblatt des SHT75 Sensors ist [hier](https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Datasheets/Sensirion_Humidity_Sensors_SHT7x_Datasheet.pdf) zu finden.

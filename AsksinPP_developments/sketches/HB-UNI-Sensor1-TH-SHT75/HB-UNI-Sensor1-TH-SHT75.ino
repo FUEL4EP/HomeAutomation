@@ -49,7 +49,7 @@
 using namespace as;
 
 //correction factor of the clock inaccuracy (ceramic resonator is default on Arduino boards), if no quartz RTC is used, wee also HB-UNI-Sen-CURRENT from Jérôme ( jp112sdl )
-#define SYSCLOCK_FACTOR    0.944   // adjust to get sampling data exactly every 600 seconds
+#define SYSCLOCK_FACTOR    0.944   // adjust to get sampling data exactly every 240 seconds
 
 #ifdef SENSOR_SHT75
 #include "Sensors/Sens_SHT75.h"    // HB-UNI-Sensor1 custom sensor class
