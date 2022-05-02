@@ -1,6 +1,6 @@
 # ep-hb-devices-addon [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Github All Releases](https://img.shields.io/github/downloads/FUEL4EP/HomeAutomation/total.svg)](https://github.com/FUEL4EP/HomeAutomation/releases) ![GitHub release (by tag)](https://img.shields.io/github/downloads/FUEL4EP/HomeAutomation/latest/total) [![GitHub issues](https://img.shields.io/github/issues/FUEL4EP/HomeAutomation.svg)](https://github.com/FUEL4EP/HomeAutomation/issues) 
 
-**:heavy_check_mark: lauffähig unter CCU3 / RaspberryMatic Firmware 3.47.10 - 3.63.8**<br/>
+**:heavy_check_mark: lauffähig unter CCU3 / RaspberryMatic Firmware 3.47.10 - 3.63.9**<br/>
 Die jeweils aktuellste Version ist bei den [Releases](https://github.com/FUEL4EP/HomeAutomation/releases/latest) zu finden.
 
 <hr/>
