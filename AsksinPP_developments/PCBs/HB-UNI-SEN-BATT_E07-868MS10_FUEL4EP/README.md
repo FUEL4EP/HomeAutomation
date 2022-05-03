@@ -92,7 +92,7 @@
 ## Bestellen von Platinen
 
 - die Platine kann entweder direkt bei JLCPCB bestellt werden
-- oder per PN bei FUEL4EP nachfragen. Aus der Bestellung der Prototypen sind noch wenige Platinen kostengünstig abzugeben.
+- oder per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen. Aus der Bestellung der Prototypen sind noch wenige Platinen kostengünstig abzugeben.
 
 ## Disclaimer
 

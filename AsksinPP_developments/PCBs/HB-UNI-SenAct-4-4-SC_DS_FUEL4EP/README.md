@@ -10,7 +10,8 @@
 - 3x Einbausteckdosen 45 mm x 45 mm, z.B. DELOCK 81321 Easy 45 Schutzkontakt-Steckdose, werden an der Rückseite des Gehäuses angebracht
 - **diese Schaltung und Platine darf ausschließlich von ausgebildeten elektrischen Fachkräften verwendet werden, siehe Disclaimer unten!**
 - diese Schaltung und Platine ist noch nicht validiert!
-- ein geeigneter Sketch kann auf Nachfrage zur Verfügung gestellt werden
+- ein geeigneter Sketch kann auf Nachfrage zur Verfügung gestellt werden:
+    - per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen.
 - die Platine V1.2 behebt Fehler, die bei der Validierung eines Prototypen festgestellt und korrigiert wurden. Bitte keine Platinen der Versionen V1.0 und V1.1 verwenden.
 - **wichtige Aufbauhinweise:**
     + zuerst die Niederspannungsplatine HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB Schritt für Schritt aufbauen, in Betrieb nehmen und testen:

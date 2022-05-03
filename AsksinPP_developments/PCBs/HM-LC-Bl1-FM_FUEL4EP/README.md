@@ -9,6 +9,7 @@
 - diese Schaltung und Platine darf ausschließlich von ausgebildeten elektrischen Fachkräften verwendet werden, siehe Disclaimer unten!
 - diese Schaltung und Platine ist noch nicht validiert!
 - ein geeigneter Sketch kann auf Nachfrage zur Verfügung gestellt werden.
+    + per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen.
 - V1.2 der Platine behebt Fehler, die bei der Bestückung eines Prototypen erkannt wurden, bitte keine V1.0 und V1.1 Platinen verwenden!
 - **wichtige Aufbauhinweise:**
     + zuerst die Niederspannungsplatine HM-LC-Bl1-FM_FUEL4EP_PCB Schritt für Schritt aufbauen, in Betrieb nehmen und testen:

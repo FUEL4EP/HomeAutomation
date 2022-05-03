@@ -21,12 +21,13 @@
 
 - entwickelt mit KiCAD 5.1.12
 - noch in Entwicklung, noch zu validieren!
-- die Platine wurde noch nicht bei JLCPCB gefertigt und mit den SMD Bauteilen bestückt!
+- die Platine wurde noch nicht bei JLCPCB gefertigt und mit den SMD Bauteilen bestückt, da die ATMega1284P-AU Preise dort exorbitant hoch sind!
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB.png)
 - die nicht SMD Bauteile müssen von Hand verlötet werden
 - mangels Verfügbarkeit des [TPS61221 Aufwärtswandlers](https://www.ti.com/lit/ds/symlink/tps61221.pdf?ts=1634546965861&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61221) trifft dies später auch auf die Bestückungsoption Aufwärtswandler zu
 - die gefertigte Platine wird mit dem Sketch [tbd](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/tbd) validiert werden:
 ![pic](Pictures_of_JLCPCB_prototypes/tbd.png)
+- weitere Infos per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum.
 
 ## Eigenschaften
 
@@ -53,6 +54,7 @@
     + das schafft Platz für eine 8-polige Stiftleiste J11 zum optionalen Anschluss eines [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm). Der ATMega1284P hat auch genügend RAM für die Programmierung eines 200 Pixel x 200 Pixel e-Papermoduls.
     + JLCPCB BOM and CPL Dateien für SMT Service werden [bereitgestellt](./JLCPCB_SMT_Service/)
 - Hinweis: der TPS61221 ist zur Zeit von nirgendwo lieferbar
+- Hinweis: der ATMega1284P-AU ist zur Zeit nirgendwo zu vernünftigen Preisen käuflich. JLCPCB verlangt 24 US$ !!!!
 
 ### Benötigte Bauteile:
 
