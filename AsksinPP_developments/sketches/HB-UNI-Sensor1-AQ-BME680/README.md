@@ -242,6 +242,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - Die Parameter der Autokalibrierung und der Multiplen Linearen Regression werden alle 24 Stunden in das EEPROM des ATmega1284P abgespeichert.
 - Die letzten EEPROM Daten werden bei einem Batteriewechsel oder/und einem RESET als aktuelle Parameter zurückgespeichert. Bedingung dafür ist, dass die VCC Betriebsspannung <= 3.3V ist.
 - Bei Betrieb mit ISP Programmer oder FTDI Debugger werden die EEPROM Daten bei einem Reset **NICHT** zurückgespeichert. Vor der Rückspeicherung wird geprüft, ob die Betriebsspannung kleiner als 3.3V ist. Bei einem Betrieb mit ISP Programmer oder FTDI Debugger ist die Betriebsspannung größer als 3.3V.
+- Die Laufzeit mit einem neuen Satz Batterien beträgt >= 10 Monate.
 
 # Vergleich des Bosch BME680 Sensors mit Sensoren anderer Hersteller
 - Hier ist eine interessante [Publikation "Development of a Compact, IoT-Enabled Electronic

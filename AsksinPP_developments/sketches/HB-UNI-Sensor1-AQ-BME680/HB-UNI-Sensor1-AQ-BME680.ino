@@ -41,8 +41,8 @@
 
 #define PEERS_PER_CHANNEL   6
 #define SAMPLINGINTERVALL_IN_SECONDS 240
-#define BAT_VOLT_LOW        28  // 2.8V
-#define BAT_VOLT_CRITICAL   27  // 2.7V
+#define BAT_VOLT_LOW        27  // 2.7V
+#define BAT_VOLT_CRITICAL   26  // 2.6V
 
 #if defined M1284P
 #define CC1101_CS_PIN       4     // SS Tindie Pro Mini XL v2
