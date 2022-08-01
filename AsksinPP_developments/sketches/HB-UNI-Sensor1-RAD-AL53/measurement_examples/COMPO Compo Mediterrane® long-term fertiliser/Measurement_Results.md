@@ -2,10 +2,10 @@
 # Measurement Results
 
 
-## Sample: 	[WOLF-Garten Long-Term Lawn Fertiliser](https://www.amazon.de/-/en/gp/product/B0001FPOU0)
+## Sample: 	[COMPO Compo Mediterrane® long-term fertiliser](https://www.amazon.de/Compo-COMPO-Mediterrane%C2%AE-Langzeit-D%C3%BCnger/dp/B073GCQF1K)
 
 
-- Sample Mass: 1000 g
+- Sample Mass: 1500 g
 
 - Sample Volume: [airtight large glass storage jar with clip lock 2 Litres](https://www.amazon.de/-/en/gp/product/B0055KE15A)
 
