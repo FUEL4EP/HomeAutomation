@@ -475,7 +475,7 @@ auf Basis einer kostengünstigen PIN-Diode](http://www.opengeiger.de/ABGDetektor
 
 ## Akkulebensdauer
 
-- der Sensor läuft mit einer Akkuladung ca. 2 Monate (das ist noch zu validieren)
+- der Sensor läuft mit einer Akkuladung ca. 3..4 Monate
 - die Kapazität von NiMH Akkus lässt nach 50..100 Ladezyklen nach
 - diese [Grafik](https://www.pocketnavigation.de/wp-content/uploads/2015/02/ansmann_2850_zyklen_verglei-550x308.jpg) zeigt die Entladekurve eines NiMH Akkus über der Anzahl von Entladezyklen
 - hier ein interessanter Artikel zu [NiMH-Akkus Zyklen und Lebenserwartung](https://www.pocketnavigation.de/2015/03/mignon-aa-akkus-test-vergleich/5/)
