@@ -83,8 +83,8 @@ foreach(deviceid, dom.GetObject(ID_DEVICES).EnumUsedIDs())
                        '&description=' + urlEncodeDescription +
                        '&priority=' + NotifyMyProwlMsgPriority ;
             if(debug){WriteLine("\t url  :  "#url);}
-            ! send ProwlAPP Push Message only if at least one of the alarm bits is set
-            if ( ( ALARM_CPM == 1 ) || ( ALARM_MAC == 1 ))
+            ! send ProwlAPP Push Message only if at least one of the alarm bits is set or debug is true
+            if ( ( ALARM_CPM == 1 ) || ( ALARM_MAC == 1 ) || (debug == true))
             {
               system.Exec("wget -q -O - '"#url#"'", &stdout, &stderr);
             }

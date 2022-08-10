@@ -31,10 +31,11 @@
   - [Lizenz](#lizenz)
 
 ## Neuerungen
-- dies ist eine initiale Freigabe, ein erster Prototyp von HB-UNI-Sensor1-RAD-AL53 ist voll funktionsfähig und läuft seit mehreren Wochen
+- dies ist eine initiale Freigabe, ein Prototyp von HB-UNI-Sensor1-RAD-AL53 ist voll funktionsfähig und läuft seit vielen Monaten fehlerfrei
 - ein e-Paper und ein NiMH-Lademodul fehlen in dieser initialen Freigabe noch
 - Rückmeldungen, Fragen und Hinweise zur Verbesserung der Dokumentation sind [im Homematic Forum](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53) willkommen oder auch als private Nachricht an [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum.
-- die Dokumentation ist noch im Aufbau, Hinweise auf Fehler oder Unvollständigkeiten sind als private Nachricht willkommen 
+- die Dokumentation ist noch im Aufbau, Hinweise auf Fehler oder Unvollständigkeiten sind als private Nachricht willkommen
+- eine beispielhafte Alarmierung mit einer Push Meldung einer iOS ProwlApp ist [hier](./ProwlApp_Alarm) beschrieben.
 
 ## Einsteiger
 
@@ -475,7 +476,7 @@ auf Basis einer kostengünstigen PIN-Diode](http://www.opengeiger.de/ABGDetektor
 
 ## Akkulebensdauer
 
-- der Sensor läuft mit einer Akkuladung ca. 3..4 Monate
+- der Sensor läuft mit einer Akkuladung [ca. 3..4 Monate](./Images/accumulator_voltage_over_3+_months.png)
 - die Kapazität von NiMH Akkus lässt nach 50..100 Ladezyklen nach
 - diese [Grafik](https://www.pocketnavigation.de/wp-content/uploads/2015/02/ansmann_2850_zyklen_verglei-550x308.jpg) zeigt die Entladekurve eines NiMH Akkus über der Anzahl von Entladezyklen
 - hier ein interessanter Artikel zu [NiMH-Akkus Zyklen und Lebenserwartung](https://www.pocketnavigation.de/2015/03/mignon-aa-akkus-test-vergleich/5/)
