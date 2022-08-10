@@ -1,0 +1,95 @@
+! This Homematic script is pushing an alarm message to the ProwlApp
+! see for more details https://www.prowlapp.com/
+! Prowl is a push notification client for iOS. Push to your iPhone, iPod touch, or iPad notifications from a Mac or Windows computer, or from a multitude of apps and services. Easily integrate the Prowl API into your applications.
+
+boolean debug               = true;       !set to true if you want to get debug messages in the Homematic/RaspberryMatic script execution debug window, set to false if no debug messages shall be outputted
+string  itemTMP             = ' ';
+!--------------------------------------------------!
+!---------NotifyMyProwl Einstellungen------------!
+!--------------------------------------------------!
+string NotifyMyProwlApiKey='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';                          ! please insert your personal Prowl API key here
+integer NotifyMyProwlMsgPriority=2;                                                             ! highest priority = 2 lowest priority = -2 in ProwlAPP
+string NotifyMyProwlMsgApplication="Raspberrymatic%20Your_City%20Your_radiation_sensor_name";   ! insert your ProwlApp alarm headline here 
+string NotifyMyProwlMsgEvent="Alarm%20:%20";
+
+string Channel_Selector = 'Radioaktivitätssensor 1';                                            ! insert your Homematic device name here, space is not '%20' !
+
+string stdout;
+string stderr;
+string text_CPM;
+string text_MCPM;
+string text_MAC;
+string url;
+string urlEncodeEvent;
+string urlEncodeDescription;
+
+string  deviceid;
+foreach(deviceid, dom.GetObject(ID_DEVICES).EnumUsedIDs()) 
+{
+    var device  = dom.GetObject(deviceid);
+    !if(debug){WriteLine("Device:"#device#" (id:"#deviceid#")");}
+                                                    
+    if( "HB-UNI-Sensor-RAD-AL53" == device.HssType() ) 
+    {  
+        WriteLine("\t name :"#device.HssType());
+
+        string channelid;                                                                                                           
+        foreach(channelid,device.Channels().EnumUsedIDs())
+        {
+          var channel = dom.GetObject(channelid);
+          var channeltype = channel.HssType();
+          if(debug){WriteLine("\t Channel:"#channel#" (id:"#channelid#")");}
+          if(debug){WriteLine("\t Channelname:"#channel.Name());}
+          if(debug){WriteLine("\t Channel Selector:"#Channel_Selector);}
+          if(debug){WriteLine("\t Channeltype:"#channel#" (id:"#channeltype#")");}
+          if(debug){WriteLine("\t channel.HssType:"#channel.HssType());}
+          
+          if( Channel_Selector == channel.Name() ) 
+          {
+            if(debug){WriteLine("\t Sensor found : "#Channel_Selector);}
+            var interface    =   dom.GetObject(channel.Interface());
+            var datapoint    =   interface#"."#channel.Address();
+            if(debug){WriteLine("\t Datapoint:"#datapoint);}
+            var CPM =   dom.GetObject(datapoint#".COUNTS_PER_MEASUREMENT_INTERVAL").Value().ToString(0);
+            if(debug){WriteLine("\t Counts per interval:"#CPM);}
+            var MCPM =   dom.GetObject(datapoint#".COUNTS_PER_MEASUREMENT_INTERVAL_MAX").Value().ToString(0);
+            if(debug){WriteLine("\t Maximum counts per interval:"#MCPM);}
+            var MAC =   dom.GetObject(datapoint#".MOVING_AVERAGE_COUNT").Value().ToString(3);
+            if(debug){WriteLine("\t Moving average count:"#MAC);}
+            var ALARM_CPM =   dom.GetObject(datapoint#".HB_ALARM_COUNTS_PER_MEASUREMENT_INTERVAL").Value();
+            if(debug){WriteLine("\t Alarm CPM:"#ALARM_CPM);}
+            var ALARM_MAC =   dom.GetObject(datapoint#".HB_ALARM_MOVING_AVERAGE").Value();
+            if(debug){WriteLine("\t Alarm MAC:"#ALARM_MAC);}
+            
+            urlEncodeEvent = '';
+            urlEncodeDescription = '';
+            urlEncodeEvent = '%0A' # NotifyMyProwlMsgEvent # 'CPM/MAC%20:%20' # ALARM_CPM # '/' # ALARM_MAC;
+            
+            text_CPM =  '%0A' # Channel_Selector # '%20:%20%0Acounts%20per%20interval%20:%20' # CPM # "%20";
+            text_MCPM = '%0A' # Channel_Selector # '%20:%20%0Amaximum%20counts%20per%20interval%20:%20' # MCPM # "%20";
+            text_MAC =  '%0A' # Channel_Selector # '%20:%20%0Amoving%20average%20count%20:%20' # MAC # "%20";
+ 
+
+            urlEncodeDescription = urlEncodeDescription + text_CPM + '%0A';
+            urlEncodeDescription = urlEncodeDescription + text_MCPM + '%0A';
+            urlEncodeDescription = urlEncodeDescription + text_MAC + '%0A';
+            
+            if(debug){WriteLine("\t urlEncodeDescription  :  "#urlEncodeDescription);}
+            
+            string url = 'https://prowl.weks.net/publicapi/add' +
+                       '?apikey=' + NotifyMyProwlApiKey +
+                       '&application='+ NotifyMyProwlMsgApplication +
+                       '&event='+ urlEncodeEvent  +
+                       '&description=' + urlEncodeDescription +
+                       '&priority=' + NotifyMyProwlMsgPriority ;
+            if(debug){WriteLine("\t url  :  "#url);}
+            ! send ProwlAPP Push Message only if at least one of the alarm bits is set
+            if ( ( ALARM_CPM == 1 ) || ( ALARM_MAC == 1 ))
+            {
+              system.Exec("wget -q -O - '"#url#"'", &stdout, &stderr);
+            }
+          }
+        }   
+
+    }
+}
