@@ -35,7 +35,7 @@
 - ein e-Paper und ein NiMH-Lademodul fehlen in dieser initialen Freigabe noch
 - Rückmeldungen, Fragen und Hinweise zur Verbesserung der Dokumentation sind [im Homematic Forum](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53) willkommen oder auch als private Nachricht an [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum.
 - die Dokumentation ist noch im Aufbau, Hinweise auf Fehler oder Unvollständigkeiten sind als private Nachricht willkommen
-- eine beispielhafte Alarmierung mit einer Push Meldung einer iOS ProwlApp ist [hier](./ProwlApp_Alarm) beschrieben.
+- eine beispielhafte Alarmierung mit einer iOS ProwlApp Push Meldung ist [hier](./ProwlApp_Alarm) beschrieben.
 
 ## Einsteiger
 
@@ -471,8 +471,10 @@ Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
 - [Teststrahler](https://stoppi-homemade-physics.de/teststrahler/)
 - [Ein Beitrag zur Gefährdungsabschätzung der Kontamination der Nahrungskette durch Uran aus phosphorhaltigen Düngemitteln, Lebensmittel- und Futtermittelzusatzstoffen](https://publikationsserver.tu-braunschweig.de/servlets/MCRFileNodeServlet/dbbs_derivate_00046859/Diss_Windmann_Heike.pdf)
 - [Auch Geschirreiniger enthalten Uran](http://www.strahlentelex.de/Stx_12_616_S04-05.pdf)
-- [Herstellung eines Alpha- Beta- Gamma-empfindlichen Strahlungsdetektors
-auf Basis einer kostengünstigen PIN-Diode](http://www.opengeiger.de/ABGDetektor.pdf)
+- [Herstellung eines Alpha- Beta- Gamma-empfindlichen Strahlungsdetektors auf Basis einer kostengünstigen PIN-Diode](http://www.opengeiger.de/ABGDetektor.pdf)
+- [Radioaktive Strahlung in unserer Nahrung](https://www.ua-bw.de/uploaddoc/cvuafr/Technoseum_301111.pdf)
+- [Radioaktivität und Strahlenschutz](https://www.kernd.de/kernd-wAssets/docs/service/013radioaktivitaet-u-strahlenschutz2012.pdf)
+- [Biochemie der Ernährung](https://books.google.com/books/about/Biochemie_der_Ernährung.html?hl=de&id=pyiDBwAAQBAJ)
 
 ## Akkulebensdauer
 
