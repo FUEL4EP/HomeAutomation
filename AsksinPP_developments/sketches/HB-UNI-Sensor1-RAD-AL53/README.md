@@ -475,6 +475,8 @@ Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
 - [Radioaktive Strahlung in unserer Nahrung](https://www.ua-bw.de/uploaddoc/cvuafr/Technoseum_301111.pdf)
 - [Radioaktivität und Strahlenschutz](https://www.kernd.de/kernd-wAssets/docs/service/013radioaktivitaet-u-strahlenschutz2012.pdf)
 - [Biochemie der Ernährung](https://books.google.com/books/about/Biochemie_der_Ernährung.html?hl=de&id=pyiDBwAAQBAJ)
+- [γ-Spektroskopie mit NaI- und Ge-Detektoren](https://www.ikp.uni-koeln.de/students/la/demo/download/DOC-2006-Feb-50-1.pdf)
+- [NATÜRLICHE UND KÜNSTLICHE RADIONUKLIDE IN UNSERER UMWELT](https://www.fs-ev.org/fileadmin/user_upload/90_Archiv/FS-Pub-Archiv-final/FS-2010-153-T%20Natürliche%20und%20künstliche%20Radionuklide%20in%20unserer%20Umwelt%2042.%20Jahrestagung.pdf)
 
 ## Akkulebensdauer
 
