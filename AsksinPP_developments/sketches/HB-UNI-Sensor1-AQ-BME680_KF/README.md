@@ -360,6 +360,14 @@ Nose for Breath Analysis"](https://www.mdpi.com/2079-9292/9/1/84/pdf) dazu zu fi
 ## Aufstellung des Sensors
 - Nach dem Einlernen des Kalman Filters sollte der Sensor an einem schattigen Ort aufgestellt werden, so dass er keiner direkten Sonnenstrahlung ausgesetzt ist.
 
+## Außenluftgütesensor
+
+- Der Sensor kann bei geeigneter Anbringung auch als zur Messung der Außenluftgüte verwendet werden. Dabei muss darauf geachtet werden, dass er keiner Feuchtigkeit oder Regen direkt ausgesetzt wird. Geeignet ist z.B. die Anbringung unter einem völlig regengeschützten Dach (auch kein Spritzwasser) kopfüber hängend:
+
+![pic](Images/hängender_Außensensor_HB-UNI-Sensor1-AQ-BME680_KF.png)
+
+Dieser Sensor verrichtet seit über einem halben Jahr seine Dienste. Beim Vergleich von Innensensoren mit dem Außensensor zeigt sich, dass die Innenluftgüte nicht unter die Außenluftgüte abfällt.
+
 ## Erfahrungen zur Geruchsempfindlichkeit des BME680 Sensors
 
 - Der BME680 Sensor ist **nicht** empfindlich für (nur wenn auffällig)
