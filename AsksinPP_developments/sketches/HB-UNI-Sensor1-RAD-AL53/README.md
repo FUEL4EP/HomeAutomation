@@ -77,7 +77,7 @@
 - misst alpha-, beta- und gamma-Strahlung
 - die Absorptionscharakteristik für gamma-Strahlung ist ähnlich der PIN-Diode [X100-7 THD von First Sensor](https://www.first-sensor.com/cms/upload/datasheets/X100-7_THD_5000040.pdf) und auf gamma Energien von < ca. 10keV beschränkt.
 - geringer Energieverbrauch: nur ca 0,83 mA im Messbetrieb
-- Versorgung mit zwei aufladbaren 2700mAh NiMH Akkumulatorzellen: Laufzeit > 2 Monate mit einer Akkuladung
+- Versorgung mit zwei aufladbaren 2700mAh NiMH Akkumulatorzellen: Laufzeit > 4 Monate mit einer Akkuladung
 - die Ausgangspulse des AL53 Sensors werden mit einem [ABLIC S-35770 24-Bit Zählerbausstein](https://www.ablic.com/en/doc/datasheet/counter_ic/S35770_I_E.pdf) gezählt und per I2C alle 10 Minuten ausgelesen.
 - die typische Zählrate bedingt durch die natürliche Hintergrundstrahlung beträgt ca. ~5 Ereignisse in 10 Minuten (Einheit: cpi = counts per interval, interval := 10 Minuten) oder ~30 Ereignisse in einer Stunde. **Daher ist der Sensor nicht für die schnelle Erfassung von Radioaktivität oder einer schnellen Änderung der Radioaktivität geeignet.**
 - ein gleitender Mittelwert wird mit einem zyklischen Ringpuffer der Tiefe 1008 aus den ausgelesenen Zählerständen gebildet, d.h. die gleitende Mittelwertbildung wird über den Zeitraum der letzten 1008 * 10 Minuten = 7 Tage durchgeführt. Es wird jeweils  das älteste Zählergebnis verworfen, wenn ein neues Zählergebnis eingelesen wird. Das Füllen des Ringpuffers dauert 7 Tage. Währenddessen steigt der gleitende Mittelwert 'semi' linear an.
@@ -435,8 +435,7 @@
 
 - [Strahlenschutz und Dosimetrie](https://www.hzdr.de/FWR/DOCS/Archiv/RC_2009_02.pdf)
 - [Teviso AL53 @ Opengeiger](http://www.opengeiger.de/TevisoModul.pdf)
-- [Kostengünstige  Gamma-Spektroskopie  mit  einer  PIN-Diode  und  aufgesetztem 
-Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
+- [Kostengünstige  Gamma-Spektroskopie  mit  einer  PIN-Diode  und  aufgesetztem Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
 - [Beta, Gamma Detektor mit BPW 34 Photodioden, optimierte Schaltung](https://www.mikrocontroller.net/topic/344882)
 - [Multi Sensor Data Acquisition System Design for Monitoring the Radiation Dose Based on Wireless Sensor Network](https://www.ripublication.com/irph/ijert19/ijertv12n6_19.pdf)
 - [PocketGeigerType5_ARDUINO Schaltplan](https://radiation-watch.sakuraweb.com/share/type5_circuit_diagram.pdf)
@@ -477,10 +476,13 @@ Szintillationskristall](http://www.opengeiger.de/PinDiodenGSpec.pdf)
 - [Biochemie der Ernährung](https://books.google.com/books/about/Biochemie_der_Ernährung.html?hl=de&id=pyiDBwAAQBAJ)
 - [γ-Spektroskopie mit NaI- und Ge-Detektoren](https://www.ikp.uni-koeln.de/students/la/demo/download/DOC-2006-Feb-50-1.pdf)
 - [NATÜRLICHE UND KÜNSTLICHE RADIONUKLIDE IN UNSERER UMWELT](https://www.fs-ev.org/fileadmin/user_upload/90_Archiv/FS-Pub-Archiv-final/FS-2010-153-T%20Natürliche%20und%20künstliche%20Radionuklide%20in%20unserer%20Umwelt%2042.%20Jahrestagung.pdf)
+- [Radon und Radonmessung](http://www.neulinger.com/radon/)
+- [Bestimmung von Halbwertsdicken](https://www.physikalische-schulexperimente.de/physo/Bestimmung_von_Halbwertsdicken)
+- [Wechselwirkung von αlpha-Strahlen](https://www.analytik.ethz.ch/vorlesungen/radiochemie/WWmitMaterie.pdf)
 
 ## Akkulebensdauer
 
-- der Sensor läuft mit einer Akkuladung [ca. 3..4 Monate](./Images/accumulator_voltage_over_3+_months.png)
+- der Sensor läuft mit einer Akkuladung [ca. 4..5 Monate](./Images/accumulator_voltage_over_4+_months.png)
 - die Kapazität von NiMH Akkus lässt nach 50..100 Ladezyklen nach
 - diese [Grafik](https://www.pocketnavigation.de/wp-content/uploads/2015/02/ansmann_2850_zyklen_verglei-550x308.jpg) zeigt die Entladekurve eines NiMH Akkus über der Anzahl von Entladezyklen
 - hier ein interessanter Artikel zu [NiMH-Akkus Zyklen und Lebenserwartung](https://www.pocketnavigation.de/2015/03/mignon-aa-akkus-test-vergleich/5/)

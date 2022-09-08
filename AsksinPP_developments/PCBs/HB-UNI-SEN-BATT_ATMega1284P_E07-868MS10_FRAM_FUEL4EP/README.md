@@ -54,7 +54,8 @@
     + das schafft Platz für eine 8-polige Stiftleiste J11 zum optionalen Anschluss eines [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm). Der ATMega1284P hat auch genügend RAM für die Programmierung eines 200 Pixel x 200 Pixel e-Papermoduls.
     + JLCPCB BOM and CPL Dateien für SMT Service werden [bereitgestellt](./JLCPCB_SMT_Service/)
 - Hinweis: der TPS61221 ist zur Zeit von nirgendwo lieferbar
-- Hinweis: der ATMega1284P-AU ist zur Zeit nirgendwo zu vernünftigen Preisen käuflich. JLCPCB verlangt 24 US$ !!!!
+- Hinweis: der MB85RS2MTPF FRAM Speicher ist zur Zeit bei JLCPCB nicht verfügbar
+- Hinweis: der ATMega1284P-AU ist zur Zeit nirgendwo zu vernünftigen Preisen käuflich. JLCPCB verlangt 23 US$ !!!!
 
 ### Benötigte Bauteile:
 
@@ -118,7 +119,8 @@
 * Achtung: Kein Überspannungschutz vorhanden
 * der Verpolungsschutz ist optional. Dafür Bauteil Q1 (IRLU024N) und R3 (100KOhm Widerstand) bestücken. Alternativ JP1 auf der Platinenrückseite brücken um ohne Verpolungsschutz zu arbeiten.
  * bei der Nutzung des JLCPCB SMT Bestückungsservice ist darauf zu achten, dass **alle** benötigten SMD Bauteile als im Lager **verfügbar** angezeigt werden. Sonst bitte **NICHT** bestellen!
- * aktuell ist der benötigte ATMega1284P-AU beim JLCPCP SMT Service nicht verfügbar. Daher wurde auch noch kein Prototyp gebaut.
+ * aktuell ist der benötigte ATMega1284P-AU und das FFRAM MB85RS2MTPF beim JLCPCP SMT Service nur sehr teuer / nicht verfügbar. Daher wurde auch noch kein Prototyp gebaut.
+ 
 ## Disclaimer
 
 -   die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr.
