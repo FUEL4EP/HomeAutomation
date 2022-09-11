@@ -13,6 +13,7 @@
   - [Eigenschaften](#eigenschaften)
   - [Bilder](#bilder)
   - [Experimente](#experimente)
+  - [Radonmessung](#radonmessung)
   - [Schaltplan](#schaltplan)
   - [Platine](#platine)
   - [Gehäuse](#gehäuse)
@@ -31,11 +32,13 @@
   - [Lizenz](#lizenz)
 
 ## Neuerungen
-- dies ist eine initiale Freigabe, ein Prototyp von HB-UNI-Sensor1-RAD-AL53 ist voll funktionsfähig und läuft seit vielen Monaten fehlerfrei
-- ein e-Paper und ein NiMH-Lademodul fehlen in dieser initialen Freigabe noch
+- ein Prototyp von HB-UNI-Sensor1-RAD-AL53 ist voll funktionsfähig und läuft seit vielen Monaten fehlerfrei
+- eine e-Paper Anzeige könnte nachgerüstet werden, ist aber noch nicht implementiert
+- stattdessen hat sich die Auswertung und Anzeige mit dem [CCU Historian](https://github.com/mdzio/ccu-historian) bewährt
 - Rückmeldungen, Fragen und Hinweise zur Verbesserung der Dokumentation sind [im Homematic Forum](https://homematic-forum.de/forum/viewtopic.php?f=76&t=60293&hilit=AL53) willkommen oder auch als private Nachricht an [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum.
-- die Dokumentation ist noch im Aufbau, Hinweise auf Fehler oder Unvollständigkeiten sind als private Nachricht willkommen
-- eine beispielhafte Alarmierung mit einer iOS ProwlApp Push Meldung ist [hier](./ProwlApp_Alarm) beschrieben.
+- die Dokumentation wird kontinuierlich, vor allem mit Messergebnissen, ergänzt, Hinweise auf Fehler oder Unvollständigkeiten sind als private Nachricht willkommen
+- **NEU**: eine beispielhafte Alarmierung mit einer iOS ProwlApp Push Meldung ist [hier](./ProwlApp_Alarm) beschrieben.
+- **NEU**: eine Methode für die qualitative Messung von **Radon** ist unten beschrieben
 
 ## Einsteiger
 
@@ -44,9 +47,9 @@
 - bitte alle Kapitel vor dem Fragestellen im Homematic Forum durchlesen
 
 ##  Hinweise
-- geplante Erweiterungen
+- eventuell geplante Erweiterungen
     + e-Paper Anzeige mit [1.54 inch e-Paper Module von Waveshare](https://www.waveshare.com/wiki/1.54inch_e-Paper_Module) mit SPI-Schnittstelle 
-    + Akkulademodul mit 5V USB Ladebuche
+    + Akkulademodul mit 5V USB Ladebuche (ist eigentlich nicht notwendig, da der Sensor mit einer Akkuladung >4 Monate läuft)
     + 3D Druck Gehäuse
     + eventuell weiteren Signaleingang für externen Geigerzähler, z.B. [Taschen-Geiger-Strahlungssensor - Typ 5](https://www.robotshop.com/de/de/taschen-geiger-strahlungssensor-typ-5.html) oder [Stuttgarter Geigerle](http://www.opengeiger.de/BauanleitungV1_1.pdf)
 - Mitwirkende sind willkommen, Interesse bitte per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) melden
@@ -152,8 +155,24 @@
 
 - Ergebnisse werden nach und nach [hier](./measurement_examples) abgelegt
 - Messung von Kaliumchlorid in Lebensmittelqualität (E508), das aufgrund seines natürlichen K-40 Gehalts ein Beta-Strahler ist
-- Radonmessung mit dem Dünger ist geplant:
+- Radonmessung mit dem Dünger:
     - [Uran im Boden und im Wasser ? – Testen Sie Ihr Düngemittel !](http://www.opengeiger.de/DuengerRadonTest.pdf)
+    
+### Radonmessung
+
+- Eine Messung der Radonkonzentration in Wohn- und Kellerrämen kann einfach nach der [Methode](https://www.neulinger.com/radon/RS1.html) von Josef Neulinger gemacht werden. Dazu sammelt man mit einem [Wattepad](https://www.dm.de/ebelin-wattepads-bio-p4066447015553.html), das vorne an einem Staubsaugerrohr befestigt wird, für ca. 10 Minuten bei geringer Saugleistung Staub. Dieser Staub enthält das Radon und dessen Spaltprodukte. Für einen Miele Staubsauger sind [STL-Dateien](./3D_print_files/Miele_vacuum_clearer_adapter_for_radon_fission_product_collector/) für einen 3D-Druck Adapter beigefügt:
+
+![pic](./Images/Miele_vacuum_clearer_adapter_for_radon_fission_product_collector.png)
+
+Das Wattepad wird zwischen die beiden Teile des Adapters eingeklemmt.  
+Für Anpassungen an andere Staubsaugermodelle ist ein FreeCAD Modell bereitgestellt, das einfach anzupassen ist.
+
+Hier ein erstes Messergebnis von meinem Keller:
+
+![pic](./Images/Radon_measurement_from_dust_collected_by_a_vacuum_cleaner.png)
+
+Die gemessene Aktivität steigt um über einen Faktor 10 an. Whow!
+Weitere Radon Messungen werden in Kürze folgen.
 
 ## Schaltplan
 
@@ -479,6 +498,9 @@
 - [Radon und Radonmessung](http://www.neulinger.com/radon/)
 - [Bestimmung von Halbwertsdicken](https://www.physikalische-schulexperimente.de/physo/Bestimmung_von_Halbwertsdicken)
 - [Wechselwirkung von αlpha-Strahlen](https://www.analytik.ethz.ch/vorlesungen/radiochemie/WWmitMaterie.pdf)
+- [Radonmessung mit Staubsauger - Radon Ist Ein Radioaktives Gas](https://www.strahlenmesstechnik.ch/infos-radioaktivitaet/radon-gas/)
+- [Radioaktiver Feinstaub](http://www.opengeiger.de/Feinstaub/RadioaktiverFeinstaubSilvester2016.pdf)
+- [Radon-Nachweis in Raumluft-Proben mit Hochspannung](https://www.grossberger.net/atomphysik/radon.html)
 
 ## Akkulebensdauer
 
