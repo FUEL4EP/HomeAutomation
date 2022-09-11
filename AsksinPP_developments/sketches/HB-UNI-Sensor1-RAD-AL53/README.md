@@ -167,6 +167,8 @@
 Das Wattepad wird zwischen die beiden Teile des Adapters eingeklemmt.  
 Für Anpassungen an andere Staubsaugermodelle ist ein FreeCAD Modell bereitgestellt, das einfach anzupassen ist.
 
+Das Wattepad wird unmittelbar nach dem Ende der Luftansaugung vor den AL53 Sensor platziert (z.B. mit einem Tesafilm angeklebt), die Außenseite mit dem angesaugten Staub dabei soll zum Sensor hinweisen.
+
 Hier ein erstes Messergebnis von meinem Keller:
 
 ![pic](./Images/Radon_measurement_from_dust_collected_by_a_vacuum_cleaner.png)
