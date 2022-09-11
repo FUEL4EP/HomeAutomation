@@ -169,6 +169,8 @@ Für Anpassungen an andere Staubsaugermodelle ist ein FreeCAD Modell bereitgeste
 
 Das Wattepad wird unmittelbar nach dem Ende der Luftansaugung vor den AL53 Sensor platziert (z.B. mit einem Tesafilm angeklebt), die Außenseite mit dem angesaugten Staub dabei soll zum Sensor hinweisen.
 
+Wer eine feinere zeitliche Auflösung des Abfalls der gemessenen Radioaktivität haben will, setzt vorübergehend im WebUI das Sendeintervall (=Messintervall) von 600 Sekunden z.B. auf 300 Sekunden herab. Dadurch wird allerdings auch die mittlere Anzahl der gemessenen Zerfälle pro Messintervall (cpi) verringert.
+
 Hier ein erstes Messergebnis von meinem Keller:
 
 ![pic](./Images/Radon_measurement_from_dust_collected_by_a_vacuum_cleaner.png)
