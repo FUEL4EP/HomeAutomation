@@ -39,6 +39,7 @@
 - die Dokumentation wird kontinuierlich, vor allem mit Messergebnissen, ergänzt, Hinweise auf Fehler oder Unvollständigkeiten sind als private Nachricht willkommen
 - **NEU**: eine beispielhafte Alarmierung mit einer iOS ProwlApp Push Meldung ist [hier](./ProwlApp_Alarm) beschrieben.
 - **NEU**: eine Methode für die qualitative Messung von **Radon** ist unten beschrieben
+- **NEU**: STL-Dateien für den 3D-Druck eines Gehäuses sind nun verfügbar
 
 ## Einsteiger
 
@@ -50,7 +51,6 @@
 - eventuell geplante Erweiterungen
     + e-Paper Anzeige mit [1.54 inch e-Paper Module von Waveshare](https://www.waveshare.com/wiki/1.54inch_e-Paper_Module) mit SPI-Schnittstelle 
     + Akkulademodul mit 5V USB Ladebuche (ist eigentlich nicht notwendig, da der Sensor mit einer Akkuladung >4 Monate läuft)
-    + 3D Druck Gehäuse
     + eventuell weiteren Signaleingang für externen Geigerzähler, z.B. [Taschen-Geiger-Strahlungssensor - Typ 5](https://www.robotshop.com/de/de/taschen-geiger-strahlungssensor-typ-5.html) oder [Stuttgarter Geigerle](http://www.opengeiger.de/BauanleitungV1_1.pdf)
 - Mitwirkende sind willkommen, Interesse bitte per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) melden
   
@@ -172,7 +172,7 @@ Hier ein erstes Messergebnis von meinem Keller:
 ![pic](./Images/Radon_measurement_from_dust_collected_by_a_vacuum_cleaner.png)
 
 Die gemessene Aktivität steigt um über einen Faktor 10 an. Whow!
-Weitere Radon Messungen werden in Kürze folgen.
+Weitere Ergebnisse von Radon Messungen werden in Kürze hier folgen.
 
 ## Schaltplan
 
@@ -193,8 +193,11 @@ Weitere Radon Messungen werden in Kürze folgen.
 
 ## Gehäuse
 
-- ein passendes 3D Druckgehäuse muss noch entworfen werden (in Planung). Basis wird das [Gehäuse HB-UNI-SEN-BATT snap in V2 von wpatrick](https://www.thingiverse.com/thing:3540481) sein. Die Grundplatte bleibt. Das Oberteil wird mit größerer Bauhöhe neu erstellt.  Auf die Grundplatte werden die  [Abstandhalter](./3D_print_files/Spacer_sleeve.stl) geklebt, so dass die Module auf die Unterseite der Platine geklebt werden können.
-- Ein passendes Unterteil für 3D-Druck ist [hier](./3D_print_files/Case_bottom_with_10mm_spacers). 
+- Ein passendes Unterteil für 3D-Druck ist [hier](./3D_print_files/Case_bottom_with_10mm_spacers.stl).
+- Ein passendes Oberteil für 3D-Druck ist [hier](./3D_print_files/Case_top.stl).
+![pic](./Images/HB-UNI-Sensor1-RAD-AL53_case_bottom.png)
+![pic](./Images/HB-UNI-Sensor1-RAD-AL53_case_top.png)
+- FreeCAD Modelle sind beigefügt, falls Anpassungen notwendig sein sollten.
 
 
 ## Aufbau
