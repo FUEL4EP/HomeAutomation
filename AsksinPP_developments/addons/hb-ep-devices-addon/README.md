@@ -9,7 +9,7 @@ Die jeweils aktuellste Version ist bei den [Releases](https://github.com/FUEL4EP
 
 **Dieses Addon und diese README.md Datei sind abgeleitet von [Jérômes](https://github.com/jp112sdl) Addon [JP-HB-Devices-addon](https://github.com/jp112sdl/JP-HB-Devices-addon). Herzlichen Dank dafür an Jérôme.**
 
-Dieses Addon integriert die unten aufgelisteten HomeBrew Projekte in die CCU-Firmware.</font><br/>
+Dieses Addon integriert die unten aufgelisteten HomeBrew Projekte in die CCU3/RaspberryMatic-Firmware.</font><br/>
 Ich stelle es 
 
 - kostenfrei 
@@ -44,7 +44,7 @@ Nach einem Upgrade der CCU/RaspberryMatic Firmware kann es notwendig sein, diese
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THPD-BME280_thumb.png" width=25/> | [HB-UNI-SENSOR1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) | hoch genauer und sehr schneller THPD Sensor<br/>basierend auf Sensirion SHT85 und Bosch BME280<br/>mit Taupunkttemperatur<br/>und absoluter Luftfeuchte<br/>NEU: optional: gleitender Mittelwert der Temperatur über 24 Stunden und 7 Tage bei ATMega1284P| 🔋 |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-RAD-AL53_thumb.png" width=25/> | [HB-UNI-SENSOR1-RAD-AL53](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-RAD-AL53)<br/>| Radioaktivitätssensor mit PIN-Dioden Detektor<br/>basierend auf Teviso AL53<br/>für Alpha-, Beta- und Gammastrahlung| 🔋 |
 
-
+Alle hier aufgeführten Homematic Selbstbaugeräte sind bei mir selbst im Einsatz und im täglichen Betrieb validiert. Meine Zentrale läuft unter RaspberryMatic in der neuesten verfügbaren Version auf einem Raspberry Pi 3B+ .
 
 
 **Hinweis für Entwickler** _(verwendete Device Model meiner bzw. fremd-eingebundener HB-Geräte)_ **:**
