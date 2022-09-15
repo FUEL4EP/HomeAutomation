@@ -164,6 +164,8 @@
 
 ![pic](./Images/Miele_vacuum_clearer_adapter_for_radon_fission_product_collector.png)
 
+![pic](./Images/Miele_vacuum_cleaner_adaptor_with_cotton_wool_pad.png)
+
 Das Wattepad wird zwischen die beiden Teile des Adapters eingeklemmt.  
 Für Anpassungen an andere Staubsaugermodelle ist ein FreeCAD Modell bereitgestellt, das einfach anzupassen ist.
 
