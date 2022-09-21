@@ -175,11 +175,11 @@ Das Wattepad wird unmittelbar nach dem Ende der Luftansaugung vor den AL53 Senso
 
 Wer eine feinere zeitliche Auflösung des Abfalls der gemessenen Radioaktivität haben will, setzt vorübergehend im WebUI das Sendeintervall (=Messintervall) von 600 Sekunden z.B. auf 300 Sekunden herab. Dadurch wird allerdings auch die mittlere Anzahl der gemessenen Zerfälle pro Messintervall (cpi) verringert.
 
-Hier ein erstes Messergebnis von meinem Keller:
+Hier ein erstes Messergebnis von meinem Keller (Messintervall: 300 Sekunden):
 
 ![pic](./Images/Radon_measurement_from_dust_collected_by_a_vacuum_cleaner.png)
 
-Die gemessene Aktivität steigt um über einen Faktor 10 an. Whow!
+Die gemessene Aktivität steigt ca. um einen Faktor 10 an. Whow!
 Weitere Ergebnisse von Radon Messungen werden in Kürze hier folgen.
 
 ## Schaltplan
