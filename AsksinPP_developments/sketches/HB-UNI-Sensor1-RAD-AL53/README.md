@@ -160,7 +160,7 @@
     
 ### Radonmessung
 
-- Eine Messung der Radonkonzentration in Wohn- und Kellerrämen kann einfach nach der [Methode](https://www.neulinger.com/radon/RS1.html) von Josef Neulinger gemacht werden. Dazu sammelt man mit einem [Wattepad](https://www.dm.de/ebelin-wattepads-bio-p4066447015553.html), das vorne an einem Staubsaugerrohr befestigt wird, für ca. 10 Minuten bei geringer Saugleistung Staub. Dieser Staub enthält die Radon Zerfallsprodukte Po 218, Pb 214, Bi 214, Po 214 und Pb 210. Für einen Miele Staubsauger sind [STL-Dateien](./3D_print_files/Miele_vacuum_clearer_adapter_for_radon_fission_product_collector/) für einen 3D-Druck Adapter beigefügt:
+- Eine **qualitative** Messung der Radonkonzentration in Wohn- und Kellerrämen kann einfach nach der [Methode](https://www.neulinger.com/radon/RS1.html) von Josef Neulinger gemacht werden. Dazu sammelt man mit einem [Wattepad](https://www.dm.de/ebelin-wattepads-bio-p4066447015553.html), das vorne an einem Staubsaugerrohr befestigt wird, für 10 Minuten bei geringer Saugleistung (~300W) Staub. Dieser Staub enthält die Radon Zerfallsprodukte Po 218, Pb 214, Bi 214, Po 214 und Pb 210. Für einen Miele Staubsauger sind [STL-Dateien](./3D_print_files/Miele_vacuum_clearer_adapter_for_radon_fission_product_collector/) für einen 3D-Druck Adapter beigefügt:
 
 ![pic](./Images/Miele_vacuum_clearer_adapter_for_radon_fission_product_collector.png)
 
@@ -179,7 +179,13 @@ Hier ein erstes Messergebnis von meinem Keller (Messintervall: 300 Sekunden):
 
 ![pic](./Images/Radon_measurement_from_dust_collected_by_a_vacuum_cleaner.png)
 
-Die gemessene Aktivität steigt ca. um einen Faktor 10 an. Whow!
+Die gemessene Aktivität steigt ca. um einen Faktor 10 gegenüber der Normalrate an. Whow!
+
+Hier ein Vergleich der gemessen Aktivitäten im Keller (~gegen 19:30 Uhr) und im Wohnzimmer (~8:30 Uhr). Die Aktivität im Wohnzimmer ist um ca. einen Faktor 4 geringer als im Wohnzimmer.
+![pic](./Images/Radon_measurement_from_dust_collected_by_a_vacuum_cleaner_cellar_and_living_room.png)
+
+Diese Messergebnisse sind nicht kalibriert und daher auch nicht quantitativ verwendbar. Da die Messungen mit derselben Methodik erfolgen, sind Messungen innerhalb eines Hauses vergleichbar.
+
 Weitere Ergebnisse von Radon Messungen werden in Kürze hier folgen.
 
 ## Schaltplan
