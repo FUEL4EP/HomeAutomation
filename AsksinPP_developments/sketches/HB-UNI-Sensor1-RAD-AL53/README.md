@@ -179,7 +179,7 @@ Hier ein erstes Messergebnis von meinem Keller (Messintervall: 300 Sekunden):
 
 ![pic](./Images/Radon_measurement_from_dust_collected_by_a_vacuum_cleaner.png)
 
-Die gemessene Aktivität steigt ca. um einen Faktor 10 gegenüber der Normalrate an. Whow!
+Die gemessene Aktivität steigt ca. um einen Faktor 100 gegenüber der Normalrate an. Whow!
 
 Hier ein Vergleich der gemessen Aktivitäten im Keller (~gegen 19:30 Uhr) und im Wohnzimmer (~8:30 Uhr). Die Aktivität im Wohnzimmer ist um ca. einen Faktor 4 geringer als im Wohnzimmer.
 ![pic](./Images/Radon_measurement_from_dust_collected_by_a_vacuum_cleaner_cellar_and_living_room.png)
@@ -518,6 +518,7 @@ Weitere Ergebnisse von Radon Messungen werden in Kürze hier folgen.
 - [Radonmessung mit Staubsauger - Radon Ist Ein Radioaktives Gas](https://www.strahlenmesstechnik.ch/infos-radioaktivitaet/radon-gas/)
 - [Radioaktiver Feinstaub](http://www.opengeiger.de/Feinstaub/RadioaktiverFeinstaubSilvester2016.pdf)
 - [Radon-Nachweis in Raumluft-Proben mit Hochspannung](https://www.grossberger.net/atomphysik/radon.html)
+- [BfS: Radon in der Boden-Luft in Deutschland](https://www.bfs.de/DE/themen/ion/umwelt/radon/karten/boden.html)
 
 ## Akkulebensdauer
 
