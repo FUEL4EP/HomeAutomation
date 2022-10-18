@@ -519,6 +519,9 @@ Weitere Ergebnisse von Radon Messungen werden in Kürze hier folgen.
 - [Radioaktiver Feinstaub](http://www.opengeiger.de/Feinstaub/RadioaktiverFeinstaubSilvester2016.pdf)
 - [Radon-Nachweis in Raumluft-Proben mit Hochspannung](https://www.grossberger.net/atomphysik/radon.html)
 - [BfS: Radon in der Boden-Luft in Deutschland](https://www.bfs.de/DE/themen/ion/umwelt/radon/karten/boden.html)
+- [Radon in Innenräumen: Ein in der umweltmedizinischen Diskussion unterschätzter Risikofaktor für Lungenkrebs](https://www.aerzteblatt.de/archiv/69731/Radon-in-Innenraeumen)
+- [Informationen zu Radon im Innenraum](https://www.drhaumann.de/index_htm_files/Haumann%20Info%20Radon.pdf)
+- [Radon: Das Krebsrisiko im Keller](https://www.deutsche-apotheker-zeitung.de/daz-az/2005/daz-50-2005/uid-15134)
 
 ## Akkulebensdauer
 
