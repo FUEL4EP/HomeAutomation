@@ -184,9 +184,13 @@ Die gemessene Aktivität steigt ca. um einen Faktor 100 gegenüber der Normalrat
 Hier ein Vergleich der gemessen Aktivitäten im Keller (~gegen 19:30 Uhr) und im Wohnzimmer (~8:30 Uhr). Die Aktivität im Wohnzimmer ist um ca. einen Faktor 4 geringer als im Wohnzimmer.
 ![pic](./Images/Radon_measurement_from_dust_collected_by_a_vacuum_cleaner_cellar_and_living_room.png)
 
+
 Diese Messergebnisse sind nicht kalibriert und daher auch nicht quantitativ verwendbar. Da die Messungen mit derselben Methodik erfolgen, sind Messungen innerhalb eines Hauses vergleichbar.
 
-Weitere Ergebnisse von Radon Messungen werden in Kürze hier folgen.
+Hier zum Vergleich eine Messung der Radonaktivität in meinem Wohnzimmer mit einem kalibrierten Airthings Corentium Home Radonmessgerät. Nach einer Woche Messzeit war der 'Long Term average' ca 21 Bq/m3:
+
+![pic](./Images/Radon_radioactivity_Airthings_Corentium_Home_one_week_average.png)
+
 
 ## Schaltplan
 
