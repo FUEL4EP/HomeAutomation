@@ -215,6 +215,7 @@ Hier zum Vergleich eine Messung der Radonaktivität in meinem Wohnzimmer mit ein
 - Ein passendes Oberteil für 3D-Druck ist [hier](./3D_print_files/Case_top.stl).
 ![pic](./Images/HB-UNI-Sensor1-RAD-AL53_case_bottom.png)
 ![pic](./Images/HB-UNI-Sensor1-RAD-AL53_case_top.png)
+![pic](./Images/HB-UNI-Sensor1-RAD-AL53_case.png)
 - FreeCAD Modelle sind beigefügt, falls Anpassungen notwendig sein sollten.
 
 
