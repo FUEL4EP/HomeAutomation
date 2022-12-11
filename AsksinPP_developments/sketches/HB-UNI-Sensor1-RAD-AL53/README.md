@@ -527,6 +527,7 @@ Hier zum Vergleich eine Messung der Radonaktivität in meinem Wohnzimmer mit ein
 - [Radon in Innenräumen: Ein in der umweltmedizinischen Diskussion unterschätzter Risikofaktor für Lungenkrebs](https://www.aerzteblatt.de/archiv/69731/Radon-in-Innenraeumen)
 - [Informationen zu Radon im Innenraum](https://www.drhaumann.de/index_htm_files/Haumann%20Info%20Radon.pdf)
 - [Radon: Das Krebsrisiko im Keller](https://www.deutsche-apotheker-zeitung.de/daz-az/2005/daz-50-2005/uid-15134)
+- [BfS Radonhandbuch Deutschland - sehr gute Zusammenfassung](https://www.bfs.de/SharedDocs/Downloads/BfS/DE/broschueren/ion/radon-handbuch.pdf?__blob=publicationFile&v=7)
 
 ## Akkulebensdauer
 
