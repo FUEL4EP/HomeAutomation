@@ -531,7 +531,7 @@ Hier zum Vergleich eine Messung der Radonaktivität in meinem Wohnzimmer mit ein
 
 ## Akkulebensdauer
 
-- der Sensor läuft mit einer Akkuladung [ca. 4..5 Monate](./Images/accumulator_voltage_over_4+_months.png)
+- der Sensor läuft mit einer Akkuladung [ca. 6..7 Monate](./Images/accumulator_voltage_over_6+_months.png)
 - die Kapazität von NiMH Akkus lässt nach 50..100 Ladezyklen nach
 - diese [Grafik](https://www.pocketnavigation.de/wp-content/uploads/2015/02/ansmann_2850_zyklen_verglei-550x308.jpg) zeigt die Entladekurve eines NiMH Akkus über der Anzahl von Entladezyklen
 - hier ein interessanter Artikel zu [NiMH-Akkus Zyklen und Lebenserwartung](https://www.pocketnavigation.de/2015/03/mignon-aa-akkus-test-vergleich/5/)
