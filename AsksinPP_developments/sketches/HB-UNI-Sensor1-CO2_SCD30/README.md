@@ -10,6 +10,13 @@ Die CO2 Konzentration ist ein wichtiger Indikator für die Luftqualität in Inne
 
 [Auswirkung hoher CO2 Konzentrationen](https://www.cik-solutions.com/content/images/co2-konzentration.png)
 
+**UPDATE 05. 04. 2023:** Es ist nun möglich, eine Korrektur des Jahresmittelwerts der CO2-Konzentration der Atmosphäre vorzunehmen, siehe auch [Umweltbundesamt: Atmosphärische Treibhausgas-Konzentrationen](https://www.umweltbundesamt.de/daten/klima/atmosphaerische-treibhausgas-konzentrationen#kohlendioxid-)  
+Die Parameter sind am Ende von [./Cfg/Device_SCD30.h](./Cfg/Device_SCD30.h) definiert:
+
+> #define actual_CO2_annual_average_100      41900   
+#define CO2_annual_reference_100           40000 
+
+
 ## Hardware
 
 Als Ausgangspunkt wird die Platine Alex Reinert und der Sketch  HB-UNI-SEN-BATT von Tom Major genommen und geeignet modifiziert.
@@ -356,15 +363,17 @@ Im obigen Beispiel ADC0_FACTOR ist 3.509 die mit dem Voltmeter gemessene VCC Spa
 
 ### Speicherbedarf des Sketches:
 
-**Update 08.12.2020:** Der Sketch verwendet 28670 Bytes (93%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
-Globale Variablen verwenden 1345 Bytes (65%) des dynamischen Speichers, 703 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
-Diese Werte gelten für den eingeschalteten DEBUG Modus.<br/>
-**Bitte nach der erfolgreichen Inbetriebnahme UNBEDINGT die Debugoption ausschalten:
-**
+**Update 05.04.2023:** 
+Der Sketch verwendet 28500 Bytes (92%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
+Globale Variablen verwenden 1290 Bytes (62%) des dynamischen Speichers, 758 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
+Diese Werte gelten für den eingeschalteten DEBUG Modus.<br/>  
+
+**Bitte nach der erfolgreichen Inbetriebnahme UNBEDINGT die Debugoption ausschalten:**
+
 > //#define NDEBUG   // uncomment in case of stability issues
 
-**Nur bei ausgeschaltetem DEBUG Modus wird bei einem kritischen Akkuladezustand der Sensor in den Tiefschlaf versetzt!
-**
+**Nur bei ausgeschaltetem DEBUG Modus wird bei einem kritischen Akkuladezustand der Sensor in den Tiefschlaf versetzt!**
+
 ### Benötigtes Addon auf CCUx/RaspberryMatic:
 
 **Update 08.12.2020:** **Vor** dem Anlernen des HB-UNI-Sensor1-CO2_SCD30 Sensors ist das Addon [ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf der CCUx/RaspberryMatic zu installieren. Dazu die 'hb-ep-devices-addon.tgz' von dort bitte herunterladen und als Zusatzsoftware in der CCU3/RaspberryMatic installieren. Die 'tgz'-Datei muss nicht unzipped werden!
@@ -451,8 +460,8 @@ Bitte ändere in 	'Cfg/Device_SCD30.h'
 // 1) Standard: tmBattery, UBatt = Betriebsspannung AVR
 //#define BAT_SENSOR tmBattery
 //------------
-// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A2, activation pin A3, Faktor = Rges/Rlow*1000, z.B. 94k/47k, Faktor (3*47k)/(2*47k)*1000 = 3333; correction factor2 = 2653/2986, total factor = 3333 * 2653/2986
- #define BAT_SENSOR tmBatteryResDiv<A2, A3, 2961>
+// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A2, activation pin A3, Faktor = Rges/Rlow*1000, z.B. 141k/47k, Faktor (3*47k)/(1*47k)*1000 = 3000; correction factor2 = Vmeas_should/Vmeas_actual, total factor = Faktor * factor2
+#define BAT_SENSOR tmBatteryResDiv&lt;A2, A3, 2961&gt
 </code></pre>
 
 ab nach
@@ -464,8 +473,8 @@ ab nach
 // 1) Standard: tmBattery, UBatt = Betriebsspannung AVR
  #define BAT_SENSOR tmBattery
 //------------
-// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A2, activation pin A3, Faktor = Rges/Rlow*1000, z.B. 94k/47k, Faktor (3*47k)/(2*47k)*1000 = 3333; correction factor2 = 2653/2986, total factor = 3333 * 2653/2986
-// #define BAT_SENSOR tmBatteryResDiv<A2, A3, 2961>
+// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A2, activation pin A3, Faktor = Rges/Rlow*1000, z.B. 141k/47k, Faktor (3*47k)/(1*47k)*1000 = 3000; correction factor2 = Vmeas_should/Vmeas_actual, total factor = Faktor * factor2
+// #define BAT_SENSOR tmBatteryResDiv&lt;A2, A3, 2961&gt
 </code></pre>
 
 Für reinen Netzbetrieb des HB-UNI-Sensor1-CO2_SCD30 Sensors sind an der Hardware folgende Anpassungen vorzunehmen:
@@ -501,7 +510,7 @@ Für reinen Netzbetrieb des HB-UNI-Sensor1-CO2_SCD30 Sensors sind an der Hardwar
 	
 ### Wichtige Hinweise, unbedingt beachten !!
 
-*  Vor dem Programmieren mit einem ISP Programmer oder Anschliessen eines FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino sind die Akkus aus den Halterungen zu entnehmen. Sonst entsteht ein hoher Strom Akku => Step-Up Wandler => 3.5 Versorgung ISP Programmer / FTDI Adapter. Sonst sind die Akkus sehr schnell tief entladen !!!!
+*  **Vor dem Programmieren mit einem ISP Programmer oder Anschliessen eines FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino sind die Akkus aus den Halterungen zu entnehmen.** Sonst entsteht ein hoher Strom Akku => Step-Up Wandler => 3.5 Versorgung ISP Programmer / FTDI Adapter. Sonst sind die Akkus sehr schnell tief entladen !!!!
 * Für die Verwendung des Akku-Step-Up Wandlers muss **vor** dem Auflöten der Batteriehalterungen mit einer scharfen Klinge die VCC Leiterbahn der Basisplatine aufgetrennt werden.
 * Die Spannungen der Step-Up und Step-Down Wandler müssen **unbedingt** im Leerlauf ohne angeschlossene andere Schaltkreise an den jeweiligen Potentiometern eingestellt werden. Sonst droht die Zerstörung der anderen Bauteile aufgrund von Überspannung! Die Wandler, die in das Gehäuseoberteil eingeklebt werden, müssen bei abgezogenem Arduino Common Sensor Stecker eingestellt werden (elektrische Trennung von Ober- und Unterteil des Gehäuses). Für die Feinjustage kann die Verbindung wieder hergestellt werden. Der Akku-Step-Up Wandler muss auch im Leerlauf ohne angeschlossene Last zuerst eingestellt werden, d.h. die Verbindung der Schottkydiode auf VCC wird erst **nach** der initialen Einstellung hergestellt.
 * Die korrekte Polarität der DC Spannungsversorgungsbuchse muss vor dem Anschluss von Wandlern oder Lademodulen geprüft werden. Das vorgeschlagene Netzteil erlaubt beide Polaritäten durch Umstecken des Adapters.<br/>

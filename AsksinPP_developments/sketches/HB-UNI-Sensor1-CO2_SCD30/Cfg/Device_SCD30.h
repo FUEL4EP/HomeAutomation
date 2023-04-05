@@ -69,6 +69,8 @@
 #define BAT_VOLT_LOW        24  // 2.4V accumulator voltage for low battery signalling measured at pin A2 (see above)
 #define BAT_VOLT_CRITICAL   22  // 2.2V accuumulator voltage for switch off (sleep forever)
 
+#define actual_CO2_annual_average_100      41900 // scaled by 100; see e.g. https://www.umweltbundesamt.de/daten/klima/atmosphaerische-treibhausgas-konzentrationen#kohlendioxid-
+#define CO2_annual_reference_100           40000 // scaled by 100; used by Sensirion's SCD30 autocalibration
 
 #endif
 

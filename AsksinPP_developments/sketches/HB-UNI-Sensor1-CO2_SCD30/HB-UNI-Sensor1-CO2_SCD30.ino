@@ -1,7 +1,7 @@
 //---------------------------------------------------------
 // HB-UNI-Sensor1-CO2_SCD30
-// Version 2.0
-// (C) 2020 FUEL4EP (Creative Commons)
+// Version 2.1
+// (C) 2020-2023 FUEL4EP (Creative Commons)
 // (C) 2018-2020 Tom Major (Creative Commons)
 // https://creativecommons.org/licenses/by-nc-sa/4.0/
 // You are free to Share & Adapt under the following terms:
@@ -9,7 +9,11 @@
 // +++
 // AskSin++ 2016-10-31 papa Creative Commons
 //---------------------------------------------------------
-
+// Updates: 
+//
+// 05-04-2023:  Added correction of average annual CO2 increase due to climate change, see ./Cfg/Device_SCD30.h
+//---------------------------------------------------------
+//
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 // !! NDEBUG muss UNBEDINGT aktiviert werden wenn die Sensorentwicklung und die Tests abgeschlossen sind und das Gerät in den 'Produktionsmodus' geht !!!

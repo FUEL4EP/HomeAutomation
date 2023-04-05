@@ -2,7 +2,7 @@
 //---------------------------------------------------------
 // Sens_SCD30
 // 2019-07-14 Tom Major (Creative Commons)
-// 2020-11-24 FUELEP
+// 2023-04-05 FUELEP
 // https://creativecommons.org/licenses/by-nc-sa/4.0/
 // You are free to Share & Adapt under the following terms:
 // Give Credit, NonCommercial, ShareAlike
@@ -31,6 +31,7 @@ class Sens_SCD30 : public Sensor {
     uint32_t _carbondioxide;
     uint8_t  _humidity;
     int16_t  _humidity_correction;
+    float    _temperature_f, _carbondioxide_f, _humidity_f;
     
     SCD30    airSensor;
 
@@ -49,22 +50,45 @@ class Sens_SCD30 : public Sensor {
         }
         if (airSensor.dataAvailable())
         {    
-             
-              _temperature      = (int16_t)(round(airSensor.getTemperature() * 10.0)); 
-              DPRINT("Measured temperature x10       : ");
-              DPRINT(_temperature);
-              DPRINTLN(" deg C");
-              _carbondioxide    = (uint32_t)(round(airSensor.getCO2() * 100.0));
+          _temperature_f        = airSensor.getTemperature();
+          _carbondioxide_f      = airSensor.getCO2();
+          _humidity_f           = airSensor.getHumidity();
 #ifdef DEEP_DEBUG
-              DPRINT("Sensor's humidity measurement  : ");
-              DPRINT(airSensor.getHumidity());
-              DPRINTLN(" %");
+          DDECLN(_temperature_f);
+          DDECLN(_carbondioxide_f);
+          DDECLN(_humidity_f);
 #endif
-              _humidity         = (uint8_t)((int16_t)(round(airSensor.getHumidity())) + _humidity_correction);
-              DPRINT("Corrected humidity measurement : ");
-              DPRINT(_humidity);
-              DPRINTLN(" %");
-              DPRINTLN("");
+          _temperature      = (int16_t)(round(_temperature_f * 10.0));
+          _carbondioxide    = (uint32_t)(round(_carbondioxide_f * 100.0));
+          _humidity         = (uint8_t)((int16_t)(round(_humidity_f)));
+#ifdef DEEP_DEBUG
+          DPRINT("Measured temperature x10        : ");
+          DPRINT(_temperature);
+          DPRINTLN(" deg C");
+          DPRINT("Sensor's CO2 measurement x100   : ");
+          DDEC(_carbondioxide);
+          DPRINTLN(" ppm");
+#endif
+          // correction of CO2 concentration due to increase of average annual average by the climate change
+          _carbondioxide = _carbondioxide + actual_CO2_annual_average_100 - CO2_annual_reference_100;   // correction of annual average CO2 due to climate change, see Device_SCD30.h in subdirectory Cfg
+#ifdef DEEP_DEBUG
+          DPRINT("corrected CO2 measurement x100  : ");
+          DDEC(_carbondioxide);
+          DPRINTLN(" ppm");
+          DPRINT("Sensor's humidity measurement   : ");
+          DDEC(_humidity);
+          DPRINTLN(" %");
+          DPRINTLN("");
+#endif
+          // correction of humidity
+          _humidity         = (uint8_t)(_humidity +  _humidity_correction);
+#ifdef DEEP_DEBUG
+          DPRINT("Corrected humidity measurement  : ");
+          DPRINT(_humidity);
+          DPRINTLN(" %");
+          DPRINTLN("");
+#endif
+
         }
     }
 
