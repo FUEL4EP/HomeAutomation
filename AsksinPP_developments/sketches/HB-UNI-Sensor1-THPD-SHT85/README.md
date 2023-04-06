@@ -251,7 +251,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 ## Betriebsdauer mit einem neuen Batteriesatz
 
-- die Betriebsdauer mit einem neuen Satz an Batterien beträgt > 6 Monate (noch nicht vollständig evaluiert). Der Spannungsabfall der Batteriespannung über einen Zeitraum von >8 Monaten ist [hier](Images/battery_voltage_drop_8_months.png) gezeigt. Nach 8 Monaten beträgt die gemessene Batteriespannung noch immer 3,08 Volt. Die Spannungsspitze Anfang Februar im Histogramm ist auf einen Programmiervorgang zurückzuführen, der die Alkaline-Batterien auflädt (ja, man kann Alkaline Batterien auch aufladen).
+- die Betriebsdauer mit einem neuen Satz an Batterien beträgt > 14 Monate (noch nicht vollständig evaluiert). Der Spannungsabfall der Batteriespannung über einen Zeitraum von >14 Monaten ist [hier](Images/battery_voltage_drop_14_months.png) gezeigt. Nach 14 Monaten beträgt die gemessene Batteriespannung noch immer 2,99 Volt. Die Spannungsspitze Anfang Februar im Histogramm ist auf einen Programmiervorgang zurückzuführen, der die Alkaline-Batterien auflädt (ja, man kann Alkaline Batterien auch aufladen). Der Sensor befindet sich im Außenbereich.
 
 ## Lizenz
 
