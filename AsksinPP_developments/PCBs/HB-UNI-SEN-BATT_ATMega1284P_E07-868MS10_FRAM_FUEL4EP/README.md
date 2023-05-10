@@ -22,7 +22,7 @@
 - entwickelt mit KiCAD 5.1.12
 - Prototyp erfolgreich  bei JLCPCB gefertigt
 - Software ist noch in Entwicklung
-- Bilder der Prototyp-Platinen, die bei JLCPCB gefertigt wurden
+- Bilder der Prototyp-Platinen, die bei JLCPCB gefertigt wurden:
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB_top.png)
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB_bottom.png)
 - die nicht SMD Bauteile müssen von Hand verlötet werden
@@ -56,7 +56,7 @@
     + das schafft Platz für eine 8-polige Stiftleiste J11 zum optionalen Anschluss eines [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm). Der ATMega1284P hat auch genügend RAM für die Programmierung eines 200 Pixel x 200 Pixel e-Papermoduls.
     + JLCPCB BOM and CPL Dateien für SMT Service werden [bereitgestellt](./JLCPCB_SMT_Service/)
 - Hinweis: der TPS61221 ist zur Zeit bei JLCPCB nur für einen astronomisch hohen Preis käuflich (~100US$)
-- Hinweis: der MB85RS2MTPF FRAM Speicher JLCPCB muss bei JLCPCB als [Vorbestellung von Bauteilen](https://support.jlcpcb.com/article/164-what-is-jlcpcb-parts-pre-order-service) vorab gekauft werden
+- Hinweis: der MB85RS2MTPF FRAM Speicher muss bei JLCPCB als [Vorbestellung von Bauteilen](https://support.jlcpcb.com/article/164-what-is-jlcpcb-parts-pre-order-service) vorab gekauft werden
 
 
 ### Benötigte Bauteile:
@@ -129,7 +129,7 @@
 ## Versionsverlauf
 
 -	V1.1 10. Januar 2022: R8 auf 47kOhm geändert, zusätzliche Aufdrucktexte
--	10\. Mai 2023: Prototypen von JLCPCB verfügbar,
+-	10\. Mai 2023: Prototypen von JLCPCB verfügbar, Systemvalidierung und Softwareentwicklung muss noch gemacht werden
 
 ## Lizenz 
 
