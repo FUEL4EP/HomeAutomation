@@ -20,9 +20,11 @@
 ## Platine wurde nach Fertigung bei JLCPCB erfolgreich validiert
 
 - entwickelt mit KiCAD 5.1.12
-- noch in Entwicklung, noch zu validieren!
-- die Platine wurde noch nicht bei JLCPCB gefertigt und mit den SMD Bauteilen bestückt, da die ATMega1284P-AU Preise dort exorbitant hoch sind!
-![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB.png)
+- Prototyp erfolgreich  bei JLCPCB gefertigt
+- Software ist noch in Entwicklung
+- Bilder der Prototyp-Platinen, die bei JLCPCB gefertigt wurden
+![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB_top.png)
+![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB_bottom.png)
 - die nicht SMD Bauteile müssen von Hand verlötet werden
 - mangels Verfügbarkeit des [TPS61221 Aufwärtswandlers](https://www.ti.com/lit/ds/symlink/tps61221.pdf?ts=1634546965861&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61221) trifft dies später auch auf die Bestückungsoption Aufwärtswandler zu
 - die gefertigte Platine wird mit dem Sketch [tbd](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/tbd) validiert werden:
@@ -53,9 +55,9 @@
     + als Funkmodul wird das [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf) verwendet. Dieses ist qualitativ viel besser als die üblichen grünen noname 868 MHz Funkmodule.
     + das schafft Platz für eine 8-polige Stiftleiste J11 zum optionalen Anschluss eines [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm). Der ATMega1284P hat auch genügend RAM für die Programmierung eines 200 Pixel x 200 Pixel e-Papermoduls.
     + JLCPCB BOM and CPL Dateien für SMT Service werden [bereitgestellt](./JLCPCB_SMT_Service/)
-- Hinweis: der TPS61221 ist zur Zeit von nirgendwo lieferbar
-- Hinweis: der MB85RS2MTPF FRAM Speicher ist zur Zeit bei JLCPCB nicht verfügbar
-- Hinweis: der ATMega1284P-AU ist zur Zeit nirgendwo zu vernünftigen Preisen käuflich. JLCPCB verlangt 23 US$ !!!!
+- Hinweis: der TPS61221 ist zur Zeit bei JLCPCB nur für einen astronomisch hohen Preis käuflich (~100US$)
+- Hinweis: der MB85RS2MTPF FRAM Speicher JLCPCB muss bei JLCPCB als [Vorbestellung von Bauteilen](https://support.jlcpcb.com/article/164-what-is-jlcpcb-parts-pre-order-service) vorab gekauft werden
+
 
 ### Benötigte Bauteile:
 
@@ -118,8 +120,7 @@
 ### Hinweise
 * Achtung: Kein Überspannungschutz vorhanden
 * der Verpolungsschutz ist optional. Dafür Bauteil Q1 (IRLU024N) und R3 (100KOhm Widerstand) bestücken. Alternativ JP1 auf der Platinenrückseite brücken um ohne Verpolungsschutz zu arbeiten.
- * bei der Nutzung des JLCPCB SMT Bestückungsservice ist darauf zu achten, dass **alle** benötigten SMD Bauteile als im Lager **verfügbar** angezeigt werden. Sonst bitte **NICHT** bestellen!
- * aktuell ist der benötigte ATMega1284P-AU und das FFRAM MB85RS2MTPF beim JLCPCP SMT Service nur sehr teuer / nicht verfügbar. Daher wurde auch noch kein Prototyp gebaut.
+ * bei der Nutzung des JLCPCB SMT Bestückungsservice ist darauf zu achten, dass **alle** benötigten SMD Bauteile als im Lager **verfügbar** angezeigt werden. Sonst bitte **NICHT** bestellen! Gegebenenfalls müssen für die SMD-Widerstände äquivalente Widerstände von anderen Herstellern über die Suchfunktion ausgewählt werden.
  
 ## Disclaimer
 
@@ -127,7 +128,8 @@
 
 ## Versionsverlauf
 
--    V1.1 10. Januar 2022: R8 auf 47kOhm geändert, zusätzliche Aufdrucktexte
+-	V1.1 10. Januar 2022: R8 auf 47kOhm geändert, zusätzliche Aufdrucktexte
+-	10\. Mai 2023: Prototypen von JLCPCB verfügbar,
 
 ## Lizenz 
 
