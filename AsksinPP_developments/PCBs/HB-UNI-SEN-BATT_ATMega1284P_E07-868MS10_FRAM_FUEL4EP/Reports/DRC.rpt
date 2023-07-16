@@ -1,0 +1,36 @@
+** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP.kicad_pcb **
+** Created on 2023-07-16 17:46:49 **
+
+** Found 6 DRC violations **
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(153.6700 mm, 134.8105 mm): Linie auf F.Silkscreen
+    @(152.5108 mm, 133.2000 mm): Durchlochpad 1 [<no net>] von H8
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(138.4300 mm, 134.8105 mm): Linie auf F.Silkscreen
+    @(124.5108 mm, 133.2000 mm): Durchlochpad 1 [<no net>] von H6
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(122.2300 mm, 127.2000 mm): Linie auf F.Silkscreen
+    @(122.7150 mm, 117.7500 mm): Pad 1A [GND] von Module1 auf F.Cu
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(153.6700 mm, 134.8105 mm): Linie auf F.Silkscreen
+    @(152.5108 mm, 133.2000 mm): Durchlochpad 1 [<no net>] von H8
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(151.0030 mm, 136.0805 mm): PCB-Text "I2C" auf F.Silkscreen
+    @(152.5108 mm, 133.2000 mm): Durchlochpad 1 [<no net>] von H8
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(123.1900 mm, 134.8105 mm): Linie auf F.Silkscreen
+    @(124.5108 mm, 133.2000 mm): Durchlochpad 1 [<no net>] von H6
+
+** Found 0 unconnected pads **
+
+** Found 1 Footprint errors **
+[missing_footprint]: Fehlender Footprint Dummy1 (Waveshare_1.54_inch_epaper_dummy)
+    Local override; Severity: warning
+
+** End of Report **

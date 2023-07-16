@@ -1,135 +1,58 @@
-"Source:","PCBs/HM-LC-Bl1-FM_FUEL4EP/HM-LC-Bl1-FM_FUEL4EP_PCB.sch",,,,,,,,,,
-"Date:","Mi 05 Jan 2022 19:55:30 CET",,,,,,,,,,
-"Tool:","Eeschema 5.1.12-84ad8e8a86~92~ubuntu18.04.1",,,,,,,,,,
-"Generator:","/usr/share/kicad/plugins/bom_csv_grouped_by_value.py",,,,,,,,,,
-"Component Count:","69",,,,,,,,,,
-,,,,,,,,,,,
-"Individual Components:",,,,,,,,,,,
-,,,,,,,,,,,
-"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet","MPN","OC_FARNELL","OC_NEWARK","PACKAGE","SUPPLIER"
-,,"C1","10uF","Device:CP","Capacitor_THT:CP_Radial_D5.0mm_P2.50mm",,,,,,
-,,"C2","100n","Device:C","Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm","~",,,,,
-,,"C3","100n","Device:C","Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm","~",,,,,
-,,"C4","100n","Device:C","Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm","~",,,,,
-,,"C5","10u","Device:CP","Capacitor_THT:CP_Radial_D5.0mm_P2.00mm","~",,,,,
-,,"D2","1N5819","Diode:1N5819","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","http://www.vishay.com/docs/88525/1n5817.pdf",,,,,
-,,"D6","1N5819","Diode:1N5819","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","http://www.vishay.com/docs/88525/1n5817.pdf",,,,,
-,,"D7","1N4148","Diode:1N4148","Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal","https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf",,,,,
-,,"D10","1N4148","Diode:1N4148","Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal","https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf",,,,,
-,,"D11","1N4735A 6.2V","Diode:1N47xxA","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","https://www.vishay.com/docs/85816/1n4728a.pdf",,,,,
-,,"H1","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"H2","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"H3","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"H4","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"J1","Down Button","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-,,"J2","Up Button","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-,,"J3","Dual LED","Connector:Screw_Terminal_01x03","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal","~",,,,,
-,,"J4","Config Button","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-,,"J5","ISP Programmer","Connector_Generic:Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","~",,,,,
-,,"J6","Accumulator","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-,,"J7","LED rot","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-,,"J8","LED grün","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-,,"J9","LED gelb","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-,,"J10","charge","Connector_Generic:Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","~",,,,,
-,,"J11","24V PSU","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-,,"J12","230V Netzteil Relais","Connector:Screw_Terminal_01x03","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal","~",,,,,
-,,"J13","Velux Motor","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-,,"J14","Motor direction LEDs","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-,,"J15","Charge Indication LED","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-,,"J16","H Brücke Relais In","Connector_Generic:Conn_01x04","Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical","~",,,,,
-,,"J17","Motor Relais In","Connector_Generic:Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","~",,,,,
-,,"J18","Conn_01x03","Connector_Generic:Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","~",,,,,
-,,"J19","GND","Connector_Generic:Conn_01x01","Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical","~",,,,,
-,,"JP1","Jumper","Jumper:SolderJumper_2_Bridged","Jumper:SolderJumper-2_P1.3mm_Bridged2Bar_Pad1.0x1.5mm","~",,,,,
-,,"LOGO1","Logo_Open_Hardware_Small","Graphic:Logo_Open_Hardware_Small","FUEL4EP:CC-BY-ND-SA","~",,,,,
-,,"Module1","Arduino_Pro_Mini_328P_1","FUEL4EP:Arduino_Pro_Mini_328P_1","FUEL4EP:ArduinoProMini","https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/",,,,,
-,,"Module2","CC1101_transceiver_module","FUEL4EP:CC1101_transceiver_module","FUEL4EP:CC1101","https://www.ti.com/lit/ds/symlink/cc1101.pdf",,,,,
-,,"Module3","4_channel_LOGIC_LEVEL_CONVERTER","FUEL4EP:4_channel_LOGIC_LEVEL_CONVERTER","FUEL4EP:4_channel_LOGIC_LEVEL_CONVERTER","https://cdn.sparkfun.com/datasheets/BreakoutBoards/Logic_Level_Bidirectional.pdf",,,,,
-,,"Module4","LM2596_buck 24V->6.3V","FUEL4EP:LM2596_buck","FUEL4EP:LM2596_buck","https://www.olimex.com/Products/Breadboarding/BB-PWR-3608/resources/MT3608.pdf",,,,,
-,,"Module5","Velux Motor Relais","FUEL4EP:1_channel_relay_module","FUEL4EP:1_channel_relay_module","https://www.mcucity.com/product/2413/12v-1-2-4-8-channel-12v-relay-module-optocoupler-isolation-support-hgh-and-low-level-trigger",,,,,
-,,"Module6","Velux Motor H-Brücken Relais","FUEL4EP:2_channel_relay_module","FUEL4EP:2_channel_relay_module","http://s3.amazonaws.com/s3.image.smart/download/101-70-100/2%2Brelay.rar",,,,,
-,,"Q1","IRLU024N","Device:Q_NMOS_GDS","Package_TO_SOT_THT:TO-251-3_Vertical",,,,,,
-,,"Q2","BD238","Transistor_BJT:BD238","Package_TO_SOT_THT:TO-126-3_Vertical","http://www.electronica-pt.com/datasheets/bd/BD234.pdf",,,,,
-,,"Q3","IRF9Z34N","FUEL4EP:IRF9Z34N","FUEL4EP:TO220V",,,,,,
-,,"Q4","2N7000","Transistor_FET:2N7000","Package_TO_SOT_THT:TO-92_Inline","https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF",,,,,
-,,"Q5","MCP1702-2802E_TO","FUEL4EP:MCP1702-2802E_TO","FUEL4EP:TO127P254X533-3",,"MCP1702-2802E/TO","1331485","34M7419","TO-92","Microchip"
-,,"R1","330","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
-,,"R2","470k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal","~",,,,,
-,,"R3","100K","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
-,,"R4","100k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R5","10k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R6","10k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R7","330","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
-,,"R8","470","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R9","470","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R10","330","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R11","330","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R12","330","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R13","1k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R14","1k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R15","1k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R16","1.2k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R17","10k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R18","180","Device:R","Resistor_THT:R_Axial_DIN0614_L14.3mm_D5.7mm_P15.24mm_Horizontal","~",,,,,
-,,"R19","4.7k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R20","1k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R21","2.7k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R22","2.7","Device:R","Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal","~",,,,,
-,,"R23","330","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
-,,,,,,,,,,,
-,,,,,,,,,,,
-,,,,,,,,,,,
-"Collated Components:",,,,,,,,,,,
-,,,,,,,,,,,
-"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet","MPN","OC_FARNELL","OC_NEWARK","PACKAGE","SUPPLIER"
-"1","1","C1","10uF","Device:CP","Capacitor_THT:CP_Radial_D5.0mm_P2.50mm",,,,,,
-"2","3","C2, C3, C4","100n","Device:C","Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm","~",,,,,
-"3","1","C5","10u","Device:CP","Capacitor_THT:CP_Radial_D5.0mm_P2.00mm","~",,,,,
-"4","2","D2, D6","1N5819","Diode:1N5819","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","http://www.vishay.com/docs/88525/1n5817.pdf",,,,,
-"5","2","D7, D10","1N4148","Diode:1N4148","Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal","https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf",,,,,
-"6","1","D11","1N4735A 6.2V","Diode:1N47xxA","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","https://www.vishay.com/docs/85816/1n4728a.pdf",,,,,
-"7","4","H1, H2, H3, H4","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-"8","1","J1","Down Button","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-"9","1","J2","Up Button","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-"10","1","J3","Dual LED","Connector:Screw_Terminal_01x03","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal","~",,,,,
-"11","1","J4","Config Button","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-"12","1","J5","ISP Programmer","Connector_Generic:Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","~",,,,,
-"13","1","J6","Accumulator","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-"14","1","J7","LED rot","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-"15","1","J8","LED grün","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-"16","1","J9","LED gelb","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-"17","1","J10","charge","Connector_Generic:Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","~",,,,,
-"18","1","J11","24V PSU","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-"19","1","J12","230V Netzteil Relais","Connector:Screw_Terminal_01x03","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal","~",,,,,
-"20","1","J13","Velux Motor","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-"21","1","J14","Motor direction LEDs","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-"22","1","J15","Charge Indication LED","Connector:Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","~",,,,,
-"23","1","J16","H Brücke Relais In","Connector_Generic:Conn_01x04","Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical","~",,,,,
-"24","1","J17","Motor Relais In","Connector_Generic:Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","~",,,,,
-"25","1","J18","Conn_01x03","Connector_Generic:Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","~",,,,,
-"26","1","J19","GND","Connector_Generic:Conn_01x01","Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical","~",,,,,
-"27","1","JP1","Jumper","Jumper:SolderJumper_2_Bridged","Jumper:SolderJumper-2_P1.3mm_Bridged2Bar_Pad1.0x1.5mm","~",,,,,
-"28","1","LOGO1","Logo_Open_Hardware_Small","Graphic:Logo_Open_Hardware_Small","FUEL4EP:CC-BY-ND-SA","~",,,,,
-"29","1","Module1","Arduino_Pro_Mini_328P_1","FUEL4EP:Arduino_Pro_Mini_328P_1","FUEL4EP:ArduinoProMini","https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/",,,,,
-"30","1","Module2","CC1101_transceiver_module","FUEL4EP:CC1101_transceiver_module","FUEL4EP:CC1101","https://www.ti.com/lit/ds/symlink/cc1101.pdf",,,,,
-"31","1","Module3","4_channel_LOGIC_LEVEL_CONVERTER","FUEL4EP:4_channel_LOGIC_LEVEL_CONVERTER","FUEL4EP:4_channel_LOGIC_LEVEL_CONVERTER","https://cdn.sparkfun.com/datasheets/BreakoutBoards/Logic_Level_Bidirectional.pdf",,,,,
-"32","1","Module4","LM2596_buck 24V->6.3V","FUEL4EP:LM2596_buck","FUEL4EP:LM2596_buck","https://www.olimex.com/Products/Breadboarding/BB-PWR-3608/resources/MT3608.pdf",,,,,
-"33","1","Module5","Velux Motor Relais","FUEL4EP:1_channel_relay_module","FUEL4EP:1_channel_relay_module","https://www.mcucity.com/product/2413/12v-1-2-4-8-channel-12v-relay-module-optocoupler-isolation-support-hgh-and-low-level-trigger",,,,,
-"34","1","Module6","Velux Motor H-Brücken Relais","FUEL4EP:2_channel_relay_module","FUEL4EP:2_channel_relay_module","http://s3.amazonaws.com/s3.image.smart/download/101-70-100/2%2Brelay.rar",,,,,
-"35","1","Q1","IRLU024N","Device:Q_NMOS_GDS","Package_TO_SOT_THT:TO-251-3_Vertical",,,,,,
-"36","1","Q2","BD238","Transistor_BJT:BD238","Package_TO_SOT_THT:TO-126-3_Vertical","http://www.electronica-pt.com/datasheets/bd/BD234.pdf",,,,,
-"37","1","Q3","IRF9Z34N","FUEL4EP:IRF9Z34N","FUEL4EP:TO220V",,,,,,
-"38","1","Q4","2N7000","Transistor_FET:2N7000","Package_TO_SOT_THT:TO-92_Inline","https://www.onsemi.com/pub/Collateral/NDS7002A-D.PDF",,,,,
-"39","1","Q5","MCP1702-2802E_TO","FUEL4EP:MCP1702-2802E_TO","FUEL4EP:TO127P254X533-3",,"MCP1702-2802E/TO","1331485","34M7419","TO-92","Microchip"
-"40","6","R1, R7, R10, R11, R12, R23","330","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"41","1","R2","470k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal","~",,,,,
-"42","1","R3","100K","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
-"43","1","R4","100k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"44","3","R5, R6, R17","10k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"45","2","R8, R9","470","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"46","4","R13, R14, R15, R20","1k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"47","1","R16","1.2k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"48","1","R18","180","Device:R","Resistor_THT:R_Axial_DIN0614_L14.3mm_D5.7mm_P15.24mm_Horizontal","~",,,,,
-"49","1","R19","4.7k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"50","1","R21","2.7k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"51","1","R22","2.7","Device:R","Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal","~",,,,,
+"Source:","/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HM-LC-Bl1-FM_FUEL4EP/HM-LC-Bl1-FM_FUEL4EP_PCB.kicad_sch"
+"Date:","Do 13 Jul 2023 17:16:03 CEST"
+"Tool:","Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1"
+"Generator:","/usr/share/kicad/plugins/bom_csv_grouped_by_value_with_fp.py"
+"Component Count:","72"
+"Ref","Qnty","Value","Cmp name","Footprint","Description","Vendor"
+"C1, ","1","10uF","C_Polarized","Capacitor_THT:CP_Radial_D5.0mm_P2.50mm","Polarized capacitor",""
+"C2, C3, C4, C6, ","4","100n","C","Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm","Unpolarized capacitor",""
+"C5, ","1","10u","C_Polarized","Capacitor_THT:CP_Radial_D5.0mm_P2.00mm","Polarized capacitor",""
+"D2, D6, ","2","1N5819","1N5819","Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal","40V 1A Schottky Barrier Rectifier Diode, DO-41",""
+"D7, D10, ","2","1N4148","1N4148","Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal","100V 0.15A standard switching diode, DO-35",""
+"D11, ","1","1N4735A 6.2V","1N47xxA","Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal","1300mW Silicon planar power Zener diodes, DO-41",""
+"H1, H2, H3, H4, ","4","MountingHole","MountingHole","FUEL4EP:MountingHole_M3","Mounting Hole without connection",""
+"J1, ","1","Down Button","Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J2, ","1","Up Button","Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J3, ","1","Dual LED","Screw_Terminal_01x03","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal","Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J4, ","1","Config Button","Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J5, ","1","ISP Programmer","Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J6, ","1","Accumulator","Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J7, ","1","LED rot","Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J8, ","1","LED grün","Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J9, ","1","LED gelb","Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J10, ","1","charge","Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J11, ","1","24V PSU","Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J12, ","1","230V Netzteil Relais","Screw_Terminal_01x03","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal","Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J13, ","1","Velux Motor","Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J14, ","1","Motor direction LEDs","Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J15, ","1","Charge Indication LED","Screw_Terminal_01x02","TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal","Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J16, ","1","H Brücke Relais In","Conn_01x04","Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical","Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J17, ","1","Motor Relais In","Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J18, ","1","Conn_01x03","Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J19, ","1","GND","Conn_01x01","Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical","Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"JP1, ","1","Jumper","SolderJumper_2_Bridged","Jumper:SolderJumper-2_P1.3mm_Bridged2Bar_Pad1.0x1.5mm","Solder Jumper, 2-pole, closed/bridged",""
+"LOGO1, ","1","Logo_Open_Hardware_Small","Logo_Open_Hardware_Small","FUEL4EP:CC-BY-ND-SA","Open Hardware logo, small",""
+"Module1, ","1","Arduino_Pro_Mini_328P_1","Arduino_Pro_Mini_328P_1","FUEL4EP:ArduinoProMini","PCB with same size and pin locations as a Arduino Pro Mini, requires setup according https://prominimicros.com/how-to-use-the-pro-mini-xl-or-atmega-1284p-with-the-arduino-ide/",""
+"Module2, ","1","CC1101_transceiver_module","CC1101_transceiver_module","FUEL4EP:CC1101","TI CC1101 868.3 MHz tranceiver module",""
+"Module3, ","1","4_channel_LOGIC_LEVEL_CONVERTER","4_channel_LOGIC_LEVEL_CONVERTER","FUEL4EP:4_channel_LOGIC_LEVEL_CONVERTER","4_channel_LOGIC_LEVEL_CONVERTER",""
+"Module4, ","1","LM2596_buck 24V->6.3V","LM2596_buck","FUEL4EP:LM2596_buck","https://chips-and-more.com/cm/pdf/K3608.pdf",""
+"Module5, ","1","Velux Motor Relais","1_channel_relay_module","FUEL4EP:1_channel_relay_module","https://www.mcucity.com/product/2413/12v-1-2-4-8-channel-12v-relay-module-optocoupler-isolation-support-hgh-and-low-level-trigger",""
+"Module6, ","1","Velux Motor H-Brücken Relais","2_channel_relay_module","FUEL4EP:2_channel_relay_module","Saintsmart, https://www.sainsmart.com/products/2-channel-5v-relay-module http://s3.amazonaws.com/s3.image.smart/download/101-70-100/101-70-100.docx",""
+"Q1, ","1","IRLU024N","Q_NMOS_GDS","Package_TO_SOT_THT:TO-251-3_Vertical","N-MOSFET transistor, gate/drain/source",""
+"Q2, ","1","BD238","BD238","Package_TO_SOT_THT:TO-126-3_Vertical","2A Ic, 80V Vce, Low Voltage Transistor, TO-126",""
+"Q3, ","1","IRF9Z34N","IRF9Z34N","FUEL4EP:TO220V","",""
+"Q4, ","1","2N7000","2N7000","Package_TO_SOT_THT:TO-92_Inline","0.2A Id, 200V Vds, N-Channel MOSFET, 2.6V Logic Level, TO-92",""
+"Q5, ","1","MCP1702-2802E_TO","MCP1702-2802E_TO","FUEL4EP:TO127P254X533-3","",""
+"R1, R7, R10, R11, R12, R23, ","6","330","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R2, ","1","470k","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal","Resistor",""
+"R3, ","1","100K","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R4, ","1","100k","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R5, R6, R17, R24, ","4","10k","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R8, R9, ","2","470","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R13, R14, R15, R20, ","4","1k","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R16, ","1","1.2k","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R18, ","1","180","R","Resistor_THT:R_Axial_DIN0614_L14.3mm_D5.7mm_P15.24mm_Horizontal","Resistor",""
+"R19, ","1","4.7k","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R21, ","1","2.7k","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R22, ","1","2.7","R","Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal","Resistor",""
+"SW1, ","1","SW_Push","SW_Push","Button_Switch_THT:SW_PUSH_6mm_H4.3mm","Push button switch, generic, two pins",""

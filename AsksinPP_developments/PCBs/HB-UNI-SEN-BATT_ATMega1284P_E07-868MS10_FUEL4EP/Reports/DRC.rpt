@@ -1,0 +1,30 @@
+** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP.kicad_pcb **
+** Created on 2023-07-16 16:10:49 **
+
+** Found 5 DRC violations **
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(153.6700 mm, 134.8105 mm): Linie auf F.Silkscreen
+    @(152.5108 mm, 133.2000 mm): Durchlochpad 1 [<no net>] von H8
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(153.6700 mm, 152.5905 mm): Linie auf F.Silkscreen
+    @(152.5108 mm, 133.2000 mm): Durchlochpad 1 [<no net>] von H8
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(123.1900 mm, 134.8105 mm): Linie auf F.Silkscreen
+    @(124.5108 mm, 133.2000 mm): Durchlochpad 1 [<no net>] von H6
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(138.4300 mm, 134.8105 mm): Linie auf F.Silkscreen
+    @(124.5108 mm, 133.2000 mm): Durchlochpad 1 [<no net>] von H6
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(122.2300 mm, 127.2000 mm): Linie auf F.Silkscreen
+    @(122.7150 mm, 117.7500 mm): Pad 1A [GND] von Module1 auf F.Cu
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **

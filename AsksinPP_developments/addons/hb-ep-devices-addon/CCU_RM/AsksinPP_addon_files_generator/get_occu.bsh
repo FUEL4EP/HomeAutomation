@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# latest checked occu version: https://github.com/eq-3/occu/commit/a420be85d65df323a6c94efc5b132dbe9a2e3f24  version 3.69.7
 
 # ensure same definitions as in 'make_all.bsh'!
 LIBRARY_DIR=./libraries
@@ -8,7 +10,7 @@ SUBDIR2=WebUI/www
 OCCU_XML_DIR=${OCCU_DIR}/${SUBDIR1}
 OCCU_WEBUI_DIR=${OCCU_DIR}/${SUBDIR2}
 
-VERSION=0.1
+VERSION=0.11
 
 [ -d libraries ] || mkdir libraries
 [ -d libraries/occu ] || mkdir libraries/occu

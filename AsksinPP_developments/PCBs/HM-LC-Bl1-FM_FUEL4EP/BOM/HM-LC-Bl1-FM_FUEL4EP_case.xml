@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HM-LC-Bl1-FM_FUEL4EP/HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch</source>
+    <date>Do 13 Jul 2023 17:31:03 CEST</date>
+    <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>HM-LC-Bl1-FM_FUEL4EP</title>
+        <company>FUEL4EP</company>
+        <rev>1.0</rev>
+        <date>2021-10-01</date>
+        <source>HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch</source>
+        <comment number="1" value="24V Polwendeaktor für VELUX Rolladen AsksinPP Gehäusebauteile"/>
+        <comment number="2" value="Creative Commons License, non-commercial"/>
+        <comment number="3" value="Vorsicht 230V: Nutzung auf eigene Gefahr"/>
+        <comment number="4" value="Nur für ausgebildete Elektofachleute"/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="BT1">
+      <value>2700mAh NiMH acccucell</value>
+      <libsource lib="Device" part="Battery_Cell" description="Single-cell battery"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006194d1d7</tstamps>
+    </comp>
+    <comp ref="BT2">
+      <value>2700mAh NiMH acccucell</value>
+      <libsource lib="Device" part="Battery_Cell" description="Single-cell battery"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006194daa8</tstamps>
+    </comp>
+    <comp ref="BT3">
+      <value>2700mAh NiMH acccucell</value>
+      <libsource lib="Device" part="Battery_Cell" description="Single-cell battery"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006194e236</tstamps>
+    </comp>
+    <comp ref="BT4">
+      <value>2700mAh NiMH acccucell</value>
+      <libsource lib="Device" part="Battery_Cell" description="Single-cell battery"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006194e845</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>Dual LED</value>
+      <libsource lib="Device" part="LED_Dual_AAK" description="Dual LED, common cathode on pin 3"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006194fe2a</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>rot</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000618de3ff</tstamps>
+    </comp>
+    <comp ref="D3">
+      <value>grün</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000618f0889</tstamps>
+    </comp>
+    <comp ref="D4">
+      <value>gelb</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000619521f0</tstamps>
+    </comp>
+    <comp ref="D5">
+      <value>grün</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000617d818f</tstamps>
+    </comp>
+    <comp ref="D6">
+      <value>rot</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000617cbf2c</tstamps>
+    </comp>
+    <comp ref="D7">
+      <value>blau</value>
+      <footprint>LED_THT:LED_D5.0mm</footprint>
+      <libsource lib="Device" part="LED" description="Light emitting diode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-000061955391</tstamps>
+    </comp>
+    <comp ref="F1">
+      <value>1A fast</value>
+      <libsource lib="Device" part="Fuse" description="Fuse"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006195c121</tstamps>
+    </comp>
+    <comp ref="F2">
+      <value>3A fast</value>
+      <libsource lib="Device" part="Fuse" description="Fuse"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-000061a3a1f0</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Down button</value>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006198640a</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Up Button</value>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-000061986d4d</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>Dual LED</value>
+      <libsource lib="Connector" part="Conn_01x03_Male" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-000061987a45</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>Config Button</value>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-000061988560</tstamps>
+    </comp>
+    <comp ref="J6">
+      <value>Conn_01x02_Male</value>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000619754a5</tstamps>
+    </comp>
+    <comp ref="J7">
+      <value>LED rot</value>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006198916c</tstamps>
+    </comp>
+    <comp ref="J8">
+      <value>LED grün</value>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-000061989820</tstamps>
+    </comp>
+    <comp ref="J9">
+      <value>LED gelb</value>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006198a0aa</tstamps>
+    </comp>
+    <comp ref="J11">
+      <value>24V PSU</value>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006198f27b</tstamps>
+    </comp>
+    <comp ref="J12">
+      <value>230V supply relais</value>
+      <libsource lib="Connector" part="Conn_01x03_Male" description="Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006198d647</tstamps>
+    </comp>
+    <comp ref="J13">
+      <value>Velux Motor</value>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006198bcd3</tstamps>
+    </comp>
+    <comp ref="J14">
+      <value>Motor direction LEDs</value>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006198c3cd</tstamps>
+    </comp>
+    <comp ref="J15">
+      <value>charge indication LED</value>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006198ccf9</tstamps>
+    </comp>
+    <comp ref="J16">
+      <value>Cold_Device_Socket</value>
+      <libsource lib="FUEL4EP" part="Cold_Device_Socket" description="3-pin Cold Device Socket with Earth wire (230VAC)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006195dfa8</tstamps>
+    </comp>
+    <comp ref="LOGO1">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>FUEL4EP:CC-BY-ND-SA</footprint>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000615dee46</tstamps>
+    </comp>
+    <comp ref="M1">
+      <value>24V Velux Motor</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Motor" part="Motor_DC" description="DC Motor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000617ca7e1</tstamps>
+    </comp>
+    <comp ref="Module1">
+      <value>PSU_PS60-W1V24</value>
+      <footprint>FUEL4EP:PSU_PS60-W1V24</footprint>
+      <datasheet>https://www.sanpupower.com/wp-content/uploads/2018/09/PS60-W1V.pdf</datasheet>
+      <libsource lib="FUEL4EP" part="PSU_PS60-W1V24" description="power supply 24V 2.5A"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000617757ce</tstamps>
+    </comp>
+    <comp ref="Module2">
+      <value>230V power supply relais</value>
+      <datasheet>https://www.mcucity.com/product/2413/12v-1-2-4-8-channel-12v-relay-module-optocoupler-isolation-support-hgh-and-low-level-trigger</datasheet>
+      <libsource lib="FUEL4EP" part="1_channel_relay_module" description="https://www.mcucity.com/product/2413/12v-1-2-4-8-channel-12v-relay-module-optocoupler-isolation-support-hgh-and-low-level-trigger"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-0000619589fa</tstamps>
+    </comp>
+    <comp ref="SW1">
+      <value>Down Button</value>
+      <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006194ed42</tstamps>
+    </comp>
+    <comp ref="SW2">
+      <value>Down Button</value>
+      <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-00006194f2d4</tstamps>
+    </comp>
+    <comp ref="SW3">
+      <value>Config Button</value>
+      <libsource lib="Switch" part="SW_Push" description="Push button switch, generic, two pins"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HM-LC-Bl1-FM_FUEL4EP_case.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-000061950652</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Conn_01x02_Male">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_01x03_Male">
+      <description>Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x03_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Battery_Cell">
+      <description>Single-cell battery</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">BT</field>
+        <field name="Value">Battery_Cell</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Fuse">
+      <description>Fuse</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>*Fuse*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">F</field>
+        <field name="Value">Fuse</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED">
+      <description>Light emitting diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="LED_Dual_AAK">
+      <description>Dual LED, common cathode on pin 3</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>LED*</fp>
+        <fp>LED_SMD:*</fp>
+        <fp>LED_THT:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED_Dual_AAK</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A1" type="input"/>
+        <pin num="2" name="A2" type="input"/>
+        <pin num="3" name="K" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="FUEL4EP" part="1_channel_relay_module">
+      <description>https://www.mcucity.com/product/2413/12v-1-2-4-8-channel-12v-relay-module-optocoupler-isolation-support-hgh-and-low-level-trigger</description>
+      <docs>https://www.mcucity.com/product/2413/12v-1-2-4-8-channel-12v-relay-module-optocoupler-isolation-support-hgh-and-low-level-trigger</docs>
+      <fields>
+        <field name="Reference">Module</field>
+        <field name="Value">1_channel_relay_module</field>
+        <field name="Datasheet">https://www.mcucity.com/product/2413/12v-1-2-4-8-channel-12v-relay-module-optocoupler-isolation-support-hgh-and-low-level-trigger</field>
+      </fields>
+      <pins>
+        <pin num="1A" name="NC" type="passive"/>
+        <pin num="1C" name="DC+" type="power_in"/>
+        <pin num="1D" name="H" type="power_out"/>
+        <pin num="2A" name="COM" type="passive"/>
+        <pin num="2C" name="DC-" type="power_in"/>
+        <pin num="2D" name="SEL" type="power_in"/>
+        <pin num="3A" name="NO" type="passive"/>
+        <pin num="3C" name="IN" type="input"/>
+        <pin num="3D" name="L" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="FUEL4EP" part="Cold_Device_Socket">
+      <description>3-pin Cold Device Socket with Earth wire (230VAC)</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Cold_Device_Socket</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="AC_N" type="power_out"/>
+        <pin num="2" name="EARTH" type="power_out"/>
+        <pin num="3" name="AC_P" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="FUEL4EP" part="PSU_PS60-W1V24">
+      <description>power supply 24V 2.5A</description>
+      <docs>https://www.sanpupower.com/wp-content/uploads/2018/09/PS60-W1V.pdf</docs>
+      <fields>
+        <field name="Reference">Module</field>
+        <field name="Value">PSU_PS60-W1V24</field>
+        <field name="Datasheet">https://www.sanpupower.com/wp-content/uploads/2018/09/PS60-W1V.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1A" name="V+" type="power_out"/>
+        <pin num="2A" name="V-" type="power_out"/>
+        <pin num="3A" name="AC_230V_GC" type="power_in"/>
+        <pin num="4A" name="AC_230V_N" type="power_in"/>
+        <pin num="5A" name="AC_230V_L" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Graphic" part="Logo_Open_Hardware_Small">
+      <description>Open Hardware logo, small</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">#LOGO</field>
+        <field name="Value">Logo_Open_Hardware_Small</field>
+        <field name="Datasheet">~</field>
+      </fields>
+    </libpart>
+    <libpart lib="Motor" part="Motor_DC">
+      <description>DC Motor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>PinHeader*P2.54mm*</fp>
+        <fp>TerminalBlock*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">M</field>
+        <field name="Value">Motor_DC</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_Push">
+      <description>Push button switch, generic, two pins</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_Push</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/usr/share/kicad/symbols//Connector.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/usr/share/kicad/symbols//Device.kicad_sym</uri>
+    </library>
+    <library logical="FUEL4EP">
+      <uri>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HM-LC-Bl1-FM_FUEL4EP/../FUEL4EP.kicad_sym</uri>
+    </library>
+    <library logical="Graphic">
+      <uri>/usr/share/kicad/symbols//Graphic.kicad_sym</uri>
+    </library>
+    <library logical="Motor">
+      <uri>/usr/share/kicad/symbols//Motor.kicad_sym</uri>
+    </library>
+    <library logical="Switch">
+      <uri>/usr/share/kicad/symbols//Switch.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/A5">
+      <node ref="J12" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Module2" pin="3C" pinfunction="IN" pintype="input"/>
+    </net>
+    <net code="2" name="/GND">
+      <node ref="J12" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="Module2" pin="2C" pinfunction="DC-" pintype="power_in"/>
+    </net>
+    <net code="3" name="/Vrelais">
+      <node ref="J12" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="Module2" pin="1C" pinfunction="DC+" pintype="power_in"/>
+    </net>
+    <net code="4" name="Net-(BT1-Pad1)">
+      <node ref="BT1" pin="1" pinfunction="+" pintype="passive"/>
+      <node ref="J6" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="5" name="Net-(BT1-Pad2)">
+      <node ref="BT1" pin="2" pinfunction="-" pintype="passive"/>
+      <node ref="BT2" pin="1" pinfunction="+" pintype="passive"/>
+    </net>
+    <net code="6" name="Net-(BT2-Pad2)">
+      <node ref="BT2" pin="2" pinfunction="-" pintype="passive"/>
+      <node ref="BT3" pin="1" pinfunction="+" pintype="passive"/>
+    </net>
+    <net code="7" name="Net-(BT3-Pad2)">
+      <node ref="BT3" pin="2" pinfunction="-" pintype="passive"/>
+      <node ref="BT4" pin="1" pinfunction="+" pintype="passive"/>
+    </net>
+    <net code="8" name="Net-(BT4-Pad2)">
+      <node ref="BT4" pin="2" pinfunction="-" pintype="passive"/>
+      <node ref="J6" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="9" name="Net-(D1-Pad1)">
+      <node ref="D1" pin="1" pinfunction="A1" pintype="input"/>
+      <node ref="J3" pin="3" pinfunction="Pin_3" pintype="passive"/>
+    </net>
+    <net code="10" name="Net-(D1-Pad2)">
+      <node ref="D1" pin="2" pinfunction="A2" pintype="input"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="11" name="Net-(D1-Pad3)">
+      <node ref="D1" pin="3" pinfunction="K" pintype="input"/>
+      <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="12" name="Net-(D2-Pad1)">
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J7" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="13" name="Net-(D2-Pad2)">
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J7" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="14" name="Net-(D3-Pad1)">
+      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J8" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="15" name="Net-(D3-Pad2)">
+      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J8" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="16" name="Net-(D4-Pad1)">
+      <node ref="D4" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J9" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="17" name="Net-(D4-Pad2)">
+      <node ref="D4" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J9" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="18" name="Net-(D5-Pad1)">
+      <node ref="D5" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D6" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J14" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="19" name="Net-(D5-Pad2)">
+      <node ref="D5" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D6" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J14" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="20" name="Net-(D7-Pad1)">
+      <node ref="D7" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J15" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="21" name="Net-(D7-Pad2)">
+      <node ref="D7" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J15" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="22" name="Net-(F1-Pad1)">
+      <node ref="F1" pin="1" pintype="passive"/>
+      <node ref="Module2" pin="3A" pinfunction="NO" pintype="passive"/>
+    </net>
+    <net code="23" name="Net-(F1-Pad2)">
+      <node ref="F1" pin="2" pintype="passive"/>
+      <node ref="J16" pin="3" pinfunction="AC_P" pintype="power_out"/>
+    </net>
+    <net code="24" name="Net-(F2-Pad1)">
+      <node ref="F2" pin="1" pintype="passive"/>
+      <node ref="J11" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="25" name="Net-(F2-Pad2)">
+      <node ref="F2" pin="2" pintype="passive"/>
+      <node ref="Module1" pin="1A" pinfunction="V+" pintype="power_out"/>
+    </net>
+    <net code="26" name="Net-(J1-Pad1)">
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="SW1" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="27" name="Net-(J1-Pad2)">
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="SW1" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="28" name="Net-(J2-Pad1)">
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="SW2" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="29" name="Net-(J2-Pad2)">
+      <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="SW2" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="30" name="Net-(J4-Pad1)">
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="SW3" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="31" name="Net-(J4-Pad2)">
+      <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="SW3" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="32" name="Net-(J11-Pad1)">
+      <node ref="J11" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Module1" pin="2A" pinfunction="V-" pintype="power_out"/>
+    </net>
+    <net code="33" name="Net-(J13-Pad1)">
+      <node ref="J13" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="M1" pin="2" pinfunction="-" pintype="passive"/>
+    </net>
+    <net code="34" name="Net-(J13-Pad2)">
+      <node ref="J13" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="M1" pin="1" pinfunction="+" pintype="passive"/>
+    </net>
+    <net code="35" name="Net-(J16-Pad1)">
+      <node ref="J16" pin="1" pinfunction="AC_N" pintype="power_out"/>
+      <node ref="Module1" pin="4A" pinfunction="AC_230V_N" pintype="power_in"/>
+    </net>
+    <net code="36" name="Net-(J16-Pad2)">
+      <node ref="J16" pin="2" pinfunction="EARTH" pintype="power_out"/>
+      <node ref="Module1" pin="3A" pinfunction="AC_230V_GC" pintype="power_in"/>
+    </net>
+    <net code="37" name="Net-(Module1-Pad5A)">
+      <node ref="Module1" pin="5A" pinfunction="AC_230V_L" pintype="power_in"/>
+      <node ref="Module2" pin="2A" pinfunction="COM" pintype="passive"/>
+    </net>
+    <net code="38" name="Net-(Module2-Pad1D)">
+      <node ref="Module2" pin="1D" pinfunction="H" pintype="power_out"/>
+      <node ref="Module2" pin="2D" pinfunction="SEL" pintype="power_in"/>
+    </net>
+    <net code="39" name="unconnected-(Module2-Pad1A)">
+      <node ref="Module2" pin="1A" pinfunction="NC" pintype="passive+no_connect"/>
+    </net>
+    <net code="40" name="unconnected-(Module2-Pad3D)">
+      <node ref="Module2" pin="3D" pinfunction="L" pintype="power_out+no_connect"/>
+    </net>
+  </nets>
+</export>

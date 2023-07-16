@@ -1,6 +1,7 @@
 //------------------------------------------------------------------------------------------------------------------------
 // HB-UNI-Sensor1-AQ-BME680_KF
 // Version 1.0
+// normal aH version
 // (C) 2020 FUEL4EP (Creative Commons)
 // https://creativecommons.org/licenses/by-nc-sa/4.0/
 // You are free to Share & Adapt under the following terms:
@@ -43,8 +44,8 @@
 
 #define PEERS_PER_CHANNEL   6
 #define SAMPLINGINTERVALL_IN_SECONDS 240
-#define BAT_VOLT_LOW        27  // 2.7V
-#define BAT_VOLT_CRITICAL   26  // 2.6V
+#define BAT_VOLT_LOW        26  // 2.6V
+#define BAT_VOLT_CRITICAL   25  // 2.5V
 
 #if defined M1284P
 #define CC1101_CS_PIN       4     // SS Tindie Pro Mini XL v2
@@ -84,7 +85,7 @@ using namespace as;
 // define all device properties
 const struct DeviceInfo PROGMEM devinfo = {
   {0xf6, 0x06, 0x01},       // Device ID             // change 0x01 to your sensor's index number, if you use multiple HB-UNI-Sensor1-AQ-BME680_KF sensors, please increase the index for each sensor by 1
-  "EPAQNAME01",             // Device Serial         // change NAME to your name abbreviation, if you use multiple HB-UNI-Sensor1-AQ-BME680_KF sensors, please increase the index for each sensor by 1
+  "BME6800601",             // Device Serial         // change NAME to your name abbreviation, if you use multiple HB-UNI-Sensor1-AQ-BME680_KF sensors, please increase the index for each sensor by 1
 // 1234567890                                        // device serial must be exactly 10 characters
   {0xf6, 0x06},             // Device Model Indoor   needs to fit to Addon XML hb-uni-sensor-AQ-BME680_KF.xml line 6:
                             //                       <parameter index="10.0" size="2.0" const_value="0xF606" /> 

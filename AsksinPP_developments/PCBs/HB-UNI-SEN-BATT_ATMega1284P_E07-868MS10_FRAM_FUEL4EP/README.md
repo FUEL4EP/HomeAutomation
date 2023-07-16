@@ -10,17 +10,18 @@
 
 ![pic](PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_top_view.png)
 
-![pic](PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB_KiCAD_with_epaper_option.png)
+![pic](PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB_with_epaper_option.png)
 
 ## Credits
 
 - diese Platine ist ursprünglich von Alexander Reinerts Platine [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) abgeleitet, aber in vielerlei Hinsicht verbessert
 - vielen Dank an Alexander Reinert für die Vorarbeit.
 
-## Platine wurde nach Fertigung bei JLCPCB erfolgreich validiert
+## Platine Version 1.1 wurde nach Fertigung bei JLCPCB erfolgreich validiert
 
-- entwickelt mit KiCAD 5.1.12
-- Prototyp erfolgreich  bei JLCPCB gefertigt
+- Version 1.1 wurde entwickelt mit KiCAD 5.1.12  
+- für KiCAD 6 wurde eine Migration auf Version 1.2 durchgeführt
+- Prototyp Version 1.1 erfolgreich  bei JLCPCB gefertigt, ist aber noch nicht validiert
 - Software ist noch in Entwicklung
 - Bilder der Prototyp-Platinen, die bei JLCPCB gefertigt wurden:
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB_top.png)
@@ -34,7 +35,7 @@
 ## Eigenschaften
 
 - abgeleitet aus [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT)
-- kompletter Datensatz für KiCAD 5.1.12 auf Github verfügbar:
+- kompletter Datensatz für KiCAD 6 auf Github verfügbar::
     + 'git clone https://github.com/FUEL4EP/HomeAutomation.git' oder als [ZIP-Datei](https://github.com/FUEL4EP/HomeAutomation/archive/refs/heads/master.zip)
     + die Platinendaten sind dann unter 'HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP' direkt mit KiCAD aufrufbar
 - neue Eigenschaften:
@@ -54,8 +55,7 @@
     + Korrektur der Abstandfehlers bei einem Batteriehalter. Beim [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) hat das schon mal gerne zu thermischen Ausfällen durch mechanische Spannungen geführt.
     + als Funkmodul wird das [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf) verwendet. Dieses ist qualitativ viel besser als die üblichen grünen noname 868 MHz Funkmodule.
     + das schafft Platz für eine 8-polige Stiftleiste J11 zum optionalen Anschluss eines [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm). Der ATMega1284P hat auch genügend RAM für die Programmierung eines 200 Pixel x 200 Pixel e-Papermoduls.
-    + JLCPCB BOM and CPL Dateien für SMT Service werden [bereitgestellt](./JLCPCB_SMT_Service/)
-- Hinweis: der TPS61221 ist zur Zeit bei JLCPCB nur für einen astronomisch hohen Preis käuflich (~100US$)
+    + JLCPCB BOM and CPL Dateien für SMT Service werden [bereitgestellt](./jlcpcb/production_files)
 - Hinweis: der MB85RS2MTPF FRAM Speicher muss bei JLCPCB als [Vorbestellung von Bauteilen](https://support.jlcpcb.com/article/164-what-is-jlcpcb-parts-pre-order-service) vorab gekauft werden
 
 
@@ -129,7 +129,15 @@
 ## Versionsverlauf
 
 -	V1.1 10. Januar 2022: R8 auf 47kOhm geändert, zusätzliche Aufdrucktexte
--	10\. Mai 2023: Prototypen von JLCPCB verfügbar, Systemvalidierung und Softwareentwicklung muss noch gemacht werden
+-   V1.1 10. Mai 2023: Prototypen von JLCPCB verfügbar, Systemvalidierung und Softwareentwicklung muss noch gemacht werden
+-   V1.2 16. Juli 2023: Migration der Datenbasen zu KiCAD 6; als Induktivität    	                     für den Aufwärtswandler wird nun LQH3NPN4R7MM0L von
+                         Murata Electronics verwendet, die bei JLCPCB bestellbar ist  (eventuell ist eine Vorbestellung notwendig) 
+
+- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
+- PCB Version 1.2
+- Schematics  1.2
+
 
 ## Lizenz 
 

@@ -1,6 +1,6 @@
 # ep-hb-devices-addon [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Github All Releases](https://img.shields.io/github/downloads/FUEL4EP/HomeAutomation/total.svg)](https://github.com/FUEL4EP/HomeAutomation/releases) ![GitHub release (by tag)](https://img.shields.io/github/downloads/FUEL4EP/HomeAutomation/latest/total) [![GitHub issues](https://img.shields.io/github/issues/FUEL4EP/HomeAutomation.svg)](https://github.com/FUEL4EP/HomeAutomation/issues) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-**:heavy_check_mark: lauffähig unter CCU3 / RaspberryMatic Firmware 3.47.10 - 3.67.10**<br/>
+**:heavy_check_mark: lauffähig unter CCU3 / RaspberryMatic Firmware 3.47.10 - 3.69.7**<br/>
 Die jeweils aktuellste Version ist bei den [Releases](https://github.com/FUEL4EP/HomeAutomation/releases/latest) zu finden.
 
 <hr/>
@@ -37,13 +37,14 @@ Nach einem Upgrade der CCU/RaspberryMatic Firmware kann es notwendig sein, diese
 |--------|--------|--------|:--------:|
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-CO2-SCD30_thumb.png" width=25/> | [HB-UNI-SENSOR1-CO2-SCD30](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30) | NDIR CO2 Sensor<br/>_basierend auf Sensirion SCD30_ | 🔋 ⚡ |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-AQ-BME680_thumb.png" width=25/> | [HB-UNI-SENSOR1-AQ-BME680](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680) | Air Quality Sensor<br/>basierend auf Bosch BME680 <br/>und multipler linearer Regression | 🔋 |
-|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-AQ-BME680_KF_thumb.png" width=25/> | [HB-UNI-SENSOR1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) | selbstkalibrierender Air Quality Sensor<br/>basierend auf Bosch BME680<br/>und Kalman Filter | 🔋 |
-|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-AQ-BME680_KF_DEBUG_thumb.png" width=25/> | [HB-UNI-SENSOR1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) | selbstkalibrierender Air Quality Sensor<br/>basierend auf Bosch BME680<br/>und Kalman Filter (DEBUG) | 🔋 |
+|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-AQ-BME680_KF_thumb.png" width=25/> | [HB-UNI-SENSOR1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) | selbstkalibrierender Air Quality Sensor<br/>basierend auf Bosch BME680<br/>und Kalman Filter <br/>aLF Version| 🔋 |
+|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-AQ-BME680_KF_DEBUG_thumb.png" width=25/> | [HB-UNI-SENSOR1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) | selbstkalibrierender Air Quality Sensor<br/>basierend auf Bosch BME680<br/>und Kalman Filter <br/>aLF Version (DEBUG) | 🔋 |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-TH-SHT75_thumb.png" width=25/> | [HB-UNI-SENSOR1-TH-SHT75](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75) | hoch genauer TH Sensor<br/>basierend auf Sensirion SHT75<br/>NEU: optional: gleitender Mittelwert der Temperatur über 24 Stunden | 🔋 |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THPD-BME280_thumb.png" width=25/> | [HB-UNI-SENSOR1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) | THPD Sensor<br/>basierend auf Bosch BME280<br/>mit Taupunkttemperatur<br/>und absoluter Luftfeuchte| 🔋 |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THPD-BME280_thumb.png" width=25/> | [HB-UNI-SENSOR1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) | hoch genauer und sehr schneller THPD Sensor<br/>basierend auf Sensirion SHT85 und Bosch BME280<br/>mit Taupunkttemperatur<br/>und absoluter Luftfeuchte<br/>NEU: optional: gleitender Mittelwert der Temperatur über 24 Stunden und 7 Tage bei ATMega1284P| 🔋 |
 |<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-RAD-AL53_thumb.png" width=25/> | [HB-UNI-SENSOR1-RAD-AL53](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-RAD-AL53)<br/>| Radioaktivitätssensor mit PIN-Dioden Detektor<br/>basierend auf Teviso AL53<br/>für Alpha-, Beta- und Gammastrahlung| 🔋 |
-
+|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-AQ-BME680_KF_rLF_thumb.png" width=25/> | [HB-UNI-SENSOR1-AQ-BME680_KF_rLF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_rLF) | selbstkalibrierender Air Quality Sensor<br/>basierend auf Bosch BME680<br/>und Kalman Filter<br/>rLF Version | 🔋 |
+|<img src="CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-AQ-BME680_KF_rLF_DEBUG_thumb.png" width=25/> | [HB-UNI-SENSOR1-AQ-BME680_KF_rLF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_rLF_DEBUG) | selbstkalibrierender Air Quality Sensor<br/>basierend auf Bosch BME680<br/>und Kalman Filter <br/>rLF Version (DEBUG) | 🔋 |
 Alle hier aufgeführten Homematic Selbstbaugeräte sind bei mir selbst im Einsatz und im täglichen Betrieb validiert. Meine Zentrale läuft unter RaspberryMatic in der neuesten verfügbaren Version auf einem Raspberry Pi 3B+ .
 
 
@@ -61,7 +62,11 @@ Alle hier aufgeführten Homematic Selbstbaugeräte sind bei mir selbst im Einsat
 |F6 08 | HB-UNI-SENSOR1-RAD-AL53 |
 |F6 09 | HB-UNI-SENSOR1-THPD-SHT85 |
 |F6 0A | HB-UNI-SENSOR1-THPD-SHT75-MA |
-
+|F6 0B | HB-UNI-SENSOR1-AQ-BME680_KF_rLF |
+|F6 0C | HB-UNI-SENSOR1-AQ-BME680_KF_DEBUG_rLF |
+|F6 0D | HB-LC-Bl1-FM-HYBRID (in Entwicklung) |
+|F6 0E | HB-UNI-SENACT-4-4-SC_DS (in Entwicklung) |
+|F6 0F | HB-UNI-Sensor1-THPD_MA-AHT20 (in Entwicklung) |
 <br/>
 
 

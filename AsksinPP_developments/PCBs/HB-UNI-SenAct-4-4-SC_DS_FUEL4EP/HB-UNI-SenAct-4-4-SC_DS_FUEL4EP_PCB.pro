@@ -1,4 +1,4 @@
-update=Mi 05 Jan 2022 20:02:07 CET
+update=Fr 09 Jun 2023 20:43:39 CEST
 version=1
 last_client=kicad
 [general]
@@ -14,7 +14,7 @@ LibDir=
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=
+LastNetListRead=HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.net
 CopperLayerCount=2
 BoardThickness=1.6002
 AllowMicroVias=1
@@ -64,7 +64,7 @@ OthersTextUpright=1
 SolderMaskClearance=0
 SolderMaskMinWidth=0.12
 SolderPasteClearance=0
-SolderPasteRatio=-0
+SolderPasteRatio=0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
 Type=0

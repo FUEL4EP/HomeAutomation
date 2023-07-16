@@ -16,7 +16,7 @@
 - für AQ_COMP_GAS_RES_RAW, AQ_COMP_GAS_RES_MIN, AQ_COMP_GAS_RES_MAX, AQ_ALPHA, AQ_BETA können bei der Ausgabe der Datenpunkte Sättigungseffekte auftreten, wenn der unterstützte Wertebreich über- bzw. unterschritten wird. Dadurch werden Überlaufeffekte vermieden.
 - alle anderen Datenpunkte sind nicht beobachtbar, da die maximale Payload einer Nachricht 17 Bytes beträgt.
 - zur Verifizierung und besserem Verständnis des Kalman Filters wird ein Jupyter Notebook [Prove_of_Kalman_filter_with_synthesized_data.ipynb](./Kalman_Filter/Prove_of_Kalman_filter_with_synthesized_data.ipynb) zur Verfügung gestellt. Auf Github kann das Notebook direkt angesehen werden.
--	Die Debug-Version [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) und die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) nutzen diesselbe Struktur für die Abspeicherung und Restaurierung von EEPROM-Daten. Daher kann der Sensor zwischen diesen beiden Versionen umprogrammiert werden. Dabei bitte die Hinweise unter 'Neuprogrammierung (Flashen)' unten beachten.
+-	Die Debug-Version [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG) und die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) nutzen diesselbe Struktur für die Abspeicherung und Restaurierung von EEPROM-Daten. Daher kann der Sensor zwischen diesen beiden Versionen umprogrammiert werden. Dabei bitte die Hinweise unten unter 'Neuprogrammierung (Flashen) mit Erhalt der EEPROM Parameter' beachten.
 -	hier Histogramme über 4 Monate von 3 direkt nebeneinander platzierten baugleichen Sensoren
     +	Histogramme der mit dem Kalman Filter berechneten Online Regressionskoeffizienten alpha (Temperatur) und beta (absolute Luftfeuchte)
      	![pic](Autocalibration/convergence_of_Kalman_absolute_humidity_regression_coefficient_alpha_over_4_months.png)
@@ -61,6 +61,26 @@
 
 - restliche Vorgehensweise siehe [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF), dort sinngemäß 'HB-UNI-Sensor1-AQ-BME680_KF' durch 'HB-UNI-Sensor1-AQ-BME680_KF_DEBUG' ersetzen
 
+## Neuprogrammierung (Flashen) mit Erhalt der EEPROM Parameter
+
+- um die bisher gespeicherten EEPROM Parameter bei einer Neuprogrammierung zu erhalten, bitte die folgende Änderungen im Quellcode machen:
+	+ im Code [sens_bme680_KF_DEBUG.h](./sensors/sens_bme680_KF_DEBUG.h) in der Zeile 70 ändern
+	
+> #define MAX_BATTERY_VOLTAGE                              3320      // change to 6000 for debugging with FTDI Debugger, default: 3320
+
+		* nach
+ 
+> #define MAX_BATTERY_VOLTAGE                              6000      // change to 6000 for debugging with FTDI Debugger, default: 3320
+
++ im Code [sens_bme680_KF.h](../HB-UNI-Sensor1-AQ-BME680_KF/sensors/sens_bme680_KF.h) des Sensors [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) in der Zeile 70 ändern
+	
+> #define MAX_BATTERY_VOLTAGE                              3320      // change to 6000 for debugging with FTDI Debugger, default: 3320
+
+		* nach
+ 
+> #define MAX_BATTERY_VOLTAGE                              6000      // change to 6000 for debugging with FTDI Debugger, default: 3320
+
+- dadurch wird auch beim Flashen die Schwellspannung zum Löschen der EEPROM Parameter nicht überschritten und der Inhalt des EEPROM Speichers kann zurück gelesen werden
 
 ## Lizenz
 

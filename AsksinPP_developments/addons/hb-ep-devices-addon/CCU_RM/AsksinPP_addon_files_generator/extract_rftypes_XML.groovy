@@ -1,5 +1,7 @@
 #!/usr/bin/env groovy
 
+/* # latest checked occu version: https://github.com/eq-3/occu/commit/a420be85d65df323a6c94efc5b132dbe9a2e3f24  version 3.69.7 */
+
 package extract_rftypes_XML
 /**
 * A simple extractor for translation candidates of a rftypes XML file.
@@ -23,7 +25,7 @@ import groovy.xml.*
 
 class extract_rftypes_XML {
 
-    static VersionString                       = "0.13"
+    static VersionString                       = "0.14"
     static Map_Storage_Identifier              = "extract_rftypes_XML map storage file, please don't touch!\n\n"
     static Addon_translation_archive_file      = "Addon_extract_rftypes_XML_translation_archive.db"
     static Addon_control_XML_file              = "AsksinPP_addon_generator_control_file.xml"
@@ -111,7 +113,7 @@ class extract_rftypes_XML {
         println "\n.. reading '${file_name}' .."
         def inputFile = new File(file_name)
         
-        String required_match_regex = /^jQuery\.extend\(true\,langJSON\,\ \{\n\ \ \"de\"\ \:\ [\s\S]*langJSON.de.blinkBillowFast;$/
+        String required_match_regex = /^jQuery\.extend\(true\,langJSON\,\ \{\n\ \ \"de\"\ \:\ [\s\S]*langJSON.de.stringTableValveStateErrorPosition;[\s\S]$/
 
 
         if ( !( inputFile.text ==~ required_match_regex) )

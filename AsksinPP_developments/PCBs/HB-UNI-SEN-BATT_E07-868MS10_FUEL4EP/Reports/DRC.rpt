@@ -1,0 +1,165 @@
+** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP.kicad_pcb **
+** Created on 2023-07-15 08:52:20 **
+
+** Found 23 DRC violations **
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(131.0640 mm, 117.0940 mm): PCB-Text "eByte E07-868MS10" auf F.Silkscreen
+    @(123.8000 mm, 117.7500 mm): Durchlochpad 1A [GND] von Module1
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(131.0640 mm, 117.0940 mm): PCB-Text "eByte E07-868MS10" auf F.Silkscreen
+    @(122.7150 mm, 117.7500 mm): Pad 1A [GND] von Module1 auf F.Cu
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(122.2300 mm, 127.2000 mm): Linie auf F.Silkscreen
+    @(122.7150 mm, 117.7500 mm): Pad 1A [GND] von Module1 auf F.Cu
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(147.3200 mm, 113.5000 mm): Referenz "J1"
+    @(147.3200 mm, 113.6650 mm): Durchlochpad 1 [/A0] von J1
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(152.2500 mm, 113.5000 mm): Referenz "J2"
+    @(152.4000 mm, 113.6650 mm): Durchlochpad 1 [/A1] von J2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(147.3200 mm, 104.0000 mm): Referenz "J3"
+    @(147.3200 mm, 104.1400 mm): Durchlochpad 1 [/A2] von J3
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(152.5000 mm, 104.0000 mm): Referenz "J4"
+    @(152.4000 mm, 104.1400 mm): Durchlochpad 1 [/A3] von J4
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(138.4300 mm, 91.4400 mm): Kreis auf F.Silkscreen
+    @(138.4300 mm, 91.4400 mm): Durchlochpad 3E [/SCL] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(138.4300 mm, 93.9800 mm): Kreis auf F.Silkscreen
+    @(138.4300 mm, 93.9800 mm): Durchlochpad 4E [/SDA] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(129.5400 mm, 80.0100 mm): Kreis auf F.Silkscreen
+    @(129.5400 mm, 80.0100 mm): Durchlochpad 2D [Net-(Module2-Pad2D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(132.0800 mm, 80.0100 mm): Kreis auf F.Silkscreen
+    @(132.0800 mm, 80.0100 mm): Durchlochpad 3D [Net-(Module2-Pad3D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(139.7000 mm, 80.0100 mm): Kreis auf F.Silkscreen
+    @(139.7000 mm, 80.0100 mm): Durchlochpad 6D [Net-(Module2-Pad6D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(137.1600 mm, 80.0100 mm): Kreis auf F.Silkscreen
+    @(137.1600 mm, 80.0100 mm): Durchlochpad 5D [Net-(Module2-Pad5D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(127.0000 mm, 80.0100 mm): Kreis auf F.Silkscreen
+    @(127.0000 mm, 80.0100 mm): Durchlochpad 1D [Net-(Module2-Pad1D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(134.6200 mm, 80.0100 mm): Kreis auf F.Silkscreen
+    @(134.6200 mm, 80.0100 mm): Durchlochpad 4D [Net-(Module2-Pad4D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(106.6800 mm, 90.1700 mm): PCB-Text "HB-UNI-SENS-BATT_E07-868MS10_FUEL4..." auf B.Silkscreen
+    @(106.4250 mm, 136.1500 mm): Durchlochpad [<no net>] von BT2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(134.6200 mm, 80.0100 mm): Kreis auf B.Silkscreen
+    @(134.6200 mm, 80.0100 mm): Durchlochpad 4D [Net-(Module2-Pad4D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(132.0800 mm, 80.0100 mm): Kreis auf B.Silkscreen
+    @(132.0800 mm, 80.0100 mm): Durchlochpad 3D [Net-(Module2-Pad3D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(137.1600 mm, 80.0100 mm): Kreis auf B.Silkscreen
+    @(137.1600 mm, 80.0100 mm): Durchlochpad 5D [Net-(Module2-Pad5D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(139.7000 mm, 80.0100 mm): Kreis auf B.Silkscreen
+    @(139.7000 mm, 80.0100 mm): Durchlochpad 6D [Net-(Module2-Pad6D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(127.0000 mm, 80.0100 mm): Kreis auf B.Silkscreen
+    @(127.0000 mm, 80.0100 mm): Durchlochpad 1D [Net-(Module2-Pad1D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(129.5400 mm, 80.0100 mm): Kreis auf B.Silkscreen
+    @(129.5400 mm, 80.0100 mm): Durchlochpad 2D [Net-(Module2-Pad2D)] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(124.2500 mm, 79.5000 mm): Kreisbogen auf Edge.Cuts
+    @(142.2400 mm, 78.7400 mm): Linie auf F.Silkscreen
+
+** Found 0 unconnected pads **
+
+** Found 21 Footprint errors **
+[net_conflict]: Das Pad-Netz (Net-(Module1-Pad2A)) stimmt nicht mit dem im Schaltplan (unconnected-(Module1-Pad2A)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(123.8000 mm, 115.4700 mm): Durchlochpad 2A [Net-(Module1-Pad2A)] von Module1
+[net_conflict]: Das Pad-Netz (Net-(Module1-Pad7C)) stimmt nicht mit dem im Schaltplan (unconnected-(Module1-Pad7C)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(141.3450 mm, 117.5800 mm): Pad 7C [Net-(Module1-Pad7C)] von Module1 auf F.Cu
+[net_conflict]: Das Pad-Netz (Net-(Module1-Pad7C)) stimmt nicht mit dem im Schaltplan (unconnected-(Module1-Pad7C)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(140.2600 mm, 117.5800 mm): Durchlochpad 7C [Net-(Module1-Pad7C)] von Module1
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad1A)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad1A)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(140.9700 mm, 82.5500 mm): Durchlochpad 1A [Net-(Module2-Pad1A)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad1B)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad1B)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(128.2700 mm, 110.4900 mm): Durchlochpad 1B [Net-(Module2-Pad1B)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad1C)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad1C)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(125.7300 mm, 82.5500 mm): Durchlochpad 1C [Net-(Module2-Pad1C)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad1D)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad1D)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(127.0000 mm, 80.0100 mm): Durchlochpad 1D [Net-(Module2-Pad1D)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad1E)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad1E)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(138.4300 mm, 86.3600 mm): Durchlochpad 1E [Net-(Module2-Pad1E)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad2B)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad2B)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(130.8100 mm, 110.4900 mm): Durchlochpad 2B [Net-(Module2-Pad2B)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad2C)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad2C)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(125.7300 mm, 85.0900 mm): Durchlochpad 2C [Net-(Module2-Pad2C)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad2D)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad2D)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(129.5400 mm, 80.0100 mm): Durchlochpad 2D [Net-(Module2-Pad2D)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad3B)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad3B)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(133.3500 mm, 110.4900 mm): Durchlochpad 3B [Net-(Module2-Pad3B)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad3C)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad3C)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(125.7300 mm, 87.6300 mm): Durchlochpad 3C [Net-(Module2-Pad3C)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad3D)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad3D)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(132.0800 mm, 80.0100 mm): Durchlochpad 3D [Net-(Module2-Pad3D)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad4B)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad4B)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(135.8900 mm, 110.4900 mm): Durchlochpad 4B [Net-(Module2-Pad4B)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad4D)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad4D)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(134.6200 mm, 80.0100 mm): Durchlochpad 4D [Net-(Module2-Pad4D)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad5B)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad5B)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(138.4300 mm, 110.4900 mm): Durchlochpad 5B [Net-(Module2-Pad5B)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad5D)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad5D)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(137.1600 mm, 80.0100 mm): Durchlochpad 5D [Net-(Module2-Pad5D)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad6C)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad6C)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(125.7300 mm, 95.2500 mm): Durchlochpad 6C [Net-(Module2-Pad6C)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad6D)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad6D)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(139.7000 mm, 80.0100 mm): Durchlochpad 6D [Net-(Module2-Pad6D)] von Module2
+[net_conflict]: Das Pad-Netz (Net-(Module2-Pad12C)) stimmt nicht mit dem im Schaltplan (unconnected-(Module2-Pad12C)) angegebenen Netz überein.
+    Local override; Severity: warning
+    @(125.7300 mm, 110.4900 mm): Durchlochpad 12C [Net-(Module2-Pad12C)] von Module2
+
+** End of Report **

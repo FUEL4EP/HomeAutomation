@@ -6,6 +6,7 @@
 - Bestückungsoption für [Waveshare ePaper Modul (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
 - Bestückungsoption für [TPS61221 Aufwärtswandler](https://www.ti.com/lit/ds/symlink/tps61221.pdf?ts=1634546965861&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61221) bei NiMH Akkumulatorbetrieb
 - alle SMD Bausteine sind mit dem JLCPCB SMT Bestückungsservice kostengünstig und qualitativ hochwertig bestückbar, das ist also auch für Grobmotoriker wie mich gegeignet :-)
+- die Bestückungsoptionen Aufwärtswandler und ePaper wurden noch nicht validiert!
 
 ![pic](PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_top_view.png)
 
@@ -23,14 +24,13 @@
 - entwickelt mit KiCAD 5.1.10
 - die Platine wurde bei JLCPCB gefertigt und mit den SMD Bauteilen bestückt
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_PCB.png); die nicht SMD Bauteile müssen von Hand verlötet werden
-- mangels Verfügbarkeit des [TPS61221 Aufwärtswandlers](https://www.ti.com/lit/ds/symlink/tps61221.pdf?ts=1634546965861&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61221) trifft dies später auch auf die Bestückungsoption Aufwärtswandler zu
-- die gefertigte Platine wurde erfolgreich mit dem Sketch [HB-UNI-SENSOR1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) validiert:
+- die gefertigte Platine wurde erfolgreich **ohne** Aufwärtswandler mit dem Sketch [HB-UNI-SENSOR1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) validiert:
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-Sensor1-AQ-BME680_KF_build_with_HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_PCB.png)
 
 ## Eigenschaften
 
 - abgeleitet aus [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT)
-- kompletter Datensatz für KiCAD 5.1.10 auf Github verfügbar:
+- kompletter Datensatz für KiCAD 6 auf Github verfügbar:
     + 'git clone https://github.com/FUEL4EP/HomeAutomation.git' oder als [ZIP-Datei](https://github.com/FUEL4EP/HomeAutomation/archive/refs/heads/master.zip)
     + die Platinendaten sind dann unter 'HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP' direkt mit KiCAD aufrufbar
 - neue Eigenschaften:
@@ -39,12 +39,11 @@
     + Bestückungsoption für [Waveshare ePaper Modul (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
     + Bestückungsoption für [TPS61221 Aufwärtswandler](https://www.ti.com/lit/ds/symlink/tps61221.pdf?ts=1634546965861&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61221) bei NiMH Akkumulatorbetrieb
     + alle SMD Bausteine sind mit dem JLCPCB SMT Bestückungsservice kostengünstig und qualitativ hochwertig bestückbar, das ist also auch für Grobmotoriker wie mich gegeignet :-)
-    + Stiftleiste J10 mit Versorgungspannungen zum Gehäuseoberteil oder Akkulademodul
+    + Stiftleiste J10 mit Versorgungsspannungen zum Gehäuseoberteil oder Akkulademodul
     + Korrektur der Abstandfehlers bei einem Batteriehalter. Beim [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) hat das schon mal gerne zu thermischen Ausfällen durch mechanische Spannungen geführt.
     + als Funkmodul wird das [eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf) verwendet. Dieses ist qualitativ viel besser als die üblichen grünen noname 868 MHz Funkmodule.
     + das schafft Platz für eine 8-polige Stiftleiste J11 zum optionalen Anschluss eines [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm). Der ATMega1284P hat auch genügend RAM für die Programmierung eines 200 Pixel x 200 Pixel e-Papermoduls.
-    + JLCPCB BOM and CPL Dateien für SMT Service werden [bereitgestellt](./JLCPCB_SMT_Service/)
-- Hinweis: der TPS61221 ist zur Zeit von nirgendwo lieferbar
+    + JLCPCB BOM and CPL Dateien für SMT Service werden [bereitgestellt](./jlcpcb/production_files)
 
 ### Benötigte Bauteile:
 
@@ -105,15 +104,19 @@
 * bei Einbau eines e-Paper Moduls muss das Gehäuseoberteil angepasst werden (noch zu tun)
 
 ### Hinweise
-* Achtung: Kein Überspannungschutz vorhanden
+* Achtung: Kein Überspannungsschutz vorhanden
 * der Verpolungsschutz ist optional. Dafür Bauteil Q1 (IRLU024N) und R3 (100KOhm Widerstand) bestücken. Alternativ JP1 auf der Platinenrückseite brücken um ohne Verpolungsschutz zu arbeiten.
 * bei der Nutzung des JLCPCB SMT Bestückungsservice ist darauf zu achten, dass **alle** benötigten SMD Bauteile als im Lager **verfügbar** angezeigt werden. Sonst bitte **NICHT** bestellen!
+
+### KiCAD Plugin
+- für die Erzeugung der JLCPCB Produktionsdaten wurde das Plugin [KiCAD JLCPCB tools](https://github.com/bouni/kicad-jlcpcb-tools) verwendet.
 
 
 ## Bestellen von Platinen
 
 - die Platine kann entweder direkt bei JLCPCB bestellt werden
-- oder per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen. Aus der Bestellung der Prototypen sind noch wenige Platinen kostengünstig abzugeben.
+- die notwendigen Produktionsdaten stehen [hier](./jlcpcb/production_files/)
+- oder per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen. Aus der Bestellung der Prototypen sind noch wenige Platinen kostengünstig abzugeben (Stand Juli 2023).
 
 ## Disclaimer
 
@@ -121,7 +124,14 @@
 
 ## Versionsverlauf
 
--    V1.1 10. Januar 2022: R8 auf 47kOhm geändert, zusätzliche Aufdrucktexte
+-    V1.1 10. Januar 2022: R8 auf 47 kOhm geändert, zusätzliche Aufdrucktexte
+-    V1.2 15. Juni 2023: Migration der Datenbasen zu KiCAD 6, als Induktivität    	                     für den Aufwärtswandler wird nun LQH3NPN4R7MM0L von
+                         Murata Electronics verwendet, die bei JLCPCB bestellbar ist  (eventuell ist eine Vorbestellung notwendig) 
+
+- 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
+- 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
+- 	PCB Version 1.2
+- 	Schematics  1.2
 
 ## Lizenz 
 

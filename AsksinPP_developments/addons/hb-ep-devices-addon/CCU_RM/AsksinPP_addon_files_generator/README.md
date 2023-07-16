@@ -3,18 +3,28 @@
 
 
 ## IMPORTANT: UNDER CONSTRUCTION AND VALIDATION
+- successfully used for all my home brew devices
 
 <br/>
 ## IMPORTANT: Since this generator software has beta status only, please check the generated install and uninstall scripts very carefully before using them in a production version of an addon. Usage is at your own risk! Thanks. Your feedback and enhancement proposals are welcome! Please let me know if the generator is creating wrong or incomplete install and uninstall scripts. Please send me a PN in such a case: FUEL4EP @ https://homematic-forum.de
 <br/>
 
+# NEWS 9th June 2023:
+
+- adapted [extract_rftypes_XML.groovy](./extract_rftypes_XML.groovy) to support lattest occu release of EQ3
+- some required_match_regex expression required an update
+
 # NEWS 2nd June 2021:
 - code has been restructured in order to support also subset definitions in rftypes XML
-- easymodes references are extracted and the concerning paramset definition are supressed in the translation XML control file
+- easymodes references are extracted and the concerning paramset definition are suppressed in the translation XML control file
 - option ids are extracted
-- the addon generator has been proven to work correctly for 'hb-ep-devices-addon' installed on a RaspberryMatic 3.57.5.2021052
 - the addon generator tends to extract a few more entries than the manually generated install and uninstall scripts e.g. of JP-HB-Devices-addon
 - all entries are getting an author specific prefix, e.g. 'F6' in case of FUEL4EP
+
+# NEWS 27th May June 2023:
+- the addon generator has been proven to work correctly for 'hb-ep-devices-addon' installed on a RaspberryMatic Aktuelle Firmwareversion: 	3.69.7.20230506
+- the addon generator has been validated with occu version: https://github.com/eq-3/occu/commit/a420be85d65df323a6c94efc5b132dbe9a2e3f24  version 3.69.7
+- the addon has been developed and tested under Kubuntu 22.04
 
 # Known unsupported features (currently no plan for support)
 
@@ -27,7 +37,7 @@
 - a singular install 'install_<addon_name>' is newly introduced instead of the previous style of one install script per device
 - a singular uninstall 'uninstall_<addon_name>' is newly introduced instead of the previous style of one uninstall script per device
 
-- the following software installations are prereqisites:
+- the following software installations are prerequisites:
 
 	+ install [groovy](https://groovy-lang.org/), a multi-faceted language for the Java platform, on your computer
 	+ install [XML Copy Editor](https://xml-copy-editor.sourceforge.io/) on your computer
@@ -37,7 +47,9 @@
         
 	+ change your working directory to the [location](./) of this README.md file
 	+ ensure that your internet connection is up and running. An update of some required data from EQ'3 occu repository will be done automatically.
-	+ ensure that all your addon devices' rftypes XML files are store in [../src/addon/firmware/rftypes/](../src/addon/firmware/rftypes/)
+	+ ensure that all your addon devices' rftypes XML files are stored in [../src/addon/firmware/rftypes/](../src/addon/firmware/rftypes/)
+	+ it is recommended to derive new rftypes XML files from existing ones. Unfortunately some reverse engineering and deep understanding is required for that purpose
+	+ if you have trouble, please ask in the Homematic Forum for help
 	+ start in a LINUX console  window the script [./make_all.bsh](./make_all.bsh) with the command line option '-run1':
 	
         > make_all.bash -run1
@@ -85,6 +97,7 @@
 			* generating the [addon uninstall script](./uninstall_hb-ep-devices-addon)
 	+	please check the generated addon install and uninstall scripts. If they are correct, please copy them manually to the [addon directory ../src/addon/](../src/addon).
 	+	copy the edited XML control file for addon generator [./AsksinPP_addon_generator_control_file.xml](./AsksinPP_addon_generator_control_file.xml) to [./libraries/AsksinPP_addon_generator_control_file_translation_source.xml](./libraries/AsksinPP_addon_generator_control_file_translation_source.xml]) in order to preserve your latest changes for later generator runs
+	+	create device icons with 250x250 pixels and 50x50 pixels png format, e.g. with Gimp, [here](../src/addon/www/config/img/devices/) in the subdirectories '50' and #250', respectively. Crosscheck the png file names with the defined names in [install_hb-ep-devices-addon](./install_hb-ep-devices-addon).
 	
 	+	if you want solely to validate your newly created rftypes XML files in [../src/addon/firmware/rftypes/](../src/addon/firmware/rftypes/), then start in a LINUX console  window the script [./make_all.bsh](./make_all.bsh) with the command line option '-check':
 	
@@ -113,7 +126,7 @@
 # have fun and give feedback
 
 - enjoy! Feedback and improvement suggestions are welcome!
-- please always provide suffiecient test data for debugging if you found some deficiencies
+- please always provide sufficient test data for debugging if you found some deficiencies
 
 
 ## Lizenz

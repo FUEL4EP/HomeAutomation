@@ -4,12 +4,15 @@
               -   http://heartygfx.blogspot.com    -
               -       OpenScad Parametric Box      -
               -         CC BY-NC 3.0 License       -
+              - adaptions 2023-07-10 (C) FUEL4EP   -
 ////////////////////////////////////////////////////////////////////
 
 Improved by jbebel:
 http://github.com/jbebel/Ultimate-Box-Maker
-Adapted to case for HB-UNI-SenAct-4-4-SC_DS_FUEL4EP
+Adapted to case for HB-UNI-SenAct-4-4-SC_DS_FUEL4EP by FUEL4EP
 https://github.com/FUEL4EP/HomeAutomation
+
+V1.1 with notches for power plug hole
 
 To create a box, start by modifying the numerical parameters in the sections
 below. This can be Dized, so if you double all the non-feature parameters
@@ -54,6 +57,21 @@ Fixation_Stick = 0; // [0:No, 1:Yes]
 
 // preview[view:north east, tilt:top diagonal]
 //----------------------- Box parameters ---------------------------
+
+
+/* [STL element to export] */
+// - Top shell
+TShell = 0; // [0:No, 1:Yes]
+// - Bottom shell
+BShell = 1; // [0:No, 1:Yes]
+// - Front panel
+FPanL = 1; // [0:No, 1:Yes]
+// - Back panel
+BPanL = 1; // [0:No, 1:Yes]
+// - Panel holes and text
+PanelFeatures = 1; // [0:No, 1:Yes]
+// Fixation Stick for ACDC convertor
+Fixation_Stick = 1; // [0:No, 1:Yes]
 
 /* [Box options] */
 // - Wall thickness
@@ -165,19 +183,6 @@ Foot4YFromEdge = 4;
 Foot4Y = PCBWidth - Foot4YFromEdge;
 
 
-/* [STL element to export] */
-// - Top shell
-TShell = 0; // [0:No, 1:Yes]
-// - Bottom shell
-BShell = 1; // [0:No, 1:Yes]
-// - Front panel
-FPanL = 0; // [0:No, 1:Yes]
-// - Back panel
-BPanL = 0; // [0:No, 1:Yes]
-// - Panel holes and text
-PanelFeatures = 1; // [0:No, 1:Yes]
-// Fixation Stick for ACDC convertor
-Fixation_Stick = 1; // [0:No, 1:Yes]
 
 // Resolution based on Round parameter. Set this first number to something
 // smaller to speed up processing. It should always be a multiple of 4.
@@ -363,12 +368,12 @@ module BPanelHoles() {
                Height_PlugSocket,
                0);
                
-    SquareHole(1,
+    PowerPlugSquareHole(1,
                XOffsetCenter_power_plug - Width_power_plug/2,
                YOffsetBottom_power_plug,
                Width_power_plug,
                Height_power_plug,
-               2);
+               0);
     // CylinderHole(On/Off, Xpos, Ypos, Diameter)
     CylinderHole(1,
                  XBackCentOffsetFuse,
@@ -949,7 +954,7 @@ module CylinderHole(OnOff, Cx, Cy, Cdia) {
 
 
 Width_Nose_PowerSocketHole = 3.8;
-Height_Nose_PowerSocketHole = 1.2;
+Height_Nose_PowerSocketHole = 1.1;
 Edge_Offset_Nose_Height_Nose_PowerSocketHole = 5.4;
 
 Width_Rip_PowerSocketHole = 10.1;
@@ -970,8 +975,8 @@ module PowerSocketHole(OnOff, Sx, Sy, Sl, Sw, Filet) {
             translate ([-Height_Nose_PowerSocketHole,my_height-Width_Nose_PowerSocketHole-Edge_Offset_Nose_Height_Nose_PowerSocketHole,0]) square([Height_Nose_PowerSocketHole,Width_Nose_PowerSocketHole]);
             translate ([my_width,Edge_Offset_Nose_Height_Nose_PowerSocketHole,0]) square([Height_Nose_PowerSocketHole,Width_Nose_PowerSocketHole]);
             translate ([my_width,my_height-Width_Nose_PowerSocketHole-Edge_Offset_Nose_Height_Nose_PowerSocketHole,0]) square([Height_Nose_PowerSocketHole,Width_Nose_PowerSocketHole]);
-            translate ([my_width/2-Width_Rip_PowerSocketHole/2,-Height_Rip_PowerSocketHole]) square([Width_Rip_PowerSocketHole,Height_Rip_PowerSocketHole]);
             translate ([my_width/2-Width_Rip_PowerSocketHole/2,my_height]) square([Width_Rip_PowerSocketHole,Height_Rip_PowerSocketHole]);
+            translate ([my_width/2-Width_Rip_PowerSocketHole/2,-Height_Rip_PowerSocketHole]) square([Width_Rip_PowerSocketHole,Height_Rip_PowerSocketHole]);
         }
         
     }
@@ -1001,6 +1006,46 @@ module SquareHole(OnOff, Sx, Sy, Sl, Sw, Filet) {
                 square([Sl - Filet*2, Sw - Filet*2]);
             }
         }
+    }
+}
+
+
+/*  Powersocket Square Hole module
+
+    Produces a rectangular prism with potentially rounded corner for use as
+    a hole in a panel with some notches for fixation of the power socket
+
+    Arguments:
+    OnOff: Rendered only if 1
+    Sx: X position of bottom left corner
+    Sy: Y position of bottom left corner
+    Sl: width of rectangle
+    Sw: height of rectangle
+    Filet: radius of rounded corner
+*/
+module PowerPlugSquareHole(OnOff, Sx, Sy, Sl, Sw, Filet) {
+
+    if (OnOff) {
+        width_lower_notch      = 7.2;
+        height_lower_notch     = 1.4;
+        depth_notches          = 1.0;
+        width_upper_notch      = 4.5;
+        height_upper_notch     = 1.2;
+        distance_upper_notches = 9.5;    
+        Offset = Filet + CutoutMargin;
+        echo("PowerPlugSquareHole:", Sx=Sx - CutoutMargin, Sy=Sy - CutoutMargin,
+             Sl=Sl + CutoutMargin*2, Sw=Sw + CutoutMargin*2, Filet=Offset);
+        translate([Sx + Filet, Sy + Filet, 0]) {
+            offset(r=Offset, $fn=Resolution) {
+                square([Sl - Filet*2, Sw - Filet*2]);
+            }
+            my_height = Sw - Filet*2;
+            my_width  = Sl - Filet*2;
+            
+            translate ([my_width/2-width_upper_notch-distance_upper_notches/2,my_height]) square([width_upper_notch,height_upper_notch]);
+            translate ([my_width/2+distance_upper_notches/2,my_height]) square([width_upper_notch,height_upper_notch]);
+            translate ([my_width/2-width_lower_notch/2,-height_lower_notch]) square([width_lower_notch,height_lower_notch]);
+        } 
     }
 }
 

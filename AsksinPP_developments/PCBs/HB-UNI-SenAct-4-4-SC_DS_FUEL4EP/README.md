@@ -1,18 +1,20 @@
 # HB-UNI-SenAct-4-4-SC_DS_FUEL4EP [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%2FHB-UNI-SenAct-4-4-SC_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)  <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
+
 **Platine für DIY AsksinPP für**
 - 3x Schaltaktor für Betrieb an einem Netzfreischalter
 - Akkubetrieb im Standby, automatische Ladeschaltung
 - bei Aktivierung eines Aktors wird die Netzspannung zugeschaltet und am Ende wieder abgeschaltet
-- (fast) kein Standby-Verbrauch
-- ein handelsübliches [4 Kanal Relais Modul](https://www.amazon.de/dp/B078Q8S9S9/) wird mit Distanzhaltern "huckepack" auf die Basisplatine montiert
-- die angestrebte Gehäusegröße beträgt 15 cm (Breite) x 11 cm (Tiefe) x 5,5 cm (Höhe), ein passendes 3D-Druckgehäuse ist noch zu entwerfen
+- geringer Standby-Verbrauch von ca. 1 mA @ 5V Vaccu, an einer weiteren Reduktion wird gearbeitet
+- ein handelsübliches [4 Kanal Relais Modul](https://www.ebay.de/itm/155095219126) wird mit Distanzhaltern "huckepack" auf die Basisplatine montiert
+	+ bitte darauf achten, dass das Relaymodul den Aufdruck [P2H1588A0](./PNGs/4-Relais Modul_top_view.png) hat, da Module mit unterschiedlichen Maßen im Handel verfügbar sind.
+	+ die Außenmaße des Moduls sollten 72,2 mm x 52 mm betragen
+- ein STL-Modell eines 3D-druckbaren Gehäuses wird mitgeliefert, die Außenmaße des gedruckten Gehäuses sind 20,8 cm (Breite) x 13,3 cm (Tiefe) x 6,8 cm /(Höhe).
 - 3x Einbausteckdosen 45 mm x 45 mm, z.B. DELOCK 81321 Easy 45 Schutzkontakt-Steckdose, werden an der Rückseite des Gehäuses angebracht
 - **diese Schaltung und Platine darf ausschließlich von ausgebildeten elektrischen Fachkräften verwendet werden, siehe Disclaimer unten!**
-- diese Schaltung und Platine ist noch nicht validiert!
-- ein geeigneter Sketch kann auf Nachfrage zur Verfügung gestellt werden:
-    - per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen.
-- die Platine V1.2 behebt Fehler, die bei der Validierung eines Prototypen festgestellt und korrigiert wurden. Bitte keine Platinen der Versionen V1.0 und V1.1 verwenden.
+- ein weitgehend validierter Sketch [HB-UNI-SenAct-4-4-SC_DS.ino](../../sketches/HB-UNI-SenAct-4-4-SC_DS/) steht zum Testen zur Verfügung
+	- Fragen und Rückmeldungen per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen.
+- die Platine V1.3 behebt Fehler, die bei der Validierung eines Prototypen festgestellt und korrigiert wurden. Bitte **keine** Platinen der Versionen V1.0, V1.1 oder V1.2 verwenden.
 - **wichtige Aufbauhinweise:**
     + zuerst die Niederspannungsplatine HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB Schritt für Schritt aufbauen, in Betrieb nehmen und testen:
         + für den Arduino Pro Mini und den CC1101 Tranceiver **vor Einbau** in einem externen Testbed den Ruhestrom prüfen (<10uA) und einen Frequenztest durchführen!
@@ -22,7 +24,15 @@
         * dann die Funktion testen
         * erst als Letztes die 230V Verdrahtung mit der gebotenen Vorsicht anbringen
         * die Sicherungen nicht vergessen
-        * Zugentlastungen für das Netzkabel anbringen!
+        * gegebenenfalls Zugentlastungen für das Netzkabel anbringen!
+- ein passendes 3D-druckbares Gehäuse ist im STL Format und openSCAD Format [hier](./3D_Printer/case/) zu finden
+	+ ein 3D Druck wurde damit erfolgreich durchgeführt, ein Prototyp ist erfolgreich aufgebaut und weitgehend validiert worden.
+	
+## Versionen
+- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
+- PCB Version 1.3
+- Schematics  1.3
 
 
 ## Disclaimer

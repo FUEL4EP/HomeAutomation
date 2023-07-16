@@ -7,10 +7,11 @@
 - die Relay-Module werden mit 0,5mm² Adernendhülsen 'huckepack' auf die Platine gelötet, die Adernendhülsen zuerst auf die Relay-Module auflöten, dann in die Platine einstecken und in der Platine festlöten
 - (fast) kein Standby-Verbrauch
 - diese Schaltung und Platine darf ausschließlich von ausgebildeten elektrischen Fachkräften verwendet werden, siehe Disclaimer unten!
-- diese Schaltung und Platine ist noch nicht validiert!
+- diese Schaltung und Platine ist in der Version 1.0 validiert. Es sind aufgrund von Fehlern kleine Korrekturen vonnöten gewesen, die in der Version 1.3 korrigiert sind.
 - ein geeigneter Sketch kann auf Nachfrage zur Verfügung gestellt werden.
     + per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen.
-- V1.2 der Platine behebt Fehler, die bei der Bestückung eines Prototypen erkannt wurden, bitte keine V1.0 und V1.1 Platinen verwenden!
+    + zur Zeit existiert ein funktionsfähiger Sketch, der noch um die Akkuladesoftware erweitert werden muss. Sobald die Entwicklung abgeschlossen sein wird, wird ein Release einschließlich Sketch auf Github gemacht werden.
+- V1.3 der Platine behebt Fehler, die bei der Bestückung eines Prototypen erkannt wurden, bitte keine V1.0, V1.1 und V1.2 Platinen verwenden!
 - **wichtige Aufbauhinweise:**
     + zuerst die Niederspannungsplatine HM-LC-Bl1-FM_FUEL4EP_PCB Schritt für Schritt aufbauen, in Betrieb nehmen und testen:
         + für den Arduino Pro Mini und den CC1101 Tranceiver **vor Einbau** in einem externen Testbed den Ruhestrom prüfen (<10uA) und einen Frequenztest durchführen!
@@ -18,6 +19,11 @@
     + die 230V Schaltungsteile erst dann anschließen, wenn der Rest vollständig geprüft wurde und die Software alle notwendigen Funktionen zeigt.
 - Ein Diskussionsfaden ist im Homematic Forum unter [Nachbau HM-LC-Bl1-FM für Velux Rolladen und Netzfreischalter](https://homematic-forum.de/forum/viewtopic.php?f=76&t=71683&sid=71b7e84664ec8bed7b9e50bd442664ad) zu finden
 
+## Versionen
+- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
+- PCB Version 1.3
+- Schematics  1.2
 
 ## Disclaimer
 

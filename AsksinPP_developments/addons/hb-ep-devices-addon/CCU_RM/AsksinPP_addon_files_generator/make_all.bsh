@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# latest checked occu version: https://github.com/eq-3/occu/commit/a420be85d65df323a6c94efc5b132dbe9a2e3f24  version 3.69.7
+# validated with Kubuntu 22.04
 
 # This script has been developped for Linux OS, please adapt to other OS appropriately according to your needs
 
@@ -9,7 +12,7 @@
 # https://github.com/koknat/dif
 # usage: dif file1 file2 -sort
 
-# Version 0.1 2021-05-2021
+# Version 0.12 27-05-2023
 # (c) FUEL4EP 
 
 # prerequisites (Linux OS is assumed)
@@ -43,7 +46,7 @@ OCCU_XML_DIR=${OCCU_DIR}/${SUBDIR1}               #don't change, needs to be in 
 OCCU_WEBUI_DIR=${OCCU_DIR}/${SUBDIR2}             #don't change, needs to be in sync with definition in 'get_occu.bsh'
 EASYMODES_DIR=${OCCU_WEBUI_DIR}/config/easymodes 
 
-VERSION=0.11
+VERSION=0.12
 #========================================================================================================================
 
 echo ""
@@ -169,6 +172,9 @@ if [[ execute_part1 -eq 1 ]]; then
         echo ""
         echo ".. working on ${xml}"
         # first iteration (with -c -y options)
+        echo ""
+        echo ".. executing now: /usr/bin/env groovy ./extract_rftypes_XML.groovy -c -y -eq3 ${LIBRARY_DIR} -occu ${OCCU_DIR} -easy ${EASYMODES_DIR} -e -eq3_db ${LIBRARY_DIR}/EQ3_occu_extract_rftypes_translation_archive.db -a ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db -t ${LIBRARY_DIR}/AsksinPP_addon_generator_control_file_translation_source.xml -o AsksinPP_addon_generator_control_file.xml -n ${ADDON_NAME} ${xml}"
+        echo ""
         /usr/bin/env groovy ./extract_rftypes_XML.groovy -c -y -eq3 ${LIBRARY_DIR} -occu ${OCCU_DIR} -easy ${EASYMODES_DIR} -e -eq3_db ${LIBRARY_DIR}/EQ3_occu_extract_rftypes_translation_archive.db -a ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db -t ${LIBRARY_DIR}/AsksinPP_addon_generator_control_file_translation_source.xml -o AsksinPP_addon_generator_control_file.xml -n ${ADDON_NAME} ${xml}
       else
         # > first iteration (add -m option)

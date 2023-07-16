@@ -1,100 +1,43 @@
-"Source:","PCBs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.sch",,,,,,,,,,
-"Date:","Mi 05 Jan 2022 20:03:52 CET",,,,,,,,,,
-"Tool:","Eeschema 5.1.12-84ad8e8a86~92~ubuntu18.04.1",,,,,,,,,,
-"Generator:","/usr/share/kicad/plugins/bom_csv_grouped_by_value.py",,,,,,,,,,
-"Component Count:","50",,,,,,,,,,
-,,,,,,,,,,,
-"Individual Components:",,,,,,,,,,,
-,,,,,,,,,,,
-"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet","MPN","OC_FARNELL","OC_NEWARK","PACKAGE","SUPPLIER"
-,,"C1","10uF","Device:CP","Capacitor_THT:CP_Radial_D5.0mm_P2.50mm",,,,,,
-,,"C4","100n","Device:C","Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm","~",,,,,
-,,"C5","10u","Device:CP","Capacitor_THT:CP_Radial_D5.0mm_P2.00mm","~",,,,,
-,,"D1","LED","Device:LED","LED_THT:LED_D3.0mm","~",,,,,
-,,"D2","1N5819","Diode:1N5819","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","http://www.vishay.com/docs/88525/1n5817.pdf",,,,,
-,,"D3","1N5819","Diode:1N5819","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","http://www.vishay.com/docs/88525/1n5817.pdf",,,,,
-,,"D6","1N5819","Diode:1N5819","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","http://www.vishay.com/docs/88525/1n5817.pdf",,,,,
-,,"D11","1N4735A 6.2V","Diode:1N47xxA","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","https://www.vishay.com/docs/85816/1n4728a.pdf",,,,,
-,,"H1","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"H2","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"H3","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"H4","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"H5","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"H6","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"H7","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"H8","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-,,"J1","5V  supply","Connector_Generic:Conn_01x02","Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical","~",,,,,
-,,"J2","4x Push Buttons","Connector_Generic:Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","~",,,,,
-,,"J3","4x Relais","Connector_Generic:Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","~",,,,,
-,,"J4","5x LEDs","Connector_Generic:Conn_01x07","Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical","~",,,,,
-,,"J5","ISP Programmer","Connector_Generic:Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","~",,,,,
-,,"J6","Accumulator","Connector_Generic:Conn_01x02","Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical","~",,,,,
-,,"J7","GND","Connector_Generic:Conn_01x01","Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical","~",,,,,
-,,"J10","charge","Connector_Generic:Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","~",,,,,
-,,"JP1","Jumper","Jumper:SolderJumper_2_Bridged","Jumper:SolderJumper-2_P1.3mm_Bridged2Bar_Pad1.0x1.5mm","~",,,,,
-,,"LOGO1","Logo_Open_Hardware_Small","Graphic:Logo_Open_Hardware_Small","FUEL4EP:CC-BY-ND-SA","~",,,,,
-,,"Module1","Arduino_Pro_Mini_328P_1","FUEL4EP:Arduino_Pro_Mini_328P_1","FUEL4EP:ArduinoProMini","https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/",,,,,
-,,"Module2","CC1101_transceiver_module","FUEL4EP:CC1101_transceiver_module","FUEL4EP:CC1101","https://www.ti.com/lit/ds/symlink/cc1101.pdf",,,,,
-,,"Module3","4_channel_LOGIC_LEVEL_CONVERTER","FUEL4EP:4_channel_LOGIC_LEVEL_CONVERTER","FUEL4EP:4_channel_LOGIC_LEVEL_CONVERTER","https://cdn.sparkfun.com/datasheets/BreakoutBoards/Logic_Level_Bidirectional.pdf",,,,,
-,,"Module4","NIUP11TA_NiMH_charger","FUEL4EP:NIUP11TA_NiMH_charger","FUEL4EP:NIUP11TA_NiMH_charger","https://aitendo3.sakura.ne.jp/aitendo_data/product_img/ic/charger/CJC5288/CJC5288.pdf",,,,,
-,,"Q1","IRLU024N","Device:Q_NMOS_GDS","Package_TO_SOT_THT:TO-251-3_Vertical",,,,,,
-,,"Q2","BD238","Transistor_BJT:BD238","Package_TO_SOT_THT:TO-126-3_Vertical","http://www.electronica-pt.com/datasheets/bd/BD234.pdf",,,,,
-,,"Q4","IRF9Z34N","FUEL4EP:IRF9Z34N","FUEL4EP:TO220V",,,,,,
-,,"Q5","MCP1702-2802E_TO","FUEL4EP:MCP1702-2802E_TO","FUEL4EP:TO127P254X533-3",,"MCP1702-2802E/TO","1331485","34M7419","TO-92","Microchip"
-,,"R1","330","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
-,,"R2","470k","Device:R","Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal","~",,,,,
-,,"R3","100K","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
-,,"R4","100k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R5","470","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R6","470","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R7","470","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R8","470","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R9","4.7k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R10","1k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R11","470","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R13","1k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R14","1k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R17","10k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-,,"R22","2.7","Device:R","Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal","~",,,,,
-,,"SW1","SW_Push","Switch:SW_Push","Button_Switch_THT:SW_PUSH_6mm_H4.3mm","~",,,,,
-,,,,,,,,,,,
-,,,,,,,,,,,
-,,,,,,,,,,,
-"Collated Components:",,,,,,,,,,,
-,,,,,,,,,,,
-"Item","Qty","Reference(s)","Value","LibPart","Footprint","Datasheet","MPN","OC_FARNELL","OC_NEWARK","PACKAGE","SUPPLIER"
-"1","1","C1","10uF","Device:CP","Capacitor_THT:CP_Radial_D5.0mm_P2.50mm",,,,,,
-"2","1","C4","100n","Device:C","Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm","~",,,,,
-"3","1","C5","10u","Device:CP","Capacitor_THT:CP_Radial_D5.0mm_P2.00mm","~",,,,,
-"4","1","D1","LED","Device:LED","LED_THT:LED_D3.0mm","~",,,,,
-"5","3","D2, D3, D6","1N5819","Diode:1N5819","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","http://www.vishay.com/docs/88525/1n5817.pdf",,,,,
-"6","1","D11","1N4735A 6.2V","Diode:1N47xxA","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","https://www.vishay.com/docs/85816/1n4728a.pdf",,,,,
-"7","8","H1, H2, H3, H4, H5, H6, H7, H8","MountingHole","Mechanical:MountingHole","FUEL4EP:MountingHole_M3","~",,,,,
-"8","1","J1","5V  supply","Connector_Generic:Conn_01x02","Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical","~",,,,,
-"9","1","J2","4x Push Buttons","Connector_Generic:Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","~",,,,,
-"10","1","J3","4x Relais","Connector_Generic:Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","~",,,,,
-"11","1","J4","5x LEDs","Connector_Generic:Conn_01x07","Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical","~",,,,,
-"12","1","J5","ISP Programmer","Connector_Generic:Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","~",,,,,
-"13","1","J6","Accumulator","Connector_Generic:Conn_01x02","Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical","~",,,,,
-"14","1","J7","GND","Connector_Generic:Conn_01x01","Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical","~",,,,,
-"15","1","J10","charge","Connector_Generic:Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","~",,,,,
-"16","1","JP1","Jumper","Jumper:SolderJumper_2_Bridged","Jumper:SolderJumper-2_P1.3mm_Bridged2Bar_Pad1.0x1.5mm","~",,,,,
-"17","1","LOGO1","Logo_Open_Hardware_Small","Graphic:Logo_Open_Hardware_Small","FUEL4EP:CC-BY-ND-SA","~",,,,,
-"18","1","Module1","Arduino_Pro_Mini_328P_1","FUEL4EP:Arduino_Pro_Mini_328P_1","FUEL4EP:ArduinoProMini","https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/",,,,,
-"19","1","Module2","CC1101_transceiver_module","FUEL4EP:CC1101_transceiver_module","FUEL4EP:CC1101","https://www.ti.com/lit/ds/symlink/cc1101.pdf",,,,,
-"20","1","Module3","4_channel_LOGIC_LEVEL_CONVERTER","FUEL4EP:4_channel_LOGIC_LEVEL_CONVERTER","FUEL4EP:4_channel_LOGIC_LEVEL_CONVERTER","https://cdn.sparkfun.com/datasheets/BreakoutBoards/Logic_Level_Bidirectional.pdf",,,,,
-"21","1","Module4","NIUP11TA_NiMH_charger","FUEL4EP:NIUP11TA_NiMH_charger","FUEL4EP:NIUP11TA_NiMH_charger","https://aitendo3.sakura.ne.jp/aitendo_data/product_img/ic/charger/CJC5288/CJC5288.pdf",,,,,
-"22","1","Q1","IRLU024N","Device:Q_NMOS_GDS","Package_TO_SOT_THT:TO-251-3_Vertical",,,,,,
-"23","1","Q2","BD238","Transistor_BJT:BD238","Package_TO_SOT_THT:TO-126-3_Vertical","http://www.electronica-pt.com/datasheets/bd/BD234.pdf",,,,,
-"24","1","Q4","IRF9Z34N","FUEL4EP:IRF9Z34N","FUEL4EP:TO220V",,,,,,
-"25","1","Q5","MCP1702-2802E_TO","FUEL4EP:MCP1702-2802E_TO","FUEL4EP:TO127P254X533-3",,"MCP1702-2802E/TO","1331485","34M7419","TO-92","Microchip"
-"26","1","R1","330","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
-"27","1","R2","470k","Device:R","Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal","~",,,,,
-"28","1","R3","100K","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal",,,,,,
-"29","1","R4","100k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"30","5","R5, R6, R7, R8, R11","470","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"31","1","R9","4.7k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"32","3","R10, R13, R14","1k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"33","1","R17","10k","Device:R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","~",,,,,
-"34","1","R22","2.7","Device:R","Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal","~",,,,,
-"35","1","SW1","SW_Push","Switch:SW_Push","Button_Switch_THT:SW_PUSH_6mm_H4.3mm","~",,,,,
+"Source:","/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_sch"
+"Date:","Fr 14 Jul 2023 13:55:46 CEST"
+"Tool:","Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1"
+"Generator:","/usr/share/kicad/plugins/bom_csv_grouped_by_value_with_fp.py"
+"Component Count:","53"
+"Ref","Qnty","Value","Cmp name","Footprint","Description","Vendor"
+"C1, ","1","10uF","C_Polarized","Capacitor_THT:CP_Radial_D5.0mm_P2.50mm","Polarized capacitor",""
+"C4, ","1","100n","C","Capacitor_THT:C_Disc_D7.5mm_W2.5mm_P5.00mm","Unpolarized capacitor",""
+"C5, ","1","10u","C_Polarized","Capacitor_THT:CP_Radial_D5.0mm_P2.00mm","Polarized capacitor",""
+"D1, ","1","LED","LED","LED_THT:LED_D3.0mm","Light emitting diode",""
+"D2, D3, D6, ","3","1N5819","1N5819","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","40V 1A Schottky Barrier Rectifier Diode, DO-41",""
+"D11, ","1","1N4735A 6.2V","1N47xxA","Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal","1300mW Silicon planar power Zener diodes, DO-41",""
+"H1, H2, H3, H4, H5, H6, H7, H8, ","8","MountingHole","MountingHole","FUEL4EP:MountingHole_M3","Mounting Hole without connection",""
+"J1, ","1","5V  supply","Conn_01x02","Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical","Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J2, ","1","4x Push Buttons","Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J3, ","1","4x Relais","Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J4, ","1","5x LEDs","Conn_01x07","Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical","Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J5, ","1","ISP Programmer","Conn_01x06","Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical","Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J6, ","1","Accumulator","Conn_01x02","Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical","Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J7, ","1","GND","Conn_01x01","Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical","Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J8, ","1","VCC","Conn_01x01","Connector_PinHeader_1.27mm:PinHeader_1x01_P1.27mm_Vertical","Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"J10, ","1","charge","Conn_01x03","Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical","Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)",""
+"JP1, ","1","Jumper","SolderJumper_2_Bridged","Jumper:SolderJumper-2_P1.3mm_Bridged2Bar_Pad1.0x1.5mm","Solder Jumper, 2-pole, closed/bridged",""
+"LOGO1, ","1","Logo_Open_Hardware_Small","Logo_Open_Hardware_Small","FUEL4EP:CC-BY-ND-SA","Open Hardware logo, small",""
+"Module1, ","1","Arduino_Pro_Mini_328P_1","Arduino_Pro_Mini_328P_1","FUEL4EP:ArduinoProMini","PCB with same size and pin locations as a Arduino Pro Mini, requires setup according https://prominimicros.com/how-to-use-the-pro-mini-xl-or-atmega-1284p-with-the-arduino-ide/",""
+"Module2, ","1","CC1101_transceiver_module","CC1101_transceiver_module","FUEL4EP:CC1101","TI CC1101 868.3 MHz tranceiver module",""
+"Module3, ","1","4_channel_LOGIC_LEVEL_CONVERTER","4_channel_LOGIC_LEVEL_CONVERTER","FUEL4EP:4_channel_LOGIC_LEVEL_CONVERTER","4_channel_LOGIC_LEVEL_CONVERTER",""
+"Module4, ","1","HW-668_step-up","HW-668_step-up","FUEL4EP:HW-668_step-up","https://datasheet.lcsc.com/szlcsc/Shenzhen-Suosemi-Tech-SX1308_C78162.pdf",""
+"Q1, ","1","IRLU024N","Q_NMOS_GDS","Package_TO_SOT_THT:TO-251-3_Vertical","N-MOSFET transistor, gate/drain/source",""
+"Q2, ","1","BD238","BD238","Package_TO_SOT_THT:TO-126-3_Vertical","2A Ic, 80V Vce, Low Voltage Transistor, TO-126",""
+"Q4, ","1","IRF9Z34N","IRF9Z34N","FUEL4EP:TO220V","",""
+"Q5, ","1","MCP1702-2802E_TO","MCP1702-2802E_TO","FUEL4EP:TO127P254X533-3","",""
+"R1, ","1","330","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R2, ","1","470k","R","Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal","Resistor",""
+"R3, ","1","100K","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R4, ","1","100k","R","Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal","Resistor",""
+"R5, R6, R7, R8, R11, ","5","470","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R9, ","1","4.7k","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R10, R13, R14, ","3","1k","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R15, ","1","22","R","Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P20.32mm_Horizontal","Resistor",""
+"R17, ","1","10k","R","Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal","Resistor",""
+"R22, ","1","2.7","R","Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P20.32mm_Horizontal","Resistor",""
+"SW1, SW2, ","2","SW_Push","SW_Push","Button_Switch_THT:SW_PUSH_6mm_H4.3mm","Push button switch, generic, two pins",""

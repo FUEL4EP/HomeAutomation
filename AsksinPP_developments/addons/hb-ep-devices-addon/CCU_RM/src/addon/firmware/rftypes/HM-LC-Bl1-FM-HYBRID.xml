@@ -3,7 +3,7 @@
   <supported_types>
     <type name="accu powered / mains operation with demand switch radio-controlled blind actuator 1-channel for Velux blind shutter" id="HB-LC-Bl1-FM-HYBRID" priority="2">
       <parameter index="9.0" size="1.0" cond_op="GE" const_value="0x10"/>
-      <parameter index="10.0" size="2.0" const_value="0xf60b"/>
+      <parameter index="10.0" size="2.0" const_value="0xf60d"/>
     </type>
   </supported_types>
   <paramset type="MASTER" id="blind_dev_master">
