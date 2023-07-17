@@ -70,7 +70,7 @@ Ein Diskussionsstrang im [Homematic Forum](https://homematic-forum.de/forum/view
 
 -  [AsksinPP Master](https://github.com/pa-pa/AskSinPP/tree/master)
 - **WICHTIG**: Die Asksinpp Bibliothek muss gepatcht werden: siehe https://homematic-forum.de/forum/viewtopic.php?f=76&t=71788&hilit=SCKFloatOnIdle
-- ein 'Radio.h'-Patch wird bereitgestellt
+- ein 'Radio.h'-[Patch](./AsksinPP_patch/Patch_for_Radio.h) wird bereitgestellt
 
 ## Bitte genau diese Abfolge beim Einspielen von Software beachten:
 
@@ -131,12 +131,11 @@ Globale Variablen verwenden 1078 Bytes (52%) des dynamischen Speichers, 970 Byte
 	- wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des Atmega328P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
 
 - die Programmierung erfolgt mit einem ISP Programmer, z.B. Diamex ISP USB Programmer. Dazu dienen die Signale VCC, GND, MOSI, SCK, MISO,
-RSET an der Steckerleiste links der Basisplatine. Dort eine Steckerleiste einlöten.
+RSET an der Steckerleiste J5 auf der linken Seite der Basisplatine. Dort eine Steckerleiste einlöten.
 - ISP Programmer auf 3.3V einstellen!
 - Einstellungen Arduino IDE: 8MHz, 3.3V
 - Hochladen des kompilierten Sketchs im Arduino IDE mit: Sketch => Hochladen mit Programmer
-- Debugging wird über den seriellen Monitor mit einem FTDI Adapter USB zu TTL Serial für
-3,3V und 5V für Arduino gemacht. Als Baudrate des seriellen Monitors bitte **57600** Baud einstellen.
+- Debugging wird über den seriellen Monitor mit einem FTDI Adapter USB zu TTL Serial für 3,3V und 5V für Arduino gemacht. Als Baudrate des seriellen Monitors bitte **57600** Baud einstellen.
 - **WICHTIG:** Wenn der Config-Taster des Aktors (unbeabsichtigt) länger als 6..8 Sekunden gedrückt wurde, muss der Aktor danach neu an der Zentrale angelernt werden. Beim Reset wird die Adresse der Zentrale (CCU3/RaspberryMatic) im EEPROM des 328P gelöscht. Damit funktioniert LazyConfig nicht mehr. Zum erneuten Anlernen, zuerst den Aktor in der CCU3/RaspberryMatic ablernen und dann normal wieder anlernen. 
 
 ## Benötigte Libraries
@@ -151,7 +150,8 @@ RSET an der Steckerleiste links der Basisplatine. Dort eine Steckerleiste einlö
   #include "PulseReset.h"
 
 ### Ladefunktion für die NiMH-Akkumulatorbatterien
-- die Ladefunktionalität ist noch nicht implementiert!  Die Akkumulatorbatterien müssen gegebenenfalls extern geladen werden. Eine Warnung bei Unterspannung erfolgt.
+- es wird empfohlen, NiMH Akkumulatoren mit 2600 mA Kapazität zu verwenden
+- die Ladefunktionalität ist noch nicht implementiert!  Die Akkumulatorbatterien müssen gegebenenfalls extern geladen werden. Eine Warnung bei Unterspannung erfolgt jedoch.
 - die Ladefunktion wird nachgereicht werden, sobald sie verfügbar sein wird.
 - ein rudimentäres Laden bei jeder Aktivierung eines Relais ist zur Zeit als vorübergehende Lösung eingebaut (ca. 25mAh)
 

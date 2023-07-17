@@ -1,0 +1,29 @@
+--- Radio.h_org_11_Jul_2023	2023-07-11 18:42:19.778547721 +0200
++++ Radio.h_patched_11_Jul_2023	2023-07-11 18:41:52.389891120 +0200
+@@ -72,7 +72,7 @@
+ 
+ #ifdef ARDUINO_ARCH_AVR
+ 
+-template <uint8_t CS,uint8_t MOSI,uint8_t MISO,uint8_t SCLK, class PINTYPE=ArduinoPins>
++template <uint8_t CS,uint8_t MOSI,uint8_t MISO,uint8_t SCLK, class PINTYPE=ArduinoPins,bool SCKFloatOnIdle=false>
+ class AvrSPI {
+ 
+ public:
+@@ -106,11 +106,17 @@
+   }
+ 
+   void select () {
++    if( SCKFloatOnIdle==true) {
++      PINTYPE::setOutput(SCLK);
++    }
+     PINTYPE::setLow(CS);
+   }
+ 
+   void deselect () {
+     PINTYPE::setHigh(CS);
++    if( SCKFloatOnIdle==true) {
++      PINTYPE::setInput(SCLK);
++    }
+   }
+ 
+   void ping () {
