@@ -168,7 +168,7 @@ RSET an der Steckerleiste links der Basisplatine. Dort eine Steckerleiste einlö
 
 > sdev.radio().initReg(CC1101_PATABLE, PA_Normal);                                    // normal RF transmission power of CC1101, PA_Normal = 0x50, can be set to PA_LowPower or PA_MaxPower; see Radio.h
 
-## Wichtige Sicherheitshinweise
+## Wichtige Sicherheitshinweise, maximale Strombelastbarkeit
 
 - bitte die maximale Strombelastbarkeit der Relais beachten, siehe Aufdruck:
 ![pic](./Images/4-Relais Modul_top_view.png)
@@ -184,6 +184,7 @@ RSET an der Steckerleiste links der Basisplatine. Dort eine Steckerleiste einlö
 - alle 230 V Spannung führenden Leitungen und Lötanschlüsse sind im spannungslosen Zustand fachgerecht mit Isolationsband vor Berührungen zu schützen
 - die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr
 - da es sich um ein Gerät mit Netzspannung handelt, ist besondere Vorsicht beim Betrieb des Geräts vonnöten
+- das Gerät vor Feuchtigkeit schützen!
 
 ## Lizenz 
 
