@@ -42,21 +42,21 @@ Ein Diskussionsstrang im [Homematic Forum](https://homematic-forum.de/forum/view
 	
 ## Frequenztest des CC1101 RF Moduls
 
-- Bitte vor dem Aufspielen des eigentlichen Sketches HB-UNI-SenAct-4-4-SC_DS.ino **UNBEDINGT** einen [Frequenztest ATMega328P](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) durchführen. Viele CC1101 Module lassen sich ohne diesen Frequenztest nicht anlernen!
+- bitte vor dem Aufspielen des eigentlichen Sketches HB-UNI-SenAct-4-4-SC_DS.ino **UNBEDINGT** einen [Frequenztest ATMega328P](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) durchführen. Viele CC1101 Module lassen sich ohne diesen Frequenztest nicht anlernen!
 - Eine Beschreibung des Frequenztests ist [hier](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) zu finden.
 		
 ## Verringerung des Ruhestroms: [siehe auch Referenz von TomMajor](https://github.com/TomMajor/SmartHome/tree/master/Info/Ruhestrom)
 
-- Auf dem Arduino Pro Mini sollte der LDO Spannungsregler (die Stelle ist im Bild mit 1 markiert) sowie die Power-LED (2) entfernt werden, um den Ruhestrom wesentlich zu verringern.  
-- Weiterhin kann die zweite LED am Arduino Pin 13 (SCK) entfernt werden (3). Deren Einfluss auf den Ruhestrom ist kleiner als bei LDO und Power-LED, trotzdem kann es sich auf lange Sicht lohnen da diese bei jeder CC1101 Kommunikation für kurze Zeit aktiv ist, besonders im BurstDetector Mode.
+- auf dem Arduino Pro Mini sollte der LDO Spannungsregler (die Stelle ist im Bild mit 1 markiert) sowie die Power-LED (2) entfernt werden, um den Ruhestrom wesentlich zu verringern.  
+- weiterhin kann die zweite LED am Arduino Pin 13 (SCK) entfernt werden (3). Deren Einfluss auf den Ruhestrom ist kleiner als bei LDO und Power-LED, trotzdem kann es sich auf lange Sicht lohnen da diese bei jeder CC1101 Kommunikation für kurze Zeit aktiv ist, besonders im BurstDetector Mode.
 
 ![pic](./Images/ProMini_LDO_LED.png)	
 
-- Brown-Out_Detektor des ATmega328P  (BOD) ausschalten, siehe Einstellungen Arduino IDE unten unter Punkt **Benötigter Sketch**
-- Bitte danach den [SleepTest](https://github.com/TomMajor/SmartHome/blob/master/Info/Ruhestrom/SleepTest/SleepTest.ino) durchführen. Der gemessene Ruhestrom im Sleep-Modus sollte < 10 uA betragen. Ist der gemessene Strom nach ein paar Sekunden höher, ist ein Bauteil defekt und muss ausgetauscht werden. Da das Auslöten immer schwierig ist, ist ein gesockelter Einbau zu empfehlen.
+- den Brown-Out_Detektor des ATmega328P  (BOD) ausschalten, siehe Einstellungen Arduino IDE unten unter Punkt **Benötigter Sketch**
+- bitte danach den [SleepTest](https://github.com/TomMajor/SmartHome/blob/master/Info/Ruhestrom/SleepTest/SleepTest.ino) durchführen. Der gemessene Ruhestrom im Sleep-Modus sollte < 10 uA betragen. Ist der gemessene Strom nach ein paar Sekunden höher, ist ein Bauteil defekt und muss ausgetauscht werden. Da das Auslöten immer schwierig ist, ist ein gesockelter Einbau zu empfehlen.
 	       
 
-## Das angemeldete Gerät in dem RaspberryMatic WebUI
+## Das angemeldete Gerät in der RaspberryMatic WebUI
 
 ![pic](./Images/WebUI.png)
 ![pic](./Images/WebUI_devices.png)
@@ -64,33 +64,33 @@ Ein Diskussionsstrang im [Homematic Forum](https://homematic-forum.de/forum/view
 
 ## Vor dem Aufspielen von Software
 
-- Bitte macht Euch zuerst mit den Grundlagen von AsksinPP [hier](https://asksinpp.de/Grundlagen/) vertraut.
+- bitte macht Euch zuerst mit den Grundlagen von AsksinPP [hier](https://asksinpp.de/Grundlagen/) vertraut.
 
 ## Bitte immer die aktuellste Version von AsksinPP nutzen
 
 -  [AsksinPP Master](https://github.com/pa-pa/AskSinPP/tree/master)
 - **WICHTIG**: Die Asksinpp Bibliothek muss gepatcht werden: siehe https://homematic-forum.de/forum/viewtopic.php?f=76&t=71788&hilit=SCKFloatOnIdle
-- ein 'Radio.h'-[Patch](./AsksinPP_patch/Patch_for_Radio.h) wird bereitgestellt
+- ein 'Radio.h'-[Patch](./AsksinPP_patch) wird bereitgestellt
 
 ## Bitte genau diese Abfolge beim Einspielen von Software beachten:
 
 - Details sind gegebenenfalls weiter unten zu finden
 
-1. Bitte zuerst nochmals vergewissern, dass der verbaute Arduino Pro Mini ein 3,3V/8MHz Typ ist.
-2. Das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren.
-3. Für das Programmierern und Setzen der Fuses des ATmega328P ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
-4. Setzten der richtigen Fuses mit dem [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xFF  High Byte:0xD2  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
-5. Dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [FreqTest.ino Sketch](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
-6. Den Config-Taster ganz lange drücken (ca. 6..8 Sekunden) bis die rote LED erlischt und im seriellen Monitor 'RESET' ausgegeben wird. Damit wird ein 'Werksreset' durchgeführt und das EEPROM gelöscht. Damit gehen auch alle im EEPROM gespeicherten Einstellungen verloren.  Die ermittelte Frequenzeinstellung des Frequenztests bleibt aber erhalten.
+1. bitte zuerst nochmals vergewissern, dass der verbaute Arduino Pro Mini ein 3,3V/8MHz Typ ist.
+2. das benötigte Addon [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest) auf Eure CCU3/RaspberryMatic installieren.
+3. für das Programmierern und Setzen der Fuses des ATmega328P ist ein ISP Programmer empfohlen. Eine Anleitung ist [hier](https://asksinpp.de/Grundlagen/04-isp.html) zu finden. Dabei bitte unbedingt den ISP Programmer auf 3,3V einstellen!
+4. setzten der richtigen Fuses mit dem [avrdude script](avrdude/avrdude_328P.bsh) (LINUX version) oder mit [AVRDUDESS](https://blog.zakkemble.net/avrdudess-a-gui-for-avrdude/) (Windows Version): Fuse Setting: Low Byte:0xFF  High Byte:0xD2  Extended Byte:0xFF. Dafür bitte einen ISP Programmer verwenden, siehe [hier](https://asksinpp.de/Grundlagen/04-isp.html). Ich persönlich nutze diesen [ISP Programmer](https://www.amazon.de/Diamex-Programmer-XMEGA-ATMEGA-ATtiny/dp/B0064LLRB0).
+5. dann den [Frequenztest](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) durchführen. Dazu den [FreqTest.ino Sketch](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) ausführen und dabei auf ein erfolgreiches Beenden achten.
+6. den Config-Taster ganz lange drücken (ca. 6..8 Sekunden) bis die rote LED erlischt und im seriellen Monitor 'RESET' ausgegeben wird. Damit wird ein 'Werksreset' durchgeführt und das EEPROM gelöscht. Damit gehen auch alle im EEPROM gespeicherten Einstellungen verloren.  Die ermittelte Frequenzeinstellung des Frequenztests bleibt aber erhalten.
 
-7. Gegebenenfalls im Sketch in der Struct DeviceInfo die GeräteID (0x01) und den Gerätenamen ("SENACTDS01", genau 10 Zeichen!) ändern,  falls mehrere Geräte dieses Typs verwendet werden.
+7. gegebenenfalls im Sketch in der Struct DeviceInfo die GeräteID (0x01) und den Gerätenamen ("SENACTDS01", genau 10 Zeichen!) ändern,  falls mehrere Geräte dieses Typs verwendet werden.
 
-8. Die aktuelle Version des [HB-UNI-SENACT-4-4-SC_DS](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-SC_DS) Sketches herunterladen, siehe unten.
+8. die aktuelle Version des [HB-UNI-SENACT-4-4-SC_DS](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-SC_DS) Sketches herunterladen, siehe unten.
 9. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
-10. Dann den Sketch [HB-UNI-SENACT-4-4-SC_DS.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-SC_DS/HB-UNI-SENACT-4-4-SC_DS.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
-11. Den neuen Aktor in der CCU/RaspBerryMatic anlernen.
-12. Den neuen Aktor in der CCU3/RaspberryMatic einem Gewerk, z.B. 'Multimedia', zuordnen.
-13. Sollte das initiale Peering der vier Tasten mit den 4 Aktoren nicht klappen, bitte diese Zeile für nur einen neuen Programmierlauf auskommentieren:
+10. dann den Sketch [HB-UNI-SENACT-4-4-SC_DS.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-SC_DS/HB-UNI-SENACT-4-4-SC_DS.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
+11. den neuen Aktor in der CCU/RaspBerryMatic anlernen.
+12. den neuen Aktor in der CCU3/RaspberryMatic einem Gewerk, z.B. 'Multimedia', zuordnen.
+13. sollte das initiale Peering der vier Tasten mit den 4 Aktoren nicht klappen, bitte diese Zeile für nur einen neuen Programmierlauf auskommentieren:
 > //first=true;    // comment out for only one (!) programming if the peering is not working as expected, e.g. if after you have changed the pin assignment
  
 
