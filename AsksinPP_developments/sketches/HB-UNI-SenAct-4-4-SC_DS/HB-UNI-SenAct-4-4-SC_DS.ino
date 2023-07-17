@@ -20,6 +20,16 @@
 // additional functionality for the hybrid charge mode will be added later on; currently they are not yet implemented in software, but only in hardware
 // the class template derived_SwitchChannel is inherited from the class template SwitchChannel of AsksinnPP. Some overloading is done for the required new functionality.
 
+//---------------------------------------------------------
+// !! NDEBUG sollte aktiviert werden wenn die Aktorentwicklung und die Tests abgeschlossen sind und das Gerät in den 'Produktionsmodus' geht.
+// Insbesondere die RAM-Einsparungen sind wichtig für die Stabilität / dynamische Speicherzuweisungen etc.
+// Dies beseitigt dann auch die mögliche Arduino-Warnung 'Low memory available, stability problems may occur'.
+//
+//#define NDEBUG
+//#define USE_CC1101_ALT_FREQ_86835  //use alternative frequency to compensate not correct working cc1101 modules
+
+//---------------------------------------------------------
+
 
 // define this to read the device id, serial and device type from boot-loader section
 // #define USE_OTA_BOOTLOADER
