@@ -195,7 +195,7 @@ case "$1" in
     info)
         echo "Info: <b>HB-EP-Devices AddOn</b><br>"
         echo "Info: <b>CCU3, RaspberryMatic</b><br>"
-        echo "Info: (c) 2020-2022 FUEL4EP<br>"
+        echo "Info: (c) 2020-2023 FUEL4EP<br>"
         echo "Info:  <center><img src='../addons/${ADDON_NAME}/${ADDON_NAME}.png'></img></center><br/><a href='https://github.com/FUEL4EP/SmartHome/tree/master/HB-EP-Devices-AddOn'>Projekt auf Github</a>"
         echo "Info: <b>derived from HB-TM-Devices AddOn</b><br>"
         echo "Info: (c) 2018-2020 TomMajor<br>"
