@@ -5,6 +5,10 @@
 - 3x Schaltaktor für Betrieb an einem Netzfreischalter
 - Akkubetrieb im Standby, automatische Ladeschaltung
 - bei Aktivierung eines Aktors wird die Netzspannung zugeschaltet und am Ende wieder abgeschaltet
+![pic](./PNGs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB_top_3D.png)
+![pic](./3D_Printer/case/top.png)
+![pic](./3D_Printer/case/back.png)
+![pic](./3D_Printer/case/internal_1.png)
 - geringer Standby-Verbrauch von ca. 1 mA @ 5V Vaccu, an einer weiteren Reduktion wird gearbeitet
 - ein handelsübliches [4 Kanal Relais Modul](https://www.ebay.de/itm/155095219126) wird mit Distanzhaltern "huckepack" auf die Basisplatine montiert
 	+ bitte darauf achten, dass das Relaymodul den Aufdruck [P2H1588A0](./PNGs/4-Relais Modul_top_view.png) hat, da Module mit unterschiedlichen Maßen im Handel verfügbar sind.
@@ -26,6 +30,7 @@
         * die Sicherungen nicht vergessen
         * gegebenenfalls Zugentlastungen für das Netzkabel anbringen!
 - ein passendes 3D-druckbares Gehäuse ist im STL Format und openSCAD Format [hier](./3D_Printer/case/) zu finden
+![pic](./3D_Printer/case/Case_bottom_OpenSCAD_view.png)
 	+ ein 3D Druck wurde damit erfolgreich durchgeführt, ein Prototyp ist erfolgreich aufgebaut und weitgehend validiert worden.
 	
 ## Versionen
@@ -35,11 +40,20 @@
 - Schematics  1.3
 
 
+## Wichtige Sicherheitshinweise
+
+- bitte die maximale Strombelastbarkeit der Relais beachten, siehe Aufdruck:
+![pic](./PNGs/4-Relais Modul_top_view.png)
+- auch bei rein ohmschen Lasten sollte die maximale Strombelastbarkeit der Relais nicht ausgereizt werden.
+- bei induktiven Lastanteilen sollte weniger als die Hälfte des spezifizierten Maximalstroms zugrunde gelegt werden.  Bitte lesen Sie dazu das Datenblatt des Relais oder fragen Sie Ihre Elektrofachkraft.
+
+
 ## Disclaimer
 
 - aufgrund der im Gerät frei geführten Netzspannung und des Netzspannungsanschlusses darf die Installation nur von Fachkräften durchgeführt werden, die aufgrund ihrer Ausbildung dazu befugt sind.
 - die einschlägigen Sicherheits- und VDE-Bestimmungen sind unbedingt zu beachten. Durch eine unsachgemäße Installation können Sach- und Personenschäden verursacht werden, für die der Errichter haftet.
 - Installationsarbeiten sowohl am primärseitigen Netzanschluss als auch am Sekundäranschluss dürfen nur **im stromlosen Zustand erfolgen. Dabei sind alle einschlägigen Vorschriften des Installationshandwerks zu beachten!** 
+- alle 230 V Spannung führenden Leitungen und Lötanschlüsse sind im spannungslosen Zustand fachgerecht mit Isolationsband vor Berührungen zu schützen
 - die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr
 
 ## Lizenz 
