@@ -27,7 +27,8 @@
         * als Erstes dann das 'Huckepack'-4-Kanal-Relaismodul anbringen und nur die Steuersignale verbinden, noch keine 230V Spannungen an den Relaisausgängen anschließen
         * dann die Funktion testen
         * erst als Letztes die 230V Verdrahtung mit der gebotenen Vorsicht anbringen
-        * die Sicherungen nicht vergessen
+        * die Sicherung nicht vergessen
+        * bitte darauf achten, dass Nullleiter und Phase entsprechend des [Schaltplans](./schematics/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_case.pdf) angeschlossen werden. Die Phase muss jeweils mit den Relais geschaltet werden. Bitte den Stecker des Kaltgerätekabels so in die Steckdose stecken, dass diese Zuordnung erhalten bleibt. Sonst kann es bei einigen Netzfreischaltern vorkommen, dass sie wegen der höheren kapazitiven Last nicht in den Freischaltzustand gehen und periodisch ein- und ausschalten. Die blaue LED glimmt dann nachts alle paar Sekunden kurz.
         * gegebenenfalls Zugentlastungen für das Netzkabel anbringen!
 - ein passendes 3D-druckbares Gehäuse ist im STL Format und openSCAD Format [hier](./3D_Printer/case/) zu finden
 ![pic](./3D_Printer/case/Case_bottom_OpenSCAD_view.png)
