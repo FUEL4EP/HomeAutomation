@@ -23,11 +23,19 @@
     + zuerst die Niederspannungsplatine HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB Schritt für Schritt aufbauen, in Betrieb nehmen und testen:
         + für den Arduino Pro Mini und den CC1101 Tranceiver **vor Einbau** in einem externen Testbed den Ruhestrom prüfen (<10uA) und einen Frequenztest durchführen!
         + das 'Huckepack'-4-Kanal-Relaismodul noch nicht anbringen
+    - die Ausgangsspannung des Aufwärtsreglers HW-668 **vor dem Einbau** auf 7,3 Volt einstellen. Dabei eine Eingangsspannung von 5 Volt verwenden.
+    - das Schaltnetzteil TIW 06-105 mit dem 3D gedruckten Stift im Gehäuseunterteil fixieren. Vorher die Netzanschlussleitung des Schaltnetzteils auf die benötigte Länge kürzen und abisolieren.
     + die 230V Schaltungsteile erst dann anschließen, wenn der Rest vollständig geprüft wurde und die Software alle notwendigen Funktionen zeigt.
         * als Erstes dann das 'Huckepack'-4-Kanal-Relaismodul anbringen und nur die Steuersignale verbinden, noch keine 230V Spannungen an den Relaisausgängen anschließen
         * dann die Funktion testen
         * erst als Letztes die 230V Verdrahtung mit der gebotenen Vorsicht anbringen
+        * den Nullleiter innerhalb des Gehäuses mit einer 5-fach Wago-Klemme WAGO 221-415 (Reichelt) aus fünf Segmenten herstellen, die zwischen Platine und den Einbausteckdosen platziert wird.
         * die Sicherung nicht vergessen
+        * alle Netzleitungen mit 1,5 mm2 Leitungen durchführen
+        * alle Netzverbindungen spannungsfrei mit einem Ohmmeter auf Korrektheit uund Niederohmigkeit prüfen
+        * alle Schrauben, vor allem die an den Einbausteckdosen, fest anschrauben.
+        * die Anschlüsse an die Kaltgerätebuchse löten
+        * Einbausteckdosen und Kaltgerätebuchse in die Gehäuserückwand einkleben
         * bitte darauf achten, dass Nullleiter und Phase entsprechend des [Schaltplans](./schematics/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_case.pdf) angeschlossen werden. Die Phase muss jeweils mit den Relais geschaltet werden. Bitte den Stecker des Kaltgerätekabels so in die Steckdose stecken, dass diese Zuordnung erhalten bleibt. Sonst kann es bei einigen Netzfreischaltern vorkommen, dass sie wegen der höheren kapazitiven Last nicht in den Freischaltzustand gehen und periodisch ein- und ausschalten. Die blaue LED glimmt dann nachts alle paar Sekunden kurz.
         * gegebenenfalls Zugentlastungen für das Netzkabel anbringen!
 - ein passendes 3D-druckbares Gehäuse ist im STL Format und openSCAD Format [hier](./3D_Printer/case/) zu finden
