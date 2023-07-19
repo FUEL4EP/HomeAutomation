@@ -7,6 +7,8 @@ METALL 470K Widerstand, Metallschicht, 470 kOhm, 0207, 0,6 W, 1%
 
 VI MBB02070C2209 VI MBB02070C2209 Dünnschichtwiderstand, axial, 0,6 W, 22 Ohm, 1%
 
+R1 case: 220kOhm 0.5W
+
 sonst:
 
 0.4W: VIS C1003FC100 L 3.4 D 1.6

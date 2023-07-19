@@ -21,6 +21,7 @@
 - die Platine V1.3 behebt Fehler, die bei der Validierung eines Prototypen festgestellt und korrigiert wurden. Bitte **keine** Platinen der Versionen V1.0, V1.1 oder V1.2 verwenden.
 - **wichtige Aufbauhinweise:**
     + zuerst die Niederspannungsplatine HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB Schritt für Schritt aufbauen, in Betrieb nehmen und testen:
+	    * der Schaltplan der Platine ist [hier](./schematics/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.pdf) oder in der bereitgestellten KiCAD-Datenbasis
         + für den Arduino Pro Mini und den CC1101 Tranceiver **vor Einbau** in einem externen Testbed den Ruhestrom prüfen (<10uA) und einen Frequenztest durchführen!
         + das 'Huckepack'-4-Kanal-Relaismodul noch nicht anbringen
     - die Ausgangsspannung des Aufwärtsreglers HW-668 **vor dem Einbau** auf 7,3 Volt einstellen. Dabei eine Eingangsspannung von 5 Volt verwenden.
@@ -36,7 +37,8 @@
         * alle Schrauben, vor allem die an den Einbausteckdosen, fest anschrauben.
         * die Anschlüsse an die Kaltgerätebuchse löten
         * Einbausteckdosen und Kaltgerätebuchse in die Gehäuserückwand einkleben
-        * bitte darauf achten, dass Nullleiter und Phase entsprechend des [Schaltplans](./schematics/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_case.pdf) angeschlossen werden. Die Phase muss jeweils mit den Relais geschaltet werden. Bitte den Stecker des Kaltgerätekabels so in die Steckdose stecken, dass diese Zuordnung erhalten bleibt. Sonst kann es bei einigen Netzfreischaltern vorkommen, dass sie wegen der höheren kapazitiven Last nicht in den Freischaltzustand gehen und periodisch ein- und ausschalten. Die blaue LED glimmt dann nachts alle paar Sekunden kurz.
+        * bitte darauf achten, dass Nullleiter und Phase entsprechend des [Schaltplans](./schematics/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_case.pdf) angeschlossen werden. Die Phase muss jeweils mit den Relais geschaltet werden. Bitte den Stecker des Kaltgerätekabels so in die Steckdose stecken, dass diese Zuordnung erhalten bleibt. 
+        * sollte die blaue LED D1 bei Dunkelheit periodisch leicht glimmen, dann bitte einen 0,5W 220kOhm Widerstand, wie im [Schaltplan](./schematics/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_case.pdf) des Gehäuses angegeben, einlöten.
         * gegebenenfalls Zugentlastungen für das Netzkabel anbringen!
 - ein passendes 3D-druckbares Gehäuse ist im STL Format und openSCAD Format [hier](./3D_Printer/case/) zu finden
 ![pic](./3D_Printer/case/Case_bottom_OpenSCAD_view.png)
