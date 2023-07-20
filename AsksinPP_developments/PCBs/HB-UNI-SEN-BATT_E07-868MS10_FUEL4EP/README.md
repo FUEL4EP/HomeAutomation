@@ -42,7 +42,7 @@
 * [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/)
     - mit deutlich mehr Programm-, RAM- und EEPROM-Speicher als Arduino Pro Mini: 128kByte Programmspeicher, 16kByte SRAM, 4kByte EEPROM
 * oder alternativ ein Arduino Pro Mini
-* eByte E07-868MS10 Sendemodul 868MHz oder alternativ das [Elecbee CC1101 Wireless-Modul 868 MHz](https://www.elecbee.com/de-24507-CC1101-Wireless-Module-868MHz-Digital-Transmission-Receiving-Industrial-grade-RF-Communication-Transparent-Transmission) Modul
+* [eByte E07-868MS10 Sendemodul 868MHz](https://www.elecbee.com/de-24376-E07-868MS10-CC1101-Stamp-Hole-Antenna-IoT-UHF-1000m-868MHz-SPI-10dBm-Wireless-Transmitter-Transceiver-RF-Module) oder alternativ das [Elecbee CC1101 Wireless-Modul 868 MHz](https://www.elecbee.com/de-24507-CC1101-Wireless-Module-868MHz-Digital-Transmission-Receiving-Industrial-grade-RF-Communication-Transparent-Transmission) Modul
 * e-Paper [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm) (optional, Anschluss an J11)
 * 2x Keystone 2460 Batteriehalter 1xAA (oder Goobay 1xAA Batteriehalter)
 * 1x LEDs 3mm Low Current (Pin 4)
