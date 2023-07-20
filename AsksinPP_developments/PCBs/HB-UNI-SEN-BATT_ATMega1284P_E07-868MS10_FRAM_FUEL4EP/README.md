@@ -62,7 +62,7 @@
 ### Benötigte Bauteile:
 
 - bedingt durch die SMT Service von JLCPCB sind nur noch wenige Durchsteckbauteile von Hand zu verlöten:
-* eByte E07-868MS10 Sendemodul 868MHz
+* eByte E07-868MS10 Sendemodul 868MHz oder alternativ das [Elecbee CC1101 Wireless-Modul 868 MHz](https://www.elecbee.com/de-24507-CC1101-Wireless-Module-868MHz-Digital-Transmission-Receiving-Industrial-grade-RF-Communication-Transparent-Transmission) Modul
 * e-Paper [Waveshare ePaper Moduls (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm) (optional, Anschluss an J11)
 * 2x Keystone 2460 Batteriehalter 1xAA
 * Stiftleiste RM 1.27mm 1x8 Pin (für eByte E07-868MS10 Sendemodul 868MHz)
