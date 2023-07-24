@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_sch</source>
-    <date>Fr 14 Jul 2023 13:55:46 CEST</date>
+    <date>Sa 22 Jul 2023 15:40:22 CEST</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -302,14 +302,14 @@
       <tstamps>00000000-0000-0000-0000-00006193f4ac</tstamps>
     </comp>
     <comp ref="Module4">
-      <value>HW-668_step-up</value>
+      <value>HW-668_step_up</value>
       <footprint>FUEL4EP:HW-668_step-up</footprint>
-      <datasheet>https://datasheet.lcsc.com/szlcsc/Shenzhen-Suosemi-Tech-SX1308_C78162.pdf</datasheet>
-      <libsource lib="FUEL4EP" part="HW-668_step-up" description="https://datasheet.lcsc.com/szlcsc/Shenzhen-Suosemi-Tech-SX1308_C78162.pdf"/>
+      <datasheet>https://datasheetspdf.com/pdf-file/921054/Suosemi/SX1308/1</datasheet>
+      <libsource lib="FUEL4EP" part="HW-668_step_up" description="HW-668 SX1308"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>77dbf059-fbca-4af7-9d32-aeed2db5bf69</tstamps>
+      <tstamps>8b764394-f7a5-407a-ad66-c1415d7815e6</tstamps>
     </comp>
     <comp ref="Q1">
       <value>IRLU024N</value>
@@ -458,6 +458,15 @@
       <property name="Sheetfile" value="HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>00000000-0000-0000-0000-000061b97278</tstamps>
+    </comp>
+    <comp ref="R12">
+      <value>4.7k</value>
+      <footprint>Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a2a4bcff-26d0-48c1-8ae3-4d58ad966d77</tstamps>
     </comp>
     <comp ref="R13">
       <value>1k</value>
@@ -824,17 +833,17 @@
         <pin num="8C" name="~{CSN}" type="input"/>
       </pins>
     </libpart>
-    <libpart lib="FUEL4EP" part="HW-668_step-up">
-      <description>https://datasheet.lcsc.com/szlcsc/Shenzhen-Suosemi-Tech-SX1308_C78162.pdf</description>
-      <docs>https://datasheet.lcsc.com/szlcsc/Shenzhen-Suosemi-Tech-SX1308_C78162.pdf</docs>
+    <libpart lib="FUEL4EP" part="HW-668_step_up">
+      <description>HW-668 SX1308</description>
+      <docs>https://datasheetspdf.com/pdf-file/921054/Suosemi/SX1308/1</docs>
       <fields>
         <field name="Reference">Module</field>
-        <field name="Value">HW-668_step-up</field>
-        <field name="Datasheet">https://datasheet.lcsc.com/szlcsc/Shenzhen-Suosemi-Tech-SX1308_C78162.pdf</field>
+        <field name="Value">HW-668_step_up</field>
+        <field name="Datasheet">https://datasheetspdf.com/pdf-file/921054/Suosemi/SX1308/1</field>
       </fields>
       <pins>
         <pin num="1A" name="GND" type="power_in"/>
-        <pin num="1C" name="GND" type="power_in"/>
+        <pin num="1C" name="GND" type="input"/>
         <pin num="2A" name="VIN" type="power_in"/>
         <pin num="2C" name="OUT" type="power_in"/>
       </pins>
@@ -1100,6 +1109,7 @@
       <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="Q4" pin="3" pintype="passive"/>
+      <node ref="R12" pin="2" pintype="passive"/>
       <node ref="R9" pin="1" pintype="passive"/>
     </net>
     <net code="30" name="/Vcharge">
@@ -1113,8 +1123,9 @@
       <node ref="J5" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="J6" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="Module4" pin="1A" pinfunction="GND" pintype="power_in"/>
-      <node ref="Module4" pin="1C" pinfunction="GND" pintype="power_in"/>
+      <node ref="Module4" pin="1C" pinfunction="GND" pintype="input"/>
       <node ref="Q1" pin="2" pinfunction="D" pintype="passive"/>
+      <node ref="R12" pin="1" pintype="passive"/>
     </net>
     <net code="32" name="/plusBAT">
       <node ref="J10" pin="2" pinfunction="Pin_2" pintype="passive"/>

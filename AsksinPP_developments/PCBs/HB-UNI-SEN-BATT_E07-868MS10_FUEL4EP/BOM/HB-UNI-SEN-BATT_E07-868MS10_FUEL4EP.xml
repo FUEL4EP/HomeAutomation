@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP.kicad_sch</source>
-    <date>Fr 14 Jul 2023 16:52:33 CEST</date>
+    <date>Sa 22 Jul 2023 16:12:52 CEST</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -614,7 +614,7 @@
       <uri>/usr/share/kicad/symbols//Device.kicad_sym</uri>
     </library>
     <library logical="FUEL4EP">
-      <uri>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP/../FUEL4EP.lib</uri>
+      <uri>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP/../FUEL4EP.kicad_sym</uri>
     </library>
     <library logical="Graphic">
       <uri>/usr/share/kicad/symbols//Graphic.kicad_sym</uri>

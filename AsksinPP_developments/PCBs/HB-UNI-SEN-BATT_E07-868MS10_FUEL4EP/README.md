@@ -92,7 +92,13 @@
 ## Bestellen von Platinen
 
 - die Platine kann entweder direkt bei JLCPCB bestellt werden
-- oder per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen. Aus der Bestellung der Prototypen sind noch wenige Platinen kostengünstig abzugeben.
+- oder per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen. Aus der Bestellung der Prototypen sind noch wenige Platinen kostengünstig abzugeben
+
+## Versionen
+- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
+- PCB Version 1.2 (Migration auf KiCAD 6)
+- Schematics  1.1
 
 ## Disclaimer
 

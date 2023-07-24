@@ -687,7 +687,7 @@
           (name "VCC" (effects (font (size 1.27 1.27))))
           (number "1C" (effects (font (size 1.27 1.27))))
         )
-        (pin no_connect line (at 24.13 13.97 180) (length 5.08) hide
+        (pin no_connect line (at 24.13 13.97 180) (length 5.08)
           (name "ANT" (effects (font (size 1.27 1.27))))
           (number "2A" (effects (font (size 1.27 1.27))))
         )

@@ -21,8 +21,8 @@
 
 ## Versionen
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
-- PCB Version 1.3
+- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
+- PCB Version 1.4 
 - Schematics  1.2
 
 ## Disclaimer

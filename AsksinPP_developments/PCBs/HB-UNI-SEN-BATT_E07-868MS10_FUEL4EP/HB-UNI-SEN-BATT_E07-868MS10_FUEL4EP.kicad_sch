@@ -5,9 +5,9 @@
   (paper "A4")
 
   (title_block
-    (title "HB-UNI-SEN-BATT_FUEL4EP")
-    (date "2021-10-01")
-    (rev "1.0")
+    (title "HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP")
+    (date "2023-07-24")
+    (rev "1.1")
     (company "FUEL4EP")
     (comment 1 "connector for Waveshare e-paper module (B) 1.54inch (J11)")
     (comment 2 "for Tindie Pro Mini XL V2 and eByte E07-868MS10 transceiver")
@@ -753,7 +753,7 @@
       (property "Footprint" "" (id 2) (at 5.08 -2.54 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "Datasheet" "" (id 3) (at 5.08 -2.54 0)
+      (property "Datasheet" "" (id 3) (at 9.525 -5.08 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (symbol "E07-868MS10_0_0"
@@ -774,7 +774,7 @@
           (name "VCC" (effects (font (size 1.27 1.27))))
           (number "1C" (effects (font (size 1.27 1.27))))
         )
-        (pin no_connect line (at 24.13 13.97 180) (length 5.08) hide
+        (pin no_connect line (at 24.13 13.97 180) (length 5.08)
           (name "ANT" (effects (font (size 1.27 1.27))))
           (number "2A" (effects (font (size 1.27 1.27))))
         )

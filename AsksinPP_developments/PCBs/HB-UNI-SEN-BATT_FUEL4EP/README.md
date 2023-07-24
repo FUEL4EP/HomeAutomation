@@ -13,6 +13,7 @@
 
 - entwickelt mit KiCAD 5.1.10, mein persönliches Erstlingswerk mit KiCAD PCBNEW
 - die Platine wurde bei JLCPCB gefertigt
+- Update 22. Juli 2023: Migration auf KiCAD 6
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_FUEL4EP_PCB.png)
 - die gefertigte Platine wurde erfolgreich mit dem Sketch [HB-UNI-SENSOR1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) validiert:
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-Sensor1-THPD-BME280_build_with_HB-UNI-SEN-BATT_FUEL4EP_PCB.png)
@@ -20,7 +21,7 @@
 ## Eigenschaften
 
 - weitgehend identisch mit [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT)
-- kompletter Datensatz für KiCAD 5.1.10 auf Github verfügbar:
+- kompletter Datensatz für KiCAD 6 auf Github verfügbar:
     + 'git clone https://github.com/FUEL4EP/HomeAutomation.git' oder als [ZIP-Datei](https://github.com/FUEL4EP/HomeAutomation/archive/refs/heads/master.zip)
     + die Platinendaten sind dann unter 'HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP' direkt mit KiCAD aufrufbar
 - der Arduino Pro Mini ist durch einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) ersetzt
@@ -57,7 +58,7 @@
     + am besten diese beiden Tests in einem Testaufbau mit Stecksockeln vor dem Einlöten durchführen
 
 ### Passende AsksinPP Projekte von FUEL4EP
-- Arduino Pro Mini ATMega328P basierend:
+- Arduino Pro Mini ATMega328P oder Tindie Pro Mini XL - v2 - ATmega 1284p basierend:
     + [HB-UNI-Sensor1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280)
     + [HB-UNI-Sensor1-TH-SHT75](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-TH-SHT75)
      + [HB-UNI-Sensor1-CO2_SCD30](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-CO2_SCD30)
@@ -84,7 +85,7 @@
 ## Versionen
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
-- PCB Version 1.1 (Upgrade auuf KiCAD 6.0)
+- PCB Version 1.2 (Upgrade auf KiCAD 6.0)
 - Schematics  1.0
 
 

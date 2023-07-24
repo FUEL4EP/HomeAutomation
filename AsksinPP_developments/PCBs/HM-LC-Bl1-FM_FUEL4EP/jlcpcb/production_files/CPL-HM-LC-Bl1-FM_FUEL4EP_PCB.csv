@@ -1,0 +1,64 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+C1,10uF,CP_Radial_D5.0mm_P2.50mm,31.090112,-74.93,0.0,top
+C2,100n,C_Disc_D7.5mm_W2.5mm_P5.00mm,45.76,-31.75,0.0,top
+C3,100n,C_Disc_D7.5mm_W2.5mm_P5.00mm,45.76,-27.94,0.0,top
+C4,100n,C_Disc_D7.5mm_W2.5mm_P5.00mm,45.68,-67.945,0.0,top
+C5,10u,CP_Radial_D5.0mm_P2.00mm,55.245,-31.429887,90.0,top
+D2,1N5819,D_DO-41_SOD81_P10.16mm_Horizontal,56.134,-57.658,180.0,top
+D6,1N5819,D_DO-41_SOD81_P10.16mm_Horizontal,53.594,-75.946,180.0,top
+D7,1N4148,D_DO-35_SOD27_P7.62mm_Horizontal,60.96,-26.924,180.0,top
+D10,1N4148,D_DO-35_SOD27_P7.62mm_Horizontal,91.8464,-19.6342,-90.0,top
+D11,1N4735A 6.2V,D_DO-41_SOD81_P10.16mm_Horizontal,18.542,-49.022,0.0,top
+J1,Down Button,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",6.655,-31.755,-90.0,top
+J2,Up Button,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",6.655,-20.325,-90.0,top
+J3,Dual LED,"TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal",6.655,-45.725,-90.0,top
+J4,Config Button,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",19.045,-7.925,180.0,top
+J5,ISP Programmer,PinHeader_1x06_P2.54mm_Vertical,41.402,-58.674,90.0,top
+J6,Accumulator,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",93.975,-7.925,180.0,top
+J7,LED rot,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",6.655,-59.695,-90.0,top
+J8,LED grün,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",6.655,-82.555,-90.0,top
+J9,LED gelb,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",6.655,-71.125,-90.0,top
+J10,charge,PinHeader_1x03_P2.54mm_Vertical,18.415,-22.24,180.0,top
+J11,24V PSU,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",105.405,-7.925,180.0,top
+J12,230V Netzteil Relais,"TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal",80.005,-7.925,180.0,top
+J13,Velux Motor,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",116.835,-7.925,180.0,top
+J14,Motor direction LEDs,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",117.805,-19.045,90.0,top
+J15,Charge Indication LED,"TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",55.25,-90.373,0.0,top
+J16,H Brücke Relais In,PinHeader_1x04_P2.54mm_Vertical,62.865,-81.905,0.0,top
+J17,Motor Relais In,PinHeader_1x03_P2.54mm_Vertical,67.945,-39.355,0.0,top
+J18,Conn_01x03,PinHeader_1x03_P2.54mm_Vertical,63.246,-67.071,180.0,top
+J19,GND,PinHeader_1x01_P1.27mm_Vertical,23.114,-28.194,0.0,top
+LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA,91.17441,-82.643386,0.0,top
+Module1,Arduino_Pro_Mini_328P_1,ArduinoProMini,46.98,-44.46,0.0,top
+Module2,CC1101_transceiver_module,CC1101,37.67,-87.24,0.0,top
+Module4,LM2596_buck 24V->6.3V,LM2596_buck,47.994,-13.295,0.0,top
+Module5,Velux Motor Relais,1_channel_relay_module,96.39,-39.77,0.0,top
+Module6,Velux Motor H-Brücken Relais,2_channel_relay_module,91.415,-74.975,0.0,top
+Q1,IRLU024N,TO-251-3_Vertical,20.57,-40.76,180.0,top
+Q2,BD238,TO-126-3_Vertical,55.88,-68.205,0.0,top
+Q3,IRF9Z34N,TO220V,98.1612,-19.3294,90.0,top
+Q4,2N7000,TO-92_Inline,78.74,-23.22,180.0,top
+Q5,MCP1702-2802E_TO,TO127P254X533-3,43.927599,-74.1988,90.0,top
+R1,330,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,16.51,-60.325,0.0,top
+R2,470k,R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal,25.5143,-56.6293,0.0,top
+R3,100K,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,27.305,-38.1,-90.0,top
+R4,100k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,26.67,-60.325,180.0,top
+R5,10k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,29.21,-27.94,0.0,top
+R6,10k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,29.21,-31.75,0.0,top
+R7,330,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,16.51,-57.15,0.0,top
+R8,470,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,36.83,-27.94,180.0,top
+R9,470,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,36.83,-31.75,180.0,top
+R10,330,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,21.59,-61.722,-90.0,top
+R11,330,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,28.575,-67.691,180.0,top
+R12,330,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,38.1,-66.675,-90.0,top
+R13,1k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,64.008,-57.912,-90.0,top
+R14,1k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,55.88,-64.135,0.0,top
+R15,1k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,108.458,-14.986,180.0,top
+R16,1.2k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,111.125,-21.59,90.0,top
+R17,10k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,45.72,-63.5,180.0,top
+R18,180,R_Axial_DIN0614_L14.3mm_D5.7mm_P15.24mm_Horizontal,80.645,-16.51,0.0,top
+R19,4.7k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,16.51,-54.61,180.0,top
+R20,1k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,85.725,-24.13,180.0,top
+R21,2.7k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,94.234,-21.0058,-90.0,top
+R22,2.7,R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal,19.558,-45.466,180.0,top
+R23,330,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,55.88,-80.645,180.0,top

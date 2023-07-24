@@ -125,12 +125,13 @@
 ## Versionsverlauf
 
 -    V1.1 10. Januar 2022: R8 auf 47 kOhm geändert, zusätzliche Aufdrucktexte
--    V1.2 15. Juni 2023: Migration der Datenbasen zu KiCAD 6, als Induktivität    	                     für den Aufwärtswandler wird nun LQH3NPN4R7MM0L von
-                         Murata Electronics verwendet, die bei JLCPCB bestellbar ist  (eventuell ist eine Vorbestellung notwendig) 
+-    V1.2 15. Juli 2023: Migration der Datenbasen zu KiCAD 6, als Induktivität    	                     für den Aufwärtswandler wird nun LQH3NPN4R7MM0L von
+                         Murata Electronics verwendet, die bei JLCPCB bestellbar ist  (eventuell ist eine Vorbestellung notwendig)
+-	 V1.3 24. Juli 2023:	KiCAD 6 bedingte Verbesserungen der Datenbasis
 
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
-- 	PCB Version 1.2
+- 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
+- 	PCB Version 1.3
 - 	Schematics  1.2
 
 ## Lizenz 

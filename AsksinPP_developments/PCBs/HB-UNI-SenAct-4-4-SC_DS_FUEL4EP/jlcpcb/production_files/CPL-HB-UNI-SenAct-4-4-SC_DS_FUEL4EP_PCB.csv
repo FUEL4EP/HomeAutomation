@@ -1,0 +1,45 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+C1,10uF,CP_Radial_D5.0mm_P2.50mm,66.104887,-27.94,180.0,top
+C4,100n,C_Disc_D7.5mm_W2.5mm_P5.00mm,16.931,-26.67,180.0,top
+C5,10u,CP_Radial_D5.0mm_P2.00mm,15.24,-16.284887,90.0,top
+D1,LED,LED_D3.0mm,3.013,-30.734,0.0,top
+D2,1N5819,D_DO-41_SOD81_P7.62mm_Horizontal,57.15,-31.75,180.0,top
+D3,1N5819,D_DO-41_SOD81_P7.62mm_Horizontal,67.437,-53.213,180.0,top
+D6,1N5819,D_DO-41_SOD81_P7.62mm_Horizontal,67.437,-56.515,180.0,top
+D11,1N4735A 6.2V,D_DO-41_SOD81_P7.62mm_Horizontal,39.37,-6.35,90.0,top
+J1,5V  supply,PinHeader_1x02_P2.54mm_Vertical,82.55,-16.993,0.0,top
+J2,4x Push Buttons,PinHeader_1x06_P2.54mm_Vertical,22.86,-60.96,90.0,top
+J3,4x Relais,PinHeader_1x06_P2.54mm_Vertical,66.04,-60.96,-90.0,top
+J4,5x LEDs,PinHeader_1x07_P2.54mm_Vertical,44.445,-61.093,-90.0,top
+J5,ISP Programmer,PinHeader_1x06_P2.54mm_Vertical,3.048,-44.958,180.0,top
+J6,Accumulator,PinHeader_1x02_P2.54mm_Vertical,82.55,-10.663,180.0,top
+J7,GND,PinHeader_1x01_P1.27mm_Vertical,10.414,-60.96,0.0,top
+J8,VCC,PinHeader_1x01_P1.27mm_Vertical,10.414,-58.42,0.0,top
+J10,charge,PinHeader_1x03_P2.54mm_Vertical,3.048,-16.525,180.0,top
+LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA,36.58981,-21.099186,0.0,top
+Module1,Arduino_Pro_Mini_328P_1,ArduinoProMini,25.41,-38.09,180.0,top
+Module2,CC1101_transceiver_module,CC1101,74.235,-41.48,0.0,top
+Module4,HW-668_step_up,HW-668_step-up,59.69,-9.27,0.0,top
+Q1,IRLU024N,TO-251-3_Vertical,72.383,-20.2,0.0,top
+Q2,BD238,TO-126-3_Vertical,58.674,-20.574,0.0,top
+Q4,IRF9Z34N,TO220V,83.058,-26.162,90.0,top
+Q5,MCP1702-2802E_TO,TO127P254X533-3,48.026,-27.392199,0.0,top
+R1,330,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,6.604,-32.004,-90.0,top
+R2,470k,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,20.955,-11.43,180.0,top
+R3,100K,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,66.548,-23.622,0.0,top
+R4,100k,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,31.9405,-15.1384,0.0,top
+R5,470,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,41.91,-54.61,-90.0,top
+R6,470,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,44.45,-54.61,-90.0,top
+R7,470,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,46.99,-54.61,-90.0,top
+R8,470,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,49.53,-54.61,-90.0,top
+R9,4.7k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,77.724,-27.94,-90.0,top
+R10,1k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,77.47,-19.812,-90.0,top
+R11,470,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,39.37,-54.61,-90.0,top
+R12,4.7k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,73.66,-25.908,-90.0,top
+R13,1k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,49.784,-19.812,180.0,top
+R14,1k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,57.658,-24.511,0.0,top
+R15,22,R_Axial_DIN0309_L9.0mm_D3.2mm_P20.32mm_Horizontal,25.146,-3.556,0.0,top
+R17,10k,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,58.42,-28.575,180.0,top
+R22,2.7,R_Axial_DIN0309_L9.0mm_D3.2mm_P20.32mm_Horizontal,25.146,-7.62,0.0,top
+SW1,SW_Push,SW_PUSH_6mm_H4.3mm,19.558,-54.61,180.0,top
+SW2,SW_Push,SW_PUSH_6mm_H4.3mm,31.698,-54.574,0.0,top

@@ -350,7 +350,9 @@
   },
   "libraries": {
     "pinned_footprint_libs": [],
-    "pinned_symbol_libs": []
+    "pinned_symbol_libs": [
+      "FUEL4EP"
+    ]
   },
   "meta": {
     "filename": "HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP.kicad_pro",
