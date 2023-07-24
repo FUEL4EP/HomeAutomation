@@ -15,7 +15,7 @@
 ## Platine ist noch nicht validiert
 
 - neu entwickelt mit KiCAD 6
-- Migration zum SMD RF-Modul e-Byte E07-900M10S, da eByte die Fertigung des Moduls E07-868MS10 eingestellt hat
+- Migration zum [SMD RF-Modul e-Byte E07-900M10S](https://www.manualslib.com/manual/2937348/Ebyte-E07-900m10s.html), da eByte die Fertigung des Moduls E07-868MS10 eingestellt hat
 - die Platine wurde **noch nicht** bei JLCPCB gefertigt
 - **die Evaluation steht noch aus!**
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP_PCB.png)
