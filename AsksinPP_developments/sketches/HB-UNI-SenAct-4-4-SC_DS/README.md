@@ -151,9 +151,13 @@ RSET an der Steckerleiste J5 auf der linken Seite der Basisplatine. Dort eine St
 
 ### Ladefunktion für die NiMH-Akkumulatorbatterien
 - es wird empfohlen, NiMH Akkumulatoren mit 2600 mA Kapazität zu verwenden
-- die Ladefunktionalität ist noch nicht implementiert!  Die Akkumulatorbatterien müssen gegebenenfalls extern geladen werden. Eine Warnung bei Unterspannung erfolgt jedoch.
+- **die Ladefunktionalität ist noch nicht implementiert!**  Die Akkumulatorbatterien müssen gegebenenfalls extern geladen werden. Eine Warnung bei Unterspannung erfolgt jedoch im GUI der HomeMatic/RaspberryMatic-Zentrale.
 - die Ladefunktion wird nachgereicht werden, sobald sie verfügbar sein wird.
-- ein rudimentäres Laden bei jeder Aktivierung eines Relais ist zur Zeit als vorübergehende Lösung eingebaut (ca. 25mAh)
+- ein rudimentäres Laden bei jeder Aktivierung eines Relais ist zur Zeit als vorübergehende Lösung eingebaut (ca. 25mAh). Eine Berechnung dazu ist [hier](./accu_chargiing/accu_charging.xlsx). Ein Überladen der Akkus sollte bei einmaliger täglicher Nutzung nicht auftreten. Der Ladestrom beträgt ca. 100mA und liegt damit unter 0.1C. Bei mehrmaliger Nutzung am Tag ist  die Ladedauer PULSE_WIDTH_CHARGE_CONTROL_PIN im Sketch geeignet anzupassen. Im Originalsketch auf Github ist zur Zeit eine Ladezeit von 20 Minuten eingestellt, d.h. die blaue Lade-LED erlischt nach ca. 20 Minuten nach der Aktivierung eines Relaiskontakts.
+
+## Mindestdauer eines Tastendrucks is ca. 1 Sekunde
+
+- aufgrund einer Eigenschaft der AsksinPP-Bibliothek muss ein Tastendruck mindestens ca. 1 Sekunde dauern, damit er erkannt wird. Also eine Taste solange gedrückt halten, bis die dazugehörige LED aufleuchtet oder erlischt.
 
 ## Benötigtes Addon
 
