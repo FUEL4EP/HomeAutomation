@@ -1,5 +1,5 @@
 ** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_pcb **
-** Created on 2023-07-22 16:00:49 **
+** Created on 2023-07-24 14:34:33 **
 
 ** Found 15 DRC violations **
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
@@ -40,6 +40,10 @@
     @(73.6600 mm, 23.3680 mm): Durchlochpad 1 [/minusBAT] von R12
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(10.1600 mm, 36.8300 mm): Kreis auf B.Silkscreen
+    @(10.1600 mm, 36.8300 mm): Durchlochpad 4D [unconnected-(Module1-Pad4D)] von Module1
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(10.1600 mm, 34.2900 mm): Kreis auf B.Silkscreen
     @(10.1600 mm, 34.2900 mm): Durchlochpad 5D [unconnected-(Module1-Pad5D)] von Module1
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
@@ -58,10 +62,6 @@
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(10.1600 mm, 44.4500 mm): Kreis auf B.Silkscreen
     @(10.1600 mm, 44.4500 mm): Durchlochpad 1D [unconnected-(Module1-Pad1D)] von Module1
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(10.1600 mm, 36.8300 mm): Kreis auf B.Silkscreen
-    @(10.1600 mm, 36.8300 mm): Durchlochpad 4D [unconnected-(Module1-Pad4D)] von Module1
 
 ** Found 0 unconnected pads **
 

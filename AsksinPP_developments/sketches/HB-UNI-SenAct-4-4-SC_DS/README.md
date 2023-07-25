@@ -168,12 +168,17 @@ RSET an der Steckerleiste J5 auf der linken Seite der Basisplatine. Dort eine St
 
 > sdev.radio().initReg(CC1101_PATABLE, PA_Normal);                                    // normal RF transmission power of CC1101, PA_Normal = 0x50, can be set to PA_LowPower or PA_MaxPower; see Radio.h
 
-## Wichtige Sicherheitshinweise, maximale Strombelastbarkeit
+## Wichtige Sicherheitshinweise
 
-- bitte die maximale Strombelastbarkeit der Relais beachten, siehe Aufdruck:
-![pic](./Images/4-Relais Modul_top_view.png)
-- auch bei rein ohmschen Lasten sollte die maximale Strombelastbarkeit der Relais nicht ausgereizt werden.
-- bei induktiven Lastanteilen sollte weniger als die Hälfte des spezifizierten Maximalstroms zugrunde gelegt werden.  Bitte lesen Sie dazu das Datenblatt des Relais oder fragen Sie Ihre Elektrofachkraft.
+- **unbedingt** die maximale Strombelastbarkeit der Relais beachten, siehe Aufdruck:
+![pic](./PNGs/4-Relais Modul_top_view.png)
+- auch bei rein ohmschen Lasten sollte die maximale Strombelastbarkeit der Relais **nicht** ausgereizt werden.
+- bei induktiven Lastanteilen sollte **weniger als die Hälfte** des spezifizierten Maximalstroms zugrunde gelegt werden.  Bitte lesen Sie dazu das Datenblatt des Relais oder fragen Sie Ihre Elektrofachkraft.
+- während einer längeren Abwesenheit sollte der Netzstecker der Geräts gezogen werden
+- die Schaltsignale für die Relais sind **nicht** verschlüsselt. Daher bitte eine Lasten anschließen, die eventuell einen Brand auslösen könnten.
+- sollte die Homematic/RaspberryMatic-Zentrale  vom Internet aus erreichbar sein, darf dieser Schalter nicht eingesetzt werden! Für die Sicherheit ist der Nutzer alleine verantwortlich!
+- die automatische Ladeschaltung ist zur Zeit noch nicht in Software implementiert! Der Nutzer ist für den korrekten Ladezustand der Akkus verantwortlich.
+- ein automatische Ladeschaltung wird in Zukunft als Update zur Verfügung gestellt werden. Das kann aber noch eine Weile dauern ..
 
 
 ## Haftungsausschluss
@@ -185,6 +190,7 @@ RSET an der Steckerleiste J5 auf der linken Seite der Basisplatine. Dort eine St
 - die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr
 - da es sich um ein Gerät mit Netzspannung handelt, ist besondere Vorsicht beim Betrieb des Geräts vonnöten
 - das Gerät vor Feuchtigkeit schützen!
+- obige Sicherheitshinweise **unbedingt** beachten!
 
 ## Lizenz 
 

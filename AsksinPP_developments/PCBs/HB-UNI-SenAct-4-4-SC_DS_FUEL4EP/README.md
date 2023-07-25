@@ -18,31 +18,35 @@
 - **diese Schaltung und Platine darf ausschließlich von ausgebildeten elektrischen Fachkräften verwendet werden, siehe Disclaimer unten!**
 - ein weitgehend validierter Sketch [HB-UNI-SenAct-4-4-SC_DS.ino](../../sketches/HB-UNI-SenAct-4-4-SC_DS/) steht zum Testen zur Verfügung
 	- Fragen und Rückmeldungen per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen.
-- die Platine V1.3 behebt Fehler, die bei der Validierung eines Prototypen festgestellt und korrigiert wurden. Bitte **keine** Platinen der Versionen V1.0, V1.1 oder V1.2 verwenden.
+- die Platine V1.5 behebt Fehler, die bei der Validierung eines Prototypen festgestellt und korrigiert wurden. Bitte **keine** Platinen der Versionen V1.0 bis V1.4 verwenden.
+- ein passendes 3D-druckbares Gehäuse ist im STL Format und openSCAD Format [hier](./3D_Printer/case/) zu finden
+![pic](./3D_Printer/case/Case_bottom_OpenSCAD_view.png)
+	+ ein 3D Druck wurde damit erfolgreich durchgeführt, ein Prototyp ist erfolgreich aufgebaut und weitgehend validiert worden, siehe entsprechende Bilder im Verzeichnis [PNGs](./PNGs)
 - **wichtige Aufbauhinweise:**
+- die Materiallisten sind unter [BOM](./BOM) zu finden
     + zuerst die Niederspannungsplatine HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB Schritt für Schritt aufbauen, in Betrieb nehmen und testen:
 	    * der Schaltplan der Platine ist [hier](./schematics/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.pdf) oder in der bereitgestellten KiCAD-Datenbasis
         + für den Arduino Pro Mini und den CC1101 Tranceiver **vor Einbau** in einem externen Testbed den Ruhestrom prüfen (<10uA) und einen Frequenztest durchführen!
         + das 'Huckepack'-4-Kanal-Relaismodul noch nicht anbringen
     - die Ausgangsspannung des Aufwärtsreglers HW-668 **vor dem Einbau** auf 7,3 Volt einstellen. Dabei eine Eingangsspannung von 5 Volt verwenden.
-    - das Schaltnetzteil TIW 06-105 mit dem 3D gedruckten Stift im Gehäuseunterteil fixieren. Vorher die Netzanschlussleitung des Schaltnetzteils auf die benötigte Länge kürzen und abisolieren.
+    - das Schaltnetzteil TIW 06-105 mit dem [3D gedruckten Stift im Gehäuseunterteil fixieren](./PNGs/internal_3.png). Vorher die Netzanschlussleitung des Schaltnetzteils auf die benötigte Länge kürzen und abisolieren.
+    - das [4-fach AA Batteriefach](https://www.amazon.de/Batteriehalter-Mignon-Akkuhalter-Batteriefach-Schalter-4x-AA/dp/B0761TSC32?th=1) **unbedingt** mit dem Schalter nach [unten](./PNGs/internal_1.png) in das vorgesehene Fach platzieren, sonst werden die Anschlussdrähte beschädigt und es droht ein Kurzschluss der Akkus!
     + die 230V Schaltungsteile erst dann anschließen, wenn der Rest vollständig geprüft wurde und die Software alle notwendigen Funktionen zeigt.
         * als Erstes dann das 'Huckepack'-4-Kanal-Relaismodul anbringen und nur die Steuersignale verbinden, noch keine 230V Spannungen an den Relaisausgängen anschließen
         * dann die Funktion testen
+        * falls manche LEDs (z.B. orange, blau oder pinke LEDs) zu hell im Vergleich zu den anderen LEDs leuchten sollten, bitte einen größeren Vorwiderstand wählen, z.B. 4.7 kOhm. Der vergrößerte Vorwiderstand kann auch in die 'fliegende' Vorverdrahtung der Gehäusevorderwand eingelötet werden.
         * erst als Letztes die 230V Verdrahtung mit der gebotenen Vorsicht anbringen
         * den Nullleiter innerhalb des Gehäuses mit einer 5-fach Wago-Klemme WAGO 221-415 (Reichelt) aus fünf Segmenten herstellen, die zwischen Platine und den Einbausteckdosen platziert wird.
-        * die Sicherung nicht vergessen
+        * bitte nicht vergessen, eine Sicherung einzuschrauben
         * alle Netzleitungen mit 1,5 mm2 Leitungen durchführen
-        * alle Netzverbindungen spannungsfrei mit einem Ohmmeter auf Korrektheit uund Niederohmigkeit prüfen
-        * alle Schrauben, vor allem die an den Einbausteckdosen, fest anschrauben.
+        * alle Netzverbindungen spannungsfrei mit einem Ohmmeter auf Korrektheit und Niederohmigkeit prüfen
+        * alle Schrauben, vor allem die an den Einbausteckdosen und an den Relaiskontakten, fest anziehen. Nach erfolgtem Aufbau nochmals auf Festigkeit prüfen.
         * die Anschlüsse an die Kaltgerätebuchse löten
         * Einbausteckdosen und Kaltgerätebuchse in die Gehäuserückwand einkleben
         * bitte darauf achten, dass Nullleiter und Phase entsprechend des [Schaltplans](./schematics/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_case.pdf) angeschlossen werden. Die Phase muss jeweils mit den Relais geschaltet werden. Bitte den Stecker des Kaltgerätekabels so in die Steckdose stecken, dass diese Zuordnung erhalten bleibt. 
         * sollte die blaue LED D1 bei Dunkelheit periodisch leicht glimmen, dann bitte einen 0,5W 220kOhm Widerstand, wie im [Schaltplan](./schematics/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_case.pdf) des Gehäuses angegeben, einlöten.
         * gegebenenfalls Zugentlastungen für das Netzkabel anbringen!
-- ein passendes 3D-druckbares Gehäuse ist im STL Format und openSCAD Format [hier](./3D_Printer/case/) zu finden
-![pic](./3D_Printer/case/Case_bottom_OpenSCAD_view.png)
-	+ ein 3D Druck wurde damit erfolgreich durchgeführt, ein Prototyp ist erfolgreich aufgebaut und weitgehend validiert worden.
+
 	
 ## Versionen
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
@@ -57,6 +61,11 @@
 ![pic](./PNGs/4-Relais Modul_top_view.png)
 - auch bei rein ohmschen Lasten sollte die maximale Strombelastbarkeit der Relais nicht ausgereizt werden.
 - bei induktiven Lastanteilen sollte weniger als die Hälfte des spezifizierten Maximalstroms zugrunde gelegt werden.  Bitte lesen Sie dazu das Datenblatt des Relais oder fragen Sie Ihre Elektrofachkraft.
+- während einer längeren Abwesenheit sollte der Netzstecker der Geräts gezogen werden
+- die Schaltsignale für die Relais sind **nicht** verschlüsselt. Daher bitte eine Lasten anschließen, die eventuell einen Brand auslösen könnten.
+- sollte die Homematic/RaspberryMatic-Zentrale  vom Internet aus erreichbar sein, darf dieser Schalter nicht eingesetzt werden! Für die Sicherheit ist der Nutzer alleine verantwortlich!
+- die automatische Ladeschaltung ist zur Zeit noch nicht in Software implementiert! Der Nutzer ist für den korrekten Ladezustand der Akkus verantwortlich.
+- ein automatische Ladeschaltung wird in Zukunft als Update zur Verfügung gestellt werden. Das kann aber noch eine Weile dauern ..
 
 
 ## Disclaimer
