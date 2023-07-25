@@ -50,9 +50,9 @@
       },
       "diff_pair_dimensions": [
         {
-          "gap": 0.254,
-          "via_gap": 0.25,
-          "width": 0.1524
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
         }
       ],
       "drc_exclusions": [],
@@ -123,7 +123,7 @@
         "use_height_for_length_calcs": true
       },
       "track_widths": [
-        0.2,
+        0.0,
         0.15,
         0.2,
         0.4,
@@ -131,8 +131,8 @@
       ],
       "via_dimensions": [
         {
-          "diameter": 0.6,
-          "drill": 0.4
+          "diameter": 0.0,
+          "drill": 0.0
         },
         {
           "diameter": 0.6,

@@ -22,6 +22,7 @@
     (37 "F.SilkS" user "F.Silkscreen")
     (38 "B.Mask" user)
     (39 "F.Mask" user)
+    (41 "Cmts.User" user "User.Comments")
     (42 "Eco1.User" user "User.Eco1")
     (43 "Eco2.User" user "User.Eco2")
     (44 "Edge.Cuts" user)

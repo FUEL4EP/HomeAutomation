@@ -48,7 +48,13 @@
           "min_clearance": 0.508
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [
         "clearance|101970000|-8925000|e3f66ac5-92fa-483b-a308-671c21013ad3|93eeea09-9a2b-439d-8b55-65471eff1695",
         "clearance|101970000|-9325000|0a7aecaa-8149-4b91-bd5a-b792caaf5cb7|93eeea09-9a2b-439d-8b55-65471eff1695",
