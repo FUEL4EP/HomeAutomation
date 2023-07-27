@@ -73,7 +73,7 @@ gas_score = ((gas - gas_lower_limit)/(gas_upper_limit - gas_lower_limit)) * 100.
 
 - The below diagram shows the above described auto-calibration algorithms as waveforms collected in the CCU Historian.
 
-![pic](./auto-calibration.png)
+![pic](./autocalibration.png)
 
 ### Auto-calibration of the residual of the multiple linear regression
 

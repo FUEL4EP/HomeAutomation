@@ -4,7 +4,7 @@
 
 
 # Universeller selbstkalibrierender Luftgütesensor auf der Basis des Bosch BME680 Sensor (HB-UNI-Sensor1-AQ-BME680_KF_rLF) mit vollautomatischer Kompensation der Abhängigkeiten von Temperatur und relativer Luftfeuchte mit einem Kalman Filter
-- **Neu:** Firmware Version 1.1 mit Kompensation der relativen Luftfeuchtigkeit
+- **Neu:** Firmware Version 1.1 mit Kompensation der **relativen** Luftfeuchtigkeit
 	+ der Sensor [HB-UNI-Sensor1-AQ-BME680_KF_rLF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_rLF) ist eine verbesserte Version des Sensors [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF)
 	+ der Sensor [HB-UNI-Sensor1-AQ-BME680_KF_rLF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_rLF) kompensiert den Einfluss der **relativen** Luftfeuchtigkeit auf den Sensormesswert 
 	+ der Sensor [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) kompensiert den Einfluss der **absoluten** Luftfeuchtigkeit auf den Sensormesswert
@@ -23,7 +23,7 @@
 - ein herzliches Dankeschön an alle, die im Homematic Forum geholfen haben, meine Probleme zu lösen
 - der Homematic Forum [Diskussionsstrang](https://homematic-forum.de/forum/viewtopic.php?t=49422)
 - hilfreich ist auch die Diskussion zu den [rftypes XMLs](https://homematic-forum.de/forum/viewtopic.php?f=76&t=62578&sid=cf0f4cd99f7ee2bf070e9f39391ee652)
-- **WICHTIG:** Zur Kompensation der Einflüsse von Temperatur und **relativer** Luftfeuchte auf die Luftgütemessung wird ein selbstlernendes Kalman Filter verwendet. Das initiale Lernen des zur online Regression benutzten Kalman Filters dauert ca. 14..21 Tage bis eine ausreichende Konvergenz erreicht ist. Details siehe unten. Die Empfehlung ist, den aufgebauten und programmierten Sensor einfach 14..21 Tage laufen zu lassen, ohne ihm viel Beachtung zu schenken. Die vom Kalman Filter ermittelten Regressionskoeffizient können sich noch über Monate hinweg leicht verändern.
+- **WICHTIG:** Zur Kompensation der Einflüsse von Temperatur und **relativer** Luftfeuchte auf die Luftgütemessung wird ein selbstlernendes Kalman Filter verwendet. Das initiale Lernen des zur online Regression benutzten Kalman Filters dauert ca. 4 bis 8 Wochen bis eine ausreichende Konvergenz erreicht ist. Details siehe unten. Die Empfehlung ist, den aufgebauten und programmierten Sensor einfach ca. 4 bis 8 Wochen laufen zu lassen, ohne ihm viel Beachtung zu schenken. Die vom Kalman Filter ermittelten Regressionskoeffizient können sich noch über Monate hinweg leicht verändern.
 - zur Verifizierung und besserem Verständnis des Kalman Filters wird ein Jupyter Notebook [Prove_of_Kalman_filter_with_synthesized_data.ipynb](./Kalman_Filter/Prove_of_Kalman_filter_with_synthesized_data.ipynb) zur Verfügung gestellt. Auf Github kann das Notebook direkt angesehen werden.
 - ausschliesslich für DEBUG Zwecke gibt es eine DEBUG Version des Sensors [HB-UNI-Sensor1-AQ-BME680_KF_rLF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_rLF_DEBUG). Wer Interesse an der Detailfunktion des Kalman Filters hat, kann initial während des Lernvorgangs des Kalman Filters diese DEBUG Version aufspielen und den Lernvorgang zu beobachten und zu kontrollieren. Details dazu hier: [HB-UNI-Sensor1-AQ-BME680_KF_rLF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_rLF_DEBUG). Wenn das Kalman-Filter nach 2..3 Wochen konvergiert hat, kann die DEBUG Version in die Normalversion [HB-UNI-Sensor1-AQ-BME680_KF_rLF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_rLF) umprogrammiert werden. Die erlernten und im EEPROM abgespeicherten Kalman Regressionskoeffizienten bleiben beim Umprogrammieren erhalten. Dazu bitte die Anleitung befolgen.
 - Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=66058&sid=8555144b99f475b251fc1b9d958e9f8b) zu finden. Bitte dort auch Fragen stellen.
@@ -78,7 +78,7 @@
 	 
 ## Initiales Lernen des Kalman Filters
 
-- das Kalman Filter zur Kompensation der Einflüsse von Temperatur und relativer Luftfeuchte auf die gemessenen Gaswiderstände braucht zu Beginn eines Autokalibrierzyklus ca. 14..21 Tage um auf einigermaßen stabile Regressionskoeffizienten einzuschwingen. Solange sich die geschätzten Regressionskoeffizienten sich noch mehr als 10% innerhalb von 4 Stunden ändern, ist keine Konvergenz gegeben. Dies wird mit der Ausgabe des Werts 3.333 im Datenpunkt AQ_LOG10 gekennzeichnet. Der Datenpunkt AQ_LEVEL zeigt währen der Phase des Lernens (=Nichtkonvergenz) einen 'Nichtkonvergenzgrad' an, der sich zwischen 0% und 100% bewegt. Werte oberhalb von 10% kennzeichnen eine Nichtkonvergenz.
+- das Kalman Filter zur Kompensation der Einflüsse von Temperatur und relativer Luftfeuchte auf die gemessenen Gaswiderstände braucht zu Beginn eines Autokalibrierzyklus ca. 4 bis 8 Wochen um auf einigermaßen stabile Regressionskoeffizienten einzuschwingen. Solange sich die geschätzten Regressionskoeffizienten sich noch mehr als 10% innerhalb von 4 Stunden ändern, ist keine Konvergenz gegeben. Dies wird mit der Ausgabe des Werts 3.333 im Datenpunkt AQ_LOG10 gekennzeichnet. Der Datenpunkt AQ_LEVEL zeigt währen der Phase des Lernens (=Nichtkonvergenz) einen 'Nichtkonvergenzgrad' an, der sich zwischen 0% und 100% bewegt. Werte oberhalb von 10% kennzeichnen eine Nichtkonvergenz.
 - solange die Änderungen der geschätzten Regressionskoeffizienten zwischen 2% und 10% innerhalb von 4 Stunden betragen, werden der obere und untere Referenzwert für 100% bzw. 0% Luftgüte mit einer schnelleren Abkling- bzw. Aufklingfunktion beaufschlagt. Die Zeitkonstante wird mit einer linearen Interpolation bestimmt.
 - erst wenn die Änderungen <= 2% sind, beträgt die Abkling- bzw. Aufklingzeitkonstante 2 Wochen.
 - das Lernen des Kalman Filters findet hauptsächlich bei Veränderungen der Temperatur und relativen Luftfeuchte statt, also beim Lüften. Häufigeres und intensives Lüften kann den Lernprozess beschleunigen. Seltenes Lüften kann den Lernvorgang verlangsamen!
@@ -410,6 +410,9 @@ Dieser Sensor verrichtet seit über einem halben Jahr seine Dienste. Beim Vergle
 - Der BME680 Sensor reagiert sehr empfindlich auf (nur Auswahl)
 	+ Isopropanol
 	+ Schwefelwasserstoffgase
+	+ Schnaps
+	+ Käse
+	+ gehender Hefeteig
 	+ .. wird fortgesetzt, bitte informiert Eure Erfahrungen per PN and mich. Danke!
 
 ## Lizenz
