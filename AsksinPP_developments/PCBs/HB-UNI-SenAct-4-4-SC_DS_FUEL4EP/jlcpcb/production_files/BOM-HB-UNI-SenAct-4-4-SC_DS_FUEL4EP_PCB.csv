@@ -1,6 +1,5 @@
 Comment,Designator,Footprint,LCSC
 4.7k,R12,R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal,
-MCP1702-2802E_TO,Q5,TO127P254X533-3,
 100n,C4,C_Disc_D7.5mm_W2.5mm_P5.00mm,
 10u,C5,CP_Radial_D5.0mm_P2.00mm,
 LED,D1,LED_D3.0mm,
@@ -53,3 +52,4 @@ SW_Push,SW2,SW_PUSH_6mm_H4.3mm,
 HW-668_step_up,Module4,HW-668_step-up,
 22,R15,R_Axial_DIN0309_L9.0mm_D3.2mm_P20.32mm_Horizontal,
 VCC,J8,PinHeader_1x01_P1.27mm_Vertical,
+MCP1702-3302E/TO,Q3,TO127P254X533-3,

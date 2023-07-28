@@ -1,7 +1,15 @@
 ** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HM-LC-Bl1-FM_FUEL4EP/HM-LC-Bl1-FM_FUEL4EP_PCB.kicad_pcb **
-** Created on 2023-07-25 16:57:22 **
+** Created on 2023-07-28 09:35:44 **
 
 ** Found 67 DRC violations **
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(118.6400 mm, 50.1200 mm): Kreis auf F.Silkscreen
+    @(118.6400 mm, 50.1200 mm): Durchlochpad [<no net>] von Module5
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(118.6400 mm, 29.4200 mm): Kreis auf F.Silkscreen
+    @(118.6400 mm, 29.4200 mm): Durchlochpad [<no net>] von Module5
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(113.8650 mm, 58.4750 mm): Kreis auf F.Silkscreen
@@ -16,72 +24,32 @@
     @(68.9650 mm, 91.4750 mm): Durchlochpad [<no net>] von Module6
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(118.6400 mm, 50.1200 mm): Kreis auf F.Silkscreen
-    @(118.6400 mm, 50.1200 mm): Durchlochpad [<no net>] von Module5
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(118.6400 mm, 29.4200 mm): Kreis auf F.Silkscreen
-    @(118.6400 mm, 29.4200 mm): Durchlochpad [<no net>] von Module5
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(68.9650 mm, 58.4750 mm): Kreis auf F.Silkscreen
-    @(68.9650 mm, 58.4750 mm): Durchlochpad [<no net>] von Module6
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(62.2300 mm, 50.8000 mm): Kreis auf F.Silkscreen
-    @(62.2300 mm, 50.8000 mm): Durchlochpad 6D [unconnected-(Module1-Pad6D)] von Module1
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(62.2300 mm, 48.2600 mm): Kreis auf F.Silkscreen
-    @(62.2300 mm, 48.2600 mm): Durchlochpad 5D [unconnected-(Module1-Pad5D)] von Module1
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(26.3940 mm, 2.6450 mm): Linie auf F.Silkscreen
     @(28.1940 mm, 4.4450 mm): Durchlochpad 1C [GND] von Module4
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(26.3940 mm, 2.6450 mm): Linie auf F.Silkscreen
     @(28.1940 mm, 22.1450 mm): Durchlochpad 2C [Net-(D7-Pad2)] von Module4
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(69.6940 mm, 2.6450 mm): Linie auf F.Silkscreen
-    @(67.8940 mm, 22.1450 mm): Durchlochpad 2A [/24V_raw] von Module4
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(69.6940 mm, 2.6450 mm): Linie auf F.Silkscreen
-    @(67.8940 mm, 4.4450 mm): Durchlochpad 1A [/GND_power] von Module4
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(26.3940 mm, 2.6450 mm): Linie auf F.Silkscreen
-    @(67.8940 mm, 4.4450 mm): Durchlochpad 1A [/GND_power] von Module4
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(26.3940 mm, 2.6450 mm): Linie auf F.Silkscreen
-    @(28.1940 mm, 4.4450 mm): Durchlochpad 1C [GND] von Module4
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(26.3940 mm, 23.9450 mm): Linie auf F.Silkscreen
-    @(67.8940 mm, 22.1450 mm): Durchlochpad 2A [/24V_raw] von Module4
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(26.3940 mm, 23.9450 mm): Linie auf F.Silkscreen
-    @(28.1940 mm, 22.1450 mm): Durchlochpad 2C [Net-(D7-Pad2)] von Module4
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(47.1700 mm, 90.7400 mm): Kreis auf F.Silkscreen
-    @(47.1700 mm, 90.7400 mm): Durchlochpad 3A [GND] von Module2
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(47.1700 mm, 85.7400 mm): Kreis auf F.Silkscreen
-    @(47.1700 mm, 85.7400 mm): Durchlochpad 1A [GND] von Module2
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(74.1400 mm, 29.4200 mm): Kreis auf F.Silkscreen
     @(74.1400 mm, 29.4200 mm): Durchlochpad [<no net>] von Module5
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(69.6940 mm, 2.6450 mm): Linie auf F.Silkscreen
+    @(67.8940 mm, 4.4450 mm): Durchlochpad 1A [/GND_power] von Module4
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(69.6940 mm, 2.6450 mm): Linie auf F.Silkscreen
+    @(67.8940 mm, 22.1450 mm): Durchlochpad 2A [/24V_raw] von Module4
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(74.1400 mm, 50.1200 mm): Kreis auf F.Silkscreen
     @(74.1400 mm, 50.1200 mm): Durchlochpad [<no net>] von Module5
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(62.2300 mm, 43.1800 mm): Kreis auf F.Silkscreen
+    @(62.2300 mm, 43.1800 mm): Durchlochpad 3D [unconnected-(Module1-Pad3D)] von Module1
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(62.2300 mm, 45.7200 mm): Kreis auf F.Silkscreen
@@ -92,36 +60,68 @@
     @(62.2300 mm, 38.1000 mm): Durchlochpad 1D [unconnected-(Module1-Pad1D)] von Module1
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(62.2300 mm, 43.1800 mm): Kreis auf F.Silkscreen
-    @(62.2300 mm, 43.1800 mm): Durchlochpad 3D [unconnected-(Module1-Pad3D)] von Module1
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(62.2300 mm, 40.6400 mm): Kreis auf F.Silkscreen
     @(62.2300 mm, 40.6400 mm): Durchlochpad 2D [unconnected-(Module1-Pad2D)] von Module1
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(62.2300 mm, 50.8000 mm): Kreis auf B.Silkscreen
+    @(26.3940 mm, 23.9450 mm): Linie auf F.Silkscreen
+    @(28.1940 mm, 22.1450 mm): Durchlochpad 2C [Net-(D7-Pad2)] von Module4
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(26.3940 mm, 23.9450 mm): Linie auf F.Silkscreen
+    @(67.8940 mm, 22.1450 mm): Durchlochpad 2A [/24V_raw] von Module4
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(26.3940 mm, 2.6450 mm): Linie auf F.Silkscreen
+    @(28.1940 mm, 4.4450 mm): Durchlochpad 1C [GND] von Module4
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(26.3940 mm, 2.6450 mm): Linie auf F.Silkscreen
+    @(67.8940 mm, 4.4450 mm): Durchlochpad 1A [/GND_power] von Module4
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(68.9650 mm, 58.4750 mm): Kreis auf F.Silkscreen
+    @(68.9650 mm, 58.4750 mm): Durchlochpad [<no net>] von Module6
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(62.2300 mm, 48.2600 mm): Kreis auf F.Silkscreen
+    @(62.2300 mm, 48.2600 mm): Durchlochpad 5D [unconnected-(Module1-Pad5D)] von Module1
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(62.2300 mm, 50.8000 mm): Kreis auf F.Silkscreen
     @(62.2300 mm, 50.8000 mm): Durchlochpad 6D [unconnected-(Module1-Pad6D)] von Module1
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(62.2300 mm, 45.7200 mm): Kreis auf B.Silkscreen
-    @(62.2300 mm, 45.7200 mm): Durchlochpad 4D [unconnected-(Module1-Pad4D)] von Module1
+    @(47.1700 mm, 85.7400 mm): Kreis auf F.Silkscreen
+    @(47.1700 mm, 85.7400 mm): Durchlochpad 1A [GND] von Module2
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(47.1700 mm, 90.7400 mm): Kreis auf F.Silkscreen
+    @(47.1700 mm, 90.7400 mm): Durchlochpad 3A [GND] von Module2
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(62.2300 mm, 48.2600 mm): Kreis auf B.Silkscreen
     @(62.2300 mm, 48.2600 mm): Durchlochpad 5D [unconnected-(Module1-Pad5D)] von Module1
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(62.2300 mm, 50.8000 mm): Kreis auf B.Silkscreen
+    @(62.2300 mm, 50.8000 mm): Durchlochpad 6D [unconnected-(Module1-Pad6D)] von Module1
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(62.2300 mm, 38.1000 mm): Kreis auf B.Silkscreen
     @(62.2300 mm, 38.1000 mm): Durchlochpad 1D [unconnected-(Module1-Pad1D)] von Module1
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(62.2300 mm, 40.6400 mm): Kreis auf B.Silkscreen
+    @(62.2300 mm, 40.6400 mm): Durchlochpad 2D [unconnected-(Module1-Pad2D)] von Module1
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
     @(62.2300 mm, 43.1800 mm): Kreis auf B.Silkscreen
     @(62.2300 mm, 43.1800 mm): Durchlochpad 3D [unconnected-(Module1-Pad3D)] von Module1
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(62.2300 mm, 40.6400 mm): Kreis auf B.Silkscreen
-    @(62.2300 mm, 40.6400 mm): Durchlochpad 2D [unconnected-(Module1-Pad2D)] von Module1
+    @(62.2300 mm, 45.7200 mm): Kreis auf B.Silkscreen
+    @(62.2300 mm, 45.7200 mm): Durchlochpad 4D [unconnected-(Module1-Pad4D)] von Module1
 [clearance]: Freiraum-Verstoß
     Local override; Severity: error (excluded)
 [clearance]: Freiraum-Verstoß

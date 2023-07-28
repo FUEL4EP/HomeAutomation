@@ -2,14 +2,14 @@
 <export version="E">
   <design>
     <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_sch</source>
-    <date>Sa 22 Jul 2023 15:40:22 CEST</date>
+    <date>Fr 28 Jul 2023 09:19:39 CEST</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>SenAct-4-4-SC_FUEL4EP_PCB</title>
         <company>FUEL4EP</company>
-        <rev>1.3</rev>
-        <date>2023-07-13</date>
+        <rev>1.5</rev>
+        <date>2023-07-28</date>
         <source>HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_sch</source>
         <comment number="1" value="3x Schalter Schaltaktor AsksinPP PCB für Netzfreischalter"/>
         <comment number="2" value="Creative Commons License, non-commercial"/>
@@ -330,6 +330,22 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>00000000-0000-0000-0000-0000617f3078</tstamps>
     </comp>
+    <comp ref="Q3">
+      <value>MCP1702-3302E/TO</value>
+      <footprint>TO127P254X533-3</footprint>
+      <datasheet>https://ww1.microchip.com/downloads/en/DeviceDoc/22008E.pdf</datasheet>
+      <fields>
+        <field name="PACKAGE">TO-92</field>
+        <field name="SUPPLIER">Microchip</field>
+      </fields>
+      <libsource lib="FUEL4EP" part="MCP1702-3302E{slash}TO" description=""/>
+      <property name="SUPPLIER" value="Microchip"/>
+      <property name="PACKAGE" value="TO-92"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>053dd794-1fc5-42b8-96b0-9604d84c4640</tstamps>
+    </comp>
     <comp ref="Q4">
       <value>IRF9Z34N</value>
       <footprint>FUEL4EP:TO220V</footprint>
@@ -338,27 +354,6 @@
       <property name="Sheetfile" value="HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>00000000-0000-0000-0000-0000619ef6e1</tstamps>
-    </comp>
-    <comp ref="Q5">
-      <value>MCP1702-2802E_TO</value>
-      <footprint>FUEL4EP:TO127P254X533-3</footprint>
-      <fields>
-        <field name="MPN">MCP1702-2802E/TO</field>
-        <field name="OC_FARNELL">1331485</field>
-        <field name="OC_NEWARK">34M7419</field>
-        <field name="PACKAGE">TO-92</field>
-        <field name="SUPPLIER">Microchip</field>
-      </fields>
-      <libsource lib="FUEL4EP" part="MCP1702-2802E_TO" description=""/>
-      <property name="OC_FARNELL" value="1331485"/>
-      <property name="SUPPLIER" value="Microchip"/>
-      <property name="MPN" value="MCP1702-2802E/TO"/>
-      <property name="PACKAGE" value="TO-92"/>
-      <property name="OC_NEWARK" value="34M7419"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>00000000-0000-0000-0000-0000619a7cde</tstamps>
     </comp>
     <comp ref="R1">
       <value>330</value>
@@ -860,16 +855,15 @@
         <pin num="3" name="" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="FUEL4EP" part="MCP1702-2802E_TO">
+    <libpart lib="FUEL4EP" part="MCP1702-3302E{slash}TO">
+      <docs>https://ww1.microchip.com/downloads/en/DeviceDoc/22008E.pdf</docs>
       <fields>
         <field name="Reference">Q</field>
-        <field name="Value">MCP1702-2802E_TO</field>
+        <field name="Value">MCP1702-3302E{slash}TO</field>
         <field name="Footprint">TO127P254X533-3</field>
-        <field name="OC_FARNELL">1331485</field>
+        <field name="Datasheet">https://ww1.microchip.com/downloads/en/DeviceDoc/22008E.pdf</field>
         <field name="SUPPLIER">Microchip</field>
-        <field name="MPN">MCP1702-2802E/TO</field>
         <field name="PACKAGE">TO-92</field>
-        <field name="OC_NEWARK">34M7419</field>
       </fields>
       <pins>
         <pin num="1" name="GND" type="power_in"/>
@@ -1044,7 +1038,7 @@
       <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="Module2" pin="1C" pinfunction="VCC" pintype="power_in"/>
       <node ref="Module3" pin="LV" pinfunction="LV" pintype="power_in"/>
-      <node ref="Q5" pin="3" pinfunction="VOUT" pintype="power_in"/>
+      <node ref="Q3" pin="3" pinfunction="VOUT" pintype="power_in"/>
     </net>
     <net code="16" name="/LED_AC_supply">
       <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
@@ -1152,7 +1146,7 @@
       <node ref="Module3" pin="GND1" pinfunction="GND" pintype="power_in"/>
       <node ref="Module3" pin="GND2" pinfunction="GND" pintype="power_in"/>
       <node ref="Q1" pin="3" pinfunction="S" pintype="passive"/>
-      <node ref="Q5" pin="1" pinfunction="GND" pintype="power_in"/>
+      <node ref="Q3" pin="1" pinfunction="GND" pintype="power_in"/>
       <node ref="R10" pin="2" pintype="passive"/>
       <node ref="SW1" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="SW2" pin="2" pinfunction="2" pintype="passive"/>
@@ -1210,7 +1204,7 @@
       <node ref="Module1" pin="4A" pinfunction="VCC" pintype="power_in"/>
       <node ref="Module3" pin="HV" pinfunction="HV" pintype="power_in"/>
       <node ref="Q2" pin="1" pinfunction="E" pintype="passive"/>
-      <node ref="Q5" pin="2" pinfunction="VIN" pintype="power_in"/>
+      <node ref="Q3" pin="2" pinfunction="VIN" pintype="power_in"/>
       <node ref="R14" pin="1" pintype="passive"/>
       <node ref="R3" pin="1" pintype="passive"/>
     </net>
