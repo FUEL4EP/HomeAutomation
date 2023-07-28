@@ -177,16 +177,16 @@ public:
     //DPRINTLN(F("Initializing of pin done "));
     supply_V_relais_by_battery_pin = V_RELAIS_BAT_SUPPLIED_PIN;
     DPRINT(F("Initializing V_relais control pin : ")); DDECLN( supply_V_relais_by_battery_pin );
-    ArduinoPins::setOutput(supply_V_relais_by_battery_pin);  // set D3 as an output pin
-    ArduinoPins::setHigh(supply_V_relais_by_battery_pin);    // low-active output, therefore the inactive state is High
+    IODriver::setOutput(supply_V_relais_by_battery_pin);  // set D3 as an output pin
+    IODriver::setHigh(supply_V_relais_by_battery_pin);    // low-active output, therefore the inactive state is High
 
     // charge_control_pin
     // put temporarily here until the charging class will be implemented later on
-    ArduinoPins::setOutput(CHARGE_CONTROL_PIN);  // set A3 as an output pin
-    ArduinoPins::setLow(CHARGE_CONTROL_PIN);     // low-active output, short pulse during init
+    IODriver::setOutput(CHARGE_CONTROL_PIN);  // set A3 as an output pin
+    IODriver::setLow(CHARGE_CONTROL_PIN);     // low-active output, short pulse during init
     delay(400);                                  // short 400 ms pulse of the blue LED during startup
-    ArduinoPins::setHigh(CHARGE_CONTROL_PIN);    // low-active output, therefore the inactive state is High
-    ArduinoPins::setInput(CHARGE_CONTROL_PIN);   // set A3 as an input pin in order to prevent leakage currents through R9
+    IODriver::setHigh(CHARGE_CONTROL_PIN);    // low-active output, therefore the inactive state is High
+    IODriver::setInput(CHARGE_CONTROL_PIN);   // set A3 as an input pin in order to prevent leakage currents through R9
     
     // define the Arduino control pins for the four relays
     relay_pin_1 = RELAY_PIN_1;
@@ -202,10 +202,10 @@ public:
     
      active_external_relay_output_flag = false;
 
-     status_relay_1 = ArduinoPins::getState(relay_pin_1); 
-     status_relay_2 = ArduinoPins::getState(relay_pin_2); 
-     status_relay_3 = ArduinoPins::getState(relay_pin_3);
-     status_relay_4 = ArduinoPins::getState(relay_pin_4);
+     status_relay_1 = IODriver::getState(relay_pin_1); 
+     status_relay_2 = IODriver::getState(relay_pin_2); 
+     status_relay_3 = IODriver::getState(relay_pin_3);
+     status_relay_4 = IODriver::getState(relay_pin_4);
     
      
      DPRINT(F("Relay 1 status : ")); DDECLN( status_relay_1 );
@@ -222,8 +222,8 @@ public:
   }
 
   void pulse_charging_of_accumulators () {
-    ArduinoPins::setOutput(CHARGE_CONTROL_PIN);  // set A3 as an output pin
-    ArduinoPins::setLow(CHARGE_CONTROL_PIN);     // low-active output, short pulse during init
+    IODriver::setOutput(CHARGE_CONTROL_PIN);  // set A3 as an output pin
+    IODriver::setLow(CHARGE_CONTROL_PIN);     // low-active output, short pulse during init
     DPRINT(F("Charging accumulators for ")); DDEC( PULSE_WIDTH_CHARGE_CONTROL_PIN ); DPRINTLN(F(" milliseconds"));
     PulseReset_CHARGE_CONTROL_PIN.reset_pins(PULSE_WIDTH_CHARGE_CONTROL_PIN); // stop charging after PULSE_WIDTH_CHARGE_CONTROL_PIN milliseconds
   }
@@ -237,7 +237,7 @@ public:
     if ( ( newstate == AS_CM_JT_ON ) || ( newstate == AS_CM_JT_OFF ) ) {
       // set V_RELAIS_BAT_SUPPLIED_PIN to the active low state for a temporary supply of V_relais by the batteries
       DPRINTLN(F("Set V_RELAIS_BAT_SUPPLIED_PIN to active .."));
-      ArduinoPins::setLow(supply_V_relais_by_battery_pin);  // active low output!
+      IODriver::setLow(supply_V_relais_by_battery_pin);  // active low output!
     }
    
     DPRINT(F("Switching relay pin : ")); DDEC( pin ); DPRINT(F(" ")); DDECLN( newstate );
@@ -248,13 +248,15 @@ public:
 
       // switch on the AC supply relay for supplying the relays from now on
       DPRINTLN(F("Switching on AC supply relay .."));
-      ArduinoPins::setLow(RELAY_PIN_1);
+      IODriver::setLow(RELAY_PIN_1);
 
       // charge the accumulators for a pulse of PULSE_WIDTH_CHARGE_CONTROL_PIN milliseconds
       pulse_charging_of_accumulators();
     }
     else if ( newstate == AS_CM_JT_OFF ) {
-      if( this->hasflag(LOWACTIVE) == true ) IODriver::setHigh(pin);
+      if( this->hasflag(LOWACTIVE) == true ) {
+        IODriver::setHigh(pin);
+      }
       else IODriver::setLow(pin);
     }
 
@@ -276,10 +278,10 @@ public:
       // switch off the AC suppy relay if no external relay output is active and ( state_AC_supply_relay_1 == AS_CM_JT_OFF )
       if (state_AC_supply_relay_1 == AS_CM_JT_OFF) {
         DPRINTLN(F("Switching off AC supply relay .."));
-        ArduinoPins::setHigh(RELAY_PIN_1); // reset state of AC supply to the 'off'-state: active low-output! only if ( state_AC_supply_relay_1 == AS_CM_JT_OFF )
+        IODriver::setHigh(RELAY_PIN_1); // reset state of AC supply to the 'off'-state: active low-output! only if ( state_AC_supply_relay_1 == AS_CM_JT_OFF )
       }
       else {
-        DPRINTLN(F("Keep state oof  AC supply relay unchanged"));
+        DPRINTLN(F("Keep state of AC supply relay unchanged"));
       }
       
     }
