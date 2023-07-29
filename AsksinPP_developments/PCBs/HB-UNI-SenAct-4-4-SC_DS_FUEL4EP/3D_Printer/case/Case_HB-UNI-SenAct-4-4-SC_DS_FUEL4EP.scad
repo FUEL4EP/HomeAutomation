@@ -4,7 +4,7 @@
               -   http://heartygfx.blogspot.com    -
               -       OpenScad Parametric Box      -
               -         CC BY-NC 3.0 License       -
-              - adaptions 2023-07-10 (C) FUEL4EP   -
+              - adaptions 2023-07-29 (C) FUEL4EP   -
 ////////////////////////////////////////////////////////////////////
 
 Improved by jbebel:
@@ -43,9 +43,9 @@ in order to have the appropriate flexibility.
 // - Top shell
 TShell = 0; // [0:No, 1:Yes]
 // - Bottom shell
-BShell = 1; // [0:No, 1:Yes]
+BShell = 0; // [0:No, 1:Yes]
 // - Front panel
-FPanL = 0; // [0:No, 1:Yes]
+FPanL = 1; //  [0:No, 1:Yes]
 // - Back panel
 BPanL = 0; // [0:No, 1:Yes]
 // - Panel holes and text
@@ -244,14 +244,14 @@ Depth_ACDC_convertor = 47.9;
 Height_ACDC_convertor = 23.6;
 Height_ACDC_Frame = 15;
 X_Offset_ACDC_Center = 18;
-Y_Offset_ACDC_Center = 10;
+Y_Offset_ACDC_Center = 7;
 
 Width_Fixation_Hole = 5;
 Height_Fixation_Hole = 3;
 
 // Battery Pack 4x AA
 Width_battery_pack = 64.6;
-Depth_battery_pack = 68.6;
+Depth_battery_pack = 70.1;
 Height_battery_pack = 20.0;
 Height_battery_pack_Frame = 10;
 Height_bottom_pillar_battery_pack = Height - 2 * Thick - Height_battery_pack - PartMargin;
