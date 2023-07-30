@@ -8,6 +8,7 @@
 	+ normale Homematic-Aktoren sind daher **NICHT** für den Betrieb an einem Netzfreischalter geeignet
 - NiMH-Akkubetrieb im Standby
 	- geringer Standby-Verbrauch von ca. 1 mA @ 5V
+		* ein Derivat HB-UNI-SenAct-4-4-RC_DS ist geplant, das eine geringere Stromaufnahme im Standby haben sollte
 - bei Aktivierung eines Aktors wird die Netzspannung zugeschaltet und am Ende wieder abgeschaltet
 - automatische Ladeschaltung; die Ladesoftware ist bisher nur rudimentär implementiert; Update erfolgt später
 - abgeleitet von [HB-UNI-SenAct-4-4](https://github.com/jp112sdl/HB-UNI-SenAct-4-4)
@@ -158,6 +159,7 @@ RSET an der Steckerleiste J5 auf der linken Seite der Basisplatine. Dort eine St
 ## Mindestdauer eines Tastendrucks is ca. 1 Sekunde
 
 - aufgrund einer Eigenschaft der AsksinPP-Bibliothek muss ein Tastendruck mindestens ca. 1 Sekunde dauern, damit er erkannt wird. Also eine Taste solange gedrückt halten, bis die dazugehörige LED aufleuchtet oder erlischt.
+- ein Derivat HB-UNI-SenAct-4-4-RC_DS ist geplant, das dann Interrupt gesteuerte Tasten haben wird
 
 ## Benötigtes Addon
 
@@ -181,6 +183,7 @@ RSET an der Steckerleiste J5 auf der linken Seite der Basisplatine. Dort eine St
 - während einer längeren Abwesenheit sollte der Netzstecker der Geräts gezogen werden
 - die Schaltsignale für die Relais sind **nicht** verschlüsselt. Daher bitte eine Lasten anschließen, die eventuell einen Brand auslösen könnten.
 - sollte die Homematic/RaspberryMatic-Zentrale  vom Internet aus erreichbar sein, darf dieser Schalter nicht eingesetzt werden! Für die Sicherheit ist der Nutzer alleine verantwortlich!
+- nach einem Reset oder bei Spannungswiederkehr werden die Relais in kurzem Abstand ein und dann wieder ausgeschaltet. Daher dürfen nur Lasten angeschlossen werden, die dadurch nicht beschädigt werden können. 
 - die automatische Ladeschaltung ist zur Zeit noch nicht in Software implementiert! Der Nutzer ist für den korrekten Ladezustand der Akkus verantwortlich.
 - ein automatische Ladeschaltung wird in Zukunft als Update zur Verfügung gestellt werden. Das kann aber noch eine Weile dauern ..
 
