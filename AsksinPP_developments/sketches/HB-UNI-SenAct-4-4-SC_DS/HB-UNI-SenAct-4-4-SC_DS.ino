@@ -61,10 +61,13 @@
 #define MAX_ACCUMULATOR_VOLTAGE    5100        // limit the accumulators voltage: charging is disabled if the accumulator voltage is above this threshold
 
 #define V_RELAIS_BAT_SUPPLIED_PIN  3           // D3
-#define PULSE_WIDTH_V_RELAIS_BAT_SUPPLIED_PIN  millis2ticks(900UL)               // pulse width at V_RELAIS_BAT_SUPPLIED_PIN, needs to be long enough to switch the AC power relay and to power up the main DC power
+#define PULSE_WIDTH_V_RELAIS_BAT_SUPPLIED_PIN  millis2ticks(900UL)                // pulse width at V_RELAIS_BAT_SUPPLIED_PIN, needs to be long enough to switch the AC power relay and to power up the main DC power
 #define PULSE_WIDTH_CHARGE_CONTROL_PIN         seconds2ticks(60UL * 20 * 0.88)    // pulse width at CHARGE_CONTROL_PIN for an intermediate charging of the accumulator batteris after having switched on a relay output (20 minutes)
-                                                                                  // 60 seconds * 15 (= minutes) * corrective factor
+                                                                                  // 60 seconds * 20 (= minutes) * corrective factor
+#define LONG_PULSE_WIDTH_CHARGE_CONTROL_PIN    seconds2ticks(60UL * 240 * 0.88)   // long pulse width at CHARGE_CONTROL_PIN for an intermediate charging of the accumulator batteris after having switched on a relay output (240 minutes = 4 hours), total charge of accumulators is about 1/4 * C
+                                                                                  // 60 seconds * 240 (= minutes) * corrective factor
 
+                                                                                  
 #define SABOTAGE_PIN_1    false                // disable SABOTAGE_PIN false=0
 
 #define LED_PIN                  4
@@ -99,11 +102,33 @@ const struct DeviceInfo PROGMEM devinfo = {
   {0x01, 0x00}            // Info Bytes
 };
 
+template <uint8_t CS,uint8_t MOSI,uint8_t MISO,uint8_t SCLK, class PINTYPE=ArduinoPins,bool SCKFloatOnIdle=false>
+class derived_AvrSPI : public AvrSPI< CS, MOSI, MISO, SCLK, PINTYPE> {
+
+public:
+
+  void select () {
+    if( SCKFloatOnIdle==true) {
+      PINTYPE::setOutput(SCLK);
+    }
+    PINTYPE::setLow(CS);
+  }
+
+  void deselect () {
+    PINTYPE::setHigh(CS);
+    if( SCKFloatOnIdle==true) {
+      PINTYPE::setInput(SCLK);
+    }
+  }
+
+};
+
+
 /**
    Configure the used hardware
 */
 //typedef AvrSPI<10, 11, 12, 13> RadioSPI;
-typedef AvrSPI<10, 11, 12, 13, ArduinoPins, true> RadioSPI;  // see https://homematic-forum.de/forum/viewtopic.php?f=76&t=71788&hilit=SCKFloatOnIdle&start=30
+typedef derived_AvrSPI<10, 11, 12, 13, ArduinoPins, true> RadioSPI;  // see https://homematic-forum.de/forum/viewtopic.php?f=76&t=71788&hilit=SCKFloatOnIdle&start=30
 typedef AskSin<StatusLed<LED_PIN>, BAT_SENSOR, Radio<RadioSPI, 2> > Hal;
 Hal hal;
 
@@ -216,7 +241,7 @@ public:
   void pulse_charging_of_accumulators () {
     IODriver::setOutput(CHARGE_CONTROL_PIN);  // set A3 as an output pin
     IODriver::setLow(CHARGE_CONTROL_PIN);     // low-active output, short pulse during init
-    PulseReset_CHARGE_CONTROL_PIN.reset_pins(PULSE_WIDTH_CHARGE_CONTROL_PIN); // stop charging after PULSE_WIDTH_CHARGE_CONTROL_PIN milliseconds
+    PulseReset_CHARGE_CONTROL_PIN.reset_pins(PULSE_WIDTH_CHARGE_CONTROL_PIN); // stop charging after PULSE_WIDTH_CHARGE_CONTROL_PIN ticks
   }
 
   virtual void switchState(__attribute__((unused)) uint8_t oldstate,uint8_t newstate,__attribute__((unused)) uint32_t tdelay) {
@@ -303,12 +328,19 @@ class MixDevice : public ChannelDevice<Hal, VirtBaseChannel<Hal, SwList0>, 8, Sw
         virtual ~CycleInfoAlarm () {}
 
         void trigger (AlarmClock& clock)  {
+          uint16_t        accumulator_voltage;
           set(CYCLETIME);
           clock.add(*this);
           dev.derived_switchChannel(1).changed(true);
           DPRINT(F("accumulator voltage(MCU ADC) (x1000.0) [mV] : "));
-          dev.battery().update();
-          DDECLN(dev.battery().current());    // BatteryTM class, mV resolution
+          accumulator_voltage = dev.battery().current();
+          DDECLN(accumulator_voltage);    // BatteryTM class, mV resolution
+          if ( accumulator_voltage <= BAT_VOLT_LOW * 100 ) {
+             dev.derived_switchChannel(RELAY_PIN_1).switchState(AS_CM_JT_OFF, AS_CM_JT_ON, 0);  // switch on AC power supply
+             ArduinoPins::setOutput(CHARGE_CONTROL_PIN);  // set A3 as an output pin
+             ArduinoPins::setLow(CHARGE_CONTROL_PIN);     // low-active output, short pulse during init
+             PulseReset_CHARGE_CONTROL_PIN.reset_pins(LONG_PULSE_WIDTH_CHARGE_CONTROL_PIN); // stop charging after PLONG_ULSE_WIDTH_CHARGE_CONTROL_PIN ticks
+          }
         }
     } cycle;
 

@@ -69,9 +69,8 @@ Ein Diskussionsstrang im [Homematic Forum](https://homematic-forum.de/forum/view
 
 ## Bitte immer die aktuellste Version von AsksinPP nutzen
 
--  [AsksinPP Master](https://github.com/pa-pa/AskSinPP/tree/master)
-- **WICHTIG**: Die Asksinpp Bibliothek muss gepatcht werden: siehe https://homematic-forum.de/forum/viewtopic.php?f=76&t=71788&hilit=SCKFloatOnIdle
-- ein 'Radio.h'-[Patch](./AsksinPP_patch) wird bereitgestellt
+- [AsksinPP Master](https://github.com/pa-pa/AskSinPP/tree/master)
+- die Klasse AvrSPI von Radio.h wird durch den Sketch erweitert. Ein Patchen von AsksinPP ist daher nicht mehr notwendig.
 
 ## Bitte genau diese Abfolge beim Einspielen von Software beachten:
 
