@@ -1,14 +1,13 @@
-# HB-UNI-SenAct-4-4-SC_DS [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2FAsksinPP_developments%2Fsketches%2FHB-UNI-SENACT-4-4-SC_DS&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+# HB-UNI-SenAct-4-4-RC_DS [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2FAsksinPP_developments%2Fsketches%2FHB-UNI-SENACT-4-4-RC_DS&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 <br/>
 
-# 3x AsksinPP Schaltaktor für Betrieb an einem Netzfreischalter
+# 3x AsksinPP Schaltaktor für Betrieb an einem Netzfreischalter und Interrupt auslösenden Drucktasten
 
 - geeignet für den Betrieb an einem [Netzfreischalter](https://de.wikipedia.org/wiki/Netzfreischalter)
 	+ [Netzfreischalter](https://www.haus.de/smart-home/netzfreischalter-30565) speisen im freigeschalteten Zustand, wenn alle Verbraucher ausgeschaltet sind,  eine niedrige Gleichspannung ein 
 	+ normale Homematic-Aktoren sind daher **NICHT** für den Betrieb an einem Netzfreischalter geeignet
 - NiMH-Akkubetrieb im Standby
-	- geringer Standby-Verbrauch von ca. 1 mA @ 5V
-		* ein Derivat [HB-UNI-SENACT-4-4-RC_DS](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-RC_DS) ist verfügbar, das eine geringfügig geringere Stromaufnahme im Standby hat
+	- geringer Standby-Verbrauch von ca. 0.7 mA @ 5V
 - bei Aktivierung eines Aktors wird die Netzspannung zugeschaltet und am Ende wieder abgeschaltet
 - automatische Ladeschaltung; die Ladesoftware ist bisher nur rudimentär implementiert; Update erfolgt später
 - abgeleitet von [HB-UNI-SenAct-4-4](https://github.com/jp112sdl/HB-UNI-SenAct-4-4)
@@ -29,7 +28,7 @@ Ein Diskussionsstrang im [Homematic Forum](https://homematic-forum.de/forum/view
 - alle 230 V Spannung führenden Leitungen und Lötanschlüsse sind im spannungslosen Zustand fachgerecht mit Isolationsband vor Berührungen zu schützen
 - die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr
 
-## Bitte Addon 'ep-hb-devices-addon' auf die Version >= 1.14 aktualisieren
+## Bitte Addon 'ep-hb-devices-addon' auf die Version >= 1.15 aktualisieren
 - [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
 - bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
@@ -43,7 +42,7 @@ Ein Diskussionsstrang im [Homematic Forum](https://homematic-forum.de/forum/view
 	
 ## Frequenztest des CC1101 RF Moduls
 
-- bitte vor dem Aufspielen des eigentlichen Sketches HB-UNI-SenAct-4-4-SC_DS.ino **UNBEDINGT** einen [Frequenztest ATMega328P](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) durchführen. Viele CC1101 Module lassen sich ohne diesen Frequenztest nicht anlernen!
+- bitte vor dem Aufspielen des eigentlichen Sketches HB-UNI-SenAct-4-4-RC_DS.ino **UNBEDINGT** einen [Frequenztest ATMega328P](https://github.com/pa-pa/AskSinPP/blob/master/examples/FreqTest/FreqTest.ino) durchführen. Viele CC1101 Module lassen sich ohne diesen Frequenztest nicht anlernen!
 - Eine Beschreibung des Frequenztests ist [hier](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) zu finden.
 		
 ## Verringerung des Ruhestroms: [siehe auch Referenz von TomMajor](https://github.com/TomMajor/SmartHome/tree/master/Info/Ruhestrom)
@@ -69,8 +68,7 @@ Ein Diskussionsstrang im [Homematic Forum](https://homematic-forum.de/forum/view
 
 ## Bitte immer die aktuellste Version von AsksinPP nutzen
 
-- [AsksinPP Master](https://github.com/pa-pa/AskSinPP/tree/master)
-- die Klasse AvrSPI von Radio.h wird durch den Sketch erweitert. Ein Patchen von AsksinPP ist daher nicht mehr notwendig.
+-  [AsksinPP Master](https://github.com/pa-pa/AskSinPP/tree/master)
 
 ## Bitte genau diese Abfolge beim Einspielen von Software beachten:
 
@@ -85,9 +83,9 @@ Ein Diskussionsstrang im [Homematic Forum](https://homematic-forum.de/forum/view
 
 7. gegebenenfalls im Sketch in der Struct DeviceInfo die GeräteID (0x01) und den Gerätenamen ("SENACTDS01", genau 10 Zeichen!) ändern,  falls mehrere Geräte dieses Typs verwendet werden.
 
-8. die aktuelle Version des [HB-UNI-SENACT-4-4-SC_DS](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-SC_DS) Sketches herunterladen, siehe unten.
+8. die aktuelle Version des [HB-UNI-SENACT-4-4-RC_DS](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-RC_DS) Sketches herunterladen, siehe unten.
 9. Die benötigten Libraries installieren, siehe unten unter 'Benötigte Libraries'.
-10. dann den Sketch [HB-UNI-SENACT-4-4-SC_DS.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-SC_DS/HB-UNI-SENACT-4-4-SC_DS.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
+10. dann den Sketch [HB-UNI-SENACT-4-4-RC_DS.ino](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-RC_DS/HB-UNI-SENACT-4-4-RC_DS.ino) kompilieren und mit dem ISP Programmer auf den Arduino Pro Mini hochladen.
 11. den neuen Aktor in der CCU/RaspBerryMatic anlernen.
 12. den neuen Aktor in der CCU3/RaspberryMatic einem Gewerk, z.B. 'Multimedia', zuordnen.
 13. sollte das initiale Peering der vier Tasten mit den 4 Aktoren nicht klappen, bitte diese Zeile für nur einen neuen Programmierlauf auskommentieren:
@@ -96,24 +94,24 @@ Ein Diskussionsstrang im [Homematic Forum](https://homematic-forum.de/forum/view
 
 ## Benötiger Sketch
 
-[HB-UNI-SENACT-4-4-SC_DS](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-SC_DS)
+[HB-UNI-SENACT-4-4-RC_DS](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-RC_DS)
 
 - bitte das gesamte Verzeichnis mit allen Unterverzeichnissen kopieren:
 
 ### Zur lokalen Installation des Github Releases auf Deinem Computer
 
-- gehe bitte in Dein Zielinstallationsverzeichnis, wo Du mit dem HB-UNI-SENACT-4-4-SC_DS Aktor arbeiten möchtest
+- gehe bitte in Dein Zielinstallationsverzeichnis, wo Du mit dem HB-UNI-SENACT-4-4-RC_DS Aktor arbeiten möchtest
 
   - gebe dort 'git clone https://github.com/FUEL4EP/HomeAutomation.git' ein
 	  + damit lädst Du mein [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) für alle meine auf Github freigegebenen HomeBrew Sensoren und Aktoren herunter.
   - dann findest Du ein neues Verzeichnis 'HomeAutomation' auf Deinem Rechner, das alle meine auf Github freigebenen Sensoren und Aktoren enthält, siehe [README.md](https://github.com/FUEL4EP/HomeAutomation/blob/master/README.md)
   	+ mache bitte regelmäßig ein Update mit 'git pull'
  -	enthalten ist auch das notwendige Addon '[ep-hb-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)'
- -	den HB-UNI-SENACT-4-4-SC_DS Aktor findest Du unter './HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-SC_DS'
+ -	den HB-UNI-SENACT-4-4-RC_DS Aktor findest Du unter './HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-RC_DS'
  
 - alternativ kann vom Github [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) die ZIP-Datei HomeAutomation-master.zip heruntergeladen und auf dem lokalen Rechner ausgepackt werden. Bitte dann regelmäßig auf Github nach Updates schauen.
 
-- nach erfolgreicher Inbetriebnahme können die Debugausgaben im serial Monitor ausgeschaltet werden. Dazu bitte im Sketch HB-UNI-SENACT-4-4-SC_DS.ino auskommentieren:
+- nach erfolgreicher Inbetriebnahme können die Debugausgaben im serial Monitor ausgeschaltet werden. Dazu bitte im Sketch HB-UNI-SENACT-4-4-RC_DS.ino auskommentieren:
 
 > // !! NDEBUG sollte aktiviert werden wenn die Aktorentwicklung und die Tests abgeschlossen sind und das Gerät in den 'Produktionsmodus' geht.<br/>
 > // Insbesondere die RAM-Einsparungen sind wichtig für die Stabilität / dynamische Speicherzuweisungen etc.<br/>
@@ -155,21 +153,21 @@ RSET an der Steckerleiste J5 auf der linken Seite der Basisplatine. Dort eine St
 - die Ladefunktion wird nachgereicht werden, sobald sie verfügbar sein wird.
 - ein rudimentäres Laden bei jeder Aktivierung eines Relais ist zur Zeit als vorübergehende Lösung eingebaut (ca. 25mAh). Eine Berechnung dazu ist [hier](./accu_charging/accu_charging.xlsx). Ein Überladen der Akkus sollte bei einmaliger täglicher Nutzung nicht auftreten. Der Ladestrom beträgt ca. 100mA und liegt damit unter 0.1C. Bei mehrmaliger Nutzung am Tag ist  die Ladedauer PULSE_WIDTH_CHARGE_CONTROL_PIN im Sketch geeignet anzupassen. Im Originalsketch auf Github ist zur Zeit eine Ladezeit von 20 Minuten eingestellt, d.h. die blaue Lade-LED erlischt nach ca. 20 Minuten nach der Aktivierung eines Relaiskontakts.
 
-## Mindestdauer eines Tastendrucks ist ca. 1 Sekunde
+## kurze Tastendrücke
 
-- aufgrund einer Eigenschaft der AsksinPP-Bibliothek muss ein Tastendruck beim SC-Typ mindestens ca. 1 Sekunde dauern, damit er erkannt wird. Also eine Taste solange gedrückt halten, bis die dazugehörige LED aufleuchtet oder erlischt.
-- ein Derivat [HB-UNI-SENACT-4-4-RC_DS](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-RC_DS) ist verfügbar, das bedienungsfreundliche Interrupt gesteuerte Drucktasten hat.
+- ein kurzes Drücken auf die Drucktaste eines Kanals schaltet den entsprechenden Kanal und das zugehörige Relais. Die dazugehörige LED leuchtet auf oder erlischt.
+- ein Derivat [HB-UNI-SENACT-4-4-SC_DS](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SENACT-4-4-SC_DS) ist verfügbar, das mindestens ca. 1 Sekunde dauernde Tastendrücke braucht.
 
 ## DutyCycle kann durch Burstmode zu hoch werden
 
-- der HB-UNI-SenAct-4-4-SC_DS verwendet als WOR-Gerät (Wakeup On Radio) den Burstmode zum Wecken des Geräts. Bei einem häufigen Betätigen eines Relais kann es daher zu einem zu hohen DutyCycle kommen **und das Gerät funktioniert dann vorübergehend (ca. 1 Stunde) nicht mehr korrekt**.
+- der HB-UNI-SenAct-4-4-RC_DS verwendet als WOR-Gerät (Wakeup On Radio) den Burstmode zum Wecken des Geräts. Bei einem häufigen Betätigen eines Relais kann es daher zu einem zu hohen DutyCycle kommen **und das Gerät funktioniert dann vorübergehend (ca. 1 Stunde) nicht mehr korrekt**.
 
 ## Benötigtes Addon
 
 - [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
-- minimale Versionn: 1.14
+- minimale Versionn: 1.15
 
-- bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-SENACT-4-4-SC_DS Aktors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
+- bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-SENACT-4-4-RC_DS Aktors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
 
 ## Verringerung der Tx Sendeleistung
 

@@ -2,14 +2,15 @@
 // AskSin++
 // 2016-10-31 papa Creative Commons - http://creativecommons.org/licenses/by-nc-sa/3.0/de/
 // 2018-08-13 jp112sdl Creative Commons - http://creativecommons.org/licenses/by-nc-sa/3.0/de/
-// 2023-07-30 FUEL4EP adaptions to PCB HB-UNI-SenAct-4-4-SC_DS_FUEL4EP 
+// 2023-07-30 FUEL4EP adaptions to PCB HB-UNI-SenAct-4-4-RC_DS_FUEL4EP
 // special thanks to jp112sdl for the base version of HB-UNI-SenAct-4-4
 //- -----------------------------------------------------------------------------------------------------------------------
 // ci-test=yes board=328p aes=no
 
 // 3-channel power supply switch with hybrid power supply accumulator for start-up / mains operation and automatic charging of accumulators
 // adapted to the PCB HB-UNI-SenAct-4-4-SC_DS_FUEL4EP https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP
-// The fourth switch of HB-UNI-SenAct-4-4_SC is internally used for switching on the mains operationthe first hundred milliseconds after activating a relay
+// The PCB HB-UNI-SenAct-4-4-SC_DS_FUEL4EP has been ooriginally designed to fit to the sketch HB-UNI-SenAct-4-4-SC_DS. However, it fits also to this sketch HB-UNI-SenAct-4-4-RC_DS.
+// The fourth switch of HB-UNI-SenAct-4-4_RC is internally used for switching on the mains operationthe first hundred milliseconds after activating a relay
 // The battery is only used for supplying the device during sleep mode and for the first few hundred milliseconds after activating a relay output, then the main supply is taking over
 // The device can be attached to a main supply with a demand switch (in German: Netzfreischalter), e.g. in a sleeping room
 // The software for charging the accumulator batteries is not yet implemented, please charge the accumulator batteries manually for the time being!
@@ -37,7 +38,7 @@
 #include <AskSinPP.h>
 #include <LowPower.h>
 #include <Switch.h>
-#include <ContactState.h>
+#include <MultiChannelDevice.h>
 #include "tmBattery.h"
 #include "PulseReset.h"
 
@@ -46,16 +47,16 @@
 
 // mapping of analog pins as digital I/O
 // see definitions at pins_arduino.h
-// do not change in case you are using the PCB HB-UNI-SenAct-4-4-SC_DS_FUEL4EP
+// do not change in case you are using the PCB HB-UNI-SenAct-4-4-RC_DS_FUEL4EP
 #define RELAY_PIN_1 A4          // 18  // AC supply // IN4 // brown
 #define RELAY_PIN_2 A5          // 19  // Hifiberry // IN3 // white
 #define RELAY_PIN_3 A0          // 14  // Monitor   // IN2 // lila
 #define RELAY_PIN_4 A1          // 15  // Heating   // IN1 // green
 
-#define SENS_PIN_1  5           // AC supply   // brown
-#define SENS_PIN_2  6           // Hifiberry   // white
-#define SENS_PIN_3  7           // Monitor     // lila
-#define SENS_PIN_4  9           // Heating     // green
+#define REMOTE_PIN_1  5           // AC supply   // brown
+#define REMOTE_PIN_2  6           // Hifiberry   // white
+#define REMOTE_PIN_3  7           // Monitor     // lila
+#define REMOTE_PIN_4  9           // Heating     // green
 
 #define CHARGE_CONTROL_PIN         A3          // control pin for charging the accumulators, active low, the charging software is not yet implemented, please charge the accumulator batteries manually for the time being!
 #define MAX_ACCUMULATOR_VOLTAGE    5100        // limit the accumulators voltage: charging is disabled if the accumulator voltage is above this threshold
@@ -75,14 +76,26 @@
 
 // number of available peers per channel
 #define CREATE_INTERNAL_PEERINGS  // needs to be set in order to create the internal peerings
-#define PEERS_PER_SwitchChannel  6
-#define PEERS_PER_SENSCHANNEL    6
+#define PEERS_PER_SwitchChannel  4
+#define PEERS_PER_RemoteChannel  4
 
-#define DEV_MODEL 0x0E
+#define DEV_MODEL 0x10
 #define CYCLETIME seconds2ticks(60UL * 60 * 12 * 0.88) // 60 seconds * 60 (= minutes) * 12 (=hours) * corrective factor
 
 //#define  BatterySensor
-#define BAT_SENSOR tmBatteryResDiv<A6, A2, 5700>   //see tmbattery.h; measurement of accumulator voltage; sense pin = A6; activationn pin = A2; Rhigh = 470kOhm; Rlow = 100kOhm;  Vinmax=6.27V
+#define BAT_SENSOR tmBatteryResDiv<A6, A2, 5700>       //see tmbattery.h; measurement of accumulator voltage; sense pin = A6; activationn pin = A2; Rhigh = 470kOhm; Rlow = 100kOhm;  Vinmax=6.27V
+
+
+
+#define remISR(device,chan,pin) class device##chan##ISRHandler { \
+    public: \
+      static void isr () { device.remoteChannel(chan).irq(); } \
+  }; \
+  device.remoteChannel(chan).button().init(pin); \
+  if( digitalPinToInterrupt(pin) == NOT_AN_INTERRUPT ) \
+    enableInterrupt(pin,device##chan##ISRHandler::isr,CHANGE); \
+  else \
+    attachInterrupt(digitalPinToInterrupt(pin),device##chan##ISRHandler::isr,CHANGE);
 
 
 // all library classes are placed in the name-space 'as'
@@ -94,7 +107,7 @@ PulseReset PulseReset_CHARGE_CONTROL_PIN;                // see PulseReset.h
 // define all device properties
 const struct DeviceInfo PROGMEM devinfo = {
   {0xf6, DEV_MODEL, 0x01},// Device ID
-  "SENACTDS01",
+  "SENACTDS02",
   // Device Serial
   {0xf6, DEV_MODEL},      // Device Model
   0x10,                   // Firmware Version
@@ -106,6 +119,34 @@ template <uint8_t CS,uint8_t MOSI,uint8_t MISO,uint8_t SCLK, class PINTYPE=Ardui
 class derived_AvrSPI : public AvrSPI< CS, MOSI, MISO, SCLK, PINTYPE> {
 
 public:
+  uint8_t send (uint8_t data) {
+    SPDR = data;                  // send byte
+    while (!(SPSR & _BV(SPIF)));  // wait until transfer finished
+    return SPDR;
+  }
+
+  void waitMiso () {
+    while(PINTYPE::getState(MISO));
+  }
+
+  void init () {
+    PINTYPE::setOutput(CS);
+    PINTYPE::setOutput(MOSI);
+    PINTYPE::setInput(MISO);
+    PINTYPE::setOutput(SCLK);
+    // SPI enable, master, speed = CLK/4
+    SPCR = _BV(SPE) | _BV(MSTR);
+    PINTYPE::setHigh(CS);
+    // Set SCLK = 1 and SI = 0, to avoid potential problems with pin control mode
+    PINTYPE::setHigh(SCLK);
+    PINTYPE::setLow(MOSI);
+  }
+
+  void shutdown () {
+    PINTYPE::setInput(CS);
+    PINTYPE::setInput(MOSI);
+    PINTYPE::setInput(SCLK);
+  }
 
   void select () {
     if( SCKFloatOnIdle==true) {
@@ -121,7 +162,7 @@ public:
     }
   }
 
-   void ping () {
+  void ping () {
     select();                                     // wake up the communication module
     waitMiso();
     deselect();
@@ -172,6 +213,8 @@ public:
     deselect();                                   // deselect  radio module
   }
 
+
+
 };
 
 
@@ -183,39 +226,78 @@ typedef derived_AvrSPI<10, 11, 12, 13, ArduinoPins, true> RadioSPI;  // see http
 typedef AskSin<StatusLed<LED_PIN>, BAT_SENSOR, Radio<RadioSPI, 2> > Hal;
 Hal hal;
 
-
-DEFREGISTER(Reg0, MASTERID_REGS, DREG_INTKEY, DREG_CYCLICINFOMSG, DREG_SABOTAGEMSG)
+DEFREGISTER(Reg0, MASTERID_REGS, DREG_INTKEY, DREG_CYCLICINFOMSG)
 class SwList0 : public RegList0<Reg0> {
   public:
     SwList0(uint16_t addr) : RegList0<Reg0>(addr) {}
     void defaults() {
       clear();
       intKeyVisible(true);
-      sabotageMsg(true);
       cycleInfoMsg(true);
     }
 };
 
-
-DEFREGISTER(Reg1, CREG_AES_ACTIVE, CREG_MSGFORPOS, CREG_EVENTDELAYTIME, CREG_LEDONTIME, CREG_TRANSMITTRYMAX)
-class SensList1 : public RegList1<Reg1> {
+DEFREGISTER(RemoteReg1, CREG_LONGPRESSTIME, CREG_AES_ACTIVE, CREG_DOUBLEPRESSTIME)
+class RemoteList1 : public RegList1<RemoteReg1> {
   public:
-    SensList1 (uint16_t addr) : RegList1<Reg1>(addr) {}
+    RemoteList1 (uint16_t addr) : RegList1<RemoteReg1>(addr) {}
     void defaults () {
       clear();
-      msgForPosA(1);
-      msgForPosB(2);
-      aesActive(false);
-      eventDelaytime(0);
-      ledOntime(100);
-      transmitTryMax(6);
+      longPressTime(1);
+      // aesActive(false);
+      // doublePressTime(0);
+    }
+};
+class RemoteChannel : public Channel<Hal, RemoteList1, EmptyList, DefList4, PEERS_PER_RemoteChannel, SwList0>, public Button {
+  private:
+    uint8_t       repeatcnt;
+
+  public:
+    typedef Channel<Hal, RemoteList1, EmptyList, DefList4, PEERS_PER_RemoteChannel, SwList0> BaseChannel;
+
+    RemoteChannel () : BaseChannel() {}
+    virtual ~RemoteChannel () {}
+
+    Button& button () {
+      return *(Button*)this;
+    }
+
+    uint8_t status () const {
+      return 0;
+    }
+
+    uint8_t flags () const {
+      return 0;
+    }
+
+    virtual void state(uint8_t s) {
+      DHEX(BaseChannel::number());
+      Button::state(s);
+      RemoteEventMsg& msg = (RemoteEventMsg&)this->device().message();
+      DPRINT("BATTERY IS LOW? "); DDECLN(this->device().battery().low());
+      msg.init(this->device().nextcount(), this->number(), repeatcnt, (s == longreleased || s == longpressed), this->device().battery().low());
+      if ( s == released || s == longreleased) {
+        this->device().sendPeerEvent(msg, *this);
+        repeatcnt++;
+      }
+      else if (s == longpressed) {
+        this->device().broadcastPeerEvent(msg, *this);
+      }
+    }
+
+    uint8_t state() const {
+      return Button::state();
+    }
+
+    bool pressed () const {
+      uint8_t s = state();
+      return s == Button::pressed || s == Button::debounce || s == Button::longpressed;
     }
 };
 
 
 
 typedef SwitchChannel<Hal, PEERS_PER_SwitchChannel, SwList0>  SwChannel;
-typedef TwoStateChannel<Hal, SwList0, SensList1, DefList4, PEERS_PER_SENSCHANNEL> SensChannel;
 
 // the class template derived_SwitchChannel is inherited from the class template SwitchChannel of AsksinnPP. Some overloading is done for the required new functionality.
 template <class HalType,int PeerCount,class List0Type,class IODriver=ArduinoPins>
@@ -256,7 +338,6 @@ public:
     delay(200);                               // short 200 ms pulse of the blue LED during startup
     IODriver::setHigh(CHARGE_CONTROL_PIN);    // low-active output, therefore the inactive state is High
     IODriver::setInput(CHARGE_CONTROL_PIN);   // set A3 as an input pin in order to prevent leakage currents through R9
-
   }
 
 
@@ -361,8 +442,7 @@ public:
         IODriver::setInput(RELAY_PIN_1); 
       }
       else {
-      }
-      
+      }     
     }
  
     this->changed(true);
@@ -398,7 +478,7 @@ class MixDevice : public ChannelDevice<Hal, VirtBaseChannel<Hal, SwList0>, 8, Sw
     
   public:
     VirtChannel<Hal, derived_SwChannel, SwList0>   swChannel1,   swChannel2,   swChannel3,   swChannel4;
-    VirtChannel<Hal, SensChannel, SwList0> sensChannel5, sensChannel6, sensChannel7, sensChannel8;
+    VirtChannel<Hal, RemoteChannel, SwList0> remChannel5, remChannel6, remChannel7, remChannel8;
   public:
     typedef ChannelDevice<Hal, VirtBaseChannel<Hal, SwList0>, 8, SwList0> DeviceType;
     // constructor
@@ -408,10 +488,10 @@ class MixDevice : public ChannelDevice<Hal, VirtBaseChannel<Hal, SwList0>, 8, Sw
       DeviceType::registerChannel(swChannel3, 3);
       DeviceType::registerChannel(swChannel4, 4);
 
-      DeviceType::registerChannel(sensChannel5, 5);
-      DeviceType::registerChannel(sensChannel6, 6);
-      DeviceType::registerChannel(sensChannel7, 7);
-      DeviceType::registerChannel(sensChannel8, 8);
+      DeviceType::registerChannel(remChannel5, 5);
+      DeviceType::registerChannel(remChannel6, 6);
+      DeviceType::registerChannel(remChannel7, 7);
+      DeviceType::registerChannel(remChannel8, 8);
     }
     // destructor
     virtual ~MixDevice () {}
@@ -437,22 +517,22 @@ class MixDevice : public ChannelDevice<Hal, VirtBaseChannel<Hal, SwList0>, 8, Sw
       }
     }
 
-    SensChannel& sensorChannel (uint8_t num)  {
+    RemoteChannel& remoteChannel (uint8_t num)  {
       switch (num) {
         case 5:
-          return sensChannel5;
+          return remChannel5;
           break;
         case 6:
-          return sensChannel6;
+          return remChannel6;
           break;
         case 7:
-          return sensChannel7;
+          return remChannel7;
           break;
         case 8:
-          return sensChannel8;
+          return remChannel8;
           break;
         default:
-          return sensChannel5;
+          return remChannel5;
           break;
       }
     }
@@ -479,33 +559,34 @@ uint8_t derived_SwitchChannel< HalType, PeerCount, List0Type, IODriver>::state_A
 template <class HalType,int PeerCount,class List0Type,class IODriver>                                                                  // <-------- ALLOCATE MEMORY FOR THE STATIC VARIABLE - see also https://stackoverflow.com/questions/17071130/default-argument-for-template-parameter-for-class-enclosing
 bool derived_SwitchChannel< HalType, PeerCount, List0Type, IODriver>::current_relay_states[4] = {false, false, false, false};          // <-------- ALLOCATE MEMORY FOR THE STATIC VARIABLE -
 
-
-
 void initPeerings (bool first) {
   // create internal peerings - CCU2 needs this
   if ( first == true ) {
-#ifdef CREATE_INTERNAL_PEERINGS    
+#ifdef CREATE_INTERNAL_PEERINGS
+    DPRINTLN(F(".. creating peerings now"));
     HMID devid;
     sdev.getDeviceID(devid);
-    DPRINTLN(F("Internal Peering .."));
+    DPRINT(F(".. devid = ")); DHEXLN(devid);
     for ( uint8_t i = 1; i <= 4; ++i ) {
-      Peer ipeer(devid, i + 4);
+      Peer ipeer(devid, i + 4 );
       sdev.derived_switchChannel(i).peer(ipeer);
     }
     for ( uint8_t i = 1; i <= 4; ++i ) {
       Peer ipeer(devid, i);
-      sdev.sensorChannel(i + 4).peer(ipeer);
+      sdev.remoteChannel(i + 4).peer(ipeer);
     }
-#endif    
+#endif
   }
 }
+
+
 
 void setup () {
   
   DINIT(57600, ASKSIN_PLUS_PLUS_IDENTIFIER);  // set baud rate of serial monitor
   
   bool first = sdev.init(hal);
-  //first=true;    // comment out for only one (!) programming if the peering is not working as expected, e.g. if after you have changed the pin assignment
+  first=true;    // comment out for only one (!) programming if the peering is not working as expected, e.g. if after you have changed the pin assignment
   
   DPRINTLN(F("Init HAL .."));
 
@@ -515,11 +596,10 @@ void setup () {
   sdev.derived_switchChannel(3).init(RELAY_PIN_3, true);
   sdev.derived_switchChannel(4).init(RELAY_PIN_4, true);
 
-  sdev.sensorChannel(5).init(SENS_PIN_1, SABOTAGE_PIN_1);  // sabotage pin are disabled; see above
-  sdev.sensorChannel(6).init(SENS_PIN_2, SABOTAGE_PIN_1);
-  sdev.sensorChannel(7).init(SENS_PIN_3, SABOTAGE_PIN_1);
-  sdev.sensorChannel(8).init(SENS_PIN_4, SABOTAGE_PIN_1);
-
+  remISR(sdev, 5, REMOTE_PIN_1);
+  remISR(sdev, 6, REMOTE_PIN_2);
+  remISR(sdev, 7, REMOTE_PIN_3);
+  remISR(sdev, 8, REMOTE_PIN_4);
   
   buttonISR(cfgBtn, CONFIG_BUTTON_PIN);
 
