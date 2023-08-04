@@ -149,7 +149,7 @@ index                  : 12
 
 
 device name            : HB-UNI-SenAct-4-4-SC_DS
-device description     : 3-channel power switch with hybrid supply and automatic accu charging
+device description     : 3x Netzschalter mit hybridem Akku-/Netzbetrieb für Netzfreischalter
 small case device name : hb-uni-senact-4-4-SC_DS
 XML version            : not specified
 index                  : 13
@@ -1304,7 +1304,7 @@ index                  : 12
 
 
 device name            : HB-UNI-SenAct-4-4-SC_DS
-device description     : 3-channel power switch with hybrid supply and automatic accu charging
+device description     : 3x Netzschalter mit hybridem Akku-/Netzbetrieb für Netzfreischalter
 small case device name : hb-uni-senact-4-4-SC_DS
 XML version            : not specified
 index                  : 13
