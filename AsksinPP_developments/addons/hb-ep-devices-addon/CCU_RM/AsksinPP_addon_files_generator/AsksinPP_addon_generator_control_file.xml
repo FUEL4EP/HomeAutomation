@@ -45,10 +45,10 @@
     <device id='HB-UNI-SENSOR-AQ-BME680_KF_DEBUG' index='12' device_name='HB-UNI-Sensor-AQ-BME680_KF_DEBUG' device_model='0xF607' device_small_case_name='hb-uni-sensor-AQ-BME680_KF_DEBUG' rftypes_XML_version='0x10' VersionString='0.14'>
       <device_description>universeller Luftgütesensor mit Kalman Filter (Debug Version)</device_description>
     </device>
-    <device id='HB-UNI-SENACT-4-4-SC_DS' index='13' device_name='HB-UNI-SenAct-4-4-SC_DS' device_model='0xF60E' device_small_case_name='hb-UNI-senact-4-4-SC_DS' rftypes_XML_version='not specified' VersionString='0.14'>
+    <device id='HB-UNI-SENACT-4-4-SC_DS' index='13' device_name='HB-UNI-SenAct-4-4-SC_DS' device_model='0xF60E' device_small_case_name='hb-uni-senact-4-4-SC_DS' rftypes_XML_version='not specified' VersionString='0.14'>
       <device_description>3-channel power switch with hybrid supply and automatic accu charging</device_description>
     </device>
-    <device id='HB-UNI-SENACT-4-4-RC_DS' index='14' device_name='HB-UNI-SenAct-4-4-RC_DS' device_model='0xF610' device_small_case_name='hb-UNI-senact-4-4-RC_DS' rftypes_XML_version='not specified' VersionString='0.14'>
+    <device id='HB-UNI-SENACT-4-4-RC_DS' index='14' device_name='HB-UNI-SenAct-4-4-RC_DS' device_model='0xF610' device_small_case_name='hb-uni-senact-4-4-RC_DS' rftypes_XML_version='not specified' VersionString='0.14'>
       <device_description>3x Netzschalter mit hybridem Akku-/Netzbetrieb für Netzfreischalter</device_description>
     </device>
   </devices>
