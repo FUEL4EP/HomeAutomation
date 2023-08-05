@@ -11,12 +11,16 @@
 ![pic](./3D_Printer/case/internal_1.png)
 - geringer Standby-Verbrauch von ca. 1 mA @ 5V Vaccu, an einer weiteren Reduktion wird gearbeitet
 - ein handelsübliches [4 Kanal Relais Modul](https://www.ebay.de/itm/155095219126) wird mit Distanzhaltern "huckepack" auf die Basisplatine montiert
-	+ bitte darauf achten, dass das Relaymodul den Aufdruck [P2H1588A0](./PNGs/4-Relais Modul_top_view.png) hat, da Module mit unterschiedlichen Maßen im Handel verfügbar sind.
-	+ die Außenmaße des Moduls sollten 72,2 mm x 52 mm betragen
+	+ bitte darauf achten, dass das Relais-Modul den Aufdruck [P2H1588A0](./PNGs/4-Relais Modul_top_view.png) hat, da Module mit unterschiedlichen Maßen im Handel verfügbar sind.
+	+ die Außenmaße des Relais-Moduls sollten 72,2 mm x 52 mm betragen
 - ein STL-Modell eines 3D-druckbaren Gehäuses wird mitgeliefert, die Außenmaße des gedruckten Gehäuses sind 20,8 cm (Breite) x 13,3 cm (Tiefe) x 6,8 cm /(Höhe).
 - 3x Einbausteckdosen 45 mm x 45 mm, z.B. DELOCK 81321 Easy 45 Schutzkontakt-Steckdose, werden an der Rückseite des Gehäuses angebracht
 - **diese Schaltung und Platine darf ausschließlich von ausgebildeten elektrischen Fachkräften verwendet werden, siehe Disclaimer unten!**
-- ein weitgehend validierter Sketch [HB-UNI-SenAct-4-4-SC_DS.ino](../../sketches/HB-UNI-SenAct-4-4-SC_DS/) steht zum Testen zur Verfügung
+- als passende Sketche stehen zur Verfügung:
+	+ [HB-UNI-SenAct-4-4-SC_DS.ino](../../sketches/HB-UNI-SenAct-4-4-SC_DS/)
+		* Abfrage der Gerätetasten durch 'Polling'
+	+ [HB-UNI-SenAct-4-4-RC_DS.ino](../../sketches/HB-UNI-SenAct-4-4-RC_DS/)
+		* Gerätetasten lösen einen Interrupt aus
 	- Fragen und Rückmeldungen per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum nachfragen.
 - die Platine V1.5 behebt Fehler, die bei der Validierung eines Prototypen festgestellt und korrigiert wurden. Bitte **keine** Platinen der Versionen V1.0 bis V1.4 verwenden.
 - ein passendes 3D-druckbares Gehäuse ist im STL Format und openSCAD Format [hier](./3D_Printer/case/) zu finden
