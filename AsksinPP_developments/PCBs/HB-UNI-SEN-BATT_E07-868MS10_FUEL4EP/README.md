@@ -88,6 +88,11 @@
 * Achtung: Kein Überspannungschutz vorhanden
 * der Verpolungsschutz ist optional. Dafür Bauteil Q1 (IRLU024N) und R3 (100KOhm Widerstand) bestücken. Alternativ JP1 auf der Platinenrückseite brücken um ohne Verpolungsschutz zu arbeiten.
 
+### Abkündigung des Ebyte Sendemoduls eByte E07-868MS10
+- EByte hat die Produktion des Sendemoduls eByte E07-868MS10 abgekündigt. Inzwischen ist das Sendemodul eByte E07-868MS10 auf dem Markt kaum noch erhältlich.
+- der Nachfolger ist das Modul EByte E07-900M10S 
+- dafür wird die neu entwickelte Platine [HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP) angeboten.
+
 
 ## Bestellen von Platinen
 
