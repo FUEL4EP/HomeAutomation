@@ -39,6 +39,8 @@
         * als Erstes dann das 'Huckepack'-4-Kanal-Relaismodul anbringen und nur die Steuersignale verbinden, noch keine 230V Spannungen an den Relaisausgängen anschließen
         * dann die Funktion testen
         * falls manche LEDs (z.B. orange, blau oder pinke LEDs) zu hell im Vergleich zu den anderen LEDs leuchten sollten, bitte einen größeren Vorwiderstand wählen, z.B. 4.7 kOhm. Der vergrößerte Vorwiderstand kann auch in die 'fliegende' Vorverdrahtung der Gehäusevorderwand eingelötet werden.
+        * pinke LED benötigen einen ca. 10kOhm Vorwiderstand
+        * blaue LEDs benötigen einen ca. 4,7kOhm Vorwiderstand
         * erst als Letztes die 230V Verdrahtung mit der gebotenen Vorsicht anbringen
         * den Nullleiter innerhalb des Gehäuses mit einer 5-fach Wago-Klemme WAGO 221-415 (Reichelt) aus fünf Segmenten herstellen, die zwischen Platine und den Einbausteckdosen platziert wird.
         * bitte nicht vergessen, eine Sicherung einzuschrauben
@@ -49,6 +51,7 @@
         * Einbausteckdosen und Kaltgerätebuchse in die Gehäuserückwand einkleben
         * bitte darauf achten, dass Nullleiter und Phase entsprechend des [Schaltplans](./schematics/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_case.pdf) angeschlossen werden. Die Phase muss jeweils mit den Relais geschaltet werden. Bitte den Stecker des Kaltgerätekabels so in die Steckdose stecken, dass diese Zuordnung erhalten bleibt. 
         * sollte die blaue LED D1 bei Dunkelheit periodisch leicht glimmen, dann bitte einen 0,5W 220kOhm Widerstand, wie im [Schaltplan](./schematics/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_case.pdf) des Gehäuses angegeben, einlöten.
+        * sollte die blaue LED D1 bei Dunkelheit dauerhaft glimmen, dann bitte einen 0,22uF 250V K X2 Kondensator die blaue LED D1 bei Dunkelheit. Es darf nur ein für 250V geeigneter Entstörkondensator verwendet werden!
         * gegebenenfalls Zugentlastungen für das Netzkabel anbringen!
 
 	
