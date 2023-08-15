@@ -1,0 +1,26 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+C1,1206,1,10uF,C7171
+"C10, C11, C12, C13",0805,4,10u,C15850
+"C2, C3, C4, C8, C9",0805,5,100n,C28233
+C5,1206,1,10u,C7171
+"C6, C7",0805,2,22p,C1804
+D1,0805,1,LED red 3mm,C84256
+J10,PinHeader_1x03_P2.54mm_Vertical,1,charge,
+J11,PinPads_1x08_P2.00mm_Vertical,1,ePaper connector,
+J12,PinHeader_1x06_P2.54mm_Vertical,1,FTDI Debuger,
+JP1,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,1,NO,
+JP2,SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,1,cut for accus,
+JP3,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,1,step-up supply,
+L1,FUEL4EP_Inductor_SMD_1,1,4.7u,C86077
+Module1,eByte_E07-868MS10,1,E07-868MS10,
+Q1,TO-251-3_Vertical,1,IRLU024N,C558184
+R1,0805,1,470,C17710
+"R2, R4, R5",0805,3,10k,C17733
+"R3, R7",0805,2,100K,C340475
+R6,0805,1,22,C23345
+R8,0805,1,47k,C17713
+SW1,SW_TS-1187A-B-A-B,1,Config button,C318884
+SW2,SW_TS-1187A-B-A-B,1,Reset button,C318884
+U1,TQFP-44_10x10mm_P0.8mm,1,ATmega1284P-AU,C33575
+U2,Texas_R-PDSO-G6,1,TPS61221DCK,C37055
+Y1,Crystal_SMD_5032-2Pin_5.0x3.2mm_HandSoldering,1,8MHz,C115962

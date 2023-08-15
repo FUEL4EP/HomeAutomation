@@ -124,15 +124,16 @@
 
 ## Versionsverlauf
 
--    V1.1 10. Januar 2022: R8 auf 47 kOhm geändert, zusätzliche Aufdrucktexte
--    V1.2 15. Juli 2023: Migration der Datenbasen zu KiCAD 6, als Induktivität    	                     für den Aufwärtswandler wird nun LQH3NPN4R7MM0L von
+-    V1.1 10. Jan 2022: R8 auf 47 kOhm geändert, zusätzliche Aufdrucktexte
+-    V1.2 15. Jul 2023: Migration der Datenbasen zu KiCAD 6, als Induktivität    	                     für den Aufwärtswandler wird nun LQH3NPN4R7MM0L von
                          Murata Electronics verwendet, die bei JLCPCB bestellbar ist  (eventuell ist eine Vorbestellung notwendig)
--	 V1.3 24. Juli 2023:	KiCAD 6 bedingte Verbesserungen der Datenbasis
+-	 V1.3 24. Jul 2023:	KiCAD 6 bedingte Verbesserungen der Datenbasis
+-	 V1.4 15. Aug 2023:	Fix of En pin of TPS61221 boost converter (must be tied to VIN)
 
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	PCB Version 1.3
-- 	Schematics  1.2
+- 	PCB Version 1.4
+- 	Schematics  1.3
 
 ## Lizenz 
 

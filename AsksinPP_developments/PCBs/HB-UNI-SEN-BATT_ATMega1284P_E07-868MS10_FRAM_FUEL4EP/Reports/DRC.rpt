@@ -1,5 +1,5 @@
 ** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP.kicad_pcb **
-** Created on 2023-07-25 15:33:21 **
+** Created on 2023-08-15 11:16:13 **
 
 ** Found 5 DRC violations **
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
