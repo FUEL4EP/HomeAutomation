@@ -1,24 +1,24 @@
 Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
-BT1,AA,BatteryHolder_Keystone_2460_1xAA,63.49,-34.86,-90.0,top
-BT2,AA,BatteryHolder_Keystone_2460_1xAA,11.42,-34.9,90.0,top
-C1,10uF,CP_Radial_D4.0mm_P1.50mm,46.955,-51.627599,-90.0,top
-D1,LED red 3mm,LED_D3.0mm,45.05,-4.555,-90.0,top
-J1,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,46.32,-36.94,0.0,top
-J2,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,51.4,-36.94,0.0,top
-J3,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,46.32,-27.415,0.0,top
-J4,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,51.4,-27.415,0.0,top
-J5,ISP Programmer,PinHeader_1x06_P2.54mm_Vertical,62.83,-66.78,90.0,top
-J6,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,24.73,-66.79,180.0,top
-J7,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,34.89,-66.79,180.0,top
-J8,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,39.97,-66.79,180.0,top
-J9,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,50.13,-66.79,180.0,top
-J10,charge,PinHeader_1x03_P2.54mm_Vertical,67.514,-3.3435,90.0,top
-LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA,14.841186,-22.98619,90.0,top
-Module1,CC1101,CC1101,32.78,-44.945,180.0,top
-Module2,Tindie_Pro_Mini_XL_V2,Tindie_ArduinoProMiniXL_1284P_V2,32.24,-17.26,90.0,top
-Q1,IRLU024N,TO-251-3_Vertical,9.24,-66.66,0.0,top
-R1,470,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,45.05,-10.04,-90.0,top
-R3,100K,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,17.335,-66.78,180.0,top
-R4,10K,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,50.13,-45.6,-90.0,top
-R5,10K,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,46.32,-45.6,-90.0,top
-SW1,config button,SW_PUSH_6mm_H5mm,48.935,-17.595,0.0,top
+BT1,AA,BatteryHolder_Keystone_2460_1xAA,63.49,40.14,-90.0,top
+BT2,AA,BatteryHolder_Keystone_2460_1xAA,11.42,40.1,90.0,top
+C1,10uF,CP_Radial_D4.0mm_P1.50mm,46.955,23.372401,-90.0,top
+D1,LED red 3mm,LED_D3.0mm,45.05,70.445,-90.0,top
+J1,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,46.32,38.06,0.0,top
+J2,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,51.4,38.06,0.0,top
+J3,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,46.32,47.585,0.0,top
+J4,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,51.4,47.585,0.0,top
+J5,ISP Programmer,PinHeader_1x06_P2.54mm_Vertical,62.83,8.22,90.0,top
+J6,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,24.73,8.21,180.0,top
+J7,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,34.89,8.21,180.0,top
+J8,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,39.97,8.21,180.0,top
+J9,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,50.13,8.21,180.0,top
+J10,charge,PinHeader_1x03_P2.54mm_Vertical,67.514,71.6565,90.0,top
+LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA,14.841186,52.01381,90.0,top
+Module1,CC1101,CC1101,32.78,30.055,180.0,top
+Module2,Tindie_Pro_Mini_XL_V2,Tindie_ArduinoProMiniXL_1284P_V2,32.24,57.74,90.0,top
+Q1,IRLU024N,TO-251-3_Vertical,9.24,8.34,0.0,top
+R1,470,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,45.05,64.96,-90.0,top
+R3,100K,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,17.335,8.22,180.0,top
+R4,10K,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,50.13,29.4,-90.0,top
+R5,10K,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,46.32,29.4,-90.0,top
+SW1,config button,SW_PUSH_6mm_H5mm,48.935,57.405,0.0,top
