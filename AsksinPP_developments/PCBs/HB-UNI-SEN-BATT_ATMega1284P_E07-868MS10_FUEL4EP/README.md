@@ -21,11 +21,20 @@
 
 ## Platine wurde nach Fertigung bei JLCPCB erfolgreich validiert
 
-- entwickelt mit KiCAD 5.1.10
+- entwickelt mit KiCAD 6.0.11
 - die Platine wurde bei JLCPCB gefertigt und mit den SMD Bauteilen bestückt
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_PCB.png); die nicht SMD Bauteile müssen von Hand verlötet werden
 - die gefertigte Platine wurde erfolgreich **ohne** Aufwärtswandler mit dem Sketch [HB-UNI-SENSOR1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF) validiert:
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-Sensor1-AQ-BME680_KF_build_with_HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_PCB.png)
+- **Update 21. Aug 2023:** Die gefertigte Platine wurde erfolgreich **mit** dem Aufwärtswandler TPS61221 validiert:
+![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_PCB_with_boost_converterand_dummy_AA_battery.png)
+	+ die Platine wurde bei JLCPCB gefertigt und einschließlich der Induktivität mit den SMD Bauteilen bestückt 
+	+ im Bild wurde ein AA-Akkumulator wurde durch eine AA-Dummy- Batterie ersetzt
+	+ Betrieb ist mit einer oder zwei AA Akkumulatorbatterien möglich
+	+ die Ausgangsspannung des Aufwärtswandlers beträgt 3.3 Volt
+	+ der Jumper JP2 ist bei Betrieb mit einem Aufwärtswandler zu durchtrennen
+	+ der Jumper JP3 ist ist bei Betrieb mit einem Aufwärtswandler mit einer Lötbrücke zu versehen
+
 
 ## Eigenschaften
 
