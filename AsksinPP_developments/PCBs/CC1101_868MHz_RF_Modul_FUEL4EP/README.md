@@ -4,6 +4,10 @@
 
 - diese Platine wurde noch nicht bei JLCPCB gefertigt und ist daher auch nicht validiert. Nutzung auf eigenes Risiko!
 
+## Rückmeldungen
+
+- und Verbesserungsvorschläge sind [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=59315&sid=065a9bd8a22968df4a251db89efb1d4a&start=120#p775660) willkommen.
+
 ## Disclaimer
 
 -   die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr.
