@@ -1,0 +1,27 @@
+Comment,Designator,Footprint,LCSC
+100n,"C11,C12,C13,C14,C15,C16,C17",C_0402_1005Metric,C1525
+100pF,C3,C_0402_1005Metric,C1546
+12pF,"C7,C8",C_0402_1005Metric,C1547
+3.3pF,C5,C_0402_1005Metric,C1565
+12nH,"L1,L2,L5,L6",L_0402_1005Metric,C2043991
+15p,C9,C_0402_1005Metric,C2169087
+4.7u,C10,C_0402_1005Metric,C23733
+56k,R1,R_0402_1005Metric,C25796
+CC1101RGPR,U1,Texas_S-PVQFN-N20_EP2.4x2.4mm_ThermalVias,C29953
+47pF,C6,C_0402_1005Metric,C384800
+3.3nH,L7,L_0402_1005Metric,C412273
+1.0pF,C2,C_0402_1005Metric,C710646
+1.5pF,"C1,C4",C_0402_1005Metric,C76901
+18nH,"L3,L4",L_0402_1005Metric,C908004
+Crystal  26MHz,Y1,Crystal_SMD_3225-4Pin_3.2x2.5mm,C91747
+Ant.,JA2,castellated_hole_Pitch2.28mm_Drill0.8mm,
+GND,JA1,castellated_hole_Pitch2.28mm_Drill0.8mm,
+Conn,JC8,castellated_hole_Pitch1.27mm_Drill0.65mm_rounded,
+Conn,JC7,castellated_hole_Pitch1.27mm_Drill0.65mm_rounded,
+Conn,JC6,castellated_hole_Pitch1.27mm_Drill0.65mm_rounded,
+Conn,JC5,castellated_hole_Pitch1.27mm_Drill0.65mm_rounded,
+Conn,JC4,castellated_hole_Pitch1.27mm_Drill0.65mm_rounded,
+Conn,JC3,castellated_hole_Pitch1.27mm_Drill0.65mm_rounded,
+Conn,JC2,castellated_hole_Pitch1.27mm_Drill0.65mm_rounded,
+Conn,JC1,castellated_hole_Pitch1.27mm_Drill0.65mm,
+Logo_Open_Hardware_Small,LOGO1,CC-BY-ND-SA_bottom,

@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch</source>
+    <date>Fr 25 Aug 2023 10:30:40 CEST</date>
+    <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>CC1101_868MHz_RF_Modul_FUEL4EP</title>
+        <company>(C) FUEL4EP 2023</company>
+        <rev>1.0</rev>
+        <date>2023-08-25</date>
+        <source>CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch</source>
+        <comment number="1" value="fork of Jérômes CC1101_module https://github.com/jp112sdl/CC1101_Module "/>
+        <comment number="2" value="Creative Commons License, non-commercial"/>
+        <comment number="3" value="for AsksinPP DIY devices"/>
+        <comment number="4" value="868.3 MHz CC1101 RF tranceiver module prepared for JLCPCB assembly"/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>1.5pF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C76901</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C76901"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a7141e22-0145-46fd-ba8f-835a7fef77af</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>1.0pF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C710646</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C710646"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a63b4c3f-cb76-4f6f-b32f-b86c08976e9b</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>100pF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1546</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1546"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>aff394e1-da27-44c6-87f7-2418e93197a6</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>1.5pF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C76901</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C76901"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f916947a-cd4f-4d82-b9ad-f5cdb1907cfe</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>3.3pF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1565</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1565"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0d571035-4555-4c38-8927-a4c2d60d5302</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>47pF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C384800</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C384800"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>60ab62a3-45e2-4a0e-9e24-8de3c88e03fe</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>12pF</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1547</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1547"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4c417169-56d6-4d24-a9cc-d9839532b187</tstamps>
+    </comp>
+    <comp ref="C8">
+      <value>12p</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1547</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1547"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>96f1c641-28fd-4e78-a7f0-239d9e010e33</tstamps>
+    </comp>
+    <comp ref="C9">
+      <value>15p</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C2169087</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C2169087"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f59715c3-5d29-4d02-9aa7-86eda5befd8a</tstamps>
+    </comp>
+    <comp ref="C10">
+      <value>4.7u</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C23733</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C23733"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8ad1be12-de54-4a47-b9f1-1bcad76e302e</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1525"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a02cff7f-8e0a-47b1-9afd-78cb28ec16e0</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1525"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>89a46872-f559-4723-bd69-b1effc800fa5</tstamps>
+    </comp>
+    <comp ref="C13">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1525"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4511b598-0f07-476e-9b94-351960102c21</tstamps>
+    </comp>
+    <comp ref="C14">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1525"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>05443561-7493-4e53-b694-85a09d97aade</tstamps>
+    </comp>
+    <comp ref="C15">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1525"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2597c3ae-1472-4757-bd59-ebd5c1980c79</tstamps>
+    </comp>
+    <comp ref="C16">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1525"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>883038cc-8400-4283-a894-fd59844ff1aa</tstamps>
+    </comp>
+    <comp ref="C17">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C1525"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c0151b83-a1a5-4ba0-8b3e-94c8e9c0795e</tstamps>
+    </comp>
+    <comp ref="JA1">
+      <value>GND</value>
+      <footprint>FUEL4EP:castellated_hole_Pitch2.28mm_Drill0.8mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ede691df-cb41-4f20-8be6-97ea1d6566a4</tstamps>
+    </comp>
+    <comp ref="JA2">
+      <value>Ant.</value>
+      <footprint>FUEL4EP:castellated_hole_Pitch2.28mm_Drill0.8mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>aab1047b-e6f6-457b-9a35-ab080250d42c</tstamps>
+    </comp>
+    <comp ref="JC1">
+      <value>Conn</value>
+      <footprint>FUEL4EP:castellated_hole_Pitch1.27mm_Drill0.65mm</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d63e2720-5a5c-4cf2-bc3c-462560f614d8</tstamps>
+    </comp>
+    <comp ref="JC2">
+      <value>Conn</value>
+      <footprint>FUEL4EP:castellated_hole_Pitch1.27mm_Drill0.65mm_rounded</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8c2f685e-6900-4809-9362-9f338260a1c0</tstamps>
+    </comp>
+    <comp ref="JC3">
+      <value>Conn</value>
+      <footprint>FUEL4EP:castellated_hole_Pitch1.27mm_Drill0.65mm_rounded</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>74fb5088-72f8-46a1-8ce1-b6a583d1eb40</tstamps>
+    </comp>
+    <comp ref="JC4">
+      <value>Conn</value>
+      <footprint>FUEL4EP:castellated_hole_Pitch1.27mm_Drill0.65mm_rounded</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>037c18cd-3785-4a73-89d0-d0687bfd5028</tstamps>
+    </comp>
+    <comp ref="JC5">
+      <value>Conn</value>
+      <footprint>FUEL4EP:castellated_hole_Pitch1.27mm_Drill0.65mm_rounded</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e5039a40-5ccc-479b-87be-4698bad0e1a0</tstamps>
+    </comp>
+    <comp ref="JC6">
+      <value>Conn</value>
+      <footprint>FUEL4EP:castellated_hole_Pitch1.27mm_Drill0.65mm_rounded</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ce55ab2c-7b1b-4fea-87e3-7933ba4f95af</tstamps>
+    </comp>
+    <comp ref="JC7">
+      <value>Conn</value>
+      <footprint>FUEL4EP:castellated_hole_Pitch1.27mm_Drill0.65mm_rounded</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b0ddcc2a-1df2-40f6-a118-eec90cb82c68</tstamps>
+    </comp>
+    <comp ref="JC8">
+      <value>Conn</value>
+      <footprint>FUEL4EP:castellated_hole_Pitch1.27mm_Drill0.65mm_rounded</footprint>
+      <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>da306614-d63c-4907-94c4-9057727fdaa4</tstamps>
+    </comp>
+    <comp ref="L1">
+      <value>12nH</value>
+      <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C2043991</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="LCSC" value="C2043991"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>485de024-d191-4164-80fe-fb0ef8256173</tstamps>
+    </comp>
+    <comp ref="L2">
+      <value>12nH</value>
+      <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C2043991</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="LCSC" value="C2043991"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9ca3e884-2f40-4895-a2e9-38e86516193c</tstamps>
+    </comp>
+    <comp ref="L3">
+      <value>18nH</value>
+      <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C908004</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="LCSC" value="C908004"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>39014538-3e11-4503-b934-6bfcc780859e</tstamps>
+    </comp>
+    <comp ref="L4">
+      <value>18nH</value>
+      <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C908004</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="LCSC" value="C908004"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>369fc866-7c69-4f5c-bb20-ed5c5d27939d</tstamps>
+    </comp>
+    <comp ref="L5">
+      <value>12nH</value>
+      <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C2043991</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="LCSC" value="C2043991"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>144bcb33-8908-445d-abe4-4162b277c402</tstamps>
+    </comp>
+    <comp ref="L6">
+      <value>12nH</value>
+      <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C2043991</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="LCSC" value="C2043991"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cfe71f57-5a72-401f-8faa-d4f375a45d12</tstamps>
+    </comp>
+    <comp ref="L7">
+      <value>3.3nH</value>
+      <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C412273</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="L" description="Inductor"/>
+      <property name="LCSC" value="C412273"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>16ca96f3-7e53-4503-9c2c-e441c049bdc2</tstamps>
+    </comp>
+    <comp ref="LOGO1">
+      <value>Logo_Open_Hardware_Small</value>
+      <footprint>FUEL4EP:CC-BY-ND-SA_bottom</footprint>
+      <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>369260fd-2bee-424f-800b-6c922452476b</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>56k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25796</field>
+        <field name="TYPE">0402</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C25796"/>
+      <property name="TYPE" value="0402"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fc65b0f4-7bdc-4a42-9c7f-4a042692e565</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>CC1101RGPR</value>
+      <footprint>Package_DFN_QFN:Texas_S-PVQFN-N20_EP2.4x2.4mm_ThermalVias</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/cc1101.pdf</datasheet>
+      <fields>
+        <field name="Description">Low-Power Sub-1 GHz RF Transceiver</field>
+        <field name="LCSC">C29953</field>
+        <field name="MF">Texas Instruments</field>
+        <field name="Package">QFN-20-EP(4x4)</field>
+        <field name="TYPE">QFN-20-EP(4x4)</field>
+      </fields>
+      <libsource lib="FUEL4EP" part="CC1101RGPR" description=""/>
+      <property name="MF" value="Texas Instruments"/>
+      <property name="Description" value="Low-Power Sub-1 GHz RF Transceiver"/>
+      <property name="Package" value="QFN-20-EP(4x4)"/>
+      <property name="LCSC" value="C29953"/>
+      <property name="TYPE" value="QFN-20-EP(4x4)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>80544830-1057-4129-8fab-a3f8cdad684a</tstamps>
+    </comp>
+    <comp ref="Y1">
+      <value>Crystal  26MHz</value>
+      <footprint>Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm</footprint>
+      <fields>
+        <field name="LCSC">C91747</field>
+        <field name="TYPE">SMD3225-4P</field>
+      </fields>
+      <libsource lib="Device" part="Crystal_GND24" description="Four pin crystal, GND on pins 2 and 4"/>
+      <property name="LCSC" value="C91747"/>
+      <property name="TYPE" value="SMD3225-4P"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9b37ee9a-eac3-42ae-859e-69ec0c132ff5</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Conn_01x01_Male">
+      <description>Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x01_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Crystal_GND24">
+      <description>Four pin crystal, GND on pins 2 and 4</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Crystal*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">Y</field>
+        <field name="Value">Crystal_GND24</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+        <pin num="4" name="4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="L">
+      <description>Inductor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Choke_*</fp>
+        <fp>*Coil*</fp>
+        <fp>Inductor_*</fp>
+        <fp>L_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">L</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="FUEL4EP" part="CC1101RGPR">
+      <docs>https://www.ti.com/lit/ds/symlink/cc1101.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">CC1101RGPR</field>
+        <field name="Footprint">QLP20</field>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/cc1101.pdf</field>
+        <field name="MF">Texas Instruments</field>
+        <field name="Description">Low-Power Sub-1 GHz RF Transceiver</field>
+        <field name="Package">QFN-20-EP(4x4)</field>
+      </fields>
+      <pins>
+        <pin num="1" name="SCLK" type="input"/>
+        <pin num="2" name="SO/GDO1" type="bidirectional"/>
+        <pin num="3" name="GDO2" type="output"/>
+        <pin num="4" name="DVDD" type="power_in"/>
+        <pin num="5" name="DCOUPL" type="bidirectional"/>
+        <pin num="6" name="GDO0" type="output"/>
+        <pin num="7" name="~{CS}" type="input"/>
+        <pin num="8" name="XOSC_Q1" type="bidirectional"/>
+        <pin num="9" name="AVDD1" type="power_in"/>
+        <pin num="10" name="XOSC_Q2" type="bidirectional"/>
+        <pin num="11" name="AVDD2" type="power_in"/>
+        <pin num="12" name="RF_P" type="bidirectional"/>
+        <pin num="13" name="RF_N" type="bidirectional"/>
+        <pin num="14" name="AVDD3" type="power_in"/>
+        <pin num="15" name="AVDD4" type="power_in"/>
+        <pin num="16" name="GND1" type="power_in"/>
+        <pin num="17" name="RBIAS" type="bidirectional"/>
+        <pin num="18" name="DGUARD" type="power_in"/>
+        <pin num="19" name="GND2" type="power_in"/>
+        <pin num="20" name="SI" type="input"/>
+        <pin num="21" name="GND3" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Graphic" part="Logo_Open_Hardware_Small">
+      <description>Open Hardware logo, small</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">#LOGO</field>
+        <field name="Value">Logo_Open_Hardware_Small</field>
+        <field name="Datasheet">~</field>
+      </fields>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/usr/share/kicad/symbols//Connector.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/usr/share/kicad/symbols//Device.kicad_sym</uri>
+    </library>
+    <library logical="FUEL4EP">
+      <uri>/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/../FUEL4EP.kicad_sym</uri>
+    </library>
+    <library logical="Graphic">
+      <uri>/usr/share/kicad/symbols//Graphic.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/GDO0">
+      <node ref="JC2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="GDO0" pintype="output"/>
+    </net>
+    <net code="2" name="/GDO2">
+      <node ref="JC7" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="GDO2" pintype="output"/>
+    </net>
+    <net code="3" name="/MISO{slash}GDO1">
+      <node ref="JC6" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="SO/GDO1" pintype="bidirectional"/>
+    </net>
+    <net code="4" name="/MOSI">
+      <node ref="JC5" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="20" pinfunction="SI" pintype="input"/>
+    </net>
+    <net code="5" name="/SCK">
+      <node ref="JC4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="SCLK" pintype="input"/>
+    </net>
+    <net code="6" name="/~{CS}">
+      <node ref="JC3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="7" pinfunction="~{CS}" pintype="input"/>
+    </net>
+    <net code="7" name="GND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C10" pin="2" pintype="passive"/>
+      <node ref="C11" pin="2" pintype="passive"/>
+      <node ref="C12" pin="2" pintype="passive"/>
+      <node ref="C13" pin="2" pintype="passive"/>
+      <node ref="C14" pin="2" pintype="passive"/>
+      <node ref="C15" pin="2" pintype="passive"/>
+      <node ref="C16" pin="2" pintype="passive"/>
+      <node ref="C17" pin="2" pintype="passive"/>
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C8" pin="1" pintype="passive"/>
+      <node ref="C9" pin="1" pintype="passive"/>
+      <node ref="JA1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="JC8" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="U1" pin="16" pinfunction="GND1" pintype="power_in"/>
+      <node ref="U1" pin="19" pinfunction="GND2" pintype="power_in"/>
+      <node ref="U1" pin="21" pinfunction="GND3" pintype="power_in"/>
+      <node ref="Y1" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="Y1" pin="4" pinfunction="4" pintype="passive"/>
+    </net>
+    <net code="8" name="Net-(C1-Pad1)">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="L1" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="L4" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="9" name="Net-(C2-Pad1)">
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="L2" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="L3" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="10" name="Net-(C3-Pad2)">
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="L3" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="11" name="Net-(C4-Pad2)">
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="L4" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="L5" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="12" name="Net-(C5-Pad2)">
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="L5" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="L6" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="13" name="Net-(C6-Pad1)">
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="L7" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="14" name="Net-(C6-Pad2)">
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7" pin="2" pintype="passive"/>
+      <node ref="L6" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="15" name="Net-(C7-Pad1)">
+      <node ref="C7" pin="1" pintype="passive"/>
+      <node ref="JA2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="L7" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="16" name="Net-(C8-Pad2)">
+      <node ref="C8" pin="2" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="XOSC_Q1" pintype="bidirectional"/>
+      <node ref="Y1" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="17" name="Net-(C9-Pad2)">
+      <node ref="C9" pin="2" pintype="passive"/>
+      <node ref="U1" pin="10" pinfunction="XOSC_Q2" pintype="bidirectional"/>
+      <node ref="Y1" pin="3" pinfunction="3" pintype="passive"/>
+    </net>
+    <net code="18" name="Net-(C16-Pad1)">
+      <node ref="C16" pin="1" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="DCOUPL" pintype="bidirectional"/>
+    </net>
+    <net code="19" name="Net-(L1-Pad1)">
+      <node ref="L1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="13" pinfunction="RF_N" pintype="bidirectional"/>
+    </net>
+    <net code="20" name="Net-(L2-Pad1)">
+      <node ref="L2" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U1" pin="12" pinfunction="RF_P" pintype="bidirectional"/>
+    </net>
+    <net code="21" name="Net-(R1-Pad2)">
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="U1" pin="17" pinfunction="RBIAS" pintype="bidirectional"/>
+    </net>
+    <net code="22" name="VDDA">
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C11" pin="1" pintype="passive"/>
+      <node ref="C12" pin="1" pintype="passive"/>
+      <node ref="C13" pin="1" pintype="passive"/>
+      <node ref="C14" pin="1" pintype="passive"/>
+      <node ref="C15" pin="1" pintype="passive"/>
+      <node ref="C17" pin="1" pintype="passive"/>
+      <node ref="JC1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="11" pinfunction="AVDD2" pintype="power_in"/>
+      <node ref="U1" pin="14" pinfunction="AVDD3" pintype="power_in"/>
+      <node ref="U1" pin="15" pinfunction="AVDD4" pintype="power_in"/>
+      <node ref="U1" pin="18" pinfunction="DGUARD" pintype="power_in"/>
+      <node ref="U1" pin="4" pinfunction="DVDD" pintype="power_in"/>
+      <node ref="U1" pin="9" pinfunction="AVDD1" pintype="power_in"/>
+    </net>
+  </nets>
+</export>
