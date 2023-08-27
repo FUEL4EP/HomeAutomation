@@ -1,4 +1,4 @@
-20965237539363809
+20972010115156827
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -52710,6 +52710,13 @@ Tindie_ArduinoProMiniXL_1284P_V2
 39
 39
 FUEL4EP
+U.FL_Molex_MCRF_73412-0110_Vertical
+Molex Microcoaxial RF Connectors (MCRF), mates Hirose U.FL, (http://www.molex.com/pdm_docs/sd/734120110_sd.pdf)
+mcrf hirose ufl u.fl microcoaxial
+0
+4
+2
+FUEL4EP
 USB-MICRO-MK5P
 
 
@@ -52738,11 +52745,32 @@ castellated_hole_Pitch1.27mm_Drill0.65mm_rounded
 2
 1
 FUEL4EP
+castellated_hole_Pitch1.27mm_Drill0.75mm
+
+
+0
+2
+1
+FUEL4EP
+castellated_hole_Pitch1.27mm_Drill0.75mm_rounded
+
+
+0
+2
+1
+FUEL4EP
 castellated_hole_Pitch2.28mm_Drill0.8mm
 
 
 0
 2
+1
+FUEL4EP
+castellated_short_hole_Pitch2.28mm_Drill0.8mm
+
+
+0
+1
 1
 FUEL4EP
 eByte_E07-868MS10

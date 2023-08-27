@@ -1,5 +1,5 @@
-** Drc report for /home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/CC1101_868MHz_RF_Modul_FUEL4EP.kicad_pcb **
-** Created on 2023-08-25 11:02:03 **
+** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/CC1101_868MHz_RF_Modul_FUEL4EP.kicad_pcb **
+** Created on 2023-08-27 19:17:08 **
 
 ** Found 11 DRC violations **
 [copper_edge_clearance]: Platinenkanten-Freiraum-Verstoß (Platinenkonfigurations-Rand-Einschränkungen Freiraum 0.0750 mm; tatsächlich 0.0000 mm)
