@@ -55,7 +55,9 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "missing_courtyard|9398000|-2794000|713a504b-9bdd-45ef-815d-f9ee200a396a|00000000-0000-0000-0000-000000000000"
+      ],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2
@@ -359,7 +361,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "CC1101_868MHz_RF_Modul_FUEL4EP.kicad_pro",
+    "filename": "CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_pro",
     "version": 1
   },
   "net_settings": {

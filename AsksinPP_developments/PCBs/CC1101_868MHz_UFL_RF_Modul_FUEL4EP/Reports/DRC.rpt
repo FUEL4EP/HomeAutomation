@@ -1,0 +1,53 @@
+** Drc report for /home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP/CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_pcb **
+** Created on 2023-08-27 16:50:41 **
+
+** Found 11 DRC violations **
+[copper_edge_clearance]: Platinenkanten-Freiraum-Verstoß (Platinenkonfigurations-Rand-Einschränkungen Freiraum 0.0750 mm; tatsächlich 0.0000 mm)
+    Rule: Platinenkonfigurations-Rand-Einschränkungen; Severity: error
+    @(0.0000 mm, 0.0000 mm): Linie auf Edge.Cuts
+    @(0.0000 mm, -5.8100 mm): Durchlochpad 1 [/MOSI] von JC5
+[copper_edge_clearance]: Platinenkanten-Freiraum-Verstoß (Platinenkonfigurations-Rand-Einschränkungen Freiraum 0.0750 mm; tatsächlich 0.0000 mm)
+    Rule: Platinenkonfigurations-Rand-Einschränkungen; Severity: error
+    @(19.0000 mm, -13.0000 mm): Linie auf Edge.Cuts
+    @(19.0000 mm, -3.5500 mm): Durchlochpad 1 [GND] von JA1
+[copper_edge_clearance]: Platinenkanten-Freiraum-Verstoß (Platinenkonfigurations-Rand-Einschränkungen Freiraum 0.0750 mm; tatsächlich 0.0000 mm)
+    Rule: Platinenkonfigurations-Rand-Einschränkungen; Severity: error
+    @(0.0000 mm, 0.0000 mm): Linie auf Edge.Cuts
+    @(0.0000 mm, -2.0000 mm): Durchlochpad 1 [GND] von JC8
+[copper_edge_clearance]: Platinenkanten-Freiraum-Verstoß (Platinenkonfigurations-Rand-Einschränkungen Freiraum 0.0750 mm; tatsächlich 0.0000 mm)
+    Rule: Platinenkonfigurations-Rand-Einschränkungen; Severity: error
+    @(19.0000 mm, -13.0000 mm): Linie auf Edge.Cuts
+    @(19.0000 mm, -1.2700 mm): Durchlochpad 1 [Net-(C7-Pad1)] von JA2
+[copper_edge_clearance]: Platinenkanten-Freiraum-Verstoß (Platinenkonfigurations-Rand-Einschränkungen Freiraum 0.0750 mm; tatsächlich 0.0000 mm)
+    Rule: Platinenkonfigurations-Rand-Einschränkungen; Severity: error
+    @(0.0000 mm, 0.0000 mm): Linie auf Edge.Cuts
+    @(0.0000 mm, -4.5400 mm): Durchlochpad 1 [/MISO/GDO1] von JC6
+[copper_edge_clearance]: Platinenkanten-Freiraum-Verstoß (Platinenkonfigurations-Rand-Einschränkungen Freiraum 0.0750 mm; tatsächlich 0.0000 mm)
+    Rule: Platinenkonfigurations-Rand-Einschränkungen; Severity: error
+    @(0.0000 mm, 0.0000 mm): Linie auf Edge.Cuts
+    @(0.0000 mm, -8.3500 mm): Durchlochpad 1 [/~{CS}] von JC3
+[copper_edge_clearance]: Platinenkanten-Freiraum-Verstoß (Platinenkonfigurations-Rand-Einschränkungen Freiraum 0.0750 mm; tatsächlich 0.0000 mm)
+    Rule: Platinenkonfigurations-Rand-Einschränkungen; Severity: error
+    @(0.0000 mm, 0.0000 mm): Linie auf Edge.Cuts
+    @(0.0000 mm, -9.6200 mm): Durchlochpad 1 [/GDO0] von JC2
+[copper_edge_clearance]: Platinenkanten-Freiraum-Verstoß (Platinenkonfigurations-Rand-Einschränkungen Freiraum 0.0750 mm; tatsächlich 0.0000 mm)
+    Rule: Platinenkonfigurations-Rand-Einschränkungen; Severity: error
+    @(0.0000 mm, 0.0000 mm): Linie auf Edge.Cuts
+    @(0.0000 mm, -10.8900 mm): Durchlochpad 1 [VDDA] von JC1
+[copper_edge_clearance]: Platinenkanten-Freiraum-Verstoß (Platinenkonfigurations-Rand-Einschränkungen Freiraum 0.0750 mm; tatsächlich 0.0000 mm)
+    Rule: Platinenkonfigurations-Rand-Einschränkungen; Severity: error
+    @(0.0000 mm, 0.0000 mm): Linie auf Edge.Cuts
+    @(0.0000 mm, -7.0800 mm): Durchlochpad 1 [/SCK] von JC4
+[copper_edge_clearance]: Platinenkanten-Freiraum-Verstoß (Platinenkonfigurations-Rand-Einschränkungen Freiraum 0.0750 mm; tatsächlich 0.0000 mm)
+    Rule: Platinenkonfigurations-Rand-Einschränkungen; Severity: error
+    @(0.0000 mm, 0.0000 mm): Linie auf Edge.Cuts
+    @(0.0000 mm, -3.2700 mm): Durchlochpad 1 [/GDO2] von JC7
+[missing_courtyard]: Footprint hat keine Abstandsfläche definiert
+    Local override; Severity: warning (excluded)
+    @(9.3980 mm, -2.7940 mm): Footprint LOGO1
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **
