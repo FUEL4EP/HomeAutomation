@@ -174,6 +174,15 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - **WICHTIG:** Wenn der Config-Taster des Sensors (unbeabsichtigt) länger als 6..8 Sekunden gedrückt wurde, muss der Sensor danach neu an der Zentrale angelernt werden. Beim Reset wird die Adresse der Zentrale (CCU3/RaspberryMatic) im EEPROM des 328P gelöscht. Damit funktioniert LazyConfig nicht mehr. Zum erneuten Anlernen, zuerst den Sensor in der CCU3/RaspberryMatic ablernen und dann normal wieder anlernen. Die Offseteinstellungen müssen dann im WebUI erneut vorgenommen werden!
 
 
+## I2C-Adresse des BME280 Moduls
+
+- auf dem Mark gibt es BME280 Module mit den I2C-Adressen 0x76 und 0x77.
+- der Sketch verwendet 0x76 als I2C-Adresse
+- falls das BME280 Modul die I2C-Adresse 0x77 hat, gibt es zwei Möglichkeiten:
+	+ bei den meisten BME280 Modulen lässt sich die I2C-Adresse durch eine Lötbrücke zwischen 0x76 und 0x77 ändern. Bitte das Datenblatt des Moduls dazu lesen.	
+	+ die Softwarelösung besteht darin in 'Sensors/Sens_BME280.h' die Zeile 'BME280I2C::I2CAddr_0x76 // I2C address. I2C specific' durch 'BME280I2C::I2CAddr_0x77 // I2C address. I2C specific' zu ersetzen.
+
+
 ## Benötigte Libraries
 
 + [AskSinPP Library](https://github.com/pa-pa/AskSinPP)</br>
