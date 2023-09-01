@@ -1,4 +1,4 @@
-20970316679695250
+20978684929706700
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -52745,6 +52745,20 @@ castellated_hole_Pitch1.27mm_Drill0.65mm_rounded
 2
 1
 FUEL4EP
+castellated_hole_Pitch1.27mm_Drill0.75mm
+
+
+0
+2
+1
+FUEL4EP
+castellated_hole_Pitch1.27mm_Drill0.75mm_rounded
+
+
+0
+2
+1
+FUEL4EP
 castellated_hole_Pitch2.28mm_Drill0.8mm
 
 
@@ -52773,14 +52787,28 @@ eByte_E07-900M10S
 22
 22
 FUEL4EP
-eByte_pin_01
-
-
-0
-0
-0
-FUEL4EP
 ePaper_MountingHole_M5
+
+
+0
+1
+1
+FUEL4EP
+edge_hole_Pitch1.27mm_Drill0.75mm
+
+
+0
+1
+1
+FUEL4EP
+edge_hole_Pitch1.27mm_Drill0.75mm_rounded
+
+
+0
+1
+1
+FUEL4EP
+edge_hole_Pitch2.28mm_Drill0.8mm
 
 
 0

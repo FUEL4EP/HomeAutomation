@@ -1,5 +1,5 @@
-** Drc report for /home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP/CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_pcb **
-** Created on 2023-08-29 09:31:14 **
+** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP/CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_pcb **
+** Created on 2023-09-01 16:04:11 **
 
 ** Found 1 DRC violations **
 [missing_courtyard]: Footprint hat keine Abstandsfläche definiert

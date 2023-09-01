@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name FUEL4EP)(type KiCad)(uri ${KIPRJMOD}/../FUEL4EP.pretty)(options "")(descr ""))
-)
