@@ -1,0 +1,15 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+C1,1uF,C_0603_1608Metric,14.224,2.3,180.0,top
+C2,100n,C_0402_1005Metric,15.8,10.0,180.0,top
+LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA,15.22619,11.447814,0.0,bottom
+R1,10K,R_0402_1005Metric,18.207269,3.337,0.0,top
+R2,10K,R_0402_1005Metric,18.2,2.321,180.0,top
+R3,100k,R_0402_1005Metric,1.8,13.2,90.0,top
+R4,10k,R_0402_1005Metric,1.8,15.7,90.0,top
+R5,100k,R_0402_1005Metric,9.2,13.2,90.0,top
+R6,10k,R_0402_1005Metric,9.2,15.7,90.0,top
+R7,100k,R_0402_1005Metric,16.6,13.2,90.0,top
+R8,10k,R_0402_1005Metric,16.6,15.7,90.0,top
+R9,100k,R_0402_1005Metric,24.0,13.2,90.0,top
+R10,10k,R_0402_1005Metric,24.0,15.7,90.0,top
+U1,PCA9536D,SOIC-8_3.9x4.9mm_P1.27mm,15.47,6.6,270.0,top
