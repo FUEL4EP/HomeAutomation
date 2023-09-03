@@ -55,19 +55,27 @@
 | [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP) | AsksinPP Platine mit SMD Bestückung:<br/> ATMega1284P <br/>[eByte E07-868MS10 Sendemodul](https://www.rcscomponents.kiev.ua/datasheets/e07-868ms10_usermanual_en_v1_20.pdf)<br/>optionalem Aufwärtwandler TPS61221<br/>[optionalem e-Paper Waveshare 1,54 Zoll](https://www.waveshare.com/wiki/1.54inch_e-Paper_Module)<br/>optionalen 2x 2Mbit FRAM MB85RS2MTPF| [3D Ansicht 1](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP/PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_top_view.png)<br/>[3D Ansicht 2](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP/PNGs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB_KiCAD_with_epaper_option.png)|
 | [HB-UNI-SenAct-4-4-SC_DS_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP) | AsksinPP Platine für Durchsteckmontage für 3xSchaltaktor für Betrieb an Netzfreischalter| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP/PNGs/HB-UNI-SenAct-4-4-SC_DS_FUEL4EP_PCB_top_3D.png)|
 | [HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP) - NEU -| AsksinPP Platine basierend auf<br/> [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) oder Arduino Pro Mini<br/> und [eByte E07-900M10S Sendemodul](https://www.manualslib.com/manual/2937348/Ebyte-E07-900m10s.html)| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP/PNGs/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP_PCB_3D_top.png)|
+| [CC1101_868MHz_RF_Modul_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP) - NEU -| AsksinPP RF 868.3 MHz Funkmodule als Ersatz für eByte E07-868M10S| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/PNGs/CC1101_868MHz_RF_Modul_FUEL4EP_PCB_3D_top.png)|
+| [CC1101_868MHz_UFL_RF_Modul_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP) - NEU -| AsksinPP RF 868.3 MHz Funkmodule als Ersatz für eByte E07-868M10S mit U.FL Antennenbuchse| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP/PNGs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP_PCB_3D_top.png)|
+| [4Bit_I2C_Port_Expander_Module_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/4Bit_I2C_Port_Expander_Module_FUEL4EP) - NEU -| I2C Portexpander| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/4Bit_I2C_Port_Expander_Module_FUEL4EP/PNGs/4Bit_I2C_Port_Expander_Module_FUEL4EP_PCB_3D_top.png)|
 
 <br/>
 
-#### Installation von Sensoren auf lokalem Computer
+#### Installation von Sensoren oder Platinen auf einem lokalen Computer
 
 - Herunterladen des Sammelrepositories in ein lokales Zielverzeichnis mit dem Kommando:
 	+	git clone https://github.com/FUEL4EP/HomeAutomation.git
 	+	alternativ kann vom Github [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) die ZIP-Datei HomeAutomation-master.zip heruntergeladen und auf dem lokalen Rechner ausgepackt werden. Bitte dann regelmäßig auf Github nach Updates schauen.
 - alle zu einem Sensor <Sensorname\> gehörenden Installationsdaten stehen dann unter
 	+ HomeAutomation/AsksinPP_developments/sketches/<Sensorname\>
-- der Sensor Sketch
-	+ HomeAutomation/AsksinPP_developments/sketches/<Sensorname\>/<Sensorname\>.ino<br/><br/>
-  kann direkt im Arduino IDE aufgerufen werden
+	* der Sensor Sketch
+		+ HomeAutomation/AsksinPP_developments/sketches/<Sensorname\>/<Sensorname\>.ino<br/>kann direkt im Arduino IDE aufgerufen werden
+- alle zu einer Platine <Platinenname\> gehörenden Installationsdaten stehen dann unter
+	- HomeAutomation/AsksinPP_developments/PCBs/<Platinenname\>
+  - die Platine
+	+ HomeAutomation/AsksinPP_developments/PCBs/<Platinenname\>/<Platinenname\>.kicad_pro<br/>
+  kann direkt mit KiCAD 6 aufgerufen werden
+<br/>
 <br/>
 
 #### Installation von Bibliotheken auf lokalem Computer
