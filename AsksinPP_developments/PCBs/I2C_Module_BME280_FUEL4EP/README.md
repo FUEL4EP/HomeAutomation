@@ -48,6 +48,8 @@
 - Gerber-Daten als Zip-Datei
 - BOM- und CPL-Daten als CSV-Datei
 
+- die Rotation von U1 (BME280) ist bei JLCPCB Assembly-Service-Online-View falsch und muss händisch korrigiert und geprüft werden. Bitte die entsprechende Option beim Bestellen wählen.
+
 ## lokale Installation des Github Releases auf Deinem Computer
 
 - gehe bitte in Dein Zielinstallationsverzeichnis, wo Du mit der I2C_Module_BME280_FUEL4EP Platine mit KiCAD arbeiten möchtest

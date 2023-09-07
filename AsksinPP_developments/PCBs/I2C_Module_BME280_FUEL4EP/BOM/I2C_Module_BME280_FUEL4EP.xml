@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_BME280_FUEL4EP/I2C_Module_BME280_FUEL4EP.kicad_sch</source>
-    <date>Do 07 Sep 2023 13:31:51 CEST</date>
+    <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_BME280_FUEL4EP/I2C_Module_BME280_FUEL4EP.kicad_sch</source>
+    <date>Do 07 Sep 2023 17:51:16 CEST</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -27,7 +27,13 @@
     <comp ref="C1">
       <value>4.7u</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C19666</field>
+        <field name="TYPE">0603</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C19666"/>
+      <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -36,7 +42,13 @@
     <comp ref="C3">
       <value>100n</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14663</field>
+        <field name="TYPE">0603</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -45,7 +57,13 @@
     <comp ref="C4">
       <value>100n</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14663</field>
+        <field name="TYPE">0603</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -106,7 +124,13 @@
     <comp ref="R1">
       <value>4.7k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25900</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C25900"/>
+      <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -115,7 +139,13 @@
     <comp ref="R2">
       <value>4.7k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25900</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C25900"/>
+      <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -124,7 +154,13 @@
     <comp ref="R3">
       <value>10k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C25744"/>
+      <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>

@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_BME680_FUEL4EP/I2C_Module_BME680_FUEL4EP.kicad_sch</source>
-    <date>Do 07 Sep 2023 15:12:54 CEST</date>
+    <date>Do 07 Sep 2023 17:38:37 CEST</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -27,7 +27,13 @@
     <comp ref="C1">
       <value>4.7u</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C19666</field>
+        <field name="TYPE">0603</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C19666"/>
+      <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME680_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -36,7 +42,13 @@
     <comp ref="C3">
       <value>100n</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14663</field>
+        <field name="TYPE">0603</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME680_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -45,7 +57,13 @@
     <comp ref="C4">
       <value>100n</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="LCSC">C14663</field>
+        <field name="TYPE">0603</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME680_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -106,7 +124,13 @@
     <comp ref="R1">
       <value>4.7k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25900</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C25900"/>
+      <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME680_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -115,7 +139,13 @@
     <comp ref="R2">
       <value>4.7k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25900</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C25900"/>
+      <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME680_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -124,7 +154,13 @@
     <comp ref="R3">
       <value>10k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="LCSC" value="C25744"/>
+      <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME680_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -134,7 +170,13 @@
       <value>BME680</value>
       <footprint>Package_LGA:Bosch_LGA-8_3x3mm_P0.8mm_ClockwisePinNumbering</footprint>
       <datasheet>https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BME680-DS001.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C125972</field>
+        <field name="TYPE">LGA-8</field>
+      </fields>
       <libsource lib="Sensor" part="BME680" description="4-in-1 sensor, gas, humidity, pressure, temperature, I2C and SPI interface, 1.71-3.6V, LGA-8"/>
+      <property name="LCSC" value="C125972"/>
+      <property name="TYPE" value="LGA-8"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME680_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -298,6 +340,7 @@
       <node ref="JP1" pin="1" pinfunction="A" pintype="passive"/>
       <node ref="R1" pin="2" pintype="passive"/>
       <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="GND" pintype="power_in"/>
       <node ref="U1" pin="7" pinfunction="GND" pintype="power_in"/>
     </net>
     <net code="4" name="Net-(JP1-Pad2)">
@@ -319,9 +362,6 @@
       <node ref="FB1" pin="2" pintype="passive"/>
       <node ref="R3" pin="1" pintype="passive"/>
       <node ref="U1" pin="8" pinfunction="VDD" pintype="power_in"/>
-    </net>
-    <net code="7" name="unconnected-(U1-Pad1)">
-      <node ref="U1" pin="1" pinfunction="GND" pintype="power_in"/>
     </net>
   </nets>
 </export>

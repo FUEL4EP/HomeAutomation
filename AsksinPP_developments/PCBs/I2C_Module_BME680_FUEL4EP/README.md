@@ -48,7 +48,7 @@
 - Gerber-Daten als Zip-Datei
 - BOM- und CPL-Daten als CSV-Datei
 
-- die Rotation von U1 (BME680) ist bei JLCPCB Assembly-Service-Online-View falsch und muss händisch korrigiert und geprüft werden. Bitte die entsprechende Option wählen.
+- die Rotation von U1 (BME680) ist bei JLCPCB Assembly-Service-Online-View falsch und muss händisch korrigiert und geprüft werden. Bitte die entsprechende Option beim Bestellen wählen.
 
 ## lokale Installation des Github Releases auf Deinem Computer
 
