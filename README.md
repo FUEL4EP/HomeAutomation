@@ -58,6 +58,7 @@
 | [CC1101_868MHz_RF_Modul_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP) - NEU -| AsksinPP RF 868.3 MHz Funkmodule als Ersatz für eByte E07-868M10S| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/PNGs/CC1101_868MHz_RF_Modul_FUEL4EP_PCB_3D_top.png)|
 | [CC1101_868MHz_UFL_RF_Modul_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP) - NEU -| AsksinPP RF 868.3 MHz Funkmodule als Ersatz für eByte E07-868M10S mit U.FL Antennenbuchse| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP/PNGs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP_PCB_3D_top.png)|
 | [4Bit_I2C_Port_Expander_Module_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/4Bit_I2C_Port_Expander_Module_FUEL4EP) - NEU -| I2C Portexpander| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/4Bit_I2C_Port_Expander_Module_FUEL4EP/PNGs/4Bit_I2C_Port_Expander_Module_FUEL4EP_PCB_3D_top.png)|
+| [I2C_Module_BME280_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_BME280_FUEL4EP) - NEU -| I2C BME280 Sensor Modul| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_BME280_FUEL4EP/PNGs/I2C_Module_BME280_FUEL4EP_PCB_3D_top.png)|
 
 <br/>
 
