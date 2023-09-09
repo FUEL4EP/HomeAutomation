@@ -61,6 +61,7 @@
 | [I2C_Module_BME280_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_BME280_FUEL4EP) - NEU -| I2C BME280 THPD Sensor Modul| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_BME280_FUEL4EP/PNGs/I2C_Module_BME280_FUEL4EP_PCB_3D_top.png)|
 | [I2C_Module_BME680_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_BME680_FUEL4EP) - NEU -| I2C BME680 VOC Sensor Modul| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_BME680_FUEL4EP/PNGs/I2C_Module_BME680_FUEL4EP_PCB_3D_top.png)|
 | [I2C_Module_SHT85_BME280_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT85_BME280_FUEL4EP) - NEU -| I2C SHT85 und BME280 THPD Sensor Modul| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT85_BME280_FUEL4EP/PNGs/I2C_Module_SHT85_BME280_FUEL4EP_PCB_3D_top.png)|
+| [I2C_Module_SHT45_BME280_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_FUEL4EP) - NEU -| I2C SHT45 und BME280 THPD Sensor Modul| [3D Ansicht](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_FUEL4EP/PNGs/I2C_Module_SHT45_BME280_FUEL4EP_PCB_3D_top.png)|
 
 
 <br/>
