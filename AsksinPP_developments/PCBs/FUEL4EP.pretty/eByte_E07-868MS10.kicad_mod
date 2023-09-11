@@ -46,7 +46,7 @@
   (pad "7C" thru_hole circle (at 1.27 9.62) (size 1 1) (drill 0.65) (layers *.Cu *.Mask) (tstamp 8872b698-5266-40ba-af83-af95abb967a1))
   (pad "8C" smd rect (at 0.185 10.89) (size 2.17 1) (layers "F.Cu" "F.Mask") (tstamp 7fa30d4f-f661-4955-84de-8030abea2637))
   (pad "8C" thru_hole circle (at 1.27 10.89) (size 1 1) (drill 0.65) (layers *.Cu *.Mask) (tstamp 80e199d6-3660-4112-87f8-772e94e5d1fa))
-  (model "/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/FUEL4EP_kicad_3D_models/ebyte_E07-868MS10.step"
+  (model "../FUEL4EP_kicad_3D_models/ebyte_E07-868MS10.step"
     (offset (xyz 0 -13 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

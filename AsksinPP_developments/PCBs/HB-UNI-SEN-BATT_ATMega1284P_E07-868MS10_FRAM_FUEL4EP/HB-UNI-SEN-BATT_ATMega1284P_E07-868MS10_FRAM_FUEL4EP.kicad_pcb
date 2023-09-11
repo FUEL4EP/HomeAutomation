@@ -773,7 +773,7 @@
       (net 1 "GND") (pinfunction "GND") (pintype "power_in") (tstamp 875b0557-c12a-4dc0-a0a9-4d2d600c8982))
     (pad "8C" smd rect (at 0.185 10.89 180) (size 2.17 1) (layers "F.Cu" "F.Mask")
       (net 1 "GND") (pinfunction "GND") (pintype "power_in") (tstamp b057d2fd-8527-4826-8f09-4da96bc7b130))
-    (model "/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/FUEL4EP_kicad_3D_models/ebyte_E07-868MS10.step"
+    (model "../FUEL4EP_kicad_3D_models/ebyte_E07-868MS10.step"
       (offset (xyz 0 -13 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))

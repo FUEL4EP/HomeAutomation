@@ -1,4 +1,4 @@
-20958465755385392
+20983768663639337
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -52542,6 +52542,13 @@ CC-BY-ND-SA
 0
 0
 FUEL4EP
+CC-BY-ND-SA_bottom
+
+
+0
+0
+0
+FUEL4EP
 CC1101
 CC1101 module
 
@@ -52640,6 +52647,13 @@ Through hole pin header THT 1x08 2.00mm single row
 8
 8
 FUEL4EP
+SHT4X
+Consumer SHT4x Digital and Analog
+
+0
+4
+4
+FUEL4EP
 SOP-8_5.28x5.23mm_P1.27mm
 SOP, 8 Pin (http://www.macronix.com/Lists/Datasheet/Attachments/7534/MX25R3235F,%20Wide%20Range,%2032Mb,%20v1.6.pdf#page=80), generated with kicad-footprint-generator ipc_gullwing_generator.py
 SOP SO
@@ -52703,6 +52717,13 @@ Tindie_ArduinoProMiniXL_1284P_V2
 39
 39
 FUEL4EP
+U.FL_Molex_MCRF_73412-0110_Vertical
+Molex Microcoaxial RF Connectors (MCRF), mates Hirose U.FL, (http://www.molex.com/pdm_docs/sd/734120110_sd.pdf)
+mcrf hirose ufl u.fl microcoaxial
+0
+4
+2
+FUEL4EP
 USB-MICRO-MK5P
 
 
@@ -52715,6 +52736,55 @@ Waveshare_ePaper_module
 
 0
 4
+1
+FUEL4EP
+XDCR_SHT85
+
+
+0
+4
+4
+FUEL4EP
+castellated_hole_Pitch1.27mm_Drill0.65mm
+
+
+0
+2
+1
+FUEL4EP
+castellated_hole_Pitch1.27mm_Drill0.65mm_rounded
+
+
+0
+2
+1
+FUEL4EP
+castellated_hole_Pitch1.27mm_Drill0.75mm
+
+
+0
+2
+1
+FUEL4EP
+castellated_hole_Pitch1.27mm_Drill0.75mm_rounded
+
+
+0
+2
+1
+FUEL4EP
+castellated_hole_Pitch2.28mm_Drill0.8mm
+
+
+0
+2
+1
+FUEL4EP
+castellated_short_hole_Pitch2.28mm_Drill0.8mm
+
+
+0
+1
 1
 FUEL4EP
 eByte_E07-868MS10
@@ -52731,7 +52801,35 @@ eByte_E07-900M10S
 22
 22
 FUEL4EP
+eByte_E07-900MM10S
+
+
+0
+20
+20
+FUEL4EP
 ePaper_MountingHole_M5
+
+
+0
+1
+1
+FUEL4EP
+edge_hole_Pitch1.27mm_Drill0.75mm
+
+
+0
+1
+1
+FUEL4EP
+edge_hole_Pitch1.27mm_Drill0.75mm_rounded
+
+
+0
+1
+1
+FUEL4EP
+edge_hole_Pitch2.28mm_Drill0.8mm
 
 
 0

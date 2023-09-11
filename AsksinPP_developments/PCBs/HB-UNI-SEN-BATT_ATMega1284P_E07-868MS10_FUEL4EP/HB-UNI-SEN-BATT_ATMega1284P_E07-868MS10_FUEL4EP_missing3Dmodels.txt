@@ -1,9 +1,0 @@
-### Missing 3D models - created on 2023-07-15 12:42
-### Printed by checking_3D_models plugin
-Board file: /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP.kicad_pcb
-3D missing models written to:
-/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP_missing3Dmodels.txt
--------
--------
-NUM of 3D missing models:0
-checked extensions ['.stp', '.step', '.stpZ']

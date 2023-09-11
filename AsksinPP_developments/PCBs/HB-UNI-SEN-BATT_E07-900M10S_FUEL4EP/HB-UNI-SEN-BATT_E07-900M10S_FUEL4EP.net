@@ -1,6 +1,6 @@
 (export (version "E")
   (design
-    (source "/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP.kicad_sch")
+    (source "./HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP.kicad_sch")
     (date "Sa 22 Jul 2023 17:41:47 CEST")
     (tool "Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1")
     (sheet (number "1") (name "/") (tstamps "/")
@@ -543,7 +543,7 @@
     (library (logical "Device")
       (uri "/usr/share/kicad/symbols//Device.kicad_sym"))
     (library (logical "FUEL4EP")
-      (uri "/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP/../FUEL4EP.kicad_sym"))
+      (uri "../FUEL4EP.kicad_sym"))
     (library (logical "Graphic")
       (uri "/usr/share/kicad/symbols//Graphic.kicad_sym"))
     (library (logical "Jumper")

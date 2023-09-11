@@ -55,7 +55,7 @@
   (pad "3A" thru_hole circle (at 44.5 18.1) (size 3.5 3.5) (drill 1.5) (layers *.Cu *.Mask) (tstamp 1b6f337d-42dc-4487-b84e-d476ec50f51b))
   (pad "3C" thru_hole circle (at 5.5 18) (size 3.5 3.5) (drill 1.5) (layers *.Cu *.Mask) (tstamp 3f0b1c73-9ecf-4d80-a3c4-3bf60b76e326))
   (pad "3D" thru_hole circle (at 18.08 3) (size 2 2) (drill 1) (layers *.Cu *.Mask) (tstamp d7402d78-4135-41c8-89d5-292a1f5482f9))
-  (model "/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/FUEL4EP_kicad_3D_models/5V_One_Channel_Relay.step"
+  (model "../FUEL4EP_kicad_3D_models/5V_One_Channel_Relay.step"
     (offset (xyz -0.5 -0.5 0))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 90))
