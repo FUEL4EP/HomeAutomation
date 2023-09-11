@@ -4,6 +4,7 @@
 - [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) **oder Arduino Pro Mini**
 - [eByte E07-900MM10S Sendemodul](https://ebyteiot.com/products/ebyte-e07-900MM10Sti-cc1101-wireless-rf-module-868mhz-915mhz-ipex-stamp?_pos=2&_sid=bbf1d47dc&_ss=r)
 - Steckerleiste für [Waveshare ePaper Modul (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
+- U.FL Antennenbuchse (optional bestückbar)
 
 ![pic](PNGs/HB-UNI-SEN-BATT_E07-900MM10S_FUEL4EP_top_view.png)
 
