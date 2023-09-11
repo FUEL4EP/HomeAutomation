@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name "FUEL4EP")(type "KiCad")(uri "${KIPRJMOD}/../FUEL4EP.kicad_sym")(options "")(descr ""))
-)
