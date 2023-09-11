@@ -79,4 +79,9 @@
   (pad "5B" smd rect (at 7.54 10 90) (size 1.5 0.8) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 2bbf4992-0127-4109-911b-69af2a499a73))
   (pad "5C" smd rect (at 0 7.54) (size 1.5 0.8) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 4038345a-3f0c-4e1d-808a-fcbe23fa05cb))
   (pad "5D" smd rect (at 7.54 0 270) (size 1.5 0.8) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp b252dbe7-54c8-4f8d-afb0-ec734b802568))
+  (model "../FUEL4EP_kicad_3D_models/E07-900MM10S.step"
+    (offset (xyz 0 -10 0.1))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )
