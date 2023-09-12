@@ -41,6 +41,11 @@
 - die Daten für die Bestellung liegen im Verzeichnis [./jlcpcb/production_files/](./jlcpcb/production_files/)
 - Gerber-Daten als Zip-Datei
 - BOM- und CPL-Daten als CSV-Datei
+- bei der Bestellung bitte angeben '[specify a location](https://jlcpcb.com/help/article/50-How-to-remove-order-number-from-your-PCB)'
+
+![pic](./Pictures_of_JLCPCB_prototypes/specify_an_order_number.png)
+
+- der  Dummy-Text 'JLCJLCJLCJLC' ist auf der Rückseite der Platine
 
 ## lokale Installation des Github Releases auf Deinem Computer
 
@@ -58,9 +63,10 @@
 ## Versionsverlauf
 
 -   V1.3 01. Sep 2023: Anpassung der Silkscreen-Texte and JLCPCB-Regeln
+-   V1.4 12. Sep 2023: Verbesserung der GND-Durchkontaktierungen
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.3
+- PCB Version 1.4
 - Schematics  1.1
 
 ## Disclaimer

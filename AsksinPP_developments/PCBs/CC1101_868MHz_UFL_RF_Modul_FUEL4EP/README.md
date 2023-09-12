@@ -46,6 +46,11 @@
 ## Hinweis für Bestückung bei JLCPCB
 
 - die U.FL Buchse wird im Online Viewer [falsch](./Pictures_of_JLCPCB_prototypes/CC1101_868MHz_UFL_RF_Modul_FUEL4EP_JLCPCB_assembly_wrong_placement_UFL_connector.png) positioniert. Das ist ein Dummy-Fehler.
+- - bei der Bestellung bitte angeben '[specify a location](https://jlcpcb.com/help/article/50-How-to-remove-order-number-from-your-PCB)'
+
+![pic](./Pictures_of_JLCPCB_prototypes/specify_an_order_number.png)
+
+- der  Dummy-Text 'JLCJLCJLCJLC' ist auf der Rückseite der Platine
 
 ## lokale Installation des Github Releases auf Deinem Computer
 
