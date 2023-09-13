@@ -1,0 +1,9 @@
+ERC-Bericht (Mi 13 Sep 2023 14:19:57 CEST, UTF8-kodiert)
+
+***** Schaltplan /
+[multiple_net_names]: GND und CTS sind jeweils mit dem gleichen Teil verbunden. GND wird in der Netzliste benutzt
+    ; Severity: warning (excluded)
+    @(75.56 mm, 28.57 mm): Symbol #PWR05 [GND] Pin 1 [GND, Stromversorgung, Linie]
+    @(140.97 mm, 165.10 mm): Bezeichner 'CTS'
+
+ ** ERC-Meldungen: 1  Fehler 0  Warnungen 1

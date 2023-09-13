@@ -3565,7 +3565,7 @@
     (property "Value" "E07-900MM10S" (id 1) (at 96.52 162.56 90)
       (effects (font (size 1.27 1.27) bold))
     )
-    (property "Footprint" "U.FL connector (optional)" (id 2) (at 90.17 181.61 0)
+    (property "Footprint" "FUEL4EP:eByte_E07-900MM10S" (id 2) (at 90.17 181.61 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (id 3) (at 90.17 181.61 0)
@@ -3815,7 +3815,7 @@
       (reference "LOGO1") (unit 1) (value "Logo_Open_Hardware_Small") (footprint "FUEL4EP:CC-BY-ND-SA")
     )
     (path "/355609ac-841a-4e6b-bbeb-2d1eb180bf65"
-      (reference "Module1") (unit 1) (value "E07-900MM10S") (footprint "U.FL connector (optional)")
+      (reference "Module1") (unit 1) (value "E07-900MM10S") (footprint "FUEL4EP:eByte_E07-900MM10S")
     )
     (path "/00000000-0000-0000-0000-0000615b04ce"
       (reference "Module2") (unit 1) (value "Tindie_Pro_Mini_XL_V2") (footprint "FUEL4EP:Tindie_ArduinoProMiniXL_1284P_V2")

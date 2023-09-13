@@ -1,0 +1,10 @@
+** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP.kicad_pcb **
+** Created on 2022-01-10 10:48:03 **
+
+** Found 1 DRC errors **
+ErrType(46): Footprint hat keinen Sperrbereich definiert
+    @(116.250 mm, 101.000 mm): Footprint LOGO1 auf F.Cu
+
+** Found 0 unconnected pads **
+
+** End of Report **

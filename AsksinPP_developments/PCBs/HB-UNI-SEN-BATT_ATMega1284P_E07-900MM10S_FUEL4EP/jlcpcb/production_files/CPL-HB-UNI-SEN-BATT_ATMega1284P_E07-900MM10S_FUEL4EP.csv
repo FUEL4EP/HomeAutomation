@@ -1,0 +1,43 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+BT1,AA,BatteryHolder_Keystone_2460_1xAA,63.49,40.14,-90.0,top
+BT2,AA,BatteryHolder_Keystone_2460_1xAA,11.42,39.9,90.0,top
+C1,10uF,C_0402_1005Metric,32.258,39.37,0.0,top
+C2,100n,C_0805_2012Metric,30.2189,42.95,180.0,top
+C3,100n,C_0805_2012Metric,41.1765,50.7015,90.0,top
+C4,100n,C_0805_2012Metric,33.366,58.639,180.0,top
+C5,10u,C_1206_3216Metric_Pad1.33x1.80mm_HandSolder,38.065,62.5248,90.0,top
+C6,22p,C_0805_2012Metric,29.4925,64.481,0.0,top
+C7,22p,C_0805_2012Metric,33.747,64.481,180.0,top
+C8,100n,C_0805_2012Metric,33.8511,43.1069,180.0,top
+C9,100n,C_0805_2012Metric,28.5248,69.1292,180.0,top
+C10,10u,C_0805_2012Metric,53.03068,50.9428,0.0,top
+C11,10u,C_0805_2012Metric,53.03068,48.94636,0.0,top
+C12,10u,C_0805_2012Metric,53.051,55.78912,0.0,top
+C13,10u,C_0805_2012Metric,53.051,57.79572,0.0,top
+C14,100n,C_0402_1005Metric,35.306,39.116,180.0,top
+D1,LED red 3mm,LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder,9.1635,72.7995,0.0,top
+H1,MountingHole,MountingHole_2.2mm_M2_Pad_Via,15.0,71.75,0.0,top
+H2,MountingHole,MountingHole_2.2mm_M2_Pad_Via,60.0,71.75,0.0,top
+H3,MountingHole,MountingHole_2.2mm_M2_Pad_Via,15.0,3.25,0.0,top
+H4,MountingHole,MountingHole_2.2mm_M2_Pad_Via,60.0,3.25,0.0,top
+H5,MountingHole,ePaper_MountingHole_M5,23.5108,62.8,0.0,top
+H6,MountingHole,ePaper_MountingHole_M5,23.5108,19.8,0.0,top
+H7,MountingHole,ePaper_MountingHole_M5,51.5108,62.8,0.0,top
+H8,MountingHole,ePaper_MountingHole_M5,51.5108,19.8,0.0,top
+J13,U.FL connector,U.FL_Molex_MCRF_73412-0110_Vertical,23.5696,37.1602,0.0,top
+L1,4.7u,FUEL4EP_Inductor_SMD_1,48.733,52.416,90.0,top
+LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA,14.587186,48.87381,90.0,top
+Module1,E07-900MM10S,eByte_E07-900MM10S,37.5628,37.6898,-90.0,top
+R1,470,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,9.1725,70.704,0.0,top
+R2,10k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,32.3152,69.1292,180.0,top
+R3,100K,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,16.9416,8.1819,180.0,top
+R4,10K,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,22.19,49.749,-90.0,top
+R5,10K,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,24.984,49.765,-90.0,top
+R6,22,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,30.1435,41.0,180.0,top
+R7,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,42.61668,54.61564,90.0,top
+R8,47k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,45.558,57.115,180.0,top
+SW1,Config button,SW_TS-1187A-B-A-B,21.8,71.5,180.0,top
+SW2,Reset button,SW_TS-1187A-B-A-B,51.5,71.5,0.0,top
+U1,ATmega1284P-AU,TQFP-44_10x10mm_P0.8mm,32.8326,50.9047,180.0,top
+U2,TPS61221DCK,Texas_R-PDSO-G6,53.1145,53.3685,0.0,top
+Y1,8MHz,Crystal_SMD_5032-2Pin_5.0x3.2mm_HandSoldering,31.6515,61.56,0.0,top
