@@ -1,5 +1,5 @@
 ** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP/CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_pcb **
-** Created on 2023-09-01 16:04:11 **
+** Created on 2023-09-21 15:20:50 **
 
 ** Found 1 DRC violations **
 [missing_courtyard]: Footprint hat keine Abstandsfläche definiert

@@ -45,7 +45,7 @@
 
 ## Hinweis für Bestückung bei JLCPCB
 
-- die U.FL Buchse wird im Online Viewer [falsch](./Pictures_of_JLCPCB_prototypes/CC1101_868MHz_UFL_RF_Modul_FUEL4EP_JLCPCB_assembly_wrong_placement_UFL_connector.png) positioniert. Das ist ein Dummy-Fehler.
+- die U.FL Buchse wird im Online Viewer [falsch](./Pictures_of_JLCPCB_prototypes/CC1101_868MHz_UFL_RF_Modul_FUEL4EP_JLCPCB_assembly_wrong_placement_of_U.FL_connector.png) positioniert. Das ist ein Dummy-Fehler.
 - - bei der Bestellung bitte angeben '[specify a location](https://jlcpcb.com/help/article/50-How-to-remove-order-number-from-your-PCB)'
 
 ![pic](./Pictures_of_JLCPCB_prototypes/specify_an_order_number.png)
@@ -67,10 +67,11 @@
 ## Versionsverlauf
 
 -   V1.3 01. Sep 2023: Anpassung der Silkscreen-Texte and JLCPCB-Regeln
+-   V1.4 21. Sep 2023: Verbesserung der Entkopplungskondensatoren mit kürzeren GND-Stromschleifen zur Impedanzverringerung
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.3
-- Schematics  1.1
+- PCB Version 1.4
+- Schematics  1.3
 
 ## Disclaimer
 

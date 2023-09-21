@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP/CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch</source>
-    <date>Di 29 Aug 2023 09:37:34 CEST</date>
+    <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch</source>
+    <date>Do 21 Sep 2023 13:28:25 CEST</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
-        <title>CC1101_868MHz_UFL_RF_Modul_FUEL4EP</title>
+        <title>CC1101_868MHz_RF_Modul_FUEL4EP</title>
         <company>(C) FUEL4EP 2023</company>
-        <rev>1.1</rev>
-        <date>2023-08-28</date>
-        <source>CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch</source>
+        <rev>1.2</rev>
+        <date>2023-09-21</date>
+        <source>CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch</source>
         <comment number="1" value="fork of Jérômes CC1101_module https://github.com/jp112sdl/CC1101_Module "/>
         <comment number="2" value="Creative Commons License, non-commercial"/>
         <comment number="3" value="for AsksinPP DIY devices"/>
@@ -35,7 +35,7 @@
       <property name="LCSC" value="C76901"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a7141e22-0145-46fd-ba8f-835a7fef77af</tstamps>
     </comp>
@@ -50,7 +50,7 @@
       <property name="LCSC" value="C710646"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a63b4c3f-cb76-4f6f-b32f-b86c08976e9b</tstamps>
     </comp>
@@ -65,7 +65,7 @@
       <property name="LCSC" value="C1546"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>aff394e1-da27-44c6-87f7-2418e93197a6</tstamps>
     </comp>
@@ -80,7 +80,7 @@
       <property name="LCSC" value="C76901"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>f916947a-cd4f-4d82-b9ad-f5cdb1907cfe</tstamps>
     </comp>
@@ -95,7 +95,7 @@
       <property name="LCSC" value="C1565"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>0d571035-4555-4c38-8927-a4c2d60d5302</tstamps>
     </comp>
@@ -110,7 +110,7 @@
       <property name="LCSC" value="C384800"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>60ab62a3-45e2-4a0e-9e24-8de3c88e03fe</tstamps>
     </comp>
@@ -125,7 +125,7 @@
       <property name="LCSC" value="C1547"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>4c417169-56d6-4d24-a9cc-d9839532b187</tstamps>
     </comp>
@@ -140,7 +140,7 @@
       <property name="LCSC" value="C1547"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>96f1c641-28fd-4e78-a7f0-239d9e010e33</tstamps>
     </comp>
@@ -155,7 +155,7 @@
       <property name="LCSC" value="C2169087"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>f59715c3-5d29-4d02-9aa7-86eda5befd8a</tstamps>
     </comp>
@@ -170,7 +170,7 @@
       <property name="LCSC" value="C23733"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>8ad1be12-de54-4a47-b9f1-1bcad76e302e</tstamps>
     </comp>
@@ -185,7 +185,7 @@
       <property name="LCSC" value="C1525"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a02cff7f-8e0a-47b1-9afd-78cb28ec16e0</tstamps>
     </comp>
@@ -200,22 +200,22 @@
       <property name="LCSC" value="C1525"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>89a46872-f559-4723-bd69-b1effc800fa5</tstamps>
     </comp>
     <comp ref="C13">
       <value>100n</value>
-      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
-        <field name="LCSC">C1525</field>
-        <field name="TYPE">0402</field>
+        <field name="LCSC">C14663</field>
+        <field name="TYPE">0603</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <property name="LCSC" value="C1525"/>
-      <property name="TYPE" value="0402"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>4511b598-0f07-476e-9b94-351960102c21</tstamps>
     </comp>
@@ -230,7 +230,7 @@
       <property name="LCSC" value="C1525"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>05443561-7493-4e53-b694-85a09d97aade</tstamps>
     </comp>
@@ -245,7 +245,7 @@
       <property name="LCSC" value="C1525"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>2597c3ae-1472-4757-bd59-ebd5c1980c79</tstamps>
     </comp>
@@ -260,7 +260,7 @@
       <property name="LCSC" value="C1525"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>883038cc-8400-4283-a894-fd59844ff1aa</tstamps>
     </comp>
@@ -275,7 +275,7 @@
       <property name="LCSC" value="C1525"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>c0151b83-a1a5-4ba0-8b3e-94c8e9c0795e</tstamps>
     </comp>
@@ -291,16 +291,16 @@
       <property name="LCSC" value="C76889"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>71ff8111-1f10-42f1-aa1e-0ece824a572d</tstamps>
+      <tstamps>70d72f88-fece-4702-8681-a618c25208db</tstamps>
     </comp>
     <comp ref="JA1">
       <value>GND</value>
       <footprint>FUEL4EP:edge_hole_Pitch2.28mm_Drill0.8mm</footprint>
       <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>ede691df-cb41-4f20-8be6-97ea1d6566a4</tstamps>
     </comp>
@@ -309,35 +309,25 @@
       <footprint>FUEL4EP:edge_hole_Pitch2.28mm_Drill0.8mm</footprint>
       <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>aab1047b-e6f6-457b-9a35-ab080250d42c</tstamps>
-    </comp>
-    <comp ref="JA3">
-      <value>U.FL connector</value>
-      <footprint>FUEL4EP:U.FL_Molex_MCRF_73412-0110_Vertical</footprint>
-      <datasheet> ~</datasheet>
-      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>4e997eb5-02cd-42f7-a945-8cb0f7244727</tstamps>
     </comp>
     <comp ref="JC1">
       <value>Conn</value>
       <footprint>FUEL4EP:edge_hole_Pitch1.27mm_Drill0.75mm</footprint>
       <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3bd4a0fb-e6ac-4a52-93e8-f66fa55da25b</tstamps>
+      <tstamps>d63e2720-5a5c-4cf2-bc3c-462560f614d8</tstamps>
     </comp>
     <comp ref="JC2">
       <value>Conn</value>
       <footprint>FUEL4EP:edge_hole_Pitch1.27mm_Drill0.75mm_rounded</footprint>
       <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>8c2f685e-6900-4809-9362-9f338260a1c0</tstamps>
     </comp>
@@ -346,7 +336,7 @@
       <footprint>FUEL4EP:edge_hole_Pitch1.27mm_Drill0.75mm_rounded</footprint>
       <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>74fb5088-72f8-46a1-8ce1-b6a583d1eb40</tstamps>
     </comp>
@@ -355,7 +345,7 @@
       <footprint>FUEL4EP:edge_hole_Pitch1.27mm_Drill0.75mm_rounded</footprint>
       <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>037c18cd-3785-4a73-89d0-d0687bfd5028</tstamps>
     </comp>
@@ -364,7 +354,7 @@
       <footprint>FUEL4EP:edge_hole_Pitch1.27mm_Drill0.75mm_rounded</footprint>
       <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>e5039a40-5ccc-479b-87be-4698bad0e1a0</tstamps>
     </comp>
@@ -373,7 +363,7 @@
       <footprint>FUEL4EP:edge_hole_Pitch1.27mm_Drill0.75mm_rounded</footprint>
       <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>ce55ab2c-7b1b-4fea-87e3-7933ba4f95af</tstamps>
     </comp>
@@ -382,7 +372,7 @@
       <footprint>FUEL4EP:edge_hole_Pitch1.27mm_Drill0.75mm_rounded</footprint>
       <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>b0ddcc2a-1df2-40f6-a118-eec90cb82c68</tstamps>
     </comp>
@@ -391,7 +381,7 @@
       <footprint>FUEL4EP:edge_hole_Pitch1.27mm_Drill0.75mm_rounded</footprint>
       <libsource lib="Connector" part="Conn_01x01_Male" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>da306614-d63c-4907-94c4-9057727fdaa4</tstamps>
     </comp>
@@ -406,7 +396,7 @@
       <property name="LCSC" value="C2043991"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>485de024-d191-4164-80fe-fb0ef8256173</tstamps>
     </comp>
@@ -421,7 +411,7 @@
       <property name="LCSC" value="C2043991"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>9ca3e884-2f40-4895-a2e9-38e86516193c</tstamps>
     </comp>
@@ -436,7 +426,7 @@
       <property name="LCSC" value="C908004"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>39014538-3e11-4503-b934-6bfcc780859e</tstamps>
     </comp>
@@ -451,7 +441,7 @@
       <property name="LCSC" value="C908004"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>369fc866-7c69-4f5c-bb20-ed5c5d27939d</tstamps>
     </comp>
@@ -466,7 +456,7 @@
       <property name="LCSC" value="C2043991"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>144bcb33-8908-445d-abe4-4162b277c402</tstamps>
     </comp>
@@ -481,7 +471,7 @@
       <property name="LCSC" value="C2043991"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>cfe71f57-5a72-401f-8faa-d4f375a45d12</tstamps>
     </comp>
@@ -496,7 +486,7 @@
       <property name="LCSC" value="C412273"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>16ca96f3-7e53-4503-9c2c-e441c049bdc2</tstamps>
     </comp>
@@ -505,7 +495,7 @@
       <footprint>FUEL4EP:CC-BY-ND-SA_bottom</footprint>
       <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>369260fd-2bee-424f-800b-6c922452476b</tstamps>
     </comp>
@@ -520,7 +510,7 @@
       <property name="LCSC" value="C25796"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>fc65b0f4-7bdc-4a42-9c7f-4a042692e565</tstamps>
     </comp>
@@ -542,7 +532,7 @@
       <property name="LCSC" value="C29953"/>
       <property name="TYPE" value="QFN-20-EP(4x4)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>80544830-1057-4129-8fab-a3f8cdad684a</tstamps>
     </comp>
@@ -558,7 +548,7 @@
       <property name="LCSC" value="C91747"/>
       <property name="TYPE" value="SMD3225-4P"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="CC1101_868MHz_UFL_RF_Modul_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>9b37ee9a-eac3-42ae-859e-69ec0c132ff5</tstamps>
     </comp>
@@ -577,27 +567,6 @@
       </fields>
       <pins>
         <pin num="1" name="Pin_1" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="Connector" part="Conn_Coaxial">
-      <description>coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)</description>
-      <docs> ~</docs>
-      <footprints>
-        <fp>*BNC*</fp>
-        <fp>*SMA*</fp>
-        <fp>*SMB*</fp>
-        <fp>*SMC*</fp>
-        <fp>*Cinch*</fp>
-        <fp>*LEMO*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">J</field>
-        <field name="Value">Conn_Coaxial</field>
-        <field name="Datasheet"> ~</field>
-      </fields>
-      <pins>
-        <pin num="1" name="In" type="passive"/>
-        <pin num="2" name="Ext" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="Device" part="C">
@@ -740,7 +709,7 @@
       <uri>/usr/share/kicad/symbols//Device.kicad_sym</uri>
     </library>
     <library logical="FUEL4EP">
-      <uri>/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP/../FUEL4EP.kicad_sym</uri>
+      <uri>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/../FUEL4EP.kicad_sym</uri>
     </library>
     <library logical="Graphic">
       <uri>/usr/share/kicad/symbols//Graphic.kicad_sym</uri>
@@ -790,7 +759,6 @@
       <node ref="C8" pin="1" pintype="passive"/>
       <node ref="C9" pin="1" pintype="passive"/>
       <node ref="JA1" pin="1" pinfunction="Pin_1" pintype="passive"/>
-      <node ref="JA3" pin="2" pinfunction="Ext" pintype="passive"/>
       <node ref="JC8" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="R1" pin="1" pintype="passive"/>
       <node ref="U1" pin="16" pinfunction="GND1" pintype="power_in"/>
@@ -837,7 +805,6 @@
     <net code="16" name="Net-(C7-Pad1)">
       <node ref="C7" pin="1" pintype="passive"/>
       <node ref="JA2" pin="1" pinfunction="Pin_1" pintype="passive"/>
-      <node ref="JA3" pin="1" pinfunction="In" pintype="passive"/>
       <node ref="L7" pin="2" pinfunction="2" pintype="passive"/>
     </net>
     <net code="17" name="Net-(C8-Pad2)">
