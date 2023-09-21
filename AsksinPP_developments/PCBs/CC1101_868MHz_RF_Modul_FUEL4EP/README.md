@@ -64,10 +64,11 @@
 
 -   V1.3 01. Sep 2023: Anpassung der Silkscreen-Texte and JLCPCB-Regeln
 -   V1.4 12. Sep 2023: Verbesserung der GND-Durchkontaktierungen
+-   V1.5 21. Sep 2023: Verbesserung der Entkopplungskondensatoren mit kürzeren GND-Stromschleifen zur Impedanzverringerung
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.4
-- Schematics  1.1
+- PCB Version 1.5
+- Schematics  1.2
 
 ## Disclaimer
 

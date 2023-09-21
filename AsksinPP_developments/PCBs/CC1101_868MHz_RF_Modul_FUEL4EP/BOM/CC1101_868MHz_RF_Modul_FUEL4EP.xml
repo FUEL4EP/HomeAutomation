@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch</source>
-    <date>Di 29 Aug 2023 08:40:01 CEST</date>
+    <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch</source>
+    <date>Do 21 Sep 2023 13:28:25 CEST</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>CC1101_868MHz_RF_Modul_FUEL4EP</title>
         <company>(C) FUEL4EP 2023</company>
-        <rev>1.1</rev>
-        <date>2023-08-28</date>
+        <rev>1.2</rev>
+        <date>2023-09-21</date>
         <source>CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch</source>
         <comment number="1" value="fork of Jérômes CC1101_module https://github.com/jp112sdl/CC1101_Module "/>
         <comment number="2" value="Creative Commons License, non-commercial"/>
@@ -206,14 +206,14 @@
     </comp>
     <comp ref="C13">
       <value>100n</value>
-      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
-        <field name="LCSC">C1525</field>
-        <field name="TYPE">0402</field>
+        <field name="LCSC">C14663</field>
+        <field name="TYPE">0603</field>
       </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
-      <property name="LCSC" value="C1525"/>
-      <property name="TYPE" value="0402"/>
+      <property name="LCSC" value="C14663"/>
+      <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="CC1101_868MHz_RF_Modul_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -709,7 +709,7 @@
       <uri>/usr/share/kicad/symbols//Device.kicad_sym</uri>
     </library>
     <library logical="FUEL4EP">
-      <uri>/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/../FUEL4EP.kicad_sym</uri>
+      <uri>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP/../FUEL4EP.kicad_sym</uri>
     </library>
     <library logical="Graphic">
       <uri>/usr/share/kicad/symbols//Graphic.kicad_sym</uri>
