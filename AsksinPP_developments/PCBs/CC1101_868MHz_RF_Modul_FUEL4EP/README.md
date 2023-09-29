@@ -46,6 +46,7 @@
 ![pic](./Pictures_of_JLCPCB_prototypes/specify_an_order_number.png)
 
 - der  Dummy-Text 'JLCJLCJLCJLC' ist auf der Rückseite der Platine
+- C8 und C9 sollen 1% C0G Kondensatoren sein
 
 ## lokale Installation des Github Releases auf Deinem Computer
 
@@ -65,10 +66,11 @@
 -   V1.3 01. Sep 2023: Anpassung der Silkscreen-Texte and JLCPCB-Regeln
 -   V1.4 12. Sep 2023: Verbesserung der GND-Durchkontaktierungen
 -   V1.5 21. Sep 2023: Verbesserung der Entkopplungskondensatoren mit kürzeren GND-Stromschleifen zur Impedanzverringerung
+-   V1.6 29. Sep 2023: Reduktion der parasitischen Kapazitäten des Oszillators; 1% CoG Kapazitäten für C8 und C9
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.5
-- Schematics  1.2
+- PCB Version 1.6
+- Schematics  1.3
 
 ## Disclaimer
 
