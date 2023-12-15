@@ -1,7 +1,7 @@
 # HB_TH_Sensor_SHT45_AllInOne_FUEL4EP [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%2FHB_TH_Sensor_SHT45_AllInOne_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 **Platine für hochgenauen und kleinen DIY AsksinPP TH Sensor**
-- integrierter hochgenauer [Sensirion SHT45](https://sensirion.com/products/catalog/SHT45-AD1F) SMD TH-Sensor (±1.0% RH / ±0.1°C digitaler Luftfeuchte- und Temperatursensor ) mit PTFE-Membran
+- integrierter hochgenauer [Sensirion SHT45-AD1B-R2](https://sensirion.com/products/catalog/SHT45) SMD TH-Sensor (±1.0% RH / ±0.1°C digitaler Luftfeuchte- und Temperatursensor )
 - kann bis auf den Batteriehalter vollständig bei JLCPCB assembliert werden
 - kleine Platine 75 mm x 25 mm
 - Versorgung mit 1x AA-Batterie oder 1x NiMH-Akkumulator
@@ -18,7 +18,7 @@
 ![pic](PNGs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP_top_view.png)
 
 ![pic](PNGs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP_PCB_top_3D.png)
-![pic](PNGs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP_PCB_top_3D_back.png)
+![pic](PNGs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP_PCB_back_3D.png)
 
 
 
@@ -79,7 +79,7 @@
 - die notwendigen Produktionsdaten stehen [hier](./jlcpcb/production_files/)
 - die folgenden Bauteile müssen [vorab bei JLCPCB bestellt werden](https://jlcpcb.com/help/article/53-what-is-jlcpcb-parts-pre-order-service):
 	+ TI TPS61221DCK (zur Zeit sehr teuer)
-	+ Sensirion SHT45-AD1F-R2
+	+ Sensirion SHT45-AD1B-R2
 	+ eByte E07-900MM10S
 - **die Platine ist noch nicht durch einen Prototypen evaluiert!**
 
@@ -90,11 +90,12 @@
 ## Versionsverlauf
 
 -   V1.0 15. Dez 2023: Initiale Vorabfreigabe
-
+-	V1.1 15. Dez 2023: SHT45-AD1B-R2 statt SHT45-AD1F, da JLCPCB SHT45-AD1F
+nicht mehr assembliert
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	PCB Version 1.0
-- 	Schematics  1.0
+- 	PCB Version 1.1
+- 	Schematics  1.1
 
 ## Lizenz 
 

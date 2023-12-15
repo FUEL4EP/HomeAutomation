@@ -7,7 +7,7 @@
   (title_block
     (title "HB_TH_Sensor_SHT45_AllInOne_FUEL4EP")
     (date "2023-12-15")
-    (rev "1.0")
+    (rev "1.1")
     (company "(C) FUEL4EP")
     (comment 1 "Creative Commons License, non-commercial")
     (comment 2 "PCB thickness: 0.8 mm")
@@ -2454,11 +2454,6 @@
     (effects (font (size 1.524 1.524)) (justify left bottom))
     (uuid ca7c2c1e-032b-4abd-9f39-d762f2423b30)
   )
-  (text "Note: F: Package with integrated,\npatented PTFE membrane"
-    (at 257.048 50.546 0)
-    (effects (font (size 0.8 0.8)) (justify left bottom))
-    (uuid f651887c-984a-47b3-ab06-aca5db335216)
-  )
 
   (label "SCL" (at 88.265 137.16 180)
     (effects (font (size 1.524 1.524)) (justify right bottom))
@@ -3902,7 +3897,7 @@
     (property "Reference" "U3" (id 0) (at 244.602 52.324 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "SHT45-AD1F-R2" (id 1) (at 257.048 44.196 0)
+    (property "Value" "SHT45-AD1B-R2" (id 1) (at 257.048 44.196 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Footprint" "FUEL4EP:SHT4X" (id 2) (at 255.27 52.07 0)
@@ -3911,7 +3906,7 @@
     (property "Datasheet" "https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf" (id 3) (at 255.27 54.61 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
-    (property "LCSC" "C5360602" (id 4) (at 251.46 45.72 0)
+    (property "LCSC" "C5221601" (id 4) (at 251.46 45.72 0)
       (effects (font (size 1.524 1.524)) hide)
     )
     (property "TYPE" "DFN-4" (id 5) (at 251.46 45.72 0)
@@ -4312,7 +4307,7 @@
       (reference "U2") (unit 1) (value "TPS61221DCK") (footprint "Package_TO_SOT_SMD:Texas_R-PDSO-G6")
     )
     (path "/bc06256e-795c-431e-82f4-646a591b6737"
-      (reference "U3") (unit 1) (value "SHT45-AD1F-R2") (footprint "FUEL4EP:SHT4X")
+      (reference "U3") (unit 1) (value "SHT45-AD1B-R2") (footprint "FUEL4EP:SHT4X")
     )
   )
 )

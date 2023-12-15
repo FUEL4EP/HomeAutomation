@@ -6,7 +6,6 @@
 - basierend auf [Sensirion SHT45](https://sensirion.com/media/documents/33FD6951/64D3B030/Sensirion_Datasheet_SHT4x.pdf) für die genaue Temperatur- und Luftfeuchtemessung
 - basierend auf [Bosch BME280](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf) für die Luftdruckmessung
 
-- **WICHTIG**: Bitte exakt den Typ SHT45-AD1F-R2 bestücken (lassen), der eine integrierte PTFE-Membrane hat, siehe Datenblatt.
 
 
 - passend zu den folgenden Mutterplatinen:
@@ -26,7 +25,6 @@
 ![pic](PNGs/I2C_Module_SHT45_BME280_FUEL4EP_PCB_3D_top.png)
 ![pic](PNGs/I2C_Module_SHT45_BME280_FUEL4EP_PCB_KiCAD.png)
 ![pic](PNGs/I2C_Module_SHT45_BME280_FUEL4EP_top_silkscreen.png)
-
 
 ## Platinenmaße
 
@@ -73,10 +71,12 @@
 ## Versionsverlauf
 
 -   V1.0 09. Sep 2023: Initiale Veröffentlichung auf Github
+-   V1.1 15. Dez 2023: SHT45-AD1B-R2 statt SHT45-AD1F, da JLCPCB SHT45-AD1F
+nicht mehr assembliert
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.0
-- Schematics  1.0
+- PCB Version 1.1
+- Schematics  1.1
 
 ## Disclaimer
 

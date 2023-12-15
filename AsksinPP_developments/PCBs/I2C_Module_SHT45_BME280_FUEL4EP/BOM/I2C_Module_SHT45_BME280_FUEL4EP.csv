@@ -1,5 +1,5 @@
-"Source:","/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_FUEL4EP/I2C_Module_SHT45_BME280_FUEL4EP.kicad_sch"
-"Date:","Sa 09 Sep 2023 09:36:21 CEST"
+"Source:","/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_FUEL4EP/I2C_Module_SHT45_BME280_FUEL4EP.kicad_sch"
+"Date:","Fr 15 Dez 2023 16:20:44 CET"
 "Tool:","Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1"
 "Generator:","/usr/share/kicad/plugins/bom_csv_grouped_by_value_with_fp.py"
 "Component Count:","14"
@@ -13,4 +13,4 @@
 "R1, R2, ","2","4.7k","R","Resistor_SMD:R_0402_1005Metric","Resistor",""
 "R3, ","1","10k","R","Resistor_SMD:R_0402_1005Metric","Resistor",""
 "U1, ","1","BME280","BME280","Package_LGA:Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering","3-in-1 sensor, humidity, pressure, temperature, I2C and SPI interface, 1.71-3.6V, LGA-8",""
-"U2, ","1","SHT45-AD1F-R2","SHT4x","FUEL4EP:SHT4X","Digital Humidity and Temperature Sensor, +/-1%RH, +/-0.1degC, I2C, 1.08-3.6V, 16bit, DFN-4",""
+"U2, ","1","SHT45-AD1B-R2","SHT4x","FUEL4EP:SHT4X","Digital Humidity and Temperature Sensor, +/-1%RH, +/-0.1degC, I2C, 1.08-3.6V, 16bit, DFN-4",""

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_FUEL4EP/I2C_Module_SHT45_BME280_FUEL4EP.kicad_sch</source>
-    <date>Sa 09 Sep 2023 09:36:21 CEST</date>
+    <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_FUEL4EP/I2C_Module_SHT45_BME280_FUEL4EP.kicad_sch</source>
+    <date>Fr 15 Dez 2023 16:20:44 CET</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>I2C_Module_SHT45_BME280_FUEL4EP</title>
         <company>FUEL4EP</company>
-        <rev>1.0</rev>
-        <date>2023-09-09</date>
+        <rev>1.1</rev>
+        <date>2023-12-15</date>
         <source>I2C_Module_SHT45_BME280_FUEL4EP.kicad_sch</source>
         <comment number="1" value="fitting to  HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP"/>
         <comment number="2" value="Creative Commons License, non-commercial"/>
@@ -198,15 +198,15 @@
       <tstamps>6c020e64-a15a-4a6f-ab04-2470855149f2</tstamps>
     </comp>
     <comp ref="U2">
-      <value>SHT45-AD1F-R2</value>
+      <value>SHT45-AD1B-R2</value>
       <footprint>FUEL4EP:SHT4X</footprint>
-      <datasheet>https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf</datasheet>
+      <datasheet>https://sensirion.com/media/documents/33FD6951/6555C40E/Sensirion_Datasheet_SHT4x.pdf</datasheet>
       <fields>
-        <field name="LCSC">C5360602</field>
+        <field name="LCSC">C5221601</field>
         <field name="TYPE">DFN-4</field>
       </fields>
       <libsource lib="Sensor_Humidity" part="SHT4x" description="Digital Humidity and Temperature Sensor, +/-1%RH, +/-0.1degC, I2C, 1.08-3.6V, 16bit, DFN-4"/>
-      <property name="LCSC" value="C5360602"/>
+      <property name="LCSC" value="C5221601"/>
       <property name="TYPE" value="DFN-4"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT45_BME280_FUEL4EP.kicad_sch"/>
