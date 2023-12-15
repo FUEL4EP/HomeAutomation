@@ -31,4 +31,9 @@
     (solder_mask_margin 0.102) (tstamp 7251f738-1214-4325-83a8-b16947916e02))
   (pad "4" smd rect (at 0.7 -0.4) (size 0.5 0.3) (layers "F.Cu" "F.Paste" "F.Mask")
     (solder_mask_margin 0.102) (tstamp 2c4cc124-04f6-47d9-91eb-43ea0d4fd563))
+  (model "../FUEL4EP_kicad_3D_models/SHT45-AD1F-R2.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 90 180 -180))
+  )
 )
