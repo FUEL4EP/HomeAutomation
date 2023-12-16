@@ -69,9 +69,10 @@
 ## Versionsverlauf
 
 -   V1.0 08. Sep 2023: Initiale Veröffentlichung auf Github
+-	V1.1 15. Dez 2023: korrigierte Positionierung der Stiftleisten in 3D Ansicht
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.0
+- PCB Version 1.1
 - Schematics  1.0
 
 ## Disclaimer

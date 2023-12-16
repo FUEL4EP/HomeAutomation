@@ -1,0 +1,23 @@
+Hinweis: Verarbeite Symbol "Q2:FUEL4EP:SOT-23_2N7002K".
+Hinweis: Verarbeite Symbol "U1:Package_SO:SOIC-8_3.9x4.9mm_P1.27mm".
+Hinweis: Verarbeite Symbol "R9:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "R7:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "R5:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "R3:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "R2:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "R1:Resistor_SMD:R_0402_1005Metric".
+Hinweis: Verarbeite Symbol "Q4:FUEL4EP:SOT-23_2N7002K".
+Hinweis: Verarbeite Symbol "Q3:FUEL4EP:SOT-23_2N7002K".
+Hinweis: Verarbeite Symbol "C1:Capacitor_SMD:C_0603_1608Metric".
+Hinweis: Verarbeite Symbol "Q1:FUEL4EP:SOT-23_2N7002K".
+Hinweis: Verarbeite Symbol "LOGO1:FUEL4EP:CC-BY-ND-SA".
+Hinweis: Verarbeite Symbol "J6:TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm".
+Hinweis: Verarbeite Symbol "J5:TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm".
+Hinweis: Verarbeite Symbol "J4:Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical".
+Hinweis: Verarbeite Symbol "J3:Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical".
+Hinweis: Verarbeite Symbol "J2:Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical".
+Hinweis: Verarbeite Symbol "J1:Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical".
+Hinweis: Verarbeite Symbol "C2:Capacitor_SMD:C_0402_1005Metric".
+
+
+Hinweis: Warnungen insgesamt: 0, Fehler insgesamt: 0.

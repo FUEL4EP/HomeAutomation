@@ -1,12 +1,12 @@
 %TF.GenerationSoftware,KiCad,Pcbnew,6.0.11-2627ca5db0~126~ubuntu22.04.1*%
-%TF.CreationDate,2023-09-07T17:42:38+02:00*%
-%TF.ProjectId,I2C_Module_BME680_FUEL4EP,4932435f-4d6f-4647-956c-655f424d4536,V1.0*%
+%TF.CreationDate,2023-12-16T12:10:39+01:00*%
+%TF.ProjectId,I2C_Module_BME680_FUEL4EP,4932435f-4d6f-4647-956c-655f424d4536,V1.1*%
 %TF.SameCoordinates,Original*%
 %TF.FileFunction,Soldermask,Bot*%
 %TF.FilePolarity,Negative*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 6.0.11-2627ca5db0~126~ubuntu22.04.1) date 2023-09-07 17:42:38*
+G04 Created by KiCad (PCBNEW 6.0.11-2627ca5db0~126~ubuntu22.04.1) date 2023-12-16 12:10:39*
 %MOMM*%
 %LPD*%
 G01*

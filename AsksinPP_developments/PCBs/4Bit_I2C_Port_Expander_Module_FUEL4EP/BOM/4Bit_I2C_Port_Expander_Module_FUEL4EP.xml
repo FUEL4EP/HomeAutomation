@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/4Bit_I2C_Port_Expander_Module_FUEL4EP/4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch</source>
-    <date>So 03 Sep 2023 11:26:17 CEST</date>
+    <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/4Bit_I2C_Port_Expander_Module_FUEL4EP/4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch</source>
+    <date>Sa 16 Dez 2023 11:55:50 CET</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>4Bit_I2C_Port_Expander_Module_FUEL4EP</title>
         <company>FUEL4EP</company>
-        <rev>1.0</rev>
-        <date>2023-09-03</date>
+        <rev>1.1</rev>
+        <date>2023-12-16</date>
         <source>4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch</source>
         <comment number="1" value="fitting to  HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP"/>
         <comment number="2" value="Creative Commons License, non-commercial"/>
@@ -27,7 +27,14 @@
     <comp ref="C1">
       <value>1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2304140030_Samsung-Electro-Mechanics-CL10A105KB8NNNC_C15849.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C15849</field>
+        <field name="TYPE">0603</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="TYPE" value="0603"/>
+      <property name="LCSC" value="C15849"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -36,7 +43,14 @@
     <comp ref="C2">
       <value>100n</value>
       <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2304140030_Samsung-Electro-Mechanics-CL05B104KO5NNNC_C1525.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C1525</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="TYPE" value="0402"/>
+      <property name="LCSC" value="C1525"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -78,6 +92,24 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>80344a1a-2878-4ccf-a31e-3c1b0bded5db</tstamps>
     </comp>
+    <comp ref="J5">
+      <value>Conn_01x01</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>eca53d83-b00e-4bb4-a682-6fe71f0f0cb5</tstamps>
+    </comp>
+    <comp ref="J6">
+      <value>Conn_01x01</value>
+      <footprint>TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x01" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f2aeee4f-c6d4-45c0-a599-9e4daf8de344</tstamps>
+    </comp>
     <comp ref="LOGO1">
       <value>Logo_Open_Hardware_Small</value>
       <footprint>FUEL4EP:CC-BY-ND-SA</footprint>
@@ -88,49 +120,80 @@
       <tstamps>00000000-0000-0000-0000-0000615dee46</tstamps>
     </comp>
     <comp ref="Q1">
-      <value>2N7000</value>
-      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
-      <datasheet>https://www.vishay.com/docs/70226/70226.pdf</datasheet>
-      <libsource lib="Transistor_FET" part="2N7000" description="0.2A Id, 200V Vds, N-Channel MOSFET, 2.6V Logic Level, TO-92"/>
+      <value>2N7002K</value>
+      <footprint>FUEL4EP:SOT-23_2N7002K</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2304140030_onsemi-2N7002K_C114458.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C114458</field>
+        <field name="TYPE">SOT-23</field>
+      </fields>
+      <libsource lib="Transistor_FET" part="2N7002K" description="0.38A Id, 60V Vds, N-Channel MOSFET, SOT-23"/>
+      <property name="TYPE" value="SOT-23"/>
+      <property name="LCSC" value="C114458"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>11860adc-94e4-4b61-9f20-a33ee9812112</tstamps>
+      <tstamps>a2cbc951-32ff-47e2-8d03-ce19c565915c</tstamps>
     </comp>
     <comp ref="Q2">
-      <value>2N7000</value>
-      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
-      <datasheet>https://www.vishay.com/docs/70226/70226.pdf</datasheet>
-      <libsource lib="Transistor_FET" part="2N7000" description="0.2A Id, 200V Vds, N-Channel MOSFET, 2.6V Logic Level, TO-92"/>
+      <value>2N7002K</value>
+      <footprint>FUEL4EP:SOT-23_2N7002K</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2304140030_onsemi-2N7002K_C114458.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C114458</field>
+        <field name="TYPE">SOT-23</field>
+      </fields>
+      <libsource lib="Transistor_FET" part="2N7002K" description="0.38A Id, 60V Vds, N-Channel MOSFET, SOT-23"/>
+      <property name="TYPE" value="SOT-23"/>
+      <property name="LCSC" value="C114458"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>90d42757-286b-4203-bdcc-59a1ada35b8c</tstamps>
+      <tstamps>d34c06c0-a806-4099-a654-d3fe1bf3c4e0</tstamps>
     </comp>
     <comp ref="Q3">
-      <value>2N7000</value>
-      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
-      <datasheet>https://www.vishay.com/docs/70226/70226.pdf</datasheet>
-      <libsource lib="Transistor_FET" part="2N7000" description="0.2A Id, 200V Vds, N-Channel MOSFET, 2.6V Logic Level, TO-92"/>
+      <value>2N7002K</value>
+      <footprint>FUEL4EP:SOT-23_2N7002K</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2304140030_onsemi-2N7002K_C114458.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C114458</field>
+        <field name="TYPE">SOT-23</field>
+      </fields>
+      <libsource lib="Transistor_FET" part="2N7002K" description="0.38A Id, 60V Vds, N-Channel MOSFET, SOT-23"/>
+      <property name="TYPE" value="SOT-23"/>
+      <property name="LCSC" value="C114458"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f2a73e0e-7513-4092-bc21-9769925756d6</tstamps>
+      <tstamps>e24a0b5e-500f-4a49-9e99-bff39292d565</tstamps>
     </comp>
     <comp ref="Q4">
-      <value>2N7000</value>
-      <footprint>Package_TO_SOT_THT:TO-92_Inline</footprint>
-      <datasheet>https://www.vishay.com/docs/70226/70226.pdf</datasheet>
-      <libsource lib="Transistor_FET" part="2N7000" description="0.2A Id, 200V Vds, N-Channel MOSFET, 2.6V Logic Level, TO-92"/>
+      <value>2N7002K</value>
+      <footprint>FUEL4EP:SOT-23_2N7002K</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2304140030_onsemi-2N7002K_C114458.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C114458</field>
+        <field name="TYPE">SOT-23</field>
+      </fields>
+      <libsource lib="Transistor_FET" part="2N7002K" description="0.38A Id, 60V Vds, N-Channel MOSFET, SOT-23"/>
+      <property name="TYPE" value="SOT-23"/>
+      <property name="LCSC" value="C114458"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d838cc2e-6fe7-4f7d-903e-81d70165526c</tstamps>
+      <tstamps>c0b67841-0249-481c-a3f6-f37dbbd7edbd</tstamps>
     </comp>
     <comp ref="R1">
       <value>10K</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="TYPE" value="0402"/>
+      <property name="LCSC" value="C25744"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -139,89 +202,94 @@
     <comp ref="R2">
       <value>10K</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C25744</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="TYPE" value="0402"/>
+      <property name="LCSC" value="C25744"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>00000000-0000-0000-0000-00005ae848bd</tstamps>
+      <tstamps>4be090e8-4dd5-4527-9958-1982a88b283d</tstamps>
     </comp>
     <comp ref="R3">
       <value>100k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1003TCE_C25741.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C25741</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="TYPE" value="0402"/>
+      <property name="LCSC" value="C25741"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>bfb6b5ce-9cdf-4a38-abff-1597273ee717</tstamps>
     </comp>
-    <comp ref="R4">
-      <value>10k</value>
-      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>f6c12fe7-5ab0-419a-b01c-698272b25e66</tstamps>
-    </comp>
     <comp ref="R5">
       <value>100k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1003TCE_C25741.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C25741</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="TYPE" value="0402"/>
+      <property name="LCSC" value="C25741"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cace107d-4d92-4e44-b4d2-cb341b635e9b</tstamps>
-    </comp>
-    <comp ref="R6">
-      <value>10k</value>
-      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>36d4edeb-3125-4715-ac9f-9e5414df51dc</tstamps>
+      <tstamps>5e8e73bd-c1ef-4bc9-a23a-fda6990a72cf</tstamps>
     </comp>
     <comp ref="R7">
       <value>100k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1003TCE_C25741.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C25741</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="TYPE" value="0402"/>
+      <property name="LCSC" value="C25741"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>24d9fe54-af86-49f0-9e0d-801922b4085a</tstamps>
-    </comp>
-    <comp ref="R8">
-      <value>10k</value>
-      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>ece5d80c-361b-4064-817a-216082cfdad2</tstamps>
+      <tstamps>8906ddf4-fe40-4f65-8b85-e6f12ac35729</tstamps>
     </comp>
     <comp ref="R9">
       <value>100k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1003TCE_C25741.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C25741</field>
+        <field name="TYPE">0402</field>
+      </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="TYPE" value="0402"/>
+      <property name="LCSC" value="C25741"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>bf6b3201-1edc-4c17-9e11-e79788cdd9fb</tstamps>
-    </comp>
-    <comp ref="R10">
-      <value>10k</value>
-      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>8c5cb5d0-a96e-49b5-be04-65e4c514cb6f</tstamps>
+      <tstamps>ef2edea4-6d9c-402f-b715-75c0ec206317</tstamps>
     </comp>
     <comp ref="U1">
       <value>PCA9536D</value>
       <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
       <datasheet>http://www.nxp.com/documents/data_sheet/PCA9536.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C129522</field>
+        <field name="TYPE">SOIC-8</field>
+      </fields>
       <libsource lib="Interface_Expansion" part="PCA9536D" description="4-bit I2C-bus and SMBus IO port, SOIC-8"/>
+      <property name="TYPE" value="SOIC-8"/>
+      <property name="LCSC" value="C129522"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="4Bit_I2C_Port_Expander_Module_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -229,6 +297,21 @@
     </comp>
   </components>
   <libparts>
+    <libpart lib="Connector_Generic" part="Conn_01x01">
+      <description>Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x01</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="Connector_Generic" part="Conn_01x04">
       <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
       <docs>~</docs>
@@ -311,21 +394,21 @@
         <pin num="8" name="VDD" type="power_in"/>
       </pins>
     </libpart>
-    <libpart lib="Transistor_FET" part="2N7000">
-      <description>0.2A Id, 200V Vds, N-Channel MOSFET, 2.6V Logic Level, TO-92</description>
-      <docs>https://www.vishay.com/docs/70226/70226.pdf</docs>
+    <libpart lib="Transistor_FET" part="2N7002K">
+      <description>0.38A Id, 60V Vds, N-Channel MOSFET, SOT-23</description>
+      <docs>https://www.diodes.com/assets/Datasheets/ds30896.pdf</docs>
       <footprints>
-        <fp>TO?92*</fp>
+        <fp>SOT?23*</fp>
       </footprints>
       <fields>
         <field name="Reference">Q</field>
-        <field name="Value">2N7000</field>
-        <field name="Footprint">Package_TO_SOT_THT:TO-92_Inline</field>
-        <field name="Datasheet">https://www.vishay.com/docs/70226/70226.pdf</field>
+        <field name="Value">2N7002K</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/ds30896.pdf</field>
       </fields>
       <pins>
-        <pin num="1" name="S" type="passive"/>
-        <pin num="2" name="G" type="input"/>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
         <pin num="3" name="D" type="passive"/>
       </pins>
     </libpart>
@@ -350,47 +433,43 @@
   <nets>
     <net code="1" name="/IO0">
       <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
-      <node ref="Q1" pin="2" pinfunction="G" pintype="input"/>
+      <node ref="Q1" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R3" pin="1" pintype="passive"/>
       <node ref="U1" pin="1" pinfunction="IO0" pintype="bidirectional"/>
     </net>
     <net code="2" name="/IO1">
       <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
-      <node ref="Q2" pin="2" pinfunction="G" pintype="input"/>
+      <node ref="Q2" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R5" pin="1" pintype="passive"/>
       <node ref="U1" pin="2" pinfunction="IO1" pintype="bidirectional"/>
     </net>
     <net code="3" name="/IO2">
       <node ref="J3" pin="3" pinfunction="Pin_3" pintype="passive"/>
-      <node ref="Q3" pin="2" pinfunction="G" pintype="input"/>
+      <node ref="Q3" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R7" pin="1" pintype="passive"/>
       <node ref="U1" pin="3" pinfunction="IO2" pintype="bidirectional"/>
     </net>
     <net code="4" name="/IO3">
       <node ref="J3" pin="4" pinfunction="Pin_4" pintype="passive"/>
-      <node ref="Q4" pin="2" pinfunction="G" pintype="input"/>
+      <node ref="Q4" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R9" pin="1" pintype="passive"/>
       <node ref="U1" pin="5" pinfunction="IO3" pintype="bidirectional"/>
     </net>
     <net code="5" name="/OC0">
       <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="Q1" pin="3" pinfunction="D" pintype="passive"/>
-      <node ref="R4" pin="1" pintype="passive"/>
     </net>
     <net code="6" name="/OC1">
       <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="Q2" pin="3" pinfunction="D" pintype="passive"/>
-      <node ref="R6" pin="1" pintype="passive"/>
     </net>
     <net code="7" name="/OC2">
       <node ref="J4" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="Q3" pin="3" pinfunction="D" pintype="passive"/>
-      <node ref="R8" pin="1" pintype="passive"/>
     </net>
     <net code="8" name="/OC3">
       <node ref="J4" pin="4" pinfunction="Pin_4" pintype="passive"/>
       <node ref="Q4" pin="3" pinfunction="D" pintype="passive"/>
-      <node ref="R10" pin="1" pintype="passive"/>
     </net>
     <net code="9" name="/SCL">
       <node ref="J1" pin="3" pinfunction="Pin_3" pintype="passive"/>
@@ -401,7 +480,7 @@
     <net code="10" name="/SDA">
       <node ref="J1" pin="4" pinfunction="Pin_4" pintype="passive"/>
       <node ref="J2" pin="4" pinfunction="Pin_4" pintype="passive"/>
-      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R2" pin="1" pintype="passive"/>
       <node ref="U1" pin="7" pinfunction="SDA" pintype="bidirectional"/>
     </net>
     <net code="11" name="GND">
@@ -409,10 +488,11 @@
       <node ref="C2" pin="2" pintype="passive"/>
       <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
-      <node ref="Q1" pin="1" pinfunction="S" pintype="passive"/>
-      <node ref="Q2" pin="1" pinfunction="S" pintype="passive"/>
-      <node ref="Q3" pin="1" pinfunction="S" pintype="passive"/>
-      <node ref="Q4" pin="1" pinfunction="S" pintype="passive"/>
+      <node ref="J5" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Q1" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="Q2" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="Q3" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="Q4" pin="2" pinfunction="S" pintype="passive"/>
       <node ref="R3" pin="2" pintype="passive"/>
       <node ref="R5" pin="2" pintype="passive"/>
       <node ref="R7" pin="2" pintype="passive"/>
@@ -424,12 +504,9 @@
       <node ref="C2" pin="1" pintype="passive"/>
       <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J6" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="R1" pin="2" pintype="passive"/>
-      <node ref="R10" pin="2" pintype="passive"/>
-      <node ref="R2" pin="1" pintype="passive"/>
-      <node ref="R4" pin="2" pintype="passive"/>
-      <node ref="R6" pin="2" pintype="passive"/>
-      <node ref="R8" pin="2" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
       <node ref="U1" pin="8" pinfunction="VDD" pintype="power_in"/>
     </net>
   </nets>
