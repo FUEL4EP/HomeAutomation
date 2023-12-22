@@ -78,8 +78,8 @@
 
 - basierend auf einem Tindie [Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) mit CC1101 Sendemodul, Eigenbau mit einem ATmega 1284p möglich
 - eine mögliche und von mir empfohlene Hardwarebasis sieht so aus:
-	-  Platine [HB-UNI-SEN-BATT_E07-900MM10S_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-900MM10S_FUEL4EP) mit einem Ebyte E07 900MM10S Funkmodul
-		* passende Sensoraufsteckplatine [I2C_Module_BME680_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_BME680_FUEL4EP)
+	-  Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_FUEL4EP) mit einem Ebyte E07 900MM10S Funkmodul
+		* passende Sensoraufsteckplatine [I2C_Module_SHT85_BME280_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT85_BME280_FUEL4EP)
     - Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) mit einem Ebyte E07 868MS10 Funkmodul (rote Platine), das ein wenig teurer als das noname grüne CC1101 Funkmodul ist, aber weniger Ärger macht, und JLCPCB SMD-Bestückung
 	  + der Abstandsfehler für einen Batteriehalter in [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt) ist korrigiert
 	  + als Batteriehalter wird der Keystone 2460 verwendet, ein Goobay 1xAA Batteeriehalter passt auch
@@ -105,6 +105,7 @@
 	+ Aufbau entsprechend siehe [Technikkram](https://technikkram.net/blog/2018/05/30/homematic-diy-projekt-thermometer-und-hydrometer-fertige-platine-im-eigenbau/)
 	+ 2x 10 kOhm I2C Abschlusswiderstände für SCL und SDA auf HB-UNI-SEN-BATT PCB einlöten
 	+ zusätzlich den SHT85 Sensor als I2C Sensor einlöten: VDD<=>VDD, GND<=>VSS, SCL<=>SCL, SDA<=>SDA mit **möglichst dünnen isolierten** Drähten von der Basisplatine zum Sensor verbinden, damit die thermische Kopplung gering ist und der Sensor dadurch schneller wird. Eine mögliche Bezugsquelle für den SHT85 Sensor ist [hier](https://www.soselectronic.com/products/sensirion/sht-85-1-305843). Bitte unbedingt den richtigen Anschluss von VSS und VDD des SHT85 Sensors prüfen. Eine Vertauschung zerstört den Sensor!
+
 	
 ## Frequenztest des CC1101 RF Moduls
 
