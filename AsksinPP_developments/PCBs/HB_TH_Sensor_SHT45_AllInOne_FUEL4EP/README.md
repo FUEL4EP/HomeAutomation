@@ -81,6 +81,7 @@
 	+ TI TPS61221DCK (zur Zeit sehr teuer)
 	+ Sensirion SHT45-AD1B-R2
 	+ eByte E07-900MM10S
+- die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als das sehr teure Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 - **die Platine ist noch nicht durch einen Prototypen evaluiert!**
 
 ## Disclaimer
@@ -92,10 +93,11 @@
 -   V1.0 15. Dez 2023: Initiale Vorabfreigabe
 -	V1.1 15. Dez 2023: SHT45-AD1B-R2 statt SHT45-AD1F, da JLCPCB SHT45-AD1F
 nicht mehr assembliert
+-	V1.2	 08. Jan 2024: Korrektur  von falschen LCSC-Teiloenummern für R1, D1 und R4
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	PCB Version 1.1
-- 	Schematics  1.1
+- 	Schematics  1.2
 
 ## Lizenz 
 

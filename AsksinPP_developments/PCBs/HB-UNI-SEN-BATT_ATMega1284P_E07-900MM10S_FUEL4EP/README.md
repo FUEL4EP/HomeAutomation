@@ -116,7 +116,7 @@
 - die Platine kann entweder direkt bei JLCPCB bestellt werden
 - die notwendigen Produktionsdaten stehen [hier](./jlcpcb/production_files/)
 - **die Platine ist noch nicht durch einen Prototypen evaluiert!**
-- das Funkmodul  [eByte E07-900MM10S Sendemodul](https://ebyteiot.com/products/ebyte-e07-900MM10Sti-cc1101-wireless-rf-module-868mhz-915mhz-ipex-stamp?_pos=2&_sid=bbf1d47dc&_ss=r) ist bei JLCPCB / EasyEDA noch nicht korrekt für die Assemblierung eingepflegt. Das ist moniert und sollte hoffentlich bald funktionieren ..
+- die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als das sehr teure Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 
 	
 ## passende DIY I2C-Sensormodule für die Fertigung bei JLCPCB
@@ -135,11 +135,12 @@
 ## Versionsverlauf
 
 -    V1.0 13. Sep 2023: Initiale Freigabe
+-    V1.1 08. Jan 2024: Korrektur der falschen LCSC-Teilenummer von C1
 
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	PCB Version 1.0
-- 	Schematics  1.0
+- 	Schematics  1.1
 
 ## Lizenz 
 

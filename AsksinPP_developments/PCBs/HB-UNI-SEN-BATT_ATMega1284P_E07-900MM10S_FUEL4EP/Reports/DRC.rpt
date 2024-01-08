@@ -1,7 +1,7 @@
-** Drc report for /home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_FUEL4EP.kicad_pcb **
-** Created on 2023-09-13 16:41:06 **
+** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_FUEL4EP.kicad_pcb **
+** Created on 2024-01-08 15:19:46 **
 
-** Found 4 DRC violations **
+** Found 5 DRC violations **
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning (excluded)
     @(37.4300 mm, -18.1895 mm): Linie auf F.Silkscreen
@@ -18,6 +18,10 @@
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning (excluded)
     @(52.6700 mm, -18.1895 mm): Linie auf F.Silkscreen
     @(51.5108 mm, -19.8000 mm): Durchlochpad 1 [<no net>] von H8
+[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse 'Default'; Severity: error
+    @(46.5330 mm, -52.2538 mm): Leiterbahn [/plusBAT] auf F.Cu, Länge 4.8362 mm
+    @(46.5580 mm, -57.1150 mm): Pad 1 [unconnected-(R8-Pad1)] von R8 auf F.Cu
 
 ** Found 0 unconnected pads **
 
