@@ -4,6 +4,7 @@
 - integrierter hochgenauer [Sensirion SHT45-AD1B-R2](https://sensirion.com/products/catalog/SHT45) SMD TH-Sensor (±1.0% RH / ±0.1°C digitaler Luftfeuchte- und Temperatursensor )
 - kann bis auf den Batteriehalter vollständig bei JLCPCB assembliert werden
 - kleine Platine 75 mm x 25 mm
+- Platinendicke: 0,8 mm (bitte nicht ändern)
 - Versorgung mit 1x AA-Batterie oder 1x NiMH-Akkumulator
 - TPS61221 Hochsetzwandler 1,2V .. 1,5V auf 3,3V
 - [integrierte 868 MHz PCB Antenne](https://www.ti.com/lit/an/swra416/swra416.pdf)
@@ -13,7 +14,8 @@
 	+ erlaubt Speicherung der Temperaturwerte über 7 Tage im RAM für die Bildung von gleitenden Mittelwerten 
 - kleines 10mmx10mm [eByte E07-900MM10S Sendemodul](https://ebyteiot.com/products/ebyte-e07-900MM10Sti-cc1101-wireless-rf-module-868mhz-915mhz-ipex-stamp?_pos=2&_sid=bbf1d47dc&_ss=r)
 - Programmierung und Serial Monitor mit 2,54 mm Pogo-Pin-Adapter oder Stiftleisten
-- alle SMD Bausteine sind mit dem JLCPCB SMT Bestückungsservice kostengünstig und qualitativ hochwertig bestückbar, das ist also auch für Grobmotoriker wie mich geeignet :-)
+- alle SMD Bausteine sind mit dem JLCPCB SMT Bestückungsservice kostengünstig und qualitativ hochwertig bestückbar
+- die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als sehr teures Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 
 ![pic](PNGs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP_top_view.png)
 
@@ -48,6 +50,7 @@
 
 - bei Anspruchnahme des SMT Bestückungsservice von JLCPCB ist nur noch ein Durchsteckbauteil von Hand zu verlöten:
 	* 1x Keystone 2460 Batteriehalter 1xAA
+- die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als sehr teures Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 
 
 ### Aufbauhinweise
@@ -78,9 +81,10 @@
 - die Platine kann direkt bei JLCPCB bestellt und dort auch assembliert werden
 - die notwendigen Produktionsdaten stehen [hier](./jlcpcb/production_files/)
 - die folgenden Bauteile müssen [vorab bei JLCPCB bestellt werden](https://jlcpcb.com/help/article/53-what-is-jlcpcb-parts-pre-order-service):
-	+ TI TPS61221DCK (zur Zeit sehr teuer)
+	+ [TI TPS61221DCKT](https://jlcpcb.com/parts/componentSearch?searchTxt=TPS61221) (zur Zeit teuer, ist aber meist billiger als angegeben)
 	+ Sensirion SHT45-AD1B-R2
 	+ eByte E07-900MM10S
+	+ Murata LQH3NPN4R7MM0L 4.7 uH SMD Induktivität
 - die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als das sehr teure Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 - **die Platine ist noch nicht durch einen Prototypen evaluiert!**
 
@@ -91,13 +95,15 @@
 ## Versionsverlauf
 
 -   V1.0 15. Dez 2023: Initiale Vorabfreigabe
--	V1.1 15. Dez 2023: SHT45-AD1B-R2 statt SHT45-AD1F, da JLCPCB SHT45-AD1F
+-	S V1.1 15. Dez 2023: SHT45-AD1B-R2 statt SHT45-AD1F, da JLCPCB SHT45-AD1F
 nicht mehr assembliert
--	V1.2	 08. Jan 2024: Korrektur  von falschen LCSC-Teiloenummern für R1, D1 und R4
+-	S V1.2	 08. Jan 2024: Korrektur von falschen LCSC-Teilenummern für R1, D1 und R4
+-	L V1.2 12. Jan 2024: Verbesserung des PCB-Layouts für den Schaltregler
+-	S V1.3 13. Jan 2024: Korrektur der falschen LCSC-Teilenummer für Schaltregler TPS61221
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	PCB Version 1.1
-- 	Schematics  1.2
+- 	PCB Version 1.2
+- 	Schematics  1.3
 
 ## Lizenz 
 

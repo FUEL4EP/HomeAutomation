@@ -6,8 +6,8 @@
 
   (title_block
     (title "HB_TH_Sensor_SHT45_AllInOne_FUEL4EP")
-    (date "2024-01-08")
-    (rev "1.2")
+    (date "2024-01-13")
+    (rev "1.3")
     (company "(C) FUEL4EP")
     (comment 1 "Creative Commons License, non-commercial")
     (comment 2 "PCB thickness: 0.8 mm")
@@ -3095,7 +3095,7 @@
     (property "Datasheet" "http://www.ti.com/lit/ds/symlink/tps61220.pdf" (id 3) (at 114.935 37.465 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "LCSC" "C37055" (id 4) (at 114.935 33.655 0)
+    (property "LCSC" "C2865756" (id 4) (at 114.935 33.655 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "TYPE" "SOT-363" (id 5) (at 114.935 33.655 0)

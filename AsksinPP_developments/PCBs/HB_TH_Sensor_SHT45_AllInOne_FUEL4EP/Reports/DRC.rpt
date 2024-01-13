@@ -1,5 +1,5 @@
-** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.kicad_pcb **
-** Created on 2024-01-08 15:53:58 **
+** Drc report for /home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.kicad_pcb **
+** Created on 2024-01-13 12:37:08 **
 
 ** Found 38 DRC violations **
 [clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)

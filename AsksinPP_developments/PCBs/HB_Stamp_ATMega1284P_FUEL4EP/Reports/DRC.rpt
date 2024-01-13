@@ -1,0 +1,18 @@
+** Drc report for /home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP/HB_Stamp_ATMega1284P_FUEL4EP.kicad_pcb **
+** Created on 2024-01-13 12:24:09 **
+
+** Found 2 DRC violations **
+[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.1000 mm)
+    Rule: Netzklasse 'Default'; Severity: warning
+    @(2.0490 mm, -27.1615 mm): Leiterbahn [Net-(AE1-Pad1)] auf F.Cu, Länge 0.8555 mm
+    @(2.0490 mm, -27.8615 mm): Linie auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse 'Default'; Severity: warning
+    @(2.0490 mm, -27.1615 mm): Pad 1 [Net-(AE1-Pad1)] von AE1 auf F.Cu
+    @(2.0490 mm, -27.8615 mm): Linie auf F.Cu
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **
