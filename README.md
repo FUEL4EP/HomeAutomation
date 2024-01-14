@@ -113,3 +113,5 @@
 - https://icon-library.com
 - https://thenounproject.com
 - Vielen Dank an hmpatman für die Bereitstellung eines Icons
+
+EOF
