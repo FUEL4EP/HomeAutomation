@@ -63,10 +63,10 @@
 ## Versionsverlauf
 
 - V1.0   13. Jan 2024: Initiale Veröffentlichung auf Github
-- S V1.1 14. Jan 2024: Ergänzung von fehlendem PWR_FLG für VCC
+- V1.1  	15. Jan 2024: Ergänzung von fehlendem PWR_FLG für VCC; I2C Steckerleiste
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.0
+- PCB Version 1.1
 - Schematics  1.1
 
 ## Disclaimer

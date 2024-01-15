@@ -11,7 +11,8 @@
 - [integrierte 868 MHz PCB Antenne](https://www.ti.com/lit/an/swra416/swra416.pdf)
 - 10 mm x 10 mm kleines Sendemodul [eByte E07 900MM10S](https://datasheet.lcsc.com/lcsc/2305061757_Chengdu-Ebyte-Elec-Tech-E07-900MM10S_C5844212.pdf) auf Platinenrückseite von Hand verlötet
 - SMD TQFP-44 [ATMega1284P](https://ww1.microchip.com/downloads/en/DeviceDoc/doc8059.pdf) mit 128kByte Programmspeicher, 16kByte SRAM, 4kByte EEPROM
-	+ ohne Quarz, Betrieb mit 8 MHz interner RC-Oszillator
+	+ ohne externen Quarz, Betrieb mit 8 MHz internem RC-Oszillator
+		+ bitte dies unbedingt bei der Programmierung von Fuses berücksichtigen!
 	+ erlaubt Speicherung der Temperaturwerte über 7 Tage im RAM für die Bildung von gleitenden Mittelwerten 
 - Programmierung und Serial Monitor mit 2,54 mm Pogo-Pin-Adapter
 - alle SMD Bausteine sind mit dem JLCPCB SMT Bestückungsservice kostengünstig und qualitativ hochwertig bestückbar
@@ -93,14 +94,12 @@
 
 ## Versionsverlauf
 
--   V1.0 15. Dez 2023: Initiale Vorabfreigabe
--	S V1.1 15. Dez 2023: SHT45-AD1B-R2 statt SHT45-AD1F, da JLCPCB SHT45-AD1F
-nicht mehr assembliert
--	S V1.2	 08. Jan 2024: Korrektur  von falschen LCSC-Teiloenummern für R1, D1 und R4
+-   V1.0 13. Jan 2024: Initiale Vorabfreigabe
+-	V1.1	 15. Jan 2024: Änderung der I2C Stiftbelegung 
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	PCB Version 1.1
-- 	Schematics  1.2
+- 	Schematics  1.1
 
 ## Lizenz 
 
