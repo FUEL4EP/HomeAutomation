@@ -4,7 +4,7 @@
 - integrierter hochgenauer [Sensirion SHT45-AD1B-R2](https://sensirion.com/products/catalog/SHT45) SMD TH-Sensor (±1.0% RH / ±0.1°C digitaler Luftfeuchte- und Temperatursensor )
 - kann bis auf den Batteriehalter vollständig bei JLCPCB assembliert werden
 - kleine Platine 75 mm x 25 mm
-- Platinendicke: 0,8 mm (bitte nicht ändern)
+- **Platinendicke: 0,8 mm (bitte nicht ändern)**
 - Versorgung mit 1x AA-Batterie oder 1x NiMH-Akkumulator
 - TPS61221 Hochsetzwandler 1,2V .. 1,5V auf 3,3V
 - [integrierte 868 MHz PCB Antenne](https://www.ti.com/lit/an/swra416/swra416.pdf)
@@ -66,7 +66,7 @@
 - Anschluss über 6-Pin 2,54 mm Pogo-Pin-Adapter oder eingelötete 6-Pin Stiftleiste
 
 ### Passendes Gehäuse
-- in Arbeit, wird später hier bereitgestellt
+- ist [hier](./3D_Printer/case/) im STL- und OpenSCAD-Format
 
 ### Hinweise
 * Achtung: Kein Überspannungsschutz oder Verpolungsschutz vorhanden
@@ -79,6 +79,7 @@
 ## Bestellen von Platinen
 
 - die Platine kann direkt bei JLCPCB bestellt und dort auch assembliert werden
+  + **als Platinendicke unbedingt bei der Bestellung angeben: 0,8 mm (bitte nicht ändern, sonst geht die PCB-Antenne nicht)**
 - die notwendigen Produktionsdaten stehen [hier](./jlcpcb/production_files/)
 - die folgenden Bauteile müssen [vorab bei JLCPCB bestellt werden](https://jlcpcb.com/help/article/53-what-is-jlcpcb-parts-pre-order-service):
 	+ [TI TPS61221DCKT](https://jlcpcb.com/parts/componentSearch?searchTxt=TPS61221) (zur Zeit teuer, ist aber meist billiger als angegeben)

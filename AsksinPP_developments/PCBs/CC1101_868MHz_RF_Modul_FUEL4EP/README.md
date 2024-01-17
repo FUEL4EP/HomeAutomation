@@ -47,6 +47,7 @@
 
 - der  Dummy-Text 'JLCJLCJLCJLC' ist auf der Rückseite der Platine
 - C8 und C9 sollen 1% C0G Kondensatoren sein
+- **als Platinendicke unbedingt bei der Bestellung angeben: 1,2 mm (bitte nicht ändern)**
 
 ## lokale Installation des Github Releases auf Deinem Computer
 
