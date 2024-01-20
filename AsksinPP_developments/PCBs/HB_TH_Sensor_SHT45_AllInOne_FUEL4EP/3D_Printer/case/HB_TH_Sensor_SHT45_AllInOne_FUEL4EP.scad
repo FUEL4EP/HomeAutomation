@@ -1,5 +1,16 @@
+// remix of https://www.thingiverse.com/thing:2411898
+// (C)Inhumierer June 30, 2017
+// my credits for Inhumierer
+
+// V 1.3 adaption to HB_TH_Sensor_SHT45_AllInOne_FUEL4EP by FUEL4EP 01/2024
 // V 1.2 Correction / hint from molotok3D, some minor fixes
-// V 1.1- added opening helper and an optional separating wall
+// V 1.1- added opening helper and an optional separating wall 
+
+// IMPORTANT: Please adjust the variable 'gap' below to
+// get a proper and not too tight fitting of the cover
+// and the bottom box.
+// The necessary adjustment may depend on your 3D
+// printer's tolerances.
 
 wPCB=25;
 lPCB=75;
@@ -98,6 +109,9 @@ module box(){
 }
 
 module cover(){
+    
+    gap=0.2;  // added FUEL4EP after test print, cover was too tight wiithout additional gap
+    
 	translate([0,0,-th])hull(){
 		for (i=[[-w/2,-l/2],[-w/2,l/2],[w/2,-l/2],[w/2,l/2]]){
 			translate(i)cylinder(r=r+th,h=th,$fn=8*r);
@@ -105,12 +119,12 @@ module cover(){
 	}
 	difference(){
 		translate([0,0,-th])hull(){
-			for (i=[[-w/2,-l/2],[-w/2,l/2],[w/2,-l/2],[w/2,l/2]]){
+			for (i=[[-w/2+gap,-l/2+gap],[-w/2+gap,l/2-gap],[w/2-gap,-l/2+gap],[w/2-gap,l/2-gap]]){
 				translate(i)cylinder(r=r,h=th+3,$fn=8*r);
 			}
 		}
 		hull(){
-			for (i=[[-w/2,-l/2],[-w/2,l/2],[w/2,-l/2],[w/2,l/2]]){
+			for (i=[[-w/2+gap,-l/2+gap],[-w/2+gap,l/2-gap],[w/2-gap,-l/2+gap],[w/2-gap,l/2-gap]]){
 				if (r>th){
 					translate(i)cylinder(r=r-th,h=3,$fn=8*r);
 				}else{
@@ -118,11 +132,11 @@ module cover(){
 				}
 			}
 		}
-	}
-	translate([-w/2+1,l/2+r-0.2,2])rotate([0,90,0])cylinder(d=1.2,h=w-2,$fn=12);
-	translate([-w/2+1,-l/2-r+0.2,2])rotate([0,90,0])cylinder(d=1.2,h=w-2,$fn=12);
-	translate([w/2+r-0.2,l/2-1,2])rotate([90,0,0])cylinder(d=1.2,h=l-2,$fn=12);
-	translate([-w/2-r+0.2,l/2-1,2])rotate([90,0,0])cylinder(d=1.2,h=l-2,$fn=12);
+	} 
+	translate([-w/2+1+gap,l/2-gap+r-0.2,2])rotate([0,90,0])cylinder(d=1.2,h=w-2-2*gap,$fn=12);
+	translate([-w/2+1+gap,-l/2+gap-r+0.2,2])rotate([0,90,0])cylinder(d=1.2,h=w-2-2*gap,$fn=12);
+	translate([w/2-gap+r-0.2,l/2-1-gap,2])rotate([90,0,0])cylinder(d=1.2,h=l-2-2*gap,$fn=12);
+	translate([-w/2+gap-r+0.2,l/2-1-gap,2])rotate([90,0,0])cylinder(d=1.2,h=l-2-2*gap,$fn=12);
 
 }
 
@@ -155,11 +169,11 @@ module PcbFeets(h_PCB_feet, d_PCB_feet, screw_dia_PCB_feet, x1_PCB_feet, y1_PCB_
     }
 }
 
+
+
+
+
 box();
-
-
-
-
 translate([0,li+3+2*th,0])
 	cover();
 translate([0,0,0])
@@ -167,5 +181,5 @@ translate([0,0,0])
 if(show_PCB==true) {
 rotate([0,180,0]) 
   translate([0,0,-h_PCB_feet-th_PCB])
-    import("HB_TH_Sensor_SHT45_AllInOne_FUEL4EP_PCB.stl");
+    import("HB_TH_Sensor_SHT45_AllInOne_FUEL4EP_mod.stl");
 }

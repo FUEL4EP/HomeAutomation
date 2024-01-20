@@ -58,7 +58,7 @@
 - es wird dringend angeraten, als ersten Schritt der Inbetriebnahme einen Frequenztest durchzuführen.
     
 ### Passende AsksinPP Projekte von FUEL4EP
-   + [HB-UNI-Sensor1-THPD-SHT45](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45) (wird bald veröffentlicht werden)
+   + [HB-UNI-Sensor1-THD-SHT45](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THD-SHT45) (wird bald veröffentlicht werden)
     
 
 ### Anschluss eines FTDI Debuggers und/oder ISP-Programmiergeräts
@@ -66,7 +66,10 @@
 - Anschluss über 6-Pin 2,54 mm Pogo-Pin-Adapter oder eingelötete 6-Pin Stiftleiste
 
 ### Passendes Gehäuse
-- ist [hier](./3D_Printer/case/) im STL- und OpenSCAD-Format
+![pic](./3D_Printer/case/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.png)
+
+- die Konstruktionsdaten sind [hier](./3D_Printer/case/) im STL- und OpenSCAD-Format zu finden
+	+ gegebenenfalls ist in der OpenSCAD-Datei [HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.scad](./3D_Printer/case/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.scad) die Variable 'gap' an die Toleranzen des 3D-Druckers anzupassen
 
 ### Hinweise
 * Achtung: Kein Überspannungsschutz oder Verpolungsschutz vorhanden
