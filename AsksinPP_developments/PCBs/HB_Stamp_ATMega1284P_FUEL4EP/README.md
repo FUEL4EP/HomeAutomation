@@ -83,8 +83,8 @@
 - die Platine kann direkt bei JLCPCB bestellt und dort auch assembliert werden
 - die notwendigen Produktionsdaten stehen [hier](./jlcpcb/production_files/)
 - die folgenden Bauteile müssen [vorab bei JLCPCB bestellt werden](https://jlcpcb.com/help/article/53-what-is-jlcpcb-parts-pre-order-service):
-	+ [TI TPS61221DCKT](https://jlcpcb.com/parts/componentSearch?searchTxt=TPS61221) (zur Zeit teuer, ist aber meist billiger als angegeben)
-	+ Murata LQH3NPN4R7MM0L 4.7 uH SMD Induktivität
+	+ [TI TPS61221DCKT](https://jlcpcb.com/parts/componentSearch?searchTxt=TPS61221) (zur Zeit teuer, ist aber meist billiger als zuerst angegeben)
+	+ Murata LQH3NPN4R7MMEL 4.7 uH SMD Induktivität
 - die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als das sehr teure Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 - **die Platine ist noch nicht durch einen Prototypen evaluiert!**
 
@@ -95,11 +95,12 @@
 ## Versionsverlauf
 
 -   V1.0 13. Jan 2024: Initiale Vorabfreigabe
--	V1.1	 15. Jan 2024: Änderung der I2C Stiftbelegung 
+-	V1.1	 15. Jan 2024: Änderung der I2C Stiftbelegung
+-	V1.2 21. Jan 2024: Drehen der PogoPin-Anschlüsse; Änderung von LCSC-Nummern für bessere Verfügbarkeit
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	PCB Version 1.1
-- 	Schematics  1.1
+- 	PCB Version 1.2
+- 	Schematics  1.2
 
 ## Lizenz 
 

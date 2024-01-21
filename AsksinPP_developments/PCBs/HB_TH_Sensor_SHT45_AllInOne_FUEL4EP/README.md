@@ -63,7 +63,7 @@
 
 ### Anschluss eines FTDI Debuggers und/oder ISP-Programmiergeräts
 
-- Anschluss über 6-Pin 2,54 mm Pogo-Pin-Adapter oder eingelötete 6-Pin Stiftleiste
+- Anschluss über 6-Pin 2,54 mm Pogo-Pin-Adapter oder eingelötete 6-Pin Stiftleiste, bitte die Beschriftung beachten und querprüfen!
 
 ### Passendes Gehäuse
 ![pic](./3D_Printer/case/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.png)
@@ -88,7 +88,7 @@
 	+ [TI TPS61221DCKT](https://jlcpcb.com/parts/componentSearch?searchTxt=TPS61221) (zur Zeit teuer, ist aber meist billiger als angegeben)
 	+ Sensirion SHT45-AD1B-R2
 	+ eByte E07-900MM10S
-	+ Murata LQH3NPN4R7MM0L 4.7 uH SMD Induktivität
+	+ Murata LQH3NPN4R7MMEL 4.7 uH SMD Induktivität
 - die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als das sehr teure Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 - **die Platine ist noch nicht durch einen Prototypen evaluiert!**
 
@@ -104,10 +104,12 @@ nicht mehr assembliert
 -	S V1.2	 08. Jan 2024: Korrektur von falschen LCSC-Teilenummern für R1, D1 und R4
 -	L V1.2 12. Jan 2024: Verbesserung des PCB-Layouts für den Schaltregler
 -	S V1.3 13. Jan 2024: Korrektur der falschen LCSC-Teilenummer für Schaltregler TPS61221
+-	S V1.4 21. Jan 2024: Änderung der LCSC-Nummern für bessere Verfügbarkeit, Änderung der Steckerleistenbelegung
+-	L V1.3 21. Jan 2024: Änderung der Ausrichtung von Steckerleisten, zusätzliche Bestückungsdrucke
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	PCB Version 1.2
-- 	Schematics  1.3
+- 	PCB Version 1.3
+- 	Schematics  1.4
 
 ## Lizenz 
 

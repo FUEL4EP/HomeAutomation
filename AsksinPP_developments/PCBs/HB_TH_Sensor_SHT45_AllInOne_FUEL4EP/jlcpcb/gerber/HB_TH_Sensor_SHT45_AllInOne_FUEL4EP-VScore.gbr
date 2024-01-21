@@ -1,11 +1,11 @@
 %TF.GenerationSoftware,KiCad,Pcbnew,6.0.11-2627ca5db0~126~ubuntu22.04.1*%
-%TF.CreationDate,2024-01-17T12:36:19+01:00*%
-%TF.ProjectId,HB_TH_Sensor_SHT45_AllInOne_FUEL4EP,48425f54-485f-4536-956e-736f725f5348,1.2*%
+%TF.CreationDate,2024-01-21T15:51:19+01:00*%
+%TF.ProjectId,HB_TH_Sensor_SHT45_AllInOne_FUEL4EP,48425f54-485f-4536-956e-736f725f5348,1.3*%
 %TF.SameCoordinates,Original*%
 %TF.FileFunction,Other,Comment*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 6.0.11-2627ca5db0~126~ubuntu22.04.1) date 2024-01-17 12:36:19*
+G04 Created by KiCad (PCBNEW 6.0.11-2627ca5db0~126~ubuntu22.04.1) date 2024-01-21 15:51:19*
 %MOMM*%
 %LPD*%
 G01*

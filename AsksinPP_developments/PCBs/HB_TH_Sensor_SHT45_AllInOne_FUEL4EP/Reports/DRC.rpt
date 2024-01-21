@@ -1,7 +1,11 @@
-** Drc report for /home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.kicad_pcb **
-** Created on 2024-01-13 12:37:08 **
+** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.kicad_pcb **
+** Created on 2024-01-21 15:51:13 **
 
-** Found 38 DRC violations **
+** Found 39 DRC violations **
+[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0995 mm)
+    Rule: Netzklasse 'Default'; Severity: warning
+    @(5.4840 mm, -60.5790 mm): Leiterbahn [Net-(AE1-Pad1)] auf F.Cu, Länge 1.3665 mm
+    @(5.4780 mm, -62.7450 mm): Linie auf F.Cu
 [clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
     Rule: Netzklasse 'Default'; Severity: warning
     @(21.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1

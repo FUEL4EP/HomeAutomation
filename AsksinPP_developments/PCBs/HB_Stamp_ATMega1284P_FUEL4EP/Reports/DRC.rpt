@@ -1,5 +1,5 @@
 ** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP/HB_Stamp_ATMega1284P_FUEL4EP.kicad_pcb **
-** Created on 2024-01-15 09:56:49 **
+** Created on 2024-01-21 13:43:57 **
 
 ** Found 39 DRC violations **
 [clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.1000 mm)
