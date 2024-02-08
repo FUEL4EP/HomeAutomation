@@ -1,0 +1,3 @@
+#!/bin/bash
+avrdude -v -pm1284p -P usb -c stk500v2  -F -b 9600 -Ulfuse:w:0xE2:m -Uhfuse:w:0xD4:m -Uefuse:w:0xFF:m         #internal 8MHz RC OSC 
+

@@ -1,5 +1,7 @@
 # I2C_Module_SHT85_BME280_FUEL4EP ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%I2C_Module_SHT85_BME280_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
+# nicht fertigen lassen, es hat sich ein fataler Fehler eingeschlichen, der kurzfristig korrigiert werden wird: Die I2C-Pullups sind an GND statt an VCC angeschlossen!
+
 
 ## I2C SHT85 und BME280 Sensor Aufsteckplatine für DIY AsksinPP-Projekte
 
