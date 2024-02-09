@@ -2,14 +2,14 @@
 <export version="E">
   <design>
     <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP/HB_Stamp_ATMega1284P_FUEL4EP.kicad_sch</source>
-    <date>So 21 Jan 2024 13:51:37 CET</date>
+    <date>Fr 09 Feb 2024 08:52:50 CET</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>HB_Stamp_ATMega1284P_FUEL4EP</title>
         <company>(C) FUEL4EP</company>
-        <rev>1.2</rev>
-        <date>2024-01-21</date>
+        <rev>1.3</rev>
+        <date>2024-02-08</date>
         <source>HB_Stamp_ATMega1284P_FUEL4EP.kicad_sch</source>
         <comment number="1" value="Creative Commons License, non-commercial"/>
         <comment number="2" value="PCB thickness: 0.8 mm"/>
@@ -492,14 +492,14 @@
       <tstamps>00000000-0000-0000-0000-00005abe25c7</tstamps>
     </comp>
     <comp ref="R5">
-      <value>4.7k</value>
+      <value>10k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="LCSC">C25900</field>
+        <field name="LCSC">C25744</field>
         <field name="TYPE">0402</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="LCSC" value="C25900"/>
+      <property name="LCSC" value="C25744"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="HB_Stamp_ATMega1284P_FUEL4EP.kicad_sch"/>
@@ -507,14 +507,14 @@
       <tstamps>f615aecc-95a7-4017-bdfe-bd1266e39644</tstamps>
     </comp>
     <comp ref="R6">
-      <value>4.7k</value>
+      <value>10k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="LCSC">C25900</field>
+        <field name="LCSC">C25744</field>
         <field name="TYPE">0402</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="LCSC" value="C25900"/>
+      <property name="LCSC" value="C25744"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="HB_Stamp_ATMega1284P_FUEL4EP.kicad_sch"/>
@@ -967,12 +967,12 @@
     </net>
     <net code="12" name="/SCL">
       <node ref="J4" pin="3" pinfunction="Pin_3" pintype="passive"/>
-      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
       <node ref="U1" pin="19" pinfunction="PC0" pintype="bidirectional"/>
     </net>
     <net code="13" name="/SDA">
       <node ref="J4" pin="4" pinfunction="Pin_4" pintype="passive"/>
-      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
       <node ref="U1" pin="20" pinfunction="PC1" pintype="bidirectional"/>
     </net>
     <net code="14" name="/SS">
@@ -988,6 +988,8 @@
       <node ref="C14" pin="1" pintype="passive"/>
       <node ref="FB1" pin="2" pintype="passive"/>
       <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
     </net>
     <net code="17" name="/plusBAT">
       <node ref="C5" pin="1" pintype="passive"/>
@@ -1021,8 +1023,6 @@
       <node ref="Module1" pin="2B" pinfunction="GND" pintype="power_in"/>
       <node ref="Module1" pin="2C" pinfunction="GND" pintype="power_in"/>
       <node ref="Module1" pin="5D" pinfunction="GND" pintype="power_in"/>
-      <node ref="R5" pin="2" pintype="passive"/>
-      <node ref="R6" pin="2" pintype="passive"/>
       <node ref="U1" pin="18" pinfunction="GND" pintype="passive"/>
       <node ref="U1" pin="28" pinfunction="GND" pintype="passive"/>
       <node ref="U1" pin="39" pinfunction="GND" pintype="passive"/>

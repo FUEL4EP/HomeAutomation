@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_small_FUEL4EP/I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch</source>
-    <date>Fr 09 Feb 2024 09:31:29 CET</date>
+    <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_SHT85_BME280_FUEL4EP/I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch</source>
+    <date>Fr 09 Feb 2024 10:06:01 CET</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
-        <title>I2C_Module_SHT45_BME280_small_FUEL4EP</title>
+        <title>I2C_Module_SHT85_BME280_FUEL4EP</title>
         <company>FUEL4EP</company>
         <rev>1.2</rev>
         <date>2024-02-08</date>
-        <source>I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch</source>
-        <comment number="1" value="fitting to  HB_Stamp_ATMega1284P_FUEL4EP"/>
+        <source>I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch</source>
+        <comment number="1" value="fitting to  HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP"/>
         <comment number="2" value="Creative Commons License, non-commercial"/>
         <comment number="3" value=""/>
         <comment number="4" value=""/>
@@ -35,7 +35,7 @@
       <property name="LCSC" value="C19666"/>
       <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>9277bb0e-19d3-46da-98d4-733854d0b690</tstamps>
     </comp>
@@ -50,7 +50,7 @@
       <property name="LCSC" value="C14663"/>
       <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>62488e6b-8df2-4cae-9dee-c1f753cf9830</tstamps>
     </comp>
@@ -65,7 +65,7 @@
       <property name="LCSC" value="C14663"/>
       <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>970a920d-499e-47de-938b-2563766d170a</tstamps>
     </comp>
@@ -80,7 +80,7 @@
       <property name="LCSC" value="C14663"/>
       <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>1c8efafb-254e-45f1-ae5f-0b69a18d9bcb</tstamps>
     </comp>
@@ -96,7 +96,7 @@
       <property name="LCSC" value="C76889"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>185964e4-830f-402b-8571-b15d10c50c69</tstamps>
     </comp>
@@ -105,16 +105,25 @@
       <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
       <libsource lib="Connector_Generic" part="Conn_01x04" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>00000000-0000-0000-0000-00006157aa50</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x04</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x04" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00000000-0000-0000-0000-000061579e50</tstamps>
     </comp>
     <comp ref="JP1">
       <value>SolderJumper_2_Bridged</value>
       <footprint>Jumper:SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm</footprint>
       <libsource lib="Jumper" part="SolderJumper_2_Bridged" description="Solder Jumper, 2-pole, closed/bridged"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a7c038cf-e13a-4aac-9478-087fe9ad0674</tstamps>
     </comp>
@@ -123,7 +132,7 @@
       <footprint>FUEL4EP:CC-BY-ND-SA</footprint>
       <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>00000000-0000-0000-0000-0000615dee46</tstamps>
     </comp>
@@ -138,7 +147,7 @@
       <property name="LCSC" value="C25744"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>010452d5-e5f2-447e-a153-71da0dbec114</tstamps>
     </comp>
@@ -153,7 +162,7 @@
       <property name="LCSC" value="C25744"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>f75dc7be-70bf-4119-8c06-195e1a960dd2</tstamps>
     </comp>
@@ -168,7 +177,7 @@
       <property name="LCSC" value="C25744"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>55b96afd-ec19-4400-9134-cc56302d872a</tstamps>
     </comp>
@@ -184,25 +193,31 @@
       <property name="LCSC" value="C92489"/>
       <property name="TYPE" value="LGA-8"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>6c020e64-a15a-4a6f-ab04-2470855149f2</tstamps>
     </comp>
     <comp ref="U2">
-      <value>SHT45-AD1B-R2</value>
-      <footprint>FUEL4EP:SHT4X</footprint>
-      <datasheet>https://sensirion.com/media/documents/33FD6951/6555C40E/Sensirion_Datasheet_SHT4x.pdf</datasheet>
+      <value>SHT85</value>
+      <footprint>FUEL4EP:XDCR_SHT85</footprint>
+      <datasheet>https://www.mouser.com/catalog/specsheets/Sensirion_10022018_HT_DS_SHT85_V0.9_D1.pdf</datasheet>
       <fields>
-        <field name="LCSC">C5221601</field>
-        <field name="TYPE">DFN-4</field>
+        <field name="Description">Humidity Temperature Sensor 0 ~ 100% RH Digital ±1.5% RH 8 s Through Hole</field>
+        <field name="LCSC">C779800</field>
+        <field name="MF">Sensirion AG</field>
+        <field name="MP">SHT85</field>
+        <field name="TYPE"> SIP-4 </field>
       </fields>
-      <libsource lib="Sensor_Humidity" part="SHT4x" description="Digital Humidity and Temperature Sensor, +/-1%RH, +/-0.1degC, I2C, 1.08-3.6V, 16bit, DFN-4"/>
-      <property name="LCSC" value="C5221601"/>
-      <property name="TYPE" value="DFN-4"/>
+      <libsource lib="FUEL4EP" part="SHT85" description=""/>
+      <property name="MF" value="Sensirion AG"/>
+      <property name="Description" value="Humidity Temperature Sensor 0 ~ 100% RH Digital ±1.5% RH 8 s Through Hole"/>
+      <property name="MP" value="SHT85"/>
+      <property name="LCSC" value="C779800"/>
+      <property name="TYPE" value=" SIP-4 "/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_sch"/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>4286b13a-2c83-4a2b-871b-df5ad20905f3</tstamps>
+      <tstamps>1a0a93ee-26bc-426c-9e55-78d4e15c6cc5</tstamps>
     </comp>
   </components>
   <libparts>
@@ -274,6 +289,22 @@
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="FUEL4EP" part="SHT85">
+      <docs>https://www.mouser.com/catalog/specsheets/Sensirion_10022018_HT_DS_SHT85_V0.9_D1.pdf</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SHT85</field>
+        <field name="Footprint">FUEL4EP:XDCR_SHT85</field>
+        <field name="Datasheet">https://www.mouser.com/catalog/specsheets/Sensirion_10022018_HT_DS_SHT85_V0.9_D1.pdf</field>
+        <field name="Description">Humidity Temperature Sensor 0 ~ 100% RH Digital ±1.5% RH 8 s Through Hole</field>
+      </fields>
+      <pins>
+        <pin num="1" name="SCL" type="input"/>
+        <pin num="2" name="VDD" type="power_in"/>
+        <pin num="3" name="VSS" type="power_in"/>
+        <pin num="4" name="SDA" type="bidirectional"/>
+      </pins>
+    </libpart>
     <libpart lib="Graphic" part="Logo_Open_Hardware_Small">
       <description>Open Hardware logo, small</description>
       <docs>~</docs>
@@ -322,25 +353,6 @@
         <pin num="8" name="VDD" type="power_in"/>
       </pins>
     </libpart>
-    <libpart lib="Sensor_Humidity" part="SHT4x">
-      <description>Digital Humidity and Temperature Sensor, +/-1%RH, +/-0.1degC, I2C, 1.08-3.6V, 16bit, DFN-4</description>
-      <docs>https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf</docs>
-      <footprints>
-        <fp>Sensirion?DFN*1.5x1.5mm*P0.8mm*SHT4x*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">U</field>
-        <field name="Value">SHT4x</field>
-        <field name="Footprint">Sensor_Humidity:Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad</field>
-        <field name="Datasheet">https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf</field>
-      </fields>
-      <pins>
-        <pin num="1" name="SDA" type="bidirectional"/>
-        <pin num="2" name="SCL" type="input"/>
-        <pin num="3" name="VDD" type="power_in"/>
-        <pin num="4" name="VSS" type="power_in"/>
-      </pins>
-    </libpart>
   </libparts>
   <libraries>
     <library logical="Connector_Generic">
@@ -348,6 +360,9 @@
     </library>
     <library logical="Device">
       <uri>/usr/share/kicad/symbols//Device.kicad_sym</uri>
+    </library>
+    <library logical="FUEL4EP">
+      <uri>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_SHT85_BME280_FUEL4EP/../FUEL4EP.kicad_sym</uri>
     </library>
     <library logical="Graphic">
       <uri>/usr/share/kicad/symbols//Graphic.kicad_sym</uri>
@@ -358,22 +373,21 @@
     <library logical="Sensor">
       <uri>/usr/share/kicad/symbols//Sensor.kicad_sym</uri>
     </library>
-    <library logical="Sensor_Humidity">
-      <uri>/usr/share/kicad/symbols//Sensor_Humidity.kicad_sym</uri>
-    </library>
   </libraries>
   <nets>
     <net code="1" name="/SCL">
       <node ref="J1" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J2" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="R2" pin="1" pintype="passive"/>
       <node ref="U1" pin="4" pinfunction="SCK" pintype="input"/>
-      <node ref="U2" pin="2" pinfunction="SCL" pintype="input"/>
+      <node ref="U2" pin="1" pinfunction="SCL" pintype="input"/>
     </net>
     <net code="2" name="/SDA">
       <node ref="J1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="J2" pin="4" pinfunction="Pin_4" pintype="passive"/>
       <node ref="R1" pin="1" pintype="passive"/>
       <node ref="U1" pin="3" pinfunction="SDI" pintype="bidirectional"/>
-      <node ref="U2" pin="1" pinfunction="SDA" pintype="bidirectional"/>
+      <node ref="U2" pin="4" pinfunction="SDA" pintype="bidirectional"/>
     </net>
     <net code="3" name="GND">
       <node ref="C1" pin="2" pintype="passive"/>
@@ -381,10 +395,11 @@
       <node ref="C3" pin="1" pintype="passive"/>
       <node ref="C4" pin="1" pintype="passive"/>
       <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="JP1" pin="1" pinfunction="A" pintype="passive"/>
       <node ref="U1" pin="1" pinfunction="GND" pintype="power_in"/>
       <node ref="U1" pin="7" pinfunction="GND" pintype="power_in"/>
-      <node ref="U2" pin="4" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U2" pin="3" pinfunction="VSS" pintype="power_in"/>
     </net>
     <net code="4" name="Net-(JP1-Pad2)">
       <node ref="JP1" pin="2" pinfunction="B" pintype="passive"/>
@@ -395,6 +410,7 @@
       <node ref="C3" pin="2" pintype="passive"/>
       <node ref="FB1" pin="1" pintype="passive"/>
       <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="R1" pin="2" pintype="passive"/>
       <node ref="R2" pin="2" pintype="passive"/>
       <node ref="U1" pin="2" pinfunction="CSB" pintype="input"/>
@@ -407,7 +423,7 @@
       <node ref="FB1" pin="2" pintype="passive"/>
       <node ref="R3" pin="1" pintype="passive"/>
       <node ref="U1" pin="8" pinfunction="VDD" pintype="power_in"/>
-      <node ref="U2" pin="3" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U2" pin="2" pinfunction="VDD" pintype="power_in"/>
     </net>
   </nets>
 </export>

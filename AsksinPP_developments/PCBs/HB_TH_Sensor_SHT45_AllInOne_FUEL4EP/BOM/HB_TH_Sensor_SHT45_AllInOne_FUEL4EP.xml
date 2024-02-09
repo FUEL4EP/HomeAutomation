@@ -2,14 +2,14 @@
 <export version="E">
   <design>
     <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.kicad_sch</source>
-    <date>So 21 Jan 2024 15:51:39 CET</date>
+    <date>Fr 09 Feb 2024 09:25:04 CET</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>HB_TH_Sensor_SHT45_AllInOne_FUEL4EP</title>
         <company>(C) FUEL4EP</company>
-        <rev>1.4</rev>
-        <date>2024-01-21</date>
+        <rev>1.5</rev>
+        <date>2024-02-08</date>
         <source>HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.kicad_sch</source>
         <comment number="1" value="Creative Commons License, non-commercial"/>
         <comment number="2" value="PCB thickness: 0.8 mm"/>
@@ -1032,12 +1032,12 @@
       <node ref="U1" pin="3" pinfunction="PB7" pintype="bidirectional"/>
     </net>
     <net code="12" name="/SCL">
-      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
       <node ref="U1" pin="19" pinfunction="PC0" pintype="bidirectional"/>
       <node ref="U3" pin="2" pinfunction="SCL" pintype="input"/>
     </net>
     <net code="13" name="/SDA">
-      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
       <node ref="U1" pin="20" pinfunction="PC1" pintype="bidirectional"/>
       <node ref="U3" pin="1" pinfunction="SDA" pintype="bidirectional"/>
     </net>
@@ -1053,6 +1053,8 @@
       <node ref="C14" pin="1" pintype="passive"/>
       <node ref="C15" pin="2" pintype="passive"/>
       <node ref="FB1" pin="2" pintype="passive"/>
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="R6" pin="1" pintype="passive"/>
       <node ref="U3" pin="3" pinfunction="VDD" pintype="power_in"/>
     </net>
     <net code="17" name="/plusBAT">
@@ -1085,8 +1087,6 @@
       <node ref="Module1" pin="2B" pinfunction="GND" pintype="power_in"/>
       <node ref="Module1" pin="2C" pinfunction="GND" pintype="power_in"/>
       <node ref="Module1" pin="5D" pinfunction="GND" pintype="power_in"/>
-      <node ref="R5" pin="2" pintype="passive"/>
-      <node ref="R6" pin="2" pintype="passive"/>
       <node ref="SW1" pin="C" pintype="passive"/>
       <node ref="SW1" pin="D" pintype="passive"/>
       <node ref="U1" pin="18" pinfunction="GND" pintype="passive"/>

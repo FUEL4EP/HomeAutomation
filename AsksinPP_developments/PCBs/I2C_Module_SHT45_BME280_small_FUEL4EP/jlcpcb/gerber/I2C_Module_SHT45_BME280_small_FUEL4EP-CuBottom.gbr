@@ -1,12 +1,12 @@
 %TF.GenerationSoftware,KiCad,Pcbnew,6.0.11-2627ca5db0~126~ubuntu22.04.1*%
-%TF.CreationDate,2024-01-15T10:29:38+01:00*%
-%TF.ProjectId,I2C_Module_SHT45_BME280_small_FUEL4EP,4932435f-4d6f-4647-956c-655f53485434,V1.1*%
+%TF.CreationDate,2024-02-09T09:37:32+01:00*%
+%TF.ProjectId,I2C_Module_SHT45_BME280_small_FUEL4EP,4932435f-4d6f-4647-956c-655f53485434,V1.2*%
 %TF.SameCoordinates,Original*%
 %TF.FileFunction,Copper,L2,Bot*%
 %TF.FilePolarity,Positive*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 6.0.11-2627ca5db0~126~ubuntu22.04.1) date 2024-01-15 10:29:38*
+G04 Created by KiCad (PCBNEW 6.0.11-2627ca5db0~126~ubuntu22.04.1) date 2024-02-09 09:37:32*
 %MOMM*%
 %LPD*%
 G01*
@@ -58,7 +58,6 @@ X17700000Y6260000D03*
 X5539014Y8491742D03*
 X1905000Y13081000D03*
 X15930000Y8030000D03*
-X14320000Y8900000D03*
 X2220000Y9000000D03*
 %TO.N,/SCL*%
 X9300000Y4826000D03*

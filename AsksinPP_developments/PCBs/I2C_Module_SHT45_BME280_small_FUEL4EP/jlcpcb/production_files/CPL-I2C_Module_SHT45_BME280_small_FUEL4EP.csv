@@ -5,8 +5,8 @@ C3,100n,C_0603_1608Metric,3.82,8.1,180.0,top
 C4,100n,C_0603_1608Metric,3.07,1.8,0.0,top
 FB1,FerriteBead,L_0402_1005Metric,2.02,10.0,0.0,top
 LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA,11.16219,14.333814,0.0,bottom
-R1,4.7k,R_0402_1005Metric,15.269,10.287,-90.0,top
-R2,4.7k,R_0402_1005Metric,13.999,10.285,-90.0,top
+R1,10k,R_0402_1005Metric,15.269,10.287,-90.0,top
+R2,10k,R_0402_1005Metric,13.999,10.285,-90.0,top
 R3,10k,R_0402_1005Metric,8.62,11.3,-90.0,top
 U1,BME280,Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering,3.07,4.1,180.0,top
 U2,SHT45-AD1B-R2,SHT4X,10.645,3.325,0.0,top

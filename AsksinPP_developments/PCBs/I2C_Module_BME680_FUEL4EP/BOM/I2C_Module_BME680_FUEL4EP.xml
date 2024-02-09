@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/home/ewald/Arduino/Backups/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_BME680_FUEL4EP/I2C_Module_BME680_FUEL4EP.kicad_sch</source>
-    <date>Do 07 Sep 2023 17:38:37 CEST</date>
+    <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_BME680_FUEL4EP/I2C_Module_BME680_FUEL4EP.kicad_sch</source>
+    <date>Fr 09 Feb 2024 09:56:35 CET</date>
     <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>I2C_Module_BME680_FUEL4EP</title>
         <company>FUEL4EP</company>
-        <rev>1.0</rev>
-        <date>2023-09-07</date>
+        <rev>1.2</rev>
+        <date>2024-02-08</date>
         <source>I2C_Module_BME680_FUEL4EP.kicad_sch</source>
         <comment number="1" value="fitting to  HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP"/>
         <comment number="2" value="Creative Commons License, non-commercial"/>
@@ -122,14 +122,14 @@
       <tstamps>00000000-0000-0000-0000-0000615dee46</tstamps>
     </comp>
     <comp ref="R1">
-      <value>4.7k</value>
+      <value>10k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="LCSC">C25900</field>
+        <field name="LCSC">C25744</field>
         <field name="TYPE">0402</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="LCSC" value="C25900"/>
+      <property name="LCSC" value="C25744"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME680_FUEL4EP.kicad_sch"/>
@@ -137,14 +137,14 @@
       <tstamps>010452d5-e5f2-447e-a153-71da0dbec114</tstamps>
     </comp>
     <comp ref="R2">
-      <value>4.7k</value>
+      <value>10k</value>
       <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
       <fields>
-        <field name="LCSC">C25900</field>
+        <field name="LCSC">C25744</field>
         <field name="TYPE">0402</field>
       </fields>
       <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="LCSC" value="C25900"/>
+      <property name="LCSC" value="C25744"/>
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_BME680_FUEL4EP.kicad_sch"/>
@@ -338,8 +338,6 @@
       <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="JP1" pin="1" pinfunction="A" pintype="passive"/>
-      <node ref="R1" pin="2" pintype="passive"/>
-      <node ref="R2" pin="2" pintype="passive"/>
       <node ref="U1" pin="1" pinfunction="GND" pintype="power_in"/>
       <node ref="U1" pin="7" pinfunction="GND" pintype="power_in"/>
     </net>
@@ -353,6 +351,8 @@
       <node ref="FB1" pin="1" pintype="passive"/>
       <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
       <node ref="U1" pin="2" pinfunction="CSB" pintype="input"/>
       <node ref="U1" pin="6" pinfunction="VDDIO" pintype="power_in"/>
     </net>

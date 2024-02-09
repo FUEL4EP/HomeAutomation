@@ -1,6 +1,6 @@
 # HB_TH_Sensor_SHT45_AllInOne_FUEL4EP [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%2FHB_TH_Sensor_SHT45_AllInOne_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-# nicht fertigen lassen, es hat sich ein fataler Fehler eingeschlichen, der kurzfristig korrigiert werden wird: Die I2C-Pullups sind an GND statt an VCC angeschlossen!
+# Warnung: Diese Version der Platine ist noch nicht valdiert. Nutzung auf eigenes Risiko!
 
 **Platine für hochgenauen und kleinen DIY AsksinPP TH Sensor**
 - integrierter hochgenauer [Sensirion SHT45-AD1B-R2](https://sensirion.com/products/catalog/SHT45) SMD TH-Sensor (±1.0% RH / ±0.1°C digitaler Luftfeuchte- und Temperatursensor )
@@ -108,10 +108,12 @@ nicht mehr assembliert
 -	S V1.3 13. Jan 2024: Korrektur der falschen LCSC-Teilenummer für Schaltregler TPS61221
 -	S V1.4 21. Jan 2024: Änderung der LCSC-Nummern für bessere Verfügbarkeit, Änderung der Steckerleistenbelegung
 -	L V1.3 21. Jan 2024: Änderung der Ausrichtung von Steckerleisten, zusätzliche Bestückungsdrucke
+-	S V1.5 08. Feb 2024: Fix der I2C Pull-Up Widerstände
+-	L V1.4 08. Feb 2024: Fix der I2C Pull-Up Widerstände und Beschriftung
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	PCB Version 1.3
-- 	Schematics  1.4
+- 	PCB Version 1.4
+- 	Schematics  1.5
 
 ## Lizenz 
 
