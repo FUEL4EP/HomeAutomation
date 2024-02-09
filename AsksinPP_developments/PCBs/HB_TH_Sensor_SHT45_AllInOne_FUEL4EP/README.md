@@ -58,6 +58,16 @@
 ### Aufbauhinweise
 
 - es wird dringend angeraten, als ersten Schritt der Inbetriebnahme einen Frequenztest durchzuführen.
+
+## Setzten der Fuses des ATMega1284P Mikrokontrollers
+
+- **nie die Fuses auf einen externen Quarzoszillator / Resonator umschalten!**
+- ein passender avrdude Skript zum Lesen und korrekten Setzen der Fuses ist [hier](./avrdude)
+
+## Prüfwerkzeuge
+
+- ein Frequenztest ist [hier](./FreqTest_1284P/)
+- ein Test des SHT45 Sensors ist [hier](./SHT45_Sensor_test)
     
 ### Passende AsksinPP Projekte von FUEL4EP
    + [HB-UNI-Sensor1-THD-SHT45](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THD-SHT45) (wird bald veröffentlicht werden)
@@ -65,7 +75,7 @@
 
 ### Anschluss eines FTDI Debuggers und/oder ISP-Programmiergeräts
 
-- Anschluss über 6-Pin 2,54 mm Pogo-Pin-Adapter oder eingelötete 6-Pin Stiftleiste, bitte die Beschriftung beachten und querprüfen!
+- Anschluss über 6-Pin 2,54 mm Pogo-Pin-Adapter oder eingelötete 6-Pin Stiftleiste, bitte die Beschriftung beachten und vor dem Anlegen eines Pogo-Pin-Adapters querprüfen!
 
 ### Passendes Gehäuse
 ![pic](./3D_Printer/case/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.png)
