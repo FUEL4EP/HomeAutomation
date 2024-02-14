@@ -67,7 +67,9 @@
 ### Anschluss eines FTDI Debuggers und/oder ISP-Programmiergeräts
 
 - Anschluss über 6-Pin 2,54 mm Pogo-Pin-Adapter auf der Platinenoberseite (FTDI Debugger) bzw. der Platinenunterseite (ISP Programmierer)
-- bitte vor Anschluss prüfen, dass die korrekte Platinenseite verwendet wird
+- bitte vor Anschluss prüfen, dass die korrekte Platinenseite verwendet wird.
+- bitte die Beschriftung beachten und vor dem Anlegen eines Pogo-Pin-Adapters querprüfen!
+- den ISP-Programmierer auf 3,3V Programmierspannung einstellen.
 
 ### Passendes Gehäuse
 - in Arbeit, wird später hier bereitgestellt

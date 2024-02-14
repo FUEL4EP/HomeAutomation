@@ -1,0 +1,3 @@
+ prototype has been ordered on 07th January 2024
+
+ Note: The module E07-MM900MS10 has not been assembled due to very high cost of standard PCBA

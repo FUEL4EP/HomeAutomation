@@ -726,7 +726,7 @@ class Addon_generator {
           println "paramset id            : ${it.@paramset_id}"
 
 
-          toEncode = it.translation_de.toString()
+          def toEncode = it.translation_de.toString()
           println "translated_string      : ${toEncode.encodeURL()}"
           println "stringtable_identifier : ${it.stringtable_identifier}"
           

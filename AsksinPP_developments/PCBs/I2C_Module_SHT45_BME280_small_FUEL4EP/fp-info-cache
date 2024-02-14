@@ -1,4 +1,4 @@
-20982073356337089
+20987771681073612
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -52647,6 +52647,13 @@ Through hole pin header THT 1x08 2.00mm single row
 8
 8
 FUEL4EP
+PogoPinHeader_SMD_1x06_P2.54mm_Vertical
+Through hole straight pin header, 1x06, 2.54mm pitch, single row
+Through hole pin header THT 1x06 2.54mm single row
+0
+6
+6
+FUEL4EP
 SHT4X
 Consumer SHT4x Digital and Analog
 
@@ -52660,6 +52667,13 @@ SOP SO
 0
 8
 8
+FUEL4EP
+SOT-23_2N7002K
+SOT, 3 Pin (https://www.jedec.org/system/files/docs/to-236h.pdf variant AB), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOT TO_SOT_SMD
+0
+3
+3
 FUEL4EP
 SW_TS-1187A-B-A-B
 
@@ -52800,6 +52814,13 @@ eByte_E07-900M10S
 0
 22
 22
+FUEL4EP
+eByte_E07-900MM10S
+
+
+0
+20
+20
 FUEL4EP
 ePaper_MountingHole_M5
 

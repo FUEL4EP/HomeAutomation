@@ -22,7 +22,7 @@
 
 ## Platinenmaße
 
-- Breite: 22 mm
+- Breite: 14,08 mm
 - Weite: 17 mm
 - Platinendicke 1,6 mm (bei der Bestellung bei JLCPCB auswählen)
 
@@ -64,12 +64,13 @@
 
 ## Versionsverlauf
 
-- V1.0  13. Jan 2024: Initiale Veröffentlichung auf Github
-- V1.1  	15. Jan 2024: Ergänzung von fehlendem PWR_FLG für VCC; I2C Steckerleiste
-- V1.2	08. Feb 2024: Fix der I2C Pull-Up Widerstände
+- V1.0   13. Jan 2024: Initiale Veröffentlichung auf Github
+- V1.1   15. Jan 2024: Ergänzung von fehlendem PWR_FLG für VCC; I2C Steckerleiste
+- V1.2	 08. Feb 2024: Fix der I2C Pull-Up Widerstände
+- L V1.3 14. Feb 2024: Verringerung der Breite auf  14,08 mm
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.2
+- PCB Version 1.3
 - Schematics  1.2
 
 ## Disclaimer

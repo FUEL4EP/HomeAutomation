@@ -76,6 +76,7 @@
 ### Anschluss eines FTDI Debuggers und/oder ISP-Programmiergeräts
 
 - Anschluss über 6-Pin 2,54 mm Pogo-Pin-Adapter oder eingelötete 6-Pin Stiftleiste, bitte die Beschriftung beachten und vor dem Anlegen eines Pogo-Pin-Adapters querprüfen!
+- den ISP-Programmierer auf 3,3V Programmierspannung einstellen.
 
 ### Passendes Gehäuse
 ![pic](./3D_Printer/case/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.png)
