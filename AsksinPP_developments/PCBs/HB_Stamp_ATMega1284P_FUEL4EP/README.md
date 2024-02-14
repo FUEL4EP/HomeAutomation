@@ -55,13 +55,22 @@
 - bei Anspruchsnahme des SMT Bestückungsservice von JLCPCB ist nur noch das Funkmodul eByte E07-900MM10S von Hand auf die Platinenrückseite zu löten
 - die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als sehr teures Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 
-
+### Passende AsksinPP Projekte von FUEL4EP
+   + [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280) (wird demnächst veröffentlicht werden)
+   
 ### Aufbauhinweise
 
-- es wird dringend angeraten, als ersten Schritt der Inbetriebnahme einen Frequenztest durchzuführen.
-    
-### Passende AsksinPP Projekte von FUEL4EP
-   + [HB-UNI-Sensor1-THPD-SHT45](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45) (wird bald veröffentlicht werden)
+- es wird dringend angeraten, als ersten Schritt der Inbetriebnahme einen Frequenztest durchzuführen. Vorher bitte die Fuses mit avrdude setzen.
+
+## Setzten der Fuses des ATMega1284P Mikrokontrollers
+
+- **nie die Fuses auf einen externen Quarzoszillator / Resonator umschalten!**
+- ein passender avrdude Skript zum Lesen und korrekten Setzen der Fuses ist [hier](./avrdude)
+
+## Prüfwerkzeuge
+
+- ein Frequenztest ist [hier](./FreqTest_1284P/)
+- ein Test des SHT45 Sensors ist [hier](./SHT45_Sensor_test)
     
 
 ### Anschluss eines FTDI Debuggers und/oder ISP-Programmiergeräts
@@ -70,6 +79,7 @@
 - bitte vor Anschluss prüfen, dass die korrekte Platinenseite verwendet wird.
 - bitte die Beschriftung beachten und vor dem Anlegen eines Pogo-Pin-Adapters querprüfen!
 - den ISP-Programmierer auf 3,3V Programmierspannung einstellen.
+- zuerst die Fuses mit avrdude setzen
 
 ### Passendes Gehäuse
 - in Arbeit, wird später hier bereitgestellt
@@ -98,13 +108,14 @@
 
 ## Versionsverlauf
 
--   V1.0 13. Jan 2024: Initiale Vorabfreigabe
--	V1.1	 15. Jan 2024: Änderung der I2C Stiftbelegung
--	V1.2 21. Jan 2024: Drehen der PogoPin-Anschlüsse; Änderung von LCSC-Nummern für bessere Verfügbarkeit
--	V1.3 08. Feb 2024: Fix der I2C Pull-Up Widerstände
+-   V1.0   13. Jan 2024: Initiale Vorabfreigabe
+-	V1.1	   15. Jan 2024: Änderung der I2C Stiftbelegung
+-	V1.2   21. Jan 2024: Drehen der PogoPin-Anschlüsse; Änderung von LCSC-Nummern für bessere Verfügbarkeit
+-	V1.3   08. Feb 2024: Fix der I2C Pull-Up Widerstände
+-	L V1.4 14. Feb 2024: Pogo-Pin Pads in Ringform
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	PCB Version 1.3
+- 	PCB Version 1.4
 - 	Schematics  1.3
 
 ## Lizenz 

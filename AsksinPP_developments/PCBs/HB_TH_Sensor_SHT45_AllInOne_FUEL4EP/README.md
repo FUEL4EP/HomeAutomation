@@ -57,7 +57,7 @@
 
 ### Aufbauhinweise
 
-- es wird dringend angeraten, als ersten Schritt der Inbetriebnahme einen Frequenztest durchzuführen.
+- es wird dringend angeraten, als ersten Schritt der Inbetriebnahme einen Frequenztest durchzuführen. Vorher bitte die Fuses mit avrdude setzen.
 
 ## Setzten der Fuses des ATMega1284P Mikrokontrollers
 
@@ -77,6 +77,7 @@
 
 - Anschluss über 6-Pin 2,54 mm Pogo-Pin-Adapter oder eingelötete 6-Pin Stiftleiste, bitte die Beschriftung beachten und vor dem Anlegen eines Pogo-Pin-Adapters querprüfen!
 - den ISP-Programmierer auf 3,3V Programmierspannung einstellen.
+- zuerst immer die Fuses mit avrdude setzen!
 
 ### Passendes Gehäuse
 ![pic](./3D_Printer/case/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.png)
