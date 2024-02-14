@@ -72,11 +72,25 @@ make_all.bsh -check Version 0.12
 .. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-RAD-AL53.xml has been correctly validated ..
 
 
+.. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-THD-SHT45.xml' ..
+
+.. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-THD-SHT45.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
+
+.. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-THD-SHT45.xml has been correctly validated ..
+
+
 .. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-THPD-BME280.xml' ..
 
 .. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-THPD-BME280.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
 
 .. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-THPD-BME280.xml has been correctly validated ..
+
+
+.. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-THPD-SHT45_BME280.xml' ..
+
+.. validating the rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-THPD-SHT45_BME280.xml' against schema file './libraries/occu.xsd' with xmllint tool ..
+
+.. The rftypes XML ../src/addon/firmware/rftypes/hb-uni-sensor-THPD-SHT45_BME280.xml has been correctly validated ..
 
 
 .. working on the addon rftypes XML file '../src/addon/firmware/rftypes/hb-uni-sensor-THPD-SHT85.xml' ..

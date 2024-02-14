@@ -1,0 +1,5 @@
+#!/bin/bash
+ADDON_NAME=hb-ep-devices-addon
+
+cp install_${ADDON_NAME} ../../CCU_RM/src/addon/
+cp uninstall_${ADDON_NAME} ../../CCU_RM/src/addon/
