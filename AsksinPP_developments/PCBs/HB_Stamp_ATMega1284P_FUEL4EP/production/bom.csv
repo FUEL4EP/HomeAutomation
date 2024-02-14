@@ -1,0 +1,27 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+AE1,Texas_SWRA416_868MHz_915MHz,1,SWRA416 868MHz PCB Antenna,
+"C1, C11, C14, C2, C4, C6, C7, C8",0402,8,100n,C1525
+C10,0402,1,4.7u,C23733
+"C12, C3",0402,2,10u,C15525
+C13,0402,1,1pF,C72134
+"C5, C9",0805,2,10u,C15850
+D1,0402,1,LED red 0402,C273598
+FB1,0402,1,FerriteBead,C76889
+J1,PinHeader_1x03_P2.54mm_Vertical,1,Power,
+J2,PogoPinHeader_SMD_1x06_P2.54mm_Vertical,1,FTDI Debuger,
+J3,PogoPinHeader_SMD_1x06_P2.54mm_Vertical,1,ISP Programmer,
+J4,PinHeader_1x04_P2.54mm_Vertical,1,I2C,
+J5,PinHeader_1x01_P2.54mm_Vertical,1,PA5/PCINT5,
+J6,TestPoint_Pad_1.0x1.0mm,1,PB3/AIN1/PCINT11,
+J7,PinHeader_1x01_P2.54mm_Vertical,1,PC4/PCINT20,
+JP1,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,1,Reset,
+JP2,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,1,Config,
+L1,FUEL4EP_Inductor_SMD_1,1,4.7u,C576538
+L2,0402,1,12nH,C2043991
+Module1,eByte_E07-900MM10S,1,E07-900MM10S,C5844212
+"R1, R5, R6",0402,3,10k,C25744
+R2,0402,1,22,C23345
+R3,0402,1,0 Ohm,C17168
+R4,0402,1,470,C25117
+U1,TQFP-44_10x10mm_P0.8mm,1,ATmega1284P-AU,C33575
+U2,Texas_R-PDSO-G6,1,TPS61221DCK,C2865756
