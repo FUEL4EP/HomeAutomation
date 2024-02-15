@@ -1,13 +1,12 @@
 # HB_TH_Sensor_SHT45_AllInOne_FUEL4EP [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%2FHB_TH_Sensor_SHT45_AllInOne_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-# Warnung: Diese Version der Platine ist noch nicht valdiert. Nutzung auf eigenes Risiko!
 
 **Platine für hochgenauen und kleinen DIY AsksinPP TH Sensor**
 - integrierter hochgenauer [Sensirion SHT45-AD1B-R2](https://sensirion.com/products/catalog/SHT45) SMD TH-Sensor (±1.0% RH / ±0.1°C digitaler Luftfeuchte- und Temperatursensor )
 - kann bis auf den Batteriehalter vollständig bei JLCPCB assembliert werden
 - kleine Platine 75 mm x 25 mm
 - **Platinendicke: 0,8 mm (bitte nicht ändern)**
-- Versorgung mit 1x AA-Batterie oder 1x NiMH-Akkumulator
+- Versorgung mit 1x AA-Alkaline-Batterie (1,5V) oder 1x NiMH-Akkumulator (1,2V)
 - TPS61221 Hochsetzwandler 1,2V .. 1,5V auf 3,3V
 - [integrierte 868 MHz PCB Antenne](https://www.ti.com/lit/an/swra416/swra416.pdf)
 - 10 mm x 10 mm kleines Sendemodul [eByte E07 900MM10S](https://datasheet.lcsc.com/lcsc/2305061757_Chengdu-Ebyte-Elec-Tech-E07-900MM10S_C5844212.pdf)
@@ -23,19 +22,19 @@
 
 ![pic](PNGs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP_PCB_top_3D.png)
 ![pic](PNGs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP_PCB_back_3D.png)
-
-
+- Bilder der bei JLCPCB gefertigten und assemblierten Prototypplatine V1.3
+![pic](Pictures_of_JLCPCB_prototypes/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP_PCB_top_JLCPCB_assembled_prototype_V1.3.png)
+![pic](Pictures_of_JLCPCB_prototypes/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP_PCB_bottom_JLCPCB_assembled_prototype_V1.3.png)
 
 
 ## Credits
 
 - mein besonderer Dank geht an papa für [AsksinPP](https://github.com/pa-pa/AskSinPP) und [Jérôme jp112sdl](https://github.com/jp112sdl) für die stete Unterstützung.
 
-## Platine wurde noch nicht bei JLCPCB gefertigt und auch noch nicht validiert
-
+## Platine V1.3 wurde bei JLCPCB gefertigt und erfolgreich validiert
 - entwickelt mit KiCAD 6.0.11
-- zur Zeit eine Vorabfreigabe
-- die Platine wurde noch nicht bei JLCPCB gefertigt und ist daher noch nicht validiert
+- V1.3 hatte noch falsche I2C-Pullup-Widerstände, die ausgelötet werden mussten
+- in der aktuellen Version V1.4 der Platine ist dieser Fehler behoben
 
 
 ## Eigenschaften
@@ -45,14 +44,14 @@
     + die Platinendaten sind dann unter 'HomeAutomation/AsksinPP_developments/PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP' direkt mit KiCAD aufrufbar
 - neue Eigenschaften:
     + SMD Bestückung, wo möglich
-    + alle SMD Bausteine sind mit dem JLCPCB SMT Bestückungsservice kostengünstig und qualitativ hochwertig bestückbar
+    + fast alle SMD Bausteine sind mit dem JLCPCB SMT Bestückungsservice kostengünstig und qualitativ hochwertig bestückbar
     + JLCPCB BOM and CPL Dateien für SMT Service werden [bereitgestellt](./jlcpcb/production_files)
 
 ### Benötigte Bauteile:
 
-- bei Anspruchnahme des SMT Bestückungsservice von JLCPCB ist nur noch ein Durchsteckbauteil von Hand zu verlöten:
+- bei Anspruchsnahme des SMT Bestückungsservice von JLCPCB sind nur noch zwei Bauteile von Hand zu verlöten:
 	* 1x Keystone 2460 Batteriehalter 1xAA
-- die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als sehr teures Standard PCBA, daher wird eine Verlötung von Hand empfohlen
+	- die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als sehr teures Standard PCBA, daher wird eine Verlötung von Hand empfohlen. Das geht mit einer feinen Lötspitze noch ganz gut.
 
 
 ### Aufbauhinweise
@@ -68,9 +67,10 @@
 
 - ein Frequenztest ist [hier](./FreqTest_1284P/)
 - ein Test des SHT45 Sensors ist [hier](./SHT45_Sensor_test)
+- ein Test des SHT45 Sensors ohne AsksinPP ist [hier](./SHT45_Sensor_test/SHT45_Sensor_test.ino)
     
-### Passende AsksinPP Projekte von FUEL4EP
-   + [HB-UNI-Sensor1-THD-SHT45](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THD-SHT45) (wird bald veröffentlicht werden)
+### Passendes AsksinPP Projekt von FUEL4EP
+   + [HB-UNI-Sensor1-THD-SHT45](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THD-SHT45)
     
 
 ### Anschluss eines FTDI Debuggers und/oder ISP-Programmiergeräts
@@ -78,6 +78,11 @@
 - Anschluss über 6-Pin 2,54 mm Pogo-Pin-Adapter oder eingelötete 6-Pin Stiftleiste, bitte die Beschriftung beachten und vor dem Anlegen eines Pogo-Pin-Adapters querprüfen!
 - den ISP-Programmierer auf 3,3V Programmierspannung einstellen.
 - zuerst immer die Fuses mit avrdude setzen!
+- Bild des Pogo-Pin_Adapters für den FTDI Debugger:
+![pic](PNGs/FTDI_debugger_with_pogo_pin_adapter.png)
+- Bild des Pogo-Pin_Adapters für den Diamex ISP Programmieradapter:
+![pic](PNGs/ISP_programmer_with_pogo_pin_adapter.png)
+
 
 ### Passendes Gehäuse
 ![pic](./3D_Printer/case/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.png)
@@ -104,7 +109,12 @@
 	+ eByte E07-900MM10S
 	+ Murata LQH3NPN4R7MMEL 4.7 uH SMD Induktivität
 - die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als das sehr teure Standard PCBA, daher wird eine Verlötung von Hand empfohlen
-- **die Platine ist noch nicht durch einen Prototypen evaluiert!**
+- **die Platine V1.3  wurde durch einen Prototypen erfolgreich validiert**
+
+## Sammelbestellung
+
+- wer Interesse an einer gemeinsamen Bestellung von Platinen und/oder Gehäusen bei JLCPCB hat, fragt bitte per per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) an.
+- wenn genügend Interesse (>= 20 bestückte Platinen und/oder 3D gedruckten Gehäusen) zustande kommt, biete ich an, Platinen  und Gehäuse gegen Vorkasse per PayPal zum Selbstkostenpreis + Versandkosten + 3 Euro Aufwandspauschale pro Versand bei JLCPCB zu bestellen und dann weiterzuverkaufen. Vor einer Bestellung wird ein Angebot bei JLCPCB eingeholt und an die Interessenten zur Zustimmung verteilt.
 
 ## Disclaimer
 

@@ -1,0 +1,89 @@
+13:02:21.175 -> AskSin++ v5.0.2 (Feb 12 2024 12:45:46)
+13:02:21.175 -> SHT45: Starting Serial Monitor ..
+13:02:21.175 -> SHT45: Trying to get serial number..
+13:02:21.175 -> SHT45: Getting serial number finished ..
+13:02:21.208 -> SHT45 sensor OK
+13:02:21.208 -> Serial Number: 235490025
+13:02:21.208 -> SHT45 offsets (all x10):
+13:02:21.208 -> -T    : 0
+13:02:21.208 -> -H    : 0
+13:02:21.241 -> clearing circular buffer of size 360
+13:02:21.241 -> clearing circular buffer of size 2520
+13:02:21.241 -> SHT45 initialized
+13:02:21.241 -> Sensor setup done
+13:02:21.275 -> Serial: SHT45THD01
+13:02:21.275 -> Clock SYSCLOCK
+13:02:21.275 -> SYSCLOCK correction factor                                                               : 0.9239999771
+13:02:21.308 -> Address Space: 32 - 73
+13:02:21.308 -> Radio init1
+13:02:21.308 -> CC Version: 14
+13:02:21.308 ->  - ready
+13:02:21.375 -> Battery set low:  11
+13:02:21.375 -> Battery set crit: 10
+13:02:21.375 -> Config Freq: 0x21657A
+13:02:21.375 -> Config Changed: List0
+13:02:21.375 -> ledMode: 1
+13:02:21.375 -> lowBatLimit: 14
+13:02:21.409 -> Battery set low:  14
+13:02:21.409 -> transmitDevTryMax: 6
+13:02:21.409 -> updCycle: 240
+13:02:21.409 -> txPower: 3
+13:02:21.409 -> * Config Changed         : List1
+13:02:21.409 -> * Temperature Offset x10 : 0
+13:02:21.442 -> * Humidity Offset x10    : 0
+13:02:21.442 -> SHT45: Starting Serial Monitor ..
+13:02:21.442 -> SHT45: Trying to get serial number..
+13:02:21.475 -> SHT45: Getting serial number finished ..
+13:02:21.475 -> SHT45 sensor OK
+13:02:21.475 -> Serial Number: 235490025
+13:02:21.475 -> SHT45 offsets (all x10):
+13:02:21.508 -> -T    : 0
+13:02:21.508 -> -H    : 0
+13:02:21.508 -> clearing circular buffer of size 360
+13:02:21.508 -> clearing circular buffer of size 2520
+13:02:21.508 -> SHT45 initialized
+13:02:26.911 -> SHT45 measurement ..
+13:02:26.944 -> SHT45 (all x10 except vapour x100):
+13:02:26.977 -> SHT45  -T    : 233
+13:02:26.977 -> SHT45  -H    : 523
+13:02:26.977 -> SHT45  -DP   : 130
+13:02:26.977 -> SHT45  -aH   : 1091
+13:02:26.977 -> 24h MA -T    : 6
+13:02:27.084 -> 7D MA  -T    : 1
+13:02:27.084 -> T/H/D/V (x10, aH x100) = 233/523/130/1091 
+13:02:27.084 -> MA T (x100) = 6/1 
+13:02:27.084 -> battery voltage x1000 = 1577
+13:02:27.084 -> msg T/H/D/V/MA_24h/MA_7D (x10, ah x100, MA x100) = 233/523/130/1091/1577/6/1 
+13:02:27.084 -> msgcnt    : 1
+13:02:27.110 -> <- 17 01 84 70 F61101 000000 00 E9 02 0B 00 82 04 43 06 29 00 06 00 01  - 583
+13:06:25.903 -> SHT45 measurement ..
+13:06:25.936 -> SHT45 (all x10 except vapour x100):
+13:06:25.936 -> SHT45  -T    : 231
+13:06:25.970 -> SHT45  -H    : 527
+13:06:25.970 -> SHT45  -DP   : 129
+13:06:25.970 -> SHT45  -aH   : 1090
+13:06:25.970 -> 24h MA -T    : 13
+13:06:25.970 -> 7D MA  -T    : 2
+13:06:25.970 -> T/H/D/V (x10, aH x100) = 231/527/129/1090 
+13:06:26.003 -> MA T (x100) = 13/2 
+13:06:26.036 -> battery voltage x1000 = 1580
+13:06:26.036 -> msg T/H/D/V/MA_24h/MA_7D (x10, ah x100, MA x100) = 231/527/129/1090/1580/13/2 
+13:06:26.070 -> msgcnt    : 2
+13:06:26.070 -> <- 17 02 A2 70 F61101 123456 00 E7 02 0F 00 81 04 42 06 2C 00 0D 00 02  - 786
+13:06:26.203 -> -> 0A 02 80 02 123456 F61101 00  - 901
+13:06:26.203 -> waitAck: 01
+13:10:24.896 -> SHT45 measurement ..
+13:10:24.930 -> SHT45 (all x10 except vapour x100):
+13:10:24.930 -> SHT45  -T    : 230
+13:10:24.930 -> SHT45  -H    : 526
+13:10:24.930 -> SHT45  -DP   : 128
+13:10:24.930 -> SHT45  -aH   : 1082
+13:10:24.963 -> 24h MA -T    : 19
+13:10:24.963 -> 7D MA  -T    : 3
+13:10:24.963 -> T/H/D/V (x10, aH x100) = 230/526/128/1082 
+13:10:24.963 -> MA T (x100) = 19/3 
+13:10:25.029 -> battery voltage x1000 = 1580
+13:10:25.029 -> msg T/H/D/V/MA_24h/MA_7D (x10, ah x100, MA x100) = 230/526/128/1082/1580/19/3 
+13:10:25.062 -> msgcnt    : 3
+13:10:25.062 -> <- 17 03 84 70 F61101 000000 00 E6 02 0E 00 80 04 3A 06 2C 00 13 00 03  - 1585
+

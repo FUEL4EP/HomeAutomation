@@ -30,6 +30,11 @@
     + die gemessenen Temperaturwerte werden in Ringpuffern der Größe 360 (24 Stunden Ringpuffer) bzw. 2520 (7 Tage Ringpuffer) als int16_t Typ abgespeichert
     + die gleitenden Mittelwerte brauchen mindesten 24 Stunden bzw. 7 Tage zum 'Einschwingen' bis alle Speicherwerte der Ringpuffer mindestens einmal mit Messwerten befüllt wurden
     + bei einem Batteriewechsel oder einem Reset werden die historischen gleitenden Mittelwerte nicht gesichert, da sie nach maximal 7 Tagen vollständig neu berechnet sind
+    
+
+## Das angemeldete Gerät im RaspberryMatic WebUI
+
+![pic](Images/WebUI.png)
 
 
 ## Taupunkttemperatur und absolute Luftfeuchtigkeit
@@ -57,34 +62,49 @@
 
 ![pic](Images/HB-UNI-Sensor1-THD-SHT45_case_2.png)
 ![pic](Images/HB-UNI-Sensor1-THD-SHT45_case_1.png)	
-- die Platine HB_TH_Sensor_SHT45_AllInOne_FUEL4EP wird mit nur einer AA-Batterie versorgt, um den Sensor möglichst klein bei guter Batterielebensdauer realisieren zu können. Aus Platzgründen wird kein externer Oszillator, sondern nur der interne 8 MHz-RC-Oszillator des ATMega1284P verwendet.
--
-## Frequenztest des CC1101 RF Moduls
+- die Platine HB_TH_Sensor_SHT45_AllInOne_FUEL4EP wird mit nur einer AA-Alkaline-Batterie oder einem AA-NiMH Akkumulator versorgt, um den Sensor möglichst klein bei guter Batterielebensdauer realisieren zu können. Aus Platzgründen wird kein externer Oszillator, sondern nur der interne 8 MHz-RC-Oszillator des ATMega1284P verwendet.
 
-- bei Inbetriebnahme den Frequenztestsketch [FreqTest_1284P.ino](./FreqTest_1284P/FreqTest_1284P.ino) verwenden.
-- vor dem Frequenztest müssen die Fuses des ATMega1284P gesetzt werden. Bitte dazu den Skript [avrdude_m1284p_int_RC_8MHz.bsh](./avrdude/avrdude_m1284p_int_RC_8MHz.bsh) verwenden (Linux Version).
-- Eine Beschreibung des Frequenztests ist [hier](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) zu finden.
-	       
-
-## Das angemeldete Gerät im RaspberryMatic WebUI
-
-![pic](Images/WebUI.png)
 
 ## Vor dem Aufspielen von Software
 
-- Bitte macht Euch zuerst mit den Grundlagen von AsksinPP [hier](https://asksinpp.de/Grundlagen/) vertraut.
+- bitte macht Euch zuerst mit den Grundlagen von AsksinPP [hier](https://asksinpp.de/Grundlagen/) vertraut.
+
 
 ## Bitte immer die aktuellste Version von AsksinPP nutzen
 
 -  [AsksinPP Master](https://github.com/pa-pa/AskSinPP/tree/master)
+
+### Anschluss eines FTDI Debuggers und/oder ISP-Programmiergeräts
+
+- Anschluss über 6-Pin 2,54 mm Pogo-Pin-Adapter oder eingelötete 6-Pin Stiftleiste, bitte **IMMER** vor Anschluss die Beschriftung der Platine beachten und vor dem Anlegen eines Pogo-Pin-Adapters querprüfen!
+- den ISP-Programmierer auf 3,3V Programmierspannung einstellen.
+- zuerst immer die Fuses mit avrdude setzen!
+- Bild des Pogo-Pin_Adapters für den FTDI Debugger:
+![pic](Images/FTDI_debugger_with_pogo_pin_adapter.png)
+- Bild des Pogo-Pin_Adapters für den Diamex ISP Programmieradapter:
+![pic](Images/ISP_programmer_with_pogo_pin_adapter.png)
+
+## Setzten der Fuses des ATMega1284P Mikrokontrollers
+
+- **nie die Fuses auf einen externen Quartzoszillator / Resonator umschalten!**
+- ein passender avrdude Skript zum Lesen und korrekten Setzen der Fuses ist [hier](./avrdude) 
+
+## Frequenztest des CC1101 RF Moduls
+
+- bei Inbetriebnahme den Frequenztestsketch [FreqTest_1284P.ino](./FreqTest_1284P/FreqTest_1284P.ino) verwenden.
+- vor dem Frequenztest müssen die Fuses des ATMega1284P gesetzt werden. Bitte dazu den Skript [avrdude_m1284p_int_RC_8MHz.bsh](./avrdude/avrdude_m1284p_int_RC_8MHz.bsh) verwenden (Linux Version).
+- eine Beschreibung des Frequenztests ist [hier](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) zu finden.
+
 
 ## Bei Inbetriebnahme bitte genau diese Abfolge beim Einspielen von Software beachten:
 
 - diese Anleitung gilt für die Platine [HB_TH_Sensor_SHT45_AllInOne_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP)
 - das Auflöten des Funkmoduls muss vor Inbetriebnahme erfolgt sein
 - die notwendigen Bibliotheken, siehe unten, lokal aufspielen
-- die Fuses des ATMega1284P setzten: Bitte dazu den Skript [avrdude_m1284p_int_RC_8MHz.bsh](./avrdude/avrdude_m1284p_int_RC_8MHz.bsh) verwenden (Linux Version).
-	+ nur falls eine Basisplatine mit externem Quartz verwendet wird, kann auch der Skript [avrdude_m1284p_ext_20MHz.bsh](./avrdude/avrdude_m1284p_ext_20MHz.bsh) verwendet werden
+- notwendige Einstellungen in der Arduino IDE sind:
+ ![pic](Images/Arduino_IDE_setting.png)
+- die Fuses des ATMega1284P setzten: Bitte dazu den Skript [avrdude_m1284p_int_RC_8MHz.bsh](./avrdude/avrdude_m1284p_int_RC_8MHz.bsh) verwenden (Linux Version). Die Protokolldatei dazu ist [hier](./avrdude/avrdude_m1284p_int_RC_8MHz.log).
+	+ **nur** falls eine Basisplatine mit externem Quartz verwendet wird, kann auch der Skript [avrdude_m1284p_ext_20MHz.bsh](./avrdude/avrdude_m1284p_ext_20MHz.bsh) verwendet werden
 - den Frequenztestskript [FreqTest_1284P.ino](./FreqTest_1284P/FreqTest_1284P.ino) programnmieren und ausführen. Die Ausgaben des seriellen Monitors (38400 Baud einstellen) sollte [so](./FreqTest_1284P/FreqTest_1284P_serial_monitor.log) aussehen
 - den Sensorsketch [HB-UNI-Sensor1-THD-SHT45.ino](./HB-UNI-Sensor1-THD-SHT45.ino) aufspielen 
  
@@ -118,7 +138,8 @@
 
 
 - als Taktfrequenz des [ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) 'Internal 8 MHz' einstellen
-- der Sketch benötigt tbd Speicherplatz
+- der Sketch verwendet 36748 Bytes (28%) des Programmspeicherplatzes. Das Maximum sind 130048 Bytes.
+Globale Variablen verwenden 7917 Bytes (48%) des dynamischen Speichers, 8467 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
 - [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) zum Setzen der Fuses für 8MHz interner RC Oszillator (Linux version)
 	- wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des ATmega1284P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
@@ -131,7 +152,10 @@
 + [EnableInterrupt](https://github.com/GreyGnome/EnableInterrupt)</br>
 + [Low-Power](https://github.com/rocketscream/Low-Power)</br>
 + [Sensirion_I2C_SHT4x](https://github.com/Sensirion/arduino-i2c-sht4x)
+	* diese Bibliothek kann auch mit der Bibliotheksverwaltung der Arduino IDE installiert werden:
+![pic](Images/Library_manager_SHT45.png)
 * [finitespace/BME280](https://github.com/finitespace/BME280) für die Taupunkt- und absolute Luftfeuchtigkeitsberechnungen
+
 
 
 
@@ -156,6 +180,14 @@
       ##define SYSCLOCK_FACTOR    0.91762   // adjust to get sampling data every 240 seconds
       ```
 
+
+
+### Passendes Gehäuse
+![pic](../../PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP/3D_Printer/case/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.png)
+
+- die Konstruktionsdaten sind [hier](../../PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP/3D_Printer/case/) im STL- und OpenSCAD-Format zu finden
+	+ gegebenenfalls ist in der OpenSCAD-Datei [HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.scad](../../PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP/3D_Printer/case/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.scad) die Variable 'gap' an die Toleranzen des 3D-Druckers anzupassen
+
 ## Verringerung der Tx Sendeleistung
 
 - nur Experten wird empfohlen, die Tx Sendeleistung zu verringern. Die Beschreibung ist [hier](./Reduction_of_Tx_RF_power/README.md).
@@ -163,6 +195,11 @@
 ## Betriebsdauer mit einem neuen Batteriesatz
 
 - noch nicht verfügbar, meine Schätzung ist ca. 1 Jahr mit einer AA-Batterie
+
+## Sammelbestellung
+
+- wer Interesse an einer gemeinsamen Bestellung von Platinen und/oder Gehäusen bei JLCPCB hat, fragt bitte per per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) an.
+- wenn genügend Interesse (>= 20 bestückte Platinen und/oder 3D gedruckten Gehäusen) zustande kommt, biete ich an, Platinen  und Gehäuse gegen Vorkasse per PayPal zum Selbstkostenpreis + Versandkosten + 3 Euro Aufwandspauschale pro Versand bei JLCPCB zu bestellen und dann weiterzuverkaufen. Vor einer Bestellung wird ein Angebot bei JLCPCB eingeholt und an die Interessenten zur Zustimmung verteilt.
 
 ## Lizenz
 
