@@ -2,7 +2,7 @@
 <br/>
 
 
-# Hoch genauer und sehr schneller (±1.0% RH / ±0.1°C) Temperatur- und Luftfeuchtesensor auf der Basis von den [Sensirion SHT45](https://sensirion.com/media/documents/33FD6951/6555C40E/Sensirion_Datasheet_SHT4x.pdf) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte, 24 Stunden und 7 Tagestemperaturmittelwerten und Batteriespannung und WebUI Offseteinstellung
+# Hoch genauer (±1.0% RH / ±0.1°C) und schneller  Temperatur- und Luftfeuchtesensor auf der Basis von den [Sensirion SHT45](https://sensirion.com/media/documents/33FD6951/6555C40E/Sensirion_Datasheet_SHT4x.pdf) mit Ausgabe von Taupunkttemperatur, absoluter Luftfeuchte, 24 Stunden und 7 Tagestemperaturmittelwerten und Batteriespannung und WebUI Offseteinstellung
 
 - abgeleitet von Toms ([TomMajor](https://github.com/TomMajor)) [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1)
 - ein herzliches Dankeschön für die Basisarbeit geht an Tom (TomMajor)
@@ -15,16 +15,16 @@
 
 ## Neue Eigenschaften im Vergleich zum [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1) Sensor
 
+- basierend auf Präzisionssensor SHT45 von Sensirion (±1.0% RH / ±0.1°C)
 - die relative Luftfeuchtigkeit wird mit 0.1 % rLF Genauigkeit ausgegeben
 - der Luftdruck wird mit 0.1 hPa Genauigkeit ausgegeben
 - die Taupunkttemperatur wird mit 0.1 K Genauigkeit ausgegeben
 - die absolute Luftfeuchte wird mit 0.01 g/m³ Genauigkeit ausgegeben
 - die Batteriespannung wird mit 10 mV Genauigkeit und jeden Zyklus ausgegeben 
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smart-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
-	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/SHT45_Setting_of_device_parameters_in_WebUI.png)
-	+ Alle drei Offsetwerte (T, rLF) müssen für die Eingabe mit dem Faktor 10 multipliziert werden.
-- für die gemessene Temperatur können die gleitenden Mittelwerte über die [Zeiträume 24 Stunden](./Images/24h_moving_average_histogram.png) und [7 Tage (hier mit Startrampe zu Beginn der Aufzeichnung)](./Images/7days_moving_average_histogram_with_ramp_up.png) berechnet werden. Hier ein Beispiel (noch mit der 0,1 Grad Kelvin Auflösung):
-![pic](Images/Moving_averages_example_histogram.png)	
+	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png)
+	+ Die zwei Offsetwerte (T, rLF) müssen für die Eingabe mit dem Faktor 10 multipliziert werden. Empfehlung ist die Offsets bei Null zu belassen, da der Sensor SHT45 hoch genau ist.
+- für die gemessene Temperatur werden die gleitenden Mittelwerte über die [Zeiträume 24 Stunden](./Images/24h_moving_average_histogram.png) und [7 Tage (hier mit Startrampe zu Beginn der Aufzeichnung)](./Images/24h_and_7days_moving_average_histogram_with_ramp_up.png) berechnet auf dem Sensor berechnet.
     + ein ATMega1284P wird benötigt, da das RAM eines ATMega328P nicht für die Speicherung der Temperaturwerte über eine Woche ausreicht
     + eine Kalibrierung des SYSCLOCK_FACTOR ist erforderlich, siehe unten unter Kalibrierung, so dass neue Temperaturmessungen exakt im Abstand von 240 Sekunden erfolgen. Ohne diese Kalibrierung sind die gleitenden Mittelwerte verfälscht!
     + die gemessenen Temperaturwerte werden in Ringpuffern der Größe 360 (24 Stunden Ringpuffer) bzw. 2520 (7 Tage Ringpuffer) als int16_t Typ abgespeichert
@@ -49,24 +49,26 @@
 	
 ## Schaltung
 
-- tbd
+- meine Empfehlung ist es die dedizierte Platine [HB_TH_Sensor_SHT45_AllInOne_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP) für den Sensor zu nehmen:
+ ![pic](Images/HB-UNI-Sensor1-THD-SHT45.png)
+- fast alle Bauteile können bei JLCPCB bestückt werden. Von Hand sind nur noch einzulöten:
+	+ der Batteriehalter
+	+ das Funkmodul eByte E07 900MM10S
 
-	
+![pic](Images/HB-UNI-Sensor1-THD-SHT45_case_2.png)
+![pic](Images/HB-UNI-Sensor1-THD-SHT45_case_1.png)	
+- die Platine HB_TH_Sensor_SHT45_AllInOne_FUEL4EP wird mit nur einer AA-Batterie versorgt, um den Sensor möglichst klein bei guter Batterielebensdauer realisieren zu können. Aus Platzgründen wird kein externer Oszillator, sondern nur der interne 8 MHz-RC-Oszillator des ATMega1284P verwendet.
+-
 ## Frequenztest des CC1101 RF Moduls
 
-- tbd
+- bei Inbetriebnahme den Frequenztestsketch [FreqTest_1284P.ino](./FreqTest_1284P/FreqTest_1284P.ino) verwenden.
+- vor dem Frequenztest müssen die Fuses des ATMega1284P gesetzt werden. Bitte dazu den Skript [avrdude_m1284p_int_RC_8MHz.bsh](./avrdude/avrdude_m1284p_int_RC_8MHz.bsh) verwenden (Linux Version).
 - Eine Beschreibung des Frequenztests ist [hier](https://asksinpp.de/Grundlagen/FAQ/Fehlerhafte_CC1101.html#ermittlung-der-cc1101-frequenz) zu finden.
 	       
 
 ## Das angemeldete Gerät im RaspberryMatic WebUI
 
-- ohne gleitende Mittelwerte (alte RM Version):
-
 ![pic](Images/WebUI.png)
-
-- mit gleitenden Mittelwerten (unmittelbar nach Reset):
-
-![pic](Images/WebUI_MA.png)
 
 ## Vor dem Aufspielen von Software
 
@@ -76,16 +78,21 @@
 
 -  [AsksinPP Master](https://github.com/pa-pa/AskSinPP/tree/master)
 
-## Bitte genau diese Abfolge beim Einspielen von Software beachten:
+## Bei Inbetriebnahme bitte genau diese Abfolge beim Einspielen von Software beachten:
 
-- Details sind gegebenenfalls weiter unten zu finden
-
-tbd
+- diese Anleitung gilt für die Platine [HB_TH_Sensor_SHT45_AllInOne_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP)
+- das Auflöten des Funkmoduls muss vor Inbetriebnahme erfolgt sein
+- die notwendigen Bibliotheken, siehe unten, lokal aufspielen
+- die Fuses des ATMega1284P setzten: Bitte dazu den Skript [avrdude_m1284p_int_RC_8MHz.bsh](./avrdude/avrdude_m1284p_int_RC_8MHz.bsh) verwenden (Linux Version).
+	+ nur falls eine Basisplatine mit externem Quartz verwendet wird, kann auch der Skript [avrdude_m1284p_ext_20MHz.bsh](./avrdude/avrdude_m1284p_ext_20MHz.bsh) verwendet werden
+- den Frequenztestskript [FreqTest_1284P.ino](./FreqTest_1284P/FreqTest_1284P.ino) programnmieren und ausführen. Die Ausgaben des seriellen Monitors (38400 Baud einstellen) sollte [so](./FreqTest_1284P/FreqTest_1284P_serial_monitor.log) aussehen
+- den Sensorsketch [HB-UNI-Sensor1-THD-SHT45.ino](./HB-UNI-Sensor1-THD-SHT45.ino) aufspielen 
  
 
 ## Benötiger Sketch
 
 [HB-UNI-Sensor1-THD-SHT45](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THD-SHT45)
+- bitte immer die aktuelle Version von Github verwenden
 
 - bitte alle Unterverzeichnisse mit kopieren:
 
@@ -102,21 +109,19 @@ tbd
 
 - nach erfolgreicher Inbetriebnahme können die Debugausgaben im serial Monitor ausgeschaltet werden. Dazu bitte im Sketch HB-UNI-Sensor1-THD-SHT45.ino auskommentieren:
 
-> // !! NDEBUG sollte aktiviert werden wenn die Sensorentwicklung und die Tests abgeschlossen sind und das Gerät in den 'Produktionsmodus' geht.<br/>
-> // Insbesondere die RAM-Einsparungen sind wichtig für die Stabilität / dynamische Speicherzuweisungen etc.<br/>
-> // Dies beseitigt dann auch die mögliche Arduino-Warnung 'Low memory available, stability problems may occur'.<br/>
-> //<br/>
-> //#define NDEBUG
+> // #define NDEBUG  // disable all serial debug messages; comment if you want to get debug messages in the serial monitor, uncomment if sketch has been proven to be fully functional
+
+- nach erfolgreicher Inbetriebnahme kann der Schutz vor Tiefentladung aktiviert werden. Dazu bitte im Sketch HB-UNI-Sensor1-THD-SHT45.ino auskommentieren:
+
+>//#define DEEP_DISCHARGE_PROTECTION_ENABLED    // IMPORTANT: Comment during FTDI debugging otherwise the sensor will sleep forever if supplied by FTDI debugger w/o an inserted battery
+                                               // IMPORTANT: Uncomment only for operational mode w/o FTDI debugger!!!
+
 
 - als Taktfrequenz des [ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) 'Internal 8 MHz' einstellen
-- ohne Berechnung von gleitenden Mittelwerten benötigt der Sketch tbd
-
+- der Sketch benötigt tbd Speicherplatz
 - [Fuses Calculator](http://eleccelerator.com/fusecalc/fusecalc.php); select ATmega1284P
 - [avrdude script](avrdude/avrdude_m1284p_int_RC_8MHz.bsh) zum Setzen der Fuses für 8MHz interner RC Oszillator (Linux version)
 	- wichtig ist dass dieser Skript **VOR** dem Flashen des Programmcodes ausgeführt wird.  Das EESAVE Konfigurationsbit des ATmega1284P muss gesetzt sein (Preserve EEPROM memory through the Chip Erase cycle; [EESAVE=1])
-
-
--tbd
 
 
 
@@ -125,7 +130,8 @@ tbd
 + [AskSinPP Library](https://github.com/pa-pa/AskSinPP)</br>
 + [EnableInterrupt](https://github.com/GreyGnome/EnableInterrupt)</br>
 + [Low-Power](https://github.com/rocketscream/Low-Power)</br>
-+ tbd
++ [Sensirion_I2C_SHT4x](https://github.com/Sensirion/arduino-i2c-sht4x)
+* [finitespace/BME280](https://github.com/finitespace/BME280) für die Taupunkt- und absolute Luftfeuchtigkeitsberechnungen
 
 
 
@@ -147,7 +153,7 @@ tbd
 
     + dazu wird der SYSCLOCK_FACTOR in [HB-UNI-Sensor1-THD-SHT45.ino](./HB-UNI-Sensor1-THD-SHT45.ino) geeignet eingestellt 
       ```
-      #define SYSCLOCK_FACTOR    0.924    // adjust to get sampling data every 240 seconds (4 minutes)
+      ##define SYSCLOCK_FACTOR    0.91762   // adjust to get sampling data every 240 seconds
       ```
 
 ## Verringerung der Tx Sendeleistung
@@ -156,7 +162,7 @@ tbd
 
 ## Betriebsdauer mit einem neuen Batteriesatz
 
-- tbd
+- noch nicht verfügbar, meine Schätzung ist ca. 1 Jahr mit einer AA-Batterie
 
 ## Lizenz
 
