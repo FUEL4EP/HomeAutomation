@@ -1,6 +1,5 @@
 # HB_Stamp_ATMega1284P_FUEL4EP [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%2FHB_Stamp_ATMega1284P_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-# Warnung: Diese Version der Platine ist noch nicht valdiert. Nutzung auf eigenes Risiko!
 
 **kleine Platine für DIY AsksinPP Geräte mit I2C und 3x IO-Pins**
 - Platinenmaße 22 mm x 40 mm
@@ -8,15 +7,14 @@
 - I2C-Steckerleistenanschluss für I2C-Module
 - 3 weitere IO-Pins anschließbar: PC4, PA5, PB3
 - optionaler Hochsetzwandler 1,2V .. 1,5V auf 3,3V mit TI TPS61221 für Betrieb mit 1x Batterie
-- Versorgung mit 1x AA-Batterie oder 1x NiMH-Akkumulator möglich
+- Versorgung mit 1x AA-Batterie (1,5V) oder 1x NiMH-Akkumulator (1,2V) möglich
 - alternativ Versorgung mit 2x AA Batterien ohne Hochsetzwandler
 - [integrierte 868 MHz PCB Antenne](https://www.ti.com/lit/an/swra416/swra416.pdf)
 - 10 mm x 10 mm kleines Sendemodul [eByte E07 900MM10S](https://datasheet.lcsc.com/lcsc/2305061757_Chengdu-Ebyte-Elec-Tech-E07-900MM10S_C5844212.pdf) auf Platinenrückseite von Hand verlötet
 - SMD TQFP-44 [ATMega1284P](https://ww1.microchip.com/downloads/en/DeviceDoc/doc8059.pdf) mit 128kByte Programmspeicher, 16kByte SRAM, 4kByte EEPROM
 	+ ohne externen Quarz, Betrieb mit 8 MHz internem RC-Oszillator
 		+ bitte dies unbedingt bei der Programmierung von Fuses berücksichtigen!
-	+ erlaubt Speicherung der Temperaturwerte über 7 Tage im RAM für die Bildung von gleitenden Mittelwerten 
-- Programmierung und Serial Monitor mit 2,54 mm Pogo-Pin-Adapter
+- Programmierung und Serial Monitor mittels 2,54 mm Pogo-Pin-Adapter, Anschlüsse sind an der gleichen Stelle auf gegenüberliegenden Platinenseiten
 - alle SMD Bausteine sind mit dem JLCPCB SMT Bestückungsservice kostengünstig und qualitativ hochwertig bestückbar
 - die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als sehr teures Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 
@@ -24,19 +22,25 @@
 
 ![pic](PNGs/HB_Stamp_ATMega1284P_FUEL4EP_PCB_top_3D.png)
 ![pic](PNGs/HB_Stamp_ATMega1284P_FUEL4EP_PCB_back_3D.png)
-
-
+- Bilder der bei JLCPCB gefertigten und assemblierten Prototypplatine V1.2
+![pic](Pictures_of_JLCPCB_prototypes/HB_Stamp_ATMega1284P_FUEL4EP_PCB_top_JLCPCB_assembled_prototype_V1.2.png)
+![pic](Pictures_of_JLCPCB_prototypes/HB_Stamp_ATMega1284P_FUEL4EP_PCB_bottom_JLCPCB_unassembled_prototype_V1.2.png)
+- das eByte E07 900MM10S Sendemodul muss aus Kostengründen von Hand aufgelötet werden
+- - V1.2 der Platine hatte noch falsche I2C-Pullup-Widerstände, die ausgelötet werden mussten
+- in der aktuellen Version auf Github ist dieser Fehler behoben
+- zusätzlich wurden die Anschlussflächen für den Pogo-Pin_Adapter als Ring ausgeführt, damit die Pogo-Pins besser zu zentrieren sind
 
 
 ## Credits
 
 - mein besonderer Dank geht an papa für [AsksinPP](https://github.com/pa-pa/AskSinPP) und [Jérôme jp112sdl](https://github.com/jp112sdl) für die stete Unterstützung.
 
-## Platine wurde noch nicht bei JLCPCB gefertigt und auch noch nicht validiert
+## Platine V1.2 wurde bei JLCPCB gefertigt und erfolgreich validiert
 
 - entwickelt mit KiCAD 6.0.11
-- zur Zeit eine Vorabfreigabe
-- die Platine wurde noch nicht bei JLCPCB gefertigt und ist daher noch nicht validiert
+- V1.2 hatte noch falsche I2C-Pullup-Widerstände, die ausgelötet werden mussten
+- in der aktuellen Version der Platine auf Github ist dieser Fehler behoben
+
 
 
 ## Eigenschaften
@@ -56,7 +60,7 @@
 - die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als sehr teures Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 
 ### Passende AsksinPP Projekte von FUEL4EP
-   + [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280) (wird demnächst veröffentlicht werden)
+   + z.B. [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280)
    
 ### Aufbauhinweise
 
@@ -70,8 +74,6 @@
 ## Prüfwerkzeuge
 
 - ein Frequenztest ist [hier](./FreqTest_1284P/)
-- ein Test des SHT45 Sensors ist [hier](./SHT45_Sensor_test)
-    
 
 ### Anschluss eines FTDI Debuggers und/oder ISP-Programmiergeräts
 
@@ -100,7 +102,6 @@
 	+ [TI TPS61221DCKT](https://jlcpcb.com/parts/componentSearch?searchTxt=TPS61221) (zur Zeit teuer, ist aber meist billiger als zuerst angegeben)
 	+ Murata LQH3NPN4R7MMEL 4.7 uH SMD Induktivität
 - die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als das sehr teure Standard PCBA, daher wird eine Verlötung von Hand empfohlen
-- **die Platine ist noch nicht durch einen Prototypen evaluiert!**
 
 ## Disclaimer
 
