@@ -20,6 +20,17 @@
 ![pic](PNGs/I2C_Module_SHT45_BME280_small_FUEL4EP_PCB_KiCAD.png)
 ![pic](PNGs/I2C_Module_SHT45_BME280_small_FUEL4EP_top_silkscreen.png)
 
+- Bilder der bei JLCPCB gefertigten und assemblierten Prototypplatine V1.1
+![pic](Pictures_of_JLCPCB_prototypes/I2C_Module_SHT45_BME280_small_FUEL4EP_PCB_top_JLCPCB_assembled_prototype_V1.1.png)
+![pic](Pictures_of_JLCPCB_prototypes/I2C_Module_SHT45_BME280_small_FUEL4EP_PCB_bottom_JLCPCB_assembled_prototype_V1.1.png)
+- - V1.1 der Platine hatte noch falsche I2C-Pullup-Widerstände, die ausgelötet werden mussten
+- in der aktuellen Version auf Github ist dieser Fehler behoben
+- zusätzlich wurde die Platine verkleinert, um auch bei Stiftmontage auf die Mutterplatine HB_Stamp_ATMega1284P_FUEL4EP Pogo-Pin_Adapteranbringen zu können.
+
+
+
+I2C_Module_SHT45_BME280_small_FUEL4EP_PCB_bottom_JLCPCB_assembled_prototype_V1.1
+
 ## Platinenmaße
 
 - Breite: 14,08 mm

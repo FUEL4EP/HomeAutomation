@@ -1,0 +1,2 @@
+IMPORTANT: Do NOT use avrdude_m1284p_ext_20MHz.bsh for the PCBs HB_TH_Sensor_SHT45_AllInOne_FUEL4EP or HB_Stamp_ATMega1284P_FUEL4EP !!
+These PCBs do have an ATMega1284P without external crystal or resonator, but use only an internal RC-oscillator as clock source.
