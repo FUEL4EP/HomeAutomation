@@ -32,7 +32,12 @@
 
 ## Status
 
-- diese Platine wurde noch nicht bei JLCPCB gefertigt und ist daher auch nicht validiert. Nutzung auf eigenes Risiko!
+- die Platine V1.1 wurde bei JLCPCB gefertigt und erfolgreich validiert
+	- V1.1 hatte noch falsche I2C-Pullup-Widerstände, die ausgelötet werden mussten
+	- in der aktuellen Version der Platine auf Github ist dieser Fehler behoben
+	- zusätzlich wurde die Platine weiter verkleinert, um bei der Montage mit Stiftleisten auf die Mutterplatine [HB_Stamp_ATMega1284P_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP) das Anbringen des Pogo_Pin_Adapters zu ermöglichen. In der V1.1 wurde daher eine flexible Verbindung mit Flachbandkabel gewählt.
+
+
 
 
 ## Rückmeldungen
@@ -72,6 +77,11 @@
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - PCB Version 1.3
 - Schematics  1.2
+
+## Sammelbestellung
+
+- wer Interesse an einer gemeinsamen Bestellung von Platinen und/oder Gehäusen bei JLCPCB hat, fragt bitte per per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) an.
+- wenn genügend Interesse (>= 20 bestückte Platinen und/oder 3D gedruckten Gehäusen) zustande kommt, biete ich an, Platinen  und Gehäuse gegen Vorkasse per PayPal zum Selbstkostenpreis + Versandkosten + 3 Euro Aufwandspauschale pro Versand bei JLCPCB zu bestellen und dann weiterzuverkaufen. Vor einer Bestellung wird ein Angebot bei JLCPCB eingeholt und an die Interessenten zur Zustimmung verteilt.
 
 ## Disclaimer
 
