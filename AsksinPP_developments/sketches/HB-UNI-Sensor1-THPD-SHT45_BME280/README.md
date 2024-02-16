@@ -83,8 +83,10 @@
 ![pic](Images/FTDI_debugger_with_pogo_pin_adapter.png)
 - Bild des Pogo-Pin_Adapters für den Diamex ISP Programmieradapter:
 ![pic](Images/ISP_programmer_with_pogo_pin_adapter.png)
+- gegebenenfalls muss die untere Acrylanpressplatte des Pogo-Pin_Adapters z.B. mit einem Dremel verkleinert werden, damit sie an HB_STAMP_ATMEGA1284P_FUEL4EP angebracht werden kann:
+![pic](Images/Pogo_pin_adapter_with_reduced_bottom_plate.png)
 
-## Setzten der Fuses des ATMega1284P Mikrokontrollers
+## Setzen der Fuses des ATMega1284P Mikrokontrollers
 
 - **nie die Fuses auf einen externen Quarzoszillator / Resonator umschalten!**
 - ein passender avrdude Skript zum Lesen und korrekten Setzen der Fuses ist [hier](./avrdude) 
@@ -107,7 +109,7 @@
 - die Fuses des ATMega1284P setzten: Bitte dazu den Skript [avrdude_m1284p_int_RC_8MHz.bsh](./avrdude/avrdude_m1284p_int_RC_8MHz.bsh) verwenden (Linux Version). Die Protokolldatei dazu ist [hier](./avrdude/avrdude_m1284p_int_RC_8MHz.log).
 	+ **nur** falls eine Basisplatine mit externem Quarz verwendet wird, kann auch der Skript [avrdude_m1284p_ext_20MHz.bsh](./avrdude/avrdude_m1284p_ext_20MHz.bsh) verwendet werden
 - den Frequenztestskript [FreqTest_1284P.ino](./FreqTest_1284P/FreqTest_1284P.ino) programnmieren und ausführen. Die Ausgaben des seriellen Monitors (38400 Baud einstellen) sollte [so](./FreqTest_1284P/FreqTest_1284P_serial_monitor.log) aussehen
-- den Sensorsketch [HB-UNI-Sensor1-THPD-SHT45_BME280.ino](./HB-UNI-Sensor1-THPD-SHT45_BME280.ino) aufspielen 
+- den Sensorsketch [HB-UNI-Sensor1-THPD-SHT45_BME280.ino](./HB-UNI-Sensor1-THPD-SHT45_BME280.ino) aufspielen. Die Ausgaben des seriellen Monitors (38400 Baud einstellen) sollte [so](./Log_files_as_reference/serial_monitor.log) aussehen
  
 
 ## Benötiger Sketch

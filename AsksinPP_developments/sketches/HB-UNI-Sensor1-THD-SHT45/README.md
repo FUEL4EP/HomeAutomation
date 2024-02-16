@@ -105,7 +105,7 @@
 - die Fuses des ATMega1284P setzten: Bitte dazu den Skript [avrdude_m1284p_int_RC_8MHz.bsh](./avrdude/avrdude_m1284p_int_RC_8MHz.bsh) verwenden (Linux Version). Die Protokolldatei dazu ist [hier](./avrdude/avrdude_m1284p_int_RC_8MHz.log).
 	+ **nur** falls eine Basisplatine mit externem Quarz verwendet wird, kann auch der Skript [avrdude_m1284p_ext_20MHz.bsh](./avrdude/avrdude_m1284p_ext_20MHz.bsh) verwendet werden
 - den Frequenztestskript [FreqTest_1284P.ino](./FreqTest_1284P/FreqTest_1284P.ino) programnmieren und ausführen. Die Ausgaben des seriellen Monitors (38400 Baud einstellen) sollte [so](./FreqTest_1284P/FreqTest_1284P_serial_monitor.log) aussehen
-- den Sensorsketch [HB-UNI-Sensor1-THD-SHT45.ino](./HB-UNI-Sensor1-THD-SHT45.ino) aufspielen 
+- den Sensorsketch [HB-UNI-Sensor1-THD-SHT45.ino](./HB-UNI-Sensor1-THD-SHT45.ino) aufspielen. Die Ausgaben des seriellen Monitors (38400 Baud einstellen) sollte [so](./Log_files_as_reference/serial_monitor.log) aussehen
  
 
 ## Benötiger Sketch

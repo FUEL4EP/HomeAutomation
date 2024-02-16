@@ -66,7 +66,7 @@
 
 - es wird dringend angeraten, als ersten Schritt der Inbetriebnahme einen Frequenztest durchzuführen. Vorher bitte die Fuses mit avrdude setzen.
 
-## Setzten der Fuses des ATMega1284P Mikrokontrollers
+## Setzen der Fuses des ATMega1284P Mikrokontrollers
 
 - **nie die Fuses auf einen externen Quarzoszillator / Resonator umschalten!**
 - ein passender avrdude Skript zum Lesen und korrekten Setzen der Fuses ist [hier](./avrdude)
@@ -82,6 +82,12 @@
 - bitte die Beschriftung beachten und vor dem Anlegen eines Pogo-Pin-Adapters querprüfen!
 - den ISP-Programmierer auf 3,3V Programmierspannung einstellen.
 - zuerst die Fuses mit avrdude setzen
+- Bild des Pogo-Pin_Adapters für den FTDI Debugger:
+![pic](PNGs/FTDI_debugger_with_pogo_pin_adapter.png)
+- Bild des Pogo-Pin_Adapters für den Diamex ISP Programmieradapter:
+![pic](PNGs/ISP_programmer_with_pogo_pin_adapter.png)
+- gegebenenfalls muss die untere Acrylanpressplatte des Pogo-Pin_Adapters z.B. mit einem Dremel verkleinert werden, damit sie an HB_STAMP_ATMEGA1284P_FUEL4EP angebracht werden kann:
+![pic](PNGs/Pogo_pin_adapter_with_reduced_bottom_plate.png)
 
 ### Passendes Gehäuse
 - in Arbeit, wird später hier bereitgestellt

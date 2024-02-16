@@ -58,7 +58,7 @@
 
 - es wird dringend angeraten, als ersten Schritt der Inbetriebnahme einen Frequenztest durchzuführen. Vorher bitte die Fuses mit avrdude setzen.
 
-## Setzten der Fuses des ATMega1284P Mikrokontrollers
+## Setzen der Fuses des ATMega1284P Mikrokontrollers
 
 - **nie die Fuses auf einen externen Quarzoszillator / Resonator umschalten!**
 - ein passender avrdude Skript zum Lesen und korrekten Setzen der Fuses ist [hier](./avrdude)

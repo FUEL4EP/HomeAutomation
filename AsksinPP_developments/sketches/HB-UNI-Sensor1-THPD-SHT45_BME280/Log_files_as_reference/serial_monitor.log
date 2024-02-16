@@ -1,0 +1,100 @@
+13:09:11.768 -> AskSin++ v5.0.2 (Feb 14 2024 16:31:30)
+13:09:11.801 -> BME280 sensor OK
+13:09:11.834 -> BME280 offsets (all x10):
+13:09:11.834 -> -P    : 0
+13:09:11.834 -> SHT45: Trying to get serial number..
+13:09:11.834 -> SHT45: Getting serial number finished ..
+13:09:11.834 -> SHT45 sensor OK
+13:09:11.867 -> Serial Number: 295868527
+13:09:11.867 -> SHT45 offsets (all x10):
+13:09:11.867 -> -T    : 0
+13:09:11.867 -> -H    : 0
+13:09:11.867 -> clearing circular buffer of size 360
+13:09:11.901 -> clearing circular buffer of size 2520
+13:09:11.901 -> Sensor setup done
+13:09:11.901 -> Serial: SHT45THPD1
+13:09:11.901 -> Clock SYSCLOCK
+13:09:11.901 -> SYSCLOCK correction factor                                                               : 0.9176199913
+13:09:11.934 -> Address Space: 32 - 76
+13:09:11.934 -> Radio init1
+13:09:11.934 -> CC Version: 14
+13:09:11.934 ->  - ready
+13:09:11.967 -> Battery set low:  11
+13:09:12.001 -> Battery set crit: 10
+13:09:12.001 -> Config Freq: 0x216582
+13:09:12.001 -> Config Changed: List0
+13:09:12.001 -> ledMode: 1
+13:09:12.001 -> lowBatLimit: 11
+13:09:12.001 -> Battery set low:  11
+13:09:12.034 -> transmitDevTryMax: 6
+13:09:12.034 -> updCycle: 240
+13:09:12.034 -> altitude: 84
+13:09:12.034 -> txPower: 5
+13:09:12.034 -> * Config Changed         : List1
+13:09:12.034 -> * Temperature Offset x10 : 0
+13:09:12.068 -> * Humidity Offset x10    : 0
+13:09:12.068 -> * Pressure Offset x10    : 0
+13:09:12.068 -> BME280 sensor OK
+13:09:12.068 -> BME280 offsets (all x10):
+13:09:12.068 -> -P    : 0
+13:09:12.101 -> SHT45: Trying to get serial number..
+13:09:12.101 -> SHT45: Getting serial number finished ..
+13:09:12.101 -> SHT45 sensor OK
+13:09:12.101 -> Serial Number: 295868527
+13:09:12.134 -> SHT45 offsets (all x10):
+13:09:12.134 -> -T    : 0
+13:09:12.134 -> -H    : 0
+13:09:12.134 -> clearing circular buffer of size 360
+13:09:12.134 -> clearing circular buffer of size 2520
+13:09:17.634 -> SHT45 measurement ..
+13:09:17.667 -> SHT45 and BME280 (all x10 except vapour x100):
+13:09:17.667 -> SHT45  -T    : 234
+13:09:17.667 -> BME280 -P    : 10059
+13:09:17.667 -> BME280 -P(NN): 10157
+13:09:17.667 -> SHT45  -H    : 524
+13:09:17.667 -> SHT45  -DP   : 131
+13:09:17.667 -> SHT45  -aH   : 1103
+13:09:17.701 -> 24h MA -T    : 7
+13:09:17.701 -> 7D MA  -T    : 1
+13:09:17.701 -> T/H/P/D/V (x10, aH x100) = 234/524/10157/131/1103
+13:09:17.701 -> MA T (x100) = 7/1
+13:09:17.767 -> battery voltage x1000 = 1600
+13:09:17.767 -> msg T/H/D/P/V/MA_24h/MA_7D (x10, ah x100, MA x100) = 234/524/10157/131/1103/1600/7/1
+13:09:17.800 -> msgcnt    : 1
+13:09:17.800 -> <- 19 01 84 70 F61201 000000 00 EA 02 0C 27 AD 00 83 04 4F 06 40 00 07 00 01  - 624
+13:13:18.517 -> SHT45 measurement ..
+13:13:18.550 -> SHT45 and BME280 (all x10 except vapour x100):
+13:13:18.550 -> SHT45  -T    : 231
+13:13:18.584 -> BME280 -P    : 10061
+13:13:18.584 -> BME280 -P(NN): 10159
+13:13:18.584 -> SHT45  -H    : 494
+13:13:18.584 -> SHT45  -DP   : 119
+13:13:18.584 -> SHT45  -aH   : 1019
+13:13:18.584 -> 24h MA -T    : 13
+13:13:18.617 -> 7D MA  -T    : 2
+13:13:18.617 -> T/H/P/D/V (x10, aH x100) = 231/494/10159/119/1019
+13:13:18.617 -> MA T (x100) = 13/2
+13:13:18.650 -> battery voltage x1000 = 1600
+13:13:18.683 -> msg T/H/D/P/V/MA_24h/MA_7D (x10, ah x100, MA x100) = 231/494/10159/119/1019/1600/13/2
+13:13:18.683 -> msgcnt    : 2
+13:13:18.717 -> <- 19 02 A2 70 F61201 123456 00 E7 01 EE 27 AF 00 77 03 FB 06 40 00 0D 00 02  - 856
+13:13:18.849 -> -> 0A 02 80 02 123456 F61201 00  - 983
+13:13:18.849 -> waitAck: 01
+13:13:19.282 -> ignore 0F 28 86 10 610DBB 000000 0A 98 CA 0B 00 00  - 1437
+13:17:19.559 -> SHT45 measurement ..
+13:17:19.592 -> SHT45 and BME280 (all x10 except vapour x100):
+13:17:19.592 -> SHT45  -T    : 233
+13:17:19.592 -> BME280 -P    : 10061
+13:17:19.592 -> BME280 -P(NN): 10158
+13:17:19.592 -> SHT45  -H    : 490
+13:17:19.592 -> SHT45  -DP   : 120
+13:17:19.626 -> SHT45  -aH   : 1026
+13:17:19.626 -> 24h MA -T    : 19
+13:17:19.626 -> 7D MA  -T    : 3
+13:17:19.626 -> T/H/P/D/V (x10, aH x100) = 233/490/10158/120/1026
+13:17:19.659 -> MA T (x100) = 19/3
+13:17:19.692 -> battery voltage x1000 = 1600
+13:17:19.725 -> msg T/H/D/P/V/MA_24h/MA_7D (x10, ah x100, MA x100) = 233/490/10158/120/1026/1600/19/3
+13:17:19.725 -> msgcnt    : 3
+13:17:19.758 -> <- 19 03 84 70 F61201 000000 00 E9 01 EA 27 AE 00 78 04 02 06 40 00 13 00 03  - 1687
+
