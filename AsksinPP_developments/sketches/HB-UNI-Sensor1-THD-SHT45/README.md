@@ -8,22 +8,21 @@
 - ein herzliches Dankeschön für die Basisarbeit geht an Tom (TomMajor)
 - ein herzliches Dankeschön an alle, die im Homematic Forum geholfen haben, meine Probleme zu lösen
 - Der hoch genaue und schnelle Sensirion SHT45 Sensor wird für die Temperatur- und Luftfeuchtemessung verwendet.
-- Das Datenblatt des SHT45 Sensors ist [hier](https://sensirion.com/media/documents/33FD6951/6555C40E/Sensirion_Datasheet_SHT4x.pdf) zu finden.
+- das Datenblatt des SHT45 Sensors ist [hier](https://sensirion.com/media/documents/33FD6951/6555C40E/Sensirion_Datasheet_SHT4x.pdf) zu finden.
 
-- Der Diskussionsstrang im Homematic Forum dazu ist bald [hier](tbd) zu finden. Bitte dort auch Fragen stellen.	
+- der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum.de/forum/viewtopic.php?f=76&t=81761&sid=7dd42180aec9f722a752fc04f8171dad) zu finden. Bitte dort auch Fragen stellen.	
 
 
 ## Neue Eigenschaften im Vergleich zum [HB-UNI-Sensor1](https://github.com/TomMajor/SmartHome/tree/master/HB-UNI-Sensor1) Sensor
 
 - basierend auf Präzisionssensor SHT45 von Sensirion (±1.0% RH / ±0.1°C)
 - die relative Luftfeuchtigkeit wird mit 0.1 % rLF Genauigkeit ausgegeben
-- der Luftdruck wird mit 0.1 hPa Genauigkeit ausgegeben
 - die Taupunkttemperatur wird mit 0.1 K Genauigkeit ausgegeben
 - die absolute Luftfeuchte wird mit 0.01 g/m³ Genauigkeit ausgegeben
 - die Batteriespannung wird mit 10 mV Genauigkeit und jeden Zyklus ausgegeben 
 - alle wichtigen Sensorparameter können interaktiv ohne Neuprogrammierung im WebUI der [RaspberryMatic](https://github.com/jens-maus/RaspberryMatic) / [CCU3](https://de.elv.com/smart-home-zentrale-ccu3-inklusive-aio-creator-neo-lizenz-ccu-plugin-151965?fs=2591490946) eingegeben werden:
 	+ [Startseite > Einstellungen > Geräte > Geräte-/ Kanalparameter einstellen](Images/Setting_of_device_parameters_in_WebUI.png)
-	+ Die zwei Offsetwerte (T, rLF) müssen für die Eingabe mit dem Faktor 10 multipliziert werden. Empfehlung ist die Offsets bei Null zu belassen, da der Sensor SHT45 hoch genau ist.
+	+ die zwei Offsetwerte (T, rLF) müssen für die Eingabe mit dem Faktor 10 multipliziert werden. Empfehlung ist die Offsets bei Null zu belassen, da der Sensor SHT45 hoch genau ist.
 - für die gemessene Temperatur werden die gleitenden Mittelwerte über die [Zeiträume 24 Stunden](./Images/24h_moving_average_histogram.png) und [7 Tage (hier mit Startrampe zu Beginn der Aufzeichnung)](./Images/24h_and_7days_moving_average_histogram_with_ramp_up.png) berechnet auf dem Sensor berechnet.
     + ein ATMega1284P wird benötigt, da das RAM eines ATMega328P nicht für die Speicherung der Temperaturwerte über eine Woche ausreicht
     + eine Kalibrierung des SYSCLOCK_FACTOR ist erforderlich, siehe unten unter Kalibrierung, so dass neue Temperaturmessungen exakt im Abstand von 240 Sekunden erfolgen. Ohne diese Kalibrierung sind die gleitenden Mittelwerte verfälscht!
@@ -39,7 +38,7 @@
 
 ## Taupunkttemperatur und absolute Luftfeuchtigkeit
 
-- Die angezeigte Taupunkttemperatur kann zur Bewertung der Gefährdung einer Schimmelbildung in einem Raum verwendet werden: Der kälteste Punkt eines Raums (in der Regel die untere oder oberere Ecke einer Außenwand) sollte eine mit einem Infrarotthermometer gemessene Temperatur haben, die mindestens 3..4 Grad Celsius über der angezeigten Taupunkttemperatur liegt. Ein Online-Luftfeuchterechner ist z.B. [hier](http://www.thestorff.de/luftfeuchte-rechner.php) zu finden.
+- Die angezeigte Taupunkttemperatur kann zur Bewertung der Gefährdung einer Schimmelbildung in einem Raum verwendet werden: Der kälteste Punkt eines Raums (in der Regel die untere oder oberere Ecke einer Außenwand) sollte eine mit einem Infrarotthermometer gemessene Temperatur haben, die mindestens 4..6 Grad Celsius über der angezeigten Taupunkttemperatur liegt. Ein Online-Luftfeuchterechner ist z.B. [hier](http://www.thestorff.de/luftfeuchte-rechner.php) zu finden.
 - Die angezeigte absolute Luftfeuchtigkeit kann dazu verwendet werden zu entscheiden, ob das Öffnen der Fenster eine Entfeuchtung eines Raums bewirkt: Wenn die absolute Luftfeuchte außen um mindestens 1 g/m³ kleiner ist als im Innenraum, dann wird beim Lüften der Raum entfeuchtet. 
 
 
@@ -50,7 +49,7 @@
 - Bitte führe die Offsetkalibrierung in zwei getrennten Schritten durch:
 	+ Kalibriere die SHT45 Temperatur in einem ersten Schritt (erste Nacht)
 	+ Kalibriere die SHT45 relative Luftfeuchtigkeit in einem zweiten Schritt (zweite Nacht)
-	+ Kalibriere die SHT45 Temperatur and relative Luftfeuchtigkeit NICHT gemeinsam in einem Schritt, da diese beiden Größen physikalisch voneinander abhängen
+	+ Kalibriere die SHT45 Temperatur und relative Luftfeuchtigkeit NICHT gemeinsam in einem Schritt, da diese beiden Größen physikalisch voneinander abhängen
 	
 ## Schaltung
 
@@ -86,7 +85,7 @@
 
 ## Setzten der Fuses des ATMega1284P Mikrokontrollers
 
-- **nie die Fuses auf einen externen Quartzoszillator / Resonator umschalten!**
+- **nie die Fuses auf einen externen Quarzoszillator / Resonator umschalten!**
 - ein passender avrdude Skript zum Lesen und korrekten Setzen der Fuses ist [hier](./avrdude) 
 
 ## Frequenztest des CC1101 RF Moduls
@@ -104,7 +103,7 @@
 - notwendige Einstellungen in der Arduino IDE sind:
  ![pic](Images/Arduino_IDE_setting.png)
 - die Fuses des ATMega1284P setzten: Bitte dazu den Skript [avrdude_m1284p_int_RC_8MHz.bsh](./avrdude/avrdude_m1284p_int_RC_8MHz.bsh) verwenden (Linux Version). Die Protokolldatei dazu ist [hier](./avrdude/avrdude_m1284p_int_RC_8MHz.log).
-	+ **nur** falls eine Basisplatine mit externem Quartz verwendet wird, kann auch der Skript [avrdude_m1284p_ext_20MHz.bsh](./avrdude/avrdude_m1284p_ext_20MHz.bsh) verwendet werden
+	+ **nur** falls eine Basisplatine mit externem Quarz verwendet wird, kann auch der Skript [avrdude_m1284p_ext_20MHz.bsh](./avrdude/avrdude_m1284p_ext_20MHz.bsh) verwendet werden
 - den Frequenztestskript [FreqTest_1284P.ino](./FreqTest_1284P/FreqTest_1284P.ino) programnmieren und ausführen. Die Ausgaben des seriellen Monitors (38400 Baud einstellen) sollte [so](./FreqTest_1284P/FreqTest_1284P_serial_monitor.log) aussehen
 - den Sensorsketch [HB-UNI-Sensor1-THD-SHT45.ino](./HB-UNI-Sensor1-THD-SHT45.ino) aufspielen 
  
