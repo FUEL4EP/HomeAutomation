@@ -1,7 +1,5 @@
 # I2C_Module_SHT45_BME280_FUEL4EP ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%I2C_Module_SHT45_BME280_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-# Warnung: Diese Version der Platine ist noch nicht valdiert. Nutzung auf eigenes Risiko!
-
 
 ## I2C SHT45 und BME280 Sensor Aufsteckplatine für DIY AsksinPP-Projekte
 
@@ -28,6 +26,13 @@
 ![pic](PNGs/I2C_Module_SHT45_BME280_FUEL4EP_PCB_KiCAD.png)
 ![pic](PNGs/I2C_Module_SHT45_BME280_FUEL4EP_top_silkscreen.png)
 
+- Bilder der bei JLCPCB gefertigten und assemblierten Prototypplatine V1.1
+![pic](Pictures_of_JLCPCB_prototypes/I2C_Module_SHT45_BME280_FUEL4EP_PCB_top_JLCPCB_assembled_prototype_V1.1.png)
+![pic](Pictures_of_JLCPCB_prototypes/I2C_Module_SHT45_BME280_FUEL4EP_PCB_bottom_JLCPCB_assembled_prototype_V1.1.png)
+- - V1.1 der Platine hatte noch falsche I2C-Pullup-Widerstände, die ausgelötet werden mussten
+- in der aktuellen Version auf Github ist dieser Fehler behoben
+
+
 ## Platinenmaße
 
 - Breite: 30,48 mm
@@ -40,7 +45,9 @@
 
 ## Status
 
-- diese Platine wurde noch nicht bei JLCPCB gefertigt und ist daher auch nicht validiert. Nutzung auf eigenes Risiko!
+- die Platine V1.1 wurde bei JLCPCB gefertigt und erfolgreich validiert
+	- V1.1 hatte noch falsche I2C-Pullup-Widerstände, die ausgelötet werden mussten
+	- in der aktuellen Version der Platine auf Github ist dieser Fehler behoben
 
 
 ## Rückmeldungen
@@ -79,8 +86,8 @@ nicht mehr assembliert
 	L V1.2 08. Feb 2024: Fix der I2C Pull-Up Widerstände
 - KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.3
-- Schematics  1.2
+- PCB Version 1.2
+- Schematics  1.3
 
 ## Disclaimer
 

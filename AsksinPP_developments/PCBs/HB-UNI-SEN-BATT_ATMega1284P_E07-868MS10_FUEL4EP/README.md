@@ -152,6 +152,7 @@
                          Murata Electronics verwendet, die bei JLCPCB bestellbar ist  (eventuell ist eine Vorbestellung notwendig)
 -	 V1.3 24. Jul 2023:	KiCAD 6 bedingte Verbesserungen der Datenbasis
 -	 V1.4 15. Aug 2023:	Fix of En pin of TPS61221 boost converter (must be tied to VIN)
+     S V1.3 17. Jan 2024:	Fix der falschen LCSC-Nummer von R7 / Layout bleibt unverändert
 
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1

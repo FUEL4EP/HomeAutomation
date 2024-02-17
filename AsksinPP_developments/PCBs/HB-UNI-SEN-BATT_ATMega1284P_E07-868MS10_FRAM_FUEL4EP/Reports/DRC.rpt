@@ -1,27 +1,47 @@
 ** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP.kicad_pcb **
-** Created on 2023-08-15 11:16:13 **
+** Created on 2024-02-17 18:59:32 **
 
-** Found 5 DRC violations **
+** Found 10 DRC violations **
+[silk_overlap]: Bestückungsdrucküberlappung
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(55.8900 mm, -30.2400 mm): Linie auf F.Silkscreen
+    @(55.4680 mm, -30.5720 mm): Referenz "U3"
+[silk_overlap]: Bestückungsdrucküberlappung
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(55.4680 mm, -30.5720 mm): Referenz "U3"
+    @(55.8900 mm, -32.2400 mm): Kreisbogen auf F.Silkscreen
+[silk_overlap]: Bestückungsdrucküberlappung
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(55.4680 mm, -30.5720 mm): Referenz "U3"
+    @(54.9250 mm, -11.5200 mm): Linie auf F.Silkscreen
+[silk_overlap]: Bestückungsdrucküberlappung
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(55.4680 mm, -40.7320 mm): Referenz "U4"
+    @(54.9250 mm, -11.5200 mm): Linie auf F.Silkscreen
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(52.6700 mm, 56.8105 mm): Linie auf F.Silkscreen
-    @(51.5108 mm, 55.2000 mm): Durchlochpad 1 [<no net>] von H8
+    @(52.6700 mm, -18.1895 mm): Linie auf F.Silkscreen
+    @(51.5108 mm, -19.8000 mm): Durchlochpad 1 [<no net>] von H8
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(37.4300 mm, 56.8105 mm): Linie auf F.Silkscreen
-    @(23.5108 mm, 55.2000 mm): Durchlochpad 1 [<no net>] von H6
+    @(37.4300 mm, -18.1895 mm): Linie auf F.Silkscreen
+    @(23.5108 mm, -19.8000 mm): Durchlochpad 1 [<no net>] von H6
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(52.6700 mm, 56.8105 mm): Linie auf F.Silkscreen
-    @(51.5108 mm, 55.2000 mm): Durchlochpad 1 [<no net>] von H8
+    @(52.6700 mm, -18.1895 mm): Linie auf F.Silkscreen
+    @(51.5108 mm, -19.8000 mm): Durchlochpad 1 [<no net>] von H8
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(50.0030 mm, 58.0805 mm): PCB-Text "I2C" auf F.Silkscreen
-    @(51.5108 mm, 55.2000 mm): Durchlochpad 1 [<no net>] von H8
+    @(50.0030 mm, -16.9195 mm): PCB-Text "I2C" auf F.Silkscreen
+    @(51.5108 mm, -19.8000 mm): Durchlochpad 1 [<no net>] von H8
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
-    @(22.1900 mm, 56.8105 mm): Linie auf F.Silkscreen
-    @(23.5108 mm, 55.2000 mm): Durchlochpad 1 [<no net>] von H6
+    @(22.1900 mm, -18.1895 mm): Linie auf F.Silkscreen
+    @(23.5108 mm, -19.8000 mm): Durchlochpad 1 [<no net>] von H6
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Rule: Platinenkonfigurations-Bestückungsdruck-Einschränkungen; Severity: warning
+    @(26.1670 mm, -21.2500 mm): Referenz "J11"
+    @(23.5108 mm, -19.8000 mm): Durchlochpad 1 [<no net>] von H6
 
 ** Found 0 unconnected pads **
 

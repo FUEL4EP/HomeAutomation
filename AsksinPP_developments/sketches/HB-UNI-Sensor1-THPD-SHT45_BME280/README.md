@@ -62,8 +62,10 @@
 - diese Fehler sind in den aktuellen Versionen auf Github behoben
 - zusätzlich wurde die I2C_Module_SHT45_BME280_small_FUEL4EP weiter verkleinert, um auch bei Montage mit einer Stiftleiste einen Pogo-Pin-Adapter aufsetzen zu können.
 - die Platine HB_Stamp_ATMega1284P_FUEL4EP kann am plusBat-Anschluss mit einer separaten AA-Alkaline-Batterie oder einem AA-NiMH Akkumulator versorgt werden. Auch 2/3-AA NiMH -Akkumulatoren mit einer Kapazität von 750mAh sind möglich, um eine möglichst kleine Bauform zu erreichen. Aus Platzgründen wird kein externer Oszillator, sondern nur der interne 8 MHz-RC-Oszillator des ATMega1284P verwendet.
-- alternativ können auch andere ATMega1284P basierte Platinen von [hier](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/) benutzt werden.
-- dafür gibt es die etwas größere I2C-Erweiterungsplatine [I2C_Module_SHT45_BME280_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_FUEL4EP)
+- alternativ können auch andere ATMega1284P basierte Platinen von [hier](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/) benutzt werden, z.B.
+	+ [HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-900MM10S_FUEL4EP)
+![pic](Images/HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_FUEL4EP_PCB_top_JLCPCB_V1.0_fully_assembled_and_validated_prototype_with_sketch_HB-UNI-Sensor1-THPD-SHT45_BME280.png)
+	- dafür gibt es die etwas größere I2C-Erweiterungsplatine [I2C_Module_SHT45_BME280_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_FUEL4EP)
 
 ## Vor dem Aufspielen von Software
 

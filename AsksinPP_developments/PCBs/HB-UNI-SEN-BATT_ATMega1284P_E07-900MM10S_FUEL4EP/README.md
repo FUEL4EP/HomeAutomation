@@ -20,12 +20,7 @@
 ## Credits
 
 - diese Platine ist von Alexander Reinerts Platine [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) abgeleitet.
-- vielen Dank an Alexander Reinert für die Vorarbeit.
-
-## Platine wurde noch nicht bei JLCPCB gefertigt und auch noch nicht validiert
-
-- entwickelt mit KiCAD 6.0.11
-- die Platine wurde noch nicht bei JLCPCB gefertigt und ist daher noch nicht validiert
+- vielen Dank an Alexander Reinert für die Vorarbeit
 
 
 ## Eigenschaften
@@ -71,6 +66,7 @@
    + [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG)
    + [HB-UNI-Sensor1-RAD-AL53](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-RAD-AL53)
    + [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85)
+   + [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280)
    
 ### Notwendige Änderung der Betriebsspannungsmessung in Sketchen
 - da die Platine einen fest verdrahteten Spannungsteiler R7 und R8 für die Betriebsspannung / Akkuspannungsmessung verwendet, muss in Sketchen folgende Anpassung gegebenenfalls durchgeführt werden:
@@ -115,7 +111,7 @@
 
 - die Platine kann entweder direkt bei JLCPCB bestellt werden
 - die notwendigen Produktionsdaten stehen [hier](./jlcpcb/production_files/)
-- **die Platine ist noch nicht durch einen Prototypen evaluiert!**
+- **die Platine V1.0 wurde mit dem Sketch HB-UNI-Sensor1-THPD-SHT45_BME280 erfolgreich validiert**
 - die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als das sehr teure Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 
 	
@@ -134,13 +130,16 @@
 
 ## Versionsverlauf
 
--    V1.0 13. Sep 2023: Initiale Freigabe
--    V1.1 08. Jan 2024: Korrektur der falschen LCSC-Teilenummer von C1
+-    V1.0 	13. Sep 2023: Initiale Freigabe
+-    S V1.1 	08. Jan 2024: Korrektur der falschen LCSC-Teilenummer von C1
+-	 L V1.1 17. Feb 2024: Verschieben der beiden Kondensatoren C1 und C14, um die Handverlötung des Funkmoduls zu erleichtern
+-	 S V1.2 17. Feb 2024: Korrektur eines unbeabsichtigt verschobenen Netznamens
+-	 S V1.3 17. Feb 2024: Korrektur LCSC Nummer für R7
 
 - 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	PCB Version 1.0
-- 	Schematics  1.1
+- 	PCB Version 1.1
+- 	Schematics  1.3
 
 ## Lizenz 
 
