@@ -62,8 +62,8 @@
 
 - es wird dringend angeraten, vor dem Einbau der I2C Sensoren durchzuführen
     + einen Frequenztest. Hier der Frequenztest für einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) : [FreqTest_1284P.ino](../Supplements/FreqTest_1284P/FreqTest_1284P.ino)
-    + einen Leckagetest. Hier der Leckagetest für einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) : [SleepTest_1284P.ino](../Supplements/SleepTest_1284P/SleepTest_1284P.ino)
-        + der Leckagestrom im Sleepmode sollte < 10 uA betragen
+    + einen Leckstromtest. Hier der Leckstromtest für einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) : [SleepTest_1284P.ino](../Supplements/SleepTest_1284P/SleepTest_1284P.ino)
+        + der Leckstrom im Sleepmode sollte < 10 uA betragen
     + für einen Arduino Pro Mini die entsprechenden Standardsketche für den Frequenztest und den SleepTest verwenden.
     + am besten diese beiden Tests in einem Testaufbau mit Stecksockeln vor dem Einlöten durchführen
     

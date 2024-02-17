@@ -98,12 +98,12 @@
 ```
 - nach
 ```
-// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin A0 (=pin 24), activation pin A1 (=pin 25) , Faktor = Rges/Rlow*1000, z.B. (100kOhm+47kOhm/100kOhm), Faktor (147k)/(100k)*1000 = 1470 (ATMega1284P)
+// 2) für StepUp/StepDown: tmBatteryResDiv, sense pin PA0 (=pin 37), activation pin PB3 (=pin 43) , Faktor = Rges/Rlow*1000, z.B. (100kOhm+47kOhm/100kOhm), Faktor (147k)/(100k)*1000 = 1470 (ATMega1284P)
 // start with Faktor = 1470
 // check in serial monitor the reported V2='accumulator voltage(MCU ADC) (x1000.0)' and compare with the reported V1='accumulator batteries voltage (x1000.0)'
 // calculate voltage correction factor V1/V2
 // calculate total Faktor = 1470 * V2/V1 = 1470 * 3141 / 3157 = 1463
-#define BAT_SENSOR tmBatteryResDiv<A0, A2, 1463>
+#define BAT_SENSOR tmBatteryResDiv<A0, PB3, 1463>
 ```
 - zur Berechnung von Faktor in tmBatteryResDiv wird ein Libreoffice Calc Sheet [tmBattery_tmBatteryResDiv_calculator.ods](../../tools/tmBattery_tmBatteryResDiv_calculator.ods) zur Verfügung gestellt
 - in der Version 1.0 war R8 = 200kOhm, daher Faktor = 3000 (ohne Kalibrierung)
