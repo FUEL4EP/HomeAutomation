@@ -71,6 +71,8 @@
 ### Notwendige Änderung der Betriebsspannungsmessung in Sketchen
 - da die Platine einen fest verdrahteten Spannungsteiler R7 und R8 für die Betriebsspannung / Akkuspannungsmessung verwendet, muss in Sketchen folgende Anpassung gegebenenfalls durchgeführt werden:
 
+- nur notwendig, wenn die Akkuspannung / Betriebsspannung größer als 3,5 Volt ist ( 2x AA Alkaline Batterie)
+
 - von bisher
 ```
 // 1) Standard: tmBattery, UBatt = Betriebsspannung AVR
