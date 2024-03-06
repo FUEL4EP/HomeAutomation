@@ -23,7 +23,7 @@
 ![pic](PNGs/HB_Stamp_ATMega1284P_FUEL4EP_PCB_top_3D.png)
 ![pic](PNGs/HB_Stamp_ATMega1284P_FUEL4EP_PCB_back_3D.png)
 - Bilder der bei JLCPCB gefertigten und assemblierten Prototypplatine V1.2
-![pic](Pictures_of_JLCPCB_prototypes/HB_Stamp_ATMega1284P_FUEL4EP_PCB_top_JLCPCB_assembled_prototype_V1.2.png)
+![pic](Pictures_of_JLCPCB_prototypes/HB_Stamp_ATMega1284P_FUEL4EP_PCB_top_JLCPCB_assembled_prototype_V1.2png)
 ![pic](Pictures_of_JLCPCB_prototypes/HB_Stamp_ATMega1284P_FUEL4EP_PCB_bottom_JLCPCB_unassembled_prototype_V1.2.png)
 - das eByte E07 900MM10S Sendemodul muss aus Kostengründen von Hand aufgelötet werden
 - - V1.2 der Platine hatte noch falsche I2C-Pullup-Widerstände, die ausgelötet werden mussten
