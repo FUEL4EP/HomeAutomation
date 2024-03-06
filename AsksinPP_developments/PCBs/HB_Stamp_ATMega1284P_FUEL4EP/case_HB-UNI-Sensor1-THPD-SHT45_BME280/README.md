@@ -7,9 +7,9 @@
 	* Tiefe: 40,1 mm
 - passend zum Sketch [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280)
 - passend zur Mutterplatine [HB_Stamp_ATMega1284P_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP)
-- passend zur Erweiterungsplatine [I2C_Module_SHT45_BME280_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_FUEL4EP)
+- passend zur Erweiterungsplatine  [I2C_Module_SHT45_BME280_small_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_small_FUEL4EP)
 - 3D druckbares Gehäuse
-	+ für Mutterplatine [HB_Stamp_ATMega1284P_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP) und Erweiterungsplatine [I2C_Module_SHT45_BME280_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_FUEL4EP)
+	+ für Mutterplatine [HB_Stamp_ATMega1284P_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP) und Erweiterungsplatine  [I2C_Module_SHT45_BME280_small_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_small_FUEL4EP)
 	+ für 2/3 AA Mignon NiMH Akku 1,2V 750mAh erhältlich z.B. bei [Amazon](https://www.amazon.de/Sparset-GP75AAH-Mignon-750mAh-wiederaufladbar-gr%C3%BCn/dp/B08HM5DL27)
 	+ für Batteriekontakte z.B. von [Amazon](https://www.amazon.de/sourcing-map-Federplatte-Vernickelt-12mmx12mm/dp/B0B1HJHPZJ/ref=asc_df_B0B1HJHPZJ/)
 	+ für USB-C NiMH-Lademodul "1S 2S 3S 4S NiMH battery charging board type-c micro usb 5v input charger module charging current 500mA" erhältlich z.B. bei [AliExpress](https://de.aliexpress.com/item/1005005777972846.html)
@@ -37,7 +37,7 @@
 
 ## Versionsverlauf
 
-- 06. März 2024: initiale Freigabe auf Github
+- 2024 März 06: initiale Freigabe auf Github
 
 ## Lizenz 
 
