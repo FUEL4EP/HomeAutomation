@@ -189,7 +189,7 @@ Globale Variablen verwenden 8109 Bytes (49%) des dynamischen Speichers, 8275 Byt
 
 ### Passendes Gehäuse
 
-- muss noch erstellt werden, wird dann hier nachgereicht.
+- gibt es [hier](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP/case_HB-UNI-Sensor1-THPD-SHT45_BME280)
 
 
 ## Verringerung der Tx Sendeleistung

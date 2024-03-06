@@ -1,7 +1,10 @@
-# 3D druckbres Gehäuse für Asksin++ THPD-Sensor HB-UNI-Sensor1-THPD-SHT45_BME280 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%2FHB_Stamp_ATMega1284P_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-
+# kleines 3D druckbares Gehäuse für Asksin++ THPD-Sensor HB-UNI-Sensor1-THPD-SHT45_BME280 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%2FHB_Stamp_ATMega1284P_FUEL4EP%2Fcase_HB-UNI-Sensor1-THPD-SHT45_BME280%2FREADME.md&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ![pic](PNGs/case_HB-UNI-Sensor1-THPD-SHT45_BME280.png)
+- CAD-Dimensionen:
+	* Breite: 29,1 mm
+	* Höhe: 47,1 mm
+	* Tiefe: 40,1 mm
 - passend zum Sketch [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280)
 - passend zur Mutterplatine [HB_Stamp_ATMega1284P_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP)
 - passend zur Erweiterungsplatine [I2C_Module_SHT45_BME280_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_FUEL4EP)
@@ -14,6 +17,14 @@
 	+ STL-Druckdateien
 	+ openSCAD-Dateien
 	+ STEP-Dateien der Mutter- und Erweiterungsplatine
+
+# notwendige Handverdrahtung:
+-	mit Flachbandkabel:
+	* I2C-Verbindungen zwischen  Mutter- und Erweiterungsplatine
+	* Versorgungsleitungen
+		* zwischen Lademodul und NiMH-Batteriehalter im Kabelkanal
+		* zwischen NiMH-Batteriehalter und Mutterplatine
+- 3mm-LED des Lademoduls einlöten
 
 ## Credits
 
