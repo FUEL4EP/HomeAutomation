@@ -49,7 +49,8 @@ difference(){
   translate([dWall,boxLength-lChargingModule,-hConnector+dWall]) rotate([0,0,0]) cube([dChargingModule,lChargingModule,wChargingModule]);
   translate([dWall+dChargingModule-wWiringChannel_4,boxLength-lChargingModule-wWiringChannel_4,-hConnector]) rotate([0,0,0]) cube([wWiringChannel_4,wWiringChannel_4,lWiringChannel_4]);
    #translate([0,boxLength-lChargingModule-wWiringChannel_4,-hConnector]) rotate([0,0,0]) cube([wWiringChannel_5,lWiringChannel_5,hConnector]);
-   #translate([dChargingModule+dWall,boxLength-lLEDOpening,-hConnector+wChargingModule-hLEDOpening+dWall]) rotate([0,0,0]) cube([dWall,lLEDOpening,hLEDOpening]);
+   translate([dChargingModule+dWall,boxLength-lLEDOpening,-hConnector+wChargingModule-hLEDOpening+dWall]) rotate([0,0,0]) cube([dWall,lLEDOpening,hLEDOpening]);
+   translate([0,boxLength-lLEDOpening,-hConnector+wChargingModule-hLEDOpening+dWall]) rotate([0,0,0]) cube([dWall,lLEDOpening,hLEDOpening]);
 }
 
 translate([-boxWidth,0,0]) rotate([0,0,0]) 2_3_A_NiMH_akku_holder();

@@ -31,6 +31,8 @@
 
 - der Batteriehalter wurde abgeleitet aus https://github.com/not-enough-time-for-all-these-projects/18650-holder
 - mein Dank geht an 'Not Enough Time For All These Projects'
+- das Gehäuse wurde abgeleitet aus https://www.thingiverse.com/thing:2411898 (C)Inhumierer June 30, 2017
+- mein Dank geht an 'Inhumierer'
 
 ## Disclaimer
 
@@ -39,6 +41,7 @@
 ## Versionsverlauf
 
 - 2024 März 06: initiale Freigabe auf Github
+- 2024 März 07: zusätzliche Aussparung im Batteriehalter
 
 ## Lizenz 
 
