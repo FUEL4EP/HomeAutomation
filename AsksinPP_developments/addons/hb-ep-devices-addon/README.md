@@ -71,10 +71,10 @@ Alle hier aufgeführten Homematic Selbstbaugeräte sind bei mir selbst im Einsat
 |F6 0C | HB-UNI-SENSOR1-AQ-BME680_KF_DEBUG_rLF |
 |F6 0D | HB-LC-Bl1-FM-HYBRID (in Entwicklung) |
 |F6 0E | HB-UNI-SENACT-4-4-SC_DS |
-|F6 0F | HB-UNI-Sensor1-THPD_MA-AHT20 (in Entwicklung) |
+|F6 0F | HB-UNI-Sensor1-THPD_MA-AHT20_BMP280 (in Entwicklung) |
 |F6 10 | HB-UNI-SENACT-4-4-RC_DS |
-|F6 11 | HB-UNI-Sensor1-THD-SHT45 (in Entwicklung) |
-|F6 12 | HB-UNI-Sensor1-THPD-SHT45_BME280 (in Entwicklung)|
+|F6 11 | HB-UNI-Sensor1-THD-SHT45 |
+|F6 12 | HB-UNI-Sensor1-THPD-SHT45_BME280 |
 <br/>
 
 

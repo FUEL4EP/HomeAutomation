@@ -21,15 +21,12 @@
 
 - Version 1.1 wurde entwickelt mit KiCAD 5.1.12  
 - für KiCAD 6 wurde eine Migration auf Version 1.2 durchgeführt
-- Prototyp Version 1.1 erfolgreich  bei JLCPCB gefertigt, ist aber noch nicht validiert
-- Software ist noch in Entwicklung
+- Prototyp Version 1.1 erfolgreich  bei JLCPCB gefertigt und validiert
+- Software ist noch in Entwicklung, siehe unten
 - Bilder der Prototyp-Platinen, die bei JLCPCB gefertigt wurden:
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB_top.png)
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP_PCB_bottom.png)
 - die nicht SMD Bauteile müssen von Hand verlötet werden
-- mangels Verfügbarkeit des [TPS61221 Aufwärtswandlers](https://www.ti.com/lit/ds/symlink/tps61221.pdf?ts=1634546965861&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61221) trifft dies später auch auf die Bestückungsoption Aufwärtswandler zu
-- die gefertigte Platine wird mit dem Sketch [tbd](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/tbd) validiert werden:
-![pic](Pictures_of_JLCPCB_prototypes/tbd.png)
 - weitere Infos per PN bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) im Homematic Forum.
 
 ## Eigenschaften
@@ -81,12 +78,17 @@
         + der Leckagestrom im Sleepmode sollte < 10 uA betragen
 
 ### Passende AsksinPP Projekte von FUEL4EP
-   + [HB-UNI-Sensor1-AQ-BME680](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680)
-   + [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF)
-   + [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG)
-   + [HB-UNI-Sensor1-RAD-AL53](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-RAD-AL53)
-   + [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85)
-   + ein neuer Sensor mit gleitender Mittelwertbildung wird bald freigegeben werden
+   + ein neuer Sensor mit gleitender Mittelwertbildung der gemessenen Temperatur über 24 Stunden, 1 Woche, 1 Monat und 1 Jahr wird bald freigegeben werden:
+		* [HB-UNI-Sensor1-THPD_MA-AHT20_BMP280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD_MA-AHT20_BMP280)
+		* alle Grundfunktionen sind schon erfolgreich getestet, das FRAM funktioniert
+- [HB-UNI-Sensor1-AQ-BME680](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680)
+- [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF)
+- [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG)
+- [HB-UNI-Sensor1-RAD-AL53](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-RAD-AL53)
+- [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85)
+- [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280)
+	
+   
    
 ### Notwendige Änderung der Betriebsspannungsmessung in Sketchen
 - da die Platine einen fest verdrahteten Spannungsteiler R7 und R8 für die Betriebsspannung / Akkuspannungsmessung verwendet, muss in Sketchen folgende Anpassung gegebenenfalls durchgeführt werden:
@@ -124,7 +126,7 @@
 * der Verpolungsschutz ist optional. Dafür Bauteil Q1 (IRLU024N) und R3 (100KOhm Widerstand) bestücken. Alternativ JP1 auf der Platinenrückseite brücken um ohne Verpolungsschutz zu arbeiten.
  * bei der Nutzung des JLCPCB SMT Bestückungsservice ist darauf zu achten, dass **alle** benötigten SMD Bauteile als im Lager **verfügbar** angezeigt werden. Sonst bitte **NICHT** bestellen! Gegebenenfalls müssen für die SMD-Widerstände äquivalente Widerstände von anderen Herstellern über die Suchfunktion ausgewählt werden.
  
-## passende DIY AsksinPP Funkmodule 868.3 MHz für die Fertigung bei JLCPCB
+## passende DIY AsksinPP Funkmodule 868,3 MHz für die Fertigung bei JLCPCB
 - als DIY-Ersatz für das eByte E07 868M10S Funkmodul stehen zur Verfügung:
 	-  [CC1101_868MHz_RF_Modul_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/CC1101_868MHz_RF_Modul_FUEL4EP) mit Drahtantenne
 	- [CC1101_868MHz_UFL_RF_Modul_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/CC1101_868MHz_UFL_RF_Modul_FUEL4EP) mit U.FL Antennenbuchse 
