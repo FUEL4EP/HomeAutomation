@@ -18,8 +18,13 @@ Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum
 - Bitte gegebenenfalls das Addon nach einem Update der CCU3/RaspberryMatic Firmware erneut installieren, falls Geräteparameter fehlen.
 
 
-## Hinweis: Alternativer schneller und hoch genauer HomeBrew Sensor
-Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, kann den neuen Sensor [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) nehmen. Er ist zusätzlich mit einem Sension SHT85 Sensor bestückt, sonst aber funktional identisch. Ein Vergleich der unterschiedlich schnellen Temperaturtransienten ist unter [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) zu finden.
+## Hinweis: Alternative schnelle und hoch genaue HomeBrew Sensoren von FUEL4EP
+- Wer in seiner Applikation einen schnellen und/oder hoch genauen Sensor braucht, kann auch einen der neueren Sensoren nehmen:
+	 * [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280)
+	 * [HB-UNI-Sensor1-THD-SHT45](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THD-SHT45)
+	 	* ohne Luftdruckmessung
+	* [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85)
+	  * HB-UNI-Sensor1-THPD-SHT85 ist zusätzlich mit einem Sensirion SHT85 Sensor bestückt, sonst aber funktional identisch. Ein Vergleich der unterschiedlich schnellen Temperaturtransienten ist unter [HB-UNI-Sensor1-THPD-SHT85](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT85) zu finden.
 
 
 
