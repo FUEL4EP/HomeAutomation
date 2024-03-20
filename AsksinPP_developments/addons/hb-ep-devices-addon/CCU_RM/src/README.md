@@ -1,6 +1,6 @@
 # ep-hb-devices-addon [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Github All Releases](https://img.shields.io/github/downloads/FUEL4EP/HomeAutomation/total.svg)](https://github.com/FUEL4EP/HomeAutomation/releases) ![GitHub release (by tag)](https://img.shields.io/github/downloads/FUEL4EP/HomeAutomation/latest/total) [![GitHub issues](https://img.shields.io/github/issues/FUEL4EP/HomeAutomation.svg)](https://github.com/FUEL4EP/HomeAutomation/issues) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-**:heavy_check_mark: lauffähig unter CCU3 / RaspberryMatic Firmware 3.47.10 -  	3.73.9**<br/>
+**:heavy_check_mark: lauffähig unter CCU3 / RaspberryMatic Firmware 3.47.10 -  	3.75.6**<br/>
 Die jeweils aktuellste Version ist bei den [Releases](https://github.com/FUEL4EP/HomeAutomation/releases/latest) zu finden.
 
 <hr/>
@@ -71,10 +71,10 @@ Alle hier aufgeführten Homematic Selbstbaugeräte sind bei mir selbst im Einsat
 |F6 0C | HB-UNI-SENSOR1-AQ-BME680_KF_DEBUG_rLF |
 |F6 0D | HB-LC-Bl1-FM-HYBRID (in Entwicklung) |
 |F6 0E | HB-UNI-SENACT-4-4-SC_DS |
-|F6 0F | HB-UNI-Sensor1-THPD_MA-AHT20 (in Entwicklung) |
+|F6 0F | HB-UNI-Sensor1-THPD_MA-AHT20_BMP280 (in Entwicklung) |
 |F6 10 | HB-UNI-SENACT-4-4-RC_DS |
-|F6 11 | HB-UNI-Sensor1-THD-SHT45 (in Entwicklung) |
-|F6 12 | HB-UNI-Sensor1-THPD-SHT45_BME280 (in Entwicklung)|
+|F6 11 | HB-UNI-Sensor1-THD-SHT45 |
+|F6 12 | HB-UNI-Sensor1-THPD-SHT45_BME280 |
 <br/>
 
 
