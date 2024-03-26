@@ -319,7 +319,7 @@ void dump_array (uint32_t addr, uint8_t *values, size_t count) {
   for (i = 0; i < count; i++) {
     if ((i % 16) == 0) {
       DPRINTLN(F(""));
-      DPRINT(F("index 0x"));
+      DPRINT(F("address 0x"));
       DHEX(laddr);
       DPRINT(F(": "));
     }
