@@ -26,7 +26,8 @@
 -
 ## Status
 
-- diese Platine wurde noch nicht bei JLCPCB gefertigt und ist daher auch nicht validiert. Nutzung auf eigenes Risiko!
+- diese Platine wurde bei JLCPCB gefertigt und wurde erfolgreich validiert
+- die Validierungsergebnisse sind [hier](./Prototype_Validation) zu finden
 
 ## Ersatz für das eByte E07 868MS10 Modul
 
