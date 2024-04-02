@@ -7,6 +7,8 @@
 ![pic](PNGs/CC1101_868MHz_RF_Modul_FUEL4EP_PCB_3D_top.png)
 ![pic](PNGs/CC1101_868MHz_RF_Modul_FUEL4EP_PCB_KiCAD.png)
 ![pic](PNGs/CC1101_868MHz_RF_Modul_FUEL4EP_top_silkscreen.png)
+![pic](Pictures_of_JLCPCB_prototypes/CC1101_868MHz_RF_Modul_FUEL4EP_PCB_top_JLCPCB_assembled_prototype_V1.6.png)
+![pic](PNGs/prototype_1_on_HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP.png)
 
 
 ## Platinenmaße
@@ -73,6 +75,11 @@
 - KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
 - PCB Version 1.6
 - Schematics  1.3
+
+## Sammelbestellung
+
+- wer Interesse an einer gemeinsamen Bestellung von Platinen und/oder Gehäusen bei JLCPCB hat, fragt bitte per per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) an.
+- wenn genügend Interesse (>= 20 bestückte Platinen und/oder 3D gedruckten Gehäusen) zustande kommt, biete ich an, Platinen  und Gehäuse gegen Vorkasse per PayPal zum Selbstkostenpreis + Versandkosten + 3 Euro Aufwandspauschale pro Versand bei JLCPCB zu bestellen und dann weiterzuverkaufen. Vor einer Bestellung wird ein Angebot bei JLCPCB eingeholt und an die Interessenten zur Zustimmung verteilt.
 
 ## Disclaimer
 

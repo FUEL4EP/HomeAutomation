@@ -8,7 +8,7 @@
 - 2 Platinen CC1101_868MHz_UFL_RF_Modul_FUEL4EP wurden bei JLCPCB gefertigt und bestückt
 
 
-# Test der Quarzfrequenz
+# Messung der Quarzfrequenz
 
 - Messung der Frequenz des GD0 Ausgangssignals nach Power-On-Reset:
 - dazu steht im Datenblatt des TI CC1101 Bausteins:
@@ -39,5 +39,16 @@ XOSC is turned on at power-on-reset, this can be used to clock the MCU in system
 - zum Vergleich wurde als Modul 5 ein gekauftes eByte E07-868MS10 Modul vermessen
 	+ das gekaufte Modul mit dem Index 5 hat eine mittlere Frequenzabweichung von -12,9 ppm
 	+ das gekaufte Modul eByte E07-868MS10 weist eine mittlere Frequenzabweichung von >10 ppm auf!
+	
+# AsksinPP Frequenztest
+
+- das Ergebnis des AsksinPP Frequenztests für das Modul 3 ist [hier](./measurement_results/CC1101_868MHz_UFL_RF_Modul_FUEL4EP_3/FreqTest_serial_monitor_3.log)
+	+ das Ergebnis ist OK
+- das Modul 3 wurde mit der Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP) validiert:
+![pic](../PNGs/prototype_3_on_HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP.png)
+
+# Empfangsemfindlichkeit
+
+- wird nachgereicht, sobald verfügbar
  
  
