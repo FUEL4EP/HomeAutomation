@@ -49,6 +49,9 @@ XOSC is turned on at power-on-reset, this can be used to clock the MCU in system
 
 # Empfangsemfindlichkeit
 
-- wird nachgereicht, sobald verfügbar
+- die Empfangsempfindlichkeit wurde für alle ausgemessenen Module am selben Ort auf dem Wohnzimmertisch im Erdgeschoss durchgeführt. Die Zentrale befand sich zwei Etagen höher im Dachgeschoss. Dazwischen sind zwei Betondecken.
+- die RSSI Werte wurden aus dem AsksinPP Frequenztest mit 'active ping' bei 868,3Mhz für die ID der Zentrale abgelesen. Der Frequenztest-Skript war für alle ausgemessenen Module identisch.
+
+- die RSSI-Messergebnisse sind [hier](./validation_results.pdf) unter Punkt 2.
  
  

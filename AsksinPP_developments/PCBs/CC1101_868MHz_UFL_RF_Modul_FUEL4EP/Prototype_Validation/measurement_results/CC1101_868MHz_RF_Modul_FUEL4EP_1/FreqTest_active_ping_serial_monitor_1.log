@@ -1,0 +1,36 @@
+16:25:29.393 -> AskSin++ v5.0.3 (Apr  2 2024 16:23:41)
+16:25:29.393 -> Radio init1
+16:25:29.393 -> CC Version: 14
+16:25:29.393 ->  - ready
+16:25:29.393 -> Active ping is enabled, looking for telegrams only from 123456!
+16:25:29.422 -> Start searching ...
+16:25:29.422 -> Freq 0x21656A 868.300 MHz: 123456.  1 / -56dBm
+16:25:29.589 -> Search for upper bound
+16:25:29.589 -> Freq 0x21657A 868.306 MHz: 123456.  1 / -56dBm
+16:25:30.623 -> Freq 0x21658A 868.313 MHz: 123456.  1 / -56dBm
+16:25:31.653 -> Freq 0x21659A 868.319 MHz: 123456.  1 / -57dBm
+16:25:32.650 -> Freq 0x2165AA 868.325 MHz: 123456.  1 / -58dBm
+16:25:33.681 -> Freq 0x2165BA 868.332 MHz:   0
+16:25:35.678 -> Search for lower bound
+16:25:35.678 -> Freq 0x21655A 868.294 MHz: 123456.  1 / -58dBm
+16:25:35.711 -> Freq 0x21654A 868.287 MHz: 123456.  1 / -56dBm
+16:25:36.743 -> Freq 0x21653A 868.281 MHz: 640308.123456.  1 / -60dBm
+16:25:37.774 -> Freq 0x21652A 868.274 MHz: 123456.  1 / -57dBm
+16:25:38.774 -> Freq 0x21651A 868.268 MHz: 794A87.123456.  1 / -65dBm
+16:25:39.806 -> Freq 0x21650A 868.262 MHz: 123456.  1 / -57dBm
+16:25:40.804 -> Freq 0x2164FA 868.255 MHz: 123456.  1 / -57dBm
+16:25:41.836 -> Freq 0x2164EA 868.249 MHz:   0
+16:25:43.831 -> 
+16:25:43.831 -> Done: 0x2164FA - 0x2165AA
+16:25:43.865 -> Calculated Freq: 0x216552 868.290 MHz
+16:25:43.865 -> Store into config area: 6552...stored!
+16:25:43.932 -> 
+16:25:43.932 -> Old Config Freq was: 0x21654A 868.287 MHzGoing to sleep...
+16:25:44.898 -> 123456.  1 / -58dBm
+16:25:44.898 -> 
+16:25:44.898 -> Done: 0x2164FA - 0x2165AA
+16:25:44.898 -> Calculated Freq: 0x216552 868.290 MHz
+16:25:44.898 -> Store into config area: 6552...stored!
+16:25:44.998 -> 
+16:25:44.998 -> Old Config Freq was: 0x216552 868.290 MHzGoing to sleep...
+

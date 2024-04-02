@@ -1,0 +1,44 @@
+16:32:08.588 -> AskSin++ v5.0.3 (Apr  2 2024 16:31:44)
+16:32:08.588 -> Radio init1
+16:32:08.588 -> CC Version: 14
+16:32:08.588 ->  - ready
+16:32:08.588 -> Active ping is enabled, looking for telegrams only from 123456!
+16:32:08.588 -> Start searching ...
+16:32:08.588 -> Freq 0x21656A 868.300 MHz: 123456.  1 / -60dBm
+16:32:08.588 -> Search for upper bound
+16:32:08.588 -> Freq 0x21657A 868.306 MHz: 58ACBD.123456.  1 / -67dBm
+16:32:08.800 -> Freq 0x21658A 868.313 MHz: 123456.  1 / -59dBm
+16:32:09.601 -> Freq 0x21659A 868.319 MHz: 1CCB7E.123456.  1 / -78dBm
+16:32:10.601 -> Freq 0x2165AA 868.325 MHz: 123456.  1 / -59dBm
+16:32:11.801 -> Freq 0x2165BA 868.332 MHz: 5060D0.123456.  1 / -65dBm
+16:32:11.968 -> Freq 0x2165CA 868.338 MHz: 5060D0.123456.  1 / -65dBm
+16:32:12.068 -> Freq 0x2165DA 868.344 MHz: 5060D0.5060D0.5060D0.F60B03.  0
+16:32:14.066 -> Search for lower bound
+16:32:14.066 -> Freq 0x21655A 868.294 MHz: 2C7878.123456.  1 / -76dBm
+16:32:14.698 -> Freq 0x21654A 868.287 MHz: 123456.  1 / -60dBm
+16:32:15.728 -> Freq 0x21653A 868.281 MHz: 794A87.123456.  1 / -66dBm
+16:32:16.726 -> Freq 0x21652A 868.274 MHz: 3421FC.123456.  1 / -70dBm
+16:32:17.758 -> Freq 0x21651A 868.268 MHz: 123456.  1 / -59dBm
+16:32:18.790 -> Freq 0x21650A 868.262 MHz: 123456.  1 / -58dBm
+16:32:19.790 -> Freq 0x2164FA 868.255 MHz:   0
+16:32:21.787 -> 
+16:32:21.787 -> Done: 0x21650A - 0x2165CA
+16:32:21.787 -> Calculated Freq: 0x21656A 868.300 MHz
+16:32:21.820 -> Store into config area: 656A...stored!
+16:32:21.920 -> 
+16:32:21.920 -> Old Config Freq was: 0x216572 868.303 MHzGoing to sleep...
+16:32:21.920 -> 123456.  1 / -58dBm
+16:32:21.920 -> 
+16:32:21.920 -> Done: 0x21650A - 0x2165CA
+16:32:21.920 -> Calculated Freq: 0x21656A 868.300 MHz
+16:32:21.953 -> Store into config area: 656A...stored!
+16:32:22.053 -> 
+16:32:22.053 -> Old Config Freq was: 0x21656A 868.300 MHzGoing to sleep...
+16:32:22.885 -> 123456.  2 / -59dBm
+16:32:22.885 -> 
+16:32:22.885 -> Done: 0x21650A - 0x2165CA
+16:32:22.885 -> Calculated Freq: 0x21656A 868.300 MHz
+16:32:22.918 -> Store into config area: 656A...stored!
+16:32:22.985 -> 
+16:32:22.985 -> Old Config Freq was: 0x21656A 868.300 MHzGoing to sleep...
+
