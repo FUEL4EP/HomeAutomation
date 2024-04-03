@@ -1,11 +1,11 @@
-# Validierung des CC1101_868MHz_UFL_RF_Modul_FUEL4EP RF-Moduls
+# Validierung des CC1101_868MHz_RF_Modul_FUEL4EP RF-Moduls
 
 
 
 
 ## Fertigung von Prototypen bei JLCPCB
 
-- 2 Platinen CC1101_868MHz_UFL_RF_Modul_FUEL4EP wurden bei JLCPCB gefertigt und bestückt
+- 2 Platinen CC1101_868MHz_RF_Modul_FUEL4EP wurden bei JLCPCB gefertigt und bestückt
 
 
 # Messung der Quarzfrequenz
@@ -33,8 +33,8 @@ XOSC is turned on at power-on-reset, this can be used to clock the MCU in system
 	+ die Standardabweichungen der Frequenzmessungen werden von der Temperaturdrift und unterschiedlich langen Betriebszeiten beeinflusst
 - die Messergebnisse des DG1022Z Frequenzzählers wurden fotografiert und sind [hier](./measurement_results) für die beiden vermessenen Module zu finden
 - die mittlere Frequenzabweichung liegt bei
-	+ Modul mit Index 3:	+6,2 ppm		Bewertung: OK
-	+ Modul mit Index 4:	+8,3 ppm		Bewertung: OK
+	+ Modul mit Index 3:	+8,0 ppm		Bewertung: OK
+	+ Modul mit Index 4:	+9,3 ppm		Bewertung: OK
 - beide vermessenen Module liegen damit innerhalb der 10 ppm Frequenztoleranz der verwendeten Quarze
 - zum Vergleich wurde als Modul 5 ein gekauftes eByte E07-868MS10 Modul vermessen
 	+ das gekaufte Modul mit dem Index 5 hat eine mittlere Frequenzabweichung von -12,9 ppm
@@ -42,14 +42,14 @@ XOSC is turned on at power-on-reset, this can be used to clock the MCU in system
 	
 # AsksinPP Frequenztest
 
-- das Ergebnis des AsksinPP Frequenztests für das Modul 3 ist [hier](./measurement_results/CC1101_868MHz_UFL_RF_Modul_FUEL4EP_3/FreqTest_serial_monitor_3.log)
+- das Ergebnis des AsksinPP Frequenztests für das Modul 1 ist [hier](./measurement_results/CC1101_868MHz_RF_Modul_FUEL4EP_1/FreqTest_serial_monitor_1.log)
 	+ das Ergebnis ist OK
-- das Modul 3 wurde mit der Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP) validiert:
-![pic](../PNGs/prototype_3_on_HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP.png)
+- das Modul 1 wurde mit der Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP) validiert:
+![pic](../PNGs/prototype_1_on_HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP.png)
 
-# Empfangsemfindlichkeit
+# Empfangsempfindlichkeit
 
-- die Empfangsempfindlichkeit wurde für alle ausgemessenen Module am selben Ort auf dem Wohnzimmertisch im Erdgeschoss durchgeführt. Die Zentrale befand sich zwei Etagen höher im Dachgeschoss. Dazwischen sind zwei Betondecken.
+- die Empfangsempfindlichkeit wurde für alle ausgemessenen Module am selben Ort im Erdgeschoss und im Keller durchgeführt. Die Zentrale befand sich zwei bzw. drei Etagen höher im Dachgeschoss. Dazwischen sind zwei bzw. drei Betondecken.
 - die RSSI Werte wurden aus dem AsksinPP Frequenztest mit 'active ping' bei 868,3Mhz für die ID der Zentrale abgelesen. Der Frequenztest-Skript war für alle ausgemessenen Module identisch.
 
 - die RSSI-Messergebnisse sind [hier](./validation_results.pdf) unter Punkt 2.
