@@ -14,7 +14,17 @@
 -	der Frequenztest sollte für das verwendete Funkmodul gelaufen sein
 -	für die Bildung einer Hochfrequenzfunkübertragungsstecke wird der Empfänger-Sketch [FreqTest_range_test_with_distant_beacon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/FreqTest_range_test_with_distant_beacon) benötigt
 -	die Funkbake kann für eine zusätzliche Hochfrequenzdämpfung in eine dicht schließende Metalldose gesetzt werden, dabei auf elektrische Isolation achten!
+
+![pic](Images/metal_can_1.png)
+![pic](Images/metal_can_2.png)
+![pic](Images/metal_can_3.png)
+
 -	durch Wahl eines geeigneten räumlichen Abstands und Ortes kann die Hochfrequenzfunkübertragungsstecke bei verschiedenen Dämpfungswerten ausgemessen werden. Die Empfangsreichweite eines RF-Tranceivers wird Folgendermaßen ermittelt werden: Die Funkbake wird solange weiter entfernt von dem RF-Tranceivers unter Test entfernt aufgestellt, bis der Empfang von Funksignalen gerade noch möglich ist. Dazu den Sketch [FreqTest_range_test_with_distant_beacon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/FreqTest_range_test_with_distant_beacon) verwenden.
+
+## Speicherbedarf auf einem ATMega328P Arduino Pro Mini
+
+- Der Sketch verwendet 17890 Bytes (58%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.
+Globale Variablen verwenden 632 Bytes (30%) des dynamischen Speichers, 1416 Bytes für lokale Variablen verbleiben. Das Maximum sind 2048 Bytes.
 
 ## Haftungsausschluss
 
