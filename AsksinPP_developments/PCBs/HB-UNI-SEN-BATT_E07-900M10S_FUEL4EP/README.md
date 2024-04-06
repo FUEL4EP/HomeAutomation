@@ -6,19 +6,18 @@
 - Steckerleiste für [Waveshare ePaper Modul (1.54inch (B)](https://www.waveshare.com/product/1.54inch-e-paper-module.htm)
 
 ![pic](PNGs/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP_top_view.png)
+![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP_PCB_top_JLCPCB_assembled_prototype_V1.0.png)
 
 ## Credits
 
 - diese Platine ist von Alexander Reinerts Platine [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) abgeleitet.
 - vielen Dank an Alexander Reinert für die Vorarbeit.
 
-## Platine ist noch nicht validiert
+## Platine wurde erfolgreich validiert
 
 - neu entwickelt mit KiCAD 6
 - Migration zum [SMD RF-Modul e-Byte E07-900M10S](https://www.manualslib.com/manual/2937348/Ebyte-E07-900m10s.html), da eByte die Fertigung des Moduls E07-868MS10 eingestellt hat
-- die Platine wurde **noch nicht** bei JLCPCB gefertigt
-- **die Evaluation steht noch aus!**
-![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP_PCB.png)
+- die Platine wurde bei JLCPCB gefertigt und erfolgreich mit dem Skript '[Range_test_beacon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/Range_test_beacon)' validiert.
 
 
 
@@ -98,7 +97,7 @@
 ## Bestellen von Platinen
 
 - die Platine kann entweder direkt bei JLCPCB bestellt werden
-- **die Platine ist noch nicht durch einen Prototypen evaluiert!**
+
 
 	
 ## passende DIY I2C-Sensormodule für die Fertigung bei JLCPCB
