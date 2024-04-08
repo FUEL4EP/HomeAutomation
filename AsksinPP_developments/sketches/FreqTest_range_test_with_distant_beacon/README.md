@@ -29,6 +29,7 @@
 -	die Empfangsbandbreite ergibt sich aus der Differenz zwischen der maximalen gemessenen Frequenz (RSSI wird ausgegeben) und der minimalen gemessenen Frequenz (RSSI wird ausgegeben). Idealerweise ist die Empfangsbandbreite >= 80 kHz.
 -	ein guter RF-Transceiver erreicht mindestens RSSI-Werte von -100 dBm.
 -	es lassen sich einfach die Empfangsempfindlichkeiten von unterschiedlichen RF-Transceivern vergleichen
+	+	bei gleichen Abstand von Funkbake und Prüfobjekt hat derjenige CC1101-Transceiver die bessere Eingangsempfindlichkeit, der den betragsmäßig kleineren RSSI dBm-Pegel bei 868,3 MHz aufweist (z.B. -98 dBm ist besser als -101 dBm)
 
 
 ## Speicherbedarf auf einem ATMega1284P 

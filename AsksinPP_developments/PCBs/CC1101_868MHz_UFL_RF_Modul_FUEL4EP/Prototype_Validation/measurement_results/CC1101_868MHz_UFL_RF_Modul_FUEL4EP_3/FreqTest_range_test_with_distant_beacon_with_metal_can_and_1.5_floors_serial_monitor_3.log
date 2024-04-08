@@ -1,0 +1,29 @@
+13:42:08.012 -> AskSin++ v5.0.3 (Apr  6 2024 08:58:11)
+13:42:08.012 -> Radio init1
+13:42:08.012 -> CC Version: 14
+13:42:08.045 ->  - ready
+13:42:08.045 -> Range analysis is enabled: Looking only for messages from a specific distant sensor with address 777777 !
+13:42:08.078 -> Start searching ...
+13:42:08.078 -> Freq 0x21656A 868.300 MHz: 777777.  1 / -99dBm
+13:42:18.190 -> Search for upper bound
+13:42:18.190 -> Freq 0x21657A 868.306 MHz: 777777.  1 / -99dBm
+13:42:28.543 -> Freq 0x21658A 868.313 MHz: 777777.  1 / -99dBm
+13:42:38.920 -> Freq 0x21659A 868.319 MHz: 777777.  1 / -98dBm
+13:42:49.268 -> Freq 0x2165AA 868.325 MHz: 777777.  1 / -98dBm
+13:42:59.643 -> Freq 0x2165BA 868.332 MHz: 777777.  1 / -98dBm
+13:43:10.003 -> Freq 0x2165CA 868.338 MHz: 777777.  1 / -100dBm
+13:43:20.381 -> Freq 0x2165DA 868.344 MHz:   0
+13:43:35.357 -> Search for lower bound
+13:43:35.357 -> Freq 0x21655A 868.294 MHz: 777777.  1 / -100dBm
+13:43:41.079 -> Freq 0x21654A 868.287 MHz: 777777.  1 / -98dBm
+13:43:51.461 -> Freq 0x21653A 868.281 MHz: 777777.  1 / -98dBm
+13:44:01.808 -> Freq 0x21652A 868.274 MHz: 777777.  1 / -99dBm
+13:44:12.194 -> Freq 0x21651A 868.268 MHz: 777777.  1 / -99dBm
+13:44:22.544 -> Freq 0x21650A 868.262 MHz: 777777.  1 / -99dBm
+13:44:32.895 -> Freq 0x2164FA 868.255 MHz:   0
+13:44:47.896 ->
+13:44:47.896 -> Done: 0x21650A - 0x2165CA
+13:44:47.929 -> Calculated Freq: 0x21656A 868.300 MHz
+13:44:47.929 -> Store into config area: 656A...stored!
+13:44:48.029 ->
+13:44:48.029 -> Old Config Freq was: 0x216572 868.303 MHzGoing to sleep...

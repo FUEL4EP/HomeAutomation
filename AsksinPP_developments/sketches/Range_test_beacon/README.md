@@ -23,6 +23,8 @@
 
 ![pic](Images/Tranceiver_range_evaluation_scheme.png)
 
+- **nach dem Ende des Reichweitentests bitte nicht vergessen, die Funkbake auszuschalten bzw. die Batterien herauszunehmen**
+
 ## Speicherbedarf auf einem ATMega328P Arduino Pro Mini
 
 - Der Sketch verwendet 17890 Bytes (58%) des Programmspeicherplatzes. Das Maximum sind 30720 Bytes.

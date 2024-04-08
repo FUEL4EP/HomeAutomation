@@ -1,0 +1,21 @@
+13:47:23.388 -> AskSin++ v5.0.3 (Apr  6 2024 09:21:59)
+13:47:23.388 -> Range analysis version of FreqTest. Please run a beacon with 'Range_test_beacon.ino' in parallel
+13:47:23.437 -> Radio init1
+13:47:23.437 -> CC Version: 14
+13:47:23.437 ->  - ready
+13:47:23.437 -> Range analysis is enabled: Looking only for messages from a specific distant sensor/beacon with address 777777 !
+13:47:23.471 -> Start searching ...
+13:47:23.471 -> Freq 0x21656A 868.300 MHz: 777777.  1 / -104dBm
+13:47:29.058 -> Search for upper bound
+13:47:29.092 -> Freq 0x21657A 868.306 MHz: 777777.  1 / -103dBm
+13:47:39.441 -> Freq 0x21658A 868.313 MHz:   0
+13:47:54.442 -> Search for lower bound
+13:47:54.442 -> Freq 0x21655A 868.294 MHz: 777777.  1 / -105dBm
+13:48:00.166 -> Freq 0x21654A 868.287 MHz: 777777.  1 / -103dBm
+13:48:10.546 -> Freq 0x21653A 868.281 MHz:   0
+13:48:25.520 ->
+13:48:25.520 -> Done: 0x21654A - 0x21657A
+13:48:25.520 -> Calculated Freq: 0x216562 868.297 MHz
+13:48:25.553 -> Store into config area: 6562...stored!
+13:48:25.619 ->
+13:48:25.619 -> Old Config Freq was: 0x216572 868.303 MHzGoing to sleep...

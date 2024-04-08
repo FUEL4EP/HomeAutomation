@@ -47,7 +47,7 @@ XOSC is turned on at power-on-reset, this can be used to clock the MCU in system
 - das Modul 3 wurde mit der Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP) validiert:
 ![pic](../PNGs/prototype_3_on_HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP.png)
 
-# Empfangsempfindlichkeit
+# Empfangsempfindlichkeit mit FreqTest
 
 - die Empfangsempfindlichkeit wurde für alle ausgemessenen Module am selben Ort im Erdgeschoss und im Keller durchgeführt. Die Zentrale befand sich zwei bzw. drei Etagen höher im Dachgeschoss. Dazwischen sind zwei bzw. drei Betondecken.
 - die RSSI Werte wurden aus dem AsksinPP Frequenztest mit 'active ping' bei 868,3Mhz für die ID der Zentrale abgelesen. Der Frequenztest-Skript war für alle ausgemessenen Module identisch.
@@ -55,3 +55,18 @@ XOSC is turned on at power-on-reset, this can be used to clock the MCU in system
 - die RSSI-Messergebnisse sind [hier](./validation_results.pdf) unter Punkt 2.
  
  
+# Empfangsempfindlichkeit mit Funkbake ‚Range_test_beacon’ und Prüfempfänger ‚FreqTest_range_test_with_distant_beacon‘
+ 
+ - um einfacher eine Funkstrecke mit veränderbarer Dämpfung realisieren zu können, wurden zwei existierende AsksinPP-Sketche leicht angepasst:
+ 	- [Range_test_beacon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/Range_test_beacon) wurde aus HM-WDS40-TH-I-SHT10 abgeleitet
+	 	+ Range_test_beacon realisiert eine Funkbake
+ 	-  [FreqTest_range_test_with_distant_beacon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/FreqTest_range_test_with_distant_beacon) wurde aus FreqTest abgeleitet
+	 	* FreqTest_range_test_with_distant_beacon filtert nur die Telegramme der Funkbake heraus
+	 
+![pic](../PNGs/Tranceiver_range_evaluation_scheme.png)
+
+- die Funkbake lässt sich leicht an verschiedene Orte mit unterschiedlichen Dämpfungen des Hochfrequenzsignals verschieben
+- die Dämpfung des Hochfrequenzsignals kann zusätzlich mit einer dicht schließenden Metalldose vergrößert werden, so dass Prüfobjekt und Funkbake in vernünftig geringem Abstand bleiben können, Laufwege werden verkürzt
+- das Prüfobjekt kann an der Nähe des Rechners bleiben
+- verschiedene Prüfobjekte lassen sich durch Umstöpseln unter gleichbleibenden Bedingungen leicht vergleichen
+- die RSSI-Messergebnisse sind [hier](./validation_results.pdf) unter Punkt 3.
