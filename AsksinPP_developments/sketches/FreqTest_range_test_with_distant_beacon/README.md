@@ -17,13 +17,18 @@
 
 - der Sketch [FreqTest_range_test_with_distant_beacon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/FreqTest_range_test_with_distant_beacon) empfängt nur Telegramme von der Funkbake mit der Geräte-ID '0x77, 0x77, 0x77'. Telegramme von anderen Geräten werden nicht ausgewertet.
 - der Sketch [FreqTest_range_test_with_distant_beacon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/FreqTest_range_test_with_distant_beacon) zeigt nur die RSSI-Werte für die Funkbake mit der Geräte-ID '0x77, 0x77, 0x77' an. RSSI-Werte von verworfenen Telegrammen anderer Geräte werden nicht ausgewertet.
--	durch Wahl eines geeigneten räumlichen Abstands und Ortes der Funkbake kann die Hochfrequenzfunkübertragungsstecke bei verschiedenen Dämpfungswerten ausgemessen werden. Die Empfangsreichweite eines RF-Tranceivers kann folgendermaßen ermittelt werden: Die Funkbake wird solange weiter entfernt von dem RF-Tranceivers unter Test entfernt aufgestellt, bis der Empfang von Funksignalen gerade noch möglich ist. 
-	-	auf der Funkbake läuft der Sketch [Range_test_beacon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/Range_test_beacon)
-	-	auf dem Gerät mit dem RF-Tranceiver unter Test läuft der Sketch [FreqTest_range_test_with_distant_beacon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/FreqTest_range_test_with_distant_beacon)
-	-	eine typische Ausgabe auf dem seriellen Monitor ist [hier](./Log_files_as_reference/serial_monitor.log)
-	-	die RSSI-Werte sollten symmetrisch zu 868,3 MHz sein und die gemessenen RSSI-Pegel sollten sehr ähnlich sein.
-	-	ein guter RF-Transceiver erreicht mindestens RSSI-Werte von -100 dBm.
-	-	es lassen sich einfach die Empfangsempfindlichkeiten von unterschiedlichen RF-Transceivern vergleichen
+-	durch Wahl eines geeigneten räumlichen Abstands und Ortes der Funkbake kann die Hochfrequenzfunkübertragungsstecke bei verschiedenen Dämpfungswerten ausgemessen werden. Die Empfangsreichweite eines RF-Tranceivers kann folgendermaßen ermittelt werden: Die Funkbake wird solange weiter entfernt von dem RF-Tranceivers unter Test entfernt aufgestellt, bis der Empfang von Funksignalen gerade noch möglich ist:
+
+
+![pic](Images/Tranceiver_range_evaluation_scheme.png)
+ 
+-	auf der Funkbake läuft der Sketch [Range_test_beacon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/Range_test_beacon)
+-	auf dem Gerät mit dem RF-Tranceiver unter Test läuft der Sketch [FreqTest_range_test_with_distant_beacon](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/FreqTest_range_test_with_distant_beacon)
+-	eine typische Ausgabe auf dem seriellen Monitor ist [hier](./Log_files_as_reference/serial_monitor.log)
+-	die RSSI-Werte sollten symmetrisch zu 868,3 MHz sein und die gemessenen RSSI-Pegel sollten sehr ähnlich sein.
+-	die Empfangsbandbreite ergibt sich aus der Differenz zwischen der maximalen gemessenen Frequenz (RSSI wird ausgegeben) und der minimalen gemessenen Frequenz (RSSI wird ausgegeben). Idealerweise ist die Empfangsbandbreite >= 80 kHz.
+-	ein guter RF-Transceiver erreicht mindestens RSSI-Werte von -100 dBm.
+-	es lassen sich einfach die Empfangsempfindlichkeiten von unterschiedlichen RF-Transceivern vergleichen
 
 
 ## Speicherbedarf auf einem ATMega1284P 
