@@ -49,7 +49,7 @@ void setup() {
     uint16_t error;
     char errorMessage[256];
 
-    sht4x.begin(Wire);
+    sht4x.begin(Wire, 0x44);
 
     uint32_t serialNumber;
     Serial.println("Trying to get serial number..");

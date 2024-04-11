@@ -53,7 +53,7 @@ public:
    bool _present_SHT45;
    uint16_t error;
 
-  _sht45.begin(Wire);
+  _sht45.begin(Wire, 0x44);
 
   uint32_t serialNumber;
 
