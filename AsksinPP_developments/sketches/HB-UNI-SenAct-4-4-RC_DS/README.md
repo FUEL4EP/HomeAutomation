@@ -186,13 +186,18 @@ RSET an der Steckerleiste J5 auf der linken Seite der Basisplatine. Dort eine St
 - sollte die Homematic/RaspberryMatic-Zentrale  vom Internet aus erreichbar sein, darf dieser Schalter nicht eingesetzt werden! Für die Sicherheit ist der Nutzer alleine verantwortlich!
 - nach einem Reset oder bei Spannungswiederkehr werden die Relais in kurzem Abstand ein und dann wieder ausgeschaltet. Daher dürfen nur Lasten angeschlossen werden, die dadurch nicht beschädigt werden können. 
 - die automatische Ladeschaltung ist zur Zeit noch nicht in Software implementiert! Der Nutzer ist für den korrekten Ladezustand der Akkus verantwortlich.
+- bei täglicher >15 Minuten langer Nutzung werden die Akkumulatoren ausreichend geladen.
 - ein automatische Ladeschaltung wird in Zukunft als Update zur Verfügung gestellt werden. Das kann aber noch eine Weile dauern ..
 
+
+## Fernsteuerung mit einem iPhone oder iPad
+
+- das Gerät kann mittels je eines iOS / iPadOS 'Shortcut' ferngesteuert ein- oder ausgeschaltet werden.
 
 ## Haftungsausschluss
 
 - aufgrund der im Gerät frei geführten Netzspannung und des Netzspannungsanschlusses darf die Installation nur von Fachkräften durchgeführt werden, die aufgrund ihrer Ausbildung dazu befugt sind.
-- die einschlägigen Sicherheits- und VDE-Bestimmungen sind unbedingt zu beachten. Durch eine unsachgemäße Installation können Sach- und Personenschäden verursacht werden, für die der Errichter haftet.
+- die einschlägigen Sicherheits- und VDE-Bestimmungen sind unbedingt zu beachten. Durch eine unsachgemäße Installation können Sach- und Personen vonschäden verursacht werden, für die der Errichter haftet.
 - Installationsarbeiten sowohl am primärseitigen Netzanschluss als auch am Sekundäranschluss dürfen nur **im stromlosen Zustand erfolgen. Dabei sind alle einschlägigen Vorschriften des Installationshandwerks zu beachten!** 
 - alle 230 V Spannung führenden Leitungen und Lötanschlüsse sind im spannungslosen Zustand fachgerecht mit Isolationsband vor Berührungen zu schützen
 - die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr
