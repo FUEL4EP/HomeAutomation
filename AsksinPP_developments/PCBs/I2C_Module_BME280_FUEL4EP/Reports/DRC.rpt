@@ -1,7 +1,10 @@
 ** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_BME280_FUEL4EP/I2C_Module_BME280_FUEL4EP.kicad_pcb **
-** Created on 2024-02-08 21:01:41 **
+** Created on 2024-04-16 15:36:02 **
 
-** Found 0 DRC violations **
+** Found 1 DRC violations **
+[missing_courtyard]: Footprint hat keine Abstandsfläche definiert
+    Local override; Severity: warning (excluded)
+    @(14.6000 mm, -14.4000 mm): Footprint LOGO1
 
 ** Found 0 unconnected pads **
 

@@ -9,6 +9,7 @@
 	* [HB_Stamp_ATMega1284P_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP)	
 - VCC max. ist 3,3 Volt !!
 - die voreingestellte Standard-I2C-Adresse des BME280 Sensors ist 0x76
+- für die I2C-Adresse 0x77 des BME280 Sensors ist der Jumper JP1 aufzutrennen und der Jumper JP2 mit Lötzinn zu überbrücken
 - für die I2C-Adresse 0x77 des BME280 Sensors ist der Jumper JP1 aufzutrennen
 - die voreingestellte I2C-Adresse des SHT45 Sensors ist 0x44
 
@@ -53,6 +54,10 @@ I2C_Module_SHT45_BME280_small_FUEL4EP_PCB_bottom_JLCPCB_assembled_prototype_V1.1
 
 - und Verbesserungsvorschläge sind willkommen.
 
+### KiCAD Plugin
+- für die Erzeugung der JLCPCB Produktionsdaten wurde das Plugin [KiCAD JLCPCB tools](https://github.com/bouni/kicad-jlcpcb-tools) verwendet.
+
+
 ## Daten für die Bestellung bei JLCPCB
 
 - die Daten für die Bestellung liegen im Verzeichnis [./jlcpcb/production_files/](./jlcpcb/production_files/)
@@ -82,10 +87,12 @@ I2C_Module_SHT45_BME280_small_FUEL4EP_PCB_bottom_JLCPCB_assembled_prototype_V1.1
 - V1.1   15. Jan 2024: Ergänzung von fehlendem PWR_FLG für VCC; I2C Steckerleiste
 - V1.2	 08. Feb 2024: Fix der I2C Pull-Up Widerstände
 - L V1.3 14. Feb 2024: Verringerung der Breite auf  14,08 mm
-- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.3
-- Schematics  1.2
+-	S V1.4 16. Apr 2024: Ersetzen von R3 durch JP2 wegen Ruhestrom; Migration auf KiCAD 7
+-	L V1.3 16. Apr 2024: Ersetzen von R3 durch JP2 wegen Ruhestrom; Migration auf KiCAD 7
+- KiCad Schaltplan-Editor Version: 7.0.11-7.0.11~ubuntu22.04.1 unter Kubuntu22.04.4
+- KiCad Leiterplatteneditor Version: 7.0.11-7.0.11~ubuntu22.04.1 unter Kubuntu22.04.4
+- PCB Version 1.4
+- Schematics  1.3
 
 ## Sammelbestellung
 

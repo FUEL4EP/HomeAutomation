@@ -1,7 +1,34 @@
 ** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_SHT85_BME280_FUEL4EP/I2C_Module_SHT85_BME280_FUEL4EP.kicad_pcb **
-** Created on 2024-02-08 21:06:22 **
+** Created on 2024-04-16 15:44:19 **
 
-** Found 0 DRC violations **
+** Found 7 DRC violations **
+[solder_mask_bridge]: Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
+    @(19.1250 mm, -1.4200 mm): PTH-Pad 1 [/SCL] von U2
+    @(19.1250 mm, -2.6900 mm): PTH-Pad 2 [VDDA] von U2
+[solder_mask_bridge]: Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
+    @(19.1250 mm, -1.4200 mm): PTH-Pad 1 [/SCL] von U2
+    @(19.1250 mm, -2.6900 mm): PTH-Pad 2 [VDDA] von U2
+[solder_mask_bridge]: Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
+    @(19.1250 mm, -2.6900 mm): PTH-Pad 2 [VDDA] von U2
+    @(19.1250 mm, -3.9600 mm): PTH-Pad 3 [GND] von U2
+[solder_mask_bridge]: Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
+    @(19.1250 mm, -2.6900 mm): PTH-Pad 2 [VDDA] von U2
+    @(19.1250 mm, -3.9600 mm): PTH-Pad 3 [GND] von U2
+[solder_mask_bridge]: Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
+    @(19.1250 mm, -3.9600 mm): PTH-Pad 3 [GND] von U2
+    @(19.1250 mm, -5.2300 mm): PTH-Pad 4 [/SDA] von U2
+[solder_mask_bridge]: Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
+    @(19.1250 mm, -3.9600 mm): PTH-Pad 3 [GND] von U2
+    @(19.1250 mm, -5.2300 mm): PTH-Pad 4 [/SDA] von U2
+[missing_courtyard]: Footprint hat keine Abstandsfläche definiert
+    Local override; Severity: warning
+    @(15.2400 mm, -13.8000 mm): Footprint LOGO1
 
 ** Found 0 unconnected pads **
 

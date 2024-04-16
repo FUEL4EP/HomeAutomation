@@ -3,8 +3,6 @@ C1,4.7u,C_0603_1608Metric,16.0,10.75,90.0,top
 C3,100n,C_0603_1608Metric,16.0,8.1,180.0,top
 C4,100n,C_0603_1608Metric,15.25,1.8,0.0,top
 FB1,FerriteBead,L_0402_1005Metric,14.2,10.0,0.0,top
-LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA,14.58619,14.382814,0.0,bottom
 R1,10k,R_0402_1005Metric,10.38,8.715,180.0,top
 R2,10k,R_0402_1005Metric,10.4,7.5,180.0,top
-R3,10k,R_0402_1005Metric,20.8,11.3,-90.0,top
-U1,BME280,Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering,15.25,4.1,180.0,top
+U1,BME280,Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering,15.25,4.1,90.0,top

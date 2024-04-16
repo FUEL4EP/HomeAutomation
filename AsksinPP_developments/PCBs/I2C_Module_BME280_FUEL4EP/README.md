@@ -17,7 +17,7 @@
 	
 - VCC max. ist 3,3 Volt !!
 - die voreingestellte Standard-I2C-Adresse ist 0x76
-- für die I2C-Adresse 0x77 ist der Jumper JP1 aufzutrennen
+- für die I2C-Adresse 0x77 ist der Jumper JP1 aufzutrennen und der Jumper JP2 mit Lötzinn zu überbrücken
 
 - Infos zu AsksinPP sind [hier](https://asksinpp.de) und [hier](https://asksinpp.de/Grundlagen/01_hardware.html#verdrahtung) zu finden
 
@@ -44,6 +44,9 @@
 ## Rückmeldungen
 
 - und Verbesserungsvorschläge sind willkommen.
+
+### KiCAD Plugin
+- für die Erzeugung der JLCPCB Produktionsdaten wurde das Plugin [KiCAD JLCPCB tools](https://github.com/bouni/kicad-jlcpcb-tools) verwendet.
 
 ## Daten für die Bestellung bei JLCPCB
 
@@ -72,10 +75,13 @@
 -	V1.1 15. Dez 2023: korrigierte Platzierung der Stiftleisten in der 3D-Ansicht
 -	S V1.3 08. Feb 2024: Fix der I2C Pull-Up Widerstände
 -	L V1.2 08. Feb 2024: Fix der I2C Pull-Up Widerstände
-- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
+-	S V1.4 16. Apr 2024: Ersetzen von R3 durch JP2 wegen Ruhestrom; Migration auf KiCAD 7
+-	L V1.3 16. Apr 2024: Ersetzen von R3 durch JP2 wegen Ruhestrom; Migration auf KiCAD 7
+- KiCad Schaltplan-Editor Version: 7.0.11-7.0.11~ubuntu22.04.1 unter Kubuntu22.04.4
+- KiCad Leiterplatteneditor Version: 7.0.11-7.0.11~ubuntu22.04.1 unter Kubuntu22.04.4
 - PCB Version 1.3
-- Schematics  1.2
+- Schematics  1.4
+
 
 ## Disclaimer
 

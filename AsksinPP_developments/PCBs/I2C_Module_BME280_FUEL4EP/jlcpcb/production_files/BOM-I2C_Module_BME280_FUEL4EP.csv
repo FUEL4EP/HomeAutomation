@@ -1,10 +1,6 @@
 Comment,Designator,Footprint,LCSC
 100n,"C3,C4",C_0603_1608Metric,C14663
 4.7u,C1,C_0603_1608Metric,C19666
-10k,"R1,R2,R3",R_0402_1005Metric,C25744
+10k,"R1,R2",R_0402_1005Metric,C25744
 FerriteBead,FB1,L_0402_1005Metric,C76889
 BME280,U1,Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering,C92489
-Conn_01x04,J1,PinHeader_1x04_P2.54mm_Vertical,
-Conn_01x04,J2,PinHeader_1x04_P2.54mm_Vertical,
-SolderJumper_2_Bridged,JP1,SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,
-Logo_Open_Hardware_Small,LOGO1,CC-BY-ND-SA,

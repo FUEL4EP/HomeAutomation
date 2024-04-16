@@ -2,14 +2,14 @@
 <export version="E">
   <design>
     <source>/home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_SHT85_BME280_FUEL4EP/I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch</source>
-    <date>Fr 09 Feb 2024 10:06:01 CET</date>
-    <tool>Eeschema 6.0.11-2627ca5db0~126~ubuntu22.04.1</tool>
+    <date>Di 16 Apr 2024 14:57:11 CEST</date>
+    <tool>Eeschema 7.0.11-7.0.11~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>I2C_Module_SHT85_BME280_FUEL4EP</title>
         <company>FUEL4EP</company>
-        <rev>1.2</rev>
-        <date>2024-02-08</date>
+        <rev>1.3</rev>
+        <date>2024-04-16</date>
         <source>I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch</source>
         <comment number="1" value="fitting to  HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP"/>
         <comment number="2" value="Creative Commons License, non-commercial"/>
@@ -36,6 +36,8 @@
       <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>9277bb0e-19d3-46da-98d4-733854d0b690</tstamps>
     </comp>
@@ -51,6 +53,8 @@
       <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>62488e6b-8df2-4cae-9dee-c1f753cf9830</tstamps>
     </comp>
@@ -66,6 +70,8 @@
       <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>970a920d-499e-47de-938b-2563766d170a</tstamps>
     </comp>
@@ -81,13 +87,14 @@
       <property name="TYPE" value="0603"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>1c8efafb-254e-45f1-ae5f-0b69a18d9bcb</tstamps>
     </comp>
     <comp ref="FB1">
       <value>FerriteBead</value>
       <footprint>Inductor_SMD:L_0402_1005Metric</footprint>
-      <datasheet>https://www.murata.com/products/productdata/8796740223006/ENFA0024.pdf?1531144803000</datasheet>
       <fields>
         <field name="LCSC">C76889</field>
         <field name="TYPE">0402</field>
@@ -97,6 +104,8 @@
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Ferrite bead"/>
+      <property name="ki_keywords" value="L ferrite bead inductor filter"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>185964e4-830f-402b-8571-b15d10c50c69</tstamps>
     </comp>
@@ -106,6 +115,8 @@
       <libsource lib="Connector_Generic" part="Conn_01x04" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>00000000-0000-0000-0000-00006157aa50</tstamps>
     </comp>
@@ -115,6 +126,8 @@
       <libsource lib="Connector_Generic" part="Conn_01x04" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>00000000-0000-0000-0000-000061579e50</tstamps>
     </comp>
@@ -124,15 +137,34 @@
       <libsource lib="Jumper" part="SolderJumper_2_Bridged" description="Solder Jumper, 2-pole, closed/bridged"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Solder Jumper, 2-pole, closed/bridged"/>
+      <property name="ki_keywords" value="solder jumper SPST"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a7c038cf-e13a-4aac-9478-087fe9ad0674</tstamps>
+    </comp>
+    <comp ref="JP2">
+      <value>SolderJumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <libsource lib="Jumper" part="SolderJumper_2_Open" description="Solder Jumper, 2-pole, open"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Solder Jumper, 2-pole, open"/>
+      <property name="ki_keywords" value="solder jumper SPST"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3374d3bd-25a4-40d2-8875-6e35497fb36f</tstamps>
     </comp>
     <comp ref="LOGO1">
       <value>Logo_Open_Hardware_Small</value>
       <footprint>FUEL4EP:CC-BY-ND-SA</footprint>
+      <fields>
+        <field name="Sim.Enable">0</field>
+      </fields>
       <libsource lib="Graphic" part="Logo_Open_Hardware_Small" description="Open Hardware logo, small"/>
+      <property name="Sim.Enable" value="0"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Open Hardware logo, small"/>
+      <property name="ki_keywords" value="Logo"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>00000000-0000-0000-0000-0000615dee46</tstamps>
     </comp>
@@ -148,6 +180,8 @@
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>010452d5-e5f2-447e-a153-71da0dbec114</tstamps>
     </comp>
@@ -163,28 +197,15 @@
       <property name="TYPE" value="0402"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>f75dc7be-70bf-4119-8c06-195e1a960dd2</tstamps>
-    </comp>
-    <comp ref="R3">
-      <value>10k</value>
-      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
-      <fields>
-        <field name="LCSC">C25744</field>
-        <field name="TYPE">0402</field>
-      </fields>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="LCSC" value="C25744"/>
-      <property name="TYPE" value="0402"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>55b96afd-ec19-4400-9134-cc56302d872a</tstamps>
     </comp>
     <comp ref="U1">
       <value>BME280</value>
       <footprint>Package_LGA:Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering</footprint>
-      <datasheet>https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BME280-DS002.pdf</datasheet>
+      <datasheet>https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf</datasheet>
       <fields>
         <field name="LCSC">C92489</field>
         <field name="TYPE">LGA-8</field>
@@ -194,6 +215,8 @@
       <property name="TYPE" value="LGA-8"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="I2C_Module_SHT85_BME280_FUEL4EP.kicad_sch"/>
+      <property name="ki_description" value="3-in-1 sensor, humidity, pressure, temperature, I2C and SPI interface, 1.71-3.6V, LGA-8"/>
+      <property name="ki_keywords" value="Bosch pressure humidity temperature environment environmental measurement digital"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>6c020e64-a15a-4a6f-ab04-2470855149f2</tstamps>
     </comp>
@@ -309,9 +332,10 @@
       <description>Open Hardware logo, small</description>
       <docs>~</docs>
       <fields>
-        <field name="Reference">#LOGO</field>
+        <field name="Reference">#SYM</field>
         <field name="Value">Logo_Open_Hardware_Small</field>
         <field name="Datasheet">~</field>
+        <field name="Sim.Enable">0</field>
       </fields>
     </libpart>
     <libpart lib="Jumper" part="SolderJumper_2_Bridged">
@@ -330,9 +354,25 @@
         <pin num="2" name="B" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="Jumper" part="SolderJumper_2_Open">
+      <description>Solder Jumper, 2-pole, open</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>SolderJumper*Open*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">SolderJumper_2_Open</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="Sensor" part="BME280">
       <description>3-in-1 sensor, humidity, pressure, temperature, I2C and SPI interface, 1.71-3.6V, LGA-8</description>
-      <docs>https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BME280-DS002.pdf</docs>
+      <docs>https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf</docs>
       <footprints>
         <fp>*LGA*2.5x2.5mm*P0.65mm*Clockwise*</fp>
       </footprints>
@@ -340,7 +380,7 @@
         <field name="Reference">U</field>
         <field name="Value">BME280</field>
         <field name="Footprint">Package_LGA:Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering</field>
-        <field name="Datasheet">https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BME280-DS002.pdf</field>
+        <field name="Datasheet">https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf</field>
       </fields>
       <pins>
         <pin num="1" name="GND" type="power_in"/>
@@ -401,9 +441,9 @@
       <node ref="U1" pin="7" pinfunction="GND" pintype="power_in"/>
       <node ref="U2" pin="3" pinfunction="VSS" pintype="power_in"/>
     </net>
-    <net code="4" name="Net-(JP1-Pad2)">
+    <net code="4" name="Net-(JP1-B)">
       <node ref="JP1" pin="2" pinfunction="B" pintype="passive"/>
-      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="JP2" pin="1" pinfunction="A" pintype="passive"/>
       <node ref="U1" pin="5" pinfunction="SDO" pintype="bidirectional"/>
     </net>
     <net code="5" name="VCC">
@@ -421,7 +461,7 @@
       <node ref="C2" pin="2" pintype="passive"/>
       <node ref="C4" pin="2" pintype="passive"/>
       <node ref="FB1" pin="2" pintype="passive"/>
-      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="JP2" pin="2" pinfunction="B" pintype="passive"/>
       <node ref="U1" pin="8" pinfunction="VDD" pintype="power_in"/>
       <node ref="U2" pin="2" pinfunction="VDD" pintype="power_in"/>
     </net>
