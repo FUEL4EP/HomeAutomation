@@ -69,4 +69,7 @@ XOSC is turned on at power-on-reset, this can be used to clock the MCU in system
 - das Prüfobjekt kann an der Nähe des Rechners bleiben
 - verschiedene Prüfobjekte lassen sich durch Umstöpseln unter gleichbleibenden Bedingungen leicht vergleichen
 - die RSSI-Messergebnisse sind [hier](./validation_results.pdf) unter Punkt 3.
+	+ Bandbreite des Empfangsfilters: >= 76 kHz          OK
+	* Welligkeit des Durchlassbereichs des Empfangsfilters: <= 2dBm  OK
+	* Mittenzentriertheit des Empfangsfilters: OK
 
