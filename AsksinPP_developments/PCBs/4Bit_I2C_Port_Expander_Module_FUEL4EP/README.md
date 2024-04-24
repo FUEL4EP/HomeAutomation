@@ -20,6 +20,7 @@
 ![pic](PNGs/4Bit_I2C_Port_Expander_Module_FUEL4EP_PCB_3D_top.png)
 ![pic](PNGs/4Bit_I2C_Port_Expander_Module_FUEL4EP_PCB_KiCAD.png)
 ![pic](PNGs/4Bit_I2C_Port_Expander_Module_FUEL4EP_top_silkscreen.png)
+![pic](Pictures_of_JLCPCB_prototypes/4Bit_I2C_Port_Expander_Module_FUEL4EP_PCB_top_JLCPCB_assembled_prototype_V1.1.png)
 
 
 ## Platinenmaße
@@ -34,7 +35,8 @@
 
 ## Status
 
-- diese Platine wurde noch nicht bei JLCPCB gefertigt und ist daher auch nicht validiert. Nutzung auf eigenes Risiko!
+- diese Platine wurde in der Version 1.1 bei JLCPCB gefertigt und ist erfolgreich validiert.
+- zum Test wurde der Sketch PCA9536/examples/PCA9536_Test.ino verwendet.
 
 
 ## Rückmeldungen
