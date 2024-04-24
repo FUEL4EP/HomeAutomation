@@ -13,12 +13,12 @@
 - diese Platine ist von Alexander Reinerts Platine [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) abgeleitet.
 - vielen Dank an Alexander Reinert für die Vorarbeit.
 
-## Platine ist noch nicht validiert
+## Platine ist erfolgreich validiert
 
 - neu entwickelt mit KiCAD 6
 - Migration zum [SMD RF-Modul e-Byte E07-900MM10S](https://www.cdebyte.com/pdf-down.aspx?id=1932), da eByte die Fertigung des Moduls E07-868MS10 eingestellt hat
-- die Platine wurde **noch nicht** bei JLCPCB gefertigt
-- **die Evaluation steht noch aus!**
+- die Platine wurde in der Version 1.0 bei JLCPCB gefertigt
+- die Platine wurde in der Version 1.0 erfolgreich mit dem Sketch FreqTest validiert, weitere Sketche sind in Entwicklung
 ![pic](PNGs/HB-UNI-SEN-BATT_E07-900MM10S_FUEL4EP_PCB_3D_top.png)
 
 
@@ -59,6 +59,7 @@
 
 ### Aufbauhinweise
 
+- das Funkmodul Ebyte E07 900MM10S sollte als Erstes auf die Platine aufgelötet werden
 - es wird dringend angeraten, vor dem Einbau der I2C Sensoren durchzuführen
     + einen Frequenztest. Hier der Frequenztest für einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) : [FreqTest_1284P.ino](../Supplements/FreqTest_1284P/FreqTest_1284P.ino)
     + einen Leckagetest. Hier der Leckagetest für einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) : [SleepTest_1284P.ino](../Supplements/SleepTest_1284P/SleepTest_1284P.ino)
@@ -96,8 +97,7 @@
 
 ## Bestellen von Platinen
 
-- die Platine kann entweder direkt bei JLCPCB bestellt werden
-- **die Platine ist noch nicht durch einen Prototypen evaluiert!**
+- die Platine kann direkt bei JLCPCB bestellt werden
 
 	
 ## passende DIY I2C-Sensormodule für die Fertigung bei JLCPCB
