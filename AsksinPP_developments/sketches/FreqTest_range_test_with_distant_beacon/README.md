@@ -38,11 +38,24 @@
 Globale Variablen verwenden 887 Bytes (5%) des dynamischen Speichers, 15497 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 /home/ewald/.arduino15/packages/MightyCore/tools/avrdude/7.2-arduino.1/bin/avrdude -C/home/ewald/.arduino15/packages/MightyCore/hardware/avr/3.0
 
+## höhere Frequenzauflösung der Empfangsempfindlichkeit
 
+- die Übertragungsfunktion des Empfangsfilters lässt sich mit einer höheren Frequenzauflösung ermitteln, wenn im Sketch
+
+> #define BOUNDSTEP 0x10               // step width during upper/lower bound analysis
+
+  z.B. durch
+
+> #define BOUNDSTEP 0x04               // step width during upper/lower bound analysis
+
+- das führt zu mehr aufgezeichneten Spektrallinien in der [Ausgabe auf dem seriellen Monitor](./Log_files_as_reference/serial_monitor_BOUNDSTEP_0x04.log) mit einem 4x dichteren Frequenzraster
+ 
 ## Haftungsausschluss
 
 - die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr
 - die nationalen Richtlinien für Funkbetrieb sind vom Anwender unbedingt zu beachten
+
+
 
 ## Lizenz 
 
