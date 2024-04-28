@@ -69,7 +69,7 @@ Der Diskussionsstrang im Homematic Forum dazu ist [hier](https://homematic-forum
 		  + als Batteriehalter wird der Keystone 2460 verwendet, ein Goobay 1xAA Batteeriehalter passt auch
 		  + statt des Tindie Pro Mini XL V2 bitte einen Arduino Pro Mini einsetzen, er passt auch, für den Tindie Pro Mini XL V2 müsste der Sketch angepasst werden
 		  + Bestellung direkt bei JLCPCB oder per PN bei bei [FUEL4EP](https://homematic-forum.de/forum/ucp.php?i=pm&mode=compose&u=20685) anfragen
-	  * oder alternativ [HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP) mit einem Ebyte E07 868MS10 Funkmodul (rote Platine), das ein wenig teurer als das noname grüne CC1101 Funkmodul ist, aber weniger Ärger macht
+	  * oder alternativ [HB-UNI-SEN-BATT_E07-900MM10S_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-900MM10S_FUEL4EP) mit einem Ebyte E07 900MM10S Funkmodul (10 mm * 10 mm Modul), das ein wenig teurer als das noname grüne CC1101 Funkmodul ist, aber weniger Ärger macht
 		  + der Abstandsfehler für einen Batteriehalter in [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB#hb-uni-sen-batt) ist korrigiert
 		  + als Batteriehalter wird der Keystone 2460 verwendet, ein Goobay 1xAA Batteeriehalter passt auch
 		  + statt des Tindie Pro Mini XL V2 bitte einen Arduino Pro Mini einsetzen, er passt auch, für den Tindie Pro Mini XL V2 müsste der Sketch angepasst werden
