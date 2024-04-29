@@ -6,7 +6,7 @@
 #include <Sensors.h>
 #include <BME280I2C.h>
 #include <EnvironmentCalculations.h>
-#include <SensirionI2CSht4x.h>
+#include <SensirionI2cSht4x.h>
 #include <Wire.h>
 //calculate 24h and 7 days moving averages, note: This option requires an ATMega1284P for RAM memory size reasons
 #include "Sens_weather_statistics_RAM.h"
@@ -52,7 +52,7 @@ class Sens_SHT45_Bme280 : public Sensor {
 
   BME280I2C _bme280;        // Default : forced mode, standby time = 1000 ms, Oversampling = pressure ×1, temperature ×1, humidity ×1, filter off
 
-  SensirionI2CSht4x _sht45;
+  SensirionI2cSht4x _sht45;
 
   char     errorMessage[256];
   

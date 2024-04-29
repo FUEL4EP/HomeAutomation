@@ -32,10 +32,10 @@
  */
 
 #include <Arduino.h>
-#include <SensirionI2CSht4x.h>
+#include <SensirionI2cSht4x.h>
 #include <Wire.h>
 
-SensirionI2CSht4x sht4x;
+SensirionI2cSht4x sht4x;
 
 void setup() {
 

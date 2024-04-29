@@ -4,7 +4,7 @@
 
 #include <Sensors.h>
 #include <EnvironmentCalculations.h>
-#include <SensirionI2CSht4x.h>
+#include <SensirionI2cSht4x.h>
 #include <Wire.h>
 //calculate 24h and 7 days moving averages, note: This requires an ATMega1284P for RAM memory size reasons!!
 #include "Sens_weather_statistics_RAM.h"
@@ -28,7 +28,7 @@ class Sens_SHT45 : public Sensor {
   int16_t   _24h_moving_average_temperature100;    // 24 h moving average of temperature,  scaled with 10.0
   int16_t   _7days_moving_average_temperature100;  // 7 days moving average of temperature, scaled with 10.0
 
-  SensirionI2CSht4x _sht45;
+  SensirionI2cSht4x _sht45;
 
   char     errorMessage[256];
   
