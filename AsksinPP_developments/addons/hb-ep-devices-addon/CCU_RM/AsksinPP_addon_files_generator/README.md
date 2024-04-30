@@ -3,7 +3,8 @@
 
 
 ## IMPORTANT: UNDER CONSTRUCTION AND VALIDATION
-- successfully used for all my home brew devices
+- successfully used for all my RF home brew devices
+- wired RS485 homebrew devices are not supported
 
 <br/>
 ## IMPORTANT: Since this generator software has beta status only, please check the generated install and uninstall scripts very carefully before using them in a production version of an addon. Usage is at your own risk! Thanks. Your feedback and enhancement proposals are welcome! Please let me know if the generator is creating wrong or incomplete install and uninstall scripts. Please send me a PN in such a case: FUEL4EP @ https://homematic-forum.de
@@ -32,7 +33,8 @@
 - if some extracted options turn out to be unnecessary, please delete them manually in the created XML control file for addon generator [AsksinPP_addon_generator_control_file.xml](./AsksinPP_addon_generator_control_file.xml)
 
 # Short description
-
+- currently on rftypes XML are supported
+- RS485 wired hs485types XML are NOT supported
 - creates the install and uninstall scripts required in [../src/addon/](../src/addon/)
 - a singular install 'install_<addon_name>' is newly introduced instead of the previous style of one install script per device
 - a singular uninstall 'uninstall_<addon_name>' is newly introduced instead of the previous style of one uninstall script per device
