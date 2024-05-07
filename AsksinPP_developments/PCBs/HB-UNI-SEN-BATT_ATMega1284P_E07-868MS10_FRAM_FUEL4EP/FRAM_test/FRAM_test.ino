@@ -12,7 +12,8 @@ FUJITSU_MB85RS2MTPF_FRAMs frams;
 
 void setup() {
   DINIT(38400, ASKSIN_PLUS_PLUS_IDENTIFIER);
-  frams.init_FRAMs();
+  SPI.begin();
+  frams.init_FRAMs(0x0000);
 
   uint8_t buf;
   buf = frams.FRAM_read8(0x40000);
@@ -247,6 +248,12 @@ void setup() {
      DPRINTLN(F("an error occured when reading a block data from FRAM "));
      frams.dump_array (start_address, block, no_of_bytes_read);
   }
+
+  // enter sleep mode
+  frams.FRAM_sleep_mode();
+
+  // return to normal mode
+  frams.FRAM_normal_mode();
 
 }
 

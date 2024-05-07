@@ -43,6 +43,8 @@
 #include <SPI.h>
 #include <Adafruit_FRAM_SPI.h>
 
+const uint8_t  FRAMS_INITIALIZED = 0xFF;
+
 //#include <AskSinPP.h>
 
 
@@ -68,6 +70,7 @@ const uint16_t  FUJITSU_MB85RS2MT_prodID    = 0x2803; // see datasheet MB85RS2MT
 const uint8_t   FUJITSU_MB85RS2MT_manufID   = 0x04;   // see datasheet MB85RS2MT, page 10
 const uint32_t  FUJITSU_MB85RS2MT_fram_size = 0x40000;   // 2MBit = 262 144 Bytes
 const uint32_t  MAX_FRAM_BANK_ADDRESS       = FUJITSU_MB85RS2MT_fram_size * 2;   // 2 x 2MBit FRAMs: 0x7FFFF
+const uint32_t  SPI_FREQ                    = (uint32_t)4000000;   // SPI freq is limited to half of CPU frequency
 
 /** Additional Operation Codes **/
 typedef enum opcodes_e {
@@ -77,9 +80,9 @@ typedef enum opcodes_e {
 
 // use hardware SPI mode to access the two FRAMs
 // first FRAM
-Adafruit_FRAM_SPI fram_1 = Adafruit_FRAM_SPI(FRAM_CS1_PIN);  // use hardware SPI
+Adafruit_FRAM_SPI fram_1 = Adafruit_FRAM_SPI(FRAM_CS1_PIN, &SPI, SPI_FREQ);  // use hardware SPI
 // second FRAM
-Adafruit_FRAM_SPI fram_2 = Adafruit_FRAM_SPI(FRAM_CS2_PIN);  // use hardware SPI
+Adafruit_FRAM_SPI fram_2 = Adafruit_FRAM_SPI(FRAM_CS2_PIN, &SPI, SPI_FREQ);  // use hardware SPI
 
 
 Adafruit_FRAM_SPI *select_FRAM (uint32_t address) {
@@ -186,7 +189,7 @@ public:
 // constructor
 FUJITSU_MB85RS2MTPF_FRAMs() {}
 
-bool init_FRAMs () {
+bool init_FRAMs (uint32_t FRAM_start_address) {
 
   bool FRAMs_found_flag=true;
 
@@ -199,6 +202,12 @@ bool init_FRAMs () {
 
    // check second  FRAM selected by FRAM_CS2_PIN
   if (check_FRAM(fram_2,"second") == false){
+    FRAMs_found_flag = false;
+  }
+
+  DPRINTLN(F("Checking FRAM start address .."));
+  if ( FRAM_start_address >= MAX_FRAM_BANK_ADDRESS ) {
+    DPRINTLN(F("ERROR: FRAM start address is too big !"));
     FRAMs_found_flag = false;
   }
 
@@ -792,22 +801,106 @@ bool FRAM_flush(uint8_t value)
   return success;
 }
 
-//!!!!!!!!!!!!!!!!!!!!!!
-// to be done
-//!!!!!!!!!!!!!!!!!!!!!!
-
 // requires extension of Adafruit's Adafruit_FRAM_SPI class, need to create a fork of Adafruit's repository
 bool FRAM_sleep_mode() {
-  return false;
+
+  bool success1, success2;
+
+  // set low power mode of FRAMs
+  #ifdef DEEP_DEBUG
+    DPRINTLN(F(".. entering low power mode of FRAMs .."));
+  #endif
+  success1 = fram_1.enter_low_power_mode();
+  success2 = fram_2.enter_low_power_mode();
+
+
+  return success1 && success2;
+}
+
+// requires extension of Adafruit's Adafruit_FRAM_SPI class, need to create a fork of Adafruit's repository
+bool FRAM_normal_mode() {
+  bool success1, success2;
+
+  // set low power mode of FRAMs
+  #ifdef DEEP_DEBUG
+    DPRINTLN(F(".. exiting low power mode of FRAMs .."));
+  #endif
+
+  success1 = fram_1.exit_low_power_mode();
+  success2 = fram_2.exit_low_power_mode();
+
+  return success1 && success2;
 }
 
 
+// cold_boot shall be executed at a factory reset
 
-void cold_boot() {
+bool cold_boot(void) {
+  bool status = false;
+
+  DPRINTLN(F(""));
+  DPRINTLN(F("Executing now a cold start of FRAM bank .."));
+  DPRINTLN(F(""));
+  DPRINTLN(F("This will take quite a while .."));
+  DPRINTLN(F(""));
+  DPRINTLN(F(""));
+  
+  status = init_FRAMs(0x0000);
+
+  if ( status ) {
+    status = FRAM_writeEnable(true);
+  }
+
+  if ( status ) {
+    status = FRAM_flush(0x00);
+  }
+
+  if ( status ) {
+    status = FRAM_writeEnable(false);
+  }
+
+  // set cold_start_flag oof FRAM bank
+  if ( status ) {
+    status = FRAM_write8(0x0000, FRAMS_INITIALIZED);  // write first byte of FRAM bank which is indicating the cold_start status
+  }
+
+  DPRINTLN(F("Cold start of FRAM bank is done"));
+  DPRINTLN(F(""));
+
+  return status;
 }
 
 
-void warm_boot() {
+// warm_boot shall be executed at a battery change or other reasons for a power suuply interruption
+
+bool warm_boot(void) {
+  bool status = false;
+  
+  DPRINTLN(F(""));
+  DPRINTLN(F("Executing now a warm start of FRAM bank .."));
+  DPRINTLN(F(""));
+  DPRINTLN(F(""));
+  
+  uint8_t cold_start_flag;
+
+  status = init_FRAMs(0x0000);
+
+  if ( status ) {
+    cold_start_flag = FRAM_read8(0x0000);  // read first byte of FRAM bank which is indicating the cold_start status
+
+    DPRINT(F("The cold_start_flag of the FRAM bank is :"));
+    DHEX(cold_start_flag);
+    DPRINTLN(F(""));
+
+    if ( cold_start_flag != FRAMS_INITIALIZED ) {
+      DPRINTLN(F("WARNING: The cold_start_flag of the FRAM bank is not set !"));
+      DPRINTLN(F(""));
+      status = false;
+    }
+
+  }
+
+  return status;
 }
 
 };
