@@ -756,7 +756,7 @@ bool FRAM_write(uint32_t addr,  uint8_t *values, size_t count) {
 }
 
 
-
+// flush the whole FRAM bank with a value
 bool FRAM_flush(uint8_t value)
 {
 
@@ -801,6 +801,98 @@ bool FRAM_flush(uint8_t value)
   return success;
 }
 
+
+// flush a region of the FRAM bank with a value
+bool FRAM_region_flush(uint8_t value, uint32_t start_address,uint32_t end_address)
+{
+
+  const uint32_t blockSize = 256;
+  uint32_t current_address = start_address;
+
+  #ifdef DEEP_DEBUG
+    DPRINTLN(F(""));
+    DPRINTLN(F(".. flushing a region of the FRAMs .."));
+    DPRINTLN(F(""));
+    DPRINT(F("start address of region : 0x"));
+    DHEX(start_address);
+    DPRINTLN(F(""));
+    DPRINT(F("end address of region   : 0x"));
+    DHEX(end_address);
+    DPRINTLN(F(""));
+    DPRINT(F("flushing with value     : 0x"));
+    DHEX(value);
+    DPRINTLN(F(""));
+  #endif
+
+  bool success = true;
+
+  // check address range
+  if (( end_address < start_address ) || ( start_address > MAX_FRAM_BANK_ADDRESS - 1 ) || ( end_address > MAX_FRAM_BANK_ADDRESS - 1 )){
+    DPRINTLN(F(""));
+    DPRINTLN(F("ERROR: wrong address range of region flush :"));
+    DPRINTLN(F(""));
+    DPRINT(F("start address of region : 0x"));
+    DHEX(start_address);
+    DPRINTLN(F(""));
+    DPRINT(F("end address of region : 0x"));
+    DHEX(end_address);
+    DPRINTLN(F(""));
+    success = false;
+  }
+
+  // fill buffer with value
+  uint8_t buf[blockSize];
+  for (uint16_t i = 0; i < blockSize; i++) buf[i] = value;
+
+  while (success && (current_address < end_address)) {
+    // Calculate the remaining bytes to erase
+    uint32_t remainingBytes = end_address - current_address;
+
+    // Determine the size of the block to erase
+    size_t blockSizeToErase = min(blockSize, remainingBytes);
+
+     #ifdef DEEP_DEBUG
+      DPRINTLN(F(""));
+      DPRINT(F("flushing block size : 0x"));
+      DHEX(blockSizeToErase);
+      DPRINTLN(F(""));
+      DPRINT(F("current address     : 0x"));
+      DHEX(current_address);
+      DPRINTLN(F(""));
+      DPRINT(F("remaining bytes     : 0x"));
+      DHEX(remainingBytes);
+    #endif
+
+    success =  FRAM_write(current_address,  buf, blockSizeToErase);
+
+    // Move to the next block
+    current_address += (uint32_t)blockSizeToErase;
+
+  }
+  DPRINTLN(F(""));
+  DPRINTLN(F("Region of FRAM bank has been flushed"));
+  DPRINTLN(F(""));
+  #ifdef DEEP_DEBUG
+    if (!success ){
+      DPRINTLN(F("Error occured when flushing region of FRAMs!"));
+    }
+    else
+    {
+      DPRINTLN(F("Region of FRAM bank was flushed successfully"));
+    }
+  #endif
+
+  return success;
+}
+
+
+
+
+
+
+
+
+
 // requires extension of Adafruit's Adafruit_FRAM_SPI class, need to create a fork of Adafruit's repository
 bool FRAM_sleep_mode() {
 
@@ -833,6 +925,37 @@ bool FRAM_normal_mode() {
 }
 
 
+
+// get first byte of FRAM bank which is indicating the cold_start status
+uint8_t get_cold_start_flag(void) {
+  uint8_t cold_start_flag;
+
+  DPRINTLN(F("Reading cold start flag of FRAM bank @ addr 0x0000 .."));
+
+  // set cold_start_flag of FRAM bank
+  cold_start_flag = FRAM_read8(0x0000);  // read first byte of FRAM bank which is indicating the cold_start status
+
+
+  DPRINT(F("The cold_start_flag of the FRAM bank is :"));
+  DHEX(cold_start_flag);
+  DPRINTLN(F(""));
+
+  return cold_start_flag;
+}
+
+// set first byte of FRAM bank which is indicating the cold_start status
+bool set_cold_start_flag(void) {
+  bool status = false;
+
+  DPRINTLN(F("Setting cold start flag of FRAM bank @ addr 0x0000 .."));
+
+  // set cold_start_flag of FRAM bank
+  status = FRAM_write8(0x0000, FRAMS_INITIALIZED);  // write first byte of FRAM bank which is indicating the cold_start status
+
+  return status;
+}
+
+
 // cold_boot shall be executed at a factory reset
 
 bool cold_boot(void) {
@@ -859,7 +982,8 @@ bool cold_boot(void) {
     status = FRAM_writeEnable(false);
   }
 
-  // set cold_start_flag oof FRAM bank
+  // set cold_start_flag of FRAM bank
+  DPRINTLN(F("Setting now the cold start flag of FRAM bank .."));
   if ( status ) {
     status = FRAM_write8(0x0000, FRAMS_INITIALIZED);  // write first byte of FRAM bank which is indicating the cold_start status
   }
@@ -886,7 +1010,7 @@ bool warm_boot(void) {
   status = init_FRAMs(0x0000);
 
   if ( status ) {
-    cold_start_flag = FRAM_read8(0x0000);  // read first byte of FRAM bank which is indicating the cold_start status
+    cold_start_flag = get_cold_start_flag();
 
     DPRINT(F("The cold_start_flag of the FRAM bank is :"));
     DHEX(cold_start_flag);

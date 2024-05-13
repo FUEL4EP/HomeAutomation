@@ -31,6 +31,10 @@
 - diese Platine wurde bei JLCPCB gefertigt und wurde erfolgreich validiert
 - die Validierungsergebnisse sind [hier](./Prototype_Validation) zu finden
 
+## Messergebnisse von 868 MHz Antennen mit einem Vector Network Analyzer
+- sind [hier](../../antennas) zu finden
+- die für die Validierung verwendete Antenne von Technikkram hat ein schlechtes VSWR. Dies erklärt die Validierungsergebnisse.
+
 
 ## Ersatz für das eByte E07 868MS10 Modul mit zusätzlicher U.FL Antennenbuchse
 
