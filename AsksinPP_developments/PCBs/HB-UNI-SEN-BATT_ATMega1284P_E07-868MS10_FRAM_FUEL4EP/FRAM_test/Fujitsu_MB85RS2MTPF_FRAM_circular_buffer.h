@@ -43,7 +43,8 @@
 #include <SPI.h>
 #include <Adafruit_FRAM_SPI.h>
 
-const uint8_t  FRAMS_INITIALIZED = 0xFF;
+const uint8_t  FRAMS_INITIALIZED   = 0xFF;    //   FRAMS_INITIALIZED = 0xFF       FRAM is initialized
+const uint8_t  FRAMS_UNINITIALIZED = 0x00;    //   FRAMS_INITIALIZED = 0x00       FRAM is not (yet) initialized
 
 //#include <AskSinPP.h>
 
@@ -70,7 +71,7 @@ const uint16_t  FUJITSU_MB85RS2MT_prodID    = 0x2803; // see datasheet MB85RS2MT
 const uint8_t   FUJITSU_MB85RS2MT_manufID   = 0x04;   // see datasheet MB85RS2MT, page 10
 const uint32_t  FUJITSU_MB85RS2MT_fram_size = 0x40000;   // 2MBit = 262 144 Bytes
 const uint32_t  MAX_FRAM_BANK_ADDRESS       = FUJITSU_MB85RS2MT_fram_size * 2;   // 2 x 2MBit FRAMs: 0x7FFFF
-const uint32_t  SPI_FREQ                    = (uint32_t)4000000;   // SPI freq is limited to half of CPU frequency
+const uint32_t  SPI_FREQ                    = (uint32_t)2000000;   // SPI freq is limited to half of CPU frequency
 
 /** Additional Operation Codes **/
 typedef enum opcodes_e {
@@ -87,7 +88,7 @@ Adafruit_FRAM_SPI fram_2 = Adafruit_FRAM_SPI(FRAM_CS2_PIN, &SPI, SPI_FREQ);  // 
 
 Adafruit_FRAM_SPI *select_FRAM (uint32_t address) {
 
-  uint8_t  FRAM_select_index   = address  / FUJITSU_MB85RS2MT_fram_size;
+  uint8_t  FRAM_select_index   = (uint8_t)(address  / FUJITSU_MB85RS2MT_fram_size);
 
   switch (FRAM_select_index) {
     case 0:
@@ -103,9 +104,13 @@ Adafruit_FRAM_SPI *select_FRAM (uint32_t address) {
       return &fram_2;
       break;
     default:
-      DPRINT(F("error: FRAM address is out of hardware bounds: 0x"));
-      DHEX(address);
+      DPRINT(F("ERROR: FRAM address is out of hardware bounds: 0x"));
+      DHEXLN(address);
       DPRINTLN(F(" .. please check your software !"));
+      DPRINT(F("ERROR: uninitialized FRAM_select_index is: 0x"));
+      DHEXLN(FRAM_select_index);
+      DPRINT(F("ERROR: FUJITSU_MB85RS2MT_fram_size is: 0x"));
+      DHEXLN(FUJITSU_MB85RS2MT_fram_size);
       return NULL;
       break;
   }
@@ -168,11 +173,11 @@ bool check_FRAM(Adafruit_FRAM_SPI &fram, const String& index_str){
     DPRINTLN(F("The first three data bytes of the FRAM are : "));
 
     DHEX(fram.read8(0x0));
-    DPRINTLN(F(" "));
+    DPRINTLN(F(""));
     DHEX(fram.read8(0x1));
-    DPRINTLN(F(" "));
+    DPRINTLN(F(""));
     DHEX(fram.read8(0x2));
-    DPRINTLN(F(" "));
+    DPRINTLN(F(""));
 
     return true;
   } else {
@@ -233,6 +238,9 @@ uint8_t FRAM_read8(uint32_t addr) {
     DPRINT(F("FRAM address is "));
     DHEX(address_of_selected_FRAM);
     DPRINTLN(F(""));
+    DPRINT(F("selected_FRAM_ptr is "));
+    DHEX((uint32_t)selected_FRAM_ptr);
+    DPRINTLN(F(""));
   #endif
 
   if (selected_FRAM_ptr != NULL) {
@@ -244,7 +252,7 @@ uint8_t FRAM_read8(uint32_t addr) {
     return selected_FRAM_ptr->read8(address_of_selected_FRAM);
   }
   else {
-    DPRINTLN(F("Error: reading dummy value!"));
+    DPRINTLN(F("ERROR: reading dummy value!"));
     return 0xFF; // dummy value
   }  
 }
@@ -299,7 +307,7 @@ uint16_t FRAM_read16(uint32_t addr) {
       #endif
       bool success = selected_FRAM_ptr->read(address_of_selected_FRAM,(uint8_t*)(&read_value),2);
       if ( !success ) {
-        DPRINTLN(F("Error: reading dummy value!"));
+        DPRINTLN(F("ERROR: reading dummy value!"));
         return 0xFFFF; // dummy value
       }
       #ifdef DEEP_DEBUG
@@ -309,7 +317,7 @@ uint16_t FRAM_read16(uint32_t addr) {
       return read_value;
     }
     else {
-      DPRINTLN(F("Error: reading dummy value!"));
+      DPRINTLN(F("ERROR: reading dummy value!"));
       return 0xFFFF; // dummy value
     }
   }
@@ -425,7 +433,7 @@ bool FRAM_read(uint32_t addr,  uint8_t *values, size_t count) {
       }
       else {
         fill_block_with_dummy_values(values, count, 0xFF);
-        DPRINTLN(F("Error occured when reading block!"));
+        DPRINTLN(F("ERROR occured when reading block!"));
       }
     #endif
     return success1 && success2;
@@ -455,14 +463,14 @@ bool FRAM_read(uint32_t addr,  uint8_t *values, size_t count) {
         }
         else {
           fill_block_with_dummy_values(values, count, 0xFF);
-          DPRINTLN(F("Error occured when reading block!"));
+          DPRINTLN(F("ERROR occured when reading block!"));
         }
       #endif
       return success1;
     }
     else {
       fill_block_with_dummy_values(values, count, 0xFF);
-      DPRINTLN(F("Error occured when reading block!"));
+      DPRINTLN(F("ERROR occured when reading block!"));
       return false;
     }
   }
@@ -545,7 +553,7 @@ bool FRAM_write8(uint32_t addr, uint8_t value) {
     return selected_FRAM_ptr->write8(address_of_selected_FRAM, value);
   }
   else {
-    DPRINTLN(F("Error writing a byte to FRAM"));
+    DPRINTLN(F("ERROR writing a byte to FRAM"));
     return false;
   }
 }
@@ -625,7 +633,7 @@ bool FRAM_write16(uint32_t addr, uint16_t value) {
       return success;
     }
     else {
-      DPRINTLN(F("Error writing two bytes to FRAM!"));
+      DPRINTLN(F("ERROR writing two bytes to FRAM!"));
       return false;
     }
   }
@@ -716,7 +724,7 @@ bool FRAM_write(uint32_t addr,  uint8_t *values, size_t count) {
     }
     #ifdef DEEP_DEBUG
       if (!success1 || !success2 ) {
-        DPRINTLN(F("Error occured when writing a splitted block!"));
+        DPRINTLN(F("ERROR occured when writing a splitted block!"));
       }
     #endif
     return success1 && success2;
@@ -743,13 +751,13 @@ bool FRAM_write(uint32_t addr,  uint8_t *values, size_t count) {
       bool success1 = selected_FRAM_ptr->write(address_of_selected_FRAM,values,count);
       #ifdef DEEP_DEBUG
         if (!success1 ){
-          DPRINTLN(F("Error occured when writing a block!"));
+          DPRINTLN(F("ERROR occured when writing a block!"));
         }
       #endif
       return success1;
     }
     else {
-      DPRINTLN(F("Error occured when writing block!"));
+      DPRINTLN(F("ERROR occured when writing block!"));
       return false;
     }
   }
@@ -786,11 +794,11 @@ bool FRAM_flush(uint8_t value)
     success &= fram_2.write(address,buf,32);  // flush upper FRAM block
   }
   DPRINTLN(F(""));
-  DPRINTLN(F("Both FRAMs were flushed"));
+  DPRINTLN(F("both FRAMs were flushed"));
   DPRINTLN(F(""));
   #ifdef DEEP_DEBUG
     if (!success ){
-      DPRINTLN(F("Error occured when flushing FRAMs!"));
+      DPRINTLN(F("ERROR occured when flushing FRAMs!"));
     }
     else
     {
@@ -802,8 +810,8 @@ bool FRAM_flush(uint8_t value)
 }
 
 
-// flush a region of the FRAM bank with a value
-bool FRAM_region_flush(uint8_t value, uint32_t start_address,uint32_t end_address)
+// flush a region of the FRAM bank with an uint8_t value
+bool FRAM_region_flush8(uint8_t value, uint32_t start_address,uint32_t end_address)
 {
 
   const uint32_t blockSize = 256;
@@ -870,15 +878,15 @@ bool FRAM_region_flush(uint8_t value, uint32_t start_address,uint32_t end_addres
 
   }
   DPRINTLN(F(""));
-  DPRINTLN(F("Region of FRAM bank has been flushed"));
+  DPRINTLN(F("region of FRAM bank has been flushed"));
   DPRINTLN(F(""));
   #ifdef DEEP_DEBUG
     if (!success ){
-      DPRINTLN(F("Error occured when flushing region of FRAMs!"));
+      DPRINTLN(F("ERROR occured when flushing region of FRAMs!"));
     }
     else
     {
-      DPRINTLN(F("Region of FRAM bank was flushed successfully"));
+      DPRINTLN(F("region of FRAM bank was flushed successfully"));
     }
   #endif
 
@@ -887,7 +895,88 @@ bool FRAM_region_flush(uint8_t value, uint32_t start_address,uint32_t end_addres
 
 
 
+// flush a region of the FRAM bank with an uint16_t value
+bool FRAM_region_flush16(uint16_t value, uint32_t start_address,uint32_t end_address)
+{
 
+  const uint32_t blockSize = 256;
+  uint32_t current_address = start_address;
+
+  #ifdef DEEP_DEBUG
+    DPRINTLN(F(""));
+    DPRINTLN(F(".. flushing a region of the FRAMs .."));
+    DPRINTLN(F(""));
+    DPRINT(F("start address of region : 0x"));
+    DHEX(start_address);
+    DPRINTLN(F(""));
+    DPRINT(F("end address of region   : 0x"));
+    DHEX(end_address);
+    DPRINTLN(F(""));
+    DPRINT(F("flushing with value     : 0x"));
+    DHEX(value);
+    DPRINTLN(F(""));
+  #endif
+
+  bool success = true;
+
+  // check address range
+  if (( end_address < start_address ) || ( start_address > MAX_FRAM_BANK_ADDRESS - 1 ) || ( end_address > MAX_FRAM_BANK_ADDRESS - 1 )){
+    DPRINTLN(F(""));
+    DPRINTLN(F("ERROR: wrong address range of region flush :"));
+    DPRINTLN(F(""));
+    DPRINT(F("start address of region : 0x"));
+    DHEX(start_address);
+    DPRINTLN(F(""));
+    DPRINT(F("end address of region : 0x"));
+    DHEX(end_address);
+    DPRINTLN(F(""));
+    success = false;
+  }
+
+  // fill buffer with value
+  uint16_t buf[blockSize];
+  for (uint16_t i = 0; i < blockSize; i++) buf[i] = value;
+
+  while (success && (current_address < end_address)) {
+    // Calculate the remaining bytes to erase
+    uint32_t remainingBytes = end_address - current_address;
+
+    // Determine the size of the block to erase
+    size_t blockSizeToErase = min(blockSize*2, remainingBytes);
+
+     #ifdef DEEP_DEBUG
+      DPRINTLN(F(""));
+      DPRINT(F("flushing block size : 0x"));
+      DHEX(blockSizeToErase);
+      DPRINTLN(F(""));
+      DPRINT(F("current address     : 0x"));
+      DHEX(current_address);
+      DPRINTLN(F(""));
+      DPRINT(F("remaining bytes     : 0x"));
+      DHEX(remainingBytes);
+    #endif
+
+    success =  FRAM_write(current_address,  (uint8_t*)(&buf), blockSizeToErase);
+
+    // Move to the next block
+    current_address += (uint32_t)blockSizeToErase;
+
+  }
+  DPRINTLN(F(""));
+  DPRINTLN(F("region of FRAM bank has been flushed"));
+  DPRINTLN(F(""));
+  #ifdef DEEP_DEBUG
+    if (!success ){
+      DPRINTLN(F("ERROR occured when flushing region of FRAMs!"));
+    }
+    else
+    {
+      DPRINTLN(F("region of FRAM bank was flushed successfully"));
+    }
+  #endif
+
+  return success;
+}
 
 
 
@@ -927,31 +1016,43 @@ bool FRAM_normal_mode() {
 
 
 // get first byte of FRAM bank which is indicating the cold_start status
-uint8_t get_cold_start_flag(void) {
-  uint8_t cold_start_flag;
+uint8_t get_FRAM_start_status_flag(void) {
+  uint8_t start_status_flag;
 
-  DPRINTLN(F("Reading cold start flag of FRAM bank @ addr 0x0000 .."));
+  DPRINTLN(F("reading start status flag of FRAM bank @ addr 0x00000 .."));
 
-  // set cold_start_flag of FRAM bank
-  cold_start_flag = FRAM_read8(0x0000);  // read first byte of FRAM bank which is indicating the cold_start status
+  // set start_status_flag of FRAM bank
+  start_status_flag = FRAM_read8(0x00000);  // read first byte of FRAM bank which is indicating the cold_start status
 
-
-  DPRINT(F("The cold_start_flag of the FRAM bank is :"));
-  DHEX(cold_start_flag);
+  DPRINTLN(F(""));
+  DPRINT(F("the start_status_flag of the FRAM bank is : "));
+  DHEXLN(start_status_flag);
   DPRINTLN(F(""));
 
-  return cold_start_flag;
+  return start_status_flag;
 }
 
 // set first byte of FRAM bank which is indicating the cold_start status
-bool set_cold_start_flag(void) {
-  bool status = false;
+bool set_FRAM_start_status_flag(uint8_t FRAM_status_flag) {
+  bool    status = false;
+  uint8_t start_status_flag;
 
-  DPRINTLN(F("Setting cold start flag of FRAM bank @ addr 0x0000 .."));
+  DPRINT(F("setting start status flag of FRAM bank @ addr 0x00000 to : "));
+  DHEXLN(FRAM_status_flag);
 
-  // set cold_start_flag of FRAM bank
-  status = FRAM_write8(0x0000, FRAMS_INITIALIZED);  // write first byte of FRAM bank which is indicating the cold_start status
+  status = FRAM_writeEnable(false);
 
+  if(status) {
+    // set start_status_flag of FRAM bank
+    status = FRAM_write8(0x00000, FRAM_status_flag);  // write first byte of FRAM bank which is indicating the start status status
+  }
+  if(status) {
+    // confirm start_status_flag of FRAM bank by a read back
+    start_status_flag = FRAM_read8(0x00000);  // read back first byte of FRAM bank which is indicating the start status status
+    DPRINT(F("the read back start_status_flag of the FRAM bank is : "));
+    DHEX(start_status_flag);
+    DPRINTLN(F(""));
+  }
   return status;
 }
 
@@ -962,64 +1063,72 @@ bool cold_boot(void) {
   bool status = false;
 
   DPRINTLN(F(""));
-  DPRINTLN(F("Executing now a cold start of FRAM bank .."));
+  DPRINTLN(F("executing now a cold start of FRAM bank .."));
   DPRINTLN(F(""));
-  DPRINTLN(F("This will take quite a while .."));
+  DPRINTLN(F("this will take quite a while .."));
   DPRINTLN(F(""));
   DPRINTLN(F(""));
   
-  status = init_FRAMs(0x0000);
+  status = init_FRAMs(0x00000);
 
   if ( status ) {
     status = FRAM_writeEnable(true);
+
+    if ( status ) {
+      status = FRAM_flush(0x00);
+    }
+
+    // set start_status_flag of FRAM bank
+    DPRINTLN(F("Setting now the cold start flag of FRAM bank .."));
+    if ( status ) {
+      status = set_FRAM_start_status_flag(FRAMS_UNINITIALIZED);
+    }
+
+    if ( status ) {
+      status = FRAM_writeEnable(false);
+    }
+  }
+  else {
+    DPRINTLN(F("ERROR: init_FRAMs failed !"));
   }
 
-  if ( status ) {
-    status = FRAM_flush(0x00);
-  }
-
-  if ( status ) {
-    status = FRAM_writeEnable(false);
-  }
-
-  // set cold_start_flag of FRAM bank
-  DPRINTLN(F("Setting now the cold start flag of FRAM bank .."));
-  if ( status ) {
-    status = FRAM_write8(0x0000, FRAMS_INITIALIZED);  // write first byte of FRAM bank which is indicating the cold_start status
-  }
-
-  DPRINTLN(F("Cold start of FRAM bank is done"));
+  DPRINTLN(F("cold start of FRAM bank is done"));
   DPRINTLN(F(""));
 
   return status;
 }
 
 
-// warm_boot shall be executed at a battery change or other reasons for a power suuply interruption
+// warm_boot shall be executed at a battery change or other reasons for a power supply interruption
 
 bool warm_boot(void) {
   bool status = false;
   
   DPRINTLN(F(""));
-  DPRINTLN(F("Executing now a warm start of FRAM bank .."));
+  DPRINTLN(F("executing now a warm start of FRAM bank .."));
   DPRINTLN(F(""));
   DPRINTLN(F(""));
   
-  uint8_t cold_start_flag;
+  uint8_t start_status_flag;
 
-  status = init_FRAMs(0x0000);
+  status = init_FRAMs(0x00000);
 
   if ( status ) {
-    cold_start_flag = get_cold_start_flag();
+    start_status_flag = get_FRAM_start_status_flag();
 
-    DPRINT(F("The cold_start_flag of the FRAM bank is :"));
-    DHEX(cold_start_flag);
+    DPRINT(F("the start_status_flag of the FRAM bank is : "));
+    DHEX(start_status_flag);
     DPRINTLN(F(""));
 
-    if ( cold_start_flag != FRAMS_INITIALIZED ) {
-      DPRINTLN(F("WARNING: The cold_start_flag of the FRAM bank is not set !"));
+    if ( start_status_flag != FRAMS_INITIALIZED ) {
+      DPRINTLN(F("ERROR: The FRAM bank is not yet initialized !"));
       DPRINTLN(F(""));
       status = false;
+    }
+    else
+    {
+      DPRINTLN(F("INFO: The FRAM bank is initialized !"));
+      DPRINTLN(F(""));
     }
 
   }
