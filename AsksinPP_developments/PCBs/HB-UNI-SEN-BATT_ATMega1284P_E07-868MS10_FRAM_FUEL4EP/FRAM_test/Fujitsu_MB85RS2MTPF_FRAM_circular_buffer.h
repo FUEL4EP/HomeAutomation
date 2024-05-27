@@ -43,8 +43,9 @@
 #include <SPI.h>
 #include <Adafruit_FRAM_SPI.h>
 
-const uint8_t  FRAMS_INITIALIZED   = 0xFF;    //   FRAMS_INITIALIZED = 0xFF       FRAM is initialized
-const uint8_t  FRAMS_UNINITIALIZED = 0x00;    //   FRAMS_INITIALIZED = 0x00       FRAM is not (yet) initialized
+const uint8_t  FRAMS_INITIALIZED   = 0xFF;         //   FRAMS_INITIALIZED = 0xFF       FRAM is initialized
+const uint8_t  FRAMS_UNINITIALIZED = 0x00;         //   FRAMS_INITIALIZED = 0x00       FRAM is not (yet) initialized
+const uint8_t  FRAM_UNPROTECT      = 0b10000010;   //   FRAM status register setting for unprotecting access: WPEN=1, BP1=0, BP0=0, WEL=1
 
 //#include <AskSinPP.h>
 
@@ -67,11 +68,11 @@ const uint8_t FRAM_MISO = 6;
 const uint8_t FRAM_MOSI = 5;
 
 // please adapt these FRAM IDs assignments to your hardware if you do not use the PCB HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP
-const uint16_t  FUJITSU_MB85RS2MT_prodID    = 0x2803; // see datasheet MB85RS2MT, page 10
-const uint8_t   FUJITSU_MB85RS2MT_manufID   = 0x04;   // see datasheet MB85RS2MT, page 10
+const uint16_t  FUJITSU_MB85RS2MT_prodID    = 0x2803;                            // see datasheet MB85RS2MT, page 10
+const uint8_t   FUJITSU_MB85RS2MT_manufID   = 0x04;                              // see datasheet MB85RS2MT, page 10
 const uint32_t  FUJITSU_MB85RS2MT_fram_size = 0x40000;   // 2MBit = 262 144 Bytes
-const uint32_t  MAX_FRAM_BANK_ADDRESS       = FUJITSU_MB85RS2MT_fram_size * 2;   // 2 x 2MBit FRAMs: 0x7FFFF
-const uint32_t  SPI_FREQ                    = (uint32_t)2000000;   // SPI freq is limited to half of CPU frequency
+const uint32_t  MAX_FRAM_BANK_ADDRESS       = FUJITSU_MB85RS2MT_fram_size * 2;   // 2 x 2MBit FRAMs: 0x00000 .. 0x7FFFF
+const uint32_t  SPI_FREQ                    = (uint32_t)4000000;                 // SPI freq is limited to half of CPU frequency
 
 /** Additional Operation Codes **/
 typedef enum opcodes_e {
@@ -101,6 +102,30 @@ Adafruit_FRAM_SPI *select_FRAM (uint32_t address) {
       #ifdef DEEP_DEBUG
         DPRINTLN(F(".. selecting second FRAM"));
       #endif
+      return &fram_2;
+      break;
+    default:
+      DPRINT(F("ERROR: FRAM address is out of hardware bounds: 0x"));
+      DHEXLN(address);
+      DPRINTLN(F(" .. please check your software !"));
+      DPRINT(F("ERROR: uninitialized FRAM_select_index is: 0x"));
+      DHEXLN(FRAM_select_index);
+      DPRINT(F("ERROR: FUJITSU_MB85RS2MT_fram_size is: 0x"));
+      DHEXLN(FUJITSU_MB85RS2MT_fram_size);
+      return NULL;
+      break;
+  }
+}
+
+Adafruit_FRAM_SPI *select_FRAM_no_deep_debug (uint32_t address) {
+
+  uint8_t  FRAM_select_index   = (uint8_t)(address  / FUJITSU_MB85RS2MT_fram_size);
+
+  switch (FRAM_select_index) {
+    case 0:
+      return &fram_1;
+      break;
+    case 1:
       return &fram_2;
       break;
     default:
@@ -146,6 +171,19 @@ bool check_FRAM_IDs(uint8_t manufID, uint16_t prodID) {
   return correct_ID_flag;
 }
 
+void FRAM_read_status_register(Adafruit_FRAM_SPI &fram){
+  DPRINT(F("Status register of FRAM is 0x"));
+  uint8_t statuts_register_FRAM = fram.getStatusRegister();
+  DHEXLN(statuts_register_FRAM);
+}
+
+bool write_status_register(Adafruit_FRAM_SPI &fram, uint8_t new_status_register_value){
+   bool status;
+   fram.writeEnable(true);
+   status = fram.setStatusRegister(new_status_register_value);
+   return status;
+}
+
 bool check_FRAM(Adafruit_FRAM_SPI &fram, const String& index_str){
 
   uint8_t  manufID;
@@ -179,6 +217,11 @@ bool check_FRAM(Adafruit_FRAM_SPI &fram, const String& index_str){
     DHEX(fram.read8(0x2));
     DPRINTLN(F(""));
 
+    FRAM_read_status_register(fram);
+    DPRINTLN(F("Removing write protection is FRAM status register now .."));
+    (void)write_status_register(fram,FRAM_UNPROTECT);
+    FRAM_read_status_register(fram);
+
     return true;
   } else {
     DPRINT(F("No "));
@@ -191,10 +234,7 @@ bool check_FRAM(Adafruit_FRAM_SPI &fram, const String& index_str){
 
 public:
 
-// constructor
-FUJITSU_MB85RS2MTPF_FRAMs() {}
-
-bool init_FRAMs (uint32_t FRAM_start_address) {
+bool init_FRAMs () {
 
   bool FRAMs_found_flag=true;
 
@@ -207,12 +247,6 @@ bool init_FRAMs (uint32_t FRAM_start_address) {
 
    // check second  FRAM selected by FRAM_CS2_PIN
   if (check_FRAM(fram_2,"second") == false){
-    FRAMs_found_flag = false;
-  }
-
-  DPRINTLN(F("Checking FRAM start address .."));
-  if ( FRAM_start_address >= MAX_FRAM_BANK_ADDRESS ) {
-    DPRINTLN(F("ERROR: FRAM start address is too big !"));
     FRAMs_found_flag = false;
   }
 
@@ -410,6 +444,9 @@ bool FRAM_read(uint32_t addr,  uint8_t *values, size_t count) {
       DPRINT(F("FRAM address is "));
       DHEX(address_of_selected_FRAM);
       DPRINTLN(F(""));
+      DPRINTLN(F(""));
+      DPRINT(F("selected_FRAM_ptr is "));
+      DHEX((uint32_t)selected_FRAM_ptr);
     #endif
 
     if (selected_FRAM_ptr != NULL) {
@@ -452,6 +489,9 @@ bool FRAM_read(uint32_t addr,  uint8_t *values, size_t count) {
     #ifdef DEEP_DEBUG
       DPRINT(F("FRAM address is "));
       DHEX(address_of_selected_FRAM);
+      DPRINTLN(F(""));
+      DPRINT(F("selected_FRAM_ptr is "));
+      DHEX((uint32_t)selected_FRAM_ptr);
       DPRINTLN(F(""));
     #endif
 
@@ -768,17 +808,28 @@ bool FRAM_write(uint32_t addr,  uint8_t *values, size_t count) {
 bool FRAM_flush(uint8_t value)
 {
 
+  const uint8_t BUF_SIZE=32;
+  uint8_t       buf[BUF_SIZE];
+  bool          success = true;
+  uint32_t      address;
+
+  Adafruit_FRAM_SPI* selected_FRAM_ptr;
+  
   #ifdef DEEP_DEBUG
     DPRINTLN(F(""));
     DPRINTLN(F(".. flushing the FRAMs .."));
     DPRINTLN(F(""));
+    DPRINT(F(".. flushing values is 0x"));
+    DHEXLN(value);
   #endif
-  bool success = true;
-
-  uint8_t buf[32];
-  for (uint8_t i = 0; i < 32; i++) buf[i] = value;
   
-  for (uint32_t address = 0; address < FUJITSU_MB85RS2MT_fram_size; address += 32)
+  for (uint8_t i = 0; i < BUF_SIZE; i++) {
+    buf[i] = value;
+    //DHEXLN(buf[i]);
+  }
+
+
+  for (address = 0; address < MAX_FRAM_BANK_ADDRESS; address += BUF_SIZE)
   {
     if ((address % 8192) == 0) {
       DPRINTLN(F(""));
@@ -787,12 +838,14 @@ bool FRAM_flush(uint8_t value)
       DPRINT(F("."));
     }
 
-    
-    fram_1.writeEnable(true);
-    success &= fram_1.write(address,buf,32);  // flush lower FRAM block
-    fram_2.writeEnable(true);
-    success &= fram_2.write(address,buf,32);  // flush upper FRAM block
+    selected_FRAM_ptr = select_FRAM_no_deep_debug(address);
+    selected_FRAM_ptr->writeEnable(true);
+    uint32_t address_of_selected_FRAM = FRAM_address(address);
+    success &= selected_FRAM_ptr->write(address_of_selected_FRAM,buf,BUF_SIZE);  // flush one block of selected FRAM
   }
+  DPRINTLN(F(""));
+  DPRINT(F("final flushed address + 1 : 0x"));
+  DHEXLN(address);
   DPRINTLN(F(""));
   DPRINTLN(F("both FRAMs were flushed"));
   DPRINTLN(F(""));
@@ -807,6 +860,28 @@ bool FRAM_flush(uint8_t value)
   #endif
   
   return success;
+}
+
+void dump_begin_and_end_of_FRAMs() {
+
+  const uint8_t BUF_SIZE = 32;
+  uint8_t       buffer[BUF_SIZE];
+  bool          status = true;
+
+  DPRINTLN(F(".. dumping data block os FRAMs now .."));
+  DPRINTLN(F("first BUF_SIZE bytes of first FRAM"));
+  status &= FRAM_read(0x00000,                                  buffer, BUF_SIZE);   //first BUF_SIZE bytes of first FRAM
+  DPRINTLN(F("last BUF_SIZE bytes of first FRAM"));
+  status &= FRAM_read(FUJITSU_MB85RS2MT_fram_size   - BUF_SIZE, buffer, BUF_SIZE);   //last  BUF_SIZE bytes of first FRAM
+  DPRINTLN(F("first BUF_SIZE bytes of second FRAM"));
+  status &= FRAM_read(FUJITSU_MB85RS2MT_fram_size,              buffer, BUF_SIZE);   //first BUF_SIZE bytes of second FRAM
+  DPRINTLN(F("last BUF_SIZE bytes of second FRAM"));
+  status &= FRAM_read(2*FUJITSU_MB85RS2MT_fram_size - BUF_SIZE, buffer, BUF_SIZE);   //last  BUF_SIZE bytes of second FRAM
+  #ifdef DEEP_DEBUG
+  if (!status ){
+    DPRINTLN(F("ERROR occured during dump_begin_and_end_of_FRAMs !"));
+  }
+  #endif
 }
 
 
@@ -1015,6 +1090,103 @@ bool FRAM_normal_mode() {
 
 
 
+// cold_boot shall be executed at a factory reset
+
+bool cold_boot(void) {
+  bool status = false;
+
+  DPRINTLN(F(""));
+  DPRINTLN(F("executing now a cold start of FRAM bank .."));
+  DPRINTLN(F(""));
+  DPRINTLN(F("this will take quite a while .."));
+  DPRINTLN(F(""));
+  DPRINTLN(F(""));
+
+  status = init_FRAMs();
+
+  if ( status ) {
+    status = FRAM_writeEnable(true);
+
+    if ( status ) {
+      status = FRAM_flush(0x00);
+    }
+
+    // set start_status_flag of FRAM bank
+    DPRINTLN(F("Setting now the cold start flag of FRAM bank .."));
+    if ( status ) {
+      status = set_FRAM_start_status_flag(FRAMS_UNINITIALIZED);
+    }
+
+    if ( status ) {
+      // save compilation date time string to FRAM @ address 0x00001
+      status = save_compilation_date_time_string_to_FRAM(0x00001);
+      if ( status ) {
+        status = FRAM_writeEnable(false);
+      }
+    }
+  }
+
+
+  if (!status) {
+    DPRINTLN(F("ERROR: init_FRAMs failed !"));
+  }
+  else {
+    DPRINTLN(F("cold start of FRAM bank is done"));
+    DPRINTLN(F(""));
+  }
+
+  return status;
+}
+
+
+// warm_boot shall be executed at a battery change or other reasons for a power supply interruption
+
+bool warm_boot(void) {
+  bool status = false;
+
+  DPRINTLN(F(""));
+  DPRINTLN(F("executing now a warm start of FRAM bank .."));
+  DPRINTLN(F(""));
+  DPRINTLN(F(""));
+
+  uint8_t start_status_flag;
+
+  status = init_FRAMs();
+
+  if ( status ) {
+    start_status_flag = get_FRAM_start_status_flag();
+
+    DPRINT(F("the start_status_flag of the FRAM bank is : "));
+    DHEX(start_status_flag);
+    DPRINTLN(F(""));
+
+    if ( start_status_flag != FRAMS_INITIALIZED ) {
+      DPRINTLN(F("ERROR: The FRAM bank is not yet initialized !"));
+      DPRINTLN(F(""));
+      status = false;
+    }
+    else
+    {
+      DPRINTLN(F("INFO: The FRAM bank is initialized !"));
+      DPRINTLN(F(""));
+    }
+    // read compilation date time string from FRAM at address 0x00001
+    status = read_compilation_date_time_string_from_FRAM(0x00001);
+
+  }
+
+  return status;
+}
+
+public:
+
+FUJITSU_MB85RS2MTPF_FRAMs() {
+  // default constructor
+   DPRINTLN(F("executiing default constructor of class FUJITSU_MB85RS2MTPF_FRAMs"));
+}
+
+
+
 // get first byte of FRAM bank which is indicating the cold_start status
 uint8_t get_FRAM_start_status_flag(void) {
   uint8_t start_status_flag;
@@ -1057,84 +1229,55 @@ bool set_FRAM_start_status_flag(uint8_t FRAM_status_flag) {
 }
 
 
-// cold_boot shall be executed at a factory reset
 
-bool cold_boot(void) {
+
+// save compilation date time string to FRAM
+bool save_compilation_date_time_string_to_FRAM(uint32_t address) {
   bool status = false;
 
-  DPRINTLN(F(""));
-  DPRINTLN(F("executing now a cold start of FRAM bank .."));
-  DPRINTLN(F(""));
-  DPRINTLN(F("this will take quite a while .."));
-  DPRINTLN(F(""));
-  DPRINTLN(F(""));
-  
-  status = init_FRAMs(0x00000);
 
-  if ( status ) {
-    status = FRAM_writeEnable(true);
+  DPRINT(F("saving compilation date time string to FRAM bank @ address 0x"));
+  DHEXLN(address);
 
-    if ( status ) {
-      status = FRAM_flush(0x00);
-    }
+  char compilation_date_time[21];
 
-    // set start_status_flag of FRAM bank
-    DPRINTLN(F("Setting now the cold start flag of FRAM bank .."));
-    if ( status ) {
-      status = set_FRAM_start_status_flag(FRAMS_UNINITIALIZED);
-    }
+  strcpy(compilation_date_time, __DATE__ " " __TIME__);  // example of compilation_date_time string: 'May 20 2024 13:08:22'
+  DPRINT(F("compilation was done at ")); DPRINTLN(compilation_date_time);
 
-    if ( status ) {
-      status = FRAM_writeEnable(false);
-    }
+  status = FRAM_writeEnable(false);
+
+  if(status) {
+    // save compilation date time string to FRAM at address
+    status = FRAM_write(address,  (uint8_t*)compilation_date_time, sizeof(compilation_date_time));  // save compilation date time string to FRAM at address
+  }
+  if (!status) {
+    DPRINT(F("ERROR: saving compilation date time string to FRAM bank failed !"));
+  }
+
+  return status;
+}
+
+// read compilation date time string from FRAM
+bool read_compilation_date_time_string_from_FRAM(uint32_t address) {
+  bool status;
+  char compilation_date_time[21]; // example of compilation_date_time string: 'May 20 2024 13:08:22'
+
+  DPRINT(F("reading compilation date time string from FRAM bank @ address 0x"));
+  DHEXLN(address);
+
+  // read compilation date time string to FRAM at address 0x00001
+  status = FRAM_read(address,  (uint8_t*)compilation_date_time, sizeof(compilation_date_time));  // read compilation date time string to FRAM at address
+
+  if (!status) {
+    DPRINT(F("ERROR: reading compilation date time string to FRAM bank failed !"));
   }
   else {
-    DPRINTLN(F("ERROR: init_FRAMs failed !"));
-  }
-
-  DPRINTLN(F("cold start of FRAM bank is done"));
-  DPRINTLN(F(""));
-
-  return status;
-}
-
-
-// warm_boot shall be executed at a battery change or other reasons for a power supply interruption
-
-bool warm_boot(void) {
-  bool status = false;
-  
-  DPRINTLN(F(""));
-  DPRINTLN(F("executing now a warm start of FRAM bank .."));
-  DPRINTLN(F(""));
-  DPRINTLN(F(""));
-  
-  uint8_t start_status_flag;
-
-  status = init_FRAMs(0x00000);
-
-  if ( status ) {
-    start_status_flag = get_FRAM_start_status_flag();
-
-    DPRINT(F("the start_status_flag of the FRAM bank is : "));
-    DHEX(start_status_flag);
-    DPRINTLN(F(""));
-
-    if ( start_status_flag != FRAMS_INITIALIZED ) {
-      DPRINTLN(F("ERROR: The FRAM bank is not yet initialized !"));
-      DPRINTLN(F(""));
-      status = false;
-    }
-    else
-    {
-      DPRINTLN(F("INFO: The FRAM bank is initialized !"));
-      DPRINTLN(F(""));
-    }
-
+    DPRINT(F("FRAM compilation date string ")); DPRINTLN(compilation_date_time);
   }
 
   return status;
 }
+
 
 };
 

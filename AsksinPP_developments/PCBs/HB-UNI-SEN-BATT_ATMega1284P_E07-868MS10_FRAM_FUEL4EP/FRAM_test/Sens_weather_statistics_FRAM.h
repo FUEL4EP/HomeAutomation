@@ -82,6 +82,9 @@ template<typename T, typename P> class  weather_statistics {
 
   public:
     weather_statistics(FUJITSU_MB85RS2MTPF_FRAMs* frams, uint32_t start_address, uint8_t cb_index, int CIRCULAR_BUFFER_SIZE, char IDENT_CHAR) {
+      if (start_address < 22) {
+        DPRINT(F("ERROR: start address of object weather_statistics is too small ! Required is >= 22 !"));
+      }
       nvm.initialized_flag                   = false;
       nvm.ident_char                         = IDENT_CHAR;
       nvm.BUFSIZE                            = CIRCULAR_BUFFER_SIZE;
@@ -129,6 +132,12 @@ template<typename T, typename P> class  weather_statistics {
         success = ( FRAM_struct.ident_char == RAM_struct.ident_char );
         status_error_message_1(success, "identifier character" );
         DPRINTLN(FRAM_struct.ident_char);
+      }
+      // check correct circular buffer index of struct FRAM_struct
+      if (success) {
+        success = ( FRAM_struct.circular_buffer_index == RAM_struct.circular_buffer_index );
+        status_error_message_1(success, "circular_buffer_index of circular buffer" );
+        DDECLN(FRAM_struct.circular_buffer_index);
       }
       // check correct dimension nof circular buffer in struct FRAM_struct
       if (success) {
@@ -331,9 +340,9 @@ template<typename T, typename P> class  weather_statistics {
 
         DPRINT(F("size of struct nvm_weather_statistics_parameters is : "));
         DDECLN(sizeof(nvm_weather_statistics_parameters));
-        DPRINT(F("last used address of class  weather_statistics in FRAM is : "));
+        DPRINT(F("last used address of class  weather_statistics in FRAM is : 0x"));
         last_used_address = nvm.end_DPs_address - 1;
-        DDECLN(last_used_address);
+        DHEXLN(last_used_address);
       }
       else {
         // warm start:  ( nvm.frams->get_FRAM_start_status_flag() == FRAMS_INITIALIZED )
@@ -348,7 +357,7 @@ template<typename T, typename P> class  weather_statistics {
         // check correct setting of nvm.initialized_flag
         if (!nvm.initialized_flag) {
           DPRINTLN(F("ERROR: struct nvm_weather_statistics_parameters is not initalized !"));
-          nvm.frams->set_FRAM_start_status_flag(FRAMS_UNINITIALIZED);     // initialization of at least one data base failed! resetting FRAM initialization flag
+          //nvm.frams->set_FRAM_start_status_flag(FRAMS_UNINITIALIZED);     // initialization of at least one data base failed! resetting FRAM initialization flag
           success = false;
         }
 
@@ -438,6 +447,9 @@ template<typename T, typename P> class  weather_statistics {
       uint8_t FRAM_bank_start_status_flag;
       FRAM_bank_start_status_flag = nvm.frams->get_FRAM_start_status_flag();
       DPRINT(F(""));
+      DPRINT(F("FRAM_bank_start_status_flag                                             : "));
+      DDECLN(FRAM_bank_start_status_flag);
+      DPRINT(F(""));
       DPRINT(F("struct nvm_weather_statistics_parameters.initialized_flag               : "));
       DDECLN(nvm.initialized_flag);
       DPRINT(F(""));
@@ -458,25 +470,6 @@ template<typename T, typename P> class  weather_statistics {
     double get_moving_average ( void ) {
        return nvm.mov_av_params.current_value;
     }
-
-    // set first byte of FRAM bank which is indicating the cold_start status
-    bool set_FRAM_start_status_flag_from_outside(uint8_t FRAM_status_flag) {
-      bool status;
-
-      status = nvm.frams->set_FRAM_start_status_flag(FRAM_status_flag);
-
-      return status;
-    }
-
-    // get first byte of FRAM bank which is indicating the cold_start status
-    uint8_t get_FRAM_start_status_flag_from_outside() {
-      uint8_t status;
-
-      status = nvm.frams->get_FRAM_start_status_flag();
-
-      return status;
-    }
-    
 };
   
 }
