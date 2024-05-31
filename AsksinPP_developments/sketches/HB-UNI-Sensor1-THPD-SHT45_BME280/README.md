@@ -199,6 +199,8 @@ Globale Variablen verwenden 8109 Bytes (49%) des dynamischen Speichers, 8275 Byt
 ## Betriebsdauer mit einem neuen Batteriesatz
 
 - noch nicht verfügbar, meine Schätzung ist ca. 6 Monate mit einem 2/3 AA-Mignon-NiMH Akkumulator mit 750mA Kapazität. Diese passt von der Größe zur Platine 'HB_Stamp_ATMega1284P_FUEL4EP'.
+- aktuelle Entladekurve eines 2/3 AA-Mignon-NiMH Akkumulators mit 750mA Kapazität:
+![pic](Images/accu_discharge_curve.png)
 - da der Batteriehalter nicht in die Platine integriert ist, sind auch andere Batteriegrößen möglich, z.B. eine AAA-Batterie oder eine AA-Batterie
 
 ## notwendige Anpassungen bei Verwendung der Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_FUEL4EP)
