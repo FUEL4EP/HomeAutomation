@@ -38,7 +38,7 @@
 
 
 
-#define DEEP_DEBUG // comment out if deep serial monitor debugging is not necessary
+//#define DEEP_DEBUG // comment out if deep serial monitor debugging is not necessary
 
 #include <SPI.h>
 #include <Adafruit_FRAM_SPI.h>
@@ -49,7 +49,9 @@ const uint8_t  FRAM_UNPROTECT      = 0b10000010;   //   FRAM status register set
 
 //#include <AskSinPP.h>
 
-
+#ifndef FLUSH_INDICATION_LED_PIN                  // Arduino LED pin to indicate an ongoing FRAM flushing by blinking
+#define FLUSH_INDICATION_LED_PIN 12
+#endif
 
 
 namespace as {
@@ -239,6 +241,10 @@ bool init_FRAMs () {
   bool FRAMs_found_flag=true;
 
   DPRINTLN(F("Initializing and checking FRAMs .."));
+
+  DPRINTLN(F("Setting FRAM flush indicator LED pin 'FLUSH_INDICATION_LED_PIN' as OUTPUT .."));
+  pinMode(FLUSH_INDICATION_LED_PIN, OUTPUT);
+  DPRINTLN(F("WARNING: Do not interrupt the flushing of the FRAMs indicated by a blinking LED at pin 'FLUSH_INDICATION_LED_PIN' .."));
 
   // check first FRAM selected by FRAM_CS1_PIN
   if (check_FRAM(fram_1,"first") == false){
@@ -803,6 +809,10 @@ bool FRAM_write(uint32_t addr,  uint8_t *values, size_t count) {
   }
 }
 
+void indicate_flushing_by_toggling_LED() {
+    digitalWrite(FLUSH_INDICATION_LED_PIN, !digitalRead(FLUSH_INDICATION_LED_PIN));
+}
+
 
 // flush the whole FRAM bank with a value
 bool FRAM_flush(uint8_t value)
@@ -833,9 +843,10 @@ bool FRAM_flush(uint8_t value)
   {
     if ((address % 8192) == 0) {
       DPRINTLN(F(""));
+      indicate_flushing_by_toggling_LED();
     }
-    if ((address % 128) == 0) {
-      DPRINT(F("."));
+    if ((address % 256) == 0) {
+      DPRINT(F("."));  
     }
 
     selected_FRAM_ptr = select_FRAM_no_deep_debug(address);
@@ -849,6 +860,7 @@ bool FRAM_flush(uint8_t value)
   DPRINTLN(F(""));
   DPRINTLN(F("both FRAMs were flushed"));
   DPRINTLN(F(""));
+  digitalWrite(FLUSH_INDICATION_LED_PIN, LOW);
   #ifdef DEEP_DEBUG
     if (!success ){
       DPRINTLN(F("ERROR occured when flushing FRAMs!"));
