@@ -113,7 +113,7 @@ class extract_rftypes_XML {
         println "\n.. reading '${file_name}' .."
         def inputFile = new File(file_name)
         
-        String required_match_regex = /^jQuery\.extend\(true\,langJSON\,\ \{\n\ \ \"de\"\ \:\ [\s\S]*langJSON.de.stringTableValveStateErrorPosition;[\s\S]$/
+        String required_match_regex = /^jQuery\.extend\(true\,langJSON\,\ \{\n\ \ \"de\"\ \:\ [\s\S]*langJSON.de.stringTableValveStateErrorPosition;$/
 
 
         if ( !( inputFile.text ==~ required_match_regex) )
