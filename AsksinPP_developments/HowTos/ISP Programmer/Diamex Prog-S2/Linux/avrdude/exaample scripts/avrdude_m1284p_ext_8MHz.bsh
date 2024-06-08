@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+avrdude -v -pm1284p -P /dev/ttyACM0 -c stk500v2  -F -b 9600 -Ulfuse:w:0xFD:m -Uhfuse:w:0x91:m -Uefuse:w:0xFF:m  #8 MHz crystal OSC

@@ -1,0 +1,9 @@
+[Sa Jun  8 09:00:00 2024] usb 3-2: new full-speed USB device number 2 using xhci_hcd
+[Sa Jun  8 09:00:00 2024] usb 3-2: New USB device found, idVendor=16c0, idProduct=2aa9, bcdDevice=43.41
+[Sa Jun  8 09:00:00 2024] usb 3-2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Sa Jun  8 09:00:00 2024] usb 3-2: Product: PROG-S2
+[Sa Jun  8 09:00:00 2024] usb 3-2: Manufacturer: ERFOS
+[Sa Jun  8 09:00:00 2024] usb 3-2: SerialNumber: 19521-54013-XXXX
+[Sa Jun  8 09:00:00 2024] cdc_acm 3-2:1.0: ttyACM0: USB ACM device
+[Sa Jun  8 09:00:00 2024] usbcore: registered new interface driver cdc_acm
+[Sa Jun  8 09:00:00 2024] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters

@@ -3,3 +3,27 @@ Arduino:
 
 https://wolles-elektronikkiste.de/atmega328p-standalone-betreiben
 https://www.instructables.com/Overview-the-Arduino-sketch-uploading-process-and-/
+http://stefanfrings.de/isp_programmieradapter/
+
+
+
+
+
+Fuse Calculator:
+
+http://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega1284phttp://eleccelerator.com/fusecalc/fusecalc.php
+
+Fuse Calculator: ATMega1284P:
+
+http://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega1284phttp://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega1284p
+
+
+
+
+MightyCore: An Arduino core for ATmega8535, ATmega16, ATmega32, ATmega164, ATmega324, ATmega644 and ATmega1284
+
+https://github.com/MCUdude/MightyCore
+
+Arduino MightyCore TQFP44 pinout, e.g. ATMega1284P:
+
+https://camo.githubusercontent.com/7277bbef4b37cca0b5183afb40919832aef241732ad3678b40555916b58f89a1/68747470733a2f2f692e696d6775722e636f6d2f4b3334785a62342e6a7067

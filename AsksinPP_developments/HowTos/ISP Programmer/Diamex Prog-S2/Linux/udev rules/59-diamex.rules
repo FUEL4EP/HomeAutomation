@@ -1,0 +1,4 @@
+# Diamex Prog-S2 rule to prevent powersaving 
+SUBSYSTEM=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="2aa9", ATTRS{power/control}=="on" GROUP="dialout", MODE="0666", SYMLINK+="diamex"
+# Reload the rules: udevadm control --reload-rules
+

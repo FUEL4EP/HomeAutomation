@@ -1,0 +1,9 @@
+ 
+diamexavr.name=DIAMEX-AVR
+diamexavr.communication=serial
+diamexavr.protocol=stk500v2
+diamexavr.speed=19200
+diamexavr.program.tool=avrdude
+diamexavr.program.extra_params=-P{serial.port} -b{program.speed}
+diamexavr.program.speed=19200
+diamexavr.program.protocol=stk500v2
