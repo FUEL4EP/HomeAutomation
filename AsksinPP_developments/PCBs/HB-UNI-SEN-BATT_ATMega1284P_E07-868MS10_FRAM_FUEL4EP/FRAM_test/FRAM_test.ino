@@ -20,8 +20,8 @@ uint32_t moving_sum;
 int16_t  preset_temp;
 
 
-weather_statistics<int16_t, int32_t>  statistics_1(&frams, 0x00016, 1, 129, 'Y');
-weather_statistics<int16_t, int32_t>  statistics_2(&frams, 0x0014D, 2, 39,  'M');
+weather_statistics<int16_t, int32_t>  statistics_1{&frams, 0x00016, 1, 129, 'Y'};
+weather_statistics<int16_t, int32_t>  statistics_2{&frams, 0x0014D, 2, 39,  'M'};
 
 
 
