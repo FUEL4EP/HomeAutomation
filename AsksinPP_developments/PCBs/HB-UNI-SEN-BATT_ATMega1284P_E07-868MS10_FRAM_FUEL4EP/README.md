@@ -78,7 +78,7 @@
         + der Leckagestrom im Sleepmode sollte < 10 uA betragen
 
 ### Passende AsksinPP Projekte von FUEL4EP
-   + ein neuer Sensor mit gleitender Mittelwertbildung der gemessenen Temperatur über 24 Stunden, 1 Woche, 1 Monat und 1 Jahr wird bald freigegeben werden:
+   + ein neuer Sensor mit gleitender Mittelwertbildung der gemessenen Temperatur über 24 Stunden, 1 Woche, 1 Monat und 1 Jahr ist als Vorabfreigabe freigegeben:
 		* [HB-UNI-Sensor1-THPD_MA-AHT20_BMP280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD_MA-AHT20_BMP280)
 		* alle Grundfunktionen sind schon erfolgreich getestet, das FRAM funktioniert
 - [HB-UNI-Sensor1-AQ-BME680](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680)
