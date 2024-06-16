@@ -4,7 +4,7 @@ Arduino:
 https://wolles-elektronikkiste.de/atmega328p-standalone-betreiben
 https://www.instructables.com/Overview-the-Arduino-sketch-uploading-process-and-/
 http://stefanfrings.de/isp_programmieradapter/
-
+https://jorisvr.nl/article/arduino-frequency
 
 
 
