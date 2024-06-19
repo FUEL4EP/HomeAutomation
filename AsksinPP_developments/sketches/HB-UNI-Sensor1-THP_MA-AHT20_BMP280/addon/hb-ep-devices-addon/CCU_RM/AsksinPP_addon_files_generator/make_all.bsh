@@ -1,0 +1,272 @@
+#!/usr/bin/env bash
+
+# latest checked occu version: https://github.com/eq-3/occu/commit/a420be85d65df323a6c94efc5b132dbe9a2e3f24  version 3.69.7
+# validated with Kubuntu 22.04
+
+# This script has been developped for Linux OS, please adapt to other OS appropriately according to your needs
+
+# The schema file ${LIBRARY_DIR}/occu.xsd can be updated to the latest occu release by
+# trang -I xml -O xsd <path_to_local_occu_repository>/*.xml ${LIBRARY_DIR}/occu.xsd
+
+# A good way to compare newly created install and install scripts with previous versions is to use 'dif':
+# https://github.com/koknat/dif
+# usage: dif file1 file2 -sort
+
+# Version 0.12 27-05-2023
+# (c) FUEL4EP 
+
+# prerequisites (Linux OS is assumed)
+# 1. git
+# 2. groovy
+
+usage()
+{
+    echo "usage: make_all.bsh [[-run1] | [-run2] | [-check] | [-h]]"
+}
+
+
+execute_part1=0
+execute_part2=0
+execute_check=0
+run=""
+
+#========================================================================================================================
+#
+#                           P A R A M E T E R S
+#
+#========================================================================================================================
+ADDON_NAME=hb-ep-devices-addon                    #adapt to your addon name, if needed
+
+# ensure same definitions as in 'get_occu.bsh'!
+LIBRARY_DIR=./libraries
+OCCU_DIR=${LIBRARY_DIR}/occu                      #don't change, needs to be in sync with definition in 'get_occu.bsh'            
+SUBDIR1=firmware/rftypes/                         #don't change, needs to be in sync with definition in 'get_occu.bsh'
+SUBDIR2=WebUI/www/                                #don't change, needs to be in sync with definition in 'get_occu.bsh'
+OCCU_XML_DIR=${OCCU_DIR}/${SUBDIR1}               #don't change, needs to be in sync with definition in 'get_occu.bsh'
+OCCU_WEBUI_DIR=${OCCU_DIR}/${SUBDIR2}             #don't change, needs to be in sync with definition in 'get_occu.bsh'
+EASYMODES_DIR=${OCCU_WEBUI_DIR}/config/easymodes 
+
+VERSION=0.12
+#========================================================================================================================
+
+echo ""
+echo "make_all.bsh Version ${VERSION}"
+echo ""
+echo "This script will run with the CLI option '-run1' up to several minutes. Please be a bit patient :-)"
+echo "The progress can be seen from the generated log files 'run1.log', 'run2.log', or 'check.log', respectively"
+echo ""
+echo "Use 'tail -f '<log_file>' at another terminal window"
+echo ""
+echo ""
+
+if [[ $# -ne 1 ]]; then
+  echo ""
+  echo "E R R O R: Exactly one command line parameter is required!"
+  echo ""
+  usage
+  echo ""
+  exit 1
+fi
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -run1 )                 execute_part1=1
+                                execute_check=1
+                                run="run1"
+                                ;;
+        -run2 )                 execute_part2=1
+                                run="run2"
+                                ;;
+        -check )                execute_check=1
+                                run="check"
+                                ;;
+        -h | --help )           usage
+                                exit
+                                ;;
+        * )                     echo ""
+                                echo "E R R O R: Wrong command line parameters!"
+                                echo ""
+                                usage
+                                exit 1
+    esac
+    shift
+done
+
+# Redirect all stdout and stderr to ${run}.log
+exec > ${run}.log 2>&1
+
+echo ""
+echo "make_all.bsh -${run} Version ${VERSION}"
+echo ""
+
+
+# delete backup files '*bck*' from previous runs in directory ${LIBRARY_DIR}
+
+for file in ${LIBRARY_DIR}/*bck*; do
+    if [ -f $file ]; then
+        /bin/rm "$file"
+    fi
+done
+
+# delete backup files '*bck*' from previous runs in current directory '.'
+
+for file in ./*bck*; do
+    if [ -f $file ]; then
+        /bin/rm "$file"
+    fi
+done
+
+#initialize iteration counter
+iteration=0
+
+
+# execute run1
+
+if [[ execute_part1 -eq 1 ]]; then
+
+  #download 'https:'https://github.com/eq-3/occu/' to '${OCCU_DIR}' with git
+  ./get_occu.bsh
+  
+  # delete existing addon_db ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db
+  FILE="${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db"
+  [[ -f ${FILE} ]] && /bin/rm ./${FILE}
+  
+  for xml in ../src/addon/firmware/rftypes/*.xml; do
+    echo ""
+    echo ".. working on the addon rftypes XML file '${xml}' .."
+    echo ""
+    
+    if [[ execute_check -eq 1 ]]; then
+      echo ".. validating the rftypes XML file '${xml}' against schema file '${LIBRARY_DIR}/occu.xsd' with xmllint tool .."
+      echo ""
+      xmllint --schema ${LIBRARY_DIR}/occu.xsd ${xml} --noout >& lint.$$.log
+      # check if lint found any validation errors
+      ret=$?
+    else
+      ret=0
+    fi
+    
+    if [[  $ret -ne 0  ]]; then
+      echo ""
+      echo "W A R N I N G : The rftypes XML ${xml} has a failed schema validation !!! Please correct the XML file!"
+      echo ""
+      echo "The xmllint error messages are:"
+      echo ""
+      /bin/cat lint.$$.log
+      echo ""
+      /bin/rm -f lint.$$.log
+      exit 1
+    else
+      if [[ execute_check -eq 1 ]]; then
+        echo ".. The rftypes XML ${xml} has been correctly validated .."; echo ""
+        /bin/rm -f lint.$$.log
+      fi
+      
+      fbname=$(basename  "${xml}" .xml)
+      
+      ((iteration++))
+      echo ".. iteration is ${iteration} .."
+      if [[ iteration -eq 1 ]]; then
+        echo ""
+        echo "====> first run, clear option is set      <===="
+        echo ""
+        echo ".. working on ${xml}"
+        # first iteration (with -c -y options)
+        echo ""
+        echo ".. executing now: /usr/bin/env groovy ./extract_rftypes_XML.groovy -c -y -eq3 ${LIBRARY_DIR} -occu ${OCCU_DIR} -easy ${EASYMODES_DIR} -e -eq3_db ${LIBRARY_DIR}/EQ3_occu_extract_rftypes_translation_archive.db -a ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db -t ${LIBRARY_DIR}/AsksinPP_addon_generator_control_file_translation_source.xml -o AsksinPP_addon_generator_control_file.xml -n ${ADDON_NAME} ${xml}"
+        echo ""
+        /usr/bin/env groovy ./extract_rftypes_XML.groovy -c -y -eq3 ${LIBRARY_DIR} -occu ${OCCU_DIR} -easy ${EASYMODES_DIR} -e -eq3_db ${LIBRARY_DIR}/EQ3_occu_extract_rftypes_translation_archive.db -a ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db -t ${LIBRARY_DIR}/AsksinPP_addon_generator_control_file_translation_source.xml -o AsksinPP_addon_generator_control_file.xml -n ${ADDON_NAME} ${xml}
+      else
+        # > first iteration (add -m option)
+        echo ""
+        echo "====> subsequent run, merge option is set <===="
+        echo ""
+        echo ".. working on ${xml}"
+        /usr/bin/env groovy ./extract_rftypes_XML.groovy -m -eq3 ${LIBRARY_DIR} -occu ${OCCU_DIR} -easy ${EASYMODES_DIR} -e -eq3_db ${LIBRARY_DIR}/EQ3_occu_extract_rftypes_translation_archive.db -a ${LIBRARY_DIR}/Addon_extract_rftypes_XML_translation_archive.db -t ${LIBRARY_DIR}/AsksinPP_addon_generator_control_file_translation_source.xml -o AsksinPP_addon_generator_control_file.xml -n ${ADDON_NAME} ${xml} 
+      fi
+    fi
+  done
+  execute_check=0
+else
+  iteration=0
+fi
+
+
+
+# execute run2
+
+if [[ execute_part2 -eq 1 ]]; then
+  /usr/bin/env groovy ./AsksinPP_addon_generator.groovy AsksinPP_addon_generator_control_file.xml
+fi
+
+# execute check
+
+if [[ execute_check -eq 1 ]]; then
+  for xml in ../src/addon/firmware/rftypes/*.xml; do
+    echo ""
+    echo ".. working on the addon rftypes XML file '${xml}' .."
+    echo ""
+    
+    
+    echo ".. validating the rftypes XML file '${xml}' against schema file '${LIBRARY_DIR}/occu.xsd' with xmllint tool .."
+    echo ""
+    xmllint --schema ${LIBRARY_DIR}/occu.xsd ${xml} --noout >& lint.$$.log
+    # check if lint found any validation errors
+    ret=$?
+
+    
+    if [[  $ret -ne 0  ]]; then
+      echo ""
+      echo "W A R N I N G : The rftypes XML ${xml} has a failed schema validation !!! Please correct the XML file!"
+      echo ""
+      echo "The xmllint error messages are:"
+      echo ""
+      /bin/cat lint.$$.log
+      echo ""
+      /bin/rm -f lint.$$.log
+      exit 1
+    else
+      echo ".. The rftypes XML ${xml} has been correctly validated .."; echo ""
+      /bin/rm -f lint.$$.log
+    fi
+  done
+fi
+
+
+# final cleaning up
+
+if [ -d ${OCCU_DIR} ]; then
+  echo ""
+  echo ".. deleting directory '${OCCU_DIR}' .."
+  echo ""
+  rm -rf ${OCCU_DIR}
+fi
+
+
+FILE="${LIBRARY_DIR}/webui.js"
+if [[ -f $FILE ]];then
+  echo ""
+  echo ".. deleting file '${FILE}' .."
+  echo ""
+  /bin/rm -f $FILE
+fi
+
+FILE="${LIBRARY_DIR}/translate.lang.stringtable.js"
+if [[ -f $FILE ]];then
+  echo ""
+  echo ".. deleting file '${FILE}' .."
+  echo ""
+  /bin/rm -f $FILE
+fi
+
+FILE="${LIBRARY_DIR}/stringtable_de.txt"
+if [[ -f $FILE ]];then
+  echo ""
+  echo ".. deleting file '${FILE}' .."
+  echo ""
+  /bin/rm -f $FILE
+fi
+
+echo ""
+echo "make_all.bsh Version ${VERSION} done"
+echo ""

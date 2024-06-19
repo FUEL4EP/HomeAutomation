@@ -1,0 +1,5 @@
+#!/bin/bash
+# see also https://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega1284p
+# some howto for Diamex Prog S2 can be found as https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/HowTos/ISP%20Programmer/Diamex%20Prog-S2
+avrdude -v -pm1284p -P /dev/ttyACM0 -c stk500v2  -F -b 9600 -Ulfuse:w:0xE2:m -Uhfuse:w:0xD4:m -Uefuse:w:0xFF:m         #internal 8MHz RC OSC
+
