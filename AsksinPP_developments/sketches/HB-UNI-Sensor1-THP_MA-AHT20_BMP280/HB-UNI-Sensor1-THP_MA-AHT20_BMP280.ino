@@ -1,6 +1,6 @@
 //--------------------------------------------------------------
 // HB-UNI-Sensor1-THP_MA-AHT20_BMP280 Homebrew Homematic AsksinPP THP sensor with moving averages stored in a ferromagnetic RAM FRAM
-// Aosong AHT20 (Temperature, Humidity) / Bosch BMP280 (Temperature, Pressure), temperature moving average filters of last day, week, month, and year and WebUI offset settings
+// Aosong AHT20 (Temperature, Humidity, Dewpoint) / Bosch BMP280 (Temperature, Pressure), temperature moving average filters of last day, week, month, and year and WebUI offset settings
 // Version 1.0
 // (C) 2018-2020 Tom Major (Creative Commons)
 // (C) 2024 FUEL4EP        (Creative Commons)          added Aosong AHT20 BMP280 and Bosch BMP280 sensor /  moving average filters (1 day, 1 week, 1 month, and 1 year) for temperature/ offset setting by WebUI
@@ -518,8 +518,7 @@ public:
 #elif defined CLOCK_RTC
         DPRINTLN(F("Clock RTC"));
 #endif
-        DPRINTLN(F("setting bootType to 'warm_boot'"));
-        this->getList1().bootType(1);
+
     }
 
     void setup(Device<Hal, SensorList0>* dev, uint8_t number, uint16_t addr)
@@ -620,6 +619,8 @@ void setup()
     buttonISR(cfgBtn, CONFIG_BUTTON_PIN);
     sdev.initDone();
     sdev.channel(1).AHT20_BMP280.init_circular_buffers_in_FRAMs( sdev.channel(1).getList1().bootType(), sdev.channel(1).getList1().presetHistoricTemperatures(), sdev.channel(1).getList1().presetTemp10());
+    DPRINTLN(F("setting bootType to 'warm_boot'"));
+    sdev.channel(1).getList1().bootType(1);
     DPRINTLN(F("circular buffers have been initialized "));
     
 }

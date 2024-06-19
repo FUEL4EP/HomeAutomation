@@ -37,6 +37,18 @@
 - geringe Stromaufnahme von ca. 12 uA Stromaufnahme im Sleep-Mode
 
 
+## WebUI
+
+![pic](./Images/WebUI.png)
+
+## Konfigurieren der Geräte- und Kanalparameter
+
+![pic](./Images/setting_of_device_parameters_in_WebUI.png)
+
+## Posteingang nach erfolgreichem Anlernen
+
+![pic](./Images/successful_teach_in.png)
+
 
 ## benötigte Hardware
 
@@ -48,15 +60,34 @@
 
 ![pic](./Images/moving_averages_after_boot.png)
 
-## Status
+## aktueller Status
 
-- Vorabfreigabe für Testzwecke
+- **Vorabfreigabe** für Testzwecke
 - die Grundfunktionen sind bereits erfolgreich validiert
 - Validierung ist noch im Gange
+	+ Temperatur, Luftfeuchte und Luftdruckmessung
+	+ Vorbelegung der Ringpuffer im FRAM mit historischen Temperaturwerten
+	+ Mittelwertbildung
+	+ Kaltstart bei Werksreset (Config-Taste > 6 Sekunden drücken)
+	+ Warmstart bei Batteriewechsel ohne Datenverlust
 
 ## Addon
 
-- eine Vorabfreigabe des benötigten Addons hb-ep-devices-addon V1.17 für Testzwecke ist [hier](./addon/)
+- eine Vorabfreigabe des benötigten Addons hb-ep-devices-addon V1.17 für Testzwecke ist [hier](./addon/) lokal beigefügt
+
+## benötigte Bibliotheken
+
+- AskSin++                  2016 papa (Creative Commons)
+- Adafruit BMP280           2020 Adafruit https://github.com/adafruit/Adafruit_BMP280_Library (no license mentioned)
+- finitespace/BME280        2016 finitespace https://github.com/finitespace/BME280  (GNU General Public License v3.0) for EnvironmentCalculations
+- AHT20                     2020 dvarrel https://github.com/dvarrel/AHT20 (Creative Commons Zero v1.0 Universal)
+- Adafruit_FRAM_SPI         2024 FUEL4EP fork of Adafruit's Adafruit_FRAM_SPI: added low power mode; https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/Adafruit_FRAM_SPI (BSD License)
+- Time                      2012 PaulStoffregen https://github.com/PaulStoffregen (no license mentioned)
+
+## Speicherbedarf auf einem ATMega1284P (mit Debug)
+
+Der Sketch verwendet 58708 Bytes (44%) des Programmspeicherplatzes. Das Maximum sind 130560 Bytes.
+Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 ## Gehäuse
 
