@@ -13,6 +13,7 @@
 
 - Breite: 19 mm
 - Weite: 13 mm
+- Dicke: 1,2 mm (empfohlen)
 
 ## Stromlaufplan
 
@@ -44,7 +45,13 @@
 ![pic](./Pictures_of_JLCPCB_prototypes/specify_an_order_number.png)
 
 - der  Dummy-Text 'JLCJLCJLCJLC' ist auf der Rückseite der Platine
+- die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als das sehr teure Standard PCBA, daher wird eine Verlötung von Hand empfohlen
+- das Funkmodule EByte E07 900MM10S muss gegebenenfalls vorher bei JLCPCB gekauft werden, falls JLCPCB die Bestückung davon machen soll
+- bei Standard PCBA ist ein Panel vonnöten
 
+## Hinweis für Bestückung von Hand
+- die Induktivität FB1 kann auch weggelassen werden und mit Lötzinn überbrückt werden
+- die Kondensatoren C1 und C2 sollten bestückt werden
 
 ## lokale Installation des Github Releases auf Deinem Computer
 
@@ -69,7 +76,7 @@
 
 ## Disclaimer
 
--   die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr.
+-  die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr.
 -  der Nutzer dieser Platine ist selbst dafür verantwortlich, dass die relevanten Richtlinien für Funkanlagen, z.B. in der EU die Funkanlagenrichtlinie (2014/53/EU, auch bekannt als RED), eingehalten wird.
 
 ## Lizenz 

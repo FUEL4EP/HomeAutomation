@@ -1429,8 +1429,10 @@
   (footprint "FUEL4EP:eByte_E07-900MM10S" (layer "F.Cu")
     (tstamp cbe0d8c4-b85f-4cd5-bc0d-8c1fc5f26a24)
     (at 6.0236 -0.9474 90)
+    (property "LCSC" "C5844212")
     (property "Sheetfile" "Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP.kicad_sch")
     (property "Sheetname" "")
+    (property "TYPE" "10x10mm")
     (path "/3a7e6e39-364a-46d9-acb7-3190f91f635e")
     (attr smd)
     (fp_text reference "Module1" (at 1.778 -2.002 90) (layer "F.SilkS") hide
