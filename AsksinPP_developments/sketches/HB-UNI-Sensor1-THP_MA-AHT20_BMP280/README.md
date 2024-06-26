@@ -17,6 +17,12 @@
 - den letzten Monat (31 Tage)
 - das letzte Jahr (365 Tage)
 
+- Diagram der gemessenen Außentemperatur und der gleitenden Mittelwerte in den ersten 7 Tagen nach Inbetriebnahme:
+
+![pic](./Images/moving_averages_first_7_days_after_boot.png)
+
+- die Ringpuffer für die Berechnung der gleitenden Mittelwerte wurde bei der Programmierung mit interpolierten historischen Werten des vergangenen Jahres vorbelegt, so dass die Mittelwerte bereits einen guten Startwert haben.
+
 ## lokale gleitende Mittelwertbildung
 
 - nichtflüchtige ferromagnetische Speicher FRAM zur lokalen Messwertspeicherung
