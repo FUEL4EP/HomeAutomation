@@ -17,7 +17,7 @@
 - den letzten Monat (31 Tage)
 - das letzte Jahr (365 Tage)
 
-- Diagram der gemessenen Außentemperatur und der gleitenden Mittelwerte in den ersten 7 Tagen nach Inbetriebnahme:
+- Diagramm der gemessenen Außentemperatur und der gleitenden Mittelwerte in den ersten 7 Tagen nach Inbetriebnahme:
 
 ![pic](./Images/moving_averages_first_7_days_after_boot.png)
 
@@ -102,13 +102,23 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
 - geplant ist ein Einbau in eine [TFA Schutzhülle mit Solar-Lüfter für Thermo-/Hygrosensoren, Innenmaße (Ø x H): 80 x 170 mm ](https://de.elv.com/tfa-schutzhuelle-mit-solar-luefter-fuer-thermo-hygrosensoren-innenmasse-oe-x-h-80-x-170-mm-253915)
 	- solarbetriebener Lüfter
 
-![pic](./Images/outdoor_case.png)
+	![pic](./Images/outdoor_case.png)
 
-![pic](./Images/TFA_solar_radiation_protection_with_fan_and_hat.png)
+	![pic](./Images/TFA_solar_radiation_protection_with_fan_and_hat.png)
 
-![pic](./Images/sun_hat_for_TFA_solar_radiation_shield.png)
 
-- ein 3D gedruckter, oben offener 'Sonnenhut', STL-Datei ist [hier](./3D_Printer/solar_radiation_shield/TFA_Solar_Radiation_Shield_sun_hat.stl), macht die Temperaturüberhöhung bei Sonneneinstrahlung noch besser.
+- drei 3D gedruckte, oben offene 'Sonnenhüte' zur zusätzlichen Abschattung bei direkter Sonneneinstrahlung machen die Temperaturüberhöhung bei Sonneneinstrahlung geringer. Die STL- und FreeCAD-Dateien sind [hier](./3D_Printer/solar_radiation_shield).
+
+- Bild des oberen 'Sonnenhuts':
+	![pic](./Images/sun_hat_for_TFA_solar_radiation_shield.png)
+- Bild eines der unteren 'Sonnenhüte':
+	
+	![pic](./Images/sun_hat_for_TFA_solar_radiation_shield_bottom.png)
+
+- die unteren 'Sonnenhüte' können entweder
+	+ von oben durch vorsichtiges Auseinanderbiegen eingeschoben werden
+	+ oder von unten nach Aufschrauben und Zerlegen des TFA Gehäuses mit Einbringen der unteren 'Sonnenhüte' beim Wiederzusammenbau erfolgen. 
+
 
 - **HINWEIS**: Bei meinem Exemplar lief im Lieferzustand der eingebaute Lüfter falsch herum. Dies führte bei Sonneneinstrahlung zu einer hohen Temperaturüberhöhung (ca. 2..4K). Nach einem Umlöten der Lüfteranschlüsse an die Solarzelle war die Temperaturüberhöhung gegenüber einer Referenzmessung deutlich besser (ca. 0,4..0,8 K). Dieser Verdrahtungsfehler wurde an TFA Dostmann berichtet und inzwischen bestätigt. Er soll verbessert werden.
 - die Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP) wird in ein 3D-gedrucktes Innengehäuse mit ePTFE Membranen kommen
