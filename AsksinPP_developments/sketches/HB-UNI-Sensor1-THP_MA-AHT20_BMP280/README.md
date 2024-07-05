@@ -105,6 +105,8 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
 	![pic](./Images/outdoor_case.png)
 
 	![pic](./Images/TFA_solar_radiation_protection_with_fan_and_hat.png)
+	
+	![pic](./Images/TFA_solar_radiation_protection_with_fan_and_hat_below_EQ3_weather_station.png)
 
 
 - drei 3D gedruckte, oben offene 'Sonnenhüte' zur zusätzlichen Abschattung bei direkter Sonneneinstrahlung machen die Temperaturüberhöhung bei Sonneneinstrahlung geringer. Die STL- und FreeCAD-Dateien sind [hier](./3D_Printer/solar_radiation_shield).
@@ -117,7 +119,8 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
 
 - die unteren 'Sonnenhüte' können entweder
 	+ von oben durch vorsichtiges Auseinanderbiegen eingeschoben werden
-	+ oder von unten nach Aufschrauben und Zerlegen des TFA Gehäuses mit Einbringen der unteren 'Sonnenhüte' beim Wiederzusammenbau erfolgen. 
+	+ oder von unten nach Aufschrauben und Zerlegen des TFA Gehäuses mit Einbringen der unteren 'Sonnenhüte' beim Wiederzusammenbau erfolgen.
+ 
 
 
 - **HINWEIS**: Bei meinem Exemplar lief im Lieferzustand der eingebaute Lüfter falsch herum. Dies führte bei Sonneneinstrahlung zu einer hohen Temperaturüberhöhung (ca. 2..4K). Nach einem Umlöten der Lüfteranschlüsse an die Solarzelle war die Temperaturüberhöhung gegenüber einer Referenzmessung deutlich besser (ca. 0,4..0,8 K). Dieser Verdrahtungsfehler wurde an TFA Dostmann berichtet und inzwischen bestätigt. Er soll verbessert werden.
