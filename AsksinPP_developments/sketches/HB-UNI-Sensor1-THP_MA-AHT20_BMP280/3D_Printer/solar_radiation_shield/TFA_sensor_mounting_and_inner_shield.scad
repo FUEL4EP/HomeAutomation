@@ -14,23 +14,24 @@
 // The necessary adjustment may depend on your 3D
 // printer's tolerances.
 //
-// V1.0 initial version
+// V1.0 05.07.2024 initial version
+// V1.1 05.07.2024 fixed TFA wedge cut out in bottom loft, increased GapOverlap_Top to 0.3
 
 $fn = 100;
 delta=0.02;
 
 
 // switches to enable/disable the parts of the drawing
-showTopLoft=1;
-showBottomLoft=0;
-showSensorContainer=0;
-showTFAWedge=0;
+showTopLoft=0;
+showBottomLoft=1;
+showSensorContainer=1;
+showTFAWedge=1;
 
 hPCB=21;
 ehPCB=5;
 wPCB=75.2;
 bPCB=75.2;
-dWall=2;
+dWall=2.5;
 
 hHelper=0.1;
 
@@ -52,7 +53,7 @@ zWedge=3*wxPCBSlide;
 
 
 zOverlap_Top=20;
-GapOverlap_Top=0.2;
+GapOverlap_Top=0.3;
 
 xTFA_Wedge=32.2;
 zTFAWedge=70.2;
@@ -122,7 +123,8 @@ module overlap(X,Y,Z,Gap){
 if (showBottomLoft) {
   translate ([0,0,0]) difference() {
     loft_rect2circ(wPCB+2*dWall,hPCB+ehPCB+2*dWall,rBottom+dWall,zhBottomLoft);
-  translate ([0,0,delta]) loft_rect2circ(wPCB,hPCB+ehPCB,rBottom,zhBottomLoft+2*delta); 
+  translate ([0,0,delta]) loft_rect2circ(wPCB,hPCB+ehPCB,rBottom,zhBottomLoft+2*delta);
+  translate ([-xTFA_Wedge/2,dxTFAWedge,-zhBottomLoft+zTFAWedge]) rotate([0,90,0]) translate ([-0,0,-delta]) wedge(zTFAWedge, xTFA_Wedge, ybottomTFAWedge, ytopTFAWedge) ; 
   }
 }
 
@@ -132,7 +134,7 @@ if (showTopLoft) {
       loft_rect2circ(wPCB+4*dWall+2*GapOverlap_Top,hPCB+ehPCB+4*dWall+2*GapOverlap_Top,rTop+dWall,zhTopLoft);
       translate ([0,0,delta]) loft_rect2circ(wPCB+dWall,hPCB+ehPCB+dWall,rTop,zhTopLoft+2*delta); 
   }
-  #translate ([0,0,+wPCB-zOverlap_Top/2]) overlap(wPCB,hPCB+ehPCB,zOverlap_Top,GapOverlap_Top);
+  translate ([0,0,+wPCB-zOverlap_Top/2]) overlap(wPCB,hPCB+ehPCB,zOverlap_Top,GapOverlap_Top);
 }
 
 // sensor container

@@ -97,6 +97,14 @@
 Der Sketch verwendet 58708 Bytes (44%) des Programmspeicherplatzes. Das Maximum sind 130560 Bytes.
 Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
+## Batteriewechsel
+
+- ein Batteriewechsel soll immer unmittelbar nach dem Übertragen eines neuen Messwertsatzes an die Zentrale erfolgen. Am besten beobachtet man dazu den Zeitstempel des letzten Messwertsatzes in der WebUI:
+
+	![pic](./Images/WebUI.png)
+
+	Nach dem Umspringen des Zeitstempels bleiben fast 4 Minuten Zeit, um die alten Batterien zu entnehmen und durch neue zu ersetzen. Die Daten der FRAMs bleiben dabei erhalten. Der Wechsel der Batterien sollte innerhalb dieser 4 Minuten abgeschlossen ein.
+
 ## Gehäuse
 
 - geplant ist ein Einbau in eine [TFA Schutzhülle mit Solar-Lüfter für Thermo-/Hygrosensoren, Innenmaße (Ø x H): 80 x 170 mm ](https://de.elv.com/tfa-schutzhuelle-mit-solar-luefter-fuer-thermo-hygrosensoren-innenmasse-oe-x-h-80-x-170-mm-253915)
@@ -120,11 +128,29 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
 - die unteren 'Sonnenhüte' können entweder
 	+ von oben durch vorsichtiges Auseinanderbiegen eingeschoben werden
 	+ oder von unten nach Aufschrauben und Zerlegen des TFA Gehäuses mit Einbringen der unteren 'Sonnenhüte' beim Wiederzusammenbau erfolgen.
+	
+- die 'Sonnenhüte' können mit einem UV resistenten, silber matten Sprühlack beschichtet werden.
+	
+- ein zweiteiliges Innengehäuse dient zur Aufnahme der Sensorplatine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP)
  
+	![pic](./Images/TFA_sensor_mounting_and_inner_shield_2.png)
+	
+- der untere Teil wird auf die TFA Bodenplatte aufgesetzt und mit einer M3 Schraube in der Mitte verschraubt.
 
+- die Sensorplatine wird in die Führungsschienen des unteren Teils von oben eingeschoben:
+
+	![pic](./Images/TFA_sensor_mounting_and_inner_shield_bottom_part_2.png)
+
+- nach dem Einsetzen der Sensorplatine in das Unterteil wird das Oberteil auf das Unterteil aufgesteckt:
+
+	![pic](./Images/TFA_sensor_mounting_and_inner_shield_top_part.png)
+	
+- danach erfolgt das vorsichtige Einbringen in das TFA Gehäuse
+
+- es gibt eine äußere und eine innere 'Luftröhren'. In beide 'Luftröhren' saugt der Lüfter getrennt Luft von unten bzw. unten und außen an.
 
 - **HINWEIS**: Bei meinem Exemplar lief im Lieferzustand der eingebaute Lüfter falsch herum. Dies führte bei Sonneneinstrahlung zu einer hohen Temperaturüberhöhung (ca. 2..4K). Nach einem Umlöten der Lüfteranschlüsse an die Solarzelle war die Temperaturüberhöhung gegenüber einer Referenzmessung deutlich besser (ca. 0,4..0,8 K). Dieser Verdrahtungsfehler wurde an TFA Dostmann berichtet und inzwischen bestätigt. Er soll verbessert werden.
-- die Platine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP) wird in ein 3D-gedrucktes Innengehäuse mit ePTFE Membranen kommen
+
 
 ## Lizenz
 
