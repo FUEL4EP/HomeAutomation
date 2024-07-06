@@ -135,6 +135,10 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
  
 	![pic](./Images/TFA_sensor_mounting_and_inner_shield_2.png)
 	
+- 3D-Druck des Innengehäuses ohne Stützstrukturen:
+
+	![pic](./Images/TFA_sensor_mounting_and_inner_shield_Cura_wo_support.png)
+	
 - der untere Teil wird auf die TFA Bodenplatte aufgesetzt und mit einer M3 Schraube in der Mitte verschraubt.
 
 - die Sensorplatine wird in die Führungsschienen des unteren Teils von oben eingeschoben:
@@ -147,7 +151,7 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
 	
 - danach erfolgt das vorsichtige Einbringen in das TFA Gehäuse
 
-- es gibt eine äußere und eine innere 'Luftröhren'. In beide 'Luftröhren' saugt der Lüfter getrennt Luft von unten bzw. unten und außen an.
+- es gibt einen inneren und einen äußeren Luftkanal. In beiden Luftkanälen saugt der Lüfter getrennt Luft von unten bzw. unten und außen an, so dass eine thermische Entkopplung erfolgt. Bei Sonneneinstrahlung bekommt der Messsensor  nur die von unten angesaugte Umgebungsluft.
 
 - **HINWEIS**: Bei meinem Exemplar lief im Lieferzustand der eingebaute Lüfter falsch herum. Dies führte bei Sonneneinstrahlung zu einer hohen Temperaturüberhöhung (ca. 2..4K). Nach einem Umlöten der Lüfteranschlüsse an die Solarzelle war die Temperaturüberhöhung gegenüber einer Referenzmessung deutlich besser (ca. 0,4..0,8 K). Dieser Verdrahtungsfehler wurde an TFA Dostmann berichtet und inzwischen bestätigt. Er soll verbessert werden.
 
