@@ -135,9 +135,9 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
  
 	![pic](./Images/TFA_sensor_mounting_and_inner_shield_2.png)
 	
-- 3D-Druck des Innengehäuses ohne Stützstrukturen:
+- Cura 4.3.1 3D-Druck des Innengehäuses mit Stützstrukturen:
 
-	![pic](./Images/TFA_sensor_mounting_and_inner_shield_Cura_wo_support.png)
+	![pic](./Images/TFA_sensor_mounting_and_inner_shield_Cura_with_support.png)
 	
 - der untere Teil wird auf die TFA Bodenplatte aufgesetzt und mit einer M3 Schraube in der Mitte verschraubt.
 
