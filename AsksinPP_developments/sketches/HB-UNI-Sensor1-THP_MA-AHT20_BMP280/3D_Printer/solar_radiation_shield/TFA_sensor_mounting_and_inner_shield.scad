@@ -14,7 +14,8 @@
 // The necessary adjustment may depend on your 3D
 // printer's tolerances.
 //
-// V1.0 10.07.2024 initial version 
+// V1.0 10.07.2024 initial version
+// V1.1 12.07.2024 slightly improved version version for a better PCB insertion
 // 
 // You can highlight an object by putting a '#' in
 // front of the generating command
@@ -39,7 +40,7 @@ showSensorContainer=1;
 showTFAWedge=1;
 showHeightCube=0;        // for check purpose only
 showOuterPipe=0;         // for check purpose only
-showBottomPlate=0;       // for check purpose only
+showBottomPlate=1;       // for check purpose only
 
 //============================
 // for top part, please select
@@ -60,23 +61,23 @@ showBottomPlate=0;       // for check purpose only
 
 dPCB=1.8;
 
-hPCB=20;
+hPCB=20.2;
 hPCBandBattery=17.7-dPCB;
 ebPCB=0.8;
 ewPCB=1.0;
 wPCB=75.4;  // height z direction
-bPCB=75.2;  // width x direction
+bPCB=75.4;  // width x direction
 dWall=2.5;
 
 hHelper=0.1;
-rMAX=77.9/2;
+rMAX=78.0/2;
 rInnerTFA=80/2;
-rDrillHole=2;
+rDrillHole=2.5;
 RDrillHoleOuter=22;
 RDrillHoleInner=13;
 
 zhBottomLoft=67;
-rBottom=rMAX-dWall;
+rBottom=rMAX-dWall+2;
 
 zhTopLoft=24;
 rTop=60/2;
@@ -91,7 +92,7 @@ ybottomTFAWedge=10.3;
 dxTFAWedge=15;
 
 rBottomPlate=67/2;
-rHoleBottomPlate=3.5/2;
+rHoleBottomPlate=4/2;
 wFilletBottom_Plate=6;
 
 w_corner_post   = 1.7;
