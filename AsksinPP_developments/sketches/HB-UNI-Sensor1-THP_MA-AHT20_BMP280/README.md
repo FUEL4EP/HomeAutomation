@@ -250,7 +250,7 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
 - in das TFA Unterteil werden mit Hilfe der 3D-gedruckten Bohrschablone zusätzliche Lüftungslöcher gebohrt, um kühle Luft von unten Ansaugen zu können:
 
 
-	![pic](./Images/drill_stencil.png)drill_stencil.png
+	![pic](./Images/drill_stencil.png)
 	
 - nach dem Einsetzen der Sensorplatine in das Unterteil wird das Oberteil auf das Unterteil aufgesteckt und mit Klebestreifen fixiert:
 
