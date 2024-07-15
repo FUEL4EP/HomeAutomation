@@ -49,6 +49,8 @@ Nach einem Upgrade der CCU/RaspberryMatic Firmware kann es notwendig sein, diese
 |<img src="https://raw.githubusercontent.com/FUEL4EP/HomeAutomation/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/src/addon/www/config/img/devices/50/hb-uni-senact-4-4-RC_DS_thumb.png" width=25/> | [HB-UNI-SenAct-4-4-RC_DS](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-SenAct-4-4-RC_DS)<br/> - NEU -| 3x Schaltaktor für Betrieb an einem **Netzfreischalter** - Akkubetrieb im Standby, automatische Ladeschaltung - bei Aktivierung eines Aktors wird die Netzspannung zugeschaltet und am Ende wieder abgeschaltet - geringer Standby-Verbrauch von ca. 0.7 mA @ 5V| 🔋 ⚡ |
 |<img src="https://raw.githubusercontent.com/FUEL4EP/HomeAutomation/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THD-SHT45_thumb.png" width=25/> | [HB-UNI-SENSOR1-THD-SHT45](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THD-SHT45)<br/> - NEU - | hoch genauer THD Sensor<br/>basierend auf Sensirion SHT45 <br/>mit Taupunkttemperatur,<br/>absoluter Luftfeuchte<br/>und gleitendem Mittelwert der Temperatur über 24 Stunden und 7 Tage<br/>| 🔋 |
 |<img src="https://raw.githubusercontent.com/FUEL4EP/HomeAutomation/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THPD-SHT45_BME280_thumb.png" width=25/> | [HB-UNI-SENSOR1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280)<br/> - NEU - | hoch genauer THPD Sensor<br/>basierend auf Sensirion SHT45 und Bosch BME280 <br/>mit Taupunkttemperatur,<br/>absoluter Luftfeuchte<br/>und gleitendem Mittelwert der Temperatur über 24 Stunden und 7 Tage<br/>| 🔋 |
+|<img src="https://raw.githubusercontent.com/FUEL4EP/HomeAutomation/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THP_MA-AHT20_BMP280_thumb.png" width=25/> | [HB-UNI-Sensor1-THP_MA-AHT20_BMP280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THP_MA-AHT20_BMP280)<br/> - NEU - | genauer THP Außensensor zur Beobachtung des Klimawandels<br/>basierend auf Aosong AHT20 und Bosch BME280 <br/>mit gleitenden Temperaturmittelwerten für 1 Jahr, 1 Monat, 1 Woche und 1 Tag<br>mit nichtflüchtigem FRAM-Speicher| 🔋 |
+
 
 Alle hier aufgeführten Homematic Selbstbaugeräte sind bei mir selbst im Einsatz und im täglichen Betrieb validiert. Meine Zentrale läuft unter RaspberryMatic in der neuesten verfügbaren Version auf einem Raspberry Pi 3B+ .
 
@@ -71,7 +73,7 @@ Alle hier aufgeführten Homematic Selbstbaugeräte sind bei mir selbst im Einsat
 |F6 0C | HB-UNI-SENSOR1-AQ-BME680_KF_DEBUG_rLF |
 |F6 0D | HB-LC-Bl1-FM-HYBRID (in Entwicklung) |
 |F6 0E | HB-UNI-SENACT-4-4-SC_DS |
-|F6 0F | HB-UNI-Sensor1-THPD_MA-AHT20_BMP280 (in Entwicklung) |
+|F6 0F | HB-UNI-Sensor1-THPD_MA-AHT20_BMP280 |
 |F6 10 | HB-UNI-SENACT-4-4-RC_DS |
 |F6 11 | HB-UNI-Sensor1-THD-SHT45 |
 |F6 12 | HB-UNI-Sensor1-THPD-SHT45_BME280 |

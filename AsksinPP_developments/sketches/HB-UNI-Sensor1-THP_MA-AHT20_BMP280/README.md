@@ -162,10 +162,16 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 	+ Mittelwertbildung
 	+ Kaltstart bei Werksreset (Config-Taste > 6 Sekunden drücken)
 	+ Warmstart bei Batteriewechsel ohne Datenverlust
+	+ Gehäuse gedruckt und getestet, erste Messungen bei Sonneneinstrahlung sind vielversprechend
 
-## Addon
 
-- eine Vorabfreigabe des benötigten Addons hb-ep-devices-addon V1.17 für Testzwecke ist [hier](./addon/) lokal beigefügt
+## Benötigtes Addon
+
+[hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
+
+- die minimal benötigte Version ist die **Version 1.17**.
+
+- bitte dieses Addon 'hb-ep-devices-addon.tgz' vor dem Anlernen des HB-UNI-Sensor1-THP_MA-AHT20_BMP280 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
 
 ## benötigte Bibliotheken
 
@@ -228,7 +234,7 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
 	
 - ein zweiteiliges Innengehäuse dient zur Aufnahme der Sensorplatine [HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FRAM_FUEL4EP)
  
-	![pic](./Images/TFA_sensor_mounting_and_inner_shield_2.png)
+	![pic](./Images/TFA_sensor_mounting_and_inner_shield_1.png)
 	
 - Cura 4.3.1 3D-Druck des Innengehäuses mit Stützstrukturen:
 
@@ -239,8 +245,14 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
 - die Sensorplatine wird in die Führungsschienen des unteren Teils von oben eingeschoben:
 
 	![pic](./Images/TFA_sensor_mounting_and_inner_shield_bottom_part_2.png)
+	![pic](./Images/sensor_inserted_into_inner_solar_radiation_shield.png)
+	
+- in das TFA Unterteil werden mit Hilfe der 3D-gedruckten Bohrschablone zusätzliche Lüftungslöcher gebohrt, um kühle Luft von unten Ansaugen zu können:
 
-- nach dem Einsetzen der Sensorplatine in das Unterteil wird das Oberteil auf das Unterteil aufgesteckt:
+
+	![pic](./Images/drill_stencil.png)drill_stencil.png
+	
+- nach dem Einsetzen der Sensorplatine in das Unterteil wird das Oberteil auf das Unterteil aufgesteckt und mit Klebestreifen fixiert:
 
 	![pic](./Images/TFA_sensor_mounting_and_inner_shield_top_part.png)
 	
