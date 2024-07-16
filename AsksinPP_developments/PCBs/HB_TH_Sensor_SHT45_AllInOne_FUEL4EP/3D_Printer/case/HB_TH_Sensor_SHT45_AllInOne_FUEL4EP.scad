@@ -110,7 +110,7 @@ module box(){
 
 module cover(){
     
-    gap=0.2;  // added FUEL4EP after test print, cover was too tight wiithout additional gap
+    gap=0.15;  // added FUEL4EP after test print, cover was too tight wiithout additional gap
     
 	translate([0,0,-th])hull(){
 		for (i=[[-w/2,-l/2],[-w/2,l/2],[w/2,-l/2],[w/2,l/2]]){
