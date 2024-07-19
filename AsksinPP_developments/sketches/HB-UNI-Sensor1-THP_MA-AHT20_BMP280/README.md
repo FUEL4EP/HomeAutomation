@@ -19,9 +19,9 @@
 
 - die Auflösung der gleitenden Mittelwerte beträgt 0,01 Grad Celsius.
 
-- Diagramm der gemessenen Außentemperatur und der gleitenden Mittelwerte in den ersten 24 Tagen nach Inbetriebnahme:
+- Diagramm der gemessenen Außentemperatur und der gleitenden Mittelwerte in den ersten 31 Tagen nach Inbetriebnahme:
 
-![pic](./Images/moving_averages_first_24_days_after_boot.png)
+![pic](./Images/moving_averages_first_31_days_after_boot.png)
 
 - die kurzen Spitzen der Temperaturmesswerte sind auf kurzes Hereinholen des Sensors von draußen ins wärmere Haus zurückzuführen.
 
@@ -140,6 +140,10 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 - in diesem Diagramm wurde am 19. Juni 2024 um ca. 9:10 Uhr (Peak in der Temperaturkurve durch Hereinholen des Sensors von draußen  in  das Haus) ein Batteriewechsel ohne Datenverlust durchgeführt, d.h. ein Warmstart.
 
+- Aufzeichnungen der Außentemperatur und der berechneten gleitenden Temperaturmittelwerten in den ersten 31 Tagen nach dem initialen Boot. Als Vorbelegung der Ringpuffer wurden [gemittelte Werte für Deutschland genommen](https://de.statista.com/statistik/daten/studie/5564/umfrage/monatliche-durchschnittstemperatur-in-deutschland/)
+- 
+![pic](./Images/moving_averages_first_31_days_after_boot.png)
+
 ## Kalibrierung des Messintervalls von 4 Minuten
 
 - die folgenden Kalibrierwerte können im Code eingestellt werden:
@@ -162,10 +166,21 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 	+ Mittelwertbildung
 	+ Kaltstart bei Werksreset (Config-Taste > 6 Sekunden drücken)
 	+ Warmstart bei Batteriewechsel ohne Datenverlust
-	+ Gehäuse gedruckt und getestet, erste Messungen bei Sonneneinstrahlung sind vielversprechend
+	+ Gehäuse gedruckt und getestet, erste Messungen bei Sonneneinstrahlung zeigen gute Ergebnisse. Die modifizierte TFA Schutzhülle misst mit dem HB-UNI-Sensor1-THP_MA-AHT20_BMP280 Sensor bei Sonneneinstrahlung geringere Temperaturen als die Original-EQ3-HM-WDS100-C6-O-2 Wetterstation. Beide sind am selben Mast angebracht, siehe Bild. Die EQ3 Wetterstation ist in ca. 3 Metern Höhe, die modifizierte TFA Schutzhülle in ca. 2 Metern Höhe angebracht.
+	
+![pic](./Images/TFA_solar_radiation_protection_with_fan_and_hat_below_EQ3_weather_station.png)
+
+- Vergleich der gemessenen Außentemperaturen an einem wolkigen Tag:
+
+![pic](./Images/delta_temperature_comparison_cloudy_day_HM-WDS100-C6-O-2_versus_modified_TFA_radiation_shield_with_HB-UNI-Sensor1-THP_MA-AHT20_BMP280.png)
+
+- Vergleich der gemessenen Außentemperaturen an einem sonnigen Tag:
+	
+![pic](./Images/temperature_comparison_sunny_day_HM-WDS100-C6-O-2_versus_modified_TFA_radiation_shield_with_HB-UNI-Sensor1-THPD-SHT45_BME280.png)
 
 
-## Benötigtes Addon
+
+## benötigtes Addon
 
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
@@ -261,6 +276,10 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
 - es gibt einen inneren und einen äußeren Luftkanal. In beiden Luftkanälen saugt der Lüfter getrennt Luft von unten bzw. unten und außen an, so dass eine thermische Entkopplung erfolgt. Bei Sonneneinstrahlung bekommt der Messsensor  nur die von unten angesaugte Umgebungsluft.
 
 - **HINWEIS**: Bei meinem Exemplar lief im Lieferzustand der eingebaute Lüfter falsch herum. Dies führte bei Sonneneinstrahlung zu einer hohen Temperaturüberhöhung (ca. 2..4K). Nach einem Umlöten der Lüfteranschlüsse an die Solarzelle war die Temperaturüberhöhung gegenüber einer Referenzmessung deutlich besser (ca. 0,4..0,8 K). Dieser Verdrahtungsfehler wurde an TFA Dostmann berichtet und inzwischen bestätigt. Er soll verbessert werden.
+
+## Literatur
+
+- [Grundlagen der Temperaturmesstechnik](https://www.meteorologyshop.eu/meteo-blog/grundlagen-der-temperaturmesstechnik)
 
 
 ## Lizenz
