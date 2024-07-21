@@ -194,15 +194,14 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 - Adafruit BMP280           2020 Adafruit https://github.com/adafruit/Adafruit_BMP280_Library (no license mentioned)
 - finitespace/BME280        2016 finitespace https://github.com/finitespace/BME280  (GNU General Public License v3.0) for EnvironmentCalculations
 - AHT20                     2020 dvarrel https://github.com/dvarrel/AHT20 (Creative Commons Zero v1.0 Universal)
-- Adafruit_FRAM_SPI         2024 FUEL4EP fork of Adafruit's Adafruit_FRAM_SPI: added low power mode; https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/Adafruit_FRAM_SPI (BSD License)
+- Adafruit_FRAM_SPI         2024 https://github.com/adafruit/Adafruit_FRAM_SPI (BSD License) >= commit 928281f of 18th Jul 2024
 - Time                      2012 PaulStoffregen https://github.com/PaulStoffregen (no license mentioned)
 
-- für [Adafruit's Adafruit_FRAM_SPI Repository](https://github.com/adafruit/Adafruit_FRAM_SPI) wurde ein Pull-Request gemacht, der von Adafruit bisher nicht übernommen wurde. Daher bitte meinen Fork verwenden, solange der Pull-Request nicht umgesetzt wurde.
 
 ## Speicherbedarf auf einem ATMega1284P (mit Debug)
 
-der Sketch verwendet 58708 Bytes (44%) des Programmspeicherplatzes. Das Maximum sind 130560 Bytes.
-Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
+- der Sketch verwendet 58710 Bytes (44%) des Programmspeicherplatzes. Das Maximum sind 130560 Bytes.
+Globale Variablen verwenden 2616 Bytes (15%) des dynamischen Speichers, 13768 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 ## Batteriewechsel
 

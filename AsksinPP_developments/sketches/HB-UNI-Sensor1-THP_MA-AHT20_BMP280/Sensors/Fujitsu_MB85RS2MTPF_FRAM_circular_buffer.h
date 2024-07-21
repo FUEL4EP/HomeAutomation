@@ -1080,8 +1080,8 @@ bool FRAM_sleep_mode() {
   #ifdef DEEP_DEBUG
     DPRINTLN(F(".. entering low power mode of FRAMs .."));
   #endif
-  success1 = fram_1.enter_low_power_mode();
-  success2 = fram_2.enter_low_power_mode();
+  success1 = fram_1.enterSleep();
+  success2 = fram_2.enterSleep();
 
 
   return success1 && success2;
@@ -1096,8 +1096,8 @@ bool FRAM_normal_mode() {
     DPRINTLN(F(".. exiting low power mode of FRAMs .."));
   #endif
 
-  success1 = fram_1.exit_low_power_mode();
-  success2 = fram_2.exit_low_power_mode();
+  success1 = fram_1.exitSleep();
+  success2 = fram_2.exitSleep();
 
   return success1 && success2;
 }

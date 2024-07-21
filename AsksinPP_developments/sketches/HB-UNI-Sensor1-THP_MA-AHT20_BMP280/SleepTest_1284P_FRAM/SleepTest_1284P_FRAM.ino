@@ -86,8 +86,8 @@ void cc1101_powerdown()
 {
   SPI.begin();                          // Initialize SPI interface
 
-  (void)fram_1.enter_low_power_mode();
-  (void)fram_2.enter_low_power_mode();
+  (void)fram_1.enterSleep();
+  (void)fram_2.enterSleep();
   
   pinMode(CC1101_GDO0, INPUT);          // Config GDO0 as input
 
@@ -133,8 +133,8 @@ void FRAMs_powerdown()
   (void)fram_1.begin();
   (void)fram_2.begin();
   // enter low power mode of FRAMs
-  (void)fram_1.enter_low_power_mode();
-  (void)fram_2.enter_low_power_mode();
+  (void)fram_1.enterSleep();
+  (void)fram_2.enterSleep();
 
   SPI.end();
   delay(10);

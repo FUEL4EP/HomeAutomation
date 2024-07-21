@@ -52,7 +52,7 @@ const int numValues = 14;     // one sample at middle of each month + one sample
 
                       //B Jan  Feb  Mar   Apr   May   Jun   Jul   Aug   Sep  Oct  Nov  Dec     E     // month of year
 double xValues[14] = {  0, 16,  45,  75,  105,  136,  166,  197,  228,  258, 289, 319, 350 , 365};   // day of year index of mid of month
-double yValues[14] = { 15, 15,  66,  75,  100,  131,  185,  187,  183,  172, 119,  55,  39,   15};   // average monthly temperatures in Germany scaled by 10: 10 deg C == 100
+double yValues[14] = { 15, 15,  66,  75,  100,  131,  168,  187,  183,  172, 119,  55,  39,   15};   // average monthly temperatures in Germany scaled by 10: 10 deg C == 100, as of M/July 2024; please update to the latest published values
                                                                                                      // source URL: https://de.statista.com/statistik/daten/studie/5564/umfrage/monatliche-durchschnittstemperatur-in-deutschland/
                                                                                                      // please update the table yValues[14] to the latest on published at that UR
                                                                                                      // get day of year from the date and time of compilation
@@ -141,10 +141,17 @@ uint16_t get_day_index_of_year_from_date_time(char const *date, char const *myti
 }
 
 
-uint16_t get_sampling_index_of_year_from_date_time(char const *date, char const *mytime) {
+uint32_t get_sampling_index_of_year_from_date_time(char const *date, char const *mytime) {
+
+
+    uint32_t EPOCH_time_in_year_from_date_time;
+    EPOCH_time_in_year_from_date_time = (uint32_t)(get_EPOCH_time_in_year_from_date_time(date, mytime));
+    DPRINT(F("EPOCH time in year from date time ")); DDECLN(EPOCH_time_in_year_from_date_time);
+    DPRINT(F("SAMPLING_INTERVAL                 ")); DDECLN(SAMPLING_INTERVAL);
+
 
     // calculate the integer sampling index from the EPOCH time, i.e. how many measurements samples have been done since beginning of year of compilation
-    return (uint32_t)(get_EPOCH_time_in_year_from_date_time(date, mytime)/SAMPLING_INTERVAL);
+    return (uint32_t)(EPOCH_time_in_year_from_date_time/SAMPLING_INTERVAL);
 }
 
 

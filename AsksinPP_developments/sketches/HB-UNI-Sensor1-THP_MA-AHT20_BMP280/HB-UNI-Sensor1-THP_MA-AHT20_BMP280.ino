@@ -1,7 +1,8 @@
 //--------------------------------------------------------------
 // HB-UNI-Sensor1-THP_MA-AHT20_BMP280 Homebrew Homematic AsksinPP THP sensor with moving averages stored in a ferromagnetic RAM FRAM
 // Aosong AHT20 (Temperature, Humidity, Dewpoint) / Bosch BMP280 (Temperature, Pressure), temperature moving average filters of last day, week, month, and year and WebUI offset settings
-// Version 1.0
+// Version 1.1  2024-07-21
+// adaption to https://github.com/adafruit/Adafruit_FRAM_SPI 928281f after merging FUEL4EP:s pull request by Adafruit
 // (C) 2018-2020 Tom Major (Creative Commons)
 // (C) 2024 FUEL4EP        (Creative Commons)          added Aosong AHT20 BMP280 and Bosch BMP280 sensor /  moving average filters (1 day, 1 week, 1 month, and 1 year) for temperature/ offset setting by WebUI
 // https://creativecommons.org/licenses/by-nc-sa/4.0/
@@ -14,7 +15,6 @@
 // finitespace/BME280        2016 finitespace https://github.com/finitespace/BME280  (GNU General Public License v3.0) for EnvironmentCalculations
 // AHT20                     2020 dvarrel https://github.com/dvarrel/AHT20 (Creative Commons Zero v1.0 Universal)
 // Adafruit_FRAM_SPI         2013 Adafruit https://github.com/adafruit/Adafruit_FRAM_SPI (BSD License)
-// Adafruit_FRAM_SPI         2024 FUEL4EP fork of Adafruit's Adafruit_FRAM_SPI: added low power mode; https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/Adafruit_FRAM_SPI (BSD License)
 // HB-LC-SwX-TP              2021 jp112sdl https://github.com/jp112sdl/HB-LC-SwX-TP (no license mentioned)
 // Time                      2012 PaulStoffregen https://github.com/PaulStoffregen (no license mentioned)
 //-------------------------------------------------------------
@@ -99,7 +99,7 @@
 using namespace as;
 
 //correction factor of the clock inaccuracy (ceramic resonator is default on Arduino boards), if no quartz RTC is used, see also HB-UNI-Sen-CURRENT from Jérôme ( jp112sdl )
-#define SYSCLOCK_FACTOR    0.94458948129    // adjust to get sampling data exactly every 240 seconds, during sleepmode the accurate crystal oscillator is stopped for power reasons and the less accurate internal RC oscillator is activated!
+#define SYSCLOCK_FACTOR    0.9253121449371428    // adjust to get sampling data exactly every 240 seconds, during sleepmode the accurate crystal oscillator is stopped for power reasons and the less accurate internal RC oscillator is activated!
 
 // both a Aosong AHT20 sensor as well as a Bosch BMP280 sensor are required
 
@@ -617,12 +617,11 @@ void setup()
 
     bool first = sdev.init(hal);
     buttonISR(cfgBtn, CONFIG_BUTTON_PIN);
-    sdev.initDone();
+    sdev.initDone();  // for cold boot
     sdev.channel(1).AHT20_BMP280.init_circular_buffers_in_FRAMs( sdev.channel(1).getList1().bootType(), sdev.channel(1).getList1().presetHistoricTemperatures(), sdev.channel(1).getList1().presetTemp10());
     DPRINTLN(F("setting bootType to 'warm_boot'"));
     sdev.channel(1).getList1().bootType(1);
     DPRINTLN(F("circular buffers have been initialized "));
-    
 }
 
 
