@@ -166,7 +166,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 	+ Mittelwertbildung
 	+ Kaltstart bei Werksreset (Config-Taste > 6 Sekunden drücken)
 	+ Warmstart bei Batteriewechsel ohne Datenverlust
-	+ Gehäuse gedruckt und getestet, erste Messungen bei Sonneneinstrahlung zeigen gute Ergebnisse. Die modifizierte TFA Schutzhülle misst mit dem HB-UNI-Sensor1-THP_MA-AHT20_BMP280 Sensor bei Sonneneinstrahlung geringere Temperaturen als die Original-EQ3-HM-WDS100-C6-O-2 Wetterstation. Beide sind am selben Mast angebracht, siehe Bild. Die EQ3 Wetterstation ist in ca. 3 Metern Höhe, die modifizierte TFA Schutzhülle in ca. 2 Metern Höhe angebracht.
+	+ Gehäuse gedruckt und getestet, erste Messungen bei Sonneneinstrahlung zeigen gute Ergebnisse. Die modifizierte TFA Schutzhülle misst mit dem HB-UNI-Sensor1-THP_MA-AHT20_BMP280 Sensor bei Sonneneinstrahlung geringere Temperaturen als die Original-EQ3-HM-WDS100-C6-O-2 Wetterstation. Beide sind am selben Mast angebracht, siehe Bild. Die EQ3 Wetterstation ist in ca. 3 Metern Höhe, die modifizierte TFA Schutzhülle in ca. 2 Metern Höhe angebracht:
 	
 ![pic](./Images/TFA_solar_radiation_protection_with_fan_and_hat_below_EQ3_weather_station.png)
 
@@ -262,7 +262,7 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
 	![pic](./Images/TFA_sensor_mounting_and_inner_shield_bottom_part_2.png)
 	![pic](./Images/sensor_inserted_into_inner_solar_radiation_shield.png)
 	
-- in das TFA Unterteil werden mit Hilfe der 3D-gedruckten Bohrschablone zusätzliche Lüftungslöcher gebohrt, um kühle Luft von unten Ansaugen zu können:
+- in das TFA Unterteil werden mit Hilfe der 3D-gedruckten Bohrschablone zusätzliche Lüftungslöcher gebohrt, um kühle Luft von unten ansaugen zu können:
 
 
 	![pic](./Images/drill_stencil.png)
@@ -273,9 +273,9 @@ Globale Variablen verwenden 2592 Bytes (15%) des dynamischen Speichers, 13792 By
 	
 - danach erfolgt das vorsichtige Einbringen in das TFA Gehäuse
 
-- es gibt einen inneren und einen äußeren Luftkanal. In beiden Luftkanälen saugt der Lüfter getrennt Luft von unten bzw. unten und außen an, so dass eine thermische Entkopplung erfolgt. Bei Sonneneinstrahlung bekommt der Messsensor  nur die von unten angesaugte Umgebungsluft.
+- es gibt einen inneren und einen äußeren Luftkanal. In beiden Luftkanälen saugt der Lüfter getrennt Luft von unten bzw. unten und außen an, so dass eine thermische Entkopplung erfolgt. Bei Sonneneinstrahlung bekommt der Messsensor  nur die von unten angesaugte kühlere Umgebungsluft.
 
-- **HINWEIS**: Bei meinem Exemplar lief im Lieferzustand der eingebaute Lüfter falsch herum. Dies führte bei Sonneneinstrahlung zu einer hohen Temperaturüberhöhung (ca. 2..4K). Nach einem Umlöten der Lüfteranschlüsse an die Solarzelle war die Temperaturüberhöhung gegenüber einer Referenzmessung deutlich besser (ca. 0,4..0,8 K). Dieser Verdrahtungsfehler wurde an TFA Dostmann berichtet und inzwischen bestätigt. Er soll verbessert werden.
+- **WICHTIGER HINWEIS**: Bei meinem Exemplar lief im Lieferzustand der eingebaute Lüfter **falsch** herum. Dies führte bei Sonneneinstrahlung zu einer hohen Temperaturüberhöhung (ca. 2..4K). Nach einem Umlöten der Lüfteranschlüsse an die Solarzelle war die Temperaturüberhöhung gegenüber einer Referenzmessung deutlich besser (ca. 0,4..0,8 K). Dieser Verdrahtungsfehler wurde an TFA Dostmann berichtet und inzwischen bestätigt. Er soll verbessert werden.
 
 ## Literatur
 
