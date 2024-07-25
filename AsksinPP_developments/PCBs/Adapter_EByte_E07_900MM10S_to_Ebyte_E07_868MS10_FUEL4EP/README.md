@@ -27,6 +27,10 @@
 
 - da das eByte E07 868MS10 Modul nicht mehr oder nur sehr schwer käuflich ist, wurde dieser Adapter als Ersatz entworfen. Es wird ein verfügbares EByte E07 900MM10S Funkmodul verbaut.
 
+## Bezugsquelle für eByte E07 900MM10S
+
+- eine mögliche Bezugsquelle für das [Funkmodul eByte 900MM10S ist AliExpress](https://de.aliexpress.com/i/1005005130759193.html)
+
 ## Rückmeldungen
 
 - sind willkommen.
