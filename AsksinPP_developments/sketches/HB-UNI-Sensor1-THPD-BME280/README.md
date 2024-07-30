@@ -198,14 +198,24 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 - **WICHTIG:** Es darf nur die [finitespace BME280](https://github.com/finitespace/BME280) Bibliothek im Suchpfad der Arduino IDE sein! Gegebenenfalls müssen andere BME280 Bibliotheken temporär anders wohin verschoben werden.
 
-
-
-
 ## Benötigtes Addon
 
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
 - bitte dieses Addon 'hb-ep-devices-addon.tgz 'vor dem Anlernen des HB-UNI-Sensor1-THPD-BME280 Sensors auf der RaspberryMatic / CCU3 installieren (kein unzip vonnöten!)
+
+## Wetterschutz für Außeneinsatz
+
+- für die Messung der Außentemperatur und Außenluftfeuchtigkeit passt z.B. dieser Wetterschutz:
+
+	![pic](Images/TFA_solar_radiation_protection_with_fan_and_hat.png)
+
+- 3D-Druckdaten gibt es unter [Thingiverse](https://www.thingiverse.com/thing:6697089)
+- oder [hier](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THP_MA-AHT20_BMP280) für einen Klimasensor mit gleich großer Platine
+- passende Basisplatinen mit 75 mm Kantenlänge für einen Arduino Pro Mini gibt es [hier](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs):
+	+ [HB-UNI-SEN-BATT_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP)
+	+ [HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP)
+	+ [HB-UNI-SEN-BATT_E07-900MM10S_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-900MM10S_FUEL4EP)
 
 ## Verringerung der Tx Sendeleistung
 

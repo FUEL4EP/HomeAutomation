@@ -66,6 +66,12 @@
     "visible_layers": "fffffff_ffffffff",
     "zone_display_mode": 0
   },
+  "git": {
+    "repo_password": "",
+    "repo_type": "",
+    "repo_username": "",
+    "ssh_key": ""
+  },
   "meta": {
     "filename": "Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP.kicad_prl",
     "version": 3
