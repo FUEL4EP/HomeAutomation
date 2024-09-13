@@ -3,3 +3,14 @@ FerriteBead,FB1,L_0603_1608Metric,C1002
 100n,C2,C_0603_1608Metric,C14663
 10u,C1,C_0603_1608Metric,C19702
 E07-900MM10S,Module1,eByte_E07-900MM10S,C5844212
+Conn_01x01_Pin,JC5,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
+GND,JA1,edge_hole_Pitch2.28mm_Drill0.8mm,
+Conn_01x01_Pin,JC8,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
+Ant.,JA2,edge_hole_Pitch2.28mm_Drill0.8mm,
+Logo_Open_Hardware_Small,LOGO1,CC-BY-ND-SA_bottom,
+Conn_01x01_Pin,JC6,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
+Conn_01x01_Pin,JC3,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
+Conn_01x01_Pin,JC2,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
+Conn_01x01_Pin,JC1,edge_hole_Pitch1.27mm_Drill0.75mm,
+Conn_01x01_Pin,JC4,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
+Conn_01x01_Pin,JC7,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,

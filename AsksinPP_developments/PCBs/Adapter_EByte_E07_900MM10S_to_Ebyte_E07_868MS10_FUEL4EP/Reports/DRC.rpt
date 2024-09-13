@@ -1,9 +1,9 @@
-** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP.kicad_pcb **
-** Created on 2024-06-25 08:11:50 **
+** Drc report for Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP.kicad_pcb **
+** Created on 2024-09-13T17:51:38+0200 **
 
 ** Found 1 DRC violations **
 [missing_courtyard]: Footprint hat keine Abstandsfläche definiert
-    Local override; Severity: warning (excluded)
+    Local override; warning (excluded)
     @(9.4996 mm, -4.2164 mm): Footprint LOGO1
 
 ** Found 0 unconnected pads **

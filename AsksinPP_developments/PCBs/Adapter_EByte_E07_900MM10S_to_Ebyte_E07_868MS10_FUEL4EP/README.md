@@ -13,7 +13,6 @@
 
 - Breite: 19 mm
 - Weite: 13 mm
-- Dicke: 1,2 mm (empfohlen)
 
 ## Stromlaufplan
 
@@ -21,15 +20,11 @@
 
 ## Status
 
-- diese Platine wurde noch nicht bei JLCPCB gefertigt und ist daher auch nicht validiert. Nutzung auf eigenes Risiko!
+- diese Platine am 13. Sep 2024 bei JLCPCB in die Fertigung gegeben und wird nach der Lieferung validiert werden. Nutzung bis dahin auf eigenes Risiko!
 
 ## Ersatz für das eByte E07 868MS10 Modul 
 
 - da das eByte E07 868MS10 Modul nicht mehr oder nur sehr schwer käuflich ist, wurde dieser Adapter als Ersatz entworfen. Es wird ein verfügbares EByte E07 900MM10S Funkmodul verbaut.
-
-## Bezugsquelle für eByte E07 900MM10S
-
-- eine mögliche Bezugsquelle für das [Funkmodul eByte 900MM10S ist AliExpress](https://de.aliexpress.com/i/1005005130759193.html)
 
 ## Rückmeldungen
 
@@ -49,13 +44,7 @@
 ![pic](./Pictures_of_JLCPCB_prototypes/specify_an_order_number.png)
 
 - der  Dummy-Text 'JLCJLCJLCJLC' ist auf der Rückseite der Platine
-- die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als das sehr teure Standard PCBA, daher wird eine Verlötung von Hand empfohlen
-- das Funkmodule EByte E07 900MM10S muss gegebenenfalls vorher bei JLCPCB gekauft werden, falls JLCPCB die Bestückung davon machen soll
-- bei Standard PCBA ist ein Panel vonnöten
 
-## Hinweis für Bestückung von Hand
-- die Induktivität FB1 kann auch weggelassen werden und mit Lötzinn überbrückt werden
-- die Kondensatoren C1 und C2 sollten bestückt werden
 
 ## lokale Installation des Github Releases auf Deinem Computer
 
@@ -72,15 +61,16 @@
 ## Versionsverlauf
 
 -   V1.0 24. Jun 2024: Initiale Version
-- KiCad Schaltplan-Editor Version: 7.0.11-7.0.11~ubuntu22.04.1 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 7.0.11-7.0.11~ubuntu22.04.1 unter Kubuntu22.04.1
-- PCB Version 1.0
-- Schematics  1.0
+-   V1.1 23. Sep 2024: Migration auf KiCAD 8; zusätzliche Vias
+- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1 unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1 unter Kubuntu22.04.1
+- PCB Version 1.1
+- Schematics  1.1
 
 
 ## Disclaimer
 
--  die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr.
+-   die Nutzung der hier veröffentlichten Inhalte erfolgt vollständig auf eigenes Risiko und ohne jede Gewähr.
 -  der Nutzer dieser Platine ist selbst dafür verantwortlich, dass die relevanten Richtlinien für Funkanlagen, z.B. in der EU die Funkanlagenrichtlinie (2014/53/EU, auch bekannt als RED), eingehalten wird.
 
 ## Lizenz 
