@@ -74,6 +74,10 @@
 - die automatische Ladeschaltung ist zur Zeit noch nicht in Software implementiert! Der Nutzer ist für den korrekten Ladezustand der Akkus verantwortlich.
 - ein automatische Ladeschaltung wird in Zukunft als Update zur Verfügung gestellt werden. Das kann aber noch eine Weile dauern ..
 
+## Fernsteuerung der Aktorkanäle mit Apple iPAD
+
+- das Ein- und Ausschalten von Lasten kann z.B. mit Kurzbefehlen (ShortCuts) auf einem Apple iPAD gesteuert werden, siehe [hier](./control_by_iPAD_shortcuts)
+
 
 ## Disclaimer
 
