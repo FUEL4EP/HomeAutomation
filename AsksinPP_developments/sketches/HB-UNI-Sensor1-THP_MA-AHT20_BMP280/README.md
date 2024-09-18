@@ -19,11 +19,9 @@
 
 - die Auflösung der gleitenden Mittelwerte beträgt 0,01 Grad Celsius.
 
-- Diagramm der gemessenen Außentemperatur und der gleitenden Mittelwerte in den ersten 31 Tagen nach Inbetriebnahme:
+- Diagramm der gemessenen Außentemperatur und der gleitenden Mittelwerte in den ersten 3 Monaten nach Inbetriebnahme:
 
-![pic](./Images/moving_averages_first_31_days_after_boot.png)
-
-- die kurzen Spitzen der Temperaturmesswerte sind auf kurzes Hereinholen des Sensors von draußen ins wärmere Haus zurückzuführen.
+![pic](./Images/moving_averages_first_3_months_after_boot.png)
 
 - die Ringpuffer für die Berechnung der gleitenden Mittelwerte wurde bei der Programmierung mit interpolierten historischen Werten des vergangenen Jahres vorbelegt, so dass die Mittelwerte bereits einen guten Startwert haben.
 
@@ -211,6 +209,10 @@ Globale Variablen verwenden 2616 Bytes (15%) des dynamischen Speichers, 13768 By
 
 	Nach dem Umspringen des Zeitstempels bleiben fast 4 Minuten Zeit, um die alten Batterien zu entnehmen und durch neue zu ersetzen. Die Daten der FRAMs bleiben dabei erhalten. Der Wechsel der Batterien sollte innerhalb dieser 4 Minuten abgeschlossen ein.
 - bei einem Batteriewechsel entsprechend dieser Anleitung bleiben die in den nichtflüchtigen FRAM-Speichern gespeicherten Messwerte erhalten, es erfolgt keine erneute Vorbelegung. 
+- die Entladekurve der 2x AA-Batterien in den ersten 3 Monaten ist:
+
+	![pic](./Images/battery_discharge_curve.png)
+- ein 2x AA-Batteriesatz hält voraussichtlich > 9 Monate
 	
 ## Kalibrierung von Temperatur, relativer Luftfeuchtigkeit
 
