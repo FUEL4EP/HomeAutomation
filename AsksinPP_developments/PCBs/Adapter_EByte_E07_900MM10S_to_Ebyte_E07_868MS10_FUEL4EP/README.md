@@ -1,5 +1,10 @@
 # Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%2FAdapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
+## Ersatz für das eByte E07 868MS10 Modul 
+
+- da das eByte E07 868MS10 Modul nicht mehr oder nur sehr schwer käuflich ist, wurde dieser Adapter als Ersatz entworfen. Es wird ein verfügbares EByte E07 900MM10S Funkmodul verbaut.
+
+
 ## Adapter für 868.3 MHz Funkmodul Ebyte E07 900MM10S auf Ebyte E07 868MS10
 
 - Infos zu AsksinPP sind [hier](https://asksinpp.de) und [hier](https://asksinpp.de/Grundlagen/01_hardware.html#verdrahtung) zu finden
@@ -7,6 +12,7 @@
 ![pic](PNGs/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP_PCB_3D_top.png)
 ![pic](PNGs/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP_PCB_KiCAD.png)
 ![pic](PNGs/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP_top_silkscreen.png)
+
 
 
 ## Platinenmaße
@@ -20,11 +26,14 @@
 
 ## Status
 
-- diese Platine am 13. Sep 2024 bei JLCPCB in die Fertigung gegeben und wird nach der Lieferung validiert werden. Nutzung bis dahin auf eigenes Risiko!
+- die Platine V1.1 wurde bei JLCPCB gefertigt und bestückt.
+- der Frequenztest wurde am 25. Sep 2024 mit einem PCB HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP erfolgreich durchgeführt.
+- die Protokolldatei des Frequenztests ist [hier](./Log_files_as_reference/FreqTest_1284P_serial_monitor.log)
+- Bilder der gefertigten Prototypen:
+![pic](Pictures_of_JLCPCB_prototypes/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP_PCB_top_V1.1.png)
+![pic](Pictures_of_JLCPCB_prototypes/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP_PCB_bottom_V1.1.png)
 
-## Ersatz für das eByte E07 868MS10 Modul 
 
-- da das eByte E07 868MS10 Modul nicht mehr oder nur sehr schwer käuflich ist, wurde dieser Adapter als Ersatz entworfen. Es wird ein verfügbares EByte E07 900MM10S Funkmodul verbaut.
 
 ## Rückmeldungen
 
