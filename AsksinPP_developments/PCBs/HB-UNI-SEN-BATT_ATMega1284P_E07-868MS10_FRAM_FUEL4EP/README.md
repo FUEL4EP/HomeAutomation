@@ -154,10 +154,12 @@
 -   V1.3 14. Jul 2023: KiCAD 6 bedingte Verbesserungen der Datenbasis
 -   V1.4 15. Aug 2023: Fix of EN pin of TPS61221 boost converter (must be tied to VIN)
 -   S V1.5 17. Feb 2024: Fix of LCSC-Nummer von R7 (Fehler bei KiCAD 6 Migration) und KiCAD 6-Bibliothekspfad
-- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
-- PCB Version 1.4
-- Schematics  1.5
+-   S V1.6 26. Sep 2024: Migration auf KiCAD 8; Fix of LCSC-Nummern (R2,R4,R5)
+-   L V1.5 26. Sep 2024: Migration auf KiCAD 8; Fix of LCSC-Nummern (R2,R4,R5) 
+- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1 1.
+- PCB Version 1.5
+- Schematics  1.6
 
 
 ## Lizenz 
