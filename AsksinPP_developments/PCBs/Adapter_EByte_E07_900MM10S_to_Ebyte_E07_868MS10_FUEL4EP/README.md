@@ -54,6 +54,9 @@
 
 - der  Dummy-Text 'JLCJLCJLCJLC' ist auf der Rückseite der Platine
 
+## Montage
+
+- die Platine wird mit einer Stiftleiste RM 1.27mm 1x8 Pin auf die Basisplatine gelötet
 
 ## lokale Installation des Github Releases auf Deinem Computer
 
