@@ -1,17 +1,17 @@
 Comment,Designator,Footprint,LCSC
-10K,"R4,R5",R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C101933
 8MHz,Y1,Crystal_SMD_5032-2Pin_5.0x3.2mm_HandSoldering,C115962
 100k,R7,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C149504
 10uF,C1,C_0402_1005Metric,C15525
 10u,"C10,C11,C12,C13",C_0805_2012Metric,C15850
+10k,"R2,R4,R5",R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17414
 470,R1,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17710
 47k,R8,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17713
-10k,R2,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17733
 22p,"C6,C7",C_0805_2012Metric,C1804
 22,R6,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C23345
 100n,"C2,C3,C4,C8,C9",C_0805_2012Metric,C28233
 Config button,"SW1,SW2",SW_TS-1187A-B-A-B,C318884
 ATmega1284P-AU,U1,TQFP-44_10x10mm_P0.8mm,C33575
+100n,C14,C_0402_1005Metric,C338011
 100K,R3,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C340475
 TPS61221DCK,U2,Texas_R-PDSO-G6,C37055
 IRLU024N,Q1,TO-251-3_Vertical,C558184
@@ -35,5 +35,4 @@ Conn_01x02,J1,PinHeader_1x02_P2.54mm_Vertical,
 Conn_01x04,J6,PinHeader_1x04_P2.54mm_Vertical,
 Conn_01x02,J2,PinHeader_1x02_P2.54mm_Vertical,
 Conn_01x04,J9,PinHeader_1x04_P2.54mm_Vertical,
-100n,C14,C_0402_1005Metric,
 Antenna,AE1,SolderWire-0.1sqmm_1x01_D0.4mm_OD1mm,

@@ -60,10 +60,10 @@
         }
       ],
       "drc_exclusions": [
-        "silk_over_copper|22190000|-18189500|00000000-0000-0000-0000-00005ad9e62b|9415e742-0856-4817-9b8c-820011acad4e",
-        "silk_over_copper|23510800|-18189500|00000000-0000-0000-0000-00005ad9e62c|9415e742-0856-4817-9b8c-820011acad4e",
-        "silk_over_copper|51510800|-18189500|bd2c2c6e-6052-4e4b-a3e1-5ead13ba892d|763794e2-2677-4d5c-829b-df7d30ac7318",
-        "silk_over_copper|52670000|-18189500|703e4742-91e4-43fa-8c92-682152ea72a0|763794e2-2677-4d5c-829b-df7d30ac7318"
+        "silk_over_copper|22168584|-17685007|00000000-0000-0000-0000-00005ad9e62b|00000000-0000-0000-0000-000000000000",
+        "silk_over_copper|25423069|-18189500|00000000-0000-0000-0000-00005ad9e62c|00000000-0000-0000-0000-000000000000",
+        "silk_over_copper|52670000|-17584393|703e4742-91e4-43fa-8c92-682152ea72a0|00000000-0000-0000-0000-000000000000",
+        "silk_over_copper|52670000|-18189500|bd2c2c6e-6052-4e4b-a3e1-5ead13ba892d|00000000-0000-0000-0000-000000000000"
       ],
       "meta": {
         "version": 2
@@ -136,7 +136,7 @@
         "min_microvia_drill": 0.1,
         "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
-        "min_text_height": 0.8,
+        "min_text_height": 0.6,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
         "min_track_width": 0.127,
@@ -257,7 +257,9 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      "multiple_net_names|1409700|1651000|6d00a9cb-94d3-49b2-b0c2-d78f136a61fd|9b70b311-2aa3-456c-8d0a-d3e55c3e8977|/7766ca2c-d652-431b-ba34-0d354b09e90f|/7766ca2c-d652-431b-ba34-0d354b09e90f|/7766ca2c-d652-431b-ba34-0d354b09e90f"
+    ],
     "meta": {
       "version": 0
     },
@@ -519,7 +521,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "",
+    "bom_export_filename": "BOM/HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_FUEL4EP.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -569,13 +571,79 @@
           "label": "DNP",
           "name": "${DNP}",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MANUFACTURER",
+          "name": "MANUFACTURER",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MAXIMUM_PACKAGE_HEIGHT",
+          "name": "MAXIMUM_PACKAGE_HEIGHT",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer",
+          "name": "Manufacturer",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "PARTREV",
+          "name": "PARTREV",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Productname",
+          "name": "Productname",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "STANDARD",
+          "name": "STANDARD",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Enable",
+          "name": "Sim.Enable",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "TYPE",
+          "name": "TYPE",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Beschreibung",
+          "name": "Description",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "Grouped By Value",
+      "name": "",
       "sort_asc": true,
-      "sort_field": "Referenz"
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
@@ -629,7 +697,7 @@
   "sheets": [
     [
       "7766ca2c-d652-431b-ba34-0d354b09e90f",
-      ""
+      "Stammblatt"
     ]
   ],
   "text_variables": {}

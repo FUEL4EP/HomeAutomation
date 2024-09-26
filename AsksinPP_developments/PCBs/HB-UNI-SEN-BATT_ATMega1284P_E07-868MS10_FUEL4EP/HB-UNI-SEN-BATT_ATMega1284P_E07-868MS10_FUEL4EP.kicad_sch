@@ -11008,7 +11008,7 @@
 		(lib_id "Graphic:Logo_Open_Hardware_Small")
 		(at 257.175 135.89 0)
 		(unit 1)
-		(exclude_from_sim yes)
+		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)

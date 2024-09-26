@@ -142,11 +142,13 @@
 -	 L V1.1 17. Feb 2024: Verschieben der beiden Kondensatoren C1 und C14, um die Handverlötung des Funkmoduls zu erleichtern
 -	 S V1.2 17. Feb 2024: Korrektur eines unbeabsichtigt verschobenen Netznamens
 -	 S V1.3 17. Feb 2024: Korrektur LCSC Nummer für R7
+-	 S V1.4 26. Sep 2024: Migration zu KiCAD 8; Fix of LCSC-Nummern (R2, R4, R5)
+-	 L V1.2 26. Sep 2024: Migration zu KiCAD 8; Fix of LCSC-Nummern (R2, R4, R5)
 
-- 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	PCB Version 1.1
-- 	Schematics  1.3
+- 	KiCad Schaltplan-Editor   Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- 	KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- 	PCB Version 1.2
+- 	Schematics  1.4
 
 ## Lizenz 
 
