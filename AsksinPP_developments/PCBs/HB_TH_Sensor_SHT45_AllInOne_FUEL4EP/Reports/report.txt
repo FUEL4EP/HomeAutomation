@@ -1,48 +1,41 @@
-Hinweis: Verarbeite Symbol "NT1:NetTie:NetTie-2_SMD_Pad0.5mm".
-Hinweis: Verarbeite Symbol "AE1:RF_Antenna:Texas_SWRA416_868MHz_915MHz".
-Hinweis: Verarbeite Symbol "H4:TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm".
-Hinweis: Verarbeite Symbol "J1:Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical".
-Hinweis: Verarbeite Symbol "J2:Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical".
-Hinweis: Verarbeite Symbol "J3:Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical".
-Hinweis: Verarbeite Symbol "JP1:Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm".
-Hinweis: Verarbeite Symbol "L1:FUEL4EP:FUEL4EP_Inductor_SMD_1".
-Hinweis: Verarbeite Symbol "L2:Inductor_SMD:L_0402_1005Metric".
-Hinweis: Verarbeite Symbol "LOGO1:FUEL4EP:CC-BY-ND-SA".
-Hinweis: Verarbeite Symbol "Module1:FUEL4EP:eByte_E07-900MM10S".
-Hinweis: Verarbeite Symbol "H3:TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm".
-Hinweis: Verarbeite Symbol "R1:Resistor_SMD:R_0402_1005Metric".
-Hinweis: Verarbeite Symbol "R2:Resistor_SMD:R_0402_1005Metric".
-Hinweis: Verarbeite Symbol "R3:Resistor_SMD:R_0402_1005Metric".
-Hinweis: Verarbeite Symbol "R4:Resistor_SMD:R_0402_1005Metric".
-Hinweis: Verarbeite Symbol "R5:Resistor_SMD:R_0402_1005Metric".
-Hinweis: Verarbeite Symbol "R6:Resistor_SMD:R_0402_1005Metric".
-Hinweis: Verarbeite Symbol "SW1:FUEL4EP:SW_TS-1187A-B-A-B".
-Hinweis: Verarbeite Symbol "U1:Package_QFP:TQFP-44_10x10mm_P0.8mm".
-Hinweis: Verarbeite Symbol "U2:Package_TO_SOT_SMD:Texas_R-PDSO-G6".
-Hinweis: Verarbeite Symbol "U3:FUEL4EP:SHT4X".
-Hinweis: Verarbeite Symbol "C12:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "BT1:FUEL4EP:BatteryHolder_Keystone_2460_1xAA".
-Hinweis: Verarbeite Symbol "C1:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "C2:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "C3:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "C4:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "C5:Capacitor_SMD:C_0805_2012Metric".
-Hinweis: Verarbeite Symbol "C6:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "C7:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "C8:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "C9:Capacitor_SMD:C_0805_2012Metric".
-Hinweis: Verarbeite Symbol "C11:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "C13:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "C14:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "C15:Capacitor_SMD:C_0402_1005Metric".
-Hinweis: Verarbeite Symbol "D1:LED_SMD:LED_0402_1005Metric".
-Hinweis: Verarbeite Symbol "FB1:Inductor_SMD:L_0402_1005Metric".
-Hinweis: Verarbeite Symbol "H1:TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm".
-Hinweis: Verarbeite Symbol "H2:TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm".
-Warnung: Kein Netz für Symbol H2 Pin 1 gefunden.
-Warnung: Kein Netz für Symbol H1 Pin 1 gefunden.
-Warnung: Kein Netz für Symbol H4 Pin 1 gefunden.
-Warnung: Kein Netz für Symbol H3 Pin 1 gefunden.
-
-
-Hinweis: Warnungen insgesamt: 0, Fehler insgesamt: 0.
+Footprint J2 (Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical) aktualisiert: : OK
+Footprint J3 (Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical) aktualisiert: : OK
+Footprint J1 (Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical) aktualisiert: : OK
+Footprint BT1 (FUEL4EP:BatteryHolder_Keystone_2460_1xAA) aktualisiert: : OK
+Footprint H2 (TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm) aktualisiert: : OK
+Hinweis: Footprint L2 (Inductor_SMD:L_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint U3 (Sensor_Humidity:Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint R5 (Resistor_SMD:R_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint FB1 (Inductor_SMD:L_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Footprint H1 (TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm) aktualisiert: : OK
+Hinweis: Footprint R3 (Resistor_SMD:R_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Footprint JP1 (Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm) aktualisiert: : OK
+Footprint H3 (TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm) aktualisiert: : OK
+Hinweis: Footprint C7 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Footprint H4 (TestPoint:TestPoint_THTPad_2.5x2.5mm_Drill1.2mm) aktualisiert: : OK
+Hinweis: Footprint C14 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint NT1 (NetTie:NetTie-2_SMD_Pad0.5mm) aktualisiert: : (keine Änderungen)
+Footprint AE1 (FUEL4EP:Texas_SWRA416_868MHz_915MHz) aktualisiert: : OK
+Hinweis: Footprint C15 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint C3 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint U1 (Package_QFP:TQFP-44_10x10mm_P0.8mm) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint C9 (Capacitor_SMD:C_0805_2012Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint U2 (Package_TO_SOT_SMD:Texas_R-PDSO-G6) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint L1 (FUEL4EP:FUEL4EP_Inductor_SMD_1) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint C13 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint C12 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint C11 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Footprint LOGO1 (FUEL4EP:CC-BY-ND-SA) aktualisiert: : OK
+Hinweis: Footprint SW1 (FUEL4EP:SW_TS-1187A-B-A-B) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint C5 (Capacitor_SMD:C_0805_2012Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint R6 (Resistor_SMD:R_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint R2 (Resistor_SMD:R_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint C8 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint C6 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint C4 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint C2 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Footprint Module1 (FUEL4EP:eByte_E07-900MM10S) aktualisiert: : OK
+Hinweis: Footprint R1 (Resistor_SMD:R_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint R4 (Resistor_SMD:R_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint C1 (Capacitor_SMD:C_0402_1005Metric) aktualisiert: : (keine Änderungen)
+Hinweis: Footprint D1 (LED_SMD:LED_0402_1005Metric) aktualisiert: : (keine Änderungen)

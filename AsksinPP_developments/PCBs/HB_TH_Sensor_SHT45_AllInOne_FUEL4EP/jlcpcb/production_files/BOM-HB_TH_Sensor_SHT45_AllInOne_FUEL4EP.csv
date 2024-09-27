@@ -13,17 +13,8 @@ LED red 0402,D1,LED_0402_1005Metric,C273598
 TPS61221DCK,U2,Texas_R-PDSO-G6,C2865756
 Config button,SW1,SW_TS-1187A-B-A-B,C318884
 ATmega1284P-AU,U1,TQFP-44_10x10mm_P0.8mm,C33575
-SHT45-AD1B-R2,U3,SHT4X,C5221601
+SHT45-AD1B-R2,U3,Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad,C5221601
 4.7u,L1,FUEL4EP_Inductor_SMD_1,C576538
 E07-900MM10S,Module1,eByte_E07-900MM10S,C5844212
 1pF,C13,C_0402_1005Metric,C72134
 FerriteBead,FB1,L_0402_1005Metric,C76889
-SWRA416 868MHz PCB Antenna,AE1,Texas_SWRA416_868MHz_915MHz,
-Reset,JP1,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,
-MountingHole,H4,TestPoint_THTPad_2.5x2.5mm_Drill1.2mm,
-MountingHole,H3,TestPoint_THTPad_2.5x2.5mm_Drill1.2mm,
-MountingHole,H1,TestPoint_THTPad_2.5x2.5mm_Drill1.2mm,
-MountingHole,H2,TestPoint_THTPad_2.5x2.5mm_Drill1.2mm,
-Conn_01x03,J1,PinHeader_1x03_P2.54mm_Vertical,
-ISP Programmer,J3,PinHeader_1x06_P2.54mm_Vertical,
-FTDI Debuger,J2,PinHeader_1x06_P2.54mm_Vertical,

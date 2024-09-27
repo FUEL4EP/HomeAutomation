@@ -1,163 +1,163 @@
-** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.kicad_pcb **
-** Created on 2024-02-08 20:59:35 **
+** Drc report for HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.kicad_pcb **
+** Created on 2024-09-27T18:39:46+0200 **
 
 ** Found 39 DRC violations **
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0995 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(5.4840 mm, -60.5790 mm): Leiterbahn [Net-(AE1-Pad1)] auf F.Cu, Länge 1.3665 mm
-    @(5.4780 mm, -62.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(21.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(21.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(21.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(21.4780 mm, -73.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(15.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(15.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(15.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(15.4780 mm, -73.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(9.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(9.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(9.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(9.4780 mm, -73.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(5.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(5.4780 mm, -62.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(5.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(5.4780 mm, -73.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(13.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(13.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(13.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(12.4780 mm, -69.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(9.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(9.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(9.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(8.4780 mm, -69.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(19.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(19.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(19.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(19.4780 mm, -73.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(17.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(17.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(17.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(17.4780 mm, -73.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(11.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(11.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(11.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(10.4780 mm, -69.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(19.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(19.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(19.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(18.4780 mm, -69.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(13.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(13.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(13.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(13.4780 mm, -73.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(17.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(17.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(17.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(16.4780 mm, -69.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(11.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(11.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(11.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(11.4780 mm, -73.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(7.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(7.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(7.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(6.4780 mm, -69.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(15.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(15.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(15.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(14.4780 mm, -69.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(21.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(21.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(21.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(20.4780 mm, -69.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(7.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(7.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(7.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(7.4780 mm, -73.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(23.4780 mm, -73.7450 mm): Durchlochpad [<no net>] von AE1
-    @(23.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(23.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(23.4780 mm, -73.7450 mm): Linie auf F.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(23.4780 mm, -68.7450 mm): Durchlochpad [<no net>] von AE1
-    @(22.4780 mm, -69.7450 mm): Linie auf B.Cu
-[clearance]: Freiraum-Verstoß (Netzklasse 'Default' Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
-    Rule: Netzklasse 'Default'; Severity: warning
-    @(5.4780 mm, -62.0450 mm): Pad 1 [Net-(AE1-Pad1)] von AE1 auf F.Cu
-    @(5.4780 mm, -62.7450 mm): Linie auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0995 mm)
+    Rule: Netzklasse "Default"; warning
+    @(5.4840 mm, -60.5790 mm): Leiterbahn [Net-(AE1-A)] auf F.Cu, Länge 1.3665 mm
+    @(5.4780 mm, -62.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(5.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(5.4780 mm, -62.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(5.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(5.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(7.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(7.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(7.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(7.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(7.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(7.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(7.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(6.4780 mm, -69.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(9.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(9.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(9.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(9.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(9.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(9.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(9.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(8.4780 mm, -69.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(11.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(11.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(11.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(11.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(11.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(11.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(11.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(10.4780 mm, -69.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(13.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(13.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(13.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(13.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(13.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(13.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(13.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(12.4780 mm, -69.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(15.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(15.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(15.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(15.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(15.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(15.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(15.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(14.4780 mm, -69.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(17.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(17.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(17.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(17.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(17.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(17.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(17.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(16.4780 mm, -69.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(19.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(19.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(19.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(19.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(19.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(19.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(19.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(18.4780 mm, -69.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(21.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(21.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(21.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(21.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(21.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(21.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(21.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(20.4780 mm, -69.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(23.4780 mm, -73.7450 mm): PTH-Pad [<no net>] von AE1
+    @(23.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(23.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(23.4780 mm, -73.7450 mm): Abschnitt [<no net>] auf F.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(23.4780 mm, -68.7450 mm): PTH-Pad [<no net>] von AE1
+    @(22.4780 mm, -69.7450 mm): Abschnitt [<no net>] auf B.Cu
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0000 mm)
+    Rule: Netzklasse "Default"; warning
+    @(5.4780 mm, -62.0450 mm): Pad 1 [Net-(AE1-A)] von AE1 auf F.Cu
+    @(5.4780 mm, -62.7450 mm): Abschnitt [<no net>] auf F.Cu
 
 ** Found 0 unconnected pads **
 

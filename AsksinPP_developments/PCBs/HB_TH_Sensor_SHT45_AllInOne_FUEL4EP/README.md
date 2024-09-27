@@ -101,7 +101,7 @@
 ## Bestellen von Platinen
 
 - die Platine kann direkt bei JLCPCB bestellt und dort auch assembliert werden
-  + **als Platinendicke unbedingt bei der Bestellung angeben: 0,8 mm (bitte nicht ändern, sonst geht die PCB-Antenne nicht)**
+  + **als Platinendicke unbedingt bei der Bestellung angeben: 0,8 mm (bitte nicht ändern, sonst geht die PCB-Antenne nicht gut)**
 - die notwendigen Produktionsdaten stehen [hier](./jlcpcb/production_files/)
 - die folgenden Bauteile müssen [vorab bei JLCPCB bestellt werden](https://jlcpcb.com/help/article/53-what-is-jlcpcb-parts-pre-order-service):
 	+ [TI TPS61221DCKT](https://jlcpcb.com/parts/componentSearch?searchTxt=TPS61221) (zur Zeit teuer, ist aber meist billiger als angegeben)
@@ -133,10 +133,12 @@ nicht mehr assembliert
 -	L V1.3 21. Jan 2024: Änderung der Ausrichtung von Steckerleisten, zusätzliche Bestückungsdrucke
 -	S V1.5 08. Feb 2024: Fix der I2C Pull-Up Widerstände
 -	L V1.4 08. Feb 2024: Fix der I2C Pull-Up Widerstände und Beschriftung
-- 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	PCB Version 1.4
-- 	Schematics  1.5
+-	S V1.6 27. Sep 2024: Migration zu KiCAD 8
+-	L V1.5 27. Sep 2024: Migration zu KiCAD 8, Verbesserung der Handlötbarkeit des RF-Moduls durch Verschiebung von Entkoppelkondensatoren
+- 	KiCad Schaltplan-Editor   Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- 	KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- 	PCB Version 1.5
+- 	Schematics  1.6
 
 ## Lizenz 
 
