@@ -89,10 +89,14 @@ I2C_Module_SHT45_BME280_small_FUEL4EP_PCB_bottom_JLCPCB_assembled_prototype_V1.1
 - L V1.3 14. Feb 2024: Verringerung der Breite auf  14,08 mm
 -	S V1.4 16. Apr 2024: Ersetzen von R3 durch JP2 wegen Ruhestrom; Migration auf KiCAD 7
 -	L V1.3 16. Apr 2024: Ersetzen von R3 durch JP2 wegen Ruhestrom; Migration auf KiCAD 7
-- KiCad Schaltplan-Editor Version: 7.0.11-7.0.11~ubuntu22.04.1 unter Kubuntu22.04.4
-- KiCad Leiterplatteneditor Version: 7.0.11-7.0.11~ubuntu22.04.1 unter Kubuntu22.04.4
-- PCB Version 1.4
-- Schematics  1.3
+-	L V1.5 29. Sep 2024: Migration auf KiCAD 8
+-   S V1.4 29. Sep 2024: Migration auf KiCAD 8
+- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build
+ unter Kubuntu22.04.4
+- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build
+ unter Kubuntu22.04.4
+- PCB Version 1.5
+- Schematics  1.4
 
 ## Sammelbestellung
 

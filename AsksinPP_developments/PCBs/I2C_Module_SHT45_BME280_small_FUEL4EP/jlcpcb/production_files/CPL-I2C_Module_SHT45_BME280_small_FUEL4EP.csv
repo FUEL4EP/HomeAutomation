@@ -7,4 +7,4 @@ FB1,FerriteBead,L_0402_1005Metric,12.0444,15.0368,180.0,top
 R1,10k,R_0402_1005Metric,5.6944,9.1948,-90.0,top
 R2,10k,R_0402_1005Metric,6.7612,9.1948,-90.0,top
 U1,BME280,Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering,7.6708,12.2428,-90.0,top
-U2,SHT45-AD1B-R2,SHT4X,2.725,3.325,0.0,top
+U2,SHT45-AD1B-R2,Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad,2.725,3.325,0.0,top
