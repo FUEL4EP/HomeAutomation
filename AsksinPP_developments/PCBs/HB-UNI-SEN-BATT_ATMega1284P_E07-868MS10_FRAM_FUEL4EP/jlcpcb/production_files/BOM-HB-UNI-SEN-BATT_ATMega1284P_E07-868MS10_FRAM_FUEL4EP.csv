@@ -18,17 +18,3 @@ IRLU024N,Q1,TO-251-3_Vertical,C558184
 10uF,"C1,C5",C_1206_3216Metric_Pad1.33x1.80mm_HandSolder,C7171
 LED red 3mm,D1,LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder,C84256
 4.7u,L1,FUEL4EP_Inductor_SMD_1,C86077
-Conn_01x02,J3,PinHeader_1x02_P2.54mm_Vertical,
-Conn_01x02,J4,PinHeader_1x02_P2.54mm_Vertical,
-ISP Programmer,J5,PinHeader_1x06_P2.54mm_Vertical,
-charge,J10,PinHeader_1x03_P2.54mm_Vertical,
-NO,JP1,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,
-cut for accus,JP2,SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,
-AHT20+BMP280,J8,PinHeader_1x04_P2.54mm_Vertical,
-FTDI Debuger,J12,PinHeader_1x06_P2.54mm_Vertical,
-Logo_Open_Hardware_Small,LOGO1,CC-BY-ND-SA,
-step-up supply,JP3,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,
-SHT85,J6,PinHeader_1x04_P1.27mm_Vertical,
-BME280/BMP280,J9,PinHeader_1x04_P2.54mm_Vertical,
-AHT25,J7,PinHeader_1x04_P1.27mm_Vertical,
-BME680,J13,PinHeader_1x05_P2.54mm_Vertical,

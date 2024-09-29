@@ -1,5 +1,5 @@
 ** Drc report for HB_TH_Sensor_SHT45_AllInOne_FUEL4EP.kicad_pcb **
-** Created on 2024-09-27T18:39:46+0200 **
+** Created on 2024-09-29T18:17:49+0200 **
 
 ** Found 39 DRC violations **
 [clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.0995 mm)

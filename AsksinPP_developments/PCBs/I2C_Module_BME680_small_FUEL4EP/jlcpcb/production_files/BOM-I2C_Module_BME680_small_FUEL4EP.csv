@@ -1,0 +1,6 @@
+Comment,Designator,Footprint,LCSC
+BME680,U1,Bosch_LGA-8_3x3mm_P0.8mm_ClockwisePinNumbering,C125972
+100n,"C2,C3",C_0603_1608Metric,C14663
+4.7u,C1,C_0603_1608Metric,C19666
+10k,"R1,R2",R_0402_1005Metric,C25744
+FerriteBead,FB1,L_0402_1005Metric,C76889

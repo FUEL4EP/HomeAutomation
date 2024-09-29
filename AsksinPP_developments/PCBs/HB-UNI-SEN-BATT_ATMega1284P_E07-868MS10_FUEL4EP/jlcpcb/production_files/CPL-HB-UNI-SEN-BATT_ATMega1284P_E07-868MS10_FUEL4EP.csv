@@ -1,6 +1,4 @@
 Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
-BT1,AA,BatteryHolder_Keystone_2460_1xAA,63.49,40.145,-90.0,top
-BT2,AA,BatteryHolder_Keystone_2460_1xAA,11.42,39.895,90.0,top
 C1,10uF,C_1206_3216Metric_Pad1.33x1.80mm_HandSolder,44.288,36.414,180.0,top
 C10,10u,C_0805_2012Metric,53.03068,50.9428,0.0,top
 C11,10u,C_0805_2012Metric,53.03068,48.94636,0.0,top
@@ -15,17 +13,7 @@ C7,22p,C_0805_2012Metric,33.747,64.481,180.0,top
 C8,100n,C_0805_2012Metric,33.8511,43.1069,180.0,top
 C9,100n,C_0805_2012Metric,28.5248,69.1292,180.0,top
 D1,LED red 3mm,LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder,9.1635,72.7995,0.0,top
-H1,MountingHole,MountingHole_2.2mm_M2_Pad_Via,15.0,71.75,0.0,top
-H2,MountingHole,MountingHole_2.2mm_M2_Pad_Via,60.0,71.75,0.0,top
-H3,MountingHole,MountingHole_2.2mm_M2_Pad_Via,15.0,3.25,0.0,top
-H4,MountingHole,MountingHole_2.2mm_M2_Pad_Via,60.0,3.25,0.0,top
-H5,MountingHole,ePaper_MountingHole_M5,23.5108,62.8,0.0,top
-H6,MountingHole,ePaper_MountingHole_M5,23.5108,19.8,0.0,top
-H7,MountingHole,ePaper_MountingHole_M5,51.5108,62.8,0.0,top
-H8,MountingHole,ePaper_MountingHole_M5,51.5108,19.8,0.0,top
-J11,ePaper connector,PinPads_1x08_P2.00mm_Vertical,35.667,21.25,90.0,top
 L1,4.7u,FUEL4EP_Inductor_SMD_1,48.733,52.366,90.0,top
-LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA,14.57,48.86,90.0,top
 R1,470,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,9.1725,70.704,0.0,top
 R2,10k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,32.3152,69.1292,180.0,top
 R3,100K,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,16.9416,8.1819,180.0,top

@@ -16,7 +16,6 @@ C7,22p,C_0805_2012Metric,33.747,64.481,180.0,top
 C8,100n,C_0805_2012Metric,33.8511,43.1069,180.0,top
 C9,100n,C_0805_2012Metric,28.5248,69.1292,180.0,top
 D1,LED red 3mm,LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder,9.1635,72.7995,0.0,top
-J11,ePaper connector,PinPads_1x08_P2.00mm_Vertical,35.667,21.25,90.0,top
 L1,4.7u,FUEL4EP_Inductor_SMD_1,48.8092,52.366,90.0,top
 Q1,IRLU024N,TO-251-3_Vertical,9.24,8.22,0.0,top
 R1,470,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,9.1725,70.704,0.0,top

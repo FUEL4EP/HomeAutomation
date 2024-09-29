@@ -1,12 +1,12 @@
 %TF.GenerationSoftware,KiCad,Pcbnew,8.0.5-8.0.5-0~ubuntu22.04.1*%
-%TF.CreationDate,2024-09-27T18:44:30+02:00*%
+%TF.CreationDate,2024-09-29T18:17:30+02:00*%
 %TF.ProjectId,HB_TH_Sensor_SHT45_AllInOne_FUEL4EP,48425f54-485f-4536-956e-736f725f5348,1.5*%
 %TF.SameCoordinates,Original*%
 %TF.FileFunction,Copper,L1,Top*%
 %TF.FilePolarity,Positive*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 8.0.5-8.0.5-0~ubuntu22.04.1) date 2024-09-27 18:44:30*
+G04 Created by KiCad (PCBNEW 8.0.5-8.0.5-0~ubuntu22.04.1) date 2024-09-29 18:17:30*
 %MOMM*%
 %LPD*%
 G01*
@@ -116,10 +116,10 @@ G04 Aperture macros list end*
 %ADD35RoundRect,0.147500X-0.147500X-0.172500X0.147500X-0.172500X0.147500X0.172500X-0.147500X0.172500X0*%
 %TD*%
 %TA.AperFunction,ComponentPad*%
-%ADD36C,2.000000*%
+%ADD36R,2.000000X2.000000*%
 %TD*%
 %TA.AperFunction,ComponentPad*%
-%ADD37R,2.000000X2.000000*%
+%ADD37C,2.000000*%
 %TD*%
 %TA.AperFunction,ComponentPad*%
 %ADD38R,1.700000X1.700000*%
@@ -698,13 +698,13 @@ D31*
 X1778000Y59817000D03*
 %TD*%
 D36*
-%TO.P,BT1,2,-*%
-%TO.N,GND*%
-X16129000Y55165000D03*
-D37*
 %TO.P,BT1,1,+*%
 %TO.N,/plusBAT*%
 X16129000Y3175000D03*
+D37*
+%TO.P,BT1,2,-*%
+%TO.N,GND*%
+X16129000Y55165000D03*
 %TD*%
 D38*
 %TO.P,J1,1,Pin_1*%

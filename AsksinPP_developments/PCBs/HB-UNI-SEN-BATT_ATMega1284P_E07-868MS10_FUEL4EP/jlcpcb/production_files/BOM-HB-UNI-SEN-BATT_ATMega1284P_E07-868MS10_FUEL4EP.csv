@@ -16,19 +16,3 @@ IRLU024N,Q1,TO-251-3_Vertical,C558184
 10uF,"C1,C5",C_1206_3216Metric_Pad1.33x1.80mm_HandSolder,C7171
 LED red 3mm,D1,LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder,C84256
 4.7u,L1,FUEL4EP_Inductor_SMD_1,C86077
-Conn_01x04,J7,PinHeader_1x04_P2.54mm_Vertical,
-Conn_01x02,J3,PinHeader_1x02_P2.54mm_Vertical,
-Conn_01x02,J4,PinHeader_1x02_P2.54mm_Vertical,
-ISP Programmer,J5,PinHeader_1x06_P2.54mm_Vertical,
-charge,J10,PinHeader_1x03_P2.54mm_Vertical,
-NO,JP1,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,
-E07-868MS10,Module1,eByte_E07-868MS10,
-cut for accus,JP2,SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,
-Conn_01x04,J8,PinHeader_1x04_P2.54mm_Vertical,
-FTDI Debuger,J12,PinHeader_1x06_P2.54mm_Vertical,
-ePaper connector,J11,PinPads_1x08_P2.00mm_Vertical,
-step-up supply,JP3,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,
-Conn_01x02,J1,PinHeader_1x02_P2.54mm_Vertical,
-Conn_01x04,J6,PinHeader_1x04_P2.54mm_Vertical,
-Conn_01x02,J2,PinHeader_1x02_P2.54mm_Vertical,
-Conn_01x04,J9,PinHeader_1x04_P2.54mm_Vertical,

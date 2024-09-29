@@ -127,7 +127,7 @@
         "allow_blind_buried_vias": false,
         "allow_microvias": true,
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.1,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.01,
         "min_hole_clearance": 0.25,
@@ -257,9 +257,7 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [
-      "multiple_net_names|1409700|1651000|6d00a9cb-94d3-49b2-b0c2-d78f136a61fd|9b70b311-2aa3-456c-8d0a-d3e55c3e8977|/7766ca2c-d652-431b-ba34-0d354b09e90f|/7766ca2c-d652-431b-ba34-0d354b09e90f|/7766ca2c-d652-431b-ba34-0d354b09e90f"
-    ],
+    "erc_exclusions": [],
     "meta": {
       "version": 0
     },
