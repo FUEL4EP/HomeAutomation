@@ -45,7 +45,7 @@
 
 ## Eigenschaften
 
-- kompletter Datensatz für KiCAD 6 auf Github verfügbar:
+- kompletter Datensatz für KiCAD 8 auf Github verfügbar:
     + 'git clone https://github.com/FUEL4EP/HomeAutomation.git' oder als [ZIP-Datei](https://github.com/FUEL4EP/HomeAutomation/archive/refs/heads/master.zip)
     + die Platinendaten sind dann unter 'HomeAutomation/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP' direkt mit KiCAD aufrufbar
 - neue Eigenschaften:
@@ -123,10 +123,12 @@
 -	V1.2   21. Jan 2024: Drehen der PogoPin-Anschlüsse; Änderung von LCSC-Nummern für bessere Verfügbarkeit
 -	V1.3   08. Feb 2024: Fix der I2C Pull-Up Widerstände
 -	L V1.4 14. Feb 2024: Pogo-Pin Pads in Ringform
-- 	KiCad Schaltplan-Editor   Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- 	PCB Version 1.4
-- 	Schematics  1.3
+-	L V1.5 29. Sep 2024: Migration zu KiCAD 8
+-	S V1.4 29. Sep 2024: Migration zu KiCAD 8
+- 	KiCad Schaltplan-Editor   Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- 	KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- 	PCB Version 1.5
+- 	Schematics  1.4
 
 ## Lizenz 
 

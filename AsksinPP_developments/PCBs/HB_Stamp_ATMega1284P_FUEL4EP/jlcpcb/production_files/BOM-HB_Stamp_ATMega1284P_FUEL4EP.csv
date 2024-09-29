@@ -15,13 +15,3 @@ ATmega1284P-AU,U1,TQFP-44_10x10mm_P0.8mm,C33575
 E07-900MM10S,Module1,eByte_E07-900MM10S,C5844212
 1pF,C13,C_0402_1005Metric,C72134
 FerriteBead,FB1,L_0402_1005Metric,C76889
-SWRA416 868MHz PCB Antenna,AE1,Texas_SWRA416_868MHz_915MHz,
-Reset,JP1,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,
-Power,J1,PinHeader_1x03_P2.54mm_Vertical,
-ISP Programmer,J3,PogoPinHeader_SMD_1x06_P2.54mm_Vertical,
-FTDI Debuger,J2,PogoPinHeader_SMD_1x06_P2.54mm_Vertical,
-PC4/PCINT20,J7,PinHeader_1x01_P2.54mm_Vertical,
-I2C,J4,PinHeader_1x04_P2.54mm_Vertical,
-PB3/AIN1/PCINT11,J6,TestPoint_Pad_1.0x1.0mm,
-Config,JP2,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,
-PA5/PCINT5,J5,PinHeader_1x01_P2.54mm_Vertical,

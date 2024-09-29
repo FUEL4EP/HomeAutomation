@@ -39,7 +39,7 @@
 
 ## Eigenschaften
 
-- kompletter Datensatz für KiCAD 6 auf Github verfügbar:
+- kompletter Datensatz für KiCAD 8 auf Github verfügbar:
     + 'git clone https://github.com/FUEL4EP/HomeAutomation.git' oder als [ZIP-Datei](https://github.com/FUEL4EP/HomeAutomation/archive/refs/heads/master.zip)
     + die Platinendaten sind dann unter 'HomeAutomation/AsksinPP_developments/PCBs/HB_TH_Sensor_SHT45_AllInOne_FUEL4EP' direkt mit KiCAD aufrufbar
 - neue Eigenschaften:
