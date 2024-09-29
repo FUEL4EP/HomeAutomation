@@ -66,10 +66,13 @@
 
 -   V1.0 03. Sep 2023: Initiale Veröffentlichung auf Github
 -	V1.1 16. Dez 2023: Wechsel von 2N7000 auf 2N2007K wegen SMD Gehäuse
-- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.1
-- Schematics  1.1
+-	V1.2 29. Sep 2024: Migration auf KiCAD8
+- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build
+ unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build
+ unter Kubuntu22.04.1
+- PCB Version 1.2
+- Schematics  1.2
 
 ## Disclaimer
 
