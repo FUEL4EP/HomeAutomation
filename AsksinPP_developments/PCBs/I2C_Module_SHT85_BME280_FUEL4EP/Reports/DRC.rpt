@@ -1,34 +1,39 @@
-** Drc report for /home/ewald/CAD/git/HomeAutomation/AsksinPP_developments/PCBs/I2C_Module_SHT85_BME280_FUEL4EP/I2C_Module_SHT85_BME280_FUEL4EP.kicad_pcb **
-** Created on 2024-04-16 15:44:19 **
+** Drc report for I2C_Module_SHT85_BME280_FUEL4EP.kicad_pcb **
+** Created on 2024-09-30T10:31:13+0200 **
 
-** Found 7 DRC violations **
+** Found 8 DRC violations **
 [solder_mask_bridge]: Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
-    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
-    @(19.1250 mm, -1.4200 mm): PTH-Pad 1 [/SCL] von U2
-    @(19.1250 mm, -2.6900 mm): PTH-Pad 2 [VDDA] von U2
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; error
+    @(19.1250 mm, -1.4200 mm): Durchsteckpad 1 [/SCL] von U2
+    @(19.1250 mm, -2.6900 mm): Durchsteckpad 2 [VDDA] von U2
 [solder_mask_bridge]: Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
-    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
-    @(19.1250 mm, -1.4200 mm): PTH-Pad 1 [/SCL] von U2
-    @(19.1250 mm, -2.6900 mm): PTH-Pad 2 [VDDA] von U2
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; error
+    @(19.1250 mm, -1.4200 mm): Durchsteckpad 1 [/SCL] von U2
+    @(19.1250 mm, -2.6900 mm): Durchsteckpad 2 [VDDA] von U2
 [solder_mask_bridge]: Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
-    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
-    @(19.1250 mm, -2.6900 mm): PTH-Pad 2 [VDDA] von U2
-    @(19.1250 mm, -3.9600 mm): PTH-Pad 3 [GND] von U2
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; error
+    @(19.1250 mm, -2.6900 mm): Durchsteckpad 2 [VDDA] von U2
+    @(19.1250 mm, -3.9600 mm): Durchsteckpad 3 [GND] von U2
 [solder_mask_bridge]: Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
-    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
-    @(19.1250 mm, -2.6900 mm): PTH-Pad 2 [VDDA] von U2
-    @(19.1250 mm, -3.9600 mm): PTH-Pad 3 [GND] von U2
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; error
+    @(19.1250 mm, -2.6900 mm): Durchsteckpad 2 [VDDA] von U2
+    @(19.1250 mm, -3.9600 mm): Durchsteckpad 3 [GND] von U2
 [solder_mask_bridge]: Vorderseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
-    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
-    @(19.1250 mm, -3.9600 mm): PTH-Pad 3 [GND] von U2
-    @(19.1250 mm, -5.2300 mm): PTH-Pad 4 [/SDA] von U2
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; error
+    @(19.1250 mm, -3.9600 mm): Durchsteckpad 3 [GND] von U2
+    @(19.1250 mm, -5.2300 mm): Durchsteckpad 4 [/SDA] von U2
 [solder_mask_bridge]: Rückseitige Lötstoppöffnung über Elementen mit verschiedenen Netzen
-    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; Severity: error (excluded)
-    @(19.1250 mm, -3.9600 mm): PTH-Pad 3 [GND] von U2
-    @(19.1250 mm, -5.2300 mm): PTH-Pad 4 [/SDA] von U2
-[missing_courtyard]: Footprint hat keine Abstandsfläche definiert
-    Local override; Severity: warning
-    @(15.2400 mm, -13.8000 mm): Footprint LOGO1
+    Rule: Mindestbreite der Lötstoppmaske aus Platinenkonfiguration; error
+    @(19.1250 mm, -3.9600 mm): Durchsteckpad 3 [GND] von U2
+    @(19.1250 mm, -5.2300 mm): Durchsteckpad 4 [/SDA] von U2
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.1700 mm)
+    Rule: Netzklasse "Default"; error
+    @(19.1250 mm, -1.4200 mm): Durchsteckpad 1 [/SCL] von U2
+    @(19.1250 mm, -2.6900 mm): Durchsteckpad 2 [VDDA] von U2
+[clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.1700 mm)
+    Rule: Netzklasse "Default"; error
+    @(19.1250 mm, -3.9600 mm): Durchsteckpad 3 [GND] von U2
+    @(19.1250 mm, -5.2300 mm): Durchsteckpad 4 [/SDA] von U2
 
 ** Found 0 unconnected pads **
 
