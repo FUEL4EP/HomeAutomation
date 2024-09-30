@@ -28,7 +28,7 @@
 -
 ## Status
 
-- diese Platine wurde bei JLCPCB gefertigt und wurde erfolgreich validiert
+- diese Platine wurde in der Version V1.6 bei JLCPCB gefertigt und wurde erfolgreich validiert
 - die Validierungsergebnisse sind [hier](./Prototype_Validation) zu finden
 
 ## Ersatz für das eByte E07 868MS10 Modul
@@ -71,10 +71,12 @@
 -   V1.4 12. Sep 2023: Verbesserung der GND-Durchkontaktierungen
 -   V1.5 21. Sep 2023: Verbesserung der Entkopplungskondensatoren mit kürzeren GND-Stromschleifen zur Impedanzverringerung
 -   V1.6 29. Sep 2023: Reduktion der parasitischen Kapazitäten des Oszillators; 1% CoG Kapazitäten für C8 und C9
-- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.6
-- Schematics  1.3
+-   S V1.4 30. Sep 2024 Migration auf KiCAD 8
+-   L V1.7 30. Sep 2024 Migration auf KiCAD 8
+- KiCad Schaltplan-Editor Version:  8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version:  8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- PCB Version 1.7
+- Schematics  1.4
 
 ## Sammelbestellung
 
