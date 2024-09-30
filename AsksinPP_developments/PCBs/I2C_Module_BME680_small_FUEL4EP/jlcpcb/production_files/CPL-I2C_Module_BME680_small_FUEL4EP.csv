@@ -1,8 +1,8 @@
 Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
 C1,4.7u,C_0603_1608Metric,6.236,8.763,0.0,top
 C2,100n,C_0603_1608Metric,1.918,7.366,0.0,top
-C3,100n,C_0603_1608Metric,6.236,7.239,180.0,top
+C3,100n,C_0603_1608Metric,2.553,1.397,0.0,top
 FB1,FerriteBead,L_0402_1005Metric,5.992,10.16,180.0,top
 R1,10k,R_0402_1005Metric,7.874,13.46,-90.0,top
 R2,10k,R_0402_1005Metric,8.89,12.444,90.0,top
-U1,BME680,Bosch_LGA-8_3x3mm_P0.8mm_ClockwisePinNumbering,2.6225,2.978,90.0,top
+U1,BME680,Bosch_LGA-8_3x3mm_P0.8mm_ClockwisePinNumbering,2.6225,3.88,90.0,top

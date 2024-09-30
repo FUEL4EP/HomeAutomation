@@ -1,7 +1,7 @@
 # I2C_Module_BME680_small_FUEL4EP ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%I2C_Module_BME680_small_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 
-## kleine I2C BME680 Sensor Aufsteckplatine für DIY AsksinPP-Projekte
+## kleine I2C BME680 VOC Sensor Aufsteckplatine für DIY AsksinPP-Projekte
 
 - basierend auf [Bosch BME680](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme680-ds001.pdf)
 - passend zu den folgenden Mutterplatinen:
@@ -61,11 +61,12 @@
 ## Versionsverlauf
 
 - V1.0   29. Sep 2024: Initiale Veröffentlichung auf Github
+- L V1.1 30. Sep 2024: Verbesserte Platzierung von C3
 - KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build
  unter Kubuntu22.04.4
 - KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build
  unter Kubuntu22.04.4
-- PCB Version 1.0
+- PCB Version 1.1
 - Schematics  1.0
 
 ## Sammelbestellung
