@@ -95,10 +95,12 @@ nicht mehr assembliert
 	L V1.2 08. Feb 2024: Fix der I2C Pull-Up Widerstände
 -	S V1.4 16. Apr 2024: Ersetzen von R3 durch JP2 wegen Ruhestrom; Migration auf KiCAD 7
 -	L V1.3 16. Apr 2024: Ersetzen von R3 durch JP2 wegen Ruhestrom; Migration auf KiCAD 7
-- KiCad Schaltplan-Editor Version: 7.0.11-7.0.11~ubuntu22.04.1 unter Kubuntu22.04.4
-- KiCad Leiterplatteneditor Version: 7.0.11-7.0.11~ubuntu22.04.1 unter Kubuntu22.04.4
-- PCB Version 1.3
-- Schematics  1.4
+-	S V1.5 30. Sep 2024: Migration auf KiCAD 8
+-	L V1.4 30. Sep 2024: Migration auf KiCAD 8; Fix von DRC Regeln
+- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.4
+- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.4
+- PCB Version 1.4
+- Schematics  1.5
 
 ## Disclaimer
 

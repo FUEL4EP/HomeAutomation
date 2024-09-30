@@ -1,12 +1,12 @@
-%TF.GenerationSoftware,KiCad,Pcbnew,7.0.11-7.0.11~ubuntu22.04.1*%
-%TF.CreationDate,2024-04-16T17:02:09+02:00*%
-%TF.ProjectId,I2C_Module_SHT45_BME280_FUEL4EP,4932435f-4d6f-4647-956c-655f53485434,V1.3*%
+%TF.GenerationSoftware,KiCad,Pcbnew,8.0.5-8.0.5-0~ubuntu22.04.1*%
+%TF.CreationDate,2024-09-30T10:01:26+02:00*%
+%TF.ProjectId,I2C_Module_SHT45_BME280_FUEL4EP,4932435f-4d6f-4647-956c-655f53485434,V1.4*%
 %TF.SameCoordinates,Original*%
 %TF.FileFunction,Soldermask,Top*%
 %TF.FilePolarity,Negative*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 7.0.11-7.0.11~ubuntu22.04.1) date 2024-04-16 17:02:09*
+G04 Created by KiCad (PCBNEW 8.0.5-8.0.5-0~ubuntu22.04.1) date 2024-09-30 10:01:26*
 %MOMM*%
 %LPD*%
 G01*
@@ -29,7 +29,7 @@ G04 Aperture macros list*
 20,1,$1+$1,$6,$7,$8,$9,0*
 20,1,$1+$1,$8,$9,$2,$3,0*%
 G04 Aperture macros list end*
-%ADD10RoundRect,0.102000X-0.250000X-0.150000X0.250000X-0.150000X0.250000X0.150000X-0.250000X0.150000X0*%
+%ADD10R,0.500000X0.300000*%
 %ADD11RoundRect,0.225000X0.250000X-0.225000X0.250000X0.225000X-0.250000X0.225000X-0.250000X-0.225000X0*%
 %ADD12R,1.000000X1.500000*%
 %ADD13RoundRect,0.147500X-0.147500X-0.172500X0.147500X-0.172500X0.147500X0.172500X-0.147500X0.172500X0*%
