@@ -7,7 +7,7 @@ Comment,Designator,Footprint,LCSC
 12nH,"L1,L2,L5,L6",L_0402_1005Metric,C2043991
 4.7u,C10,C_0402_1005Metric,C23733
 56k,R1,R_0402_1005Metric,C25796
-CC1101RGPR,U1,Texas_S-PVQFN-N20_EP2.4x2.4mm_ThermalVias,C29953
+CC1101RGPR,U1,Texas_RGP0020H_VQFN-20-1EP_4x4mm_P0.5mm_EP2.4x2.4mm_ThermalVias,C29953
 47pF,C7,C_0402_1005Metric,C384800
 12p,C8,C_0402_1005Metric,C393682
 3.3nH,L7,L_0402_1005Metric,C412273
@@ -18,14 +18,3 @@ FerriteBead,FB1,L_0402_1005Metric,C76889
 1.5pF,"C1,C4",C_0402_1005Metric,C76901
 18nH,"L3,L4",L_0402_1005Metric,C908004
 Crystal  26MHz,Y1,Crystal_SMD_3225-4Pin_3.2x2.5mm,C91747
-GND,JA2,edge_hole_Pitch2.28mm_Drill0.8mm,
-Ant.,JA1,edge_hole_Pitch2.28mm_Drill0.8mm,
-Conn,JC8,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
-Conn,JC7,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
-Conn,JC6,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
-Conn,JC5,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
-Conn,JC4,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
-Conn,JC3,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
-Conn,JC2,edge_hole_Pitch1.27mm_Drill0.75mm_rounded,
-Conn,JC1,edge_hole_Pitch1.27mm_Drill0.75mm,
-Logo_Open_Hardware_Small,LOGO1,CC-BY-ND-SA_bottom,

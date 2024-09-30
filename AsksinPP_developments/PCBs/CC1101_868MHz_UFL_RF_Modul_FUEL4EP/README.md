@@ -79,10 +79,12 @@
 -   V1.3 01. Sep 2023: Anpassung der Silkscreen-Texte and JLCPCB-Regeln
 -   V1.4 21. Sep 2023: Verbesserung der Entkopplungskondensatoren mit kürzeren GND-Stromschleifen zur Impedanzverringerung
 -   V1.5 29. Sep 2023: Verringerung der parasitischen Kapazitäten des Oszillators; 1% CoG Kapazitäten für C8 und C9
-- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.5
-- Schematics  1.4
+-   S V1.5 30. Sep 2024: Migration auf KiCAD 8
+-   L V1.6 30. Sep 2024: Migration auf KiCAD 8
+- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- PCB Version 1.6
+- Schematics  1.5
 
 ## Sammelbestellung
 
