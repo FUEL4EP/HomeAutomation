@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name "FUEL4EP")(type "KiCad")(uri "../FUEL4EP.kicad_sym")(options "")(descr ""))
+  (version 7)
+  (lib (name "FUEL4EP")(type "KiCad")(uri "${KIPRJMOD}/../FUEL4EP.kicad_sym")(options "")(descr ""))
 )

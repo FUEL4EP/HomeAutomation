@@ -13,7 +13,8 @@
 
 - entwickelt mit KiCAD 5.1.10, mein persönliches Erstlingswerk mit KiCAD PCBNEW
 - die Platine wurde bei JLCPCB gefertigt
-- Update 22. Juli 2023: Migration auf KiCAD 6
+- Update 22. Jul 2023: Migration auf KiCAD 6
+- Update 30. Sep 2024: Migration auf KiCAD 8
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_FUEL4EP_PCB.png)
 - die gefertigte Platine wurde erfolgreich mit dem Sketch [HB-UNI-SENSOR1-THPD-BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-BME280) validiert:
 ![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-Sensor1-THPD-BME280_build_with_HB-UNI-SEN-BATT_FUEL4EP_PCB.png)
@@ -92,10 +93,10 @@
 
 
 ## Versionen
-- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
-- PCB Version 1.2 (Upgrade auf KiCAD 6.0)
-- Schematics  1.0
+- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1 1.
+- PCB Version 1.3 (Upgrade auf KiCAD 8.0)
+- Schematics  1.1 (Upgrade auf KiCAD 8.0)
 
 
 ## Disclaimer
