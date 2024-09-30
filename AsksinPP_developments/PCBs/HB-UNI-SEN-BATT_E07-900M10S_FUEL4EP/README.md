@@ -24,7 +24,7 @@
 ## Eigenschaften
 
 - abgeleitet aus [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT)
-- kompletter Datensatz für KiCAD 6 auf Github verfügbar:
+- kompletter Datensatz für KiCAD 8 auf Github verfügbar:
     + 'git clone https://github.com/FUEL4EP/HomeAutomation.git' oder als [ZIP-Datei](https://github.com/FUEL4EP/HomeAutomation/archive/refs/heads/master.zip)
     + die Platinendaten sind dann unter 'HomeAutomation/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP' direkt mit KiCAD aufrufbar
 - der Arduino Pro Mini ist durch einen [Tindie Pro Mini XL - v2 - ATmega 1284p](https://www.tindie.com/products/prominimicros/pro-mini-xl-v2-atmega-1284p/) ersetzt
@@ -88,10 +88,12 @@
 * der Verpolungsschutz ist optional. Dafür Bauteil Q1 (IRLU024N) und R3 (100KOhm Widerstand) bestücken. Alternativ JP1 auf der Platinenrückseite brücken um ohne Verpolungsschutz zu arbeiten.
 
 ## Versionen
-- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
-- PCB Version 1.0
-- Schematics  1.0
+- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build
+ unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build
+ unter Kubuntu22.04.1 1.
+- PCB Version 1.1 (Migration auf KiCAD 8 am 30. Sep 2024)
+- Schematics  1.1 (Migration auf KiCAD 8 am 30. Sep 2024)
 
 
 ## Bestellen von Platinen
