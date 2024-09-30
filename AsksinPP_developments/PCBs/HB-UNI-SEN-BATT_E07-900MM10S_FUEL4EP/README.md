@@ -89,15 +89,16 @@
 * der Verpolungsschutz ist optional. Dafür Bauteil Q1 (IRLU024N) und R3 (100KOhm Widerstand) bestücken. Alternativ JP1 auf der Platinenrückseite brücken um ohne Verpolungsschutz zu arbeiten.
 
 ## Versionen
-- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1 1.
-- PCB Version 1.0
-- Schematics  1.0
+- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1 1.
+- PCB Version 1.1 (Migration zu KiCAD 8 am 30. Sep 2024)
+- Schematics  1.1 (Migration zu KiCAD 8 am 30. Sep 2024)
 
 
 ## Bestellen von Platinen
 
 - die Platine kann direkt bei JLCPCB bestellt werden
+- die JLCPCB Gerber-Fertigungsdaten sind [hier](./jlcpcb/production_files/)
 
 	
 ## passende DIY I2C-Sensormodule für die Fertigung bei JLCPCB
