@@ -20,10 +20,10 @@
 - Ein Diskussionsfaden ist im Homematic Forum unter [Nachbau HM-LC-Bl1-FM für Velux Rolladen und Netzfreischalter](https://homematic-forum.de/forum/viewtopic.php?f=76&t=71683&sid=71b7e84664ec8bed7b9e50bd442664ad) zu finden
 
 ## Versionen
-- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.5 
-- Schematics  1.3
+- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- PCB Version 1.6 (Migration auf KiCAD 8 am 30. Sep 2024)
+- PCB Schematics  1.4 (Migration auf KiCAD 8 am 30. Sep 2024)
 
 ## Disclaimer
 
