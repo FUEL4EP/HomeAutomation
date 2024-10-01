@@ -56,10 +56,10 @@
 
 	
 ## Versionen
-- KiCad Schaltplan-Editor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 6.0.11-2627ca5db0 unter Kubuntu22.04.1
-- PCB Version 1.6:  KiCAD 6 bedingte Verbesserungen der Datenbasis
-- Schematics  1.5
+- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- PCB Version 1.7 (Migration auf KiCAD 8 am 01. Okt 2024)
+- Schematics  1.5 (Migration auf KiCAD 8 am 01. Okt 2024)
 
 
 ## Wichtige Sicherheitshinweise
@@ -73,6 +73,7 @@
 - sollte die Homematic/RaspberryMatic-Zentrale  vom Internet aus erreichbar sein, darf dieser Schalter nicht eingesetzt werden! Für die Sicherheit ist der Nutzer alleine verantwortlich!
 - die automatische Ladeschaltung ist zur Zeit noch nicht in Software implementiert! Der Nutzer ist für den korrekten Ladezustand der Akkus verantwortlich.
 - ein automatische Ladeschaltung wird in Zukunft als Update zur Verfügung gestellt werden. Das kann aber noch eine Weile dauern ..
+- der Schalter funktioniert nun seit über einem Jahr auch ohne automatische Ladesoftware bei täglicher Nutzung: Stand Oktober 2024. Das 15 minütige Nachladen beim Einschalten reicht aus, um die Akkus ausreichend geladden zu halten.
 
 ## Fernsteuerung der Aktorkanäle mit Apple iPAD
 
