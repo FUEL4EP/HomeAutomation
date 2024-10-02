@@ -97,9 +97,10 @@ nicht mehr assembliert
 -	L V1.3 16. Apr 2024: Ersetzen von R3 durch JP2 wegen Ruhestrom; Migration auf KiCAD 7
 -	S V1.5 30. Sep 2024: Migration auf KiCAD 8
 -	L V1.4 30. Sep 2024: Migration auf KiCAD 8; Fix von DRC Regeln
+-	L V1.5 02. Okt 2024: Einfügen einer versehentlich gelöschten redundanten VCC Leitung
 - KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.4
 - KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.4
-- PCB Version 1.4
+- PCB Version 1.5
 - Schematics  1.5
 
 ## Disclaimer
