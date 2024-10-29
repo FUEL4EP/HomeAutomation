@@ -15,6 +15,9 @@
 // ArduinoSTL.h       (https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/libraries/avr_stl)
 // Adafruit_FRAM_SPI  (https://github.com/adafruit/Adafruit_FRAM_SPI)
 //---------------------------------------------------------
+// History:
+// 29-Oct-2024: fix of some type error resulting in wrong indices for calculating the yearly moving average
+//---------------------------------------------------------
 
 
 #ifndef _SENS_WEATHER_STATISTICS_FRAM_H_
@@ -70,8 +73,8 @@ template<typename T, typename P> class  weather_statistics {
       uint32_t                            end_DPs_address;                          // end address in FRAM bank of data points
       uint32_t                            count_index;                              // number of measured datapoints
       FUJITSU_MB85RS2MTPF_FRAMs*          frams;
-      uint16_t                            circular_index;                           // index of tail datapoint
-      uint16_t                            i;                                        // general running index
+      uint32_t                            circular_index;                           // index of tail datapoint
+      uint32_t                            i;                                        // general running index
 
       cb_params_weather<T>                weather_params;
       cb_params_mav                       mov_av_params;
@@ -88,9 +91,11 @@ template<typename T, typename P> class  weather_statistics {
 
   public:
     weather_statistics(FUJITSU_MB85RS2MTPF_FRAMs* frams, uint32_t start_address, uint8_t cb_number, long CIRCULAR_BUFFER_SIZE, char IDENT_CHAR) {
+      /*
       if (start_address < 22) {
         DPRINT(F("ERROR: start address of object weather_statistics is too small ! Required is >= 22 !"));
       }
+      */
       nvm.initialized_flag                   = false;
       nvm.ident_char                         = IDENT_CHAR;
       nvm.BUFSIZE                            = CIRCULAR_BUFFER_SIZE;
@@ -485,7 +490,7 @@ template<typename T, typename P> class  weather_statistics {
       uint32_t  compilation_sampling_index_in_year = historic_weather_statistics.get_sample_index_in_year_from_date_time_of_compilation() ;
       T         avg_temp_from_historic_data;
       P         moving_sum = 0;
-      uint32_t  i = modulo_function_for_annual_sampling_index( compilation_sampling_index_in_year - nvm.BUFSIZE ); // next sampling index for extracting average temperatures from historical data
+      uint32_t  i = modulo_function_for_annual_sampling_index( SAMPLES_PER_YEAR + compilation_sampling_index_in_year - nvm.BUFSIZE ); // next sampling index for extracting average temperatures from historical data
       uint32_t  j = nvm.circular_index;  // next sampling index for storing historical average temperatures to FRAM
       uint32_t  k = 0;
       
@@ -514,7 +519,7 @@ template<typename T, typename P> class  weather_statistics {
         }
         k++; // increment loop counter
         avg_temp_from_historic_data = historic_weather_statistics.get_historic_average_temperature_from_statistics_at_sample_index(i);
-        moving_sum += avg_temp_from_historic_data;
+        moving_sum += (P)avg_temp_from_historic_data;
 
         success &= write_DP_to_FRAM(j, &avg_temp_from_historic_data);                   // write avg_temp_from_historic_data of index i at sample index j of circular buffer
         if ( !success ) {

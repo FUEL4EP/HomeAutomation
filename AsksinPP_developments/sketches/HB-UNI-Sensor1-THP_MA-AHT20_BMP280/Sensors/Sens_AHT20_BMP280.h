@@ -54,11 +54,11 @@ class Sens_AHT20_BMP280 : public Sensor {
 
   weather_statistics<int16_t, int32_t>  _1Y_moving_average_temperature_statistics{&frams,  0x00001, 1, 131400L, 'Y'}; // 365 * 24 * 60 / 4 measurement samples int16_t =  262800 Bytes RAM memory for circular buffer
 
-  weather_statistics<int16_t, int32_t>  _1M_moving_average_temperature_statistics{&frams,  0x402C2, 2,  11160L, 'M'}; // 31 * 24 * 60 / 4 measurement samples int16_t =    22320 Bytes RAM memory for circular buffer
+  weather_statistics<int16_t, int32_t>  _1M_moving_average_temperature_statistics{&frams,  0x402C4, 2,  11160L, 'M'}; // 31 * 24 * 60 / 4  measurement samples int16_t =    22320 Bytes RAM memory for circular buffer
 
-  weather_statistics<int16_t, int32_t>  _7D_moving_average_temperature_statistics{&frams,  0x45AEB, 3,   2520L, 'W'}; // 7 * 24 * 60 / 4 measurement samples int16_t  =     5040 Bytes RAM memory for circular buffer
+  weather_statistics<int16_t, int32_t>  _7D_moving_average_temperature_statistics{&frams,  0x45AF3, 3,   2520L, 'W'}; // 7 * 24 * 60 / 4   measurement samples int16_t  =    5040 Bytes RAM memory for circular buffer
 
-  weather_statistics<int16_t, int32_t>  _24h_moving_average_temperature_statistics{&frams, 0x46ECC, 4,    360L, 'D'}; // 1 * 24 * 60 / 4 measurement samples int16_t  =      720 Bytes RAM memory for circular buffer
+  weather_statistics<int16_t, int32_t>  _24h_moving_average_temperature_statistics{&frams, 0x46ED8, 4,    360L, 'D'}; // 1 * 24 * 60 / 4   measurement samples int16_t  =     720 Bytes RAM memory for circular buffer
 
 public:
 
