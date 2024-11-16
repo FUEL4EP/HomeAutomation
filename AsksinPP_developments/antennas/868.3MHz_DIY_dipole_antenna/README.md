@@ -22,7 +22,7 @@
 ![pic](./VNA.png)
 
 
-- Bewertung: perfektes Stehwellenverhältnis VSWR von 1,0 @ 868,3MHz
+- Bewertung: Perfektes Stehwellenverhältnis VSWR von 1,13 @ 868,3MHz
 	+ hervorragende Antenne für Homematic
 	+ sehr schön ausgeprägtes Minimum des Stehwellenverhältnisses
 	+ geringe Bandbreite
