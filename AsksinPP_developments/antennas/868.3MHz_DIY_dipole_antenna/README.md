@@ -26,6 +26,10 @@
 	+ hervorragende Antenne für Homematic
 	+ sehr schön ausgeprägtes Minimum des Stehwellenverhältnisses
 	+ geringe Bandbreite
+	
+- Antennencharakteristik
+
+	+ Die Dipolantenne hat eine Richtcharakteristik. Das Antennendiagramm eines Dipols ist z.B. [hier](https://ethz.ch/content/dam/ethz/special-interest/itet/institute-ief/inst-of-electromagnetic-fields-dam/documents/laboratory-courses/manual-ant-and-waveprop.pdf) auf Seite 11 in Bild1 und Bild2 dargestellt.
 
 
 EOF
