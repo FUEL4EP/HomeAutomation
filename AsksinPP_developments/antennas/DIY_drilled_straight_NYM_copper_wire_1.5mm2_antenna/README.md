@@ -18,7 +18,7 @@
 - bestes Messergebnis mit 110 mm Drahtlänge:
 	* die Länge ist > 1/4 der Wellenlänge, da keine Massefläche benutzt wird
 	* Messungen mit Massefläche werden später nachgereicht
-	* * eine gute Stabantenne sollte als Gegenpol immer eine ausreichend große Massefläche haben, Durchmesser ca. Wellenlänge
+	* eine gute Stabantenne sollte als Gegenpol immer eine ausreichend große Massefläche haben, Durchmesser ca. Wellenlänge, siehe z.B. [hier](https://www.youtube.com/watch?v=R4EGF4ITQn0)
 
 
 ![pic](./VNA_DIY_drilled_NYM_copper_wire_1.5mm2_120mm.png)
