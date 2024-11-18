@@ -1,9 +1,9 @@
-# DIY 868,3 MHz Dipol Antenne
+# DIY 868,3 MHz [Dipol Antenne](https://de.wikipedia.org/wiki/Dipolantenne)
 
 - Anleitung siehe [Youtube VideoHow to build your own DIY Dipole 868 Mhz (LORA - Meshtastic)](https://www.youtube.com/watch?v=srV70ghBtHg)
 
 - Dipollänge für SWR=1 @ 868,3 MHz: 78mm (ohne Isolation des Antennendrahts)
-- Basis für Antennendraht: Netzleitung 1,5mm°2
+- Basis für Antennendraht: NYM Netzleitung 1,5mm°2 ohne Isolation
 
 - Messung mit Sysjoint NanoVNA F V3 Vector Network Analyzer
 	+ Firmware v0.5.3
