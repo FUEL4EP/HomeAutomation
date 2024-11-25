@@ -1,10 +1,6 @@
 # HB-UNI-Sensor1-THP_MA-AHT20_BMP280: Temperatur, Luftfeuchte und Luftdrucksensor für langfristige Klimaerfassung zur Beobachtung des Klimawandels[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2FAsksinPP_developments%2Fsketches%2FHB-UNI-Sensor1-THP_MA-AHT20_BMP280&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 <br/>
 
-# Fehler in Berechnung des Jahresmittelwerts
-
-- Update 29. Okt 2024: Typfehler in 'Sens_weather_statistics_FRAM.h' gefunden
-- ein Überlauf eines Schleifenzählers führt bei der Berechnung des Jahresmittelwerts zu falschen Werten. Der Fehler ist erkannt. Eine Korrektur wird gerade validiert. Bitte warte bis zur Freigabe der korrigierten Version.
 
 # Eigenschaften
 
@@ -24,9 +20,9 @@
 
 - die Auflösung der gleitenden Mittelwerte beträgt 0,01 Grad Celsius.
 
-- Diagramm der gemessenen Außentemperatur und der gleitenden Mittelwerte in den ersten 3 Monaten nach Inbetriebnahme:
+- Diagramm der gemessenen Außentemperatur und der gleitenden Mittelwerte in den ersten 26 Tagen nach Inbetriebnahme:
 
-![pic](./Images/moving_averages_first_3_months_after_boot.png)
+![pic](./Images/moving_averages_first_26_days_after_boot.png)
 
 - die Ringpuffer für die Berechnung der gleitenden Mittelwerte wurde bei der Programmierung mit interpolierten historischen Werten des vergangenen Jahres vorbelegt, so dass die Mittelwerte bereits einen guten Startwert haben.
 
@@ -143,9 +139,9 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 - in diesem Diagramm wurde am 19. Juni 2024 um ca. 9:10 Uhr (Peak in der Temperaturkurve durch Hereinholen des Sensors von draußen  in  das Haus) ein Batteriewechsel ohne Datenverlust durchgeführt, d.h. ein Warmstart.
 
-- Aufzeichnungen der Außentemperatur und der berechneten gleitenden Temperaturmittelwerten in den ersten 31 Tagen nach dem initialen Boot. Als Vorbelegung der Ringpuffer wurden [gemittelte Werte für Deutschland genommen](https://de.statista.com/statistik/daten/studie/5564/umfrage/monatliche-durchschnittstemperatur-in-deutschland/)
+- Aufzeichnungen der Außentemperatur und der berechneten gleitenden Temperaturmittelwerten in den ersten 26 Tagen nach dem initialen Boot. Als Vorbelegung der Ringpuffer wurden [gemittelte Werte für Deutschland genommen](https://de.statista.com/statistik/daten/studie/5564/umfrage/monatliche-durchschnittstemperatur-in-deutschland/)
 - 
-![pic](./Images/moving_averages_first_31_days_after_boot.png)
+![pic](./Images/moving_averages_first_26_days_after_boot.png)
 
 ## Kalibrierung des Messintervalls von 4 Minuten
 
@@ -161,9 +157,9 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 ## aktueller Status
 
-- **Freigabe** für Testzwecke
-- die Funktionen des Sensors sind bereits erfolgreich validiert
-- Validierung ist noch im Gange
+- **Freigabe**
+- die Funktionen des Sensors wurden erfolgreich validiert
+- Validierung ist abgeschlossen
 	+ Temperatur, Luftfeuchte und Luftdruckmessung
 	+ Vorbelegung der Ringpuffer im FRAM mit historischen Temperaturwerten
 	+ Mittelwertbildung
