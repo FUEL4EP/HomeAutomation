@@ -20,9 +20,9 @@
 
 - die Auflösung der gleitenden Mittelwerte beträgt 0,01 Grad Celsius.
 
-- Diagramm der gemessenen Außentemperatur und der gleitenden Mittelwerte in den ersten 26 Tagen nach Inbetriebnahme:
+- Diagramm der gemessenen Außentemperatur und der gleitenden Mittelwerte in den ersten 31 Tagen nach Inbetriebnahme:
 
-![pic](./Images/moving_averages_first_26_days_after_boot.png)
+![pic](./Images/moving_averages_first_31_days_after_boot.png)
 
 - die Ringpuffer für die Berechnung der gleitenden Mittelwerte wurde bei der Programmierung mit interpolierten historischen Werten des vergangenen Jahres vorbelegt, so dass die Mittelwerte bereits einen guten Startwert haben.
 
@@ -139,9 +139,9 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 - in diesem Diagramm wurde am 19. Juni 2024 um ca. 9:10 Uhr (Peak in der Temperaturkurve durch Hereinholen des Sensors von draußen  in  das Haus) ein Batteriewechsel ohne Datenverlust durchgeführt, d.h. ein Warmstart.
 
-- Aufzeichnungen der Außentemperatur und der berechneten gleitenden Temperaturmittelwerten in den ersten 26 Tagen nach dem initialen Boot. Als Vorbelegung der Ringpuffer wurden [gemittelte Werte für Deutschland genommen](https://de.statista.com/statistik/daten/studie/5564/umfrage/monatliche-durchschnittstemperatur-in-deutschland/)
+- Aufzeichnungen der Außentemperatur und der berechneten gleitenden Temperaturmittelwerten in den ersten 31 Tagen nach dem initialen Boot. Als Vorbelegung der Ringpuffer wurden [gemittelte Werte für Deutschland genommen](https://de.statista.com/statistik/daten/studie/5564/umfrage/monatliche-durchschnittstemperatur-in-deutschland/)
 - 
-![pic](./Images/moving_averages_first_26_days_after_boot.png)
+![pic](./Images/moving_averages_first_31_days_after_boot.png)
 
 ## Kalibrierung des Messintervalls von 4 Minuten
 
@@ -200,7 +200,7 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 ## Speicherbedarf auf einem ATMega1284P (mit Debug)
 
 - der Sketch verwendet 58710 Bytes (44%) des Programmspeicherplatzes. Das Maximum sind 130560 Bytes.
-Globale Variablen verwenden 2616 Bytes (15%) des dynamischen Speichers, 13768 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
+Globale Variablen verwenden 3116 Bytes (15%) des dynamischen Speichers, 13768 Bytes für lokale Variablen verbleiben. Das Maximum sind 16384 Bytes.
 
 ## Batteriewechsel
 
