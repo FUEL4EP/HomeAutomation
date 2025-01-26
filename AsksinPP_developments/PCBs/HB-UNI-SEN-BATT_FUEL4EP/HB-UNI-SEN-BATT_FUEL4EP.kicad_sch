@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "HB-UNI-SEN-BATT_FUEL4EP")
-		(date "2024-09-30")
-		(rev "1.1")
+		(date "2025-01-25")
+		(rev "1.2")
 		(company "FUEL4EP")
 		(comment 1 "for Tindie Pro Mini XL V2")
 		(comment 2 "Creative Commons License, non-commercial")
@@ -5273,7 +5273,6 @@
 	)
 	(label "SS"
 		(at 111.76 111.76 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5284,7 +5283,6 @@
 	)
 	(label "SCK"
 		(at 190.5 133.35 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5295,7 +5293,6 @@
 	)
 	(label "MISO"
 		(at 43.18 170.18 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5306,7 +5303,6 @@
 	)
 	(label "minusBAT"
 		(at 181.61 128.27 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5317,7 +5313,6 @@
 	)
 	(label "SDA"
 		(at 110.49 124.46 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5328,7 +5323,6 @@
 	)
 	(label "RSET"
 		(at 111.76 88.9 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5339,7 +5333,6 @@
 	)
 	(label "MOSI"
 		(at 190.5 130.81 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5350,7 +5343,6 @@
 	)
 	(label "SCK"
 		(at 43.18 167.64 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5361,7 +5353,6 @@
 	)
 	(label "SCL"
 		(at 110.49 121.92 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5372,7 +5363,6 @@
 	)
 	(label "minusBAT"
 		(at 53.34 40.64 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5383,7 +5373,6 @@
 	)
 	(label "A1"
 		(at 189.23 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5394,7 +5383,6 @@
 	)
 	(label "conBAT"
 		(at 39.37 39.37 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5405,7 +5393,6 @@
 	)
 	(label "A2"
 		(at 189.23 90.17 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5416,7 +5403,6 @@
 	)
 	(label "MISO"
 		(at 190.5 135.89 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5427,7 +5413,6 @@
 	)
 	(label "MOSI"
 		(at 43.18 165.1 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5438,7 +5423,6 @@
 	)
 	(label "A2"
 		(at 111.76 96.52 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5449,7 +5433,6 @@
 	)
 	(label "SS"
 		(at 43.18 177.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5460,7 +5443,6 @@
 	)
 	(label "MOSI"
 		(at 111.76 109.22 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5471,7 +5453,6 @@
 	)
 	(label "A0"
 		(at 111.76 101.6 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5482,7 +5463,6 @@
 	)
 	(label "A3"
 		(at 111.76 93.98 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5493,7 +5473,6 @@
 	)
 	(label "SCK"
 		(at 111.76 104.14 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5504,7 +5483,6 @@
 	)
 	(label "A3"
 		(at 189.23 106.68 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5515,7 +5493,6 @@
 	)
 	(label "RSET"
 		(at 190.5 138.43 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5526,7 +5503,6 @@
 	)
 	(label "SDA"
 		(at 195.58 35.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5537,7 +5513,6 @@
 	)
 	(label "CONFIG"
 		(at 60.96 115.57 90)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5548,7 +5523,6 @@
 	)
 	(label "A0"
 		(at 189.23 50.8 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5559,7 +5533,6 @@
 	)
 	(label "D2"
 		(at 43.18 175.26 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5570,7 +5543,6 @@
 	)
 	(label "D2"
 		(at 57.15 100.33 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5581,7 +5553,6 @@
 	)
 	(label "A1"
 		(at 111.76 99.06 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5592,7 +5563,6 @@
 	)
 	(label "SCL"
 		(at 195.58 33.02 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5603,7 +5573,6 @@
 	)
 	(label "plusBAT"
 		(at 53.34 21.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5614,7 +5583,6 @@
 	)
 	(label "MISO"
 		(at 111.76 106.68 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -8201,15 +8169,6 @@
 			)
 		)
 		(property "Description" "Open Hardware logo, small"
-			(at 260.35 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Enable" "0"
 			(at 260.35 137.16 0)
 			(effects
 				(font

@@ -93,10 +93,10 @@
 
 
 ## Versionen
-- KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
-- KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1 1.
-- PCB Version 1.3 (Upgrade auf KiCAD 8.0)
-- Schematics  1.1 (Upgrade auf KiCAD 8.0)
+- KiCad Schaltplan-Editor Version: 8.0.8-8.0.8-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
+- KiCad Leiterplatteneditor Version: 8.0.8-8.0.8-0~ubuntu22.04.1, release build unter Kubuntu22.04.1 1.
+- PCB Version 1.4 (Upgrade auf KiCAD 8.08)
+- Schematics  1.2 (Upgrade auf KiCAD 8.08)
 
 
 ## Disclaimer
