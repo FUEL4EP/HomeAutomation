@@ -1,0 +1,239 @@
+(footprint "SW_PUSH_5.08mm"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "Generic 6mm SW tactile push button")
+	(tags "tact sw push 6mm")
+	(property "Reference" "REF**"
+		(at 2.794 -4.699 0)
+		(layer "F.SilkS")
+		(uuid "d17f06b3-06cf-4b86-9576-eb75fb3cc3df")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SW_PUSH_5.08mm"
+		(at 2.667 4.318 0)
+		(layer "F.Fab")
+		(uuid "5a601e4b-56c2-40d9-8b05-295fe984fd71")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "60b72df7-0a00-422b-a1d5-ba87e7a9f93c")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "700df576-04a9-4ea6-a20b-92a79f4a2a32")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "df2e4200-3c44-4aa4-88db-f33ad66552ec")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -1.143 -0.75)
+		(end -1.143 0.75)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "aeda2711-00bd-4404-afb7-26d17cf1abc9")
+	)
+	(fp_line
+		(start 0.29 3.175)
+		(end 4.79 3.175)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c7c1e22f-b3eb-4ce5-b4e3-790a02a5acf0")
+	)
+	(fp_line
+		(start 4.79 -3.175)
+		(end 0.29 -3.175)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "41e8c0e2-ece5-48f0-882a-2113ba801bdb")
+	)
+	(fp_line
+		(start 6.223 0.75)
+		(end 6.223 -0.75)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "36fbfff8-b2f8-48eb-bf0a-3038078ed105")
+	)
+	(fp_line
+		(start -1.27 -3.302)
+		(end -1.27 3.302)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "bf111096-667a-49f6-85ea-2883c6ac0833")
+	)
+	(fp_line
+		(start -1.27 3.302)
+		(end 6.35 3.302)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "9c984d01-232a-4404-8f6c-4e7126c426cb")
+	)
+	(fp_line
+		(start 6.35 -3.302)
+		(end -1.27 -3.302)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "ff5f296f-3d81-4e88-8899-14ef41dc3852")
+	)
+	(fp_line
+		(start 6.35 3.302)
+		(end 6.35 -3.302)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "5142758e-7d91-435b-9962-5c083d676132")
+	)
+	(fp_line
+		(start -0.635 -3.175)
+		(end 5.715 -3.175)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "51b2ca53-bc63-449f-8d9a-16445856356f")
+	)
+	(fp_line
+		(start -0.635 3.175)
+		(end -0.635 -3.175)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0086db40-18b3-4cba-966b-c82d042e56ab")
+	)
+	(fp_line
+		(start 5.715 -3.175)
+		(end 5.715 3.175)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "cc6b54e1-337b-43a9-bebc-e9ba1b0543dd")
+	)
+	(fp_line
+		(start 5.715 3.175)
+		(end -0.635 3.175)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8a3fa572-d869-4bc0-89ce-c37ef2911a90")
+	)
+	(fp_circle
+		(center 2.54 0)
+		(end 5.39 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.Fab")
+		(uuid "8cc50bfe-bf8e-4787-bccb-0c7c0c588c69")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 2.54 -0.127 0)
+		(layer "F.Fab")
+		(uuid "e5706493-de05-4287-8700-e83ddb8dd1fb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at 0 0 90)
+		(size 2 2)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "dc834195-01dc-42ec-83f9-3044efe2074a")
+	)
+	(pad "2" thru_hole circle
+		(at 5.08 0 90)
+		(size 2 2)
+		(drill 1.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9bff696e-f4e2-4d30-9078-7d0e4fe03cce")
+	)
+	(model "../FUEL4EP_kicad_3D_models/Tactile Switch.step"
+		(offset
+			(xyz 2.5 0.1 0)
+		)
+		(scale
+			(xyz 0.95 1 1)
+		)
+		(rotate
+			(xyz -90 0 0)
+		)
+	)
+)

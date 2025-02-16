@@ -1,0 +1,88 @@
+** Drc report for HB_Pro_Mini_ATMEGA1284P_FUEL4EP.kicad_pcb **
+** Created on 2025-02-15T16:04:57+0100 **
+
+** Found 26 DRC violations **
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(12.1755 mm, -9.7716 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(11.3535 mm, -10.5936 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(10.5315 mm, -11.4156 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(9.7095 mm, -12.2376 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(8.8875 mm, -13.0596 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(9.7095 mm, -10.5936 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(11.3535 mm, -8.9495 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(10.5315 mm, -9.7716 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(8.8875 mm, -11.4156 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(8.0655 mm, -12.2376 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(10.5315 mm, -8.1275 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(9.7095 mm, -8.9495 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(8.8875 mm, -9.7716 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(8.0655 mm, -10.5936 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(7.2435 mm, -11.4156 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(9.7095 mm, -7.3055 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(8.8875 mm, -8.1275 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(7.2435 mm, -9.7716 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(6.4215 mm, -10.5936 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(8.0655 mm, -8.9495 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(8.8875 mm, -6.4835 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(8.0655 mm, -7.3055 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(7.2435 mm, -8.1275 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(6.4215 mm, -8.9495 mm): Durchsteckpad 45 [GND] von U1
+[drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
+    Rule: Einschränkungen aus Platinenkonfiguration; error
+    @(5.5994 mm, -9.7716 mm): Durchsteckpad 45 [GND] von U1
+[missing_courtyard]: Footprint hat keine Abstandsfläche definiert
+    Local override; warning
+    @(8.6106 mm, -17.8562 mm): Footprint LOGO1
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **
