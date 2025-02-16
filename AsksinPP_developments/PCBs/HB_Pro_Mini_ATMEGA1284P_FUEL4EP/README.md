@@ -1,4 +1,5 @@
-# HB_Pro_Mini_ATMEGA1284P_FUEL4EP ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%HB_Pro_Mini_ATMEGA1284P_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+# HB_Pro_Mini_ATMEGA1284P_FUEL4EP ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FFUEL4EP%2FHomeAutomation%2Ftree%2Fmaster%2FAsksinPP_developments%2FPCBs%2FHB_Pro_Mini_ATMEGA1284P_FUEL4EP&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)<a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 
 
 # Warnung: Diese Version der Platine ist noch nicht valdiert. Nutzung auf eigenes Risiko!
@@ -43,6 +44,8 @@
 
 - MightyCore ATMega1284P VQFN44 Standardpinbelegung (=TQFP44)
 ![pic](https://camo.githubusercontent.com/f742815386b28a178123e560f0cf049fb899a454ab97b18c96a96b3ec3785b91/68747470733a2f2f692e696d6775722e636f6d2f4b3334785a62342e6a7067)
+
+- [hier die Pinbelegung](./PinOut/) als Tabelle
 
 - passend zu folgenden AsksinPP Basisplatinen(wird später ergänzt)
 	* [tbd](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/tbd)
