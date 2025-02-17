@@ -1,0 +1,26 @@
+Comment,Designator,Footprint,LCSC,Quantity
+100n,"C1,C11,C2,C4,C6,C7,C8",C_0402_1005Metric,C1525,7
+10u,"C12,C3",C_0402_1005Metric,C15525,2
+10u,"C5,C9",C_0805_2012Metric,C15850,2
+0 Ohm,R3,R_0402_1005Metric,C17168,1
+12nH,L2,L_0402_1005Metric,C2043991,1
+22,R2,R_0402_1005Metric,C23345,1
+470,R4,R_0402_1005Metric,C25117,1
+10k,R1,R_0402_1005Metric,C25744,1
+LED red 0402,D1,LED_0402_1005Metric,C273598,1
+TPS61221DCK,U2,Texas_R-PDSO-G6,C2865756,1
+ATmega1284P-AU,U1,TQFP-44_10x10mm_P0.8mm,C33575,1
+4.7u,L1,FUEL4EP_Inductor_SMD_1,C576538,1
+E07-900MM10S,Module1,eByte_E07-900MM10S,C5844212,1
+1pF,C13,C_0402_1005Metric,C72134,1
+SWRA416 868MHz PCB Antenna,AE1,Texas_SWRA416_868MHz_915MHz,,1
+Reset,JP1,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,,1
+Power,J1,PinHeader_1x03_P1.27mm_Vertical,,1
+ISP Programmer,J3,PogoPinHeader_SMD_1x06_P2.54mm_Vertical,,1
+FTDI Debuger,J2,PogoPinHeader_SMD_1x06_P2.54mm_Vertical,,1
+IO1,J4,PinHeader_1x08_P1.27mm_Vertical,,1
+IO3,J6,PinHeader_1x01_P1.27mm_Vertical,,1
+Config,JP2,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,,1
+IO2,J5,PinHeader_1x03_P1.27mm_Vertical,,1
+Vaccu,TP2,TestPoint_Pad_1.0x1.0mm,,1
+GND,TP1,TestPoint_Pad_1.0x1.0mm,,1
