@@ -18,7 +18,9 @@
 
 - mein besonderer Dank geht an papa für [AsksinPP](https://github.com/pa-pa/AskSinPP) und [Jérôme jp112sdl](https://github.com/jp112sdl) für die stete Unterstützung.
 
+## Status
 
+- die Platine V1.0 wurde noch nicht bei JLCPCB gefertigt und ist daher noch nicht validiert
 
 ## Eigenschaften
 
