@@ -51,6 +51,11 @@
 ### KiCAD Plugin
 - für die Erzeugung der JLCPCB Produktionsdaten wurde das Plugin [KiCAD JLCPCB tools](https://github.com/bouni/kicad-jlcpcb-tools) verwendet.
 
+## benötigte Spezialbauteile zum Einlöten
+
+- [Piezo Signalgeber](https://www.amazon.de/dp/B0C57D9RQ8)
+- [6×6×8mm Taster mit aufsteckbaren farbigen Knopfkappen](https://www.amazon.de/Gebildet-Schalter-Momentane-Taktschalter-Drucktaster/dp/B082DBBPGC?th=1)
+
 
 ## Bestellen von Platinen
 
