@@ -1,0 +1,19 @@
+** Drc report for HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP.kicad_pcb **
+** Created on 2025-02-18T10:17:19+0100 **
+
+** Found 0 DRC violations **
+
+** Found 0 unconnected pads **
+
+** Found 3 Footprint errors **
+[footprint_symbol_mismatch]: Footprint D1-Wert (LED blau) stimmt nicht mit Symbolwert (LED blue) überein.
+    Local override; warning
+    @(5.5300 mm, -24.0000 mm): Footprint D1
+[footprint_symbol_mismatch]: Footprint D2-Wert (LED gelb) stimmt nicht mit Symbolwert (LED yellow) überein.
+    Local override; warning
+    @(13.9300 mm, -24.0000 mm): Footprint D2
+[footprint_symbol_mismatch]: Footprint D4-Wert (LED rot) stimmt nicht mit Symbolwert (LED red) überein.
+    Local override; warning
+    @(13.9300 mm, -19.0000 mm): Footprint D4
+
+** End of Report **
