@@ -1,8 +1,8 @@
 {
   "board": {
-    "active_layer": 37,
+    "active_layer": 0,
     "active_layer_preset": "All Layers",
-    "auto_track_width": true,
+    "auto_track_width": false,
     "hidden_netclasses": [],
     "hidden_nets": [],
     "high_contrast_mode": 0,
@@ -41,10 +41,8 @@
       11,
       12,
       13,
-      14,
       15,
       16,
-      17,
       18,
       19,
       20,

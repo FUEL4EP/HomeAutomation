@@ -1,5 +1,5 @@
 ** Drc report for HB-UNI-SEN-BATT_FUEL4EP.kicad_pcb **
-** Created on 2025-01-25T17:51:57+0100 **
+** Created on 2025-02-24T09:16:23+0100 **
 
 ** Found 17 DRC violations **
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
@@ -22,6 +22,12 @@
     @(38.7000 mm, -72.9900 mm): Kreis auf B.Silkscreen
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Local override; warning
+    @(37.4300 mm, -59.0200 mm): Kreis auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Local override; warning
+    @(37.4300 mm, -61.5600 mm): Kreis auf F.Silkscreen
+[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
+    Local override; warning
     @(26.0000 mm, -72.9900 mm): Kreis auf F.Silkscreen
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Local override; warning
@@ -37,19 +43,13 @@
     @(36.1600 mm, -72.9900 mm): Kreis auf F.Silkscreen
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Local override; warning
-    @(37.4300 mm, -61.5600 mm): Kreis auf F.Silkscreen
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Local override; warning
-    @(37.4300 mm, -59.0200 mm): Kreis auf F.Silkscreen
-[silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
-    Local override; warning
     @(38.7000 mm, -72.9900 mm): Kreis auf F.Silkscreen
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Local override; warning
-    @(23.2800 mm, -33.5550 mm): Kreis auf F.Silkscreen
+    @(23.2800 mm, -28.5550 mm): Kreis auf F.Silkscreen
 [silk_over_copper]: Bestückungsdruck schneidet Lötstoppmaske
     Local override; warning
-    @(23.2800 mm, -28.5550 mm): Kreis auf F.Silkscreen
+    @(23.2800 mm, -33.5550 mm): Kreis auf F.Silkscreen
 [silk_edge_clearance]: Bestückungsdruck von Platinenkante abgeschnitten
     Rule: Einschränkungen aus Platinenkonfiguration zum Bestückungsdruck; warning
     @(23.2500 mm, -73.5000 mm): Kreisbogen auf Edge.Cuts
