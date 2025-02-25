@@ -47,8 +47,8 @@
 
 - [hier die Pinbelegung](./PinOut/) als Tabelle
 
-- passend zu folgenden AsksinPP Basisplatinen(wird später ergänzt)
-	* [tbd](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/tbd)
+- passend zu folgenden AsksinPP Basisplatinen (wird später durch weitere Platinen ergänzt)
+	* [HB-UNI-SEN-BATT_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP)
 
 ## Platinenmaße
 
