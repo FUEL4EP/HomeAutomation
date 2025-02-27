@@ -9,9 +9,4 @@ EVPBB0AAB000,S1,SW_EVPBB0AAB000,C558803,1
 4.7u,L1,FUEL4EP_Inductor_SMD_1,C576538,1
 10u,C5,C_0402_1005Metric,C76991,1
 8MHz,Y2,Resonator_SMD_Murata_CSTxExxV-3Pin_3.0x1.1mm,C882602,1
-FTDI Basic,J1,PinHeader_1x06_P2.54mm_Vertical_FUEL4EP,,1
-Conn_01x05,J4,PinHeader_1x05_P2.54mm_Vertical_FUEL4EP,,1
-Conn_01x02,J5,PinHeader_1x02_P2.54mm_Vertical_FUEL4EP,,1
-Conn_01x12,J3,PinHeader_1x12_P2.54mm_Vertical_FUEL4EP,,1
-Conn_01x12,J2,PinHeader_1x12_P2.54mm_Vertical_FUEL4EP,,1
 Logo_Open_Hardware_Small,LOGO1,CC-BY-ND-SA,,1

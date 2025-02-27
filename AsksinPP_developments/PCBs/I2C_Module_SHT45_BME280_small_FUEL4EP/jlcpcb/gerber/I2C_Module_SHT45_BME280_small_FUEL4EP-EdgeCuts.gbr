@@ -1,11 +1,11 @@
-%TF.GenerationSoftware,KiCad,Pcbnew,8.0.5-8.0.5-0~ubuntu22.04.1*%
-%TF.CreationDate,2024-09-29T16:12:32+02:00*%
+%TF.GenerationSoftware,KiCad,Pcbnew,8.0.9-8.0.9-0~ubuntu22.04.1*%
+%TF.CreationDate,2025-02-27T10:50:10+01:00*%
 %TF.ProjectId,I2C_Module_SHT45_BME280_small_FUEL4EP,4932435f-4d6f-4647-956c-655f53485434,V1.5*%
 %TF.SameCoordinates,Original*%
 %TF.FileFunction,Profile,NP*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 8.0.5-8.0.5-0~ubuntu22.04.1) date 2024-09-29 16:12:32*
+G04 Created by KiCad (PCBNEW 8.0.9-8.0.9-0~ubuntu22.04.1) date 2025-02-27 10:50:10*
 %MOMM*%
 %LPD*%
 G01*

@@ -5,17 +5,3 @@ Comment,Designator,Footprint,LCSC,Quantity
 10k,"R5,R6,R7,R8",R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,C25804,4
 100n,C2,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,C28233,1
 1u,C1,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,C28323,1
-LED blau,D1,LED_D3.0mm,,1
-Power,J1,PinHeader_1x03_P1.27mm_Vertical,,1
-IO1,J4,PinHeader_1x08_P1.27mm_Vertical,,1
-IO3,J6,PinHeader_1x01_P1.27mm_Vertical,,1
-SW_Push,SW2,SW_PUSH_5.08mm,,1
-LED pink,D3,LED_D3.0mm,,1
-LED rot,D4,LED_D3.0mm,,1
-LED gelb,D2,LED_D3.0mm,,1
-SW_Push,SW3,SW_PUSH_5.08mm,,1
-Vaccu,TP2,TestPoint_Pad_1.0x1.0mm,,1
-SW_Push,SW4,SW_PUSH_5.08mm,,1
-SW_Push,SW1,SW_PUSH_5.08mm,,1
-GND,TP1,TestPoint_Pad_1.0x1.0mm,,1
-Piezo Buzzer,BZ1,Buzzer_SMD_POPESQ_POPESQ_13mm_13mm_2.5mm,,1

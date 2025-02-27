@@ -1,7 +1,7 @@
-Comment,Designator,Footprint,LCSC
-100n,"C2,C3,C4",C_0603_1608Metric,C14663
-4.7u,C1,C_0603_1608Metric,C19666
-10k,"R1,R2",R_0402_1005Metric,C25744
-SHT45-AD1B-R2,U2,Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad,C5221601
-FerriteBead,FB1,L_0402_1005Metric,C76889
-BME280,U1,Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering,C92489
+Comment,Designator,Footprint,LCSC,Quantity
+100n,"C2,C3,C4",C_0603_1608Metric,C14663,3
+4.7u,C1,C_0603_1608Metric,C19666,1
+10k,"R1,R2",R_0402_1005Metric,C25744,2
+SHT45-AD1B-R2,U2,Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad,C5221601,1
+FerriteBead,FB1,L_0402_1005Metric,C76889,1
+BME280,U1,Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering,C92489,1

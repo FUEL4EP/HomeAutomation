@@ -1,16 +1,7 @@
 Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
-BZ1,Piezo Buzzer,Buzzer_SMD_POPESQ_POPESQ_13mm_13mm_2.5mm,11.0,15.25,270.0,bottom
 C1,1u,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,11.1,23.9,90.0,top
 C2,100n,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,1.6,15.3625,-90.0,top
 C3,10u,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,1.6,11.5375,90.0,top
-D1,LED blau,LED_D3.0mm,6.8,24.0,0.0,top
-D2,LED gelb,LED_D3.0mm,15.2,24.0,0.0,top
-D3,LED pink,LED_D3.0mm,6.8,19.0,0.0,top
-D4,LED rot,LED_D3.0mm,15.2,19.0,0.0,top
-J1,Power,PinHeader_1x03_P1.27mm_Vertical,1.8288,5.1816,0.0,top
-J4,IO1,PinHeader_1x08_P1.27mm_Vertical,20.1676,5.8166,180.0,top
-J6,IO3,PinHeader_1x01_P1.27mm_Vertical,20.1676,26.0096,0.0,top
-LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA_bottom,2.2,18.4,-90.0,top
 R1,220,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,3.3,24.2,-90.0,top
 R2,220,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,18.669,22.987,-90.0,top
 R3,220,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,3.3,19.3,-90.0,top
@@ -20,7 +11,3 @@ R6,10k,R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,11.049,10.4125,-90.0,top
 R7,10k,R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,11.0,2.2,-90.0,top
 R8,10k,R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,11.0,6.2,90.0,top
 R9,10k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,11.1,19.2,-90.0,top
-SW1,SW_Push,SW_PUSH_5.08mm,6.8,12.54,90.0,top
-SW2,SW_Push,SW_PUSH_5.08mm,15.2,12.54,90.0,top
-SW3,SW_Push,SW_PUSH_5.08mm,6.8,4.54,90.0,top
-SW4,SW_Push,SW_PUSH_5.08mm,15.2,4.54,90.0,top
