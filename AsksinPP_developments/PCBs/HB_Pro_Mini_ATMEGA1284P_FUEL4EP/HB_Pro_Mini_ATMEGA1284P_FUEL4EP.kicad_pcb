@@ -237,7 +237,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C28233"
+		(property "LCSC" "C1525"
 			(at 0 0 45)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1235,7 +1235,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C28233"
+		(property "LCSC" "C1525"
 			(at 0 0 -45)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1713,7 +1713,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C28233"
+		(property "LCSC" "C1525"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2255,7 +2255,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C28233"
+		(property "LCSC" "C1525"
 			(at 0 0 -135)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2840,7 +2840,7 @@
 		(path "/667fc3fe-8945-4db3-ad4e-ad2687d994c6")
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Pro_Mini_ATMEGA1284P_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_pos_files exclude_from_bom)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start -1.27 13.97)
 			(end 1.27 13.97)
@@ -4735,7 +4735,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C17414"
+		(property "LCSC" "C25744"
 			(at 0 0 -90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5452,7 +5452,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C28233"
+		(property "LCSC" "C1525"
 			(at 0 0 135)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5687,7 +5687,7 @@
 		(path "/0c19375a-7083-4d5e-ab3f-aeae16f42170")
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Pro_Mini_ATMEGA1284P_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_pos_files exclude_from_bom)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 1.27 -11.43)
 			(end -1.27 -11.43)
@@ -5958,7 +5958,7 @@
 		(path "/a1452949-1a6d-4a7c-b83b-62bd009b129b")
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Pro_Mini_ATMEGA1284P_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_pos_files exclude_from_bom)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start -1.27 -3.81)
 			(end -1.27 1.27)
@@ -6181,7 +6181,7 @@
 		(path "/14937bd3-c0d5-40c0-9931-0b456f708327")
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Pro_Mini_ATMEGA1284P_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_pos_files exclude_from_bom)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start -1.27 -29.21)
 			(end -1.27 1.27)
@@ -6564,7 +6564,7 @@
 		(path "/4b91bdc1-9009-48a6-b953-bcf2f0674acd")
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Pro_Mini_ATMEGA1284P_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_pos_files exclude_from_bom)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 1.27 1.27)
 			(end 1.27 -29.21)

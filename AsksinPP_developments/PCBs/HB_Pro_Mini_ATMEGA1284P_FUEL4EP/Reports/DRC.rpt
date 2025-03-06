@@ -1,5 +1,5 @@
 ** Drc report for HB_Pro_Mini_ATMEGA1284P_FUEL4EP.kicad_pcb **
-** Created on 2025-02-15T16:04:57+0100 **
+** Created on 2025-03-06T08:37:04+0100 **
 
 ** Found 26 DRC violations **
 [drill_out_of_range]: Lochgröße außerhalb des zulässigen Bereichs (Einschränkungen aus Platinenkonfiguration min Loch 0.3000 mm; tatsächlich 0.2000 mm)
