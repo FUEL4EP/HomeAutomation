@@ -5200,7 +5200,7 @@
 				)
 			)
 		)
-		(property "TYPE" "0603"
+		(property "TYPE" "0402"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -5213,7 +5213,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C23345"
+		(property "LCSC" "C25092"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")

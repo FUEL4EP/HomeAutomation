@@ -8584,7 +8584,7 @@
 				(hide yes)
 			)
 		)
-		(property "TYPE" "0603"
+		(property "TYPE" "0402"
 			(at 86.36 45.72 0)
 			(effects
 				(font
@@ -8593,7 +8593,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C23345"
+		(property "LCSC" "C25092"
 			(at 86.36 45.72 0)
 			(effects
 				(font
