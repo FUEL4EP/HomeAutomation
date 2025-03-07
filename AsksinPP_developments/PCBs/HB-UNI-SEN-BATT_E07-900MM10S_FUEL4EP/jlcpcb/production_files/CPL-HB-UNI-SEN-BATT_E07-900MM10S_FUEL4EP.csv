@@ -1,1 +1,26 @@
 Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+BT1,AA,BatteryHolder_Keystone_2460_1xAA,63.49,40.145,-90.0,top
+BT2,AA,BatteryHolder_Keystone_2460_1xAA,11.42,40.095,90.0,top
+C1,10uF,CP_Radial_D4.0mm_P1.50mm,42.164,37.707,90.0,top
+D1,LED red 3mm,LED_D3.0mm,45.05,70.45,-90.0,top
+J1,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,46.32,38.065,0.0,top
+J10,charge,PinHeader_1x03_P2.54mm_Vertical,67.529,71.6565,90.0,top
+J11,ePaper connector,PinPads_1x08_P2.00mm_Vertical,34.048,21.682,90.0,top
+J12,U.FL connector,U.FL_Molex_MCRF_73412-0110_Vertical,22.735,37.688,0.0,top
+J2,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,51.4,38.065,0.0,top
+J3,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,46.32,47.59,0.0,top
+J4,Conn_01x02,PinHeader_1x02_P2.54mm_Vertical,51.4,47.59,0.0,top
+J5,ISP Programmer,PinHeader_1x06_P2.54mm_Vertical,62.83,8.22,90.0,top
+J6,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,24.73,8.22,180.0,top
+J7,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,34.89,8.22,180.0,top
+J8,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,39.97,8.22,180.0,top
+J9,Conn_01x04,PinHeader_1x04_P2.54mm_Vertical,50.13,8.22,180.0,top
+LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA,14.824,52.0,90.0,top
+Module1,E07-900MM10S,eByte_E07-900MM10S,31.329,32.338,-90.0,top
+Module2,HB_Pro_Mini_ATMEGA1284P_FUEL4EP,HB_Pro_Mini_ATMEGA1284P_FUEL4EP,32.35,57.75,90.0,top
+Q1,IRLU024N,TO-251-3_Vertical,9.24,8.22,0.0,top
+R1,470,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,45.05,64.735,-90.0,top
+R2,100K,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,17.11,8.22,180.0,top
+R4,10K,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,50.13,29.175,-90.0,top
+R5,10K,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,46.32,29.175,-90.0,top
+SW1,config button,SW_PUSH_6mm_H5mm,48.935,57.405,0.0,top

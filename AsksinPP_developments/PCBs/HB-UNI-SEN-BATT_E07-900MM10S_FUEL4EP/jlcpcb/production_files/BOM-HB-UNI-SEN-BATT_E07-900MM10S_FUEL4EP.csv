@@ -1,1 +1,36 @@
-Comment,Designator,Footprint,LCSC
+Comment,Designator,Footprint,LCSC,Quantity
+E07-900MM10S,Module1,eByte_E07-900MM10S,,1
+Antenna,AE1,SolderWire-0.1sqmm_1x01_D0.4mm_OD1mm,,1
+LED red 3mm,D1,LED_D3.0mm,,1
+Conn_01x02,J1,PinHeader_1x02_P2.54mm_Vertical,,1
+Conn_01x02,J2,PinHeader_1x02_P2.54mm_Vertical,,1
+Conn_01x04,J7,PinHeader_1x04_P2.54mm_Vertical,,1
+AA,BT1,BatteryHolder_Keystone_2460_1xAA,,1
+Conn_01x02,J3,PinHeader_1x02_P2.54mm_Vertical,,1
+Conn_01x02,J4,PinHeader_1x02_P2.54mm_Vertical,,1
+ISP Programmer,J5,PinHeader_1x06_P2.54mm_Vertical,,1
+Conn_01x04,J6,PinHeader_1x04_P2.54mm_Vertical,,1
+10uF,C1,CP_Radial_D4.0mm_P1.50mm,,1
+10K,R4,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,,1
+10K,R5,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,,1
+470,R1,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,,1
+IRLU024N,Q1,TO-251-3_Vertical,,1
+Conn_01x04,J9,PinHeader_1x04_P2.54mm_Vertical,,1
+charge,J10,PinHeader_1x03_P2.54mm_Vertical,,1
+NO,JP1,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,,1
+HB_Pro_Mini_ATMEGA1284P_FUEL4EP,Module2,HB_Pro_Mini_ATMEGA1284P_FUEL4EP,,1
+battery supply,JP2,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,,1
+config button,SW1,SW_PUSH_6mm_H5mm,,1
+Conn_01x04,J8,PinHeader_1x04_P2.54mm_Vertical,,1
+MountingHole,H2,MountingHole_2.2mm_M2_Pad_Via,,1
+MountingHole,H4,MountingHole_2.2mm_M2_Pad_Via,,1
+MountingHole,H1,MountingHole_2.2mm_M2_Pad_Via,,1
+MountingHole,H3,MountingHole_2.2mm_M2_Pad_Via,,1
+Logo_Open_Hardware_Small,LOGO1,CC-BY-ND-SA,,1
+ePaper connector,J11,PinPads_1x08_P2.00mm_Vertical,,1
+AA,BT2,BatteryHolder_Keystone_2460_1xAA,,1
+U.FL connector,J12,U.FL_Molex_MCRF_73412-0110_Vertical,,1
+battery voltage measurement,JP5,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,,1
+no BT2 battery,JP4,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,,1
+100K,R2,R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical,,1
+internal boost,JP3,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,,1
