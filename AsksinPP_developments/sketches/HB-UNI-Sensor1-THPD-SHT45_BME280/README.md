@@ -198,7 +198,7 @@ Globale Variablen verwenden 8109 Bytes (49%) des dynamischen Speichers, 8275 Byt
 
 ## Betriebsdauer mit einem neuen Batteriesatz
 
-- \> 8 Monate mit einem 2/3 AA-Mignon-NiMH Akkumulator mit 750mA Kapazität. Diese passt von der Größe zur Platine 'HB_Stamp_ATMega1284P_FUEL4EP':
+- \> 11 Monate mit einem 2/3 AA-Mignon-NiMH Akkumulator mit 750mA Kapazität. Diese passt von der Größe zur Platine 'HB_Stamp_ATMega1284P_FUEL4EP':
 ![pic](Images/accu_discharge_curve.png)
 - da der Batteriehalter nicht in die Platine integriert ist, sind auch andere Batteriegrößen möglich, z.B. eine AAA-Batterie oder eine AA-Batterie
 
