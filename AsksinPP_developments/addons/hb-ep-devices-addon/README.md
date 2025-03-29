@@ -1,6 +1,6 @@
 # ep-hb-devices-addon [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) [![Github All Releases](https://img.shields.io/github/downloads/FUEL4EP/HomeAutomation/total.svg)](https://github.com/FUEL4EP/HomeAutomation/releases) ![GitHub release (by tag)](https://img.shields.io/github/downloads/FUEL4EP/HomeAutomation/latest/total) [![GitHub issues](https://img.shields.io/github/issues/FUEL4EP/HomeAutomation.svg)](https://github.com/FUEL4EP/HomeAutomation/issues) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-**:heavy_check_mark: lauffähig unter CCU3 / RaspberryMatic Firmware 3.47.10 -  	3.79.6**<br/>
+**:heavy_check_mark: lauffähig unter CCU3 / RaspberryMatic Firmware 3.47.10 -  	3.81.5**<br/>
 Die jeweils aktuellste Version ist bei den [Releases](https://github.com/FUEL4EP/HomeAutomation/releases/latest) zu finden.
 
 <hr/>
@@ -52,7 +52,9 @@ Nach einem Upgrade der CCU/RaspberryMatic Firmware kann es notwendig sein, diese
 |<img src="https://raw.githubusercontent.com/FUEL4EP/HomeAutomation/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/src/addon/www/config/img/devices/50/hb-uni-sensor-THP_MA-AHT20_BMP280_thumb.png" width=25/> | [HB-UNI-Sensor1-THP_MA-AHT20_BMP280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THP_MA-AHT20_BMP280)<br/> - NEU - | genauer THP Außensensor zur Beobachtung des Klimawandels<br/>basierend auf Aosong AHT20 und Bosch BME280 <br/>mit gleitenden Temperaturmittelwerten für 1 Jahr, 1 Monat, 1 Woche und 1 Tag<br>mit nichtflüchtigem FRAM-Speicher| 🔋 |
 
 
-Alle hier aufgeführten Homematic Selbstbaugeräte sind bei mir selbst im Einsatz und im täglichen Betrieb validiert. Meine Zentrale läuft unter RaspberryMatic in der neuesten verfügbaren Version auf einem Raspberry Pi 3B+ .
+Alle hier aufgeführten Homematic Selbstbaugeräte sind bei mir selbst im Einsatz und im täglichen Betrieb validiert. Meine Zentrale läuft unter RaspberryMatic in der neuesten verfügbaren Version auf einem Raspberry Pi 3B+.
+
+Die Addon 'install'- und 'uninstall'-Skripte wurden automatisch mit dem Generator [AsksinPP_addon_files_generator](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/addons/hb-ep-devices-addon/CCU_RM/AsksinPP_addon_files_generator) erzeugt.
 
 
 **Hinweis für Entwickler** _(verwendete Device Model meiner bzw. fremd-eingebundener HB-Geräte)_ **:**
