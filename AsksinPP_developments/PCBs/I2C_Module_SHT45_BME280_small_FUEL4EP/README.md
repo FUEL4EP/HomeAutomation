@@ -22,9 +22,7 @@
 - Bilder der bei JLCPCB gefertigten und assemblierten Prototypplatine V1.5
 ![pic](Pictures_of_JLCPCB_prototypes/I2C_Module_SHT45_BME280_small_FUEL4EP_PCB_top_JLCPCB_assembled_prototype_V1.5.png)
 ![pic](Pictures_of_JLCPCB_prototypes/I2C_Module_SHT45_BME280_small_FUEL4EP_PCB_bottom_JLCPCB_assembled_prototype_V1.5.png)
-- - V1.1 der Platine hatte noch falsche I2C-Pullup-Widerstände, die ausgelötet werden mussten
-- in der aktuellen Version auf Github ist dieser Fehler behoben
-- zusätzlich wurde die Platine verkleinert, um auch bei Stiftmontage auf die Mutterplatine HB_Stamp_ATMega1284P_FUEL4EP Pogo-Pin_Adapteranbringen zu können.
+
 
 
 ## Platinenmaße
@@ -39,10 +37,21 @@
 
 ## Status
 
-- die Platine V1.5 wurde bei JLCPCB gefertigt 
-	- V1.1 hatte noch falsche I2C-Pullup-Widerstände, die ausgelötet werden mussten
-	- in der aktuellen Version der Platine auf Github ist dieser Fehler behoben
-	- zusätzlich wurde die Platine weiter verkleinert, um bei der Montage mit Stiftleisten auf die Mutterplatine [HB_Stamp_ATMega1284P_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP) das Anbringen des Pogo_Pin_Adapters zu ermöglichen. In der V1.1 wurde daher eine flexible Verbindung mit Flachbandkabel gewählt.
+- die Platine V1.5 wurde bei JLCPCB gefertigt und erfolgreich validiert:
+![pic](PNGs/validated_prototype.png)
+- für die Systemvalidierung wude als Hardware verwandt:
+	+ [HB-UNI-SEN-BATT_FUEL4EP V1.5](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP)
+	+ [HB_Pro_Mini_ATMEGA1284P_FUEL4EP V1.0](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Pro_Mini_ATMEGA1284P_FUEL4EP)
+	+ [I2C_Module_SHT45_BME280_small_FUEL4EP V1.5](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_small_FUEL4EP)
+	+ getestet wurden folgende Spannungeversorgungen:
+		* 1x AA Alkaline Batterie
+		* 2x AA Alkaline Batterie
+		* 1x NiMH AA Akkumulator
+		* 2x NiMH AA Akkumulator
+- für die Systemvalidierung wurde als Software verwendet:
+	+ [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280)
+	+ die Stromaufnahme im Schlafmodus mit 1x AA Alkaline Battterie beträgt ca. 22uA. 
+
 
 
 

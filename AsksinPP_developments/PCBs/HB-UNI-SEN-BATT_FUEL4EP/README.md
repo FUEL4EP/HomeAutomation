@@ -18,7 +18,20 @@
 ## Status der Validierung der Platine
 
 - Platine wurde bis zur Version V1.4 bei JLCPCB erfolgreich gefertigt und validiert
-- der Prototyp der neuen Platinenversion V1.5 wird in Kürze bei JLCPCB gefertigt und danach validiert werden
+- auch der Prototyp der neuen Platinenversion V1.5 wurde bei JLCPCB gefertigt und danach erfolgreich validiert:
+![pic](PNGs/validated_prototype.png)
+- für die Systemvalidierung wude als Hardware verwandt:
+	+ [HB-UNI-SEN-BATT_FUEL4EP V1.5](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP)
+	+ [HB_Pro_Mini_ATMEGA1284P_FUEL4EP V1.0](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Pro_Mini_ATMEGA1284P_FUEL4EP)
+	+ [I2C_Module_SHT45_BME280_small_FUEL4EP V1.5](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_small_FUEL4EP)
+	+ getestet wurden folgende Spannungeversorgungen:
+		* 1x AA Alkaline Batterie
+		* 2x AA Alkaline Batterie
+		* 1x NiMH AA Akkumulator
+		* 2x NiMH AA Akkumulator
+- für die Systemvalidierung wurde als Software verwendet:
+	+ [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280)
+	+ die Stromaufnahme im Schlafmodus mit 1x AA Alkaline Battterie beträgt ca. 22uA.
 
 ## Eigenschaften
 

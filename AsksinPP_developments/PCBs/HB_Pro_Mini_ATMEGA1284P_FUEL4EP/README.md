@@ -2,9 +2,6 @@
 
 
 
-# Warnung: Diese Version der Platine ist noch nicht valdiert. Nutzung auf eigenes Risiko!
-
-
 ## Arduino Pro Mini Klon mit der 4-fachen Größe von Flash, SRAM und EEPROM Speicher eines ATmega1284p Prozessorbausteins verglichen mit dem Standard ATmega328p Prozessorbaustein
 
 ![pic](PNGs/HB_Pro_Mini_ATMEGA1284P_FUEL4EP_PCB_3D_top.png)
@@ -61,7 +58,20 @@
 
 ## Status
 
-- diese Platine wurde noch nicht bei JLCPCB gefertigt und ist daher auch nicht validiert. Nutzung auf eigenes Risiko!
+- diese Platine wurde in der Version 1.0 bei JLCPCB erfolgreich gefertigt und assembliert:
+![pic](PNGs/validated_prototype.png)
+- für die Systemvalidierung wude als Hardware verwandt:
+	+ [HB-UNI-SEN-BATT_FUEL4EP V1.5](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP)
+	+ [HB_Pro_Mini_ATMEGA1284P_FUEL4EP V1.0](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Pro_Mini_ATMEGA1284P_FUEL4EP)
+	+ [I2C_Module_SHT45_BME280_small_FUEL4EP V1.5](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_small_FUEL4EP)
+	+ getestet wurden folgende Spannungeversorgungen:
+		* 1x AA Alkaline Batterie
+		* 2x AA Alkaline Batterie
+		* 1x NiMH AA Akkumulator
+		* 2x NiMH AA Akkumulator
+- für die Systemvalidierung wurde als Software verwendet:
+	+ [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280)
+	+ die Stromaufnahme im Schlafmodus mit 1x AA Alkaline Battterie beträgt ca. 22uA.
 
 
 ## Rückmeldungen

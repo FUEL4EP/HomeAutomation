@@ -18,7 +18,7 @@
 //---------------------------------------------------------
 // Definition von Device ID und Device Serial
 // Bei mehreren Geräten des gleichen Typs (HB-UNI-Sensor1) muss Device ID und Device Serial unterschiedlich sein! 
-#define cDEVICE_ID      { 0xF6, 0x12, 0x06 }
+#define cDEVICE_ID      { 0xF6, 0x12, 0x01 }
 #define cDEVICE_SERIAL  "SHT45THPD6"
 //                       1234567890     SERIAL must be exact 10 characters!
 
@@ -81,9 +81,9 @@
 
 
 //---------------------------------------------------------
-// Schwellwerte für Batteriespannungsmessung, Werte für eine Versorgung mit **einer** AA-Batterie und TPS61221 Aufwärtswandler für PCB  HB_Stamp_ATMega1284P_FUEL4EP
-#define BAT_VOLT_LOW        11  // 1.1V
-#define BAT_VOLT_CRITICAL   10  // 1.0V
+// Schwellwerte für Batteriespannungsmessung, Werte für eine Versorgung mit **zwei** AA-Batterien und TPS61221 Aufwärtswandler für PCB  HB_Stamp_ATMega1284P_FUEL4EP
+#define BAT_VOLT_LOW        22  // 2.2V
+#define BAT_VOLT_CRITICAL   20  // 2.0V
 #endif
 
 // clang-format on
