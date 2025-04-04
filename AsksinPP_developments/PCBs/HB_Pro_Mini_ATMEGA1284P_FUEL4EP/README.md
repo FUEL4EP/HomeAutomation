@@ -8,7 +8,7 @@
 
 ![pic](PNGs/HB_Pro_Mini_ATMEGA1284P_FUEL4EP_PCB_KiCAD.png)
 
-
+![pic](Pictures_of_JLCPCB_prototypes/HB_Pro_Mini_ATMEGA1284P_FUEL4EP_PCB.png))
 
 - [ATmega1284p](https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42719-ATmega1284P_Datasheet.pdf) statt ATmega328p
 - ATmega1284p im 7mmx7mm 44 Pin VQFN Gehäuse
@@ -119,8 +119,6 @@
 	+ [Panasonic EVPBB0AAB000 Tactile Switch SPST-NO Top Actuated Surface Mount](https://jlcpcb.com/partdetail/Panasonic-EVPBB0AAB000/C558803)
 	+ [Murata CSTNE8M00GH5L000R0 8MHz 33pF 40Ω SMD3213-3P Ceramic Resonators ROHS](https://jlcpcb.com/partdetail/946709-CSTNE8M00GH5L000R0/C882602)
 - bei der Nutzung des JLCPCB SMT Bestückungsservice ist darauf zu achten, dass **alle** benötigten SMD Bauteile als im Lager **verfügbar** angezeigt werden. Sonst bitte **NICHT** bestellen!
-
-- **die Platine V1.0  wurde noch nicht durch einen Prototypen validiert**
 
 ## Sammelbestellung
 
