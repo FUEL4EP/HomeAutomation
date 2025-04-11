@@ -78,9 +78,13 @@
         + der Leckagestrom im Sleepmode sollte < 10 uA betragen
 
 ### Passende AsksinPP Projekte von FUEL4EP
-   + ein neuer Sensor mit gleitender Mittelwertbildung der gemessenen Temperatur über 24 Stunden, 1 Woche, 1 Monat und 1 Jahr ist als Vorabfreigabe freigegeben:
-		* [HB-UNI-Sensor1-THP_MA-AHT20_BMP280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THP_MA-AHT20_BMP280)
-		* alle Grundfunktionen sind schon erfolgreich getestet, das FRAM funktioniert
+- eine passende Arduino FRAM Bibliothek ist [hier](../../sketches/HB-UNI-Sensor1-THP_MA-AHT20_BMP280/Sensors/Fujitsu_MB85RS2MTPF_FRAM_circular_buffer.h)
+	* diese FRAM Bibliothek wird beim Sketch [HB-UNI-Sensor1-THP_MA-AHT20_BMP280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THP_MA-AHT20_BMP280) verwendet
+- THP Sensor mit gleitender Mittelwertbildung der gemessenen Temperatur über 24 Stunden, 1 Woche, 1 Monat und 1 Jahr:
+	* [HB-UNI-Sensor1-THP_MA-AHT20_BMP280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THP_MA-AHT20_BMP280)
+		* alle Funktionen sind erfolgreich getestet, das FRAM funktioniert
+		* damit lassen sich lokale Klimaschwankungen gut erfassen
+		* der Sensor läuft bereits seit mehreren Monaten
 - [HB-UNI-Sensor1-AQ-BME680](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680)
 - [HB-UNI-Sensor1-AQ-BME680_KF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF)
 - [HB-UNI-Sensor1-AQ-BME680_KF_DEBUG](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_DEBUG)
