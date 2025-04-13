@@ -1,16 +1,16 @@
-# kleines 3D druckbares Gehäuse für Asksin++ THPD-Sensor HB-UNI-Sensor1-THPD-SHT45_BME280 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+# kleines 3D druckbares Gehäuse für Asksin++ PCB HB_Stamp_IO_ATMega1284P [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-![pic](PNGs/case_HB-UNI-Sensor1-THPD-SHT45_BME280_2.png)
-![pic](PNGs/case_HB-UNI-Sensor1-THPD-SHT45_BME280.png)
+![pic](PNGs/case_HB_Stamp_IO_ATMega1284P_FUEL4EP_in_Cura_Slicer.png)
+![pic](PNGs/tbd)
 - CAD-Dimensionen:
 	* Breite: 29,1 mm
-	* Höhe: 47,1 mm
-	* Tiefe: 40,1 mm
-- passend zum Sketch [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280)
-- passend zur Mutterplatine [HB_Stamp_ATMega1284P_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP)
-- passend zur Erweiterungsplatine  [I2C_Module_SHT45_BME280_small_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_small_FUEL4EP)
+	* Höhe: 47,0 mm
+	* Tiefe: 44,4 mm
+- passend zum Sketch [tbd](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/tbd)
+- passend zur Mutterplatine [HB_Stamp_IO_ATMega1284P](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_IO_ATMega1284P)
+- passend zur Erweiterungsplatine  [HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP)
 - 3D druckbares Gehäuse
-	+ für Mutterplatine [HB_Stamp_ATMega1284P_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP) und Erweiterungsplatine  [I2C_Module_SHT45_BME280_small_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_small_FUEL4EP)
+	+ für Mutterplatine [HB_Stamp_IO_ATMega1284P](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_IO_ATMega1284P) und Erweiterungsplatine  [HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP)
 	+ für 2/3 AA Mignon NiMH Akku 1,2V 750mAh erhältlich z.B. bei [Amazon](https://www.amazon.de/Sparset-GP75AAH-Mignon-750mAh-wiederaufladbar-gr%C3%BCn/dp/B08HM5DL27)
 	+ für Batteriekontakte z.B. von [Amazon](https://www.amazon.de/sourcing-map-Federplatte-Vernickelt-12mmx12mm/dp/B0B1HJHPZJ/ref=asc_df_B0B1HJHPZJ/)
 	+ für USB-C NiMH-Lademodul "1S 2S 3S 4S NiMH battery charging board type-c micro usb 5v input charger module charging current 500mA" erhältlich z.B. bei [AliExpress](https://de.aliexpress.com/item/1005005777972846.html)
@@ -24,6 +24,7 @@
 - bitte installiere die openSCAD [BOSL](https://github.com/revarbat/BOSL) Bibliothek in das Verzeichnis [openSCAD](./openSCAD), z.B. mit dem Kommando
 
 +	git clone https://github.com/revarbat/BOSL.git
+
 
 # notwendige Handverdrahtung:
 -	mit Flachbandkabel:
@@ -46,8 +47,8 @@
 
 ## Versionsverlauf
 
-- 2024 März 06: initiale Freigabe auf Github
-- 2024 März 07: zusätzliche Aussparung im Batteriehalter
+- 2025 April 13: initiale Freigabe auf Github
+
 
 ## Lizenz 
 
