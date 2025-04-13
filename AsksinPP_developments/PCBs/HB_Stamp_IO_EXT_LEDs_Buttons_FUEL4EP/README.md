@@ -23,7 +23,7 @@
 
 ## Status
 
-- die Platine V1.0 wurde noch nicht bei JLCPCB gefertigt und ist daher noch nicht validiert
+- ein Prototyp der Platine V1.0 wurde bei JLCPCB gefertigt. Der zugehörige AsksinPP-Sketch ist in Entwicklung
 
 ## Eigenschaften
 
