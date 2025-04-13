@@ -1,7 +1,8 @@
 # kleines 3D druckbares Gehäuse für Asksin++ PCB HB_Stamp_IO_ATMega1284P [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ![pic](PNGs/case_HB_Stamp_IO_ATMega1284P_FUEL4EP_in_Cura_Slicer.png)
-![pic](PNGs/tbd)
+![pic](PNGs/case_HB_Stamp_IO_ATMega1284P_FUEL4EP_1.png)
+![pic](PNGs/case_HB_Stamp_IO_ATMega1284P_FUEL4EP_2.png)
 - CAD-Dimensionen:
 	* Breite: 29,1 mm
 	* Höhe: 47,0 mm

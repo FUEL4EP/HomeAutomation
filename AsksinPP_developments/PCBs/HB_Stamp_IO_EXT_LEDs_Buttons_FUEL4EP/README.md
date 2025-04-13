@@ -13,6 +13,9 @@
 
 ![pic](PNGs/HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP_PCB_top_3D.png)
 ![pic](PNGs/HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP_PCB_back_3D.png)
+![pic](Pictures_of_JLCPCB_prototypes/HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP_top_V1.0_assembled_prototype.png)
+![pic](Pictures_of_JLCPCB_prototypes/HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP_bottom_V1.0_assembled_prototype.png)
+
 
 ## Credits
 
