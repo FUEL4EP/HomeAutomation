@@ -44,9 +44,12 @@
    + optionaler Piezosignalgeber zur akustischen Signalisierung
    
 ### Passendes Gehäuse
-- in Arbeit, wird später hier bereitgestellt
-- ähnlich [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_ATMega1284P_FUEL4EP/case_HB-UNI-Sensor1-THPD-SHT45_BME280)
+- ein 3D druckbares Gehäuse wird [hier](./case_HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP) bereitgestellt
+- die gedruckten Gehäusebauteile werden so ineinander gesteckt:
 
+	![pic](./case_HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP/PNGs/case_HB_Stamp_IO_ATMega1284P_FUEL4EP_assembly.png)
+	
+- für das passgenaue Einlöten der LEDs bitte diese [Schablone](./case_HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP/STL/LED_solder_helper.stl) verwenden 
 
 ### Hinweise
 * bei der Nutzung des JLCPCB SMT Bestückungsservice ist darauf zu achten, dass **alle** benötigten SMD Bauteile als im Lager **verfügbar** angezeigt werden. Sonst bitte **NICHT** bestellen!

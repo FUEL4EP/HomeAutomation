@@ -60,6 +60,8 @@ inc_slits=3.5;
 wi=w_outer;
 th_s=d_outer+d;
 
+show_LED_solder_helper=false;   // set to true for creating the LED solder helper
+
 module ventilation_slits() {
     
   // venting slits for sensor
@@ -150,21 +152,23 @@ difference(){
    translate([-margin/2+d,-margin/2+d,b-delta]) cube([wPCBEXT-2*d,lPCBEXT-2*d,b2+2*delta]); 
 }
 
-difference(){
+if (show_LED_solder_helper != true) {
+  difference(){
     translate([-margin/2-d_outer,-margin/2-d_outer,0]) cube([w_outer,l_outer,h_outer]);
     translate([-margin/2,-margin/2,-delta]) cube([w_outer-2*d_outer,l_outer-2*d_outer,h_outer+3*delta]);
-}
+  }
 
-translate([-margin/2,-margin/2,zo_Stamp_PCB]) framed_wedge(w_outer-2*d_outer,l_outer-2*d_outer,d_Stamp_PCB,h_Stamp_PCB);
-
-
+  translate([-margin/2,-margin/2,zo_Stamp_PCB]) framed_wedge(w_outer-2*d_outer,l_outer-2*d_outer,d_Stamp_PCB,h_Stamp_PCB);
 
 }
 
-translate([w_outer/2-d_outer-d-margin/2,l_outer/2-margin/2,0]) ventilation_slits();
+}
 
-translate([-margin/2,-margin/2+2*d_Stamp_PCB,zo_Stamp_PCB]) cube([w_outer-2*d_outer,lPCBEXT,h_Stamp_PCB]);
+if (show_LED_solder_helper != true) {
+  translate([w_outer/2-d_outer-d-margin/2,l_outer/2-margin/2,0]) ventilation_slits();
 
+  translate([-margin/2,-margin/2+2*d_Stamp_PCB,zo_Stamp_PCB]) cube([w_outer-2*d_outer,lPCBEXT,h_Stamp_PCB]);
+}
 }
 
 }

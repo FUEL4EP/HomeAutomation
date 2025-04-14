@@ -52,12 +52,17 @@
 - bei Anspruchsnahme des SMT Bestückungsservice von JLCPCB ist nur noch das Funkmodul eByte E07-900MM10S von Hand auf die Platinenrückseite zu löten
 - die JLCPCB Assemblierung des Funkmoduls eByte E07-900MM10S geht nur als sehr teures Standard PCBA, daher wird eine Verlötung von Hand empfohlen
 
+### Passende Erweiterungsplatinen
+
+- [HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_IO_EXT_LEDs_Buttons_FUEL4EP)
+
 ### Passende AsksinPP Projekte von FUEL4EP
-   + z.B. werdden bald hier veröffentlich [tbd](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/tbd)
+   + z.B. werden bald hier veröffentlicht [tbd](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/tbd)
    
 ### Aufbauhinweise
 
 - es wird dringend angeraten, als ersten Schritt der Inbetriebnahme einen Frequenztest durchzuführen. Vorher bitte die Fuses mit avrdude setzen.
+- für die Verbindungen mit der Erweiterungsplatine bitte RM1.27 Buchsen und Steckerleisten verwenden
 
 ## Setzen der Fuses des ATMega1284P Mikrokontrollers
 
@@ -83,10 +88,12 @@
 ![pic](PNGs/Pogo_pin_adapter_with_reduced_bottom_plate.png)
 
 ### Passendes Gehäuse
-- in Arbeit, wird später hier bereitgestellt
-- ein geeigneter Batteriehalter für einen 2/3 AA NiMH Akkumulator ist [hier](battery_holder) im STL und openSCAD-Format.
--![battery_holder](./battery_holder/2_3_AA_NiMH-akku-holder_2.png)
-	+ damit lässt sich ein sehr kleines Gehäuse passend zur Platine HB_Stamp_IO_ATMega1284P_FUEL4EP erstellen
+	
+- ein 3D druckbares Gehäuse wird [hier](./case_HB_Stamp_IO_ATMega1284P_FUEL4EP) bereitgestellt
+- die gedruckten Gehäusebauteile werden so ineinander gesteckt:
+
+	![pic](./case_HB_Stamp_IO_ATMega1284P_FUEL4EP/PNGs/case_HB_Stamp_IO_ATMega1284P_FUEL4EP_assembly.png)
+	
 
 ### Hinweise
 * Achtung: Kein Überspannungsschutz oder Verpolungsschutz vorhanden
