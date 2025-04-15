@@ -33,7 +33,7 @@
 
 ## Status
 
-- ein Prototyp der Platine V1.0 wurde bei JLCPCB gefertigt. Der zugehörige AsksinPP-Sketch ist in Entwicklung.
+- ein Prototyp der Platine V1.0 wurde bei JLCPCB gefertigt. Der zugehörige AsksinPP-Sketch ist in Entwicklung. Ein Frequenztest-Sketch lief erfolgreich durch, siehe unten.
 
 
 ## Eigenschaften
@@ -67,7 +67,7 @@
 ## Setzen der Fuses des ATMega1284P Mikrokontrollers
 
 - **nie die Fuses auf einen externen Quarzoszillator / Resonator umschalten!**
-- ein passender avrdude Skript zum Lesen und korrekten Setzen der Fuses ist [hier](./avrdude)
+- ein passender avrdude Skript zum Lesen und korrekten Setzen der Fuses mit einem Diamex Prog-S2 ISP Programmer ist [hier](./avrdude/Diamex Prog-S2/avrdude_m1284p_int_RC_8MHz.bsh). 
 
 ## Prüfwerkzeuge
 
