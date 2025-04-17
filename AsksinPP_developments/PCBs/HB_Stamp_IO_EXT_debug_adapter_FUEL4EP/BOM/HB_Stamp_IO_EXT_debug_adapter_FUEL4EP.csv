@@ -1,0 +1,6 @@
+"Reference","Value","Datasheet","Footprint","Qty","DNP"
+"J1,J3","Power","~","Connector_PinHeader_1.27mm:PinHeader_1x03_P1.27mm_Vertical","2",""
+"J2,J4","IO1","~","Connector_PinHeader_1.27mm:PinHeader_1x08_P1.27mm_Vertical","2",""
+"TP1","GND","~","TestPoint:TestPoint_Pad_1.0x1.0mm","1",""
+"TP2","Vaccu","~","TestPoint:TestPoint_Pad_1.0x1.0mm","1",""
+"TP3","VCC","~","TestPoint:TestPoint_Pad_1.0x1.0mm","1",""

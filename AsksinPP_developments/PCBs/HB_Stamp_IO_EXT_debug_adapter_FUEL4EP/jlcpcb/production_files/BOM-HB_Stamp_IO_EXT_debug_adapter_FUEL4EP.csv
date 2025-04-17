@@ -1,0 +1,8 @@
+Comment,Designator,Footprint,LCSC,Quantity
+Power,J1,PinHeader_1x03_P1.27mm_Vertical,,1
+IO1,J4,PinHeader_1x08_P1.27mm_Vertical,,1
+Vaccu,TP2,TestPoint_Pad_1.0x1.0mm,,1
+GND,TP1,TestPoint_Pad_1.0x1.0mm,,1
+IO1,J2,PinHeader_1x08_P1.27mm_Vertical,,1
+Power,J3,PinHeader_1x03_P1.27mm_Vertical,,1
+VCC,TP3,TestPoint_Pad_1.0x1.0mm,,1
