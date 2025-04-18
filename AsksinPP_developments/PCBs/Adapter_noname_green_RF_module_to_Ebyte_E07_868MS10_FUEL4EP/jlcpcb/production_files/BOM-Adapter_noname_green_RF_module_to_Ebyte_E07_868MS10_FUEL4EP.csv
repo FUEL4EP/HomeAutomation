@@ -1,0 +1,17 @@
+Comment,Designator,Footprint,LCSC,Quantity
+FerriteBead,FB1,L_0603_1608Metric,C1002,1
+100n,C2,C_0603_1608Metric,C14663,1
+10u,C1,C_0603_1608Metric,C19702,1
+E07-900MM10S,Module1,eByte_E07-900MM10S,C5844212,1
+Conn_01x01_Pin,JC5,hole_Pitch2.00mm_Drill0.8mm_rounded,,1
+GND,JA1,hole_Pitch2.54mm_Drill0.9mm,,1
+Conn_01x01_Pin,JC8,hole_Pitch2.00mm_Drill0.8mm_rounded,,1
+Ant.,JA2,hole_Pitch2.54mm_Drill0.9mm,,1
+Logo_Open_Hardware_Small,LOGO1,CC-BY-ND-SA_bottom,,1
+Conn_01x01_Pin,JC6,hole_Pitch2.00mm_Drill0.8mm_rounded,,1
+Conn_01x01_Pin,JC3,hole_Pitch2.00mm_Drill0.8mm_rounded,,1
+Conn_01x01_Pin,JC2,hole_Pitch2.00mm_Drill0.8mm_rounded,,1
+Conn_01x01_Pin,JC1,hole_Pitch2.00mm_Drill0.8mm,,1
+Conn_01x01_Pin,JC4,hole_Pitch2.00mm_Drill0.8mm_rounded,,1
+Conn_01x01_Pin,JC7,hole_Pitch2.00mm_Drill0.8mm_rounded,,1
+GND,JA3,hole_Pitch2.54mm_Drill0.9mm,,1

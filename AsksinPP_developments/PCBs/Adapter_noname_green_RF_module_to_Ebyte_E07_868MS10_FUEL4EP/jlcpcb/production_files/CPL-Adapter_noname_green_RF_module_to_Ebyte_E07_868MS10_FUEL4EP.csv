@@ -1,0 +1,5 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+C1,10u,C_0603_1608Metric,9.385,1.016,0.0,top
+C2,100n,C_0603_1608Metric,9.385,2.54,0.0,top
+FB1,FerriteBead,L_0603_1608Metric,3.05,16.1,0.0,top
+Module1,E07-900MM10S,eByte_E07-900MM10S,11.223,9.191,90.0,top

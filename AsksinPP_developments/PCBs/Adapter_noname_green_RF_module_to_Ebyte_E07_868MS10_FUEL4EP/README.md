@@ -1,37 +1,36 @@
-# Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+# Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-## Ersatz für das eByte E07 868MS10 Modul 
+## Ersatz für NoName grüne 868,3 MHz Modul
 
-- da das eByte E07 868MS10 Modul nicht mehr oder nur sehr schwer käuflich ist, wurde dieser Adapter als Ersatz entworfen. Es wird ein verfügbares EByte E07 900MM10S Funkmodul verbaut.
+- da das NoName grüne 868,3 MHz Modul häufig eine schlechte Qualität hat, wurde dieser Adapter als Ersatz entworfen. Es wird ein verfügbares, qualitativ hochwertiges EByte E07 900MM10S Funkmodul mit Abschirmkappe verbaut.
 
 
-## Adapter für 868.3 MHz Funkmodul Ebyte E07 900MM10S auf Ebyte E07 868MS10
+## Adapter für 868.3 MHz Funkmodul Ebyte E07 900MM10S auf NoName grüne 868,3 MHz Modul
+
 
 - Infos zu AsksinPP sind [hier](https://asksinpp.de) und [hier](https://asksinpp.de/Grundlagen/01_hardware.html#verdrahtung) zu finden
 
-![pic](PNGs/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP_PCB_3D_top.png)
-![pic](PNGs/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP_PCB_KiCAD.png)
-![pic](PNGs/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP_top_silkscreen.png)
-
+![pic](PNGs/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_3D_top.png)
+![pic](PNGs/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_KiCAD.png)
+![pic](PNGs/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_top_silkscreen.png)
 
 
 ## Platinenmaße
 
-- Breite: 19 mm
-- Weite: 13 mm
+- Breite: 19,2 mm
+- Weite: 17 mm
 
 ## Stromlaufplan
 
-- ist [hier](./Schematics/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP.pdf)
+- ist [hier](./Schematics/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP.pdf)
 
 ## Status
 
-- die Platine V1.1 wurde bei JLCPCB gefertigt und bestückt.
-- der Frequenztest wurde am 25. Sep 2024 mit einem PCB HB-UNI-SEN-BATT_ATMega1284P_E07-868MS10_FUEL4EP erfolgreich durchgeführt.
-- die Protokolldatei des Frequenztests ist [hier](./Log_files_as_reference/FreqTest_1284P_serial_monitor.log)
+- die Platine V1.0 wurde noch nicht bei JLCPCB gefertigt und bestückt.
+- die Platine ist noch nicht validiert
 - Bilder der gefertigten Prototypen:
-![pic](Pictures_of_JLCPCB_prototypes/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP_PCB_top_V1.1.png)
-![pic](Pictures_of_JLCPCB_prototypes/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP_PCB_bottom_V1.1.png)
+![pic](Pictures_of_JLCPCB_prototypes/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_top_V1.1.png)
+![pic](Pictures_of_JLCPCB_prototypes/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_bottom_V1.1.png)
 
 
 
@@ -54,32 +53,28 @@
 
 - der  Dummy-Text 'JLCJLCJLCJLC' ist auf der Rückseite der Platine
 
-- Bestückung des Funkmoduls Ebyte E07 900MM10S geht bei JLCPCB nur als teures Standard-PCBA. Handlöten ist eine günstigere Alternative.
+- Bestückung des Funkmoduls Ebyte E07 900MM10S geht bei JLCPCB nur als teures Standard-PCBA. Daher löte ich das Funkmodul immer von Hand auf.
 
-## Montage
-
-- die Platine wird mit einer Stiftleiste RM 1.27mm 1x8 Pin auf die Basisplatine gelötet
 
 ## lokale Installation des Github Releases auf Deinem Computer
 
-- gehe bitte in Dein Zielinstallationsverzeichnis, wo Du mit der Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP Platine mit KiCAD arbeiten möchtest
+- gehe bitte in Dein Zielinstallationsverzeichnis, wo Du mit der Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP Platine mit KiCAD arbeiten möchtest
 
   - gebe dort 'git clone https://github.com/FUEL4EP/HomeAutomation.git' ein
 	  + damit lädst Du mein [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) für alle meine auf Github freigegebenen HomeBrew Entwicklungen herunter.
   - dann findest Du ein neues Verzeichnis 'HomeAutomation' auf Deinem Rechner, das alle meine auf Github freigebenen Entwicklungen enthält, siehe [README.md](https://github.com/FUEL4EP/HomeAutomation/blob/master/README.md)
   	+ mache bitte regelmäßig ein Update mit 'git pull'
- -	die Platine Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP findest Du unter './HomeAutomation/tree/master/AsksinPP_developments/PCBs/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP'
+ -	die Platine Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP findest Du unter './HomeAutomation/tree/master/AsksinPP_developments/PCBs/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP'
  
 - alternativ kann vom Github [Sammelrepository](https://github.com/FUEL4EP/HomeAutomation) die ZIP-Datei HomeAutomation-master.zip heruntergeladen und auf dem lokalen Rechner ausgepackt werden. Bitte dann regelmäßig auf Github nach Updates schauen.
 
 ## Versionsverlauf
 
--   V1.0 24. Jun 2024: Initiale Version
--   V1.1 23. Sep 2024: Migration auf KiCAD 8; zusätzliche Vias
+-   V1.0 18. Apr 2025: Initiale Version
 - KiCad Schaltplan-Editor Version: 8.0.5-8.0.5-0~ubuntu22.04.1 unter Kubuntu22.04.1
 - KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1 unter Kubuntu22.04.1
-- PCB Version 1.1
-- Schematics  1.1
+- PCB Version 1.0
+- Schematics  1.0
 
 
 ## Disclaimer
