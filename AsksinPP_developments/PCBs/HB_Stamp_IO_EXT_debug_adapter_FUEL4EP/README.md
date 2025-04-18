@@ -40,6 +40,10 @@
 - die Platine kann direkt bei JLCPCB bestellt werden.
 - die notwendigen Produktionsdaten stehen [hier](./jlcpcb/production_files/)
 
+## Aufbau
+- J1 und J4 sind mit Stiftleiten RM 1,27 mm auf der Platinenunterseite zu bestücken
+- J2 und J3 sind mit Buchsenleisten RM 1,27 mm auf der Platinenoberseite zu bestücken
+
 
 ## Disclaimer
 

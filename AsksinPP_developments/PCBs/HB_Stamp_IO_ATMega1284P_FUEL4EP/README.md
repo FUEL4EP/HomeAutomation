@@ -86,6 +86,8 @@
 ![pic](PNGs/ISP_programmer_with_pogo_pin_adapter.png)
 - gegebenenfalls muss die untere Acrylanpressplatte des Pogo-Pin_Adapters z.B. mit einem Dremel verkleinert werden, damit sie an HB_Stamp_IO_ATMega1284P_FUEL4EP angebracht werden kann:
 ![pic](PNGs/Pogo_pin_adapter_with_reduced_bottom_plate.png)
+- die Adapterplatine [HB_Stamp_IO_EXT_debug_adapter_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Stamp_IO_EXT_debug_adapter_FUEL4EP) für das Aufstecken von Erweiterungsplatinen verwenden
+![pic](../HB_Stamp_IO_EXT_debug_adapter_FUEL4EP/PNGs/HB_Stamp_IO_EXT_debug_adapter_FUEL4EP_PCB_top_3D.png)
 
 ### Passendes Gehäuse
 	
