@@ -1,4 +1,4 @@
-24703153963584794
+24710129184950214
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57099,6 +57099,13 @@ Fastron L-1212FPS 4.7uH SMD Inductor
 2
 2
 FUEL4EP
+HB_Pro_Mini_ATMEGA1284P_FUEL4EP
+
+
+0
+37
+37
+FUEL4EP
 HW-668_step-up
 
 
@@ -57408,6 +57415,27 @@ edge_hole_Pitch1.27mm_Drill0.75mm_rounded
 1
 FUEL4EP
 edge_hole_Pitch2.28mm_Drill0.8mm
+
+
+0
+1
+1
+FUEL4EP
+hole_Pitch2.00mm_Drill0.8mm
+
+
+0
+1
+1
+FUEL4EP
+hole_Pitch2.00mm_Drill0.8mm_rounded
+
+
+0
+1
+1
+FUEL4EP
+hole_Pitch2.54mm_Drill0.9mm
 
 
 0
