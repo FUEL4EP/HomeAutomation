@@ -15,6 +15,8 @@
 ![pic](PNGs/I2C_Module_BME680_small_FUEL4EP_PCB_3D_top.png)
 ![pic](PNGs/I2C_Module_BME680_small_FUEL4EP_PCB_KiCAD.png)
 ![pic](PNGs/I2C_Module_BME680_small_FUEL4EP_top_silkscreen.png)
+![pic](Pictures_of_JLCPCB_prototypes/I2C_Module_BME680_small_FUEL4EP_PCB_top.png)
+![pic](Pictures_of_JLCPCB_prototypes/I2C_Module_BME680_small_FUEL4EP_PCB_bottom.png)
 
 ## Platinenmaße
 
@@ -28,7 +30,7 @@
 
 ## Status
 
-- die Platine V1.0 wurde noch nicht bei JLCPCB gefertigt und ist noch nicht validiert
+- die Platine V1.0 wurde bei JLCPCB gefertigt aber noch nicht validiert
 
 
 ## Rückmeldungen

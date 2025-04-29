@@ -13,7 +13,8 @@
 ![pic](PNGs/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_3D_top.png)
 ![pic](PNGs/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_KiCAD.png)
 ![pic](PNGs/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_top_silkscreen.png)
-
+![pic](Pictures_of_JLCPCB_prototypes/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_top.png)
+![pic](Pictures_of_JLCPCB_prototypes/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_bottom.png)
 
 ## Platinenmaße
 
@@ -26,11 +27,11 @@
 
 ## Status
 
-- die Platine V1.0 wurde noch nicht bei JLCPCB gefertigt und bestückt.
-- die Platine ist noch nicht validiert
+- die Platine V1.0 wurde bei JLCPCB gefertigt und werden von Hand bestückt werden
+- die Platine ist aber noch nicht validiert
 - Bilder der gefertigten Prototypen:
-![pic](Pictures_of_JLCPCB_prototypes/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_top_V1.1.png)
-![pic](Pictures_of_JLCPCB_prototypes/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_bottom_V1.1.png)
+- ![pic](Pictures_of_JLCPCB_prototypes/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_top.png)
+![pic](Pictures_of_JLCPCB_prototypes/Adapter_noname_green_RF_module_to_Ebyte_E07_868MS10_FUEL4EP_PCB_bottom.png)
 
 
 

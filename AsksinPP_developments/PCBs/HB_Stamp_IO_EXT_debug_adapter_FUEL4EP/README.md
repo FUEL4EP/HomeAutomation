@@ -12,11 +12,14 @@
 	![pic](PNGs/HB_Stamp_IO_EXT_debug_adapter_FUEL4EP_PCB_top_3D.png)
 	![pic](PNGs/HB_Stamp_IO_EXT_debug_adapter_FUEL4EP_PCB_back_3D.png)
 	![pic](PNGs/FTDI_debugger_with_pogo_pin_adapter.png)
+	
+	![pic](Pictures_of_JLCPCB_prototypes/HB_Stamp_IO_EXT_debug_adapter_FUEL4EP_PCB_top.png)
+	![pic](Pictures_of_JLCPCB_prototypes/HB_Stamp_IO_EXT_debug_adapter_FUEL4EP_PCB_bottom.png)
 
 
 ## Status
 
-- die Platine V1.0 wurde noch nicht bei JLCPCB gefertigt und ist daher noch nicht validiert
+- die Platine V1.0 wurde bei JLCPCB gefertigt und ist aber noch nicht validiert
 
 
 ## Eigenschaften

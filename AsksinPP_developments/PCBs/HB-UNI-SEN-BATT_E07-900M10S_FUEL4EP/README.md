@@ -10,6 +10,9 @@
 
 ![pic](PNGs/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP_PCB_3D_top.png)
 
+![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP_PCB_top_V1.2.png)
+![pic](Pictures_of_JLCPCB_prototypes/HB-UNI-SEN-BATT_E07-900M10S_FUEL4EP_PCB_bottom_V1.2.png)
+
 ## Credits
 
 - diese Platine ist von Alexander Reinerts Platine [HB-UNI-SEN-BATT](https://github.com/alexreinert/PCB/tree/master/HB-UNI-SEN-BATT) abgeleitet.
@@ -18,7 +21,7 @@
 ## Status der Validierung der Platine
 
 - Platine wurde bis zur Version V1.1 bei JLCPCB erfolgreich gefertigt und validiert
-- der Prototyp der neuen Platinenversion V1.2 wird in Kürze bei JLCPCB gefertigt und danach validiert werden
+- der Prototyp der neuen Platinenversion V1.2 wurde bei JLCPCB gefertigt, iist aber noch nicht validiert
 
 ## Eigenschaften
 
