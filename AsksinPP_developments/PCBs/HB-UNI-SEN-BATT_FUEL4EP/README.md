@@ -19,12 +19,12 @@
 
 - Platine wurde bis zur Version V1.4 bei JLCPCB erfolgreich gefertigt und validiert
 - auch der Prototyp der neuen Platinenversion V1.5 wurde bei JLCPCB gefertigt und danach erfolgreich validiert:
-![pic](PNGs/validated_prototype.png)
+![pic](PNGs/HB-UNI-SEN-BATT_FUEL4EP_prototype_validation.png)
 - für die Systemvalidierung wude als Hardware verwandt:
 	+ [HB-UNI-SEN-BATT_FUEL4EP V1.5](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB-UNI-SEN-BATT_FUEL4EP)
 	+ [HB_Pro_Mini_ATMEGA1284P_FUEL4EP V1.0](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/HB_Pro_Mini_ATMEGA1284P_FUEL4EP)
 	+ [I2C_Module_SHT45_BME280_small_FUEL4EP V1.5](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/I2C_Module_SHT45_BME280_small_FUEL4EP)
-	+ getestet wurden folgende Spannungeversorgungen:
+	+ getestet wurden folgende Spannungsversorgungen:
 		* 1x AA Alkaline Batterie
 		* 2x AA Alkaline Batterie
 		* 1x NiMH AA Akkumulator
