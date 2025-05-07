@@ -20,7 +20,7 @@
 ## Status der Validierung der Platine
 
 - Platine wurde bis zur Version V1.3 bei JLCPCB erfolgreich gefertigt und validiert
-- der Prototyp der neuen Platinenversion V1.4 wurde bei JLCPCB gefertigt, von Hand bestückt, verlötet und erfolgreich mit dem Sketch [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280) validiert:
+- der Prototyp der neuen Platinenversion V1.4 wurde bei JLCPCB gefertigt, von Hand bestückt, verlötet und erfolgreich mit dem Sketch [HB-UNI-SENSOR1-AQ-BME680_KF_rLF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_rLF) validiert:
 	![pic](PNGs/HB-UNI-SEN-BATT_E07-868MS10_FUEL4EP_prototype_validation.png)
 - Als Funkmodul wurde der [Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/PCBs/Adapter_EByte_E07_900MM10S_to_Ebyte_E07_868MS10_FUEL4EP) verwendet.
 
