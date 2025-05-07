@@ -311,9 +311,10 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 + [ClosedCube_BME680_Arduino](https://github.com/FUEL4EP/ClosedCube_BME680_Arduino/tree/implement_Bosch_datasheet_integer_formulas) (Update 08. Dez 2023, Bosch hat im August 2022 eine neue Version V1.8 des BME680 Datenblatts veröffentlicht)
 + [Optimized CRC32 library for Arduino](https://github.com/Erriez/ErriezCRC32)
 + [Kalman Filter Library](https://github.com/rfetick/Kalman)
-+ [Basic Linear Algebra](https://github.com/tomstewart89/BasicLinearAlgebra)
++ [Basic Linear Algebra Version <= V3.7](https://github.com/tomstewart89/BasicLinearAlgebra/releases/tag/3.7)
 + [Streaming](https://github.com/janelia-arduino/Streaming)
 
+**Wichtiger Hinweis:** Die Bibliothek 'BasicLinearAlgebra' darf maximal die **Version 3.7** haben, siehe [Issue 9](https://github.com/rfetick/Kalman/issues/9)
 
 
 ## BME680 Data sheet

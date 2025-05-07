@@ -14,7 +14,7 @@
 // calculation of absolute humidity              Martin Kompf (https://www.kompf.de/weather/vent.html)
 // Optimized CRC32 library for Arduino      2018 Erriez (MIT License) (https://github.com/Erriez/ErriezCRC32)
 // Kalman Filter Library                    2019 Romain JL. FETICK  (MIT License) (https://github.com/rfetick/Kalman) or (https://www.arduino.cc/reference/en/libraries/kalman-filter-library/)
-// BasicLinearAlgebra                       2016 tomstewart89 (MIT License) (https://github.com/tomstewart89/BasicLinearAlgebra)
+// BasicLinearAlgebra V3.7                  2016 tomstewart89 (MIT License) (https://github.com/tomstewart89/BasicLinearAlgebra/archive/refs/tags/3.7.zip) Wichtig: Version muss kleiner oder gleich 3.7 sein!
 //------------------------------------------------------------------------------------------------------------------------
 //
 // this code supports only an Atmega1284P MCU, an Atmega328P MCU is NOT supported for memory size reasons 
