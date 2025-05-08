@@ -32,7 +32,7 @@
 
 ## Status
 
-- die Platine V1.0 wurde bei JLCPCB gefertigt und ist von Hand bestückt und verlötet orden
+- die Platine V1.0 wurde bei JLCPCB gefertigt und ist von Hand bestückt und verlötet worden
 - die Platine V1.0 wurde am 07.  Mai 2025 erfolgreich mit dem Sketch [HB-UNI-Sensor1-THPD-SHT45_BME280](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-THPD-SHT45_BME280) validiert:
  ![pic](PNGs/Adapter_EByte_E07_900MM10S_to_noname_green_RF_module_FUEL4EP_prototype_validation.png)
 - Bilder der gefertigten Prototypen V1.0 (noch mit altem PCB-Namen):

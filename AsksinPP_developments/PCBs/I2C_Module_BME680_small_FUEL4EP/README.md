@@ -30,7 +30,9 @@
 
 ## Status
 
-- die Platine V1.0 wurde bei JLCPCB gefertigt aber noch nicht validiert
+- die Platine V1.0 wurde bei JLCPCB gefertigt und mit dem Sketch [HB-UNI-SENSOR1-AQ-BME680_KF_rLF](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/sketches/HB-UNI-Sensor1-AQ-BME680_KF_rLF) validiert:
+![pic](PNGs/I2C_Module_BME680_small_FUEL4EP_prototype_validation.png)
+
 
 
 ## Rückmeldungen
