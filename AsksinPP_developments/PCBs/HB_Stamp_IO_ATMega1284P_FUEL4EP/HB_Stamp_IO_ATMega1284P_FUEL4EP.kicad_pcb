@@ -8,9 +8,9 @@
 	)
 	(paper "A4")
 	(title_block
-		(title "HB_Stamp_ATMega1284P_FUEL4EP")
-		(date "2024-09-29")
-		(rev "1.5")
+		(title "HB_Stamp_IO_ATMega1284P_FUEL4EP")
+		(date "2025-05-09")
+		(rev "1.1")
 		(company "FUEL4EP")
 	)
 	(layers
@@ -148,7 +148,7 @@
 	(net 32 "unconnected-(U1-PD6-Pad15)")
 	(net 33 "/L")
 	(net 34 "unconnected-(U1-PB0-Pad40)")
-	(net 35 "unconnected-(U1-XTAL1-Pad8)")
+	(net 35 "Net-(U1-XTAL1)")
 	(net 36 "unconnected-(U1-PB1-Pad41)")
 	(net 37 "unconnected-(U1-PB2-Pad42)")
 	(net 38 "unconnected-(U1-XTAL2-Pad7)")
@@ -5049,9 +5049,9 @@
 			(at -5.7 1.6 270)
 			(size 1.5 0.55)
 			(layers "F.Cu" "F.Paste" "F.Mask")
-			(net 35 "unconnected-(U1-XTAL1-Pad8)")
+			(net 35 "Net-(U1-XTAL1)")
 			(pinfunction "XTAL1")
-			(pintype "input+no_connect")
+			(pintype "input")
 			(uuid "57dc4491-f974-43d0-99ed-8f8a30e6bfad")
 		)
 		(pad "9" smd rect
@@ -5724,7 +5724,7 @@
 		(path "/9ee73adb-2d90-4cde-8728-4b4e828aec47")
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Stamp_IO_ATMega1284P_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_pos_files exclude_from_bom)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start -1.11 -0.76)
 			(end 0 -0.76)
@@ -6928,7 +6928,7 @@
 		(path "/508c8099-bfb6-4ba5-bdf8-f4ab47109907")
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Stamp_IO_ATMega1284P_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_pos_files exclude_from_bom)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start -1.11 -0.76)
 			(end 0 -0.76)
@@ -7256,7 +7256,7 @@
 		(path "/5d8c731d-3c0d-4659-85f9-fcee2f605cc0")
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Stamp_IO_ATMega1284P_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_pos_files exclude_from_bom)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start -1.11 -0.76)
 			(end 0 -0.76)
@@ -7552,7 +7552,7 @@
 		(path "/00000000-0000-0000-0000-0000617211ff")
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Stamp_IO_ATMega1284P_FUEL4EP.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 1.5 14.2)
 			(end 1.5 -1.5)
@@ -8053,7 +8053,7 @@
 		(path "/7aa010be-05d4-4d0f-8edf-22c412201771")
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Stamp_IO_ATMega1284P_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_pos_files exclude_from_bom)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 1.11 0.76)
 			(end 1.11 9.585)
@@ -8708,7 +8708,7 @@
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Stamp_IO_ATMega1284P_FUEL4EP.kicad_sch")
 		(zone_connect 1)
-		(attr exclude_from_pos_files exclude_from_bom)
+		(attr exclude_from_pos_files)
 		(fp_line
 			(start 1.4 -1)
 			(end 1.4 1)
@@ -8892,7 +8892,7 @@
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Stamp_IO_ATMega1284P_FUEL4EP.kicad_sch")
 		(zone_connect 1)
-		(attr exclude_from_pos_files exclude_from_bom)
+		(attr exclude_from_pos_files)
 		(fp_line
 			(start 1.4 -1)
 			(end 1.4 1)
@@ -9495,7 +9495,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C3223181"
+		(property "LCSC" "C2043991"
 			(at 2.794 -52.832 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -9777,6 +9777,192 @@
 			(pinfunction "2")
 			(pintype "passive")
 			(uuid "a5bb1158-e614-4414-b997-cff3cb742067")
+		)
+	)
+	(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm"
+		(layer "F.Cu")
+		(uuid "f67a127e-bec0-4d9e-9979-fdb334a187fd")
+		(at 10.6 -25.9)
+		(descr "SMD rectangular pad as test Point, square 1.0mm side length")
+		(tags "test point SMD pad rectangle square")
+		(property "Reference" "TP3"
+			(at -2.35 -0.65 0)
+			(layer "F.SilkS")
+			(uuid "d4ee6670-35a2-4b71-ab94-1365665802d6")
+			(effects
+				(font
+					(size 0.7 0.7)
+					(thickness 0.1)
+				)
+			)
+		)
+		(property "Value" "ext. clock input"
+			(at 0 1.55 0)
+			(layer "F.Fab")
+			(uuid "7b31c04b-d562-4b97-bf25-ebb2c0e35b0e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fd32b09a-e96f-41ce-ae8a-c34fe7961be4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "55ef7f33-9b9f-4643-9bd9-92094f97c08b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "12bd97db-3a03-4099-909d-5a5a4bad5853")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "32db220d-e8be-4fe9-8a8f-24731ee1dc41")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "Pin* Test*")
+		(path "/818278ac-24a1-45e3-b80c-e538bf3bbbf6")
+		(sheetname "Stammblatt")
+		(sheetfile "HB_Stamp_IO_ATMega1284P_FUEL4EP.kicad_sch")
+		(attr exclude_from_pos_files)
+		(fp_line
+			(start -0.7 -0.7)
+			(end 0.7 -0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "ce9660d2-1a3c-436c-b293-504c838025f8")
+		)
+		(fp_line
+			(start -0.7 0.7)
+			(end -0.7 -0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "c3fa93cb-7f9f-4ab9-9a05-190ed6868ab5")
+		)
+		(fp_line
+			(start 0.7 -0.7)
+			(end 0.7 0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "1c11d92c-9102-4308-b4a5-800bd9b82d5f")
+		)
+		(fp_line
+			(start 0.7 0.7)
+			(end -0.7 0.7)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "9eed59c2-36a8-4d68-86fb-2e8362d3879b")
+		)
+		(fp_line
+			(start -1 -1)
+			(end -1 1)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "33025fcd-cb0b-4e27-ac09-bc5111fdec0b")
+		)
+		(fp_line
+			(start -1 -1)
+			(end 1 -1)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "13989539-f9f0-4e8b-b1de-880cc93287e3")
+		)
+		(fp_line
+			(start 1 1)
+			(end -1 1)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "4767c170-e49d-4edb-baa0-983baefa0fb1")
+		)
+		(fp_line
+			(start 1 1)
+			(end 1 -1)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "5aa06276-6620-40c3-bf4d-4ac1c4226253")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 -1.45 0)
+			(layer "F.Fab")
+			(uuid "62dc7d62-e2d4-4d5c-b1ef-d882da3f3b84")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" smd rect
+			(at 0 0)
+			(size 1 1)
+			(layers "F.Cu" "F.Mask")
+			(net 35 "Net-(U1-XTAL1)")
+			(pinfunction "1")
+			(pintype "passive")
+			(uuid "008a9292-0377-4fe6-a1f2-5deb425f1393")
 		)
 	)
 	(footprint "TestPoint:TestPoint_Pad_1.0x1.0mm"
@@ -10369,8 +10555,9 @@
 			(uuid "a322362d-210c-41fb-883c-fb7972bf2d53")
 		)
 		(fp_text user "eByte E07-900MM10S"
-			(at 11.604 -5 90)
+			(at 11.767 -4.741 90)
 			(layer "B.SilkS")
+			(hide yes)
 			(uuid "2d3a8e83-7455-43ff-9f76-767bc760f40b")
 			(effects
 				(font
@@ -10727,7 +10914,7 @@
 		(path "/00000000-0000-0000-0000-000061590630")
 		(sheetname "Stammblatt")
 		(sheetfile "HB_Stamp_IO_ATMega1284P_FUEL4EP.kicad_sch")
-		(attr smd exclude_from_pos_files exclude_from_bom)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start -1.5 -14.2)
 			(end -1.5 1.5)
@@ -11231,7 +11418,7 @@
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "Version 1.0 - 02/2025 (KiCAD 8)\n"
+	(gr_text "Version 1.1 - 05/2025 (KiCAD 8)\n"
 		(at 19.2024 -31.3436 90)
 		(layer "B.SilkS")
 		(uuid "13bb62e0-1c72-4075-ac79-0bf3d619c884")
@@ -11318,7 +11505,7 @@
 		)
 	)
 	(gr_text "C5"
-		(at 8.1788 -9.1948 0)
+		(at 8.1788 -9.15 0)
 		(layer "B.SilkS")
 		(uuid "365831c7-0e10-431a-b371-8064ec228cec")
 		(effects
@@ -11464,6 +11651,18 @@
 				(thickness 0.1)
 			)
 			(justify mirror)
+		)
+	)
+	(gr_text "eByte E07-900MM10S"
+		(at 17.1 -26.95 90)
+		(layer "B.SilkS")
+		(uuid "b4509652-dc20-485c-8d89-5d913d9e05f6")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.1)
+			)
+			(justify left bottom mirror)
 		)
 	)
 	(gr_text "GND"
@@ -11722,6 +11921,18 @@
 				(size 0.6 0.6)
 				(thickness 0.15)
 				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "XTAL1"
+		(at 6.7 -25.25 0)
+		(layer "F.SilkS")
+		(uuid "9d620f15-fed9-4a1c-bfa9-41f8a00dfeae")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.0875)
 			)
 			(justify left bottom)
 		)
@@ -14515,12 +14726,20 @@
 		(uuid "29b68f64-16e7-40fe-8748-b3527428afe7")
 	)
 	(segment
-		(start 11.64 -25.4)
-		(end 7.62 -25.4)
+		(start 9.246 -27.026)
+		(end 7.239 -25.019)
 		(width 0.2)
 		(layer "F.Cu")
 		(net 20)
-		(uuid "40525e36-ac4d-4f68-81ca-35b543396512")
+		(uuid "2e8a8f5c-77a8-4fdd-a689-eef7d147df49")
+	)
+	(segment
+		(start 7.239 -25.019)
+		(end 4.953 -25.019)
+		(width 0.2)
+		(layer "F.Cu")
+		(net 20)
+		(uuid "396fc88d-960e-4063-bc3a-ae1abaf0b179")
 	)
 	(segment
 		(start 14.844 -25.385)
@@ -14539,12 +14758,12 @@
 		(uuid "4cea5ade-c204-42e8-8e12-827bd473d430")
 	)
 	(segment
-		(start 13.743 -27.026)
-		(end 11.897746 -27.026)
+		(start 4.953 -25.019)
+		(end 4.7345 -25.2375)
 		(width 0.2)
 		(layer "F.Cu")
 		(net 20)
-		(uuid "50371890-985c-4247-8217-649f110a0857")
+		(uuid "52165f11-0479-4660-ab1c-3c800e9b5db0")
 	)
 	(segment
 		(start 19.943 -23.597439)
@@ -14563,36 +14782,12 @@
 		(uuid "5501b3ee-ea14-4a23-a555-20c4fe2c3864")
 	)
 	(segment
-		(start 4.953 -25.019)
-		(end 4.7345 -25.2375)
-		(width 0.2)
-		(layer "F.Cu")
-		(net 20)
-		(uuid "65caf6f6-8d74-448e-8ee7-ed50292347e5")
-	)
-	(segment
 		(start 13.79 -24.811)
 		(end 13.89 -24.911)
 		(width 0.2)
 		(layer "F.Cu")
 		(net 20)
 		(uuid "667ca78e-5974-4016-b5a4-9f890cf19fee")
-	)
-	(segment
-		(start 11.64 -26.768254)
-		(end 11.64 -25.4)
-		(width 0.2)
-		(layer "F.Cu")
-		(net 20)
-		(uuid "73062c07-d09d-475b-9ec4-f51544d7d8f1")
-	)
-	(segment
-		(start 7.62 -25.4)
-		(end 7.239 -25.019)
-		(width 0.2)
-		(layer "F.Cu")
-		(net 20)
-		(uuid "86a0689b-42a6-4696-ae73-dd7776e6baf2")
 	)
 	(segment
 		(start 14.545183 -24.911)
@@ -14609,14 +14804,6 @@
 		(layer "F.Cu")
 		(net 20)
 		(uuid "95d530c8-1b12-4f79-af27-d0eea20eacca")
-	)
-	(segment
-		(start 11.897746 -27.026)
-		(end 11.64 -26.768254)
-		(width 0.2)
-		(layer "F.Cu")
-		(net 20)
-		(uuid "97215f05-a5bc-40fa-8efd-17dfd49d5c90")
 	)
 	(segment
 		(start 14.844 -26.304)
@@ -14643,20 +14830,20 @@
 		(uuid "c07fa5e4-1fd0-4a52-adcb-10b2aa7efa7e")
 	)
 	(segment
-		(start 7.239 -25.019)
-		(end 4.953 -25.019)
-		(width 0.2)
-		(layer "F.Cu")
-		(net 20)
-		(uuid "da32387b-60ab-4a8e-b024-4bf369466a1c")
-	)
-	(segment
 		(start 14.224 -26.545)
 		(end 13.743 -27.026)
 		(width 0.2)
 		(layer "F.Cu")
 		(net 20)
-		(uuid "fa54d527-793a-44bb-afb1-f49b5491607b")
+		(uuid "cf0f0fef-99a1-4088-9cc6-285f690e2e7e")
+	)
+	(segment
+		(start 13.743 -27.026)
+		(end 9.246 -27.026)
+		(width 0.2)
+		(layer "F.Cu")
+		(net 20)
+		(uuid "d378ae22-df50-4c31-8a64-6e8e11b5add9")
 	)
 	(segment
 		(start 14.844 -25.385)
@@ -15081,6 +15268,14 @@
 		(layer "F.Cu")
 		(net 33)
 		(uuid "68214ebd-8790-4a80-9fbd-614eda5e7801")
+	)
+	(segment
+		(start 10.59 -23.861)
+		(end 10.59 -25.89)
+		(width 0.2)
+		(layer "F.Cu")
+		(net 35)
+		(uuid "eb511209-ac43-4570-9126-15e3075363cd")
 	)
 	(segment
 		(start 6.477 -26.543)

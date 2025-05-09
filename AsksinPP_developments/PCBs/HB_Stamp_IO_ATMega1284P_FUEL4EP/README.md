@@ -124,10 +124,11 @@
 ## Versionsverlauf
 
 -   V1.0   17. Feb 2025: Initiale Vorabfreigabe
+-   V1.1   09. Mai 2025: Testpunkt TP3 (XTAL1) hinzugefügt, um externen Takt einspeisen zu können, falls das Fusing falsch war
 - 	KiCad Schaltplan-Editor   8.0.8-8.0.8-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 8.0.8-8.0.8-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
-- 	PCB Version 1.0
-- 	Schematics  1.0
+- 	PCB Version 1.1
+- 	Schematics  1.1
 
 
 ## Lizenz 

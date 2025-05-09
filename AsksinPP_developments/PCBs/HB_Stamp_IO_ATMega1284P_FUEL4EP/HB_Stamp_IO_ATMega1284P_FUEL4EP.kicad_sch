@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "HB_Stamp_IO_ATMega1284P_FUEL4EP")
-		(date "2025-02-17")
-		(rev "1.0")
+		(date "2025-05-09")
+		(rev "1.1")
 		(company "(C) FUEL4EP")
 		(comment 1 "Creative Commons License, non-commercial")
 		(comment 2 "PCB thickness: 0.8 mm")
@@ -4230,10 +4230,6 @@
 		(uuid "8d1e745b-cae8-4bee-84c1-27bdf150e2d9")
 	)
 	(no_connect
-		(at 52.07 96.52)
-		(uuid "9ffd5f9c-8d0f-4934-8b12-13d303b7b916")
-	)
-	(no_connect
 		(at 82.55 167.64)
 		(uuid "b45a9019-472f-448d-a372-72d1cea2e6f8")
 	)
@@ -5291,6 +5287,16 @@
 	)
 	(wire
 		(pts
+			(xy 21.59 96.52) (xy 52.07 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa89769b-9d3a-42c6-9439-f090d553c006")
+	)
+	(wire
+		(pts
 			(xy 67.31 189.23) (xy 72.39 189.23)
 		)
 		(stroke
@@ -5832,7 +5838,7 @@
 	)
 	(text "internal 8MHz RC\noscillator is used"
 		(exclude_from_sim no)
-		(at 29.21 101.6 0)
+		(at 29.972 101.6 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -10403,6 +10409,79 @@
 			(project ""
 				(path "/7766ca2c-d652-431b-ba34-0d354b09e90f"
 					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 21.59 96.52 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "818278ac-24a1-45e3-b80c-e538bf3bbbf6")
+		(property "Reference" "TP3"
+			(at 17.78 94.488 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ext. clock input"
+			(at 19.812 98.298 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_1.0x1.0mm"
+			(at 21.59 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 21.59 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 21.59 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 21.59 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f7a1fc5f-35fe-4ffe-b217-0848210ff7be")
+		)
+		(instances
+			(project "HB_Stamp_IO_ATMega1284P_FUEL4EP"
+				(path "/7766ca2c-d652-431b-ba34-0d354b09e90f"
+					(reference "TP3")
 					(unit 1)
 				)
 			)
