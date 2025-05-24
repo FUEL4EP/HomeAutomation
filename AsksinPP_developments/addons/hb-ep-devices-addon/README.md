@@ -79,6 +79,9 @@ Die Addon 'install'- und 'uninstall'-Skripte wurden automatisch mit dem Generato
 |F6 10 | HB-UNI-SENACT-4-4-RC_DS |
 |F6 11 | HB-UNI-Sensor1-THD-SHT45 |
 |F6 12 | HB-UNI-Sensor1-THPD-SHT45_BME280 |
+|F6 13 | HB-UNI-SEN-RAIN (in Entwicklung) |
+|F6 14 | HB-LC-SW4-SM_BAT (in Entwicklung) |
+|F6 15 | HB-UNI-SENSOR1-CO2-CozIR-Blink (in Entwicklung) |
 <br/>
 
 
