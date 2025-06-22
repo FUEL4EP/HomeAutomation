@@ -239,6 +239,8 @@ Globale Variablen verwenden 3116 Bytes (15%) des dynamischen Speichers, 13768 By
 
 - Bild des oberen 'Sonnenhuts':
 	![pic](./Images/sun_hat_for_TFA_solar_radiation_shield.png)
+- Bild des verbesserten oberen 'Sonnenhuts' mit kleinerem Ausschnitt und zusätzlichem Rand:
+	![pic](./Images/sun_hat_for_TFA_solar_radiation_shield_improved.png)
 - Bild eines der unteren 'Sonnenhüte':
 	
 	![pic](./Images/sun_hat_for_TFA_solar_radiation_shield_bottom.png)
@@ -277,7 +279,9 @@ Globale Variablen verwenden 3116 Bytes (15%) des dynamischen Speichers, 13768 By
 
 - es gibt einen inneren und einen äußeren Luftkanal. In beiden Luftkanälen saugt der Lüfter getrennt Luft von unten bzw. unten und außen an, so dass eine thermische Entkopplung erfolgt. Bei Sonneneinstrahlung bekommt der Messsensor  nur die von unten angesaugte kühlere Umgebungsluft.
 
-- **WICHTIGER HINWEIS**: Bei meinem Exemplar lief im Lieferzustand der eingebaute Lüfter **falsch** herum. Dies führte bei Sonneneinstrahlung zu einer hohen Temperaturüberhöhung (ca. 2..4K). Nach einem Umlöten der Lüfteranschlüsse an die Solarzelle war die Temperaturüberhöhung gegenüber einer Referenzmessung deutlich besser (ca. 0,4..0,8 K). Dieser Verdrahtungsfehler wurde an TFA Dostmann berichtet und inzwischen bestätigt. Er soll verbessert werden.
+- **WICHTIGER HINWEIS 1**: Bei meinem Exemplar lief im Lieferzustand der eingebaute Lüfter **falsch** herum. Dies führte bei Sonneneinstrahlung zu einer hohen Temperaturüberhöhung (ca. 2..4K). Nach einem Umlöten der Lüfteranschlüsse an die Solarzelle war die Temperaturüberhöhung gegenüber einer Referenzmessung deutlich besser (ca. 0,4..0,8 K). Dieser Verdrahtungsfehler wurde an TFA Dostmann berichtet und inzwischen bestätigt. Er soll verbessert werden.
+
+- **WICHTIGER HINWEIS 2**: Um eine partielle Beschattung der Solarzellen zu vermeiden, sollte die TFA Schutzhülle mit Solar-Lüfter entweder ganz an der Spitze eines Rohrs angebracht werden oder aber weiter unten so am Rohr angebracht werden, dass der Schatten des Rohrs im Tagesverlauf nicht auf die Solarzellen fällt. Am besten beobachtet man den Verlauf des Rohrschattenwurfs während eines ganzen Tages. Im Sommerhalbjahr, wenn die Sonne hoch im Norden steht, sollte die Schutzhülle auf die südliche Seite des Rohrs  gedreht werden. Ein Schattenwurf auf die Solarzellen ließe sonst den Solarlüfter anhalten, was zu einer scheinbaren Temperaturüberhöhung führen würde.
 
 ## Literatur
 
