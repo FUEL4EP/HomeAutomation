@@ -1,0 +1,68 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+BT1,AA,BatteryHolder_Keystone_2460_1xAA,65.78,39.905,-90.0,top
+BT2,AA,BatteryHolder_Keystone_2460_1xAA,9.22,39.895,90.0,top
+BZ1,Piezo Buzzer,Buzzer_SMD_POPESQ_POPESQ_13mm_13mm_2.5mm,66.0,46.95,90.0,bottom
+C1,10uF,C_0402_1005Metric,33.1724,41.1252,-90.0,top
+C10,10u,C_0805_2012Metric,53.03068,50.9428,0.0,top
+C11,10u,C_0805_2012Metric,53.03068,48.94636,0.0,top
+C12,10u,C_0805_2012Metric,53.051,55.78912,0.0,top
+C13,10u,C_0805_2012Metric,53.051,57.79572,0.0,top
+C14,100n,C_0402_1005Metric,34.699,40.6654,180.0,top
+C15,100u,CP_EIA-6032-15_Kemet-U_Pad2.25x2.35mm_HandSolder,53.594,33.899,90.0,top
+C16,100n,C_0603_1608Metric,46.99,35.814,90.0,top
+C17,1u,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,52.172936,44.4025,90.0,top
+C18,4.7u,C_0603_1608Metric,47.0,3.8,90.0,top
+C19,100n,C_0603_1608Metric,50.6,1.3,180.0,top
+C2,100n,C_0805_2012Metric,30.2189,42.95,180.0,top
+C20,100n,C_0603_1608Metric,48.6,3.775,90.0,top
+C3,100n,C_0805_2012Metric,41.1765,50.7015,90.0,top
+C4,100n,C_0805_2012Metric,33.366,58.639,180.0,top
+C5,10u,C_1206_3216Metric_Pad1.33x1.80mm_HandSolder,38.065,62.5248,90.0,top
+C6,22p,C_0805_2012Metric,29.4925,64.481,0.0,top
+C7,22p,C_0805_2012Metric,33.747,64.481,180.0,top
+C8,100n,C_0805_2012Metric,33.8511,43.1069,180.0,top
+C9,100n,C_0805_2012Metric,28.5248,69.1292,180.0,top
+D1,LED red 3mm,LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder,9.1635,72.7995,0.0,top
+D2,LED green 3mm,LED_D3.0mm_angle_green,42.57,3.0,0.0,top
+D3,LED orange 3mm,LED_D3.0mm_angle_orange,37.49,3.0,0.0,top
+D4,LED red 3mm,LED_D3.0mm_angle_red,32.41,3.0,0.0,top
+FB1,FerriteBead,L_0402_1005Metric,47.8,9.05,180.0,top
+H1,MountingHole,MountingHole_2.2mm_M2_Pad_Via,15.0,71.75,0.0,top
+H2,MountingHole,MountingHole_2.2mm_M2_Pad_Via,60.0,71.75,0.0,top
+H3,MountingHole,MountingHole_2.2mm_M2_Pad_Via,15.0,3.25,0.0,top
+H4,MountingHole,MountingHole_2.2mm_M2_Pad_Via,60.0,3.25,0.0,top
+H5,MountingHole,ePaper_MountingHole_M5,23.5,65.4,0.0,top
+H6,MountingHole,ePaper_MountingHole_M5,23.5,22.4,0.0,top
+H7,MountingHole,ePaper_MountingHole_M5,51.5,65.4,90.0,top
+H8,MountingHole,ePaper_MountingHole_M5,51.5,22.4,0.0,top
+J11,ePaper connector,PinSocket_1x08_P2.00mm_Vertical,37.5,21.282,-90.0,top
+J13,U.FL connector,U.FL_Molex_MCRF_73412-0110_Vertical,22.6956,36.818,0.0,top
+L1,4.7u,FUEL4EP_Inductor_SMD_1,48.733,52.366,90.0,top
+LOGO1,Logo_Open_Hardware_Small,CC-BY-ND-SA,71.12,23.0124,90.0,top
+Module1,E07-900MM10S,eByte_E07-900MM10S,32.5628,32.6898,-90.0,top
+Q2,FDN304P,SOT-23,22.8,12.1625,90.0,top
+Q3,FDN304P,SOT-23,22.8,6.9625,90.0,top
+Q4,FDN304P,SOT-23,49.7355,35.56,0.0,top
+R1,470,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,9.1725,70.704,0.0,top
+R10,100k,R_0603_1608Metric,47.117,33.02,0.0,top
+R11,0.5,R_0603_1608Metric,50.165,33.02,0.0,top
+R12,470,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,49.45,12.85,90.0,top
+R13,470,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,28.4,3.3,90.0,top
+R14,470,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,29.7,7.7,90.0,top
+R15,10k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,54.3,44.4,90.0,top
+R16,0,R_0402_1005Metric,52.3,7.65,180.0,top
+R2,10k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,32.3152,69.1292,180.0,top
+R3,100K,R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,11.3792,8.112,-90.0,top
+R4,4.7K,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,22.19,49.749,-90.0,top
+R5,4.7K,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,24.984,49.765,-90.0,top
+R6,22,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,30.1435,41.0,180.0,top
+R7,100k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,42.61668,54.61564,90.0,top
+R8,47k,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,45.558,57.115,180.0,top
+R9,1,R_0603_1608Metric,45.339,35.814,-90.0,top
+SW1,Config button,SW_TS-1187A-B-A-B,21.8,71.5,180.0,top
+SW2,Reset button,SW_TS-1187A-B-A-B,51.5,71.5,0.0,top
+U1,ATmega1284P-AU,TQFP-44_10x10mm_P0.8mm,32.8326,50.9047,-90.0,top
+U2,TPS61221DCK,Texas_R-PDSO-G6,53.1145,53.3685,180.0,top
+U3,BME280,Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering,51.275,3.775,0.0,top
+Y1,8MHz,Crystal_SMD_5032-2Pin_5.0x3.2mm_HandSoldering,31.6515,61.56,0.0,top
+module2,COZIR-BLINK-5000-N,COZIR-BLINK-5000-N,37.4995,9.83,0.0,top

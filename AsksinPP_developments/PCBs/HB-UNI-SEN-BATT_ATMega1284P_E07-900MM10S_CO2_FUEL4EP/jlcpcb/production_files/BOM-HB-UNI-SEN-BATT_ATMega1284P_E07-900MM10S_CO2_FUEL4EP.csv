@@ -1,0 +1,48 @@
+Comment,Designator,Footprint,LCSC,Quantity
+8MHz,Y1,Crystal_SMD_5032-2Pin_5.0x3.2mm_HandSoldering,C115962,1
+100n,"C16,C19,C20",C_0603_1608Metric,C14663,3
+100k,R7,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C149504,1
+100n,C14,C_0402_1005Metric,C1525,1
+10uF,C1,C_0402_1005Metric,C15525,1
+10u,"C10,C11,C12,C13",C_0805_2012Metric,C15850,4
+100u,C15,CP_EIA-6032-15_Kemet-U_Pad2.25x2.35mm_HandSolder,C16133,1
+0,R16,R_0402_1005Metric,C17168,1
+10k,"R15,R2",R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17414,2
+4.7K,"R4,R5",R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17673,2
+470,"R1,R12,R13,R14",R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17710,4
+47k,R8,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C17713,1
+22p,"C6,C7",C_0805_2012Metric,C1804,2
+4.7u,C18,C_0603_1608Metric,C19666,1
+1,R9,R_0603_1608Metric,C22936,1
+22,R6,R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,C23345,1
+FDN304P,"Q2,Q3,Q4",SOT-23,C241803,3
+100k,"R10,R3",R_0603_1608Metric,C25803,2
+100n,"C2,C3,C4,C8,C9",C_0805_2012Metric,C28233,5
+1u,C17,C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,C28323,1
+Config button,"SW1,SW2",SW_TS-1187A-B-A-B,C318884,2
+ATmega1284P-AU,U1,TQFP-44_10x10mm_P0.8mm,C33575,1
+TPS61221DCK,U2,Texas_R-PDSO-G6,C37055,1
+0.5,R11,R_0603_1608Metric,C45312,1
+IRLU024N,Q1,TO-251-3_Vertical,C558184,1
+E07-900MM10S,Module1,eByte_E07-900MM10S,C5844212,1
+U.FL connector,J13,U.FL_Molex_MCRF_73412-0110_Vertical,C598199,1
+10u,C5,C_1206_3216Metric_Pad1.33x1.80mm_HandSolder,C7171,1
+FerriteBead,FB1,L_0402_1005Metric,C76889,1
+LED red 3mm,"D1,D2,D3,D4",LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder,C84256,4
+4.7u,L1,FUEL4EP_Inductor_SMD_1,C86077,1
+BME280,U3,Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering,C92489,1
+Conn_01x02,J3,PinHeader_1x02_P2.54mm_Vertical,,1
+Conn_01x02,J4,PinHeader_1x02_P2.54mm_Vertical,,1
+ISP Programmer,J5,PinHeader_1x06_P2.54mm_Vertical,,1
+charge,J10,PinHeader_1x03_P2.54mm_Vertical,,1
+NO,JP1,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,,1
+cut for accus,JP2,SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,,1
+FTDI Debuger,J12,PinHeader_1x06_P2.54mm_Vertical,,1
+ePaper connector,J11,PinSocket_1x08_P2.00mm_Vertical,,1
+step-up supply,JP3,SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,,1
+Conn_01x02,J1,PinHeader_1x02_P2.54mm_Vertical,,1
+Conn_01x02,J2,PinHeader_1x02_P2.54mm_Vertical,,1
+Antenna,AE1,SolderWire-0.1sqmm_1x01_D0.4mm_OD1mm,,1
+COZIR-BLINK-5000-N,module2,COZIR-BLINK-5000-N,,1
+cut for UART mode,JP4,SolderJumper-2_P1.3mm_Bridged_Pad1.0x1.5mm,,1
+Piezo Buzzer,BZ1,Buzzer_SMD_POPESQ_POPESQ_13mm_13mm_2.5mm,,1

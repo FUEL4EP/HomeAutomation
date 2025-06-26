@@ -1,40 +1,244 @@
-(footprint "FUEL4EP_Inductor_SMD_1" (version 20211014) (generator pcbnew)
-  (layer "F.Cu")
-  (tedit 0)
-  (descr "FUEL4EP_Inductor_SMD_1-1")
-  (tags "Inductor")
-  (attr smd)
-  (fp_text reference "L**" (at 0 0) (layer "F.SilkS")
-    (effects (font (size 1.27 1.27) (thickness 0.254)))
-    (tstamp b233af81-d916-4829-b606-f6103bdb9ee4)
-  )
-  (fp_text value "FUEL4EP_Inductor_SMD_1" (at 0 0) (layer "F.SilkS") hide
-    (effects (font (size 1.27 1.27) (thickness 0.254)))
-    (tstamp 282b482b-04b0-4faf-95f7-b9a19f5350c5)
-  )
-  (fp_text user "${REFERENCE}" (at 0 0) (layer "F.Fab")
-    (effects (font (size 1.27 1.27) (thickness 0.254)))
-    (tstamp 243d8dfd-be36-4ae6-a67b-59bc315a90ea)
-  )
-  (fp_line (start -1.9 0) (end -1.9 0) (layer "F.SilkS") (width 0.1) (tstamp 12b6177b-c081-455f-aa38-20d844fb0565))
-  (fp_line (start -0.4 -1.5) (end 0.4 -1.5) (layer "F.SilkS") (width 0.2) (tstamp 5d66fe0b-e675-4f4c-936c-7c7738e300b9))
-  (fp_line (start -0.4 1.5) (end 0.4 1.5) (layer "F.SilkS") (width 0.2) (tstamp 852dc150-c07b-4d8f-b2f6-be5bf639c4d0))
-  (fp_line (start -1.8 0) (end -1.8 0) (layer "F.SilkS") (width 0.1) (tstamp 94b3c188-f6ce-4d5c-a1c2-92c3fb418f8d))
-  (fp_arc (start -1.8 0) (mid -1.85 0.05) (end -1.9 0) (layer "F.SilkS") (width 0.1) (tstamp 929fb099-f9f5-4785-8ffb-3bfb7bd81c05))
-  (fp_arc (start -1.9 0) (mid -1.85 -0.05) (end -1.8 0) (layer "F.SilkS") (width 0.1) (tstamp d7bd7e6c-b4c1-42dd-b567-873ffd4f92d9))
-  (fp_line (start 2.5 2.5) (end -2.5 2.5) (layer "F.CrtYd") (width 0.05) (tstamp 34cfc3a1-0572-4c78-aad6-4d623b56436d))
-  (fp_line (start -2.5 2.5) (end -2.5 -2.5) (layer "F.CrtYd") (width 0.05) (tstamp 574005d6-eefe-4397-8d6c-c1248767be4c))
-  (fp_line (start -2.5 -2.5) (end 2.5 -2.5) (layer "F.CrtYd") (width 0.05) (tstamp 7a863a6b-8595-4cfa-a51a-072dafcfe228))
-  (fp_line (start 2.5 -2.5) (end 2.5 2.5) (layer "F.CrtYd") (width 0.05) (tstamp b861f8ae-0124-4856-af31-c2ae8db17039))
-  (fp_line (start 1.5 -1.5) (end 1.5 1.5) (layer "F.Fab") (width 0.1) (tstamp 38c81a7a-acba-4f52-8670-169c3ed612e4))
-  (fp_line (start -1.5 1.5) (end -1.5 -1.5) (layer "F.Fab") (width 0.1) (tstamp 8c490d74-f266-4352-8ef0-6d1038d2762a))
-  (fp_line (start -1.5 -1.5) (end 1.5 -1.5) (layer "F.Fab") (width 0.1) (tstamp befc7196-1a9c-4c22-9d4f-1549f63475f0))
-  (fp_line (start 1.5 1.5) (end -1.5 1.5) (layer "F.Fab") (width 0.1) (tstamp c953ff34-5ec7-4afb-a032-c63cf7612f13))
-  (pad "1" smd rect (at -1.1 0) (size 0.9 3) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 24bdff01-9c72-41d9-9d89-c24134c8deea))
-  (pad "2" smd rect (at 1 0) (size 0.9 3) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp c2aca879-0ddf-4548-b06c-f72af34d1572))
-  (model "../FUEL4EP_kicad_3D_models/FUEL4EP_Inductor_SMD_1.step"
-    (offset (xyz 0 0 0))
-    (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
-  )
+(footprint "FUEL4EP_Inductor_SMD_1"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "FUEL4EP_Inductor_SMD_1-1")
+	(tags "Inductor")
+	(property "Reference" "L**"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "b233af81-d916-4829-b606-f6103bdb9ee4")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "FUEL4EP_Inductor_SMD_1"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "282b482b-04b0-4faf-95f7-b9a19f5350c5")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e4b6fd3e-4ea1-41a8-9361-d1d6b7bac73f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c974fe0d-db57-449a-9475-7055e7e5d826")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d287563e-0370-45ce-be89-ca04d8883c96")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.9 0)
+		(end -1.9 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "12b6177b-c081-455f-aa38-20d844fb0565")
+	)
+	(fp_line
+		(start -1.8 0)
+		(end -1.8 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "94b3c188-f6ce-4d5c-a1c2-92c3fb418f8d")
+	)
+	(fp_line
+		(start -0.254 -1.524)
+		(end 0.254 -1.524)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "842266e2-084c-4329-88d2-add3ba1c335e")
+	)
+	(fp_line
+		(start -0.254 1.524)
+		(end 0.254 1.524)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "c3fbec39-431f-481c-8147-62f15462c08e")
+	)
+	(fp_arc
+		(start -1.9 0)
+		(mid -1.85 -0.05)
+		(end -1.8 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d7bd7e6c-b4c1-42dd-b567-873ffd4f92d9")
+	)
+	(fp_arc
+		(start -1.8 0)
+		(mid -1.85 0.05)
+		(end -1.9 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "929fb099-f9f5-4785-8ffb-3bfb7bd81c05")
+	)
+	(fp_line
+		(start -2.5 -2.5)
+		(end 2.5 -2.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "7a863a6b-8595-4cfa-a51a-072dafcfe228")
+	)
+	(fp_line
+		(start -2.5 2.5)
+		(end -2.5 -2.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "574005d6-eefe-4397-8d6c-c1248767be4c")
+	)
+	(fp_line
+		(start 2.5 -2.5)
+		(end 2.5 2.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "b861f8ae-0124-4856-af31-c2ae8db17039")
+	)
+	(fp_line
+		(start 2.5 2.5)
+		(end -2.5 2.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "34cfc3a1-0572-4c78-aad6-4d623b56436d")
+	)
+	(fp_line
+		(start -1.5 -1.5)
+		(end 1.5 -1.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "befc7196-1a9c-4c22-9d4f-1549f63475f0")
+	)
+	(fp_line
+		(start -1.5 1.5)
+		(end -1.5 -1.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8c490d74-f266-4352-8ef0-6d1038d2762a")
+	)
+	(fp_line
+		(start 1.5 -1.5)
+		(end 1.5 1.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "38c81a7a-acba-4f52-8670-169c3ed612e4")
+	)
+	(fp_line
+		(start 1.5 1.5)
+		(end -1.5 1.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "c953ff34-5ec7-4afb-a032-c63cf7612f13")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "243d8dfd-be36-4ae6-a67b-59bc315a90ea")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.1 0)
+		(size 0.9 3)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "24bdff01-9c72-41d9-9d89-c24134c8deea")
+	)
+	(pad "2" smd rect
+		(at 1 0)
+		(size 0.9 3)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "c2aca879-0ddf-4548-b06c-f72af34d1572")
+	)
+	(model "../FUEL4EP_kicad_3D_models/FUEL4EP_Inductor_SMD_1.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
 )
