@@ -26,6 +26,10 @@
 
 - die Ringpuffer für die Berechnung der gleitenden Mittelwerte wurde bei der Programmierung mit interpolierten historischen Werten des vergangenen Jahres vorbelegt, so dass die Mittelwerte bereits einen guten Startwert haben.
 
+- Diagramm des gleitenden Mittelwerts der Außentemperatur über 365 Tage der letzen sechs Monate
+
+![pic](./Images/moving_average_of_annual_temperature_of_six_months.png)
+
 ## lokale gleitende Mittelwertbildung
 
 - nichtflüchtige ferromagnetische Speicher FRAM zur lokalen Messwertspeicherung
@@ -214,6 +218,7 @@ Globale Variablen verwenden 3116 Bytes (15%) des dynamischen Speichers, 13768 By
 
 	![pic](./Images/battery_discharge_curve.png)
 - ein 2x AA-Batteriesatz hält voraussichtlich > 9 Monate
+	- nach 6 Monaten Betrieb beträgt die Batteriespannung noch 3,08 Volt
 	
 ## Kalibrierung von Temperatur, relativer Luftfeuchtigkeit
 
