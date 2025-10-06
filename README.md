@@ -107,6 +107,13 @@
 - bereitgestellte Bibliotheken sind als ganze Verzeichnisse von HomeAutomation/AsksinPP_developments/libraries in das lokale Bibliotheksverzeichnis der Arduino IDE Entwicklungsumgebung zu kopieren
 <br/>
 
+#### Hinweis für Nutzer von Microsoft Windows Betriebssystemen
+
+- Microsoft Windows Betriebssysteme haben leider immer noch eine [Limitierung der Pfadlängen](https://learn.microsoft.com/de-de/windows/win32/fileio/maximum-file-path-limitation?tabs=registry) MAX_PATH, die als 260 Zeichen definiert ist.
+- Linux uns MacOS Betriebssysteme haben diese Limitation nicht.
+- Dieses Repository hat zur Zeit eine maximale Pfadlänge von 208 Zeichen, ab dem Repository-Namen gezählt.
+- Sollte bei Nutzung von einem Microsoft Windows Betriebssystem beim Auspacken der ZIP-Datei dieses Repositories oder bei einem 'git clone https://github.com/FUEL4EP/HomeAutomation.git' eines Fehlermeldung '... Filename too long' auftreten, dann versucht bitte, das Auspacken oder das 'git clone'-Kommando direkt im Benutzerverzeichnis 'c:\users\<Benutzername>'. Sollte es dennoch eine Fehlermeldung geben, dann adressiert das bitte an mich, siehe Fragen und Probleme.
+
 #### Fragen und Probleme
 
 - Fragen und Probleme bitte als Github Issue [oben](https://github.com/FUEL4EP/HomeAutomation/issues) oder im [Homematic Forum](https://homematic-forum.de/forum/viewforum.php?f=76) adressieren.
