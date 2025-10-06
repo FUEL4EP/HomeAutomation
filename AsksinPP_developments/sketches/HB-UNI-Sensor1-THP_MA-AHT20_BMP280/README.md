@@ -175,11 +175,11 @@ RSET an der Steckerleiste unten rechts in der Basisplatine. Dort eine Steckerlei
 
 - Vergleich der gemessenen Außentemperaturen an einem wolkigen Tag:
 
-![pic](./Images/delta_temperature_comparison_cloudy_day_HM-WDS100-C6-O-2_versus_modified_TFA_radiation_shield_with_HB-UNI-Sensor1-THP_MA-AHT20_BMP280.png)
+![pic](./Images/delta_temperature_comp_HM-WDS100-C6-O-2_vs_mod_TFA_rad_shield.png)
 
 - Vergleich der gemessenen Außentemperaturen an einem sonnigen Tag:
 	
-![pic](./Images/temperature_comparison_sunny_day_HM-WDS100-C6-O-2_versus_modified_TFA_radiation_shield_with_HB-UNI-Sensor1-THPD-SHT45_BME280.png)
+![pic](./Images/comparison_HM-WDS100-C6-O-2_vs_mod_TFA_rad_shield.png)
 
 
 

@@ -22,11 +22,11 @@
      	![pic](Autocalibration/convergence_of_Kalman_absolute_humidity_regression_coefficient_alpha_over_4_months.png)
     + Histogramme der kompensierten Gaswiderstände (grün) und des oberen (rot) bzw. unteren (blau) Referenzwerts für saubere bzw. schlechte Luft 
         +  Sensor 1:
-           ![pic](Autocalibration/4_months_histogram_of_compensated_gas_resistance_with_upper_and_lower_bounds_for_clean_and_poor_airquality___sensor_1.png)
+           ![pic](Autocalibration/4_months_histogram_of_compensated_gas_resistance_1.png)
         + Sensor 2:
-          ![pic](Autocalibration/4_months_histogram_of_compensated_gas_resistance_with_upper_and_lower_bounds_for_clean_and_poor_airquality___sensor_2.png)
+          ![pic](Autocalibration/4_months_histogram_of_compensated_gas_resistance_2.png)
         + Sensor 3:
-          ![pic](Autocalibration/4_months_histogram_of_compensated_gas_resistance_with_upper_and_lower_bounds_for_clean_and_poor_airquality___sensor_3.png)
+          ![pic](Autocalibration/4_months_histogram_of_compensated_gas_resistance_3.png)
 - gut erkennbar ist, wie stark sich die Parameter auch nach Monaten noch ändern 
 
 
