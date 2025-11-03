@@ -26,9 +26,9 @@
 
 - die Ringpuffer für die Berechnung der gleitenden Mittelwerte wurde bei der Programmierung mit interpolierten historischen Werten des vergangenen Jahres vorbelegt, so dass die Mittelwerte bereits einen guten Startwert haben.
 
-- Diagramm des gleitenden Mittelwerts der Außentemperatur über 365 Tage der letzen sechs Monate
+- Diagramm des gleitenden Mittelwerts der Außentemperatur über 365 Tage der letzen zwölf Monate
 
-![pic](./Images/moving_average_of_annual_temperature_of_six_months.png)
+![pic](./Images/moving_average_of_annual_temperature_of_12_months.png)
 
 ## lokale gleitende Mittelwertbildung
 
@@ -217,8 +217,8 @@ Globale Variablen verwenden 3116 Bytes (15%) des dynamischen Speichers, 13768 By
 - die Entladekurve der 2x AA-Batterien in den ersten 3 Monaten ist:
 
 	![pic](./Images/battery_discharge_curve.png)
-- ein 2x AA-Batteriesatz hält voraussichtlich > 9 Monate
-	- nach 6 Monaten Betrieb beträgt die Batteriespannung noch 3,08 Volt
+- ein 2x AA-Batteriesatz hält > 12 Monate
+	- nach 12 Monaten Betrieb beträgt die Batteriespannung noch 2,97 Volt
 	
 ## Kalibrierung von Temperatur, relativer Luftfeuchtigkeit
 

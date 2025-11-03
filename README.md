@@ -3,7 +3,7 @@
 ## Home Automation Repository von FUEL4EP
 
 
-### Homebrew [Asksinpp](https://asksinpp.de/) Sensoren und benötigtes [CCU3/RM Addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest):
+### Homebrew [Asksinpp](https://asksinpp.de/) Sensoren und benötigtes [CCU3/openCCU Addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest):
 
 #### Sensoren:
 
@@ -32,12 +32,12 @@
 <br/>
 <br/>
 
-#### CCU3/RaspberryMatic Addon:
+#### CCU3/openCCU Addon:
 
 
 [hb-ep-devices-addon](https://github.com/FUEL4EP/HomeAutomation/releases/latest)
 
-- bitte die .tgz Datei als Zusatzsoftware auf der CCU3/RaspberryMatic installieren
+- bitte die .tgz Datei als Zusatzsoftware auf der CCU3/openCCU installieren
 
 <br/>
 
@@ -112,7 +112,7 @@
 - Microsoft Windows Betriebssysteme haben leider immer noch eine [Limitierung der Pfadlängen](https://learn.microsoft.com/de-de/windows/win32/fileio/maximum-file-path-limitation?tabs=registry) MAX_PATH, die als 260 Zeichen definiert ist.
 - Linux uns MacOS Betriebssysteme haben diese Limitation nicht.
 - Dieses Repository hat zur Zeit eine maximale Pfadlänge von 208 Zeichen, ab dem Repository-Namen gezählt.
-- Sollte bei Nutzung von einem Microsoft Windows Betriebssystem beim Auspacken der ZIP-Datei dieses Repositories oder bei einem 'git clone https://github.com/FUEL4EP/HomeAutomation.git' eines Fehlermeldung '... Filename too long' auftreten, dann versucht bitte, das Auspacken oder das 'git clone'-Kommando direkt im Benutzerverzeichnis 'c:\users\<Benutzername>'. Sollte es dennoch eine Fehlermeldung geben, dann adressiert das bitte an mich, siehe Fragen und Probleme.
+- Sollte bei Nutzung von einem Microsoft Windows Betriebssystem beim Auspacken der ZIP-Datei dieses Repositories oder bei einem 'git clone https://github.com/FUEL4EP/HomeAutomation.git' eine Fehlermeldung '... Filename too long' auftreten, dann versucht bitte, das Auspacken oder das 'git clone'-Kommando direkt im Benutzerverzeichnis 'c:\users\<Benutzername>'. Sollte es dennoch eine Fehlermeldung geben, dann adressiert das bitte an mich, siehe Fragen und Probleme.
 
 #### Fragen und Probleme
 
