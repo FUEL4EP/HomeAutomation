@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#https://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega328p&LOW=FF&HIGH=D2&EXTENDED=FF&LOCKBIT=FF
+avrdude -v -pm328p -P /dev/ttyACM0 -c stk500v2  -F -b 9600 -Ulfuse:w:0xFF:m -Uhfuse:w:0xD2:m -Uefuse:w:0xFF:m #ext OSC 8MHz
+
+

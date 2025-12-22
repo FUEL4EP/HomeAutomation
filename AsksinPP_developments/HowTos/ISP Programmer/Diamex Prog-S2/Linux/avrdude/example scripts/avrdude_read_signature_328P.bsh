@@ -1,0 +1,2 @@
+ #!/usr/bin/env bash
+avrdude -v -pm328p -P /dev/ttyACM0 -c stk500v2  -F -b 9600  -U signature:r:-:h #read device signature
