@@ -62,6 +62,12 @@
 
 - Bestückung des Funkmoduls Ebyte E07 900MM10S geht bei JLCPCB nur als teures Standard-PCBA. Daher löte ich das Funkmodul immer von Hand auf.
 
+## Hinweis für Bestückung von Hand
+
+- die Ferritperle FB1 (0603) kann entweder mit
+	+ Murata EMI Suppression Filter SMD0603 BLM18 470 Ohm, erhältlich z.B.  bei Reichelt als Bestellnummer [BLM18AG 471](https://www.reichelt.de/de/de/shop/produkt/emi_suppression_filter_smd0603_blm18_470_ohm-89677)
+- oder bei geringeren Anforderungen an Störunterdrückung mit Lötzinn überbrückt werden
+
 
 ## lokale Installation des Github Releases auf Deinem Computer
 
