@@ -1,4 +1,4 @@
-24719307222892881
+24721157447327844
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57277,6 +57277,13 @@ FUEL4EP
 SW_TS-1187A-B-A-B
 
 
+0
+4
+4
+FUEL4EP
+Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad
+Sensirion, SHT40, SHT41, SHT45, DFN, 4 Pin (https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf)
+DFN NoLead
 0
 4
 4

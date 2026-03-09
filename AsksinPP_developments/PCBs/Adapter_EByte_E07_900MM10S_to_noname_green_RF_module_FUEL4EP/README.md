@@ -10,7 +10,7 @@
 
 - Infos zu AsksinPP sind [hier](https://asksinpp.de) und [hier](https://asksinpp.de/Grundlagen/01_hardware.html#verdrahtung) zu finden
 
-![pic](Pictures_of_JLCPCB_prototypes/Adapter_EByte_E07_900MM10S_to_noname_green_RF_module_FUEL4EP_PCB_top_V1.0.png)
+![pic](Pictures_of_JLCPCB_prototypes/PCB_top_V1.0.png)
 ![pic](PNGs/Adapter_EByte_E07_900MM10S_to_noname_green_RF_module_FUEL4EP_PCB_3D_top.png)
 ![pic](PNGs/Adapter_EByte_E07_900MM10S_to_noname_green_RF_module_FUEL4EP_PCB_KiCAD.png)
 ![pic](PNGs/Adapter_EByte_E07_900MM10S_to_noname_green_RF_module_FUEL4EP_top_silkscreen.png)

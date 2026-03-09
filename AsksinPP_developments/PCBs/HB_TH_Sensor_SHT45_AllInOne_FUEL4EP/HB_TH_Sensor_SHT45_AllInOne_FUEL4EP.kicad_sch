@@ -2163,6 +2163,161 @@
 				)
 			)
 		)
+		(symbol "FUEL4EP:SHT4x"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Value" "SHT4x"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" "Sensor_Humidity:Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad"
+				(at 3.81 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf"
+				(at 3.81 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "Digital Humidity and Temperature Sensor, ±1%RH, ±0.1°C, I2C, 1.08-3.6V, 16bit, DFN-4"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "Sensirion environment environmental measurement digital SHT40 SHT41 SHT45"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Sensirion?DFN*1.5x1.5mm*P0.8mm*SHT4x*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SHT4x_1_1"
+				(rectangle
+					(start -5.08 5.08)
+					(end 5.08 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin bidirectional line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 2.54 7.62 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 2.54 -7.62 90)
+					(length 2.54)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "FUEL4EP:TS-1187A-B-A-B"
 			(pin_names
 				(offset 1.016) hide)
@@ -3797,161 +3952,6 @@
 						)
 					)
 					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "Sensor_Humidity:SHT4x"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify right)
-				)
-			)
-			(property "Value" "SHT4x"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify right)
-				)
-			)
-			(property "Footprint" "Sensor_Humidity:Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad"
-				(at 3.81 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf"
-				(at 3.81 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "Digital Humidity and Temperature Sensor, +/-1%RH, +/-0.1degC, I2C, 1.08-3.6V, 16bit, DFN-4"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "Sensirion environment environmental measurement digital SHT40 SHT41 SHT45"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Sensirion?DFN*1.5x1.5mm*P0.8mm*SHT4x*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SHT4x_1_1"
-				(rectangle
-					(start -5.08 5.08)
-					(end 5.08 -5.08)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin bidirectional line
-					(at -7.62 -2.54 0)
-					(length 2.54)
-					(name "SDA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 2.54 0)
-					(length 2.54)
-					(name "SCL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 2.54 7.62 270)
-					(length 2.54)
-					(name "VDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 2.54 -7.62 90)
-					(length 2.54)
-					(name "VSS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6271,7 +6271,6 @@
 	)
 	(label "SCL"
 		(at 88.9 137.16 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6282,7 +6281,6 @@
 	)
 	(label "MOSI"
 		(at 185.42 119.38 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6293,7 +6291,6 @@
 	)
 	(label "SS"
 		(at 185.42 116.84 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6304,7 +6301,6 @@
 	)
 	(label "SDA"
 		(at 88.9 139.7 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6315,7 +6311,6 @@
 	)
 	(label "VCC"
 		(at 250.19 97.79 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6326,7 +6321,6 @@
 	)
 	(label "MOSI"
 		(at 88.9 127 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6337,7 +6331,6 @@
 	)
 	(label "MISO"
 		(at 185.42 121.92 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6348,7 +6341,6 @@
 	)
 	(label "D2"
 		(at 88.9 165.1 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6359,7 +6351,6 @@
 	)
 	(label "D2"
 		(at 160.02 93.98 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6370,7 +6361,6 @@
 	)
 	(label "SCK"
 		(at 250.19 125.73 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6381,7 +6371,6 @@
 	)
 	(label "MISO"
 		(at 250.19 128.27 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6392,7 +6381,6 @@
 	)
 	(label "DTR"
 		(at 250.19 90.17 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6403,7 +6391,6 @@
 	)
 	(label "SDA"
 		(at 228.6 48.26 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6414,7 +6401,6 @@
 	)
 	(label "CONFIG"
 		(at 82.55 152.4 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6425,7 +6411,6 @@
 	)
 	(label "VCC"
 		(at 195.58 27.94 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6436,7 +6421,6 @@
 	)
 	(label "VCC"
 		(at 154.94 34.29 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6447,7 +6431,6 @@
 	)
 	(label "RSETB"
 		(at 45.72 88.9 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6458,7 +6441,6 @@
 	)
 	(label "TXD0"
 		(at 250.19 92.71 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6469,7 +6451,6 @@
 	)
 	(label "ANT"
 		(at 168.91 142.24 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6480,7 +6461,6 @@
 	)
 	(label "VDDA"
 		(at 220.98 27.94 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6491,7 +6471,6 @@
 	)
 	(label "CTS"
 		(at 250.19 100.33 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6502,7 +6481,6 @@
 	)
 	(label "plusBAT"
 		(at 152.4 34.29 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6513,7 +6491,6 @@
 	)
 	(label "GND"
 		(at 250.19 102.87 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6524,7 +6501,6 @@
 	)
 	(label "GND"
 		(at 250.19 120.65 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6535,7 +6511,6 @@
 	)
 	(label "L"
 		(at 104.14 30.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6546,7 +6521,6 @@
 	)
 	(label "SS"
 		(at 88.9 124.46 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6557,7 +6531,6 @@
 	)
 	(label "DTR"
 		(at 25.4 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6568,7 +6541,6 @@
 	)
 	(label "MISO"
 		(at 88.9 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6579,7 +6551,6 @@
 	)
 	(label "SCK"
 		(at 185.42 114.3 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6590,7 +6561,6 @@
 	)
 	(label "TXD0"
 		(at 88.9 162.56 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6601,7 +6571,6 @@
 	)
 	(label "MOSI"
 		(at 250.19 123.19 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6612,7 +6581,6 @@
 	)
 	(label "plusBAT"
 		(at 83.82 29.21 90)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6623,7 +6591,6 @@
 	)
 	(label "RXD0"
 		(at 88.9 160.02 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6634,7 +6601,6 @@
 	)
 	(label "SCL"
 		(at 228.6 43.18 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6645,7 +6611,6 @@
 	)
 	(label "RXD0"
 		(at 250.19 95.25 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6656,7 +6621,6 @@
 	)
 	(label "GND"
 		(at 157.48 34.29 270)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6667,7 +6631,6 @@
 	)
 	(label "plusBAT"
 		(at 97.79 91.44 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6678,7 +6641,6 @@
 	)
 	(label "RSETB"
 		(at 250.19 130.81 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6689,7 +6651,6 @@
 	)
 	(label "SCK"
 		(at 88.9 132.08 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6760,6 +6721,15 @@
 			)
 		)
 		(property "LCSC" "C273598"
+			(at 105.41 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 105.41 170.18 0)
 			(effects
 				(font
@@ -6854,6 +6824,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 97.79 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b828c965-5b7e-4127-9ef8-b26b23acea43")
 		)
@@ -6932,6 +6911,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 55.88 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7c74a320-4dc8-4c32-9787-c2439253b59d")
 		)
@@ -7002,6 +6990,15 @@
 			)
 		)
 		(property "TYPE" "0"
+			(at 261.62 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 261.62 123.19 0)
 			(effects
 				(font
@@ -7230,7 +7227,7 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Enable" "0"
+		(property "Sim.Enable" ""
 			(at 255.905 146.05 0)
 			(effects
 				(font
@@ -7312,6 +7309,15 @@
 			)
 		)
 		(property "LCSC" "C33575"
+			(at 67.31 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 67.31 134.62 0)
 			(effects
 				(font
@@ -7638,6 +7644,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 99.06 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "A"
 			(uuid "ce4bcdc2-d08f-4b6a-8b23-c9eee6f3579a")
 		)
@@ -7796,6 +7811,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 69.85 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5ea61288-d873-43e6-8839-efcf4f5fa1b5")
 		)
@@ -7875,6 +7899,15 @@
 			)
 		)
 		(property "LCSC" "C25744"
+			(at 45.72 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 45.72 67.31 0)
 			(effects
 				(font
@@ -8215,6 +8248,15 @@
 			)
 		)
 		(property "TYPE" "0"
+			(at 261.62 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 261.62 95.25 0)
 			(effects
 				(font
@@ -8580,6 +8622,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 115.57 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2097a6db-a177-43be-b562-47c279b189c2")
 		)
@@ -8679,6 +8730,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 90.17 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4639e7b2-9028-4dbf-8de8-22e6c7f0560b")
 		)
@@ -8758,6 +8818,15 @@
 			)
 		)
 		(property "LCSC" "C15850"
+			(at 130.81 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 130.81 39.37 0)
 			(effects
 				(font
@@ -8868,6 +8937,15 @@
 				)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 99.06 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "34954357-e09a-4d26-84b4-360cba25366f")
 		)
@@ -8955,6 +9033,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 55.88 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3fd6627d-0d76-4b1d-9b13-9e5a90d056ab")
 		)
@@ -9034,6 +9121,15 @@
 			)
 		)
 		(property "LCSC" "C15525"
+			(at 49.53 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 49.53 72.39 0)
 			(effects
 				(font
@@ -9584,6 +9680,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 147.32 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1A"
 			(uuid "a0ac8b0f-f665-48dc-a0c3-cfc079f3e117")
 		)
@@ -9725,6 +9830,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 76.2 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5e37b985-94fa-4d60-97b2-777cbd22c093")
 		)
@@ -9784,6 +9898,15 @@
 			)
 		)
 		(property "Description" "Jumper, 2-pole, open"
+			(at 36.83 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 36.83 91.44 0)
 			(effects
 				(font
@@ -9853,6 +9976,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
+			(at 262.255 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 262.255 161.29 0)
 			(effects
 				(font
@@ -9942,6 +10074,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 187.96 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "96a42ff2-de97-4f02-b0b6-3a6568c69225")
 		)
@@ -10023,6 +10164,15 @@
 			(effects
 				(font
 					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 214.63 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
@@ -10179,6 +10329,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 60.96 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c24aea95-c75f-419f-bf3b-5e478a74d73f")
 		)
@@ -10260,6 +10419,15 @@
 			(effects
 				(font
 					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 179.07 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
@@ -10351,6 +10519,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 254 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d132bebc-ae6d-47a3-a916-756b7f9e0a7d")
 		)
@@ -10412,6 +10589,15 @@
 			)
 		)
 		(property "Description" "Antenna"
+			(at 195.58 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 195.58 134.62 0)
 			(effects
 				(font
@@ -10500,6 +10686,15 @@
 			(effects
 				(font
 					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 232.41 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
@@ -10703,6 +10898,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 244.475 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project ""
 				(path "/7766ca2c-d652-431b-ba34-0d354b09e90f"
@@ -10758,6 +10962,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole without connection"
+			(at 262.255 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 262.255 156.21 0)
 			(effects
 				(font
@@ -10978,6 +11191,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 35.56 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "74c5f906-bffc-4b19-b41b-64c3baca4f9a")
 		)
@@ -11065,6 +11287,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 238.76 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4247a45e-4e36-4a54-a7ab-64c2126e501d")
 		)
@@ -11144,6 +11375,15 @@
 			)
 		)
 		(property "LCSC" "C1525"
+			(at 35.56 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 35.56 110.49 0)
 			(effects
 				(font
@@ -11286,6 +11526,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 244.475 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project ""
 				(path "/7766ca2c-d652-431b-ba34-0d354b09e90f"
@@ -11367,6 +11616,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 85.09 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "bdfab8ca-e108-40d7-b419-5bb99fafa100")
 		)
@@ -11438,6 +11696,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 154.94 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8f4ad011-56da-4bcb-8fc1-093459ebf490")
 		)
@@ -11457,7 +11724,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Sensor_Humidity:SHT4x")
+		(lib_id "FUEL4EP:SHT4x")
 		(at 251.46 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11483,7 +11750,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Sensor_Humidity:Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad"
+		(property "Footprint" "FUEL4EP:Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad"
 			(at 255.27 52.07 0)
 			(effects
 				(font
@@ -11503,7 +11770,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Digital Humidity and Temperature Sensor, +/-1%RH, +/-0.1degC, I2C, 1.08-3.6V, 16bit, DFN-4"
+		(property "Description" "Digital Humidity and Temperature Sensor, ±1%RH, ±0.1°C, I2C, 1.08-3.6V, 16bit, DFN-4"
 			(at 251.46 45.72 0)
 			(effects
 				(font
@@ -11526,6 +11793,15 @@
 			(effects
 				(font
 					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 251.46 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
@@ -11660,6 +11936,15 @@
 			)
 		)
 		(property "Description" "Net tie, 2 pins"
+			(at 240.03 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 240.03 100.33 0)
 			(effects
 				(font
@@ -11820,6 +12105,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 204.47 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6617d3a4-8edb-4fd2-923f-4daeda96cd7c")
 		)
@@ -11901,6 +12195,15 @@
 			(effects
 				(font
 					(size 1.524 1.524)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
+			(at 92.71 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
@@ -12057,6 +12360,15 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Enable" ""
+			(at 125.73 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "61645ced-79b1-4808-8978-501ed0fdff67")
 		)
@@ -12136,6 +12448,15 @@
 			)
 		)
 		(property "LCSC" "C15525"
+			(at 132.08 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Enable" ""
 			(at 132.08 115.57 0)
 			(effects
 				(font

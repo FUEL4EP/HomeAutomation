@@ -1,10 +1,5 @@
-** Drc report for I2C_Module_SHT45_BME280_small_FUEL4EP.kicad_pcb **
-** Created on 2024-09-29T11:23:31+0200 **
+ERC-Bericht (2026-02-11T15:38:13+0100, UTF8-kodiert)
 
-** Found 0 DRC violations **
+***** Schaltplan /
 
-** Found 0 unconnected pads **
-
-** Found 0 Footprint errors **
-
-** End of Report **
+ ** ERC-Meldungen: 0  Fehler 0  Warnungen 0

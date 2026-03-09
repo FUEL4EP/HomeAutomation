@@ -1,5 +1,5 @@
 ** Drc report for HB_Stamp_ATMega1284P_FUEL4EP.kicad_pcb **
-** Created on 2024-09-29T10:16:01+0200 **
+** Created on 2026-02-11T10:57:33+0100 **
 
 ** Found 39 DRC violations **
 [clearance]: Freiraum-Verstoß (Netzklasse "Default" Freiraum 0.2000 mm; tatsächlich 0.1000 mm)

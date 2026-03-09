@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP")
-		(date "2025-06-26")
-		(rev "1.0")
+		(date "2026-03-09")
+		(rev "1.1")
 		(company "FUEL4EP")
 		(comment 1 "Creative Commons License, non-commercial")
 		(comment 2 "connector for Waveshare e-paper module (B) 1.54inch (J11)")
@@ -11306,7 +11306,7 @@
 				)
 			)
 		)
-		(property "Value" "LED red 3mm"
+		(property "Value" "LED red SMD"
 			(at 114.3 158.75 0)
 			(effects
 				(font
@@ -18023,7 +18023,7 @@
 				(hide yes)
 			)
 		)
-		(property "TYPE" "LED_0805"
+		(property "TYPE" ""
 			(at 34.29 186.69 0)
 			(effects
 				(font
@@ -18032,7 +18032,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C84256"
+		(property "LCSC" ""
 			(at 34.29 186.69 0)
 			(effects
 				(font
@@ -18305,7 +18305,7 @@
 				(hide yes)
 			)
 		)
-		(property "TYPE" "LED_0805"
+		(property "TYPE" ""
 			(at 34.29 168.91 0)
 			(effects
 				(font
@@ -18314,7 +18314,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C84256"
+		(property "LCSC" ""
 			(at 34.29 168.91 0)
 			(effects
 				(font
@@ -20871,7 +20871,7 @@
 				(hide yes)
 			)
 		)
-		(property "TYPE" "LED_0805"
+		(property "TYPE" ""
 			(at 34.29 177.8 0)
 			(effects
 				(font
@@ -20880,7 +20880,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C84256"
+		(property "LCSC" ""
 			(at 34.29 177.8 0)
 			(effects
 				(font

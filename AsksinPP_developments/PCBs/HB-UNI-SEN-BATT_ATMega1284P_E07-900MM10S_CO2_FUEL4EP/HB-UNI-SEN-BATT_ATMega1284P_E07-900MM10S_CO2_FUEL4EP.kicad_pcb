@@ -205,7 +205,7 @@
 				)
 			)
 		)
-		(property "Value" "LED red 3mm"
+		(property "Value" "LED red SMD"
 			(at -1.9595 1.397 0)
 			(layer "F.Fab")
 			(uuid "30ed2ce1-a86a-485a-99ba-26b9651f8cb6")
@@ -2762,7 +2762,7 @@
 		(path "/00000000-0000-0000-0000-00005ae8d841")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_pos_files)
+		(attr through_hole)
 		(fp_line
 			(start -1.12 -1.39)
 			(end -1.12 1.15)
@@ -4521,7 +4521,7 @@
 		(path "/00000000-0000-0000-0000-0000615cd389")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr exclude_from_bom)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 2.2 0)
@@ -4767,7 +4767,7 @@
 		(path "/00000000-0000-0000-0000-0000615f62ac")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr exclude_from_bom)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 2.2 0)
@@ -5013,7 +5013,7 @@
 		(path "/00000000-0000-0000-0000-0000615d61d1")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr exclude_from_bom)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 2.2 0)
@@ -5259,7 +5259,7 @@
 		(path "/00000000-0000-0000-0000-0000615eb334")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr exclude_from_bom)
+		(attr exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 2.2 0)
@@ -5503,7 +5503,7 @@
 		(path "/00000000-0000-0000-0000-00005accd555")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_bom)
+		(attr through_hole exclude_from_pos_files exclude_from_bom)
 		(fp_line
 			(start 54.62 -8.565)
 			(end 54.62 8.565)
@@ -9443,7 +9443,7 @@
 		(path "/00000000-0000-0000-0000-00005accd42f")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_bom)
+		(attr through_hole exclude_from_pos_files exclude_from_bom)
 		(fp_line
 			(start -2.62 8.565)
 			(end -2.62 -8.565)
@@ -9932,7 +9932,7 @@
 		(path "/00000000-0000-0000-0000-0000615dee46")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_bom)
+		(attr through_hole exclude_from_pos_files exclude_from_bom)
 		(fp_poly
 			(pts
 				(xy -1.758829 -1.081206) (xy -1.681066 -1.051401) (xy -1.644833 -1.023028) (xy -1.602485 -0.957461)
@@ -10321,7 +10321,7 @@
 		(path "/00000000-0000-0000-0000-0000615f5edc")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start -1.06 15.06)
 			(end 1.06 15.06)
@@ -15062,7 +15062,7 @@
 		(path "/00000000-0000-0000-0000-0000616f3ecc")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_bom)
+		(attr through_hole exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 2.6 0)
@@ -15180,7 +15180,7 @@
 		(path "/00000000-0000-0000-0000-0000616f510e")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_bom)
+		(attr through_hole exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 2.6 0)
@@ -15298,7 +15298,7 @@
 		(path "/00000000-0000-0000-0000-0000616f47a5")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_bom)
+		(attr through_hole exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 2.6 0)
@@ -15416,7 +15416,7 @@
 		(path "/00000000-0000-0000-0000-0000616f5b7e")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole exclude_from_bom)
+		(attr through_hole exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 2.6 0)
@@ -16882,7 +16882,7 @@
 				)
 			)
 		)
-		(property "TYPE" "LED_0805"
+		(property "TYPE" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -16895,7 +16895,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C84256"
+		(property "LCSC" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -16925,7 +16925,7 @@
 		(path "/31ce9693-a4da-413b-95ee-6f5341275add")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start -0.29 -1.236)
 			(end -0.29 -1.08)
@@ -17181,7 +17181,7 @@
 				)
 			)
 		)
-		(property "TYPE" "LED_0805"
+		(property "TYPE" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17194,7 +17194,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C84256"
+		(property "LCSC" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -17224,7 +17224,7 @@
 		(path "/d0b9e41c-964f-40a5-97b8-6baeecfa2acb")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start -0.29 -1.236)
 			(end -0.29 -1.08)
@@ -20921,7 +20921,7 @@
 		(property "Reference" "D4"
 			(at 1.27 -2.96 0)
 			(layer "F.SilkS")
-			(uuid "0959638f-a6cd-4aed-8acf-59606e369288")
+			(uuid "a1e9d774-9147-4521-a9ad-d8d6b8780bd4")
 			(effects
 				(font
 					(size 1 1)
@@ -20932,7 +20932,7 @@
 		(property "Value" "LED red 3mm"
 			(at 1.27 2.96 0)
 			(layer "F.Fab")
-			(uuid "3e8793dc-2209-490d-848a-b02172269eff")
+			(uuid "11f90a5b-dcb2-497c-843e-f68d547bdc94")
 			(effects
 				(font
 					(size 1 1)
@@ -20944,7 +20944,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "cc0d40f7-6ea0-4ba5-822a-bbf4d0d0f1cd")
+			(uuid "f441d3e8-f404-4837-98cd-374da2afba54")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20956,7 +20956,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "c5f0d0b9-6784-44c2-9862-08ce591a1ab7")
+			(uuid "09609e7d-45c5-4f59-9420-dbccfd562b10")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20968,7 +20968,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0261a173-8d40-40f1-9fd4-afd311f85707")
+			(uuid "6c1e2774-9c67-47bf-85f9-5eaf059a45d4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20976,7 +20976,7 @@
 				)
 			)
 		)
-		(property "TYPE" "LED_0805"
+		(property "TYPE" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -20989,7 +20989,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C84256"
+		(property "LCSC" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -21019,7 +21019,7 @@
 		(path "/15ee3ce4-33bc-4826-bb1a-860fef157aed")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start -0.29 -1.236)
 			(end -0.29 -1.08)
@@ -21028,7 +21028,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "b63e88ae-2f7f-45f5-9d8d-02e1b0ecf8d3")
+			(uuid "4a2c9406-241e-4e58-96f7-d08e69e47c4d")
 		)
 		(fp_line
 			(start -0.29 1.08)
@@ -21038,7 +21038,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "714859b7-9f9a-4750-bfd6-3df37bdb5631")
+			(uuid "c7a5923d-67c8-4889-8f1f-16039c0d8379")
 		)
 		(fp_arc
 			(start -0.29 -1.235516)
@@ -21049,7 +21049,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "3745b543-ee54-45aa-b9a5-887d80160c27")
+			(uuid "8eb8b250-522f-4ad1-8bb8-575bc32685df")
 		)
 		(fp_arc
 			(start 0.229039 -1.08)
@@ -21060,7 +21060,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "f80cbca8-69f5-43a2-a62a-65f32bc4a2e1")
+			(uuid "f3f83e3f-25c6-447a-8d2b-99f3a73462b0")
 		)
 		(fp_arc
 			(start 2.31091 1.080049)
@@ -21071,7 +21071,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "279eef0b-8695-4ced-a5fa-668b7888b5e6")
+			(uuid "10fdc214-49f0-44b1-9cfe-7049460ee35e")
 		)
 		(fp_arc
 			(start 2.941397 1.080061)
@@ -21082,7 +21082,7 @@
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "c71a44ea-56c3-4790-a306-e660b26048a4")
+			(uuid "20caae56-f903-4f3e-8418-a2cf9466564e")
 		)
 		(fp_line
 			(start -1.15 -2.21)
@@ -21092,7 +21092,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "dbf04ce5-3a72-4c38-b0f1-2fb7c0fccf8b")
+			(uuid "9dfee39c-684d-4567-afd9-dd87c05b8b87")
 		)
 		(fp_line
 			(start -1.15 2.21)
@@ -21102,7 +21102,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "2be6b02b-a6a5-4055-a3dd-1b21a36d481b")
+			(uuid "cb6a67e1-6533-491f-bf34-f4a02b1694d4")
 		)
 		(fp_line
 			(start 3.69 -2.21)
@@ -21112,7 +21112,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "111a2c35-a1a8-44c4-8f74-50f5676ec0b2")
+			(uuid "8120fdb8-7517-4bf5-9f8a-5828e31c0d6f")
 		)
 		(fp_line
 			(start 3.69 2.21)
@@ -21122,7 +21122,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "5dd81fe3-ee61-4cc9-850c-86d3798d2ca8")
+			(uuid "e3f7f61a-44f9-4f05-a742-173d8bcd9bdd")
 		)
 		(fp_line
 			(start -0.23 -1.16619)
@@ -21132,7 +21132,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "1eeecbd7-0457-4df7-b150-542459ea8b8a")
+			(uuid "c64c97a9-dca9-472d-923e-1d3de6358843")
 		)
 		(fp_arc
 			(start -0.23 -1.16619)
@@ -21143,7 +21143,7 @@
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "db0d8e20-3bef-4b86-8a36-28bceee91719")
+			(uuid "2ad720af-a520-4866-9c76-3256e3459fbc")
 		)
 		(fp_circle
 			(center 1.27 0)
@@ -21154,12 +21154,12 @@
 			)
 			(fill none)
 			(layer "F.Fab")
-			(uuid "1d2c7626-8948-4b6d-aacf-a4313a9941b4")
+			(uuid "c116e520-4ef2-4ef5-9b36-871a97a5f532")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 1.27 0 0)
 			(layer "F.Fab")
-			(uuid "4fcf2195-fce6-407d-82d7-5aff23fea5c7")
+			(uuid "dc0eea41-f587-47dd-860f-c7861f307265")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -21181,7 +21181,7 @@
 			(net 1 "GND")
 			(pinfunction "K")
 			(pintype "passive")
-			(uuid "2d63a301-05a3-41e6-a13f-20b7cfa0b3e0")
+			(uuid "8351812e-cbc9-47b0-a735-51d01282761d")
 		)
 		(pad "2" thru_hole circle
 			(at 2.54 0)
@@ -21197,7 +21197,7 @@
 			(net 71 "Net-(D4-A)")
 			(pinfunction "A")
 			(pintype "passive")
-			(uuid "5c1697e8-209a-421f-87a7-1f28d5ae971f")
+			(uuid "51c34999-eec3-4a70-a867-743b8565a403")
 		)
 		(model "../FUEL4EP_kicad_3D_models/LED_3mm_angle_red.step"
 			(offset
@@ -21840,7 +21840,7 @@
 		(path "/97c99310-aaea-43b9-b710-092c11ecab1b")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 0 0)
 			(end 38.62 0)
@@ -23389,7 +23389,7 @@
 		(path "/9e7d5535-e373-43b2-b5cd-1aed2daf4046")
 		(sheetname "Stammblatt")
 		(sheetfile "HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP.kicad_sch")
-		(attr smd)
+		(attr smd exclude_from_pos_files)
 		(fp_line
 			(start 6.9 -6.7)
 			(end -6.9 -6.7)
@@ -29717,14 +29717,6 @@
 		(layer "F.Cu")
 		(net 18)
 		(uuid "f1956b73-3b56-4802-ad93-f17aea70096a")
-	)
-	(segment
-		(start 65.78 -65.9)
-		(end 65.95 -65.9)
-		(width 1)
-		(layer "F.Cu")
-		(net 18)
-		(uuid "f36940f5-030e-4d5a-9eb3-76536ffbf27f")
 	)
 	(segment
 		(start 47.8948 -50.892)

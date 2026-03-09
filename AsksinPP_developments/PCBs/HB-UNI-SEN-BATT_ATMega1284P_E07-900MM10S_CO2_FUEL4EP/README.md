@@ -24,7 +24,7 @@
 
 ## Status
 
-- die Platine wurde noch nicht bei JLCPCB gefertigt und ist auch noch nicht validiert. Nutzung auf eigenes Risiko!
+- die Platine wurde bei JLCPCB bestellt und ist nun in der Fertigung ist aber noch nicht validiert. Nutzung auf eigenes Risiko!
 
 ## Credits
 
@@ -95,9 +95,10 @@
 
 - die Platine kann direkt bei JLCPCB bestellt werden
 - die notwendigen Produktionsdaten stehen [hier](./jlcpcb/production_files/)
-- **die Platine V1.0 wurde noch nicht gefertigt und ist auch nicht validiert**
+- **die Platine V1.0 wird gerade bei JLCPCB gefertigt und ist daher noch nicht validiert**
 - für die Assemblierung bei JLCPCB ist ein [Standard PCBA-Service von JLCPCB](https://jlcpcb.com/capabilities/pcb-assembly-capabilities) notwendig, da der BME280 Sensor und das Funkmodul [eByte E07-900MM10S Sendemodul](https://ebyteiot.com/products/ebyte-e07-900MM10Sti-cc1101-wireless-rf-module-868mhz-915mhz-ipex-stamp?_pos=2&_sid=bbf1d47dc&_ss=r) nur als Standard PCBA verarbeitet werden können.
 - siehe auch [JLCPCB PCB-Assembly-FAQs](https://jlcpcb.com/help/catalog/212-PCB-Assembly-FAQs)
+- Für die Induktivität L1 kann alternativ das [JLCPCB-Bauteil C2043049](https://jlcpcb.com/partdetail/BOURNS-BOURNS_SRN3015TA4R7M/C2043049) verwendet werden, das auch vorbestellt werden muss.
 
 ## Sammelbestellung
 
@@ -111,13 +112,14 @@
 
 ## Versionsverlauf
 
--    V1.0 	26. Jun 2025: Initiale Freigabe
+-    V1.0 	26. Jun 2025: Initiale Freigabe  
+-    V1.1	09. Mar 2026: Aktualisierung Schaltplan mit Korrektur von Bauteilenummern
 
 
 - 	KiCad Schaltplan-Editor   Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
 - 	KiCad Leiterplatteneditor Version: 8.0.5-8.0.5-0~ubuntu22.04.1, release build unter Kubuntu22.04.1
 - 	PCB Version 1.0
-- 	Schematics  1.0
+- 	Schematics  1.1
 
 ## Lizenz 
 

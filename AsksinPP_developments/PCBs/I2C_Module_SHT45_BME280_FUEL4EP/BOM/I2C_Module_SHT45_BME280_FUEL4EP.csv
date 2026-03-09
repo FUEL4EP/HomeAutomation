@@ -8,4 +8,4 @@
 "LOGO1","Logo_Open_Hardware_Small","~","FUEL4EP:CC-BY-ND-SA","1",""
 "R1,R2","10k","~","Resistor_SMD:R_0402_1005Metric","2",""
 "U1","BME280","https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf","Package_LGA:Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering","1",""
-"U2","SHT45-AD1B-R2","https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf","Sensor_Humidity:Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad","1",""
+"U2","SHT45-AD1B-R2","https://sensirion.com/media/documents/33FD6951/624C4357/Datasheet_SHT4x.pdf","FUEL4EP:Sensirion_DFN-4_1.5x1.5mm_P0.8mm_SHT4x_NoCentralPad","1",""
