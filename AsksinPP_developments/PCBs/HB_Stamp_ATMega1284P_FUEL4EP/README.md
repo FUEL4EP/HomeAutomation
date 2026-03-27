@@ -84,10 +84,11 @@
 - zuerst die Fuses mit avrdude setzen
 - Bild des Pogo-Pin_Adapters für den FTDI Debugger:
 ![pic](PNGs/FTDI_debugger_with_pogo_pin_adapter.png)
-- Bild des Pogo-Pin_Adapters für den Diamex ISP Programmieradapter:
+- Bild des Pogo-Pin_Adapters für den Diamex Prog S2 ISP Programmieradapter:
 ![pic](PNGs/ISP_programmer_with_pogo_pin_adapter.png)
 - gegebenenfalls muss die untere Acrylanpressplatte des Pogo-Pin_Adapters z.B. mit einem Dremel verkleinert werden, damit sie an HB_STAMP_ATMEGA1284P_FUEL4EP angebracht werden kann:
 ![pic](PNGs/Pogo_pin_adapter_with_reduced_bottom_plate.png)
+- eine Anleitung zur Nutzung des eine Diamex Prog S2 Programmierers unter Linux ist [hier](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/HowTos/ISP%20Programmer/Diamex%20Prog-S2) beschrieben
 
 ### Passendes Gehäuse
 - in Arbeit, wird später hier bereitgestellt

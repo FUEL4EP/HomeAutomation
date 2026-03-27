@@ -7,3 +7,15 @@ diamexavr.program.tool=avrdude
 diamexavr.program.extra_params=-P{serial.port} -b{program.speed}
 diamexavr.program.speed=19200
 diamexavr.program.protocol=stk500v2
+
+If your Arduino is running with an internal RC oscillator clock of 8MHz and the verification is hanging at 90..100%, please use instead (-B 4 added below):
+
+diamexavr.name=DIAMEX-AVR
+diamexavr.communication=serial
+diamexavr.protocol=stk500v2
+#diamexavr.speed=19200
+diamexavr.program.tool=avrdude
+diamexavr.program.extra_params=-P{serial.port} -b{program.speed} -B 4
+diamexavr.program.speed=19200
+diamexavr.program.protocol=stk500v2
+
