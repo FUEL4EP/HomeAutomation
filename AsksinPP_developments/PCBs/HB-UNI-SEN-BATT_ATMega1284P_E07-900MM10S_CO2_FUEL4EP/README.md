@@ -1,4 +1,9 @@
-# HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+# HB-UNI-SEN-BATT_ATMega1284P_E07-900MM10S_CO2_FUEL4EP [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/) <a href='https://ko-fi.com/FUEL4EP' target='_blank'><img height='20' style='border:0px;height:20px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>  
+  
+  
+# DO NOT USE: THE PCB HAS FATAL ERRORS AND MUST BE REWORKED: KiCAD symbol and footprint of the FDN304P were wrong
+  
+# BITTE NICHT BENUTZEN: Die Platine hat fatale Fehler und muss neu erstellt werden: KiCAD Symbol und Footprint des FDN304P MOSFETR Transistors sind falsch
 
 **Platine für DIY AsksinPP NDIR-CO2-Sensor COZIR-BLINK-5000 mit extrem niedrigem Stromverbrauch :**
 - speziell angepasst für [COZIR-LP3-5000 CozIR®-LP3 Low Power CO2 Sensor](https://www.co2meter.com/de-de/collections/1-percent-co2-sensor/products/cozir-lp3-co2-sensor?variant=32074932781174)
