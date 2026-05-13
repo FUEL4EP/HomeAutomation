@@ -48,6 +48,7 @@
 
 - 2024 März 06: initiale Freigabe auf Github
 - 2024 März 07: zusätzliche Aussparung im Batteriehalter
+- 2026 Mai 13:  größere Abstände zwischen den 3D-Druckteilen 
 
 ## Lizenz 
 

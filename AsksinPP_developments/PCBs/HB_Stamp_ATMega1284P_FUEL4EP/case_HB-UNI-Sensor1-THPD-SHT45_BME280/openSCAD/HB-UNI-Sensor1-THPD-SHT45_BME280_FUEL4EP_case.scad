@@ -2,6 +2,7 @@
 // (C)Inhumierer June 30, 2017
 // my credits for Inhumierer
 
+// V 1.4 changed b to 0.5 after test 3D prints
 // V 1.3 adaption to HB_TH_Sensor_SHT45_BME280_FUEL4EP by FUEL4EP 02/2024
 // V 1.2 Correction / hint from molotok3D, some minor fixes
 // V 1.1- added opening helper and an optional separating wall 
@@ -15,7 +16,7 @@
 
 // put a # in front of a command in order to identify the concerning created object
 
-$fn=50;
+$fn=40;
 
 wINNERBOX=24.6;
 lINNERBOX=42.6;
@@ -25,7 +26,7 @@ wi=wINNERBOX+b;	  // inner width, length & heigth
 li=lINNERBOX+b;
 th=2;	// wall thickness
 h=14.5+18.1+2*th+3.1-3.5;
-r=1;	// radius of rounded corners
+r=0.5;	// radius of rounded corners
 opening_help=true;	// make a gap to ease opening of the cover, f.ex.
 		// with a coin - girls are afraid of their finger nails ;-)
 e=0.01;
@@ -70,7 +71,7 @@ module OuterCase(){
 				translate(i)cylinder(r=r,h=h+delta,$fn=32*r);
 			}
   }
-  translate([-w/2-r,-l/2-r,0]) cube([wi,li,h]);
+  #translate([-w/2-r,-l/2-r,0]) cube([wi,li,h]);
 		translate([-w/2,l/2+r,h-2])rotate([0,90,0])cylinder(d=1.2,h=w,$fn=24);
 		translate([-w/2,-l/2-r,h-2])rotate([0,90,0])cylinder(d=1.2,h=w,$fn=24);
 		translate([w/2+r,l/2,h-2])rotate([90,0,0])cylinder(d=1.2,h=l,$fn=24);
@@ -85,7 +86,7 @@ module OuterCase(){
 // venilation slits 
      
         for ( i=[-n_slits:1:n_slits-1] ){   
-          #translate([wi/2-delta,i*inc_slits+y_center_slits,zo_slits])
+          translate([wi/2-delta,i*inc_slits+y_center_slits,zo_slits])
             cube([th+2*delta,w_slits,h_slits]);
           translate([-wi/2-delta-th,i*inc_slits+y_center_slits,zo_slits])
             cube([th+2*delta,w_slits,h_slits]);
@@ -106,7 +107,7 @@ module OuterCase(){
 // charging LED opening
    
   translate([w/2+r,l/2+d_LED/2-yo_LED,h-zo_LED-th-3.1]) rotate([0,90,0]) cylinder(r=d_LED/2,h=th,$fn=32*r);
-  #translate([-0.1+w/2+r,l/2+d_LED/2-yo_LED,h-zo_LED-th-3.1]) rotate([0,0,0]) cylinder(r=d_LED/2,h=7.5-2.0+0.5,$fn=32*r);       
+  translate([-0.1+w/2+r,l/2+d_LED/2-yo_LED,h-zo_LED-th-3.1]) rotate([0,0,0]) cylinder(r=d_LED/2,h=7.5-2.0+0.5,$fn=32*r);       
     
 	}
 
@@ -153,3 +154,8 @@ translate([0,li+3+2*th,0]) cover();
 echo("width = ",wi+2*th);
 echo("length = ",li+2*th);
 echo("height = ",h+2*th);
+
+// inner opening dimenions
+echo("inner width = ",wi);
+echo("inner length = ",li);
+echo("inner height = ",h);

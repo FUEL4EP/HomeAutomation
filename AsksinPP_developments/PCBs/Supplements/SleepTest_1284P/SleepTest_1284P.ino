@@ -18,7 +18,7 @@
 
 #define Tindie_m1284p
 
-const int ledPin = 9;
+const int ledPin = 12;
 
 void setup() 
 {

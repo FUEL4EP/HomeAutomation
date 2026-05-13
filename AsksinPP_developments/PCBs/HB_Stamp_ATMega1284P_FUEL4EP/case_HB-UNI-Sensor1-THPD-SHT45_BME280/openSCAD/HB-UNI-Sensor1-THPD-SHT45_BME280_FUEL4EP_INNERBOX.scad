@@ -14,17 +14,17 @@
 
 $fa = 0.05;
 $fs=0.05;
-wPCB=22.2;
-lPCB=40.2;
-b=1.6;       
+wPCB=22.1;
+lPCB=40.1;
+b=2.1;       
 
-wSensor=22.2;
-lSensor=17.2;
+wSensor=22.1;
+lSensor=17.1;
 
-gap_device=0.8;
+gap_device=0.4;
 
-wi=wPCB+b+gap_device;	
-li=lPCB+b+gap_device;
+wi=wPCB+b+gap_device; // 22.2 + 1.5 + 0.8 = 24.5	
+li=lPCB+b+gap_device; // 40.2 + 1.5 + 0.8 = 42.5
 
 e=0.01;
 
@@ -68,7 +68,7 @@ module PCB_holder(x,y,z) {
     }
     translate([x+b/2,y+b/2,z+h_PCB_holder-th_PCB/2+delta])rotate([0,0,0]) cube([wPCB+gap_device,lPCB+gap_device,th_PCB/2+2*delta]);
     translate([wi/2-wPCB/2-gap_device/2,lSensor+gap_device+b/2,cutoutSensor-th_PCB/2+delta]) rotate([0,0,0]) cube([wPCB+gap_device,lPCB-(lSensor+b/4),th_PCB/2]);
-    translate([wi/2-wPCB/2+gap_device/4,lSensor+gap_device+b/2,cutoutSensor-th_PCB+delta]) rotate([0,0,0]) cube([wPCB-gap_device/2,lPCB-(lSensor+b/4+gap_device/2),th_PCB/2]);
+    #translate([wi/2-wPCB/2+gap_device/4,lSensor+gap_device+b/2,cutoutSensor-th_PCB+delta]) rotate([0,0,0]) cube([wPCB-gap_device/2,lPCB-(lSensor+b/4+gap_device/2),th_PCB/2]);
     
     
 // venilation slits 

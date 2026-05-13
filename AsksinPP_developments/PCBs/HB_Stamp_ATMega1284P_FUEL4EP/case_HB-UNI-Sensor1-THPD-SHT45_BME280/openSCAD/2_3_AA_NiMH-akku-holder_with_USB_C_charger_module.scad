@@ -38,13 +38,14 @@ wWiringChannel_5=dWall+dChargingModule-wWiringChannel_4;
 lWiringChannel_5=wWiringChannel_2;
 lLEDOpening=6;
 hLEDOpening=4;
+extra_gap=0.2;
 
-xFill=24.6;
-yFill=3.9;
+xFill=24.6-extra_gap;
+yFill=4.1-extra_gap;
 hFill=wChargingModule+dWall;
 
 difference(){
-  translate([0,0,-hConnector]) rotate([0,0,0]) cube([dChargingModule+2*dWall,boxLength,wChargingModule+dWall]);
+  translate([0,0,-hConnector]) rotate([0,0,0]) cube([dChargingModule+2*dWall-extra_gap,boxLength,wChargingModule+dWall]);
 
   translate([dWall,boxLength-lChargingModule,-hConnector+dWall]) rotate([0,0,0]) cube([dChargingModule,lChargingModule,wChargingModule]);
   translate([dWall+dChargingModule-wWiringChannel_4,boxLength-lChargingModule-wWiringChannel_4,-hConnector]) rotate([0,0,0]) cube([wWiringChannel_4,wWiringChannel_4,lWiringChannel_4]);
@@ -64,7 +65,7 @@ difference(){
   translate([-wWiringChannel_1-lWiringChannel_2,0,-hConnector]) rotate([0,0,0]) cube([wWiringChannel_3,lWiringChannel_3,hConnector]);
 }
 
-translate([-xFill++2*dWall+dChargingModule,-yFill,-hConnector]) rotate([0,0,0]) cube([xFill,yFill,hFill]);
+translate([-xFill++2*dWall+dChargingModule-extra_gap,-yFill,-hConnector]) rotate([0,0,0]) cube([xFill,yFill,hFill]);
 
 echo("width = ",boxWidth+2*dWall+dChargingModule);
 echo("length = ",boxLength+yFill);
