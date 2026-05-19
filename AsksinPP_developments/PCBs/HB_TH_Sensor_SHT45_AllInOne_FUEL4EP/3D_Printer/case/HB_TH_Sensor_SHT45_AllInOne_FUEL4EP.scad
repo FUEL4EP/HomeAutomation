@@ -2,6 +2,7 @@
 // (C)Inhumierer June 30, 2017
 // my credits for Inhumierer
 
+// V 1.4 some improvements for better mounting of PCB, e.g. add. PCB feed
 // V 1.3 adaption to HB_TH_Sensor_SHT45_AllInOne_FUEL4EP by FUEL4EP 01/2024
 // V 1.2 Correction / hint from molotok3D, some minor fixes
 // V 1.1- added opening helper and an optional separating wall 
@@ -47,9 +48,12 @@ y3_PCB_feet=-lPCB/2+20.447;
 x4_PCB_feet=wPCB/2-5.588;
 y4_PCB_feet=-lPCB/2+2.175;
 
+x5_PCB_feet=wPCB/2-23.079;
+y5_PCB_feet=-lPCB/2+2.175;
+
 h_PCB_feet=4;             //height
 d_PCB_feet=3.5;           //diameter
-screw_dia_PCB_feet=1.2;   //diameter of screws
+screw_dia_PCB_feet=1.3;   //diameter of screws
 
 th_PCB=0.8;               // PCB thickness
 
@@ -164,6 +168,12 @@ module PcbFeets(h_PCB_feet, d_PCB_feet, screw_dia_PCB_feet, x1_PCB_feet, y1_PCB_
     translate([x4_PCB_feet,y4_PCB_feet,th]) {
         difference() {
             cylinder(d=d_PCB_feet, h=h_PCB_feet, center=true, $fs=0.1);
+            cylinder(d=screw_dia_PCB_feet, h=h_PCB_feet+.01, center=true, $fs=0.1);
+        }
+    }
+		translate([x5_PCB_feet,y5_PCB_feet,th]) {
+        difference() {
+            #cylinder(d=d_PCB_feet, h=h_PCB_feet, center=true, $fs=0.1);
             cylinder(d=screw_dia_PCB_feet, h=h_PCB_feet+.01, center=true, $fs=0.1);
         }
     }
