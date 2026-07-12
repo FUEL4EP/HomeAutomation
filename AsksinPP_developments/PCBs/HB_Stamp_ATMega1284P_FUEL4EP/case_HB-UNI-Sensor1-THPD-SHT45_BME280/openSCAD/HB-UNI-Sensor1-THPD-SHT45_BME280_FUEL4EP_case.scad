@@ -71,7 +71,7 @@ module OuterCase(){
 				translate(i)cylinder(r=r,h=h+delta,$fn=32*r);
 			}
   }
-  #translate([-w/2-r,-l/2-r,0]) cube([wi,li,h]);
+    translate([-w/2-r,-l/2-r,0]) cube([wi,li,h]);
 		translate([-w/2,l/2+r,h-2])rotate([0,90,0])cylinder(d=1.2,h=w,$fn=24);
 		translate([-w/2,-l/2-r,h-2])rotate([0,90,0])cylinder(d=1.2,h=w,$fn=24);
 		translate([w/2+r,l/2,h-2])rotate([90,0,0])cylinder(d=1.2,h=l,$fn=24);
@@ -107,7 +107,7 @@ module OuterCase(){
 // charging LED opening
    
   translate([w/2+r,l/2+d_LED/2-yo_LED,h-zo_LED-th-3.1]) rotate([0,90,0]) cylinder(r=d_LED/2,h=th,$fn=32*r);
-  translate([-0.1+w/2+r,l/2+d_LED/2-yo_LED,h-zo_LED-th-3.1]) rotate([0,0,0]) cylinder(r=d_LED/2,h=7.5-2.0+0.5,$fn=32*r);       
+  #translate([-0.1+w/2+r,l/2+d_LED/2-yo_LED,h-zo_LED-th-3.1]) rotate([0,0,0]) cylinder(r=d_LED/2+0.1,h=7.5-2.0+0.5,$fn=32*r);       
     
 	}
 

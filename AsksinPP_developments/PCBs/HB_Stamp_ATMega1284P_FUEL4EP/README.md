@@ -91,10 +91,8 @@
 - eine Anleitung zur Nutzung des eine Diamex Prog S2 Programmierers unter Linux ist [hier](https://github.com/FUEL4EP/HomeAutomation/tree/master/AsksinPP_developments/HowTos/ISP%20Programmer/Diamex%20Prog-S2) beschrieben
 
 ### Passendes Gehäuse
-- in Arbeit, wird später hier bereitgestellt
-- ein geeigneter Batteriehalter für einen 2/3 AA NiMH Akkumulator ist [hier](battery_holder) im STL und openSCAD-Format.
--![battery_holder](./battery_holder/2_3_AA_NiMH-akku-holder_2.png)
-	+ damit lässt sich ein sehr kleines Gehäuse passend zur Platine HB_Stamp_ATMega1284P_FUEL4EP erstellen
+- ein 3D druckbares Gehäuse ist [hier](./case_HB-UNI-Sensor1-THPD-SHT45_BME280/) zu finden  
+- ein parametrisierbares OpenSCAD Modell ist beigefügt
 
 ### Hinweise
 * Achtung: Kein Überspannungsschutz oder Verpolungsschutz vorhanden

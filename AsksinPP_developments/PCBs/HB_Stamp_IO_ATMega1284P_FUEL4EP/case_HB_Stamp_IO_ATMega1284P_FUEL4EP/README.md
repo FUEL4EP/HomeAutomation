@@ -34,7 +34,9 @@
 	* Versorgungsleitungen
 		* zwischen Lademodul und NiMH-Batteriehalter im Kabelkanal
 		* zwischen NiMH-Batteriehalter und Mutterplatine
-- 3mm-LED des Lademoduls einlöten, Polung beachten
+- 3mm-LED des Lademoduls einlöten, Polung beachten  
+- das Lademodul muss ganz nach links eingeschoben werden können, daher die Leitungen zwischen Lademodul und NiMH-Batteriehalter im Kabelkanal auf der Oberseite der Lademodulplatine zur Öffnung des Druckteils 2_3_AA_NiMH-akku-holder_with_USB_C_charger_module hin einlöten. Das ist ein wenig knifflig.
+- die Leitungen zwischen NiMH-Batteriehalter und Mutterplatine kurz halten und so platzieren, dass sie bei zusammengesetztem 2_3_AA_NiMH-akku-holder_with_USB_C_charger_module und HB_Stamp_IO_ATMega1284P_FUEL4EP_INNERBOX außerhalb Deckels des eByte E07 900MM10S Funkmoduls verlaufen. Vor den Einführen dieser beiden Druckteile eventuell herausquellende die Leitungen mit einer Pinzette zurückschieben, so dass beide Druckteile direkt aufeinander liegen können. Sonst passt der Deckel nicht mehr. Erst dann beiden direkt aufeinander gesetzten Druckteile in das äußere Gehäuse HB_Stamp_IO_ATMega1284P_FUEL4EP_case vorsichtig einführen. Dabei die LED möglichst nicht verbiegen oder verkanten. Gegebenenfalls mit einer Pinzette das Einführen der LED unterstützen.
 
 ## Credits
 
