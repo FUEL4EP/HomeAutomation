@@ -77,6 +77,7 @@
 
 ## Eigenschaften
 - basierend auf dem [Teviso AL53 Sensor](https://www.teviso.com/file/pdf/al53-data-specification.pdf) Sensor
+- ***Hinweis vom 20. Jul 2026:*** Der Sensor [Teviso AL53 Sensor](https://www.teviso.com/file/pdf/al53-data-specification.pdf) ist inzwischen durch den Sensor [Teviso AL54 Sensor](https://de.gvzcomp.it/products/alpha-beta-gamma-x-ray-sensors/radiation-sensor-al54) ersetzt. Dieser hat einen zusätzlichen analogen Signalausgang. Siehe [Datenblatt](https://www.teviso.com/documents/al54-data-specification.pdf).
 - misst alpha-, beta- und gamma-Strahlung
 - die Absorptionscharakteristik für gamma-Strahlung ist ähnlich der PIN-Diode [X100-7 THD von First Sensor](https://www.first-sensor.com/cms/upload/datasheets/X100-7_THD_5000040.pdf) und auf gamma Energien von < ca. 10keV beschränkt.
 - geringer Energieverbrauch: nur ca 0,83 mA im Messbetrieb
