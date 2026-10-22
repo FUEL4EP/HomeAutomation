@@ -99,24 +99,40 @@ public:
        DPRINTLN(F("BME280 sensor NOT found"));
        _present_BME280 = false;
   }
-  
+
   // check whether SHT85 sensor can be accessed
-  bool _present_SHT85;
-  
-  if ( _sht.init() && _sht.readSample() ) {
-    DPRINTLN(F("SHT85 sensor OK"));
-    _present_SHT85 = true;
-    _tempOffset   = (float)( tempOffset10 )  / 10.0;
-    _humidOffset  = (float)( humidOffset10 ) / 10.0;
-    DPRINTLN(F("SHT85 offsets (all x10):"));
-    DPRINT(F("-T    : ")); DDECLN(tempOffset10);
-    DPRINT(F("-H    : ")); DDECLN(humidOffset10);
+  bool _present_SHT85 = false;
+
+  // 1. Initialize the sensor
+  if ( _sht.init() ) {
+    // Give the sensor a short break after bus probing
+    delay(50);
+
+    // 2. Try the first read attempt with a small retry loop
+    uint8_t retry = 3;
+    while(retry > 0 && !_sht.readSample()) {
+      delay(30);
+      retry--;
+    }
+
+    // If reading the sample was successful
+    if (retry > 0) {
+      DPRINTLN(F("SHT85 sensor OK"));
+      _present_SHT85 = true;
+      _tempOffset   = (float)( tempOffset10 )  / 10.0;
+      _humidOffset  = (float)( humidOffset10 ) / 10.0;
+      DPRINTLN(F("SHT85 offsets (all x10):"));
+      DPRINT(F("-T    : ")); DDECLN(tempOffset10);
+      DPRINT(F("-H    : ")); DDECLN(humidOffset10);
+    }
   }
-  else
+
+  // If either init or readSample failed
+  if (!_present_SHT85)
   {
     DPRINTLN(F("SHT85 sensor NOT found"));
-    _present_SHT85 = false;
   }
+
   
 #if defined CALCULATE_MOVING_AVERAGES
   _24h_moving_average_temperature_statistics.clear_buffer();
