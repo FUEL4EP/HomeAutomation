@@ -69,6 +69,7 @@ public:
   void init (uint16_t altitude, int8_t tempOffset10, int8_t humidOffset10, int8_t pressOffset10) {
 
     Wire.begin(); //ToDo sync with further I2C sensor classes
+    Wire.setClock(100000);
 
     uint8_t i = 10;
     while( (!_bme280.begin()) && (i > 0) ) {
@@ -149,6 +150,7 @@ public:
       
       // read BME280 sensor, temp_bme280 and hum_bme280 are discarded here
       _bme280.read(pres, temp_bme280, hum_bme280, BME280::TempUnit_Celsius, BME280::PresUnit_hPa);
+      delay(30);
       // read SHT85 sensor
       if (_sht.readSample()) {
           temp = _sht.getTemperature();
