@@ -1,0 +1,22 @@
+ 
+HINWEIS ZU DRITTANBIETER-LIZENZEN
+
+Die meisten Modelle in diesem Verzeichnis unterliegen der Hauptlizenz dieses Repositories (CC BY-NC-SA 4.0).
+
+Ausnahme:
+Die Datei "Wago_233-503.STEP" beinhaltet ein offizielles 3D-CAD-Modell der Firma WAGO / CADENAS.
+Dieses Modell wird hier unverändert zur Verfügung gestellt und steht unter der Lizenz:
+Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)
+
+Die restriktiveren Bedingungen unseres Hauptprojekts (wie das Kommerzielle Nutzungsverbot oder Share-Alike) erstrecken sich ausdrücklich NICHT auf diese WAGO-Datei.
+
+
+NOTICE REGARDING THIRD-PARTY LICENSES
+
+Most models in this directory are subject to the main license of this repository (CC BY-NC-SA 4.0).
+
+Exception:
+The file "Wago_233-503.STEP" contains an official 3D CAD model from WAGO / CADENAS.
+This model is provided here unmodified and is licensed under: Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)
+
+The more restrictive conditions of our main project (such as the Non-Commercial restriction or Share-Alike) explicitly DO NOT extend to this WAGO file.

@@ -1,0 +1,6 @@
+"Reference","Value","Datasheet","Footprint","Qty","DNP"
+"C1","10u","~","Capacitor_THT:CP_Radial_D5.0mm_P2.00mm","1",""
+"C2,C3,C4,C5,C6,C7,C8,C9,C10","100n","~","Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm","9",""
+"J1,J2,J3,J4,J5,J6,J7,J8,J9","Wago 233 503","~","FUEL4EP:TerminalBlock_WAGO_233-503_2x03_P2.54mm","9",""
+"J10","Conn_01x02_Socket","~","Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical","1",""
+"R1","2.7k","~","Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal","1",""
